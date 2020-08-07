@@ -36,13 +36,13 @@ export default () => {
       <HeroWave
         heading="Kallpa Lúdica"
         pattern="bg-orange-600 text-orange-500"
-        svg="M0,64L720,192L1440,64L1440,320L720,320L0,320Z"
+        svg="M0,128L720,256L1440,128L1440,320L720,320L0,320Z"
       />
 
       <div className="flex flex-col items-center justify-center max-w-3xl p-3 py-2 mx-auto">
         <Link
           to={`/juegos/`}
-          className="block px-12 py-3 my-6 font-mono text-2xl font-bold text-center text-white transition-all duration-500 bg-orange-500 shadow-md hover:bg-orange-100 hover:text-orange-900"
+          className="block px-12 py-3 my-6 font-mono text-2xl font-bold text-center text-white transition-all duration-500 bg-orange-500 rounded-md shadow-md hover:bg-orange-100 hover:text-orange-900"
         >
           Conocé la tienda de juegos
         </Link>

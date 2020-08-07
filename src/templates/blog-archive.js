@@ -5,23 +5,14 @@ import Layout from "../components/layout"
 import Pager from "../components/Pager"
 import SEO from "../components/seo"
 import { kebabCase } from "lodash"
+import Img from "gatsby-image"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import HeroWave from "../components/HeroWave"
 
-const PageTitle = styled.h1`
-  ${tw`flex items-center justify-center h-64 font-mono text-5xl font-bold text-white bg-green-800`}
-`
-
-const Pattern = styled.div`
-  ${tw``}
-`
-
 const Item = styled.div`
-  ${tw`px-8 py-12 text-center transition-all duration-500 ease-in-out bg-green-100 shadow-md`}
+  ${tw`text-center transition-all duration-500 ease-in-out `}
   ${tw`transform translate-x-2 translate-y-2`}
-
-
 
   a {
     ${tw`font-mono text-xl font-bold text-green-400 transition-all duration-500 ease-in-out `}
@@ -39,7 +30,7 @@ const Item = styled.div`
 `
 
 const Container = styled.div`
-  ${tw`grid h-screen max-w-4xl gap-4 p-3 py-12 mx-auto md:grid-cols-3`}
+  ${tw`grid max-w-6xl gap-6 p-3 py-12 mx-auto md:grid-cols-4`}
 `
 
 const BlogArchive = ({ data, pageContext, location }) => {
@@ -50,18 +41,25 @@ const BlogArchive = ({ data, pageContext, location }) => {
       <SEO title="Tiendita de juegos" />
       <HeroWave
         heading="Tiendita de juegos"
+        anchor="contenido"
         pattern="bg-green-600 text-green-500"
-        svg="M0,224L120,229.3C240,235,480,245,720,234.7C960,224,1200,192,1320,176L1440,160L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
+        svg="M0,32L120,74.7C240,117,480,203,720,202.7C960,203,1200,117,1320,74.7L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
       />
       <Container id="contenido">
         {posts.map(({ node }) => {
           const title = node.title || node.slug
           return (
-            <Pattern className="h-32 pattern-dots-md">
-              <Item key={node.slug}>
-                <Link to={`/juegos/${kebabCase(node.slug)}/`}>{title}</Link>
-              </Item>
-            </Pattern>
+            <Item key={node.slug}>
+              <Link to={`/juegos/${kebabCase(node.slug)}/`} className="">
+                <Img
+                  title={node.title}
+                  alt={node.title}
+                  className="h-64"
+                  fluid={node.imagenDestacada.fluid}
+                />
+                <h3 className="block p-3 text-left">{title}</h3>
+              </Link>
+            </Item>
           )
         })}
         <Pager pageContext={pageContext} />
@@ -84,6 +82,15 @@ export const pageQuery = graphql`
           id
           title
           slug
+          paginaWeb
+          imagenDestacada {
+            fixed(width: 600, height: 600) {
+              ...GatsbyContentfulFixed
+            }
+            fluid(maxWidth: 450) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
         }
       }
     }

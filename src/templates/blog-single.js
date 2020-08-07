@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import { Link } from "gatsby"
 import { kebabCase } from "lodash"
 import "../components/VideoReact.css"
-
+import Img from "gatsby-image"
 import SEO from "../components/seo"
 //import Article from "../components/Article"
 
@@ -102,6 +102,16 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </div>
             )}
           </div>
+          {post.paginaWeb && (
+            <a
+              href={post.paginaWeb}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-900 btn"
+            >
+              Ver pagina web del juego
+            </a>
+          )}
         </div>
         <div className="py-12 text-4xl">
           <nav style={{ display: "flex", justifyContent: "space-between" }}>
@@ -135,6 +145,15 @@ export const pageQuery = graphql`
       title
       childContentfulArticulosTextoPrincipalRichTextNode {
         json
+      }
+      paginaWeb
+      imagenDestacada {
+        fixed(width: 1200, height: 900) {
+          ...GatsbyContentfulFixed
+        }
+        fluid(maxWidth: 450) {
+          ...GatsbyContentfulFluid_withWebp
+        }
       }
     }
   }

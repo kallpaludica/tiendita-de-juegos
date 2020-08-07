@@ -2,15 +2,20 @@ import React from "react"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import AnchorLink from "react-anchor-link-smooth-scroll"
+import { IoIosArrowDown } from "react-icons/io"
 const HeroWave = (props) => (
   <>
-    <Hero className={` ${props.pattern} pattern-cross-dots-md`}>
+    <Hero className={`${props.pattern} pattern-cross-dots-md`}>
       <HeroContent>
-        <Title>
-          <AnchorLink href="#contenido" className="hover:text-gray-200">
-            {props.heading}
+        <Title>{props.heading}</Title>
+        {props.anchor && (
+          <AnchorLink
+            href="#contenido"
+            className="inline-block mt-6 text-3xl text-center text-white hover:text-green-200"
+          >
+            <IoIosArrowDown />
           </AnchorLink>
-        </Title>
+        )}
       </HeroContent>
       <Wave>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -36,7 +41,7 @@ const Title = styled.h1`
 `
 
 const Hero = styled.div`
-  ${tw`relative flex flex-col items-center justify-center w-full pt-24 pb-64 mx-auto`}
+  ${tw`relative flex flex-col items-center justify-center w-full pt-24 pb-32 mx-auto`}
 `
 
 const Wave = styled.div`

@@ -23,8 +23,14 @@ export default () => {
           className="flex items-center justify-center pb-24 text-3xl"
           id="contenido"
         >
-          Instragram: kallpaludica <br />
-          WhatsApp: +54 9 387 603-4627
+          <a
+            href="https://www.instagram.com/kallpaludica/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white bg-purple-200 btn"
+          >
+            Instragram: kallpaludica <br />
+          </a>
         </div>
       </PageContainer>
     </Layout>
