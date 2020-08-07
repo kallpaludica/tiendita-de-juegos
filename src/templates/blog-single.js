@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import { Link } from "gatsby"
 import { kebabCase } from "lodash"
 import "../components/VideoReact.css"
-import Img from "gatsby-image"
+//import Img from "gatsby-image"
 import SEO from "../components/seo"
 //import Article from "../components/Article"
 

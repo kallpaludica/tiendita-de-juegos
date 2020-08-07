@@ -93,12 +93,12 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Kallpa Lúdica`,
-        short_name: `Kallpa`,
+        short_name: `Kallpa Lúdica`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#ffffff`,
+        background_color: `#510952`,
+        theme_color: `#510952`,
         display: `standalone`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/kallpa-ludica.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

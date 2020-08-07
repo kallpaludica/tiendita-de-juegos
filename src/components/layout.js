@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
     <>
       <div className="app-container">
         <SimpleReactLightbox>
-          <main className="mt-20 text-center ">{children}</main>
+          <main className="text-center ">{children}</main>
         </SimpleReactLightbox>
         <Stn>
           <Inner>
@@ -44,9 +44,9 @@ Layout.propTypes = {
 
 export default Layout
 
-const Footer = styled.footer`
-  ${tw`relative hidden px-2 py-8 text-center text-gray-800 bg-white`}
-`
+//const Footer = styled.footer`
+//  ${tw`relative hidden px-2 py-8 text-center text-gray-800 bg-white`}
+//`
 
 const Stn = styled.div`
   ${tw`w-full p-2 py-4 bg-white`}

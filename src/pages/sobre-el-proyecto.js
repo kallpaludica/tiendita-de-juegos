@@ -4,9 +4,8 @@ import tw from "twin.macro"
 import styled from "@emotion/styled"
 import HeroWave from "../components/HeroWave"
 import "../components/VideoReact.css"
-import AboutImage from "../images/gatsby-icon.png"
+import AboutImage from "../images/kallpa-ludica.png"
 
-import Img from "gatsby-image"
 const PageContainer = styled.div`
   ${tw`flex flex-col items-center justify-center w-full p-3 py-12 mx-auto text-purple-700 bg-white`}
 `
@@ -22,7 +21,11 @@ export default () => {
       <PageContainer>
         <div className="flex items-center justify-center pb-24">
           <div className="w-full max-w-2xl mx-auto my-12 text-center text-orange-300 pattern-dots-md gray-light">
-            <img className="w-full max-w-md mx-auto" src={AboutImage} />
+            <img
+              className="w-full max-w-md mx-auto"
+              alt="Kallpa Lúdica"
+              src={AboutImage}
+            />
           </div>
         </div>
       </PageContainer>
