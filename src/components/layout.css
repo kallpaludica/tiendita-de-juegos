@@ -1,0 +1,50 @@
+/* purgecss start ignore */
+body {
+  background-image: url(/noisy-texture.png);
+  background-size: 100px 100px;
+  background-repeat: repeat;
+  @apply bg-white;
+}
+
+a {
+  text-shadow: none !important;
+  /*background-image: none !important;*/
+}
+
+.home-hero {
+  max-height: 100vh;
+  min-height: 95vh;
+}
+
+a:hover {
+  @apply text-green-600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-gray-900;
+}
+
+@screen lg {
+  body {
+    margin-left: 0;
+  }
+}
+
+main {
+  min-height: 90vh;
+}
+
+.about-text p {
+  @apply mb-2;
+}
+
+#SRLLightbox {
+  z-index: 9999;
+}
+
+/* purgecss end ignore */

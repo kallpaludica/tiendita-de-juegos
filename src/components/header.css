@@ -1,0 +1,82 @@
+/* purgecss start ignore */
+
+header nav {
+  display: block;
+}
+
+header nav a {
+  display: inline-block;
+  text-decoration: none;
+  @apply py-3 mt-1 ml-3 text-base tracking-wider text-black transition-all duration-500 border-b border-transparent;
+}
+
+@screen lg {
+  header nav a {
+    @apply text-xl;
+  }
+}
+
+body.contrast header nav a {
+  @apply text-black;
+}
+
+body.contrast .headroom {
+}
+
+header nav a:hover {
+  @apply text-green-600 opacity-100;
+}
+
+header nav a.active {
+  @apply mx-2 my-6;
+}
+
+.headroom-wrapper {
+  position: absolute;
+}
+
+.headroom {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  position: fixed !important;
+  @apply transition-all duration-500 bg-white;
+}
+.headroom--unfixed {
+  position: relative;
+  transform: translateY(0);
+  background: rgba(255, 255, 255, 0.01) !important;
+}
+
+.headroom--unfixed:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+body.transparent .headroom--unfixed:hover a {
+  color: #333;
+}
+
+body.transparent .headroom--unfixed a {
+  opacity: 1;
+}
+.headroom--scrolled {
+  @apply bg-white;
+}
+.headroom--unpinned {
+  position: fixed;
+  @apply bg-white;
+
+  transform: translateY(0);
+}
+
+@screen md {
+  .headroom--unpinned {
+    transform: translateY(-100%);
+    background: transparent !important;
+  }
+}
+.headroom--pinned {
+  position: fixed;
+  transform: translateY(0%);
+}
+/* purgecss end ignore */
