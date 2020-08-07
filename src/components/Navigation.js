@@ -33,7 +33,7 @@ const Navigation = ({ closeMenu }) => (
           onClick={closeMenu}
           to={route.slug}
           activeClassName={route.active}
-          className={`hover:${route.active} my-5 font-mono text-xl font-bold text-gray-800 text-center uppercase cursor-pointer `}
+          className={`hover:${route.active} my-5 font-mono text-2xl font-bold text-gray-800 text-right  cursor-pointer `}
         >
           {route.title}
         </Link>

@@ -21,11 +21,8 @@ export default () => {
       />
       <PageContainer>
         <div className="flex items-center justify-center pb-24">
-          <div class="pattern-dots-md text-orange-300 gray-light max-w-2xl mx-auto my-12 text-center w-full">
-            <img
-              className="max-w-md mx-auto transition-all duration-500 transform -translate-x-6 -translate-y-4 hover:-translate-y-5 hover:-translate-x-6"
-              src={AboutImage}
-            />
+          <div className="w-full max-w-2xl mx-auto my-12 text-center text-orange-300 pattern-dots-md gray-light">
+            <img className="w-full max-w-md mx-auto" src={AboutImage} />
           </div>
         </div>
       </PageContainer>

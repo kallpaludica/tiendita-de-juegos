@@ -20,7 +20,7 @@ const HeroWave = (props) => (
       <Wave>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
-            fill-opacity="1"
+            fillOpacity="1"
             className="text-white fill-current "
             d={props.svg}
           ></path>
