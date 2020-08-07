@@ -68,7 +68,7 @@ Header.defaultProps = {
 export default Header
 
 const Nav = styled.nav`
-  ${tw`justify-center hidden md:flex`}
+  ${tw`justify-end hidden md:flex`}
   flex:1;
 `
 
