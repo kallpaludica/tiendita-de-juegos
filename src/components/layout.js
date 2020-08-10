@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
     <>
       <div className="app-container">
         <SimpleReactLightbox>
-          <main className="text-center ">{children}</main>
+          <main className="text-center bg-white ">{children}</main>
         </SimpleReactLightbox>
         <Stn>
           <Inner>

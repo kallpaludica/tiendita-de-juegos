@@ -1,10 +1,17 @@
 import React from "react"
 import Layout from "../components/layout"
+import { Helmet } from "react-helmet"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import HeroWave from "../components/HeroWave"
 import "../components/VideoReact.css"
+import "../components/AwsBtn.css"
 
+import {
+  AwesomeButton,
+  AwesomeButtonProgress,
+  AwesomeButtonSocial,
+} from "react-awesome-button"
 const PageContainer = styled.div`
   ${tw`flex flex-col items-center justify-center w-full p-3 py-12 mx-auto text-purple-700 bg-white`}
 `
@@ -12,6 +19,9 @@ const PageContainer = styled.div`
 export default () => {
   return (
     <Layout>
+      <Helmet>
+        <body className="contact" />
+      </Helmet>
       <HeroWave
         heading="Contacto"
         description="Hacemos envios a toda Salta Capital"
@@ -23,14 +33,23 @@ export default () => {
           className="flex items-center justify-center pb-24 text-3xl"
           id="contenido"
         >
-          <a
+          <AwesomeButtonSocial
+            type="instagram"
             href="https://www.instagram.com/kallpaludica/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white bg-purple-200 btn"
           >
-            Instragram: kallpaludica <br />
-          </a>
+            kallpaludica
+          </AwesomeButtonSocial>
+          <span className="inline-block mx-2"></span>
+          <AwesomeButtonSocial
+            type="whatsapp"
+            href="https://wa.link/ofthek"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Hacenos tu consulta
+          </AwesomeButtonSocial>
         </div>
       </PageContainer>
     </Layout>

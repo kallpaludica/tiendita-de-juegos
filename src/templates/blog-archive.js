@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
+import { Helmet } from "react-helmet"
+import { navigate } from "gatsby" // highlight-line
 import Layout from "../components/layout"
 import Pager from "../components/Pager"
 import SEO from "../components/seo"
@@ -9,6 +11,13 @@ import Img from "gatsby-image"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import HeroWave from "../components/HeroWave"
+import {
+  AwesomeButton,
+  AwesomeButtonProgress,
+  AwesomeButtonSocial,
+} from "react-awesome-button"
+import "../components/AwsBtn.css"
+import Fade from "react-reveal/Fade"
 
 const Item = styled.div`
   ${tw`text-center transition-all duration-500 ease-in-out `}
@@ -30,7 +39,7 @@ const Item = styled.div`
 `
 
 const Container = styled.div`
-  ${tw`grid max-w-6xl gap-6 p-3 py-12 mx-auto md:grid-cols-4`}
+  ${tw`grid gap-6 p-3 py-12 mx-auto bg-white md:grid-cols-4 `}
 `
 
 const BlogArchive = ({ data, pageContext, location }) => {
@@ -39,27 +48,64 @@ const BlogArchive = ({ data, pageContext, location }) => {
   return (
     <Layout location={location}>
       <SEO title="Tiendita de juegos" />
+      <Helmet>
+        <body className="games" />
+      </Helmet>
       <HeroWave
         heading="Tiendita de juegos"
         anchor="contenido"
         pattern="bg-green-600 text-green-500"
         svg="M0,32L120,74.7C240,117,480,203,720,202.7C960,203,1200,117,1320,74.7L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
       />
+      <div className="flex justify-around max-w-3xl mx-auto">
+        <Fade bottom duration={1200} delay={100}>
+          <AwesomeButton
+            action={() => {
+              navigate(`/juegos/precio`)
+            }}
+            type="primary"
+          >
+            Ordenar por precio
+          </AwesomeButton>
+        </Fade>
+        <Fade bottom duration={1200} delay={300}>
+          <AwesomeButton
+            action={() => {
+              navigate(`/juegos/duracion`)
+            }}
+            type="primary"
+          >
+            Ordenar por duración
+          </AwesomeButton>
+        </Fade>
+        <Fade bottom duration={1200} delay={600}>
+          <AwesomeButton
+            action={() => {
+              navigate(`/juegos/edades`)
+            }}
+            type="primary"
+          >
+            Ordenar por edades
+          </AwesomeButton>
+        </Fade>
+      </div>
       <Container id="contenido">
         {posts.map(({ node }) => {
           const title = node.title || node.slug
           return (
-            <Item key={node.slug}>
-              <Link to={`/juegos/${kebabCase(node.slug)}/`} className="">
-                <Img
-                  title={node.title}
-                  alt={node.title}
-                  className="h-64"
-                  fluid={node.imagenDestacada.fluid}
-                />
-                <h3 className="block p-3 text-left">{title}</h3>
-              </Link>
-            </Item>
+            <Fade bottom duration={1200} delay={1000}>
+              <Item key={node.slug}>
+                <Link to={`/juegos/${kebabCase(node.slug)}/`} className="">
+                  <Img
+                    title={node.title}
+                    alt={node.title}
+                    className="h-64"
+                    fluid={node.imagenDestacada.fluid}
+                  />
+                  <h3 className="block p-3 text-left">{title}</h3>
+                </Link>
+              </Item>
+            </Fade>
           )
         })}
         <Pager pageContext={pageContext} />

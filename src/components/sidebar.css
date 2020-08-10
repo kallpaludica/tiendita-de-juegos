@@ -63,13 +63,13 @@
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  @apply bg-gray-900;
+  @apply bg-white;
   height: 2px !important;
 }
 
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
-  @apply bg-gray-800;
+  @apply bg-gray-300;
   opacity: 1 !important;
 }
 

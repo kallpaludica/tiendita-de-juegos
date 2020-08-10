@@ -7,28 +7,13 @@ header nav {
 header nav a {
   display: inline-block;
   text-decoration: none;
-  @apply py-3 mt-1 ml-3 text-base tracking-wider text-black transition-all duration-500 border-b border-transparent;
+  @apply py-3 mt-1 ml-3 text-base tracking-wider text-white transition-all duration-500 border-b border-transparent;
 }
 
 @screen lg {
   header nav a {
     @apply text-xl;
   }
-}
-
-body.contrast header nav a {
-  @apply text-black;
-}
-
-body.contrast .headroom {
-}
-
-header nav a:hover {
-  @apply text-green-600 opacity-100;
-}
-
-header nav a.active {
-  @apply mx-2 my-6;
 }
 
 .headroom-wrapper {
@@ -41,32 +26,37 @@ header nav a.active {
   right: 0;
   z-index: 999;
   position: fixed !important;
-  @apply transition-all duration-500 bg-white;
-}
-.headroom--unfixed {
-  position: relative;
-  transform: translateY(0);
-  background: rgba(255, 255, 255, 0.01) !important;
+  @apply transition-all duration-500;
 }
 
-.headroom--unfixed:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
-}
-body.transparent .headroom--unfixed:hover a {
-  color: #333;
-}
-
-body.transparent .headroom--unfixed a {
-  opacity: 1;
-}
 .headroom--scrolled {
-  @apply bg-white;
+  @apply bg-purple-700;
 }
+
 .headroom--unpinned {
   position: fixed;
-  @apply bg-white;
-
+  @apply bg-green-700;
   transform: translateY(0);
+}
+
+body .headroom--scrolled {
+  @apply bg-orange-700;
+}
+
+body.home .headroom--scrolled {
+  @apply bg-orange-700;
+}
+
+body.games .headroom--scrolled {
+  @apply bg-green-700;
+}
+
+body.about .headroom--scrolled {
+  @apply bg-pink-700;
+}
+
+body.contact .headroom--scrolled {
+  @apply bg-blue-700;
 }
 
 @screen md {

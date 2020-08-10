@@ -11,17 +11,17 @@ import styled from "@emotion/styled"
 const routes = [
   {
     title: "Tienda de juegos",
-    active: "text-green-500",
+    active: "text-green-200",
     slug: "/juegos",
   },
   {
     title: "Sobre el proyecto",
-    active: "text-pink-700",
+    active: "text-pink-300",
     slug: "/sobre-el-proyecto",
   },
   {
     title: "Contacto",
-    active: "text-indigo-500",
+    active: "text-indigo-200",
     slug: "/contacto",
   },
 ]
@@ -33,7 +33,7 @@ const Header = ({ siteTitle }) => (
         <Logo>
           <Link
             to="/"
-            className="block py-6 font-mono text-xl font-bold tracking-widest text-black uppercase"
+            className="block py-6 font-mono text-xl font-bold tracking-widest text-white uppercase hover:text-green-200"
           >
             {siteTitle}
           </Link>
@@ -44,7 +44,7 @@ const Header = ({ siteTitle }) => (
               <Link
                 key={i}
                 activeClassName={route.active}
-                className={`hover:${route.active} ml-6 font-mono text-xl font-bold tracking-widest text-black`}
+                className={`hover:${route.active} ml-6 font-mono text-xl font-bold tracking-widest`}
                 to={route.slug}
               >
                 {route.title}
@@ -73,19 +73,7 @@ const Nav = styled.nav`
 `
 
 const HeaderContainer = styled.header`
-  ${tw`z-50 px-2 py-0 transition-all duration-500 bg-white md:py-0 `}
-  background: rgba(255,255,255,.95);
-
-  a {
-  }
-
-  .domFiber & {
-    background: transparent !important;
-
-    a {
-      color: #fff !important;
-    }
-  }
+  ${tw`z-50 px-2 py-0 transition-all duration-500 md:py-0 `}
 `
 
 const InnerHeader = styled.div`

@@ -5,7 +5,7 @@ import styled from "@emotion/styled"
 import HeroWave from "../components/HeroWave"
 import "../components/VideoReact.css"
 import AboutImage from "../images/kallpa-ludica.png"
-
+import { Helmet } from "react-helmet"
 const PageContainer = styled.div`
   ${tw`flex flex-col items-center justify-center w-full p-3 py-12 mx-auto text-purple-700 bg-white`}
 `
@@ -13,6 +13,9 @@ const PageContainer = styled.div`
 export default () => {
   return (
     <Layout>
+      <Helmet>
+        <body className="about" />
+      </Helmet>
       <HeroWave
         heading="Sobre el proyecto"
         pattern="bg-pink-800 text-pink-900"
