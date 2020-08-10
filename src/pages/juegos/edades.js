@@ -52,7 +52,7 @@ const EdadesPage = () => {
         <body className="games" />
       </Helmet>
       <HeroWave
-        heading="Desde los mas chicos a los mas grandes"
+        heading="Empezando por los mas chiquitos"
         anchor="contenido"
         pattern="bg-green-600 text-green-500"
         svg="M0,32L120,74.7C240,117,480,203,720,202.7C960,203,1200,117,1320,74.7L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"

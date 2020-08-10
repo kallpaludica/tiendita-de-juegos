@@ -9,6 +9,7 @@ const HeroImageWave = (props) => (
     <Hero className={`${props.pattern} pattern-cross-dots-md`}>
       <HeroContent>
         <Title>{props.heading}</Title>
+        <SubTitle>De {props.author}</SubTitle>
         {props.anchor && (
           <AnchorLink
             href="#contenido"
@@ -23,7 +24,7 @@ const HeroImageWave = (props) => (
           title={props.heading}
           alt={props.heading}
           className="absolute"
-          fluid={props.imagenDestacada.fluid}
+          fluid={props.url}
         />
       </Image>
       <Wave>
@@ -47,10 +48,18 @@ const HeroContent = styled.div`
 
 const Image = styled.div`
   ${tw`relative `}
+
+  .gatsby-image-wrapper {
+    z-index: 99;
+  }
 `
 
 const Title = styled.h1`
   ${tw`font-mono text-5xl text-white`}
+`
+
+const SubTitle = styled.h3`
+  ${tw`font-mono text-2xl text-white`}
 `
 
 const Hero = styled.div`

@@ -57,15 +57,15 @@ const BlogArchive = ({ data, pageContext, location }) => {
         pattern="bg-green-600 text-green-500"
         svg="M0,32L120,74.7C240,117,480,203,720,202.7C960,203,1200,117,1320,74.7L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
       />
-      <div className="flex justify-around max-w-3xl mx-auto">
+      <div className="flex flex-col justify-around h-64 max-w-3xl mx-auto md:h-auto md:flex-row">
         <Fade bottom duration={1200} delay={100}>
           <AwesomeButton
             action={() => {
               navigate(`/juegos/precio`)
             }}
-            type="primary"
+            type="secondary"
           >
-            Ordenar por precio
+            por precio
           </AwesomeButton>
         </Fade>
         <Fade bottom duration={1200} delay={300}>
@@ -73,9 +73,9 @@ const BlogArchive = ({ data, pageContext, location }) => {
             action={() => {
               navigate(`/juegos/duracion`)
             }}
-            type="primary"
+            type="secondary"
           >
-            Ordenar por duración
+            por duración
           </AwesomeButton>
         </Fade>
         <Fade bottom duration={1200} delay={600}>
@@ -83,9 +83,9 @@ const BlogArchive = ({ data, pageContext, location }) => {
             action={() => {
               navigate(`/juegos/edades`)
             }}
-            type="primary"
+            type="secondary"
           >
-            Ordenar por edades
+            por edades
           </AwesomeButton>
         </Fade>
       </div>
@@ -93,8 +93,8 @@ const BlogArchive = ({ data, pageContext, location }) => {
         {posts.map(({ node }) => {
           const title = node.title || node.slug
           return (
-            <Fade bottom duration={1200} delay={1000}>
-              <Item key={node.slug}>
+            <Fade bottom duration={1200} delay={1000} key={node.slug}>
+              <Item>
                 <Link to={`/juegos/${kebabCase(node.slug)}/`} className="">
                   <Img
                     title={node.title}

@@ -1,5 +1,12 @@
 /* purgecss start ignore */
+.awssld__content {
+  @apply bg-white !important;
+}
 
+.awssld__bullets {
+  z-index: 999 !important;
+  bottom: 30px !important;
+}
 .bm-burger-button {
   position: fixed;
   width: 26px;

@@ -44,16 +44,28 @@ export default () => {
       </div>
       <AwesomeSlider>
         <div>
-          <img alt="Kallpa Lúdica" src={AboutImage} />
+          <img
+            alt="Kallpa Lúdica"
+            src="https://images.unsplash.com/photo-1577897113292-3b95936e5206?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=681&q=80"
+          />
         </div>
         <div>
-          <img alt="Kallpa Lúdica" src={AboutImage} />
+          <img
+            alt="Kallpa Lúdica"
+            src="https://images.unsplash.com/photo-1582921017967-79d1cb6702ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+          />
         </div>
         <div>
-          <img alt="Kallpa Lúdica" src={AboutImage} />
+          <img
+            alt="Kallpa Lúdica"
+            src="https://images.unsplash.com/photo-1519744346361-7a029b427a59?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+          />
         </div>
         <div>
-          <img alt="Kallpa Lúdica" src={AboutImage} />
+          <img
+            alt="Kallpa Lúdica"
+            src="https://images.unsplash.com/photo-1563941406054-949225931d52?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+          />
         </div>
       </AwesomeSlider>
     </Layout>
