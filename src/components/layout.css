@@ -47,8 +47,8 @@ main {
   z-index: 9999;
 }
 
-/* purgecss end ignore */
-
 .btn {
   @apply inline-block px-12 py-3 my-6 font-mono text-2xl font-bold text-center text-gray-900 transition-all duration-500 rounded-md shadow-md;
 }
+
+/* purgecss end ignore */
