@@ -113,13 +113,16 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       />*/}
       <div className="w-full py-12">
         <div className="max-w-3xl pt-24 mx-auto">
-          <div className="w-1/3 mx-auto text-center ">
-            <Img
-              fluid={post.imagenDestacada.fluid}
-              alt={post.title}
-              title={post.title}
-            />
-          </div>
+          {post.imagenDestacada && (
+            <div className="w-1/3 mx-auto text-center ">
+              <Img
+                fluid={post.imagenDestacada.fluid}
+                alt={post.title}
+                title={post.title}
+              />
+            </div>
+          )}
+
           <div className="flex flex-col w-full ">
             <h1 className="w-full text-3xl text-center">{post.title}</h1>
             <h2 className="w-full text-lg text-center">de {post.GameAuthor}</h2>

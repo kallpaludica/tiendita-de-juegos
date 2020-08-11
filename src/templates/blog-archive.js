@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
 import { navigate } from "gatsby" // highlight-line
+import AboutImage from "../images/kallpa-ludica.png"
 import Layout from "../components/layout"
 import Pager from "../components/Pager"
 import SEO from "../components/seo"
@@ -73,11 +74,19 @@ const BlogArchive = ({ data, pageContext, location }) => {
           return (
             <Item key={node.slug}>
               <Link to={`/juegos/${kebabCase(node.slug)}/`} className="">
-                <Img
-                  title={node.title}
-                  alt={node.title}
-                  fixed={node.imagenDestacada.fixed}
-                />
+                {node.imagenDestacada ? (
+                  <Img
+                    title={node.title}
+                    alt={node.title}
+                    fixed={node.imagenDestacada.fixed}
+                  />
+                ) : (
+                  <img
+                    className="w-full max-w-xs mx-auto opacity-25 "
+                    alt="Kallpa Lúdica"
+                    src={AboutImage}
+                  />
+                )}
                 <h3 className="block p-3 md:text-center">{title}</h3>
               </Link>
             </Item>

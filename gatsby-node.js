@@ -29,7 +29,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         `
-      ).then(result => {
+      ).then((result) => {
         if (result.errors) {
           console.log(result.errors)
           reject(result.errors)
@@ -38,7 +38,7 @@ exports.createPages = ({ graphql, actions }) => {
         paginate({
           createPage,
           items: result.data.allContentfulArticulos.edges,
-          itemsPerPage: 12,
+          itemsPerPage: 99,
           pathPrefix: "/juegos",
           component: path.resolve("src/templates/blog-archive.js"),
         })

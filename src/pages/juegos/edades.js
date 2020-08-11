@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import React from "react"
 import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
-
+import AboutImage from "../../images/kallpa-ludica.png"
 import Layout from "../../components/layout"
 import Pager from "../../components/Pager"
 import SEO from "../../components/seo"
@@ -62,12 +62,19 @@ const EdadesPage = () => {
         {data.collection.edges.map((item, i) => (
           <Item key={item.node.slug}>
             <Link to={`/juegos/${kebabCase(item.node.slug)}/`} className="">
-              <Img
-                title={item.node.title}
-                alt={item.node.title}
-                className="h-64"
-                fixed={item.node.imagenDestacada.fixed}
-              />
+              {item.node.imagenDestacada ? (
+                <Img
+                  title={item.node.title}
+                  alt={item.node.title}
+                  fixed={item.node.imagenDestacada.fixed}
+                />
+              ) : (
+                <img
+                  className="w-full max-w-md mx-auto opacity-25"
+                  alt="Kallpa Lúdica"
+                  src={AboutImage}
+                />
+              )}
               <h3 className="block p-3 m-0 text-xl text-center">
                 {item.node.title}
               </h3>

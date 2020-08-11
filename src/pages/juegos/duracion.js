@@ -1,5 +1,5 @@
 import { useStaticQuery, graphql } from "gatsby"
-
+import AboutImage from "../../images/kallpa-ludica.png"
 import React from "react"
 import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
@@ -61,12 +61,19 @@ const DuracionPage = () => {
         {data.collection.edges.map((item, i) => (
           <Item key={item.node.slug}>
             <Link to={`/juegos/${kebabCase(item.node.slug)}/`} className="">
-              <Img
-                title={item.node.title}
-                alt={item.node.title}
-                className="h-64"
-                fluid={item.node.imagenDestacada.fluid}
-              />
+              {item.node.imagenDestacada ? (
+                <Img
+                  title={item.node.title}
+                  alt={item.node.title}
+                  fixed={item.node.imagenDestacada.fixed}
+                />
+              ) : (
+                <img
+                  className="w-full max-w-md mx-auto opacity-25"
+                  alt="Kallpa Lúdica"
+                  src={AboutImage}
+                />
+              )}
               <h3 className="block p-3 text-left">{item.node.title}</h3>
               <h3 className="block p-3 text-left">
                 {item.node.GameDuration} min.
