@@ -8,7 +8,7 @@ const routes = [
     slug: "/",
   },
   {
-    title: "Tienda de juegos",
+    title: "Tiendita de juegos",
     active: "text-green-500",
     slug: "/juegos",
   },

@@ -10,7 +10,7 @@ import styled from "@emotion/styled"
 
 const routes = [
   {
-    title: "Tienda de juegos",
+    title: "Tiendita de juegos",
     active: "text-green-200",
     slug: "/juegos",
   },

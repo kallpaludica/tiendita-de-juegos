@@ -26,7 +26,7 @@ export default () => {
         heading="Contacto"
         description="Hacemos envios a toda Salta Capital"
         pattern="bg-indigo-600 text-indigo-500"
-        svg="M0,128L720,256L1440,128L1440,320L720,320L0,320Z"
+        svg="M0,96L120,122.7C240,149,480,203,720,208C960,213,1200,171,1320,149.3L1440,128L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
       />
       <PageContainer>
         <div

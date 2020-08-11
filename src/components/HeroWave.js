@@ -33,7 +33,7 @@ const HeroWave = (props) => (
 export default HeroWave
 
 const HeroContent = styled.div`
-  ${tw`relative z-50 block pt-12 pb-2`}
+  ${tw`relative z-50 block pt-12 pb-24`}
 `
 
 const Title = styled.h1`
@@ -41,7 +41,7 @@ const Title = styled.h1`
 `
 
 const Hero = styled.div`
-  ${tw`relative flex flex-col items-center justify-center w-full pt-24 pb-32 mx-auto`}
+  ${tw`relative flex flex-col items-center justify-center w-full pt-32 pb-32 mx-auto`}
 `
 
 const Wave = styled.div`
