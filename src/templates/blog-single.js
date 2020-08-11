@@ -8,7 +8,7 @@ import { IoMdTime } from "react-icons/io"
 import { GiTabletopPlayers } from "react-icons/gi"
 import { FaUserFriends } from "react-icons/fa"
 
-//import Img from "gatsby-image"
+import Img from "gatsby-image"
 import SEO from "../components/seo"
 //import Article from "../components/Article"
 import "../components/AwsBtn.css"
@@ -101,37 +101,52 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
     <Layout location={location}>
       <SEO title="Juegos" />
       <Helmet>
-        <body className="games" />
+        <body className="ingames" />
       </Helmet>
-
-      <HeroImageWave
+      {/*<HeroImageWave
         heading={post.title}
         author={post.GameAuthor}
         url={post.imagenDestacada.fluid}
         anchor="contenido"
         pattern="bg-green-600 text-green-500"
         svg="M0,32L120,74.7C240,117,480,203,720,202.7C960,203,1200,117,1320,74.7L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
-      />
+      />*/}
+      <div className="w-full py-12">
+        <div className="max-w-3xl pt-24 mx-auto">
+          <div className="w-1/3 mx-auto text-center ">
+            <Img
+              fluid={post.imagenDestacada.fluid}
+              alt={post.title}
+              title={post.title}
+            />
+          </div>
+          <div className="flex flex-col w-full ">
+            <h1 className="w-full text-3xl text-center">{post.title}</h1>
+            <h2 className="w-full text-lg text-center">de {post.GameAuthor}</h2>
+            <div className="flex justify-around w-full my-8 ">
+              <div className="flex flex-col items-center justify-start w-full my-2 font-bold text-center">
+                <GiTabletopPlayers className="mb-2 text-4xl " />
+                {post.GamePlayers} jugadores
+              </div>
+              <div className="flex flex-col items-center justify-start w-full my-2 font-bold text-center">
+                <IoMdTime className="mb-2 text-4xl " />
+                {post.GameDuration} min.
+              </div>
+              <div className="flex flex-col items-center justify-start w-full my-2 font-bold text-center">
+                <FaUserFriends className="mb-2 text-4xl " />
+                Edad {post.GameAges}+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div
         className="max-w-4xl p-2 mx-auto bg-white md:p-12 md:pt-0"
         id="contenido"
       >
         <div className="my-1 ">
-          <div className="flex justify-around w-full my-8 ">
-            <div className="flex flex-col items-center justify-start w-full my-2 text-center">
-              <GiTabletopPlayers className="text-4xl" />
-              {post.GamePlayers} jugadores
-            </div>
-            <div className="flex flex-col items-center justify-start w-full my-2 text-center">
-              <IoMdTime className="text-4xl" />
-              Duración del juego <br /> {post.GameDuration}
-            </div>
-            <div className="flex flex-col items-center justify-start w-full my-2 text-center">
-              <FaUserFriends className="text-4xl" />
-              Edad {post.GameAges}
-            </div>
-          </div>
-          <div className="w-full mt-2 article" id={post.slug}>
+          <div className="w-full mt-2 mb-12 article" id={post.slug}>
             {Article && (
               <div>
                 {documentToReactComponents(
@@ -141,11 +156,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </div>
             )}
           </div>
-          <div className="w-full my-12">
-            <div className="text-3xl text-green-600">${post.GameBuyPrice}</div>
-          </div>
-
-          <div className="w-full my-12">
+          <div className="flex flex-col-reverse justify-between w-full px-3 py-6 mb-12 bg-green-100 border-t-2 border-b-2 border-green-500 md:flex-row">
             <AwesomeButtonSocial
               type="whatsapp"
               href={`https://api.whatsapp.com/send?phone=5493876034627&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quiero%2C%20consultar%20por%20el%20juego%20${post.title}`}
@@ -154,6 +165,12 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             >
               Hacenos tu consulta por este juego
             </AwesomeButtonSocial>
+            <div className="mb-3 text-3xl font-bold text-center text-green-500 md:my-0 md:text-right">
+              <span className="block text-xl text-green-600 md:text-sm">
+                {post.title}
+              </span>
+              ${post.GameBuyPrice}
+            </div>
           </div>
 
           {post.paginaWeb && (
@@ -210,7 +227,7 @@ export const pageQuery = graphql`
       GameAges
       paginaWeb
       imagenDestacada {
-        fixed(width: 1200, height: 900) {
+        fixed(width: 200, height: 200) {
           ...GatsbyContentfulFixed
         }
         fluid(maxWidth: 1800) {

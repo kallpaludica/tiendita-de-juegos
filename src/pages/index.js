@@ -42,6 +42,7 @@ export default () => {
           </AwesomeButton>
         </div>
       </div>
+      {/*
       <AwesomeSlider>
         <div>
           <img
@@ -68,6 +69,7 @@ export default () => {
           />
         </div>
       </AwesomeSlider>
+      */}
     </Layout>
   )
 }

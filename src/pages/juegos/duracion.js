@@ -31,7 +31,7 @@ const DuracionPage = () => {
             paginaWeb
             paginaWeb
             imagenDestacada {
-              fixed(width: 600, height: 600) {
+              fixed(width: 180, height: 230) {
                 ...GatsbyContentfulFixed
               }
               fluid(maxWidth: 450) {
@@ -68,7 +68,9 @@ const DuracionPage = () => {
                 fluid={item.node.imagenDestacada.fluid}
               />
               <h3 className="block p-3 text-left">{item.node.title}</h3>
-              <h3 className="block p-3 text-left">{item.node.GameDuration}</h3>
+              <h3 className="block p-3 text-left">
+                {item.node.GameDuration} min.
+              </h3>
             </Link>
           </Item>
         ))}

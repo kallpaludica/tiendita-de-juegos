@@ -3,7 +3,7 @@ body {
   background-image: url(/noisy-texture.png);
   background-size: 100px 100px;
   background-repeat: repeat;
-  @apply bg-orange-400;
+  @apply bg-green-400;
 }
 
 a {

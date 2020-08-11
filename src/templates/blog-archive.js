@@ -23,8 +23,14 @@ const Item = styled.div`
   ${tw`text-center transition-all duration-500 ease-in-out `}
   ${tw`transform translate-x-2 translate-y-2`}
 
+  ${tw`flex`}
+  ${tw`md:block`}
+
+
   a {
     ${tw`font-mono text-xl font-bold text-green-400 transition-all duration-500 ease-in-out `}
+    ${tw`flex md:block`}
+
   }
 
   &:hover {
@@ -39,7 +45,7 @@ const Item = styled.div`
 `
 
 const Container = styled.div`
-  ${tw`grid gap-6 p-3 py-12 mx-auto bg-white md:grid-cols-4 `}
+  ${tw`grid gap-2 p-3 py-12 mx-auto bg-white md:grid-cols-4 lg:grid-cols-5 `}
 `
 
 const BlogArchive = ({ data, pageContext, location }) => {
@@ -57,59 +63,44 @@ const BlogArchive = ({ data, pageContext, location }) => {
         pattern="bg-green-600 text-green-500"
         svg="M0,32L120,74.7C240,117,480,203,720,202.7C960,203,1200,117,1320,74.7L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
       />
-      <div className="flex flex-col justify-around h-64 max-w-3xl mx-auto md:h-auto md:flex-row">
-        <Fade bottom duration={1200} delay={100}>
-          <AwesomeButton
-            action={() => {
-              navigate(`/juegos/precio`)
-            }}
-            type="secondary"
-          >
-            por precio
-          </AwesomeButton>
-        </Fade>
-        <Fade bottom duration={1200} delay={300}>
-          <AwesomeButton
-            action={() => {
-              navigate(`/juegos/duracion`)
-            }}
-            type="secondary"
-          >
-            por duración
-          </AwesomeButton>
-        </Fade>
-        <Fade bottom duration={1200} delay={600}>
-          <AwesomeButton
-            action={() => {
-              navigate(`/juegos/edades`)
-            }}
-            type="secondary"
-          >
-            por edades
-          </AwesomeButton>
-        </Fade>
-      </div>
+
+      <h2 className="font-mono text-4xl font-bold text-green-500">
+        ¡Novedades!
+      </h2>
       <Container id="contenido">
         {posts.map(({ node }) => {
           const title = node.title || node.slug
           return (
-            <Fade bottom duration={1200} delay={1000} key={node.slug}>
-              <Item>
-                <Link to={`/juegos/${kebabCase(node.slug)}/`} className="">
-                  <Img
-                    title={node.title}
-                    alt={node.title}
-                    className="h-64"
-                    fluid={node.imagenDestacada.fluid}
-                  />
-                  <h3 className="block p-3 text-left">{title}</h3>
-                </Link>
-              </Item>
-            </Fade>
+            <Item key={node.slug}>
+              <Link to={`/juegos/${kebabCase(node.slug)}/`} className="">
+                <Img
+                  title={node.title}
+                  alt={node.title}
+                  fixed={node.imagenDestacada.fixed}
+                />
+                <h3 className="block p-3 md:text-center">{title}</h3>
+              </Link>
+            </Item>
           )
         })}
         <Pager pageContext={pageContext} />
       </Container>
+      <section className="py-12 bg-gray-100">
+        <h2 className="font-mono text-4xl font-bold text-green-500">
+          Probá ordenar los juegos
+        </h2>
+        <div className="flex flex-col justify-center px-12 md:flex-row ">
+          <Link className="ml-3 btn" to="/juegos/edades">
+            Por edades
+          </Link>
+          <Link className="ml-3 btn" to="/juegos/precio">
+            Por precio
+          </Link>
+          <Link className="ml-3 btn" to="/juegos/duracion">
+            Por duración
+          </Link>
+        </div>
+      </section>
     </Layout>
   )
 }
@@ -130,7 +121,7 @@ export const pageQuery = graphql`
           slug
           paginaWeb
           imagenDestacada {
-            fixed(width: 600, height: 600) {
+            fixed(width: 180, height: 230) {
               ...GatsbyContentfulFixed
             }
             fluid(maxWidth: 450) {
