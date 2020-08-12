@@ -2,31 +2,20 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
-import { navigate } from "gatsby" // highlight-line
-import AboutImage from "../images/kallpa-ludica.png"
 import Layout from "../components/layout"
 import Pager from "../components/Pager"
 import SEO from "../components/seo"
-import { kebabCase } from "lodash"
-import Img from "gatsby-image"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import HeroWave from "../components/HeroWave"
-import {
-  AwesomeButton,
-  AwesomeButtonProgress,
-  AwesomeButtonSocial,
-} from "react-awesome-button"
-import "../components/AwsBtn.css"
-import Fade from "react-reveal/Fade"
+import GameCard from "../components/GameCard"
 
 const Item = styled.div`
   ${tw`text-center transition-all duration-500 ease-in-out `}
   ${tw`transform translate-x-2 translate-y-2`}
 
-  ${tw`flex`}
+  ${tw`flex bg-white`}
   ${tw`md:block`}
-
 
   a {
     ${tw`font-mono text-xl font-bold text-green-400 transition-all duration-500 ease-in-out `}
@@ -35,8 +24,8 @@ const Item = styled.div`
   }
 
   &:hover {
-    ${tw`bg-white shadow-lg`}
-    ${tw`translate-x-1 translate-y-1`}
+    ${tw`bg-white`}
+    ${tw`translate-y-1 `}
 
 
     a {
@@ -46,7 +35,7 @@ const Item = styled.div`
 `
 
 const Container = styled.div`
-  ${tw`grid gap-2 p-3 py-12 mx-auto bg-white md:grid-cols-4 lg:grid-cols-5 `}
+  ${tw`grid gap-4 p-3 py-12 mx-auto bg-white bg-gray-100 md:grid-cols-4 lg:grid-cols-5 `}
 `
 
 const BlogArchive = ({ data, pageContext, location }) => {
@@ -64,37 +53,7 @@ const BlogArchive = ({ data, pageContext, location }) => {
         pattern="bg-green-600 text-green-500"
         svg="M0,32L120,74.7C240,117,480,203,720,202.7C960,203,1200,117,1320,74.7L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
       />
-
-      <h2 className="font-mono text-4xl font-bold text-green-500">
-        ¡Novedades!
-      </h2>
-      <Container id="contenido">
-        {posts.map(({ node }) => {
-          const title = node.title || node.slug
-          return (
-            <Item key={node.slug}>
-              <Link to={`/juegos/${kebabCase(node.slug)}/`} className="">
-                {node.imagenDestacada ? (
-                  <Img
-                    title={node.title}
-                    alt={node.title}
-                    fixed={node.imagenDestacada.fixed}
-                  />
-                ) : (
-                  <img
-                    className="w-full max-w-xs mx-auto opacity-25 "
-                    alt="Kallpa Lúdica"
-                    src={AboutImage}
-                  />
-                )}
-                <h3 className="block p-3 md:text-center">{title}</h3>
-              </Link>
-            </Item>
-          )
-        })}
-        <Pager pageContext={pageContext} />
-      </Container>
-      <section className="py-12 bg-gray-100">
+      <section className="pb-6 bg-white">
         <h2 className="font-mono text-4xl font-bold text-green-500">
           Probá ordenar los juegos
         </h2>
@@ -110,6 +69,17 @@ const BlogArchive = ({ data, pageContext, location }) => {
           </Link>
         </div>
       </section>
+
+      <Container id="contenido">
+        {posts.map(({ node }) => {
+          return (
+            <Item key={node.slug}>
+              <GameCard card={node} />
+            </Item>
+          )
+        })}
+        <Pager pageContext={pageContext} />
+      </Container>
     </Layout>
   )
 }
@@ -128,6 +98,11 @@ export const pageQuery = graphql`
           id
           title
           slug
+          GameBuyPrice
+          GamePlayers
+          GameDuration
+          GameAuthor
+          GameAges
           paginaWeb
           imagenDestacada {
             fixed(width: 180, height: 230) {

@@ -4,15 +4,10 @@ import React from "react"
 import Layout from "../components/layout"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
-import HeroWave from "../components/HeroWave"
 import "../components/VideoReact.css"
 import "../components/AwsBtn.css"
 import AboutImage from "../images/kallpa-ludica.png"
-import {
-  AwesomeButton,
-  AwesomeButtonProgress,
-  AwesomeButtonSocial,
-} from "react-awesome-button"
+import { AwesomeButton, AwesomeButtonSocial } from "react-awesome-button"
 import { navigate } from "gatsby" // highlight-line
 
 const PageContainer = styled.div`
@@ -36,6 +31,22 @@ export default () => {
           <img alt="Kallpa Lúdica" src={AboutImage} />
         </div>
       </AwesomeSlider>
+      <div className="flex flex-col-reverse justify-between w-full px-3 py-6 mb-12 bg-green-100 border-t-2 border-b-2 border-green-500 md:flex-row">
+        <AwesomeButtonSocial
+          type="whatsapp"
+          href={`https://api.whatsapp.com/send?phone=5493876034627&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quiero%2C%20consultar%20por%20el%20juego%20`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Hacenos tu consulta por este juego
+        </AwesomeButtonSocial>
+        <div className="mb-3 text-3xl font-bold text-center text-green-500 md:my-0 md:text-right">
+          <span className="block text-xl text-green-600 md:text-sm">
+            nombre del juego
+          </span>
+          $500
+        </div>
+      </div>
       <PageContainer>
         <div className="flex flex-col items-center justify-center pb-24">
           <AwesomeButton

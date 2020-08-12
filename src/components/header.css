@@ -71,6 +71,7 @@ body.ingames .headroom--scrolled a {
   @apply text-white !important;
 }
 
+
 body.about .headroom--scrolled {
   @apply bg-pink-700;
 }

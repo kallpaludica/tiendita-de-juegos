@@ -86,4 +86,8 @@ const Logo = styled.div`
   .gatsby-image-wrapper {
     ${tw`w-40 `}
   }
+
+  body.ingames .headroom--scrolled & {
+    ${tw`text-white`}
+  }
 `

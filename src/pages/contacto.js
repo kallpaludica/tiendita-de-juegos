@@ -7,11 +7,7 @@ import HeroWave from "../components/HeroWave"
 import "../components/VideoReact.css"
 import "../components/AwsBtn.css"
 
-import {
-  AwesomeButton,
-  AwesomeButtonProgress,
-  AwesomeButtonSocial,
-} from "react-awesome-button"
+import { AwesomeButtonSocial } from "react-awesome-button"
 const PageContainer = styled.div`
   ${tw`flex flex-col items-center justify-center w-full p-3 py-12 mx-auto text-purple-700 bg-white`}
 `

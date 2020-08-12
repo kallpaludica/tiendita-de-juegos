@@ -1,17 +1,18 @@
 import { useStaticQuery, graphql } from "gatsby"
 
 import React from "react"
-import { Link } from "gatsby"
+//import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
-import AboutImage from "../../images/kallpa-ludica.png"
+//import AboutImage from "../../images/kallpa-ludica.png"
 import Layout from "../../components/layout"
-import Pager from "../../components/Pager"
+//import Pager from "../../components/Pager"
 import SEO from "../../components/seo"
-import { kebabCase } from "lodash"
-import Img from "gatsby-image"
+//import { kebabCase } from "lodash"
+//import Img from "gatsby-image"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import HeroWave from "../../components/HeroWave"
+import GameCard from "../../components/GameCard"
 
 const PreciosPage = () => {
   const data = useStaticQuery(graphql`
@@ -60,23 +61,7 @@ const PreciosPage = () => {
       <Container id="contenido">
         {data.collection.edges.map((item, i) => (
           <Item key={item.node.slug}>
-            <Link to={`/juegos/${kebabCase(item.node.slug)}/`} className="">
-              {item.node.imagenDestacada ? (
-                <Img
-                  title={item.node.title}
-                  alt={item.node.title}
-                  fixed={item.node.imagenDestacada.fixed}
-                />
-              ) : (
-                <img
-                  className="w-full max-w-md mx-auto opacity-25"
-                  alt="Kallpa Lúdica"
-                  src={AboutImage}
-                />
-              )}
-              <h3 className="block p-3 text-left">{item.node.title}</h3>
-              <h3 className="block p-3 text-left">${item.node.GameBuyPrice}</h3>
-            </Link>
+            <GameCard card={item.node} />
           </Item>
         ))}
       </Container>
@@ -95,8 +80,8 @@ const Item = styled.div`
   }
 
   &:hover {
-    ${tw`bg-white shadow-lg`}
-    ${tw`translate-x-1 translate-y-1`}
+    ${tw`bg-white`}
+    ${tw`translate-y-1`}
 
 
     a {
@@ -106,5 +91,5 @@ const Item = styled.div`
 `
 
 const Container = styled.div`
-  ${tw`grid gap-6 p-3 py-12 mx-auto bg-white md:grid-cols-5 `}
+  ${tw`grid gap-4 p-3 py-12 mx-auto bg-white bg-gray-100 md:grid-cols-4 lg:grid-cols-5 `}
 `

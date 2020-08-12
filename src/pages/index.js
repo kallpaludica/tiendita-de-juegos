@@ -1,18 +1,12 @@
 import React from "react"
-import AwesomeSlider from "react-awesome-slider"
 import "react-awesome-slider/dist/styles.css"
 import Layout from "../components/layout"
 import HeroWave from "../components/HeroWave"
 import { FiChevronRight } from "react-icons/fi"
 import { Helmet } from "react-helmet"
 import "../components/VideoReact.css"
-import AboutImage from "../images/kallpa-ludica.png"
 
-import {
-  AwesomeButton,
-  AwesomeButtonProgress,
-  AwesomeButtonSocial,
-} from "react-awesome-button"
+import { AwesomeButton } from "react-awesome-button"
 import "../components/AwsBtn.css"
 
 import { navigate } from "gatsby" // highlight-line

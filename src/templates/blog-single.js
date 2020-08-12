@@ -7,20 +7,17 @@ import "../components/VideoReact.css"
 import { IoMdTime } from "react-icons/io"
 import { GiTabletopPlayers } from "react-icons/gi"
 import { FaUserFriends } from "react-icons/fa"
+import AboutImage from "../images/kallpa-ludica.png"
 
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 //import Article from "../components/Article"
 import "../components/AwsBtn.css"
 import { Helmet } from "react-helmet"
-import HeroImageWave from "../components/HeroImageWave"
+//import HeroImageWave from "../components/HeroImageWave"
 
 import { GoLinkExternal } from "react-icons/go"
-import {
-  AwesomeButton,
-  AwesomeButtonProgress,
-  AwesomeButtonSocial,
-} from "react-awesome-button"
+import { AwesomeButton, AwesomeButtonSocial } from "react-awesome-button"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
 import { Player, BigPlayButton } from "video-react"
@@ -112,32 +109,74 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         svg="M0,32L120,74.7C240,117,480,203,720,202.7C960,203,1200,117,1320,74.7L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
       />*/}
       <div className="w-full py-12">
-        <div className="max-w-3xl pt-24 mx-auto">
-          {post.imagenDestacada && (
-            <div className="w-1/3 mx-auto text-center ">
-              <Img
-                fluid={post.imagenDestacada.fluid}
-                alt={post.title}
-                title={post.title}
+        <div className="max-w-6xl pt-12 mx-auto">
+          <div className="flex flex-col pt-6 border-t-2 border-green-500 sm:flex-row">
+            {post.imagenDestacada ? (
+              <div className="w-2/3 mx-auto text-center ">
+                <Img
+                  fluid={post.imagenDestacada.fluid}
+                  alt={post.title}
+                  title={post.title}
+                />
+              </div>
+            ) : (
+              <img
+                className="w-48 h-48 mx-auto my-6 opacity-25 "
+                alt="Kallpa Lúdica"
+                src={AboutImage}
               />
-            </div>
-          )}
+            )}
 
-          <div className="flex flex-col w-full ">
-            <h1 className="w-full text-3xl text-center">{post.title}</h1>
-            <h2 className="w-full text-lg text-center">de {post.GameAuthor}</h2>
-            <div className="flex justify-around w-full my-8 ">
-              <div className="flex flex-col items-center justify-start w-full my-2 font-bold text-center">
-                <GiTabletopPlayers className="mb-2 text-4xl " />
-                {post.GamePlayers} jugadores
+            <div className="flex flex-col w-full pt-3 pl-12">
+              <h1 className="w-full font-serif text-5xl font-black text-left text-green-600">
+                {post.title}
+              </h1>
+              <h3 className="w-full mb-3 font-serif text-lg italic font-bold text-left text-gray-700">
+                Juego creado por {post.GameAuthor}
+              </h3>
+
+              <div className="flex justify-start w-full my-2 text-gray-700">
+                <div className="flex flex-col items-center justify-start pr-6 my-2 font-bold text-center sm:flex-row">
+                  <GiTabletopPlayers className="mr-3 text-3xl " />
+                  {post.GamePlayers} jugadores
+                </div>
+                <div className="flex flex-col items-center justify-start pr-6 my-2 font-bold text-center sm:flex-row">
+                  <IoMdTime className="mr-3 text-2xl " />
+                  {post.GameDuration} min.
+                </div>
+
+                {post.GameAges && (
+                  <div className="flex flex-col items-center justify-start pr-6 my-2 font-bold text-center sm:flex-row">
+                    <FaUserFriends className="mr-3 text-2xl " />
+                    Edad {post.GameAges}+
+                  </div>
+                )}
               </div>
-              <div className="flex flex-col items-center justify-start w-full my-2 font-bold text-center">
-                <IoMdTime className="mb-2 text-4xl " />
-                {post.GameDuration} min.
+
+              <div className="flex flex-col-reverse justify-between w-full px-3 py-6 mb-0 bg-green-100 border-t-2 border-b-2 border-green-500 md:flex-row">
+                <AwesomeButtonSocial
+                  type="whatsapp"
+                  href={`https://api.whatsapp.com/send?phone=5493876034627&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20consultar%20por%20el%20juego%20${post.title}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Consultá o hacé tu pedido
+                </AwesomeButtonSocial>
+                <div className="mb-3 text-3xl font-bold text-center text-green-500 md:my-0 md:text-right">
+                  ${post.GameBuyPrice}
+                </div>
               </div>
-              <div className="flex flex-col items-center justify-start w-full my-2 font-bold text-center">
-                <FaUserFriends className="mb-2 text-4xl " />
-                Edad {post.GameAges}+
+
+              <div className="w-full mt-6 mb-12 article" id={post.slug}>
+                {Article && (
+                  <div>
+                    {documentToReactComponents(
+                      post.childContentfulArticulosTextoPrincipalRichTextNode
+                        .json,
+                      options
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -149,33 +188,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         id="contenido"
       >
         <div className="my-1 ">
-          <div className="w-full mt-2 mb-12 article" id={post.slug}>
-            {Article && (
-              <div>
-                {documentToReactComponents(
-                  post.childContentfulArticulosTextoPrincipalRichTextNode.json,
-                  options
-                )}
-              </div>
-            )}
-          </div>
-          <div className="flex flex-col-reverse justify-between w-full px-3 py-6 mb-12 bg-green-100 border-t-2 border-b-2 border-green-500 md:flex-row">
-            <AwesomeButtonSocial
-              type="whatsapp"
-              href={`https://api.whatsapp.com/send?phone=5493876034627&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quiero%2C%20consultar%20por%20el%20juego%20${post.title}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Hacenos tu consulta por este juego
-            </AwesomeButtonSocial>
-            <div className="mb-3 text-3xl font-bold text-center text-green-500 md:my-0 md:text-right">
-              <span className="block text-xl text-green-600 md:text-sm">
-                {post.title}
-              </span>
-              ${post.GameBuyPrice}
-            </div>
-          </div>
-
           {post.paginaWeb && (
             <div className="w-full my-12">
               <AwesomeButton
@@ -190,24 +202,24 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             </div>
           )}
         </div>
-        <div className="py-12 text-4xl">
-          <nav style={{ display: "flex", justifyContent: "space-between" }}>
-            <div>
-              {next && (
-                <Link to={`/juegos/${kebabCase(next.slug)}/`} rel="next">
-                  ←
-                </Link>
-              )}
-            </div>
-            <div style={{ justifySelf: "flex-end" }}>
-              {prev && (
-                <Link to={`/juegos/${kebabCase(prev.slug)}/`} rel="prev">
-                  →
-                </Link>
-              )}
-            </div>
-          </nav>
-        </div>
+      </div>
+      <div className="max-w-6xl py-12 mx-auto text-2xl">
+        <nav style={{ display: "flex", justifyContent: "space-between" }}>
+          <div>
+            {next && (
+              <Link to={`/juegos/${kebabCase(next.slug)}/`} rel="next">
+                ← {next.title}
+              </Link>
+            )}
+          </div>
+          <div style={{ justifySelf: "flex-end" }}>
+            {prev && (
+              <Link to={`/juegos/${kebabCase(prev.slug)}/`} rel="prev">
+                {prev.title} →
+              </Link>
+            )}
+          </div>
+        </nav>
       </div>
     </Layout>
   )
@@ -230,7 +242,7 @@ export const pageQuery = graphql`
       GameAges
       paginaWeb
       imagenDestacada {
-        fixed(width: 200, height: 200) {
+        fixed(width: 500, height: 500) {
           ...GatsbyContentfulFixed
         }
         fluid(maxWidth: 1800) {
