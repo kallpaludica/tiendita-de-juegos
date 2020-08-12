@@ -8,10 +8,11 @@ import { IoMdTime } from "react-icons/io"
 import { GiTabletopPlayers } from "react-icons/gi"
 import { FaUserFriends } from "react-icons/fa"
 import AboutImage from "../images/kallpa-ludica.png"
-
+import { SRLWrapper } from "simple-react-lightbox"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 //import Article from "../components/Article"
+import OpenGallery from "../components/OpenGallery"
 import "../components/AwsBtn.css"
 import { Helmet } from "react-helmet"
 //import HeroImageWave from "../components/HeroImageWave"
@@ -86,6 +87,39 @@ const options = {
     },
     [BLOCKS.PARAGRAPH]: (_, children) => <Text>{children}</Text>,
   },
+  buttons: {
+    iconPadding: "7px",
+    showDownloadButton: false,
+    backgroundColor: "rgba(255, 255, 255, 0.95)",
+    iconColor: "rgba(0, 0, 0, 0.8)",
+  },
+  caption: {
+    captionFontFamily: "Montserrat, sans-serif",
+    captionFontSize: "22px",
+    captionColor: "#8D99AE",
+    captionFontWeight: 300,
+    showCaption: false,
+  },
+  settings: {
+    overlayColor: "rgba(255, 255, 255, 1)",
+    transitionTimingFunction: "ease-in-out",
+    slideTransitionSpeed: 2.6,
+    slideTransitionTimingFunction: [0.25, 0.75, 0.5, 1],
+    slideAnimationType: "both",
+    slideSpringValues: [300, 200],
+    disablePanzoom: true,
+    autoplaySpeed: 6000,
+    hideControlsAfter: false,
+  },
+  progressBar: {
+    height: "3px",
+    fillColor: "rgba(237, 137, 54,1)",
+    backgroundColor: "rgba(255, 255, 255, 0.95)",
+  },
+  thumbnails: {
+    thumbnailsSize: ["150px", "100px"],
+    thumbnailsGap: "0 5px",
+  },
 }
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -110,45 +144,88 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       />*/}
       <div className="w-full py-12">
         <div className="max-w-6xl pt-12 mx-auto">
-          <div className="flex flex-col pt-6 border-t-2 border-green-500 sm:flex-row">
-            {post.imagenDestacada ? (
-              <div className="w-2/3 mx-auto text-center ">
-                <Img
-                  fluid={post.imagenDestacada.fluid}
-                  alt={post.title}
-                  title={post.title}
+          <div className="flex flex-col-reverse pt-6 border-t-2 border-green-500 sm:flex-row">
+            <div className="w-full md:w-2/3">
+              {post.imagenDestacada ? (
+                <div className="w-full mx-auto text-center ">
+                  <Img
+                    fluid={post.imagenDestacada.fluid}
+                    alt={post.title}
+                    title={post.title}
+                  />
+                </div>
+              ) : (
+                <img
+                  className="w-48 h-48 mx-auto my-6 opacity-25 "
+                  alt="Kallpa Lúdica"
+                  src={AboutImage}
                 />
-              </div>
-            ) : (
-              <img
-                className="w-48 h-48 mx-auto my-6 opacity-25 "
-                alt="Kallpa Lúdica"
-                src={AboutImage}
-              />
-            )}
+              )}
 
-            <div className="flex flex-col w-full pt-3 pl-12">
-              <h1 className="w-full font-serif text-5xl font-black text-left text-green-600">
-                {post.title}
-              </h1>
-              <h3 className="w-full mb-3 font-serif text-lg italic font-bold text-left text-gray-700">
+              <SRLWrapper options={options}>
+                {post.GameGallery && (
+                  <div className="w-full text-center ">
+                    <div className="w-full px-0 pt-6 m-auto md:py-6">
+                      <div className="grid grid-cols-3 ">
+                        {post.GameGallery.map((item, i) => (
+                          <div className="relative h-24 max-w-xl m-0 overflow-hidden border-2 border-white link">
+                            <Img
+                              title={item.title}
+                              alt={item.title}
+                              className="cursor-pointer"
+                              fluid={item.fluid}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </SRLWrapper>
+              <h3 className="w-full mb-3 font-serif text-base italic font-bold text-center text-gray-700">
                 Juego creado por {post.GameAuthor}
               </h3>
+            </div>
+            <div className="relative flex flex-col w-full px-2 pt-3 md:pl-12">
+              <h1 className="w-full pl-6 font-serif text-4xl font-black text-left text-green-600 md:pl-0 md:text-5xl">
+                {post.title}
+              </h1>
 
-              <div className="flex justify-start w-full my-2 text-gray-700">
-                <div className="flex flex-col items-center justify-start pr-6 my-2 font-bold text-center sm:flex-row">
-                  <GiTabletopPlayers className="mr-3 text-3xl " />
-                  {post.GamePlayers} jugadores
-                </div>
-                <div className="flex flex-col items-center justify-start pr-6 my-2 font-bold text-center sm:flex-row">
-                  <IoMdTime className="mr-3 text-2xl " />
-                  {post.GameDuration} min.
-                </div>
-
+              <div className="flex flex-col justify-center w-full pl-6 my-2 text-gray-700 md:px-0 md:flex-row md:justify-start">
                 {post.GameAges && (
-                  <div className="flex flex-col items-center justify-start pr-6 my-2 font-bold text-center sm:flex-row">
+                  <div className="flex flex-col items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
                     <FaUserFriends className="mr-3 text-2xl " />
                     Edad {post.GameAges}+
+                  </div>
+                )}
+
+                {post.GameDuration && (
+                  <div className="flex flex-col items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
+                    <IoMdTime className="mr-3 text-2xl " />
+                    Duración de {post.GameDuration} min.
+                  </div>
+                )}
+                {post.GamePlayers && (
+                  <div className="flex flex-col items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
+                    <GiTabletopPlayers className="mr-3 text-3xl " />
+                    {post.GamePlayers} jugadores
+                  </div>
+                )}
+              </div>
+              {post.GameGallery && (
+                <div className="pl-6 my-6 mb-8 md:px-0">
+                  <OpenGallery />
+                </div>
+              )}
+
+              <div className="w-full mt-6 mb-4 article" id={post.slug}>
+                {Article && (
+                  <div>
+                    {documentToReactComponents(
+                      post.childContentfulArticulosTextoPrincipalRichTextNode
+                        .json,
+                      options
+                    )}
                   </div>
                 )}
               </div>
@@ -166,44 +243,26 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   ${post.GameBuyPrice}
                 </div>
               </div>
-
-              <div className="w-full mt-6 mb-12 article" id={post.slug}>
-                {Article && (
-                  <div>
-                    {documentToReactComponents(
-                      post.childContentfulArticulosTextoPrincipalRichTextNode
-                        .json,
-                      options
-                    )}
-                  </div>
-                )}
-              </div>
+              {post.paginaWeb && (
+                <div className="w-full my-12">
+                  <a
+                    className="font-serif text-base font-bold text-pink-800 "
+                    href={post.paginaWeb}
+                    target="_blank"
+                    type="secondary"
+                    rel="noopener noreferrer"
+                  >
+                    Más información de {post.title}
+                    <GoLinkExternal className="inline-block ml-3" />
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>
       </div>
 
-      <div
-        className="max-w-4xl p-2 mx-auto bg-white md:p-12 md:pt-0"
-        id="contenido"
-      >
-        <div className="my-1 ">
-          {post.paginaWeb && (
-            <div className="w-full my-12">
-              <AwesomeButton
-                href={post.paginaWeb}
-                target="_blank"
-                type="secondary"
-                rel="noopener noreferrer"
-              >
-                Página oficial del juego
-                <GoLinkExternal className="inline-block mt-1 ml-3" />
-              </AwesomeButton>
-            </div>
-          )}
-        </div>
-      </div>
-      <div className="max-w-6xl py-12 mx-auto text-2xl">
+      <div className="hidden max-w-6xl py-12 mx-auto text-2xl">
         <nav style={{ display: "flex", justifyContent: "space-between" }}>
           <div>
             {next && (
@@ -241,6 +300,16 @@ export const pageQuery = graphql`
       GameAuthor
       GameAges
       paginaWeb
+      GameGallery {
+        title
+        fluid(maxWidth: 1600) {
+          # Choose either the fragment including a small base64ed image, a traced placeholder SVG, or one without.
+          ...GatsbyContentfulFluid
+        }
+        fixed(width: 150, height: 150) {
+          ...GatsbyContentfulFixed
+        }
+      }
       imagenDestacada {
         fixed(width: 500, height: 500) {
           ...GatsbyContentfulFixed

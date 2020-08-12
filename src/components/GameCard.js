@@ -10,11 +10,14 @@ export default ({ card }) => (
   <GameCard>
     <Link to={`/juegos/${kebabCase(card.slug)}/`} className="">
       {card.imagenDestacada ? (
-        <Img
-          title={card.title}
-          alt={card.title}
-          fixed={card.imagenDestacada.fixed}
-        />
+        <div className="w-48 md:w-full h-48 overflow-hidden relative">
+          <Img
+            title={card.title}
+            className=" w-full"
+            alt={card.title}
+            fluid={card.imagenDestacada.fluid}
+          />
+        </div>
       ) : (
         <img
           className="w-48 h-48 mx-auto opacity-25 my-6 "
@@ -22,7 +25,7 @@ export default ({ card }) => (
           src={AboutImage}
         />
       )}
-      <div className="pl-3 text-left sm:text-center">
+      <div className="md:pl-3 w-full text-left sm:text-center">
         <h3 className="block pt-3">{card.title}</h3>
         <b className="block font-bold text-green-800 text-3xl font-serif pb-3">
           ${card.GameBuyPrice}
@@ -33,7 +36,7 @@ export default ({ card }) => (
 )
 
 const GameCard = styled.div`
-  ${tw`relative max-w-md overflow-hidden p-6 mb-3  `}
+  ${tw`relative w-full md:max-w-md overflow-hidden mb-3  `}
   transition: all .2s;
   top: 0;
 

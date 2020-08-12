@@ -7,14 +7,16 @@ const HeroWave = (props) => (
   <>
     <Hero className={`${props.pattern} pattern-cross-dots-md`}>
       <HeroContent>
-        <Title>{props.heading}</Title>
-        {props.anchor && (
+        {props.anchor ? (
           <AnchorLink
             href="#contenido"
-            className="inline-block mt-6 text-3xl text-center text-white hover:text-green-200"
+            className="flex items-center font-mono text-5xl text-white transition-all duration-200 border-b border-transparent hover:text-white hover:border-gray-200"
           >
-            <IoIosArrowDown />
+            {props.heading}
+            <IoIosArrowDown className="ml-3 text-2xl" />
           </AnchorLink>
+        ) : (
+          <Title>{props.heading}</Title>
         )}
       </HeroContent>
       <Wave>
@@ -33,7 +35,7 @@ const HeroWave = (props) => (
 export default HeroWave
 
 const HeroContent = styled.div`
-  ${tw`relative z-50 block pt-12 pb-24`}
+  ${tw`relative z-50 flex w-full max-w-6xl pt-12 pb-24 mx-auto text-left`}
 `
 
 const Title = styled.h1`
@@ -41,7 +43,7 @@ const Title = styled.h1`
 `
 
 const Hero = styled.div`
-  ${tw`relative flex flex-col items-center justify-center w-full pt-32 pb-32 mx-auto`}
+  ${tw`relative flex flex-col items-start justify-center w-full pt-32 pb-32 mx-auto`}
 `
 
 const Wave = styled.div`

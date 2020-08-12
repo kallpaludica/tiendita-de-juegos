@@ -35,7 +35,7 @@ const Item = styled.div`
 `
 
 const Container = styled.div`
-  ${tw`grid gap-4 p-3 py-12 mx-auto bg-white bg-gray-100 md:grid-cols-4 lg:grid-cols-5 `}
+  ${tw`grid w-full max-w-6xl gap-6 p-3 py-12 mx-auto bg-white md:grid-cols-4 lg:grid-cols-5`}
 `
 
 const BlogArchive = ({ data, pageContext, location }) => {
@@ -50,14 +50,21 @@ const BlogArchive = ({ data, pageContext, location }) => {
       <HeroWave
         heading="Tiendita de juegos"
         anchor="contenido"
-        pattern="bg-green-600 text-green-500"
-        svg="M0,32L120,74.7C240,117,480,203,720,202.7C960,203,1200,117,1320,74.7L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
+        pattern="bg-green-600 text-green-500 "
+        svg="M0,288L80,277.3C160,267,320,245,480,245.3C640,245,800,267,960,229.3C1120,192,1280,96,1360,48L1440,0L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
       />
-      <section className="pb-6 bg-white">
-        <h2 className="font-mono text-4xl font-bold text-green-500">
+      <div className="flex items-baseline justify-between max-w-6xl mx-auto mt-3">
+        <h3 className="font-sans text-4xl font-bold">Juegos de la tiendita</h3>
+        <div className="font-mono text-xl font-bold text-right text-gray-800">
           Probá ordenar los juegos
-        </h2>
-        <div className="flex flex-col justify-center px-12 md:flex-row ">
+          <Link className="ml-2 text-green-500 underline" to="/juegos/precio">
+            por precio
+          </Link>
+        </div>
+      </div>
+
+      <section className="pb-6 bg-white">
+        <div className="flex-col justify-center hidden px-12 md:flex-row">
           <Link className="ml-3 btn" to="/juegos/edades">
             Por edades
           </Link>
@@ -105,7 +112,7 @@ export const pageQuery = graphql`
           GameAges
           paginaWeb
           imagenDestacada {
-            fixed(width: 180, height: 230) {
+            fixed(width: 200, height: 230) {
               ...GatsbyContentfulFixed
             }
             fluid(maxWidth: 450) {
