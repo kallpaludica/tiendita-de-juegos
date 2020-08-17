@@ -16,6 +16,11 @@ import HomeHeroImage from "../images/bg-home.jpg"
 import { AwesomeButton } from "react-awesome-button"
 import "../components/AwsBtn.css"
 import Fade from "react-reveal/Fade"
+import {
+  AiOutlineWhatsApp,
+  AiOutlineMail,
+  AiOutlineInstagram,
+} from "react-icons/ai"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -33,6 +38,21 @@ const IndexPage = () => {
             }
           }
         }
+      }
+      whatsapp: contentfulDatosDeContacto(titulo: { eq: "Whatsapp" }) {
+        id
+        titulo
+        link
+      }
+      mail: contentfulDatosDeContacto(titulo: { eq: "Mail" }) {
+        id
+        titulo
+        link
+      }
+      instagram: contentfulDatosDeContacto(titulo: { eq: "instagram" }) {
+        id
+        titulo
+        link
       }
     }
   `)
@@ -106,6 +126,49 @@ const IndexPage = () => {
         </Wave>
       </Hero>
       <section>
+        <h1 className="max-w-4xl mx-auto font-serif text-4xl font-bold text-indigo-700">
+          Contactanos
+        </h1>
+        <h2 className="max-w-4xl mx-auto font-serif text-2xl">
+          Estamos para responder a cualquier tus preguntas sobre juegos
+        </h2>
+        <Socials>
+          <a
+            className="flex flex-col items-center justify-center text-center"
+            target="_blank"
+            rel="noopener noreferrer"
+            title={data.whatsapp.titulo}
+            href={`https://api.whatsapp.com/send?phone=${data.whatsapp.link}&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20consultar`}
+          >
+            <AiOutlineWhatsApp className="my-6 text-4xl" />
+            <b>Teléfono</b>
+            {data.whatsapp.link}
+          </a>
+          <a
+            className="flex flex-col items-center justify-center text-center"
+            target="_blank"
+            rel="noopener noreferrer"
+            title={data.mail.titulo}
+            href={`mailto:${data.mail.link}`}
+          >
+            <AiOutlineMail className="my-6 text-4xl" />
+            <b>Mail</b>
+            {data.mail.link}
+          </a>
+          <a
+            className="flex flex-col items-center justify-center text-center"
+            target="_blank"
+            rel="noopener noreferrer"
+            title={data.instagram.titulo}
+            href={data.instagram.link}
+          >
+            <AiOutlineInstagram className="my-6 text-4xl" />
+            <b>Instagram</b>
+            @kallpaludica
+          </a>
+        </Socials>
+      </section>
+      <section>
         <div className="flex flex-col items-baseline justify-center w-full max-w-6xl mx-auto">
           <div className="w-full my-12 text-center text-gray-800">
             <h1 className="my-12 font-serif text-xl font-bold">
@@ -154,6 +217,13 @@ const Title = styled.h1`
 
 const Hero = styled.div`
   ${tw`relative flex flex-col items-start justify-center w-full pt-32 pb-32 mx-auto`}
+`
+
+const Socials = styled.div`
+  ${tw`flex flex-col justify-center max-w-3xl mx-auto my-12 text-center bg-white md:flex-row`}
+  a {
+    ${tw`w-full max-w-sm mx-auto md:mx-3`}
+  }
 `
 
 const Wave = styled.div`
