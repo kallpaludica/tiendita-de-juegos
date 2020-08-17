@@ -1,8 +1,12 @@
 import React from "react"
+import { useStaticQuery, graphql, navigate, Link } from "gatsby"
 import "react-awesome-slider/dist/styles.css"
 import Layout from "../components/layout"
 //import HeroWave from "../components/HeroWave"
 //import AwesomeSlider from "react-awesome-slider"
+import SEO from "../components/seo"
+import { kebabCase } from "lodash"
+
 import { FiChevronRight } from "react-icons/fi"
 import { Helmet } from "react-helmet"
 import "../components/VideoReact.css"
@@ -13,15 +17,27 @@ import { AwesomeButton } from "react-awesome-button"
 import "../components/AwsBtn.css"
 import Fade from "react-reveal/Fade"
 
-import { navigate } from "gatsby" // highlight-line
+const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query HomeQuery {
+      editoriales: allContentfulEditorial {
+        edges {
+          node {
+            id
+            title
+            slug
+          }
+        }
+      }
+    }
+  `)
 
-export default () => {
   return (
     <Layout>
       <Helmet>
         <body className="home" />
       </Helmet>
-
+      <SEO title="Inicio" />
       <Hero className="relative overflow-hidden text-indigo-500 bg-indigo-600 pattern-cross-dots-md">
         <HeroContent>
           <Fade bottom>
@@ -84,9 +100,29 @@ export default () => {
           </svg>
         </Wave>
       </Hero>
+      <section>
+        <div className="flex items-baseline justify-center max-w-6xl mx-auto">
+          <div className="my-12 font-mono text-xl font-bold text-center text-gray-800">
+            <h1 className="my-12 font-serif text-3xl">Editoriales</h1>
+            {data.editoriales.edges.map(({ node }) => {
+              return (
+                <Link
+                  key={node.slug}
+                  to={`/editoriales/${kebabCase(node.slug)}/`}
+                  className="ml-2 text-gray-800 underline"
+                >
+                  {node.title}
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+      </section>
     </Layout>
   )
 }
+
+export default IndexPage
 
 const HeroContent = styled.div`
   ${tw`relative z-50 flex flex-col w-full max-w-6xl pt-12 mx-auto text-left md:pb-24`}

@@ -51,20 +51,7 @@ const BlogArchive = ({ data, pageContext, location }) => {
         pattern="bg-green-600 text-green-500 "
         svg="M0,224L80,240C160,256,320,288,480,277.3C640,267,800,213,960,202.7C1120,192,1280,224,1360,240L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
       />
-      <div className="items-baseline justify-between hidden max-w-6xl mx-auto mt-3">
-        <div className="font-mono text-xl font-bold text-right text-gray-800">
-          Ordenar
-          <Link className="ml-2 text-green-500 underline" to="/juegos/precio">
-            más economicos primeros
-          </Link>
-          <Link className="ml-2 text-green-500 underline" to="/juegos/edades">
-            para los más chiquitos
-          </Link>
-          <Link className="ml-2 text-green-500 underline" to="/juegos/duracion">
-            de menor a mayor duración
-          </Link>
-        </div>
-      </div>
+
       <div className="flex items-baseline justify-start max-w-6xl mx-auto mt-3">
         <div className="font-mono text-xl font-bold text-right text-gray-800">
           Colecciones
