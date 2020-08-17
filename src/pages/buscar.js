@@ -1,6 +1,6 @@
 import React from "react"
-import { graphql } from "gatsby"
-//import { Link, graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
+import { kebabCase } from "lodash"
 
 import SEO from "../components/seo"
 
@@ -58,7 +58,7 @@ const SearchIndex = (props) => {
         </h2>
 
         <input
-          className="w-full p-3 text-gray-100 placeholder-gray-100 bg-gray-800 border-b-2 searchInput "
+          className="w-full p-3 text-gray-100 placeholder-gray-100 bg-green-600 border-b-2 searchInput "
           type="text"
           tabindex="0"
           aria-label="Search"
@@ -71,20 +71,19 @@ const SearchIndex = (props) => {
         {posts.map(({ node }) => {
           const { id, slug, title, GameBuyPrice } = node
           //const { description } = node.description
-          //const { name } = node.author
-          //const { spotify } = node.spotify
-          //const { soundcloud } = node.soundcloud
 
           return (
             <article
               key={id}
-              className="flex flex-col p-6 mb-3 text-center bg-white animated fadeIn"
+              className="flex justify-between w-full p-6 mb-3 text-center bg-white animated fadeIn"
             >
-              {title}
-              <span>
-                ${GameBuyPrice}
-                {slug}
-              </span>
+              <Link
+                to={`/juegos/${kebabCase(slug)}/`}
+                className="font-serif text-xl font-bold text-green-500"
+              >
+                {title}
+              </Link>
+              <span>${GameBuyPrice}</span>
             </article>
           )
         })}
