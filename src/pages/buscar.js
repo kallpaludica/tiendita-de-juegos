@@ -96,7 +96,7 @@ export default SearchIndex
 
 export const pageQuery = graphql`
   query {
-    allContentfulArticulos(sort: { fields: [GameBuyPrice], order: ASC }) {
+    allContentfulArticulos(sort: { fields: [title], order: ASC }) {
       edges {
         node {
           id

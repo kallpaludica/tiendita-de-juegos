@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 //import AwesomeSlider from "react-awesome-slider"
 import SEO from "../components/seo"
 import { kebabCase } from "lodash"
-
+import Img from "gatsby-image"
 import { FiChevronRight } from "react-icons/fi"
 import { Helmet } from "react-helmet"
 import "../components/VideoReact.css"
@@ -26,6 +26,11 @@ const IndexPage = () => {
             id
             title
             slug
+            logo {
+              fluid(maxWidth: 450) {
+                ...GatsbyContentfulFluid_withWebp
+              }
+            }
           }
         }
       }
@@ -101,20 +106,35 @@ const IndexPage = () => {
         </Wave>
       </Hero>
       <section>
-        <div className="flex items-baseline justify-center max-w-6xl mx-auto">
-          <div className="my-12 font-mono text-xl font-bold text-center text-gray-800">
-            <h1 className="my-12 font-serif text-3xl">Editoriales</h1>
-            {data.editoriales.edges.map(({ node }) => {
-              return (
-                <Link
-                  key={node.slug}
-                  to={`/editoriales/${kebabCase(node.slug)}/`}
-                  className="ml-2 text-gray-800 underline"
-                >
-                  {node.title}
-                </Link>
-              )
-            })}
+        <div className="flex flex-col items-baseline justify-center w-full max-w-6xl mx-auto">
+          <div className="w-full my-12 text-center text-gray-800">
+            <h1 className="my-12 font-serif text-xl font-bold">
+              Editoriales de Juegos con las que trabajamos
+            </h1>
+            <div className="flex items-center justify-center">
+              {data.editoriales.edges.map(({ node }) => {
+                return (
+                  <Link
+                    key={node.slug}
+                    to={`/editoriales/${kebabCase(node.slug)}/`}
+                    className="flex items-center justify-center mx-12 overflow-hidden text-gray-800 rounded-md "
+                  >
+                    {node.logo ? (
+                      <div className="relative w-48 overflow-hidden md:w-full">
+                        <Img
+                          title={node.title}
+                          className="w-32"
+                          alt={node.title}
+                          fluid={node.logo.fluid}
+                        />
+                      </div>
+                    ) : (
+                      <h2 className="w-24 max-w-xs font-bold ">{node.title}</h2>
+                    )}
+                  </Link>
+                )
+              })}
+            </div>
           </div>
         </div>
       </section>
