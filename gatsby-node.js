@@ -16,6 +16,7 @@ exports.createPages = ({ graphql, actions }) => {
     const gameSingle = path.resolve(`./src/templates/gameSingle.js`)
     const categorySingle = path.resolve(`./src/templates/categorySingle.js`)
     const publisherSingle = path.resolve(`./src/templates/publisherSingle.js`)
+    const collectionSingle = path.resolve(`./src/templates/collectionSingle.js`)
 
     resolve(
       graphql(
@@ -45,6 +46,14 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
+            allContentfulColecciones {
+              edges {
+                node {
+                  title
+                  slug
+                }
+              }
+            }
           }
         `
       ).then((result) => {
@@ -64,6 +73,7 @@ exports.createPages = ({ graphql, actions }) => {
         const posts = result.data.allContentfulArticulos.edges
         const categories = result.data.allContentfulCategoriaDelJuego.edges
         const publishers = result.data.allContentfulEditorial.edges
+        const collections = result.data.allContentfulColecciones.edges
 
         posts.forEach((post, index) => {
           createPage({
@@ -103,6 +113,21 @@ exports.createPages = ({ graphql, actions }) => {
                 index === publishers.length - 1
                   ? null
                   : publishers[index + 1].node,
+            },
+          })
+        })
+
+        collections.forEach((collection, index) => {
+          createPage({
+            path: `/colecciones/${collection.node.slug}/`,
+            component: collectionSingle,
+            context: {
+              slug: collection.node.slug,
+              prev: index === 0 ? null : collections[index - 1].node,
+              next:
+                index === collections.length - 1
+                  ? null
+                  : collections[index + 1].node,
             },
           })
         })

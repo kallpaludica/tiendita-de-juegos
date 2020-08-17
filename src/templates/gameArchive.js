@@ -38,6 +38,7 @@ const BlogArchive = ({ data, pageContext, location }) => {
   const posts = data.allContentfulArticulos.edges
   const categories = data.allContentfulCategoriaDelJuego.edges
   const publishers = data.allContentfulEditorial.edges
+  const collections = data.allContentfulColecciones.edges
 
   return (
     <Layout location={location}>
@@ -62,6 +63,22 @@ const BlogArchive = ({ data, pageContext, location }) => {
           <Link className="ml-2 text-green-500 underline" to="/juegos/duracion">
             de menor a mayor duración
           </Link>
+        </div>
+      </div>
+      <div className="flex items-baseline justify-start max-w-6xl mx-auto mt-3">
+        <div className="font-mono text-xl font-bold text-right text-gray-800">
+          Colecciones
+          {collections.map(({ node }) => {
+            return (
+              <Link
+                key={node.slug}
+                to={`/colecciones/${kebabCase(node.slug)}/`}
+                className="ml-2 text-green-500 underline"
+              >
+                {node.title}
+              </Link>
+            )
+          })}
         </div>
       </div>
       <div className="flex items-baseline justify-start max-w-6xl mx-auto mt-3">
@@ -153,6 +170,15 @@ export const pageQuery = graphql`
       }
     }
     allContentfulEditorial {
+      edges {
+        node {
+          id
+          title
+          slug
+        }
+      }
+    }
+    allContentfulColecciones {
       edges {
         node {
           id

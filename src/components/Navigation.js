@@ -22,6 +22,11 @@ const routes = [
     active: "text-indigo-500",
     slug: "/contacto",
   },
+  {
+    title: "Buscar",
+    active: "text-indigo-200",
+    slug: "/buscar",
+  },
 ]
 
 const Navigation = ({ closeMenu }) => (

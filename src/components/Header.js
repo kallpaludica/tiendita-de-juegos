@@ -20,14 +20,14 @@ const routes = [
     slug: "/sobre-el-proyecto",
   },
   {
-    title: "Buscar",
-    active: "text-indigo-200",
-    slug: "/buscar",
-  },
-  {
     title: "Contacto",
     active: "text-indigo-200",
     slug: "/contacto",
+  },
+  {
+    title: "Buscar",
+    active: "text-indigo-200",
+    slug: "/buscar",
   },
 ]
 
