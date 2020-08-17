@@ -20,6 +20,11 @@ const routes = [
     slug: "/sobre-el-proyecto",
   },
   {
+    title: "Buscar",
+    active: "text-indigo-200",
+    slug: "/buscar",
+  },
+  {
     title: "Contacto",
     active: "text-indigo-200",
     slug: "/contacto",
@@ -33,7 +38,7 @@ const Header = ({ siteTitle }) => (
         <Logo>
           <Link
             to="/"
-            className="block py-6 font-mono text-xl font-bold tracking-widest text-white uppercase hover:text-green-200"
+            className="block py-6 font-mono text-xl font-bold tracking-widest uppercase hover:text-green-200"
           >
             {siteTitle}
           </Link>
@@ -70,6 +75,14 @@ export default Header
 const Nav = styled.nav`
   ${tw`justify-end hidden md:flex`}
   flex:1;
+
+  a {
+    ${tw`text-white`}
+
+    .headroom--scrolled & {
+      ${tw`text-green-500`}
+    }
+  }
 `
 
 const HeaderContainer = styled.header`
@@ -87,7 +100,11 @@ const Logo = styled.div`
     ${tw`w-40 `}
   }
 
-  body.ingames .headroom--scrolled & {
+  a {
     ${tw`text-white`}
+
+    .headroom--scrolled & {
+      ${tw`text-green-500`}
+    }
   }
 `

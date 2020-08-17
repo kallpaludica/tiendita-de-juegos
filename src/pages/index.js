@@ -1,8 +1,8 @@
 import React from "react"
 import "react-awesome-slider/dist/styles.css"
 import Layout from "../components/layout"
-import HeroWave from "../components/HeroWave"
-import AwesomeSlider from "react-awesome-slider"
+//import HeroWave from "../components/HeroWave"
+//import AwesomeSlider from "react-awesome-slider"
 import { FiChevronRight } from "react-icons/fi"
 import { Helmet } from "react-helmet"
 import "../components/VideoReact.css"
@@ -26,7 +26,16 @@ export default () => {
         <HeroContent>
           <Fade bottom>
             <Title>
-              Hola! 👋 <br /> Te damos la bienvenida a nuestra tiendita
+              Hola!
+              <span
+                className="emoji"
+                role="img"
+                aria-label="Hola! y bienvenide"
+                aria-hidden="false"
+              >
+                👋
+              </span>
+              <br /> Te damos la bienvenida a nuestra tiendita
             </Title>
           </Fade>
           <div className="pt-12">
@@ -48,6 +57,7 @@ export default () => {
         <img
           src={HomeHeroImage}
           title="bienvenides"
+          alt="bienvenides"
           className="absolute top-0 w-auto h-screen opacity-25 sm:h-auto sm:w-full"
         />
         <Wave>

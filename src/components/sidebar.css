@@ -62,6 +62,16 @@
     top: -8px !important;
     left: 10px !important;
   }
+
+  .bm-burger-bars {
+    @apply bg-white !important;
+    opacity: 1 !important;
+  }
+
+  .bm-burger-bars-hover {
+    @apply bg-gray-300 !important;
+    opacity: 1 !important;
+  }
 }
 
 .bm-burger-button:hover {
@@ -70,13 +80,13 @@
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  @apply bg-white;
+  @apply bg-green-500;
   height: 2px !important;
 }
 
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
-  @apply bg-gray-300;
+  @apply bg-green-700;
   opacity: 1 !important;
 }
 

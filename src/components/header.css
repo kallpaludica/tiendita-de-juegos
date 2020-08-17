@@ -7,7 +7,7 @@ header nav {
 header nav a {
   display: inline-block;
   text-decoration: none;
-  @apply py-3 mt-1 ml-3 text-base tracking-wider text-white transition-all duration-500 border-b border-transparent;
+  @apply py-3 mt-1 ml-3 text-base tracking-wider transition-all duration-500 border-b border-transparent;
 }
 
 @screen lg {
@@ -30,54 +30,21 @@ header nav a {
 }
 
 .headroom--scrolled {
-  @apply bg-purple-700;
+  @apply bg-white shadow-xs;
+}
+
+.headroom--scrolled a {
+  @apply text-green-500;
 }
 
 .headroom--unpinned {
   position: fixed;
-  @apply bg-green-700;
+  @apply bg-white;
   transform: translateY(0);
 }
 
-body .headroom--scrolled {
-  @apply bg-orange-700;
-}
-
-body.home .headroom--scrolled {
-  @apply bg-orange-700;
-}
-
-body.ingames .headroom a {
-  @apply text-green-700 !important;
-}
-
-body.ingames .bm-burger-bars {
-  @apply bg-green-500;
-  height: 2px !important;
-}
-
-/* Color/shape of burger icon bars on hover*/
-body.ingames .bm-burger-bars-hover {
-  @apply bg-green-700;
-  opacity: 1 !important;
-}
-
-body.games .headroom--scrolled,
-body.ingames .headroom--scrolled {
-  @apply bg-green-700;
-}
-
-body.ingames .headroom--scrolled a {
-  @apply text-white !important;
-}
-
-
-body.about .headroom--scrolled {
-  @apply bg-pink-700;
-}
-
-body.contact .headroom--scrolled {
-  @apply bg-blue-700;
+.headroom--unpinned a {
+  @apply text-green-500;
 }
 
 @screen md {
@@ -90,4 +57,9 @@ body.contact .headroom--scrolled {
   position: fixed;
   transform: translateY(0%);
 }
+
+body.ingame a {
+  @apply text-green-500 !important;
+}
+
 /* purgecss end ignore */

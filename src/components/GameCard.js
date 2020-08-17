@@ -8,7 +8,7 @@ import AboutImage from "../images/kallpa-ludica.png"
 
 export default ({ card }) => (
   <GameCard>
-    <Link to={`/juegos/${kebabCase(card.slug)}/`} className="">
+    <Link to={`/juegos/${kebabCase(card.slug)}/`}>
       {card.imagenDestacada ? (
         <div className="w-48 md:w-full h-48 overflow-hidden relative">
           <Img
@@ -30,6 +30,25 @@ export default ({ card }) => (
         <b className="block font-bold text-green-800 text-3xl font-serif pb-3">
           ${card.GameBuyPrice}
         </b>
+      </div>
+
+      <div className="md:pl-3 w-full text-left sm:text-center">
+        {card.GameAges && (
+          <div className="block font-bold text-green-800 text-lg font-serif pb-3">
+            Edad {card.GameAges}+
+          </div>
+        )}
+      </div>
+
+      <div className="md:pl-3 w-full text-left sm:text-center">
+        <div className="block font-bold text-green-800 text-lg font-serif pb-3">
+          {card.GameDuration} min.
+        </div>
+      </div>
+      <div className="md:pl-3 w-full text-left sm:text-center">
+        <div className="block font-bold text-green-800 text-lg font-serif pb-3">
+          {card.GamePlayers} jugadores
+        </div>
       </div>
     </Link>
   </GameCard>

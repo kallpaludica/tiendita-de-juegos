@@ -11,18 +11,15 @@ import AboutImage from "../images/kallpa-ludica.png"
 import { SRLWrapper } from "simple-react-lightbox"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
-//import Article from "../components/Article"
 import OpenGallery from "../components/OpenGallery"
 import "../components/AwsBtn.css"
 import { Helmet } from "react-helmet"
-//import HeroImageWave from "../components/HeroImageWave"
-
 import { GoLinkExternal } from "react-icons/go"
-import { AwesomeButton, AwesomeButtonSocial } from "react-awesome-button"
+import { AwesomeButtonSocial } from "react-awesome-button"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
 import { Player, BigPlayButton } from "video-react"
-//import ReactTooltip from "react-tooltip"
+
 const Bold = ({ children }) => (
   <span className="font-mono font-bold">{children}</span>
 )
@@ -132,7 +129,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
     <Layout location={location}>
       <SEO title="Juegos" />
       <Helmet>
-        <body className="ingames" />
+        <body className="ingame" />
       </Helmet>
       {/*<HeroImageWave
         heading={post.title}
@@ -185,12 +182,24 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               <h3 className="w-full mb-3 font-serif text-base italic font-bold text-center text-gray-700">
                 Juego creado por {post.GameAuthor}
               </h3>
+              {post.publisher && (
+                <div className="flex items-center justify-center text-lg">
+                  <Link
+                    to={`/editoriales/${kebabCase(post.publisher.slug)}/`}
+                    className="flex flex-col py-1 pr-4 mx-2 my-2 rounded-full "
+                    key={post.publisher.slug}
+                  >
+                    <b className="font-serif text-indigo-500 hover:text-indigo-700">
+                      Editorial {post.publisher.title}
+                    </b>
+                  </Link>
+                </div>
+              )}
             </div>
             <div className="relative flex flex-col w-full px-2 pt-3 md:pl-12">
               <h1 className="w-full pl-6 font-serif text-4xl font-black text-left text-green-600 md:pl-0 md:text-5xl">
                 {post.title}
               </h1>
-
               <div className="flex flex-col justify-center w-full pl-6 my-2 text-gray-700 md:px-0 md:flex-row md:justify-start">
                 {post.GameAges && (
                   <div className="flex flex-col items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
@@ -212,13 +221,31 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   </div>
                 )}
               </div>
+              {post.categoria ? (
+                <div className="flex items-center justify-start text-lg text-center">
+                  {post.categoria.map((item, i) => (
+                    <Link
+                      to={`/categorias/${kebabCase(item.slug)}/`}
+                      className="flex flex-col py-1 pr-4 mx-2 my-2 rounded-full "
+                      key={i}
+                      data-tip={item.title}
+                    >
+                      <b className="font-serif text-indigo-500 hover:text-indigo-700">
+                        {item.title}
+                      </b>
+                    </Link>
+                  ))}
+                </div>
+              ) : (
+                <div className="hidden"></div>
+              )}
+
               {post.GameGallery && (
-                <div className="pl-6 my-6 mb-8 md:px-0">
+                <div className="pl-6 my-6 mb-8 md:px-0 md:hidden">
                   <OpenGallery />
                 </div>
               )}
-
-              <div className="w-full mt-6 mb-4 article" id={post.slug}>
+              <div className="w-full mt-2 mb-6 article" id={post.slug}>
                 {Article && (
                   <div>
                     {documentToReactComponents(
@@ -229,7 +256,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   </div>
                 )}
               </div>
-
               <div className="flex flex-col-reverse justify-between w-full px-3 py-6 mb-0 bg-green-100 border-t-2 border-b-2 border-green-500 md:flex-row">
                 <AwesomeButtonSocial
                   type="whatsapp"
@@ -243,18 +269,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   ${post.GameBuyPrice}
                 </div>
               </div>
-              {post.paginaWeb && (
-                <div className="w-full my-12">
-                  <a
-                    className="font-serif text-base font-bold text-pink-800 "
-                    href={post.paginaWeb}
-                    target="_blank"
-                    type="secondary"
-                    rel="noopener noreferrer"
-                  >
-                    Más información de {post.title}
-                    <GoLinkExternal className="inline-block ml-3" />
-                  </a>
+              {post.GamePlay && (
+                <div className="mt-12">
+                  <Player src={post.GamePlay.file.url}>
+                    <BigPlayButton position="center" />
+                  </Player>
                 </div>
               )}
             </div>
@@ -299,7 +318,20 @@ export const pageQuery = graphql`
       GameDuration
       GameAuthor
       GameAges
-      paginaWeb
+      GamePlay {
+        file {
+          url
+        }
+      }
+
+      categoria {
+        title
+        slug
+      }
+      publisher {
+        title
+        slug
+      }
       GameGallery {
         title
         fluid(maxWidth: 1600) {
@@ -313,6 +345,9 @@ export const pageQuery = graphql`
       imagenDestacada {
         fixed(width: 500, height: 500) {
           ...GatsbyContentfulFixed
+        }
+        file {
+          url
         }
         fluid(maxWidth: 1800) {
           ...GatsbyContentfulFluid_withWebp

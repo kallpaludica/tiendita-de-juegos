@@ -13,13 +13,31 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-    const blogPost = path.resolve(`./src/templates/blog-single.js`)
+    const gameSingle = path.resolve(`./src/templates/gameSingle.js`)
+    const categorySingle = path.resolve(`./src/templates/categorySingle.js`)
+    const publisherSingle = path.resolve(`./src/templates/publisherSingle.js`)
 
     resolve(
       graphql(
         `
           {
             allContentfulArticulos {
+              edges {
+                node {
+                  title
+                  slug
+                }
+              }
+            }
+            allContentfulCategoriaDelJuego {
+              edges {
+                node {
+                  title
+                  slug
+                }
+              }
+            }
+            allContentfulEditorial {
               edges {
                 node {
                   title
@@ -40,19 +58,51 @@ exports.createPages = ({ graphql, actions }) => {
           items: result.data.allContentfulArticulos.edges,
           itemsPerPage: 99,
           pathPrefix: "/juegos",
-          component: path.resolve("src/templates/blog-archive.js"),
+          component: path.resolve("src/templates/gameArchive.js"),
         })
 
         const posts = result.data.allContentfulArticulos.edges
+        const categories = result.data.allContentfulCategoriaDelJuego.edges
+        const publishers = result.data.allContentfulEditorial.edges
 
         posts.forEach((post, index) => {
           createPage({
             path: `/juegos/${post.node.slug}/`,
-            component: blogPost,
+            component: gameSingle,
             context: {
               slug: post.node.slug,
               prev: index === 0 ? null : posts[index - 1].node,
               next: index === posts.length - 1 ? null : posts[index + 1].node,
+            },
+          })
+        })
+
+        categories.forEach((category, index) => {
+          createPage({
+            path: `/categorias/${category.node.slug}/`,
+            component: categorySingle,
+            context: {
+              slug: category.node.slug,
+              prev: index === 0 ? null : categories[index - 1].node,
+              next:
+                index === categories.length - 1
+                  ? null
+                  : categories[index + 1].node,
+            },
+          })
+        })
+
+        publishers.forEach((publisher, index) => {
+          createPage({
+            path: `/editoriales/${publisher.node.slug}/`,
+            component: publisherSingle,
+            context: {
+              slug: publisher.node.slug,
+              prev: index === 0 ? null : publishers[index - 1].node,
+              next:
+                index === publishers.length - 1
+                  ? null
+                  : publishers[index + 1].node,
             },
           })
         })
