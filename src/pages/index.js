@@ -16,6 +16,8 @@ import HomeHeroImage from "../images/bg-home.jpg"
 import { AwesomeButton } from "react-awesome-button"
 import "../components/AwsBtn.css"
 import Fade from "react-reveal/Fade"
+import FormatText from "../components/wysiwyg"
+
 import {
   AiOutlineWhatsApp,
   AiOutlineMail,
@@ -53,6 +55,13 @@ const IndexPage = () => {
         id
         titulo
         link
+      }
+      contactanos: contentfulSobreElProyecto(title: { eq: "Contactanos" }) {
+        id
+        title
+        childContentfulSobreElProyectoTextoPrincipalRichTextNode {
+          json
+        }
       }
     }
   `)
@@ -127,11 +136,16 @@ const IndexPage = () => {
       </Hero>
       <section>
         <h1 className="max-w-4xl mx-auto font-serif text-4xl font-bold text-indigo-700">
-          Contactanos
+          {data.contactanos.title}
         </h1>
-        <h2 className="max-w-4xl mx-auto font-serif text-2xl">
-          Estamos para responder a cualquier tus preguntas sobre juegos
-        </h2>
+        <div className="max-w-4xl mx-auto font-serif text-2xl">
+          <FormatText
+            FormatText={
+              data.contactanos
+                .childContentfulSobreElProyectoTextoPrincipalRichTextNode
+            }
+          />
+        </div>
         <Socials>
           <a
             className="flex flex-col items-center justify-center text-center"
