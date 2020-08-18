@@ -1,89 +1,24 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
 import { Link } from "gatsby"
 import { kebabCase } from "lodash"
-import "../components/VideoReact.css"
-import { IoMdTime } from "react-icons/io"
-import { GiTabletopPlayers } from "react-icons/gi"
-import { FaUserFriends } from "react-icons/fa"
-import AboutImage from "../images/kallpa-ludica.png"
-import { SRLWrapper } from "simple-react-lightbox"
+import Layout from "../components/layout"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 import OpenGallery from "../components/OpenGallery"
-import "../components/AwsBtn.css"
+import FormatText from "../components/wysiwyg"
+import AboutImage from "../images/kallpa-ludica.png"
+import { SRLWrapper } from "simple-react-lightbox"
 import { Helmet } from "react-helmet"
-import { GoLinkExternal } from "react-icons/go"
 import { AwesomeButtonSocial } from "react-awesome-button"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
 import { Player, BigPlayButton } from "video-react"
+import { IoMdTime } from "react-icons/io"
+import { FaUserFriends } from "react-icons/fa"
+import { GiTabletopPlayers } from "react-icons/gi"
+import "../components/VideoReact.css"
+import "../components/AwsBtn.css"
 
-const Bold = ({ children }) => (
-  <span className="font-mono font-bold">{children}</span>
-)
-const Text = ({ children }) => (
-  <p className="w-full font-mono text-2xl text-left text-gray-900">
-    {children}
-  </p>
-)
-const website_url = "https://www.cooparaje.com.ar"
 const options = {
-  renderMark: {
-    [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
-    [MARKS.CODE]: (embedded) => (
-      <div>
-        <div dangerouslySetInnerHTML={{ __html: embedded }} />
-      </div>
-    ),
-  },
-  renderNode: {
-    [BLOCKS.EMBEDDED_ASSET]: (node) => {
-      if (!node.data || !node.data.target.fields) {
-        return <span className="hidden">Embedded asset is broken</span>
-      } else {
-        if (node.data.target.fields.file["es-AR"].contentType === "video/mp4") {
-          return (
-            <div>
-              <Player src={node.data.target.fields.file["es-AR"].url}>
-                <BigPlayButton position="center" />
-              </Player>
-            </div>
-          )
-        } else {
-          return (
-            <div>
-              <div className="post-image">
-                <img
-                  className="w-full max-w-md mx-auto"
-                  alt={node.data.target.fields.title["es-AR"]}
-                  src={node.data.target.fields.file["es-AR"].url}
-                />
-              </div>
-            </div>
-          )
-        }
-      }
-    },
-    [INLINES.HYPERLINK]: (node) => {
-      return (
-        <a
-          href={node.data.uri}
-          className="inline-block pb-0 font-bold border-b border-green-300 hover:bg-green-600 hover:text-white"
-          target={`${
-            node.data.uri.startsWith(website_url) ? "_self" : "_blank"
-          }`}
-          rel={`${
-            node.data.uri.startsWith(website_url) ? "" : "noopener noreferrer"
-          }`}
-        >
-          {node.content[0].value}
-        </a>
-      )
-    },
-    [BLOCKS.PARAGRAPH]: (_, children) => <Text>{children}</Text>,
-  },
   buttons: {
     iconPadding: "7px",
     showDownloadButton: false,
@@ -141,7 +76,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       />*/}
       <div className="w-full py-12">
         <div className="max-w-6xl pt-12 mx-auto">
-          <div className="flex flex-col-reverse pt-6 border-t-2 border-green-500 sm:flex-row">
+          <div className="flex flex-col pt-6 border-t-2 border-green-500 sm:flex-row">
             <div className="w-full md:w-2/3">
               {post.imagenDestacada ? (
                 <div className="w-full mx-auto text-center ">
@@ -179,7 +114,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   </div>
                 )}
               </SRLWrapper>
-              <h3 className="w-full mb-3 font-serif text-base italic font-bold text-center text-gray-700">
+              <h3 className="hidden w-full mb-3 font-serif text-base italic font-bold text-center text-gray-700 md:block">
                 Juego creado por {post.GameAuthor}
               </h3>
               {post.publisher && (
@@ -202,20 +137,20 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </h1>
               <div className="flex flex-col justify-center w-full pl-6 my-2 text-gray-700 md:px-0 md:flex-row md:justify-start">
                 {post.GameAges && (
-                  <div className="flex flex-col items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
+                  <div className="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
                     <FaUserFriends className="mr-3 text-2xl " />
                     Edad {post.GameAges}+
                   </div>
                 )}
 
                 {post.GameDuration && (
-                  <div className="flex flex-col items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
+                  <div className="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
                     <IoMdTime className="mr-3 text-2xl " />
                     Duración de {post.GameDuration} min.
                   </div>
                 )}
                 {post.GamePlayers && (
-                  <div className="flex flex-col items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
+                  <div className="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
                     <GiTabletopPlayers className="mr-3 text-3xl " />
                     {post.GamePlayers} jugadores
                   </div>
@@ -241,19 +176,20 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               )}
 
               {post.GameGallery && (
-                <div className="pl-6 my-6 mb-8 md:px-0 md:hidden">
+                <div className="hidden pl-6 my-6 mb-8 md:px-0">
                   <OpenGallery />
                 </div>
               )}
-              <div className="w-full mt-2 mb-6 article" id={post.slug}>
+              <div
+                className="w-full px-5 mt-2 mb-6 text-left md:px-0 article"
+                id={post.slug}
+              >
                 {Article && (
-                  <div>
-                    {documentToReactComponents(
+                  <FormatText
+                    FormatText={
                       post.childContentfulArticulosTextoPrincipalRichTextNode
-                        .json,
-                      options
-                    )}
-                  </div>
+                    }
+                  />
                 )}
               </div>
               <div className="flex flex-col-reverse justify-between w-full px-3 py-6 mb-0 bg-green-100 border-t-2 border-b-2 border-green-500 md:flex-row">

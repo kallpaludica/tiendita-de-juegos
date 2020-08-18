@@ -1,16 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
 import { Link } from "gatsby"
 import { kebabCase } from "lodash"
+import Layout from "../components/layout"
 import SEO from "../components/seo"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import Fade from "react-reveal/Fade"
 import HeroWave from "../components/HeroWave"
 import GameCard from "../components/GameCard"
-//import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
-//import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const CategorySingleTemplate = ({ data, pageContext, location }) => {
   const categoria = data.contentfulCategoriaDelJuego

@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import "./header.css"
 import Headroom from "react-headroom"
-
+import { GrSearch } from "react-icons/gr"
 //import ThemeToggler from "./ThemeToggler/ThemeToggler"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
@@ -25,7 +25,7 @@ const routes = [
     slug: "/contacto",
   },
   {
-    title: "Buscar",
+    title: <GrSearch className="mt-1 text-white" />,
     active: "text-indigo-200",
     slug: "/buscar",
   },

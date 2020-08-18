@@ -1,16 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
 import { Link } from "gatsby"
 import { kebabCase } from "lodash"
+import Layout from "../components/layout"
 import SEO from "../components/seo"
+import HeroWave from "../components/HeroWave"
+import GameCard from "../components/GameCard"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import Fade from "react-reveal/Fade"
-import HeroWave from "../components/HeroWave"
-import GameCard from "../components/GameCard"
-//import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
-//import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const PublisherSingleTemplate = ({ data, pageContext, location }) => {
   const publisher = data.contentfulEditorial

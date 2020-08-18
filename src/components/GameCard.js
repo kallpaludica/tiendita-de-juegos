@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import AboutImage from "../images/kallpa-ludica.png"
+import Toggle from "./GameCardToggle"
 
 export default ({ card }) => (
   <GameCard>
@@ -31,26 +32,13 @@ export default ({ card }) => (
           ${card.GameBuyPrice}
         </b>
       </div>
-
-      <div className="md:pl-3 w-full text-left sm:text-center">
-        {card.GameAges && (
-          <div className="block font-bold text-green-800 text-lg font-serif pb-3">
-            Edad {card.GameAges}+
-          </div>
-        )}
-      </div>
-
-      <div className="md:pl-3 w-full text-left sm:text-center">
-        <div className="block font-bold text-green-800 text-lg font-serif pb-3">
-          {card.GameDuration} min.
-        </div>
-      </div>
-      <div className="md:pl-3 w-full text-left sm:text-center">
-        <div className="block font-bold text-green-800 text-lg font-serif pb-3">
-          {card.GamePlayers} jugadores
-        </div>
-      </div>
     </Link>
+    <Toggle
+      title={card.title}
+      age={card.GameAges}
+      duration={card.GameDuration}
+      players={card.GamePlayers}
+    />
   </GameCard>
 )
 

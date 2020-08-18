@@ -63,6 +63,20 @@ const IndexPage = () => {
           json
         }
       }
+      allContentfulCategoriaDelJuego {
+        edges {
+          node {
+            id
+            title
+            slug
+            icono {
+              fixed(width: 80, height: 80) {
+                ...GatsbyContentfulFixed
+              }
+            }
+          }
+        }
+      }
     }
   `)
 
@@ -134,6 +148,46 @@ const IndexPage = () => {
           </svg>
         </Wave>
       </Hero>
+      <section className="relative py-24">
+        <h1 className="max-w-4xl mx-auto font-serif text-4xl font-bold text-orange-500">
+          ¿A qué te gustaría jugar?
+        </h1>
+        <div className="flex flex-wrap justify-center max-w-3xl mx-auto my-12 text-center bg-white md:flex-row">
+          {data.allContentfulCategoriaDelJuego.edges.map(({ node }) => {
+            return (
+              <Link
+                key={node.slug}
+                to={`/categorias/${kebabCase(node.slug)}/`}
+                className="flex flex-col items-center justify-center mx-12 my-3 font-serif text-xl text-gray-700 hover:text-gray-900"
+              >
+                {node.icono ? (
+                  <div className="relative overflow-hidden transition-all duration-200 transform md:w-full hover:-translate-y-2">
+                    <Img
+                      title={node.title}
+                      className="w-full"
+                      alt={node.title}
+                      fixed={node.icono.fixed}
+                    />
+                  </div>
+                ) : (
+                  <h2 className="w-24 max-w-xs font-bold ">{node.title}</h2>
+                )}
+                {node.title}
+              </Link>
+            )
+          })}
+        </div>
+        <div className="">
+          <a
+            href="https://game-icons.net/"
+            target="_blank"
+            className="p-1 text-teal-800 border border-teal-500 border-dashed opacity-75 hover:text-teal-900 hover:bg-teal-300"
+          >
+            Recurso: GameIcons.net
+          </a>
+          <b className="mr-1 text-orange-500"> #F5A623</b>
+        </div>
+      </section>
       <section>
         <h1 className="max-w-4xl mx-auto font-serif text-4xl font-bold text-indigo-700">
           {data.contactanos.title}
@@ -155,8 +209,8 @@ const IndexPage = () => {
             href={`https://api.whatsapp.com/send?phone=${data.whatsapp.link}&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20consultar`}
           >
             <AiOutlineWhatsApp className="my-6 text-4xl" />
+            <h2 className="my-2 font-serif text-xl">{data.whatsapp.link}</h2>
             <b>Teléfono</b>
-            {data.whatsapp.link}
           </a>
           <a
             className="flex flex-col items-center justify-center text-center"
@@ -166,8 +220,8 @@ const IndexPage = () => {
             href={`mailto:${data.mail.link}`}
           >
             <AiOutlineMail className="my-6 text-4xl" />
+            <h2 className="my-2 font-serif text-xl">{data.mail.link}</h2>
             <b>Mail</b>
-            {data.mail.link}
           </a>
           <a
             className="flex flex-col items-center justify-center text-center"
@@ -177,8 +231,8 @@ const IndexPage = () => {
             href={data.instagram.link}
           >
             <AiOutlineInstagram className="my-6 text-4xl" />
+            <h2 className="my-2 font-serif text-xl">@kallpaludica</h2>
             <b>Instagram</b>
-            @kallpaludica
           </a>
         </Socials>
       </section>
@@ -236,7 +290,7 @@ const Hero = styled.div`
 const Socials = styled.div`
   ${tw`flex flex-col justify-center max-w-3xl mx-auto my-12 text-center bg-white md:flex-row`}
   a {
-    ${tw`w-full max-w-sm mx-auto md:mx-3`}
+    ${tw`w-full max-w-sm mx-auto transition-all duration-200 md:mx-3`}
   }
 `
 
