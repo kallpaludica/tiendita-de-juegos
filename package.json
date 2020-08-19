@@ -42,6 +42,7 @@
     "gatsby-source-filesystem": "^2.3.23",
     "gatsby-transformer-remark": "^2.8.27",
     "gatsby-transformer-sharp": "^2.5.11",
+    "isotope-layout": "^3.0.6",
     "pattern.css": "^1.0.0",
     "postcss-import": "^12.0.1",
     "postcss-preset-env": "^6.7.0",
@@ -55,6 +56,8 @@
     "react-headroom": "^3.0.0",
     "react-helmet": "^6.0.0",
     "react-icons": "^3.10.0",
+    
+    "react-isotope": "^1.0.7",
     "react-reveal": "^1.2.2",
     "react-spring": "^8.0.27",
     "react-three-fiber": "^4.2.19",
