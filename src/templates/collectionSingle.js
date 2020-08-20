@@ -128,7 +128,7 @@ export const pageQuery = graphql`
             url
           }
           fluid(maxWidth: 1800) {
-            ...GatsbyContentfulFluid_withWebp
+            ...GatsbyContentfulFluid
           }
         }
       }

@@ -36,7 +36,7 @@ const PreciosPage = () => {
                 ...GatsbyContentfulFixed
               }
               fluid(maxWidth: 450) {
-                ...GatsbyContentfulFluid_withWebp
+                ...GatsbyContentfulFluid
               }
             }
           }

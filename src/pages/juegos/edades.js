@@ -33,7 +33,7 @@ const EdadesPage = () => {
                 ...GatsbyContentfulFixed
               }
               fluid(maxWidth: 450) {
-                ...GatsbyContentfulFluid_withWebp
+                ...GatsbyContentfulFluid
               }
             }
           }

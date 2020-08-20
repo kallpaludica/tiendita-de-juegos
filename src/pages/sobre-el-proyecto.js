@@ -1,5 +1,4 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import HeroWave from "../components/HeroWave"
 import AboutImage from "../images/kallpa-ludica.png"
@@ -46,7 +45,6 @@ const AboutPage = () => {
         </AnchorLinks>
         <About />
       </Section>
-
       <Mision />
       <Proposals />
       <Objectives />

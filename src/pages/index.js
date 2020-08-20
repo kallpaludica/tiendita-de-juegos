@@ -28,7 +28,7 @@ const IndexPage = () => {
             slug
             logo {
               fluid(maxWidth: 450) {
-                ...GatsbyContentfulFluid_withWebp
+                ...GatsbyContentfulFluid
               }
             }
           }
@@ -160,6 +160,7 @@ const IndexPage = () => {
           <a
             href="https://game-icons.net/"
             target="_blank"
+            rel="noopener noreferrer"
             className="p-1 text-teal-800 border border-teal-500 border-dashed opacity-75 hover:text-teal-900 hover:bg-teal-300"
           >
             Recurso: GameIcons.net

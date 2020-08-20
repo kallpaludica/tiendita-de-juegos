@@ -14,8 +14,8 @@ const PublishersComponent = () => {
             title
             slug
             logo {
-              fluid(maxWidth: 100) {
-                ...GatsbyContentfulFluid_withWebp
+              fluid(maxWidth: 200) {
+                ...GatsbyContentfulFluid
               }
             }
           }
@@ -30,11 +30,11 @@ const PublishersComponent = () => {
         className="flex flex-col items-baseline justify-center w-full max-w-6xl mx-auto"
         id="publishers"
       >
-        <div className="w-full my-12 text-center text-gray-800">
-          <h1 className="my-12 font-serif text-xl font-bold">
-            Editoriales de Juegos con las que trabajamos
+        <div className="w-full mb-12 text-center text-gray-800">
+          <h1 className="my-12 font-serif text-3xl font-bold">
+            Editoriales que trabajamos
           </h1>
-          <div className="flex flex-wrap items-center justify-center ">
+          <div className="flex flex-wrap items-center justify-center max-w-6xl mx-auto ">
             {data.editoriales.edges.map(({ node }) => {
               return (
                 <Link

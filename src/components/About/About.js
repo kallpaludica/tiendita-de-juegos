@@ -1,7 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import tw from "twin.macro"
-import styled from "@emotion/styled"
 import FormatText from "../wysiwyg"
 
 const AboutAboutComponent = () => {
@@ -35,9 +33,3 @@ const AboutAboutComponent = () => {
 }
 
 export default AboutAboutComponent
-
-const List = styled.div`
-  ul {
-    ${tw`pl-6 list-disc `}
-  }
-`

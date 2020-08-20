@@ -43,16 +43,6 @@ const Container = styled.div`
   ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5`}
 `
 
-const PageNav = styled.nav`
-  ${tw`flex justify-between py-12`}
-  a {
-    ${tw`font-mono font-bold`}
-  }
-  body.dark & a {
-    ${tw`text-indigo-300`}
-  }
-`
-
 export default PublisherSingleTemplate
 
 export const pageQuery = graphql`
@@ -98,7 +88,7 @@ export const pageQuery = graphql`
             url
           }
           fluid(maxWidth: 1800) {
-            ...GatsbyContentfulFluid_withWebp
+            ...GatsbyContentfulFluid
           }
         }
       }
