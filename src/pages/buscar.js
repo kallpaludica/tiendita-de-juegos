@@ -47,18 +47,18 @@ const SearchIndex = (props) => {
 
   return (
     <>
-      <div className="w-full max-w-2xl p-2 m-auto mt-24 mb-0 text-center searchBox md:pt-6 md:p-0 md:pb-6 animated fadeIn slower">
-        <h2 className="flex flex-col items-baseline py-3 pb-6 font-mono text-2xl text-left text-white md:flex-row">
-          <span className="flex-1">Todos los juegos</span>
-          <SEO title={totales} />
+      <SEO title={totales} />
+      <div className="w-full max-w-2xl p-2 m-auto mt-24 mb-2 text-center bg-white searchBox md:p-6 animated fadeIn slower">
+        <h2 className="flex flex-col items-baseline py-3 pb-6 font-mono text-2xl text-left text-green-8500 md:flex-row">
+          <span className="flex-1 font-bold">Todos los juegos</span>
 
-          <small className="text-gray-100">
-            <span className="text-gray-100">{totales}</span>
-          </small>
+          <b className="font-bold text-gray-800">
+            <span className="text-gray-800">{totales}</span>
+          </b>
         </h2>
 
         <input
-          className="w-full p-3 text-gray-100 placeholder-gray-100 bg-green-600 border-b-2 searchInput "
+          className="w-full p-3 text-gray-900 placeholder-gray-500 bg-gray-100 border-b-2 searchInput "
           type="text"
           tabindex="0"
           aria-label="Search"
@@ -75,15 +75,17 @@ const SearchIndex = (props) => {
           return (
             <article
               key={id}
-              className="flex justify-between w-full p-6 mb-3 text-center bg-white animated fadeIn"
+              className="flex justify-between w-full p-6 my-3 text-center transition-all duration-500 transform bg-white shadow-md animated fadeIn hover:-translate-y-1 hover:shadow-2xl"
             >
               <Link
                 to={`/juegos/${kebabCase(slug)}/`}
-                className="font-serif text-xl font-bold text-green-500"
+                className="font-serif text-xl font-bold"
               >
                 {title}
               </Link>
-              <span>${GameBuyPrice}</span>
+              <span className="text-xl font-bold text-green-500">
+                ${GameBuyPrice}
+              </span>
             </article>
           )
         })}

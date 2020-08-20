@@ -242,13 +242,13 @@ const IndexPage = () => {
             <h1 className="my-12 font-serif text-xl font-bold">
               Editoriales de Juegos con las que trabajamos
             </h1>
-            <div className="flex items-center justify-center">
+            <div className="flex flex-wrap items-center justify-center ">
               {data.editoriales.edges.map(({ node }) => {
                 return (
                   <Link
                     key={node.slug}
                     to={`/editoriales/${kebabCase(node.slug)}/`}
-                    className="flex items-center justify-center mx-12 overflow-hidden text-gray-800 rounded-md "
+                    className="flex items-center justify-center m-6 overflow-hidden text-gray-800 rounded-md "
                   >
                     {node.logo ? (
                       <div className="relative w-48 overflow-hidden md:w-full">

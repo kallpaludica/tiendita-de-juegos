@@ -4,6 +4,10 @@ header nav {
   display: block;
 }
 
+header nav a svg path {
+  stroke: #fff;
+}
+
 header nav a {
   display: inline-block;
   text-decoration: none;
@@ -35,6 +39,10 @@ header nav a {
 
 .headroom--scrolled a {
   @apply text-green-500;
+}
+
+.headroom--scrolled header nav a svg path {
+  stroke: #48bb78;
 }
 
 .headroom--unpinned {

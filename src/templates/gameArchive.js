@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
@@ -35,6 +35,8 @@ const Container = styled.div`
 `
 
 const BlogArchive = ({ data, pageContext, location }) => {
+  const [bandName, setBandName] = useState("")
+
   const posts = data.allContentfulArticulos.edges
   const categories = data.allContentfulCategoriaDelJuego.edges
   const publishers = data.allContentfulEditorial.edges
@@ -100,15 +102,29 @@ const BlogArchive = ({ data, pageContext, location }) => {
           })}
         </div>
       </div>
-
+      {/*
+      <div className="p-6 bg-red-500">
+        <input
+          onChange={(e) => setBandName(e.target.value)}
+          value={bandName}
+          className="m-3"
+          />
+      </div>*/}
       <Container id="contenido">
-        {posts.map(({ node }) => {
-          return (
-            <Item key={node.slug}>
-              <GameCard card={node} />
-            </Item>
+        {posts
+          .filter(
+            (word) =>
+              word.node.title.toLowerCase().indexOf(bandName.toLowerCase()) !==
+              -1
           )
-        })}
+          .map(({ node }) => {
+            return (
+              <Item key={node.slug}>
+                <GameCard card={node} />
+              </Item>
+            )
+          })}
+
         <Pager pageContext={pageContext} />
       </Container>
     </Layout>

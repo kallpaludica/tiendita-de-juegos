@@ -25,7 +25,7 @@ const routes = [
     slug: "/contacto",
   },
   {
-    title: <GrSearch className="mt-1 text-white" />,
+    title: <GrSearch className="mt-1 text-white fill-current" />,
     active: "text-indigo-200",
     slug: "/buscar",
   },

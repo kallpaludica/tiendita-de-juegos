@@ -31,7 +31,9 @@ const PublisherSingleTemplate = ({ data, pageContext, location }) => {
             ))}
           </Container>
         ) : (
-          <div className="text-center text-gray-500 ">Proximamente</div>
+          <div className="text-center text-gray-500 ">
+            Todavia no hay juegos de esta editorial
+          </div>
         )}
 
         <div className="w-full max-w-2xl m-auto article" id={publisher.slug}>
