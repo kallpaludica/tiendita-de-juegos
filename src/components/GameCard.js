@@ -11,30 +11,31 @@ export default ({ card }) => (
   <GameCard>
     <Link to={`/juegos/${kebabCase(card.slug)}/`}>
       {card.imagenDestacada ? (
-        <div className="w-48 md:w-full h-48 overflow-hidden relative">
+        <div className="image ">
           <Img
             title={card.title}
-            className=" w-full"
+            className="w-full "
             alt={card.title}
             fluid={card.imagenDestacada.fluid}
           />
         </div>
       ) : (
         <img
-          className="w-48 h-48 mx-auto opacity-25 my-6 "
+          className="w-48 h-48 mx-auto my-6 opacity-25 "
           alt="Kallpa Lúdica"
           src={AboutImage}
         />
       )}
-      <div className="md:pl-3 w-full text-left sm:text-center">
+      <div className="w-full text-left md:pl-3 sm:text-center">
         <h3 className="block pt-3">{card.title}</h3>
-        <b className="block font-bold text-green-800 text-3xl font-serif pb-3">
+        <b className="block pb-3 font-serif text-3xl font-bold text-green-800">
           ${card.GameBuyPrice}
         </b>
       </div>
     </Link>
     <Toggle
       title={card.title}
+      slug={card.slug}
       age={card.GameAges}
       duration={card.GameDuration}
       players={card.GamePlayers}
@@ -43,12 +44,13 @@ export default ({ card }) => (
 )
 
 const GameCard = styled.div`
-  ${tw`relative w-full md:max-w-md overflow-hidden mb-3  `}
-  transition: all .2s;
-  top: 0;
+  ${tw`relative w-full mb-3 overflow-hidden md:max-w-md `}
 
-  &:hover {
-    ${tw``}
-    top: 2px;
+  .image {
+    ${tw`relative w-48 h-48 overflow-hidden transition-all duration-500 transform md:w-full`}
+  }
+
+  .image:hover {
+    ${tw`scale-105`}
   }
 `

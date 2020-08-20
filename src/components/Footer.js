@@ -1,7 +1,6 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+//import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
-import { AiFillHeart } from "react-icons/ai"
 import "./layout.css"
 
 const Footer = ({ children }) => {

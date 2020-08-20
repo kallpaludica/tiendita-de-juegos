@@ -22,6 +22,9 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
         pattern="bg-indigo-600 text-indigo-500 "
         svg="M0,224L80,240C160,256,320,288,480,277.3C640,267,800,213,960,202.7C1120,192,1280,224,1360,240L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
       />
+      <Link to="/juegos/" className="font-serif font-bold text-indigo-500">
+        Ver todos los juegos
+      </Link>
       <h1 className="font-serif text-4xl font-bold">{collection.title}</h1>
       <h3 className="font-serif text-2xl">
         {collection.CollectionDescription.CollectionDescription}

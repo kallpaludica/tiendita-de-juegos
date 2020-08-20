@@ -9,6 +9,9 @@ import tw from "twin.macro"
 import styled from "@emotion/styled"
 import HeroWave from "../components/HeroWave"
 import GameCard from "../components/GameCard"
+import Publishers from "../components/Publishers/Publishers"
+import AnchorLink from "react-anchor-link-smooth-scroll"
+
 import { kebabCase } from "lodash"
 import Img from "gatsby-image"
 
@@ -17,14 +20,10 @@ const Item = styled.div`
   ${tw`transform translate-x-2 translate-y-2`}
 
   a {
-    ${tw`font-mono text-xl font-bold text-green-400 transition-all duration-500 ease-in-out `}
+    ${tw`font-mono font-bold text-green-400 transition-all duration-500 ease-in-out `}
   }
 
   &:hover {
-    ${tw`bg-white`}
-    ${tw`translate-y-1`}
-
-
     a {
       ${tw`text-green-600 `}
     }
@@ -40,7 +39,6 @@ const BlogArchive = ({ data, pageContext, location }) => {
 
   const posts = data.allContentfulArticulos.edges
   const categories = data.allContentfulCategoriaDelJuego.edges
-  const publishers = data.allContentfulEditorial.edges
   const collections = data.allContentfulColecciones.edges
 
   return (
@@ -54,8 +52,14 @@ const BlogArchive = ({ data, pageContext, location }) => {
         pattern="bg-orange-600 text-orange-500 "
         svg="M0,224L80,240C160,256,320,288,480,277.3C640,267,800,213,960,202.7C1120,192,1280,224,1360,240L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
       />
+      <AnchorLink
+        href="#publishers"
+        className="block w-full my-6 font-serif text-3xl text-center text-orange-500 hover:text-orange-500"
+      >
+        Ver editoriales
+      </AnchorLink>
       <section className="relative py-2">
-        <div className="flex flex-wrap justify-start max-w-6xl mx-auto my-0 text-center bg-white md:flex-row">
+        <div className="flex flex-wrap justify-center max-w-6xl mx-auto my-0 text-center bg-white md:flex-row">
           {categories.map(({ node }) => {
             return (
               <Link
@@ -81,15 +85,18 @@ const BlogArchive = ({ data, pageContext, location }) => {
           })}
         </div>
       </section>
-      <div className="flex items-baseline justify-start max-w-6xl mx-auto mt-3">
-        <div className="font-mono text-xl font-bold text-right text-gray-800">
+
+      <div className="flex flex-col items-center justify-center max-w-6xl mx-auto mt-12">
+        <h2 className="font-mono text-xl font-bold text-right text-gray-800">
           Colecciones
+        </h2>
+        <div className="font-mono text-xl font-bold text-right text-gray-800">
           {collections.map(({ node }) => {
             return (
               <Link
                 key={node.slug}
                 to={`/colecciones/${kebabCase(node.slug)}/`}
-                className="ml-2 text-green-500 underline"
+                className="ml-2 text-orange-500 underline"
               >
                 {node.title}
               </Link>
@@ -98,22 +105,6 @@ const BlogArchive = ({ data, pageContext, location }) => {
         </div>
       </div>
 
-      <div className="flex items-baseline justify-start max-w-6xl mx-auto mt-3">
-        <div className="flex flex-wrap font-mono text-xl font-bold text-right text-gray-800">
-          Editoriales
-          {publishers.map(({ node }) => {
-            return (
-              <Link
-                key={node.slug}
-                to={`/editoriales/${kebabCase(node.slug)}/`}
-                className="ml-2 text-green-500 underline"
-              >
-                {node.title}
-              </Link>
-            )
-          })}
-        </div>
-      </div>
       {/*
       <div className="p-6 bg-red-500">
         <input
@@ -139,6 +130,7 @@ const BlogArchive = ({ data, pageContext, location }) => {
 
         <Pager pageContext={pageContext} />
       </Container>
+      <Publishers />
     </Layout>
   )
 }
@@ -189,15 +181,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulEditorial {
-      edges {
-        node {
-          id
-          title
-          slug
-        }
-      }
-    }
+
     allContentfulColecciones {
       edges {
         node {
