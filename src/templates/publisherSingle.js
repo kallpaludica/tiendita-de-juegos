@@ -32,7 +32,7 @@ const PublisherSingleTemplate = ({ data, pageContext, location }) => {
           </Container>
         ) : (
           <div className="text-center text-gray-500 ">
-            Todavia no hay juegos de esta editorial
+            Aún no hay juegos asignados a esta editorial
           </div>
         )}
 

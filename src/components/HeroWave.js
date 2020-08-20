@@ -43,7 +43,7 @@ const Title = styled.h1`
 `
 
 const Hero = styled.div`
-  ${tw`relative flex flex-col items-start justify-center w-full pt-32 pb-32 mx-auto`}
+  ${tw`relative flex flex-col items-start justify-center w-full pt-24 pb-32 mx-auto`}
 `
 
 const Wave = styled.div`

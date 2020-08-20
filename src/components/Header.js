@@ -11,22 +11,22 @@ import styled from "@emotion/styled"
 const routes = [
   {
     title: "Tiendita de juegos",
-    active: "text-green-200",
+    active: "border-white",
     slug: "/juegos",
   },
   {
     title: "Sobre el proyecto",
-    active: "text-pink-300",
+    active: "border-white",
     slug: "/sobre-el-proyecto",
   },
   {
     title: "Contacto",
-    active: "text-indigo-200",
+    active: "border-white",
     slug: "/contacto",
   },
   {
     title: <GrSearch className="mt-1 text-white fill-current" />,
-    active: "text-indigo-200",
+    active: "border-white",
     slug: "/buscar",
   },
 ]
@@ -49,7 +49,7 @@ const Header = ({ siteTitle }) => (
               <Link
                 key={i}
                 activeClassName={route.active}
-                className={`hover:${route.active} ml-6 font-mono text-xl font-bold tracking-widest`}
+                className={`hover:${route.active} ml-6 font-mono border-t-2 text-xl font-bold tracking-widest`}
                 to={route.slug}
               >
                 {route.title}
@@ -90,7 +90,7 @@ const HeaderContainer = styled.header`
 `
 
 const InnerHeader = styled.div`
-  ${tw`relative flex items-center justify-between max-w-6xl px-0 m-auto md:py-3 sm:pr-6 md:pr-0`}
+  ${tw`relative flex items-center justify-between max-w-6xl px-0 m-auto md:py-0 sm:pr-6 md:pr-0`}
 `
 
 const Logo = styled.div`

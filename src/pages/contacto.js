@@ -51,10 +51,10 @@ const ContactPage = () => {
       </Helmet>
       <SEO title="Inicio" />
       <HeroWave
-        pattern="bg-orange-500 text-orange-700"
+        pattern="bg-green-500 text-green-700"
         svg="M0,256L80,261.3C160,267,320,277,480,272C640,267,800,245,960,229.3C1120,213,1280,203,1360,197.3L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
       />
-      <h1 className="max-w-4xl mx-auto mt-6 font-serif text-4xl font-bold text-orange-700">
+      <h1 className="max-w-4xl mx-auto mt-6 font-serif text-4xl font-bold text-green-700">
         {data.contactanos.title}
       </h1>
 
@@ -77,7 +77,19 @@ const ContactPage = () => {
         >
           <AiOutlineWhatsApp className="my-6 text-4xl" />
           <b>Teléfono</b>
-          {data.whatsapp.link}
+          <h2 className="my-2 font-serif text-xl">{data.whatsapp.link}</h2>
+        </a>
+
+        <a
+          className="flex flex-col items-center justify-center text-center"
+          target="_blank"
+          rel="noopener noreferrer"
+          title={data.instagram.titulo}
+          href={data.instagram.link}
+        >
+          <AiOutlineInstagram className="my-6 text-4xl" />
+          <b>Instagram</b>
+          <h2 className="my-2 font-serif text-xl">@kallpaludica</h2>
         </a>
         <a
           className="flex flex-col items-center justify-center text-center"
@@ -88,18 +100,7 @@ const ContactPage = () => {
         >
           <AiOutlineMail className="my-6 text-4xl" />
           <b>Mail</b>
-          {data.mail.link}
-        </a>
-        <a
-          className="flex flex-col items-center justify-center text-center"
-          target="_blank"
-          rel="noopener noreferrer"
-          title={data.instagram.titulo}
-          href={data.instagram.link}
-        >
-          <AiOutlineInstagram className="my-6 text-4xl" />
-          <b>Instagram</b>
-          @kallpaludica
+          <h2 className="my-2 font-serif text-xl">{data.mail.link}</h2>
         </a>
       </Socials>
     </Layout>
@@ -109,7 +110,7 @@ const ContactPage = () => {
 export default ContactPage
 
 const Socials = styled.div`
-  ${tw`flex flex-col justify-center max-w-3xl py-12 mx-auto text-center bg-white md:flex-row`}
+  ${tw`flex flex-col justify-center max-w-2xl pb-12 mx-auto text-center md:flex-row`}
   a {
     ${tw`w-full max-w-sm mx-auto md:mx-3`}
   }

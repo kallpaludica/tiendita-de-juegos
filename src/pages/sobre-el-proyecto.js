@@ -11,7 +11,11 @@ import "../components/VideoReact.css"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import "../components/AwsBtn.css"
-
+import {
+  AiOutlineWhatsApp,
+  AiOutlineMail,
+  AiOutlineInstagram,
+} from "react-icons/ai"
 const AboutPage = () => {
   const data = useStaticQuery(graphql`
     query AboutQuery {
@@ -43,6 +47,28 @@ const AboutPage = () => {
           json
         }
       }
+      whatsapp: contentfulDatosDeContacto(titulo: { eq: "Whatsapp" }) {
+        id
+        titulo
+        link
+      }
+      mail: contentfulDatosDeContacto(titulo: { eq: "Mail" }) {
+        id
+        titulo
+        link
+      }
+      instagram: contentfulDatosDeContacto(titulo: { eq: "instagram" }) {
+        id
+        titulo
+        link
+      }
+      contactanos: contentfulSobreElProyecto(title: { eq: "Contactanos" }) {
+        id
+        title
+        childContentfulSobreElProyectoTextoPrincipalRichTextNode {
+          json
+        }
+      }
     }
   `)
 
@@ -61,41 +87,41 @@ const AboutPage = () => {
       />
       <Section>
         <div className="flex flex-col items-baseline justify-center w-full max-w-6xl mx-auto">
-          <div className="w-full my-12 text-center text-gray-800 transform -translate-y-56">
+          <div className="w-full mt-12 text-center text-gray-800 transform -translate-y-56">
             <img
               className="w-64 max-w-md mx-auto "
               alt="Kallpa Lúdica"
               src={AboutImage}
             />
             <h1 className="max-w-4xl mx-auto font-serif text-4xl">
-              {data.mision.title}
+              {data.about.title}
             </h1>
-            <div className="flex items-center justify-center">
-              <div className="max-w-4xl mx-auto font-serif text-2xl">
-                <FormatText
-                  FormatText={
-                    data.mision
-                      .childContentfulSobreElProyectoTextoPrincipalRichTextNode
-                  }
-                />
-              </div>
+
+            <div className="max-w-xl mx-auto font-serif text-base text-left ">
+              <FormatText
+                FormatText={
+                  data.about
+                    .childContentfulSobreElProyectoTextoPrincipalRichTextNode
+                }
+              />
             </div>
           </div>
         </div>
       </Section>
 
-      <div className="w-full pb-24 text-left bg-white">
+      <div className="w-full py-24 text-left bg-orange-100">
         <h1 className="max-w-4xl mx-auto font-serif text-4xl">
-          {data.about.title}
+          {data.mision.title}
         </h1>
-
-        <div className="max-w-4xl mx-auto font-serif text-2xl">
-          <FormatText
-            FormatText={
-              data.about
-                .childContentfulSobreElProyectoTextoPrincipalRichTextNode
-            }
-          />
+        <div className="flex items-center justify-center">
+          <List className="max-w-4xl mx-auto font-serif text-2xl ">
+            <FormatText
+              FormatText={
+                data.mision
+                  .childContentfulSobreElProyectoTextoPrincipalRichTextNode
+              }
+            />
+          </List>
         </div>
       </div>
 
@@ -103,28 +129,79 @@ const AboutPage = () => {
         <h1 className="max-w-4xl mx-auto font-serif text-4xl">
           {data.propuestas.title}
         </h1>
-        <div className="max-w-4xl mx-auto font-serif text-2xl">
+        <List className="max-w-4xl mx-auto font-serif text-2xl ">
           <FormatText
             FormatText={
               data.propuestas
                 .childContentfulSobreElProyectoTextoPrincipalRichTextNode
             }
           />
-        </div>
+        </List>
       </div>
       <div className="w-full py-24 text-left bg-indigo-100">
         <h1 className="max-w-4xl mx-auto font-serif text-4xl">
           {data.objetivos.title}
         </h1>
-        <div className="max-w-4xl mx-auto font-serif text-2xl">
+        <List className="max-w-4xl mx-auto font-serif text-2xl ">
           <FormatText
             FormatText={
               data.objetivos
                 .childContentfulSobreElProyectoTextoPrincipalRichTextNode
             }
           />
-        </div>
+        </List>
       </div>
+      <Contact>
+        <h1 className="max-w-4xl mx-auto font-serif text-4xl font-bold text-green-700">
+          {data.contactanos.title}
+        </h1>
+
+        <div className="max-w-4xl mx-auto font-serif text-2xl text-gray-800">
+          <FormatText
+            FormatText={
+              data.contactanos
+                .childContentfulSobreElProyectoTextoPrincipalRichTextNode
+            }
+          />
+        </div>
+
+        <Socials>
+          <a
+            className="flex flex-col items-center justify-center text-center"
+            target="_blank"
+            rel="noopener noreferrer"
+            title={data.whatsapp.titulo}
+            href={`https://api.whatsapp.com/send?phone=${data.whatsapp.link}&text=%C2%A1Hola!%F0%9F%A4%97%20`}
+          >
+            <AiOutlineWhatsApp className="my-6 text-4xl" />
+            <b>Teléfono</b>
+            <h2 className="my-2 font-serif text-xl">{data.whatsapp.link}</h2>
+          </a>
+
+          <a
+            className="flex flex-col items-center justify-center text-center"
+            target="_blank"
+            rel="noopener noreferrer"
+            title={data.instagram.titulo}
+            href={data.instagram.link}
+          >
+            <AiOutlineInstagram className="my-6 text-4xl" />
+            <b>Instagram</b>
+            <h2 className="my-2 font-serif text-xl">@kallpaludica</h2>
+          </a>
+          <a
+            className="flex flex-col items-center justify-center text-center"
+            target="_blank"
+            rel="noopener noreferrer"
+            title={data.mail.titulo}
+            href={`mailto:${data.mail.link}`}
+          >
+            <AiOutlineMail className="my-6 text-4xl" />
+            <b>Mail</b>
+            <h2 className="my-2 font-serif text-xl">{data.mail.link}</h2>
+          </a>
+        </Socials>
+      </Contact>
     </Layout>
   )
 }
@@ -133,4 +210,21 @@ export default AboutPage
 
 const Section = styled.section`
   ${tw`relative`}
+`
+
+const Contact = styled.section`
+  ${tw`pt-24 bg-green-100 `}
+`
+
+const List = styled.div`
+  ul {
+    ${tw`pl-6 list-disc `}
+  }
+`
+
+const Socials = styled.div`
+  ${tw`flex flex-col justify-center max-w-2xl pb-12 mx-auto text-center md:flex-row`}
+  a {
+    ${tw`w-full max-w-sm mx-auto md:mx-3`}
+  }
 `

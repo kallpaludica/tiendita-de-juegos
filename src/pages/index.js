@@ -148,9 +148,42 @@ const IndexPage = () => {
           </svg>
         </Wave>
       </Hero>
+      <section>
+        <div className="flex flex-col items-baseline justify-center w-full max-w-6xl mx-auto">
+          <div className="w-full my-12 text-center text-gray-800">
+            <h1 className="my-12 font-serif text-xl font-bold">
+              Editoriales de Juegos con las que trabajamos
+            </h1>
+            <div className="flex flex-wrap items-center justify-center ">
+              {data.editoriales.edges.map(({ node }) => {
+                return (
+                  <Link
+                    key={node.slug}
+                    to={`/editoriales/${kebabCase(node.slug)}/`}
+                    className="flex items-center justify-center m-6 overflow-hidden text-gray-800 rounded-md "
+                  >
+                    {node.logo ? (
+                      <div className="relative flex items-center justify-center w-48 h-32 overflow-hidden md:w-full">
+                        <Img
+                          title={node.title}
+                          className="w-32"
+                          alt={node.title}
+                          fluid={node.logo.fluid}
+                        />
+                      </div>
+                    ) : (
+                      <h2 className="w-24 max-w-xs font-bold ">{node.title}</h2>
+                    )}
+                  </Link>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="relative py-24">
         <h1 className="max-w-4xl mx-auto font-serif text-4xl font-bold text-orange-500">
-          ¿A qué te gustaría jugar?
+          Encontrá el juego que más te guste
         </h1>
         <div className="flex flex-wrap justify-center max-w-3xl mx-auto my-12 text-center bg-white md:flex-row">
           {data.allContentfulCategoriaDelJuego.edges.map(({ node }) => {
@@ -209,8 +242,20 @@ const IndexPage = () => {
             href={`https://api.whatsapp.com/send?phone=${data.whatsapp.link}&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20consultar`}
           >
             <AiOutlineWhatsApp className="my-6 text-4xl" />
-            <h2 className="my-2 font-serif text-xl">{data.whatsapp.link}</h2>
             <b>Teléfono</b>
+            <h2 className="my-2 font-serif text-xl">{data.whatsapp.link}</h2>
+          </a>
+
+          <a
+            className="flex flex-col items-center justify-center text-center"
+            target="_blank"
+            rel="noopener noreferrer"
+            title={data.instagram.titulo}
+            href={data.instagram.link}
+          >
+            <AiOutlineInstagram className="my-6 text-4xl" />
+            <b>Instagram</b>
+            <h2 className="my-2 font-serif text-xl">@kallpaludica</h2>
           </a>
           <a
             className="flex flex-col items-center justify-center text-center"
@@ -220,54 +265,10 @@ const IndexPage = () => {
             href={`mailto:${data.mail.link}`}
           >
             <AiOutlineMail className="my-6 text-4xl" />
-            <h2 className="my-2 font-serif text-xl">{data.mail.link}</h2>
             <b>Mail</b>
-          </a>
-          <a
-            className="flex flex-col items-center justify-center text-center"
-            target="_blank"
-            rel="noopener noreferrer"
-            title={data.instagram.titulo}
-            href={data.instagram.link}
-          >
-            <AiOutlineInstagram className="my-6 text-4xl" />
-            <h2 className="my-2 font-serif text-xl">@kallpaludica</h2>
-            <b>Instagram</b>
+            <h2 className="my-2 font-serif text-xl">{data.mail.link}</h2>
           </a>
         </Socials>
-      </section>
-      <section>
-        <div className="flex flex-col items-baseline justify-center w-full max-w-6xl mx-auto">
-          <div className="w-full my-12 text-center text-gray-800">
-            <h1 className="my-12 font-serif text-xl font-bold">
-              Editoriales de Juegos con las que trabajamos
-            </h1>
-            <div className="flex flex-wrap items-center justify-center ">
-              {data.editoriales.edges.map(({ node }) => {
-                return (
-                  <Link
-                    key={node.slug}
-                    to={`/editoriales/${kebabCase(node.slug)}/`}
-                    className="flex items-center justify-center m-6 overflow-hidden text-gray-800 rounded-md "
-                  >
-                    {node.logo ? (
-                      <div className="relative w-48 overflow-hidden md:w-full">
-                        <Img
-                          title={node.title}
-                          className="w-32"
-                          alt={node.title}
-                          fluid={node.logo.fluid}
-                        />
-                      </div>
-                    ) : (
-                      <h2 className="w-24 max-w-xs font-bold ">{node.title}</h2>
-                    )}
-                  </Link>
-                )
-              })}
-            </div>
-          </div>
-        </div>
       </section>
     </Layout>
   )
@@ -288,7 +289,7 @@ const Hero = styled.div`
 `
 
 const Socials = styled.div`
-  ${tw`flex flex-col justify-center max-w-3xl mx-auto my-12 text-center bg-white md:flex-row`}
+  ${tw`flex flex-col justify-center max-w-2xl pb-12 mx-auto text-center bg-white md:flex-row`}
   a {
     ${tw`w-full max-w-sm mx-auto transition-all duration-200 md:mx-3`}
   }
