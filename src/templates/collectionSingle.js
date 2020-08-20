@@ -67,7 +67,7 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
 }
 
 const Container = styled.div`
-  ${tw`grid w-full max-w-6xl gap-6 p-3 py-12 mx-auto bg-white md:grid-cols-4 lg:grid-cols-5`}
+  ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5`}
 `
 
 const PageNav = styled.nav`

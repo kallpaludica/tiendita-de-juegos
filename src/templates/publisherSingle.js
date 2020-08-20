@@ -1,7 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Link } from "gatsby"
-import { kebabCase } from "lodash"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import HeroWave from "../components/HeroWave"
@@ -9,10 +7,10 @@ import GameCard from "../components/GameCard"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import Fade from "react-reveal/Fade"
+import Publishers from "../components/Publishers/Publishers"
 
-const PublisherSingleTemplate = ({ data, pageContext, location }) => {
+const PublisherSingleTemplate = ({ data, location }) => {
   const publisher = data.contentfulEditorial
-  const { prev, next } = pageContext
   return (
     <Layout location={location}>
       <SEO title="Editorial" />
@@ -35,33 +33,14 @@ const PublisherSingleTemplate = ({ data, pageContext, location }) => {
             Aún no hay juegos asignados a esta editorial
           </div>
         )}
-
-        <div className="w-full max-w-2xl m-auto article" id={publisher.slug}>
-          <PageNav>
-            <div>
-              {prev && (
-                <Link to={`/editoriales/${kebabCase(prev.slug)}/`} rel="prev">
-                  ← {prev.title}
-                </Link>
-              )}
-            </div>
-
-            <div style={{ justifySelf: "flex-end" }}>
-              {next && (
-                <Link to={`/editoriales/${kebabCase(next.slug)}/`} rel="next">
-                  {next.title} →
-                </Link>
-              )}
-            </div>
-          </PageNav>
-        </div>
       </div>
+      <Publishers />
     </Layout>
   )
 }
 
 const Container = styled.div`
-  ${tw`grid w-full max-w-6xl gap-6 p-3 py-12 mx-auto bg-white md:grid-cols-4 lg:grid-cols-5`}
+  ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5`}
 `
 
 const PageNav = styled.nav`
