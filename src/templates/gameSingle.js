@@ -66,14 +66,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <Helmet>
         <body className="ingame" />
       </Helmet>
-      {/*<HeroImageWave
-        heading={post.title}
-        author={post.GameAuthor}
-        url={post.imagenDestacada.fluid}
-        anchor="contenido"
-        pattern="bg-green-600 text-green-500"
-        svg="M0,32L120,74.7C240,117,480,203,720,202.7C960,203,1200,117,1320,74.7L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
-      />*/}
+
       <div className="w-full py-12">
         <div className="max-w-6xl pt-12 mx-auto">
           <div className="flex flex-col pt-6 border-t-2 border-green-500 sm:flex-row">
@@ -117,19 +110,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               <h3 className="hidden w-full mb-3 font-serif text-base italic font-bold text-center text-gray-700 md:block">
                 Juego creado por {post.GameAuthor}
               </h3>
-              {post.publisher && (
-                <div className="flex items-center justify-center text-lg">
-                  <Link
-                    to={`/editoriales/${kebabCase(post.publisher.slug)}/`}
-                    className="flex flex-col py-1 pr-4 mx-2 my-2 rounded-full "
-                    key={post.publisher.slug}
-                  >
-                    <b className="font-serif text-indigo-500 hover:text-indigo-700">
-                      Editorial {post.publisher.title}
-                    </b>
-                  </Link>
-                </div>
-              )}
             </div>
             <div className="relative flex flex-col w-full px-2 pt-3 md:pl-12">
               <h1 className="w-full pl-6 font-serif text-4xl font-black text-left text-green-600 md:pl-0 md:text-5xl">
@@ -156,8 +136,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   </div>
                 )}
               </div>
-              {post.categoria ? (
+              {post.categoria && (
                 <div className="flex items-center justify-start text-lg text-center">
+                  <span className="font-serif font-bold ">Modalidad:</span>
                   {post.categoria.map((item, i) => (
                     <Link
                       to={`/categorias/${kebabCase(item.slug)}/`}
@@ -171,9 +152,22 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                     </Link>
                   ))}
                 </div>
-              ) : (
-                <div className="hidden"></div>
               )}
+              <div className="flex items-center justify-start text-lg text-center">
+                {post.publisher && (
+                  <div className="flex items-center justify-center text-lg">
+                    <Link
+                      to={`/editoriales/${kebabCase(post.publisher.slug)}/`}
+                      className="flex flex-col py-1 my-2 mr-2 rounded-full "
+                      key={post.publisher.slug}
+                    >
+                      <b className="font-serif text-gray-800 underline hover:text-indigo-600">
+                        Editorial {post.publisher.title}
+                      </b>
+                    </Link>
+                  </div>
+                )}
+              </div>
 
               {post.GameGallery && (
                 <div className="hidden pl-6 my-6 mb-8 md:px-0">

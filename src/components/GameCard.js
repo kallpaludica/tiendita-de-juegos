@@ -26,9 +26,9 @@ export default ({ card }) => (
           src={AboutImage}
         />
       )}
-      <div className="w-full text-left md:pl-3 sm:text-center">
-        <h3 className="block pt-3">{card.title}</h3>
-        <b className="block pb-3 font-serif text-3xl font-bold text-green-800">
+      <div className="w-full h-24 pb-3 font-serif text-center md:pl-3">
+        <h3 className="block pt-3 text-lg font-bold">{card.title}</h3>
+        <b className="block pb-3 text-xl font-bold text-green-600">
           ${card.GameBuyPrice}
         </b>
       </div>

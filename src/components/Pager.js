@@ -8,7 +8,7 @@ const Pager = ({ pageContext }) => {
     <nav style={{ display: "flex", justifyContent: "space-between" }}>
       <div>
         {previousPagePath && (
-          <Link to={previousPagePath}>
+          <Link to={previousPagePath} className="text-4xl">
             <button>← </button>
           </Link>
         )}
@@ -16,7 +16,7 @@ const Pager = ({ pageContext }) => {
 
       <div style={{ justifySelf: "flex-end" }}>
         {nextPagePath && (
-          <Link to={nextPagePath}>
+          <Link to={nextPagePath} className="text-4xl">
             <button> →</button>
           </Link>
         )}

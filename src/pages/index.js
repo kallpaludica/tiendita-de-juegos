@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 import Layout from "../components/layout"
 import HomeHeroImage from "../images/bg-home.jpg"
 import Contact from "../components/About/Contact"
-import Publishers from "../components/Publishers/Publishers"
+import Publishers from "../components/Games/Publishers"
 import Mision from "../components/About/Mision"
 
 import Fade from "react-reveal/Fade"
@@ -79,7 +79,7 @@ const IndexPage = () => {
               <Fade bottom delay={500}>
                 <AwesomeButton
                   action={() => {
-                    navigate(`/juegos/`)
+                    navigate(`/juegos/todos`)
                   }}
                   type="secondary"
                 >
@@ -129,7 +129,7 @@ const IndexPage = () => {
       </section>
       <section className="relative py-24">
         <h1 className="max-w-4xl mx-auto font-serif text-4xl font-bold text-orange-500">
-          Encontrá el juego que más te guste
+          Modalidades de juegos
         </h1>
         <div className="flex flex-wrap justify-center max-w-3xl mx-auto my-12 text-center bg-white md:flex-row">
           {data.allContentfulCategoriaDelJuego.edges.map(({ node }) => {

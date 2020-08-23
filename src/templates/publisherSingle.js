@@ -7,7 +7,7 @@ import GameCard from "../components/GameCard"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import Fade from "react-reveal/Fade"
-import Publishers from "../components/Publishers/Publishers"
+import Publishers from "../components/Games/Publishers"
 
 const PublisherSingleTemplate = ({ data, location }) => {
   const publisher = data.contentfulEditorial
@@ -15,6 +15,7 @@ const PublisherSingleTemplate = ({ data, location }) => {
     <Layout location={location}>
       <SEO title="Editorial" />
       <HeroWave
+        back="Ver todos los juegos"
         heading={publisher.title}
         pattern="bg-indigo-600 text-indigo-500 "
         svg="M0,224L80,240C160,256,320,288,480,277.3C640,267,800,213,960,202.7C1120,192,1280,224,1360,240L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
@@ -29,7 +30,7 @@ const PublisherSingleTemplate = ({ data, location }) => {
             ))}
           </Container>
         ) : (
-          <div className="text-center text-gray-500 ">
+          <div className="py-24 text-center text-gray-700 ">
             Aún no hay juegos asignados a esta editorial
           </div>
         )}

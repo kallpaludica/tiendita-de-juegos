@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import HeroWave from "../components/HeroWave"
-import Publishers from "../components/Publishers/Publishers"
+import Publishers from "../components/Games/Publishers"
 import SEO from "../components/seo"
 import { Helmet } from "react-helmet"
 

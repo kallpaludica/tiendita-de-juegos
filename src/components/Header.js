@@ -12,7 +12,7 @@ const routes = [
   {
     title: "Tiendita de juegos",
     active: "border-white",
-    slug: "/juegos",
+    slug: "/juegos/todos",
   },
   {
     title: "Sobre el proyecto",
@@ -103,8 +103,12 @@ const Logo = styled.div`
   a {
     ${tw`text-white`}
 
+    &:hover {
+      ${tw`text-gray-100`}
+    }
+
     .headroom--scrolled & {
-      ${tw`text-green-500`}
+      ${tw`text-gray-800`}
     }
   }
 `

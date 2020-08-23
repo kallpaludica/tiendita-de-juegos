@@ -1,7 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
 import HeroWave from "../components/HeroWave"
-import AboutImage from "../images/kallpa-ludica.png"
+//import AboutImage from "../images/kallpa-ludica.png"
+import AboutImage from "../components/image"
 import Contact from "../components/About/Contact"
 import Mision from "../components/About/Mision"
 import Objectives from "../components/About/Objectives"
@@ -30,12 +31,8 @@ const AboutPage = () => {
 
       <Section>
         <div className="flex flex-col items-baseline justify-center w-full max-w-6xl mx-auto ">
-          <div className="w-full mt-12 text-center text-gray-800 ">
-            <img
-              className="w-64 max-w-md mx-auto "
-              alt="Kallpa Lúdica"
-              src={AboutImage}
-            />
+          <div className="w-56 mx-auto mt-16 text-center text-gray-800 ">
+            <AboutImage />
           </div>
         </div>
         <AnchorLinks>
@@ -62,7 +59,7 @@ const Section = styled.section`
 const AnchorLinks = styled.div`
   ${tw`relative flex justify-around max-w-2xl p-3 pt-6 mx-auto mb-12 border-b-2 border-pink-800`}
   a {
-    ${tw`mx-6 font-serif text-xl font-bold text-center text-pink-800`}
+    ${tw`mx-6 font-serif text-xl font-bold text-center text-pink-800 hover:text-pink-500`}
     flex: 1;
   }
 `

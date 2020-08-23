@@ -3,11 +3,9 @@ import { useStaticQuery, graphql } from "gatsby"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import FormatText from "../wysiwyg"
-import {
-  AiOutlineWhatsApp,
-  AiOutlineMail,
-  AiOutlineInstagram,
-} from "react-icons/ai"
+import { RiWhatsappLine } from "react-icons/ri"
+import { GoMail } from "react-icons/go"
+import { AiOutlineInstagram } from "react-icons/ai"
 
 const ContactComponent = () => {
   const data = useStaticQuery(graphql`
@@ -60,7 +58,7 @@ const ContactComponent = () => {
           title={data.whatsapp.titulo}
           href={`https://api.whatsapp.com/send?phone=${data.whatsapp.link}&text=%C2%A1Hola!%F0%9F%A4%97%20`}
         >
-          <AiOutlineWhatsApp className="my-6 text-4xl" />
+          <RiWhatsappLine className="my-6 text-4xl" />
           <b>Teléfono</b>
           <h2 className="my-2 font-serif text-xl">{data.whatsapp.link}</h2>
         </a>
@@ -83,7 +81,7 @@ const ContactComponent = () => {
           title={data.mail.titulo}
           href={`mailto:${data.mail.link}`}
         >
-          <AiOutlineMail className="my-6 text-4xl" />
+          <GoMail className="my-6 text-4xl" />
           <b>Mail</b>
           <h2 className="my-2 font-serif text-xl">{data.mail.link}</h2>
         </a>

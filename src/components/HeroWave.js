@@ -1,22 +1,23 @@
 import React from "react"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
-import AnchorLink from "react-anchor-link-smooth-scroll"
-import { IoIosArrowDown } from "react-icons/io"
+import FormatText from "./wysiwyg"
+import { Link } from "gatsby"
+
 const HeroWave = (props) => (
   <>
     <Hero className={`${props.pattern} pattern-cross-dots-md`}>
       <HeroContent>
-        {props.anchor ? (
-          <AnchorLink
-            href="#contenido"
-            className="flex items-center font-mono text-5xl text-white transition-all duration-200 border-b border-transparent hover:text-white hover:border-gray-200"
-          >
-            {props.heading}
-            <IoIosArrowDown className="ml-3 text-2xl" />
-          </AnchorLink>
-        ) : (
-          <Title>{props.heading}</Title>
+        <Title>{props.heading}</Title>
+        {props.subtitle && (
+          <Subtitle className="flex items-center max-w-3xl mx-auto font-mono text-white">
+            <FormatText FormatText={props.subtitle} />
+          </Subtitle>
+        )}
+        {props.back && (
+          <Back className="flex items-center max-w-3xl mx-auto ">
+            <Link to="/juegos/todos">{props.back}</Link>
+          </Back>
         )}
       </HeroContent>
       <Wave>
@@ -35,11 +36,26 @@ const HeroWave = (props) => (
 export default HeroWave
 
 const HeroContent = styled.div`
-  ${tw`relative z-50 flex w-full max-w-6xl pt-2 pb-2 mx-auto text-left`}
+  ${tw`relative z-50 flex flex-col w-full max-w-6xl pt-2 pb-2 mx-auto text-center`}
 `
 
 const Title = styled.h1`
   ${tw`font-mono text-5xl text-white`}
+`
+
+const Subtitle = styled.h3`
+  ${tw`pb-8 font-serif text-xl text-white`}
+  p {
+    ${tw`text-white `}
+  }
+`
+
+const Back = styled.div`
+  ${tw`py-3`}
+
+  a {
+    ${tw`p-3 font-serif text-base font-bold text-white border-b border-white hover:bg-white hover:text-orange-500`}
+  }
 `
 
 const Hero = styled.div`

@@ -9,6 +9,7 @@ import styled from "@emotion/styled"
 import Fade from "react-reveal/Fade"
 import HeroWave from "../components/HeroWave"
 import GameCard from "../components/GameCard"
+import GameCategories from "../components/Games/GameCategories"
 
 const CategorySingleTemplate = ({ data, pageContext, location }) => {
   const categoria = data.contentfulCategoriaDelJuego
@@ -17,11 +18,16 @@ const CategorySingleTemplate = ({ data, pageContext, location }) => {
     <Layout location={location}>
       <SEO title="Categoria" />
       <HeroWave
+        back="Ver todos los juegos"
         heading={categoria.title}
-        pattern="bg-indigo-600 text-indigo-500 "
+        subtitle={
+          categoria.childContentfulCategoriaDelJuegoCategoryDescriptionRichTextNode
+        }
+        pattern="bg-orange-600 text-orange-500 "
         svg="M0,224L80,240C160,256,320,288,480,277.3C640,267,800,213,960,202.7C1120,192,1280,224,1360,240L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
       />
-      <div>
+
+      <div className="pb-24">
         {categoria.articulos ? (
           <Container>
             {categoria.articulos.map((item, i) => (
@@ -31,10 +37,20 @@ const CategorySingleTemplate = ({ data, pageContext, location }) => {
             ))}
           </Container>
         ) : (
-          <div className="text-center text-gray-500 ">Proximamente</div>
+          <div className="py-24 text-center text-gray-700 ">
+            Aún no hay juegos asignados a esta modalidad
+          </div>
         )}
 
-        <div className="w-full max-w-2xl m-auto article" id={categoria.slug}>
+        <h4 className="max-w-6xl py-6 mx-auto mb-6 font-serif text-xl font-bold text-orange-500 border-t border-orange-200">
+          Todas las modalidades de juegos
+        </h4>
+        <GameCategories />
+
+        <div
+          className="hidden w-full max-w-2xl m-auto article"
+          id={categoria.slug}
+        >
           <PageNav>
             <div>
               {prev && (
@@ -80,6 +96,9 @@ export const pageQuery = graphql`
       id
       title
       slug
+      childContentfulCategoriaDelJuegoCategoryDescriptionRichTextNode {
+        json
+      }
       articulos {
         title
         slug
