@@ -26,8 +26,10 @@ const PreciosPage = () => {
           <GamesAside />
         </Aside>
         <Main>
-          <GameSort />
-          <MainTitle>Todos los juegos</MainTitle>
+          <PageSticky>
+            <GameSort />
+            <MainTitle>Todos los juegos</MainTitle>
+          </PageSticky>
           <GamesAll />
         </Main>
       </ContentSidebar>
@@ -39,6 +41,10 @@ export default PreciosPage
 
 const ContentSidebar = styled.div`
   ${tw`flex max-w-6xl mx-auto`}
+`
+
+const PageSticky = styled.div`
+  ${tw`sticky top-0 z-50 pt-3 bg-white`}
 `
 
 const Aside = styled.aside`

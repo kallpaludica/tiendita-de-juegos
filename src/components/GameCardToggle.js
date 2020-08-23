@@ -54,7 +54,7 @@ const Toggle = (props) => {
         </Link>
       </animated.div>
       <button
-        className="absolute top-0 right-0 z-50 flex justify-center w-8 px-1 py-4 text-gray-800 border-none focus:outline-none hover:text-green-800 "
+        className="absolute top-0 right-0 z-40 flex justify-center w-8 px-1 py-4 text-gray-800 border-none focus:outline-none hover:text-green-800 "
         onClick={() => setToggle(!isToggled)}
       >
         <animated.span style={rotate}>

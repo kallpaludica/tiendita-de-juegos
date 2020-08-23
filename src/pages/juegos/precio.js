@@ -56,9 +56,10 @@ const PreciosPage = () => {
           <GamesAside />
         </Aside>
         <Main>
-          <GameSort />
-
-          <MainTitle>Desde los más ecónomicos</MainTitle>
+          <PageSticky>
+            <GameSort />
+            <MainTitle>Desde los más ecónomicos</MainTitle>
+          </PageSticky>
           <Container id="contenido">
             {data.collection.edges.map((item, i) => (
               <GameCard card={item.node} key={item.node.slug} />
@@ -74,6 +75,10 @@ export default PreciosPage
 
 const Container = styled.div`
   ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
+`
+
+const PageSticky = styled.div`
+  ${tw`sticky top-0 z-50 pt-3 bg-white`}
 `
 
 const ContentSidebar = styled.div`

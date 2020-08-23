@@ -30,7 +30,7 @@ const GamesSort = () => {
 export default GamesSort
 
 const Sort = styled.div`
-  ${tw`relative top-0 right-0 flex justify-center py-3 transform md:translate-y-5 md:justify-end md:p-0 md:absolute`}
+  ${tw`relative top-0 right-0 flex justify-center py-3 transform md:translate-y-8 md:justify-end md:p-0 md:absolute`}
 
   b {
     ${tw`mr-2`}
