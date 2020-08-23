@@ -129,7 +129,7 @@ const IndexPage = () => {
       </section>
       <section className="relative py-24">
         <h1 className="max-w-4xl mx-auto font-serif text-4xl font-bold text-orange-500">
-          Modalidades de juegos
+          Algunas modalidades de juegos
         </h1>
         <div className="flex flex-wrap justify-center max-w-3xl mx-auto my-12 text-center bg-white md:flex-row">
           {data.allContentfulCategoriaDelJuego.edges.map(({ node }) => {

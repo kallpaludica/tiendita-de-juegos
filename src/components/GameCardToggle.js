@@ -6,6 +6,9 @@ import { kebabCase } from "lodash"
 import { IoMdTime } from "react-icons/io"
 import { FaUserFriends } from "react-icons/fa"
 import { GiTabletopPlayers } from "react-icons/gi"
+import ReactTooltip from "react-tooltip"
+import { FaCaretRight } from "react-icons/fa"
+
 const Toggle = (props) => {
   const [isToggled, setToggle] = useState(false)
   const fade = useSpring({
@@ -20,45 +23,64 @@ const Toggle = (props) => {
   return (
     <>
       <animated.div
-        className="absolute inset-0 z-40 flex flex-col items-start justify-start px-3 pt-4 pb-2 bg-gray-100"
+        className="absolute inset-0 z-40 flex flex-col items-start justify-start px-3 pt-4 pb-2 pr-4 bg-gray-100"
         style={fade}
       >
-        <h2 className="w-full pb-2 mb-3 font-serif text-lg font-bold text-left text-gray-900 border-b border-gray-500">
-          {props.title}
+        <h2 className="w-full h-16 pb-1 mb-3 font-serif text-xl font-bold text-left text-green-600 border-b border-green-600">
+          <span className="pr-2">{props.title}</span>
         </h2>
-        <div className="w-full text-left">
-          {props.age && (
-            <div className="flex pb-3 font-serif text-lg font-bold text-gray-800 ">
-              <FaUserFriends className="w-6 mt-1 mr-3 text-base " />
-              Edad {props.age}+
+        {props.age && (
+          <div className="w-full text-left">
+            <div className="flex justify-center pb-3 font-serif text-lg font-bold text-left text-gray-800 ">
+              <FaUserFriends className="w-6 mx-auto mb-1 text-base text-green-600" />
+              <div className="flex flex-col flex-1 pl-3">
+                <small className="text-sm">Edades sugeridas</small>
+                {props.age}+ años
+              </div>
             </div>
-          )}
-        </div>
-        <div className="w-full text-left">
-          <div className="flex pb-3 font-serif text-lg font-bold text-gray-800 ">
-            <IoMdTime className="w-6 mt-1 mr-3 text-lg " />
-            {props.duration} min.
           </div>
-        </div>
-        <div className="w-full text-left">
-          <div className="flex pb-3 font-serif text-lg font-bold text-gray-800 ">
-            <GiTabletopPlayers className="w-6 mt-1 mr-3 text-xl " />
-            {props.players} jugadores
+        )}
+        {props.duration && (
+          <div className="w-full text-left">
+            <div className="flex justify-center pb-3 font-serif text-lg font-bold text-left text-gray-800 ">
+              <IoMdTime className="w-6 mx-auto mb-1 text-2xl text-green-600" />
+              <div className="flex flex-col flex-1 pl-3">
+                <small className="text-sm">Tiempos de partida</small>
+                {props.duration} min.
+              </div>
+            </div>
           </div>
-        </div>
+        )}
+
+        {props.players && (
+          <div className="w-full text-left">
+            <div className="flex justify-center pb-3 font-serif text-lg font-bold text-left text-gray-800 ">
+              <GiTabletopPlayers className="w-6 mx-auto mb-1 text-2xl text-green-600" />
+              <div className="flex flex-col flex-1 pl-3">
+                {props.players} Jugadores
+              </div>
+            </div>
+          </div>
+        )}
+
         <Link
-          className="absolute bottom-0 left-0 right-0 py-2 font-serif text-sm font-bold text-center text-white uppercase transition-all duration-500 bg-green-500 hover:text-white hover:bg-green-600"
           to={`/juegos/${kebabCase(props.slug)}/`}
+          className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-2 px-3 font-serif text-sm font-bold text-left text-green-500 transition-all duration-500 bg-green-100 hover:text-white hover:bg-green-600"
         >
-          Hacé tu consulta
+          Consultar por este juego
+          <FaCaretRight className="text-lg text-green-200" />
         </Link>
       </animated.div>
+
       <button
-        className="absolute top-0 right-0 z-40 flex justify-center w-8 px-1 py-4 text-gray-800 border-none focus:outline-none hover:text-green-800 "
+        className="absolute top-0 right-0 z-40 flex justify-center px-1 py-1 text-gray-800 duration-500 transform border-none rounded-bl-lg focus:outline-none hover:text-green-500 hover:bg-gray-600"
         onClick={() => setToggle(!isToggled)}
+        data-tip="Más info"
+        style={{ backgroundColor: "rgba(255,255,255,.3)" }}
       >
+        <ReactTooltip place="left" type="light" effect="solid" />
         <animated.span style={rotate}>
-          <AiOutlinePlusCircle className="text-2xl " />
+          <AiOutlinePlusCircle className="text-3xl " />
         </animated.span>
       </button>
     </>

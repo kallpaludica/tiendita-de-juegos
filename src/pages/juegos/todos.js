@@ -28,7 +28,7 @@ const PreciosPage = () => {
         <Main>
           <PageSticky>
             <GameSort />
-            <MainTitle>Todos los juegos</MainTitle>
+            <MainTitle>Juegos por alfabeto </MainTitle>
           </PageSticky>
           <GamesAll />
         </Main>

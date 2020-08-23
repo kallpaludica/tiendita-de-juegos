@@ -58,7 +58,7 @@ const DuracionPage = () => {
         <Main>
           <PageSticky>
             <GameSort />
-            <MainTitle>De menor a mayor duración</MainTitle>
+            <MainTitle>De menor a mayor tiempo de juego</MainTitle>
           </PageSticky>
           <Container id="contenido">
             {data.collection.edges.map((item, i) => (
