@@ -28,7 +28,7 @@ export default ({ card }) => (
       )}
       <div className="w-full h-24 pb-3 font-serif text-center md:pl-3">
         <h3 className="block pt-3 text-lg font-bold">{card.title}</h3>
-        <b className="block pb-3 text-xl font-bold text-green-600">
+        <b className="block text-xl font-bold text-green-600">
           ${card.GameBuyPrice}
         </b>
       </div>
