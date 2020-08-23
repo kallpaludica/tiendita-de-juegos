@@ -31,9 +31,6 @@ const PublishersComponent = () => {
         id="publishers"
       >
         <div className="w-full mb-12 text-center text-gray-800">
-          <h1 className="my-12 font-serif text-3xl font-bold">
-            Editoriales que trabajamos
-          </h1>
           <div className="flex flex-wrap items-center justify-center max-w-6xl mx-auto ">
             {data.editoriales.edges.map(({ node }) => {
               return (
