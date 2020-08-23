@@ -36,7 +36,7 @@ const HeroWave = (props) => (
 export default HeroWave
 
 const HeroContent = styled.div`
-  ${tw`relative z-50 flex flex-col w-full max-w-6xl pt-2 pb-2 mx-auto text-center`}
+  ${tw`relative z-50 flex flex-col w-full max-w-6xl pt-2 pb-12 mx-auto text-center`}
 `
 
 const Title = styled.h1`
@@ -44,7 +44,7 @@ const Title = styled.h1`
 `
 
 const Subtitle = styled.h3`
-  ${tw`pb-8 font-serif text-xl text-white`}
+  ${tw`pb-1 font-serif text-xl text-white`}
   p {
     ${tw`text-white `}
   }
@@ -59,7 +59,7 @@ const Back = styled.div`
 `
 
 const Hero = styled.div`
-  ${tw`relative flex flex-col items-start justify-center w-full pt-24 pb-32 mx-auto`}
+  ${tw`relative flex flex-col items-start justify-center w-full pt-24 pb-16 mx-auto`}
 `
 
 const Wave = styled.div`
