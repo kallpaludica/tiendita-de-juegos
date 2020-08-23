@@ -25,7 +25,9 @@ const ContactComponent = () => {
         titulo
         link
       }
-      contactanos: contentfulSobreElProyecto(title: { eq: "Contactanos" }) {
+      contactanos: contentfulSobreElProyecto(
+        title: { eq: "Hacenos tu consulta" }
+      ) {
         id
         title
         childContentfulSobreElProyectoTextoPrincipalRichTextNode {
