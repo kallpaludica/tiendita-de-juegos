@@ -13,7 +13,7 @@ const QueryPublisherComponent = () => {
             slug
             logo {
               fluid(maxWidth: 200) {
-                ...GatsbyContentfulFluid
+                ...GatsbyContentfulFluid_withWebp
               }
             }
           }

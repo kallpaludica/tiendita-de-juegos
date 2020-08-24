@@ -31,7 +31,7 @@ const Toggle = (props) => {
         </h2>
         {props.age && (
           <div className="w-full text-left">
-            <div className="flex justify-center pb-3 font-serif text-lg font-bold text-left text-gray-800 ">
+            <div className="flex justify-center pb-1 font-serif text-lg font-bold text-left text-gray-800 ">
               <FaUserFriends className="w-6 mx-auto mb-1 text-base text-green-600" />
               <div className="flex flex-col flex-1 pl-3">
                 <small className="text-sm">Edades sugeridas</small>
@@ -42,7 +42,7 @@ const Toggle = (props) => {
         )}
         {props.duration && (
           <div className="w-full text-left">
-            <div className="flex justify-center pb-3 font-serif text-lg font-bold text-left text-gray-800 ">
+            <div className="flex justify-center pb-1 font-serif text-lg font-bold text-left text-gray-800 ">
               <IoMdTime className="w-6 mx-auto mb-1 text-2xl text-green-600" />
               <div className="flex flex-col flex-1 pl-3">
                 <small className="text-sm">Tiempos de partida</small>
@@ -54,7 +54,7 @@ const Toggle = (props) => {
 
         {props.players && (
           <div className="w-full text-left">
-            <div className="flex justify-center pb-3 font-serif text-lg font-bold text-left text-gray-800 ">
+            <div className="flex justify-center pb-1 font-serif text-lg font-bold text-left text-gray-800 ">
               <GiTabletopPlayers className="w-6 mx-auto mb-1 text-2xl text-green-600" />
               <div className="flex flex-col flex-1 pl-3">
                 {props.players} Jugadores

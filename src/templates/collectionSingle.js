@@ -114,7 +114,7 @@ export const pageQuery = graphql`
           title
           fluid(maxWidth: 1600) {
             # Choose either the fragment including a small base64ed image, a traced placeholder SVG, or one without.
-            ...GatsbyContentfulFluid
+            ...GatsbyContentfulFluid_withWebp
           }
           fixed(width: 150, height: 150) {
             ...GatsbyContentfulFixed
@@ -128,7 +128,7 @@ export const pageQuery = graphql`
             url
           }
           fluid(maxWidth: 1800) {
-            ...GatsbyContentfulFluid
+            ...GatsbyContentfulFluid_withWebp
           }
         }
       }

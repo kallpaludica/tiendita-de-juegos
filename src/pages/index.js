@@ -28,7 +28,7 @@ const IndexPage = () => {
             slug
             logo {
               fluid(maxWidth: 450) {
-                ...GatsbyContentfulFluid
+                ...GatsbyContentfulFluid_withWebp
               }
             }
           }
