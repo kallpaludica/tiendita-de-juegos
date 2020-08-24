@@ -27,15 +27,17 @@ export default ({ card }) => (
           src={AboutImage}
         />
       )}
-      <div className="relative w-full pb-12 font-serif text-left md:px-3">
-        <h3 className="block pt-3 pr-16 text-base font-bold ">{card.title}</h3>
+      <div className="relative w-full px-3 pb-12 font-serif text-left">
+        <h3 className="block pt-3 pb-8 pr-16 text-base font-bold md:pb-0 ">
+          {card.title}
+        </h3>
         <b className="absolute top-0 right-0 block pt-3 pb-6 pr-1 text-xl font-bold text-green-600">
           ${card.GameBuyPrice}
         </b>
       </div>
 
       <Link className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-2 px-3 font-serif text-sm font-bold text-left text-green-800 transition-all duration-500 bg-green-100 hover:text-white hover:bg-green-600">
-        Consultar por este juego
+        Consultar
         <FaCaretRight className="text-lg text-green-300" />
       </Link>
     </Link>

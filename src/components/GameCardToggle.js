@@ -6,8 +6,8 @@ import { kebabCase } from "lodash"
 import { IoMdTime } from "react-icons/io"
 import { FaUserFriends } from "react-icons/fa"
 import { GiTabletopPlayers } from "react-icons/gi"
-import ReactTooltip from "react-tooltip"
 import { FaCaretRight } from "react-icons/fa"
+//import ReactTooltip from "react-tooltip"
 
 const Toggle = (props) => {
   const [isToggled, setToggle] = useState(false)
@@ -34,8 +34,10 @@ const Toggle = (props) => {
             <div className="flex justify-center pb-1 font-serif text-lg font-bold text-left text-gray-800 ">
               <FaUserFriends className="w-6 mx-auto mb-1 text-base text-green-600" />
               <div className="flex flex-col flex-1 pl-3">
-                <small className="text-sm">Edades sugeridas</small>
                 {props.age}+ años
+                <small className="hidden text-xs md:block">
+                  Edades sugeridas
+                </small>
               </div>
             </div>
           </div>
@@ -45,8 +47,10 @@ const Toggle = (props) => {
             <div className="flex justify-center pb-1 font-serif text-lg font-bold text-left text-gray-800 ">
               <IoMdTime className="w-6 mx-auto mb-1 text-2xl text-green-600" />
               <div className="flex flex-col flex-1 pl-3">
-                <small className="text-sm">Tiempos de partida</small>
                 {props.duration} min.
+                <small className="hidden text-xs md:block ">
+                  Tiempos de partida
+                </small>
               </div>
             </div>
           </div>
@@ -56,8 +60,8 @@ const Toggle = (props) => {
           <div className="w-full text-left">
             <div className="flex justify-center pb-1 font-serif text-lg font-bold text-left text-gray-800 ">
               <GiTabletopPlayers className="w-6 mx-auto mb-1 text-2xl text-green-600" />
-              <div className="flex flex-col flex-1 pl-3">
-                {props.players} Jugadores
+              <div className="flex items-baseline flex-1 pl-3">
+                {props.players} <span className="pl-1 text-xs">Jugadores</span>
               </div>
             </div>
           </div>
@@ -67,7 +71,7 @@ const Toggle = (props) => {
           to={`/juegos/${kebabCase(props.slug)}/`}
           className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-2 px-3 font-serif text-sm font-bold text-left text-green-500 transition-all duration-500 bg-green-100 hover:text-white hover:bg-green-600"
         >
-          Consultar por este juego
+          Consultar
           <FaCaretRight className="text-lg text-green-200" />
         </Link>
       </animated.div>
@@ -75,10 +79,8 @@ const Toggle = (props) => {
       <button
         className="absolute top-0 right-0 z-40 flex justify-center px-1 py-1 text-gray-800 duration-500 transform border-none rounded-bl-lg focus:outline-none hover:text-green-500 hover:bg-gray-600"
         onClick={() => setToggle(!isToggled)}
-        data-tip="Más info"
         style={{ backgroundColor: "rgba(255,255,255,.3)" }}
       >
-        <ReactTooltip place="left" type="light" effect="solid" />
         <animated.span style={rotate}>
           <AiOutlinePlusCircle className="text-3xl " />
         </animated.span>
