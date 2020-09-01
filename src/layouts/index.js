@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { TransitionProvider, TransitionViews } from "gatsby-plugin-transitions"
 import Sidebar from "../components/Sidebar"
 import Header from "../components/Header"
+import { RiWhatsappLine } from "react-icons/ri"
 
 const Layout = ({ location, children }) => {
   const data = useStaticQuery(graphql`
@@ -29,6 +30,15 @@ const Layout = ({ location, children }) => {
         <Sidebar />
         <Header siteTitle={data.site.siteMetadata.title} />
         <TransitionViews>{children}</TransitionViews>
+        <a
+          className="fixed bottom-0 right-0 mb-2 mr-2 overflow-hidden text-white bg-green-500 rounded-md hover:bg-green-600 hover:text-white"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Hacenos una consulta"
+          href="https://api.whatsapp.com/send?phone=+549%203876034627&text=%C2%A1Hola!%F0%9F%A4%97%20"
+        >
+          <RiWhatsappLine className="m-2 text-3xl " />
+        </a>
       </TransitionProvider>
     </>
   )

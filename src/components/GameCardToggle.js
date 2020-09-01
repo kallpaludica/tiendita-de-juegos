@@ -82,7 +82,7 @@ const Toggle = (props) => {
         style={{ backgroundColor: "rgba(255,255,255,.3)" }}
       >
         <animated.span style={rotate}>
-          <AiOutlinePlusCircle className="text-3xl " />
+          <AiOutlinePlusCircle className="text-xl " />
         </animated.span>
       </button>
     </>

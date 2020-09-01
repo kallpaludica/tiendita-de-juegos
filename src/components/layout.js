@@ -14,6 +14,7 @@ const Layout = ({ children }) => {
         <SimpleReactLightbox>
           <main className="text-center bg-white ">{children}</main>
         </SimpleReactLightbox>
+
         <Stn>
           <Inner>
             <h3 className="pb-2 text-sm font-bold text-gray-800">
