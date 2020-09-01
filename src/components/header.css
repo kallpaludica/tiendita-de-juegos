@@ -66,8 +66,4 @@ header nav a {
   transform: translateY(0%);
 }
 
-body.ingame a {
-  @apply text-green-500 !important;
-}
-
 /* purgecss end ignore */
