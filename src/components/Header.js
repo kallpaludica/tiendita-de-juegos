@@ -15,9 +15,9 @@ const routes = [
     slug: "/juegos/todos",
   },
   {
-    title: "Sobre el proyecto",
+    title: "Quienes somos",
     active: "border-white",
-    slug: "/sobre-el-proyecto",
+    slug: "/quienes-somos",
   },
   {
     title: "Contacto",
