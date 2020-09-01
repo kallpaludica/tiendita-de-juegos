@@ -1,11 +1,89 @@
 /* purgecss start ignore */
-.awssld__content {
-  @apply bg-white !important;
+.home .awssld__content {
+  @apply bg-transparent !important;
+  min-height: 70vh !important;
+  height: auto;
 }
 
-.awssld__bullets {
+.home .awssld__container {
+  min-height: 70vh !important;
+  height: auto;
+  padding-bottom: 0 !important;
+}
+
+.home .awssld__content {
+  @apply bg-transparent;
+}
+.home .awssld__wrapper {
+  min-height: 70vh;
+}
+
+.home .awssld__controls button {
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  transition: all 0.42s;
+  width: 76px;
+}
+
+.home .awssld__controls button:hover {
+  width: 90px;
+}
+
+.home .awssld__bullets {
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  height: 100px;
+}
+
+.home .awssld__bullets button {
+  margin: 5px 10px;
+  @apply bg-indigo-500 !important;
+}
+
+.home .awssld__controls__arrow-left:after,
+.home .awssld__controls__arrow-left:before,
+.home .awssld__controls__arrow-right:after,
+.home .awssld__controls__arrow-right:before {
+  @apply bg-white opacity-100 !important;
+}
+
+.home .awssld__content > div {
+  min-width: 600px;
+}
+
+@media (max-width: 520px) {
+  .home .awssld__controls {
+    visibility: visible !important;
+  }
+  .home .awssld__controls button {
+    top: initial;
+    height: 70px;
+  }
+
+  .home .awssld__wrapper {
+    max-height: calc(100vh - 60px);
+  }
+  .home .awssld__bullets {
+    bottom: 80px;
+    height: 90px;
+  }
+
+  .home .awssld__content {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 730px) {
+  .home .awssld__content > div {
+    min-width: auto;
+  }
+}
+
+.home .awssld__bullets {
   z-index: 999 !important;
-  bottom: 30px !important;
+  bottom: -80px !important;
 }
 .bm-burger-button {
   position: fixed;

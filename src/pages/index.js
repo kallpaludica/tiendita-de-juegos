@@ -10,6 +10,8 @@ import HomeHeroImage from "../images/bg-home.jpg"
 import Contact from "../components/About/Contact"
 import Publishers from "../components/Games/Publishers"
 import Mision from "../components/About/Mision"
+import AwesomeSlider from "react-awesome-slider"
+import AboutImage from "../images/kallpa-ludica.png"
 
 import Fade from "react-reveal/Fade"
 import tw from "twin.macro"
@@ -60,35 +62,62 @@ const IndexPage = () => {
       <SEO title="Inicio" />
       <Hero className="relative overflow-hidden text-indigo-500 bg-indigo-600 pattern-cross-dots-md">
         <HeroContent>
-          <Fade bottom>
-            <Title>
-              Hola!
-              <span
-                className="emoji"
-                role="img"
-                aria-label="Hola! y bienvenide"
-                aria-hidden="false"
-              >
-                👋
-              </span>
-              <br /> Te damos la bienvenida a nuestra tiendita
-            </Title>
-          </Fade>
-          <div className="pt-12">
-            <div className="flex flex-col items-center justify-start max-w-3xl p-3 py-2 mx-auto">
-              <Fade bottom delay={500}>
-                <AwesomeButton
-                  action={() => {
-                    navigate(`/juegos/todos`)
-                  }}
-                  type="secondary"
-                >
-                  Conocé los juegos
-                  <FiChevronRight className="inline-block mt-1 ml-3" />
-                </AwesomeButton>
+          <AwesomeSlider>
+            <div>
+              <Fade bottom delay={1000}>
+                <img
+                  alt="Kallpa Lúdica"
+                  src={AboutImage}
+                  className="w-64 mx-auto "
+                />
               </Fade>
+              <div className="pt-3">
+                <div className="flex flex-col items-center justify-start max-w-3xl p-3 py-2 mx-auto">
+                  <Fade bottom delay={1000}>
+                    <AwesomeButton
+                      action={() => {
+                        navigate(`/quienes-somos`)
+                      }}
+                      type="secondary"
+                    >
+                      Quienes somos
+                      <FiChevronRight className="inline-block mt-1 ml-3" />
+                    </AwesomeButton>
+                  </Fade>
+                </div>
+              </div>
             </div>
-          </div>
+            <div>
+              <Fade bottom delay={1000}>
+                <Title>
+                  Hola!
+                  <span
+                    className="emoji"
+                    role="img"
+                    aria-label="Hola! y bienvenide"
+                    aria-hidden="false"
+                  >
+                    👋
+                  </span>
+                </Title>
+              </Fade>
+              <div className="pt-3">
+                <div className="flex flex-col items-center justify-start max-w-3xl p-3 py-2 mx-auto">
+                  <Fade bottom delay={500}>
+                    <AwesomeButton
+                      action={() => {
+                        navigate(`/juegos/todos`)
+                      }}
+                      type="secondary"
+                    >
+                      Conocé los juegos
+                      <FiChevronRight className="inline-block mt-1 ml-3" />
+                    </AwesomeButton>
+                  </Fade>
+                </div>
+              </div>
+            </div>
+          </AwesomeSlider>
         </HeroContent>
         <img
           src={HomeHeroImage}
@@ -178,7 +207,7 @@ const IndexPage = () => {
 export default IndexPage
 
 const HeroContent = styled.div`
-  ${tw`relative z-50 flex flex-col w-full max-w-6xl pt-12 mx-auto text-left md:pb-24`}
+  ${tw`relative z-50 flex flex-col w-full pt-12 mx-auto text-left md:pb-24`}
 `
 
 const Title = styled.h1`
@@ -186,7 +215,7 @@ const Title = styled.h1`
 `
 
 const Hero = styled.div`
-  ${tw`relative flex flex-col items-start justify-center w-full pt-32 pb-32 mx-auto`}
+  ${tw`relative flex flex-col items-start justify-center w-full mx-auto`}
 `
 
 const Wave = styled.div`

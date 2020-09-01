@@ -87,6 +87,10 @@ const Nav = styled.nav`
 
 const HeaderContainer = styled.header`
   ${tw`z-50 px-2 py-0 transition-all duration-500 md:py-0 `}
+
+  body.ingame & a {
+    ${tw`text-green-500`} !important
+  }
 `
 
 const InnerHeader = styled.div`
