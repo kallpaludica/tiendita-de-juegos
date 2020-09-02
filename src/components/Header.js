@@ -7,28 +7,41 @@ import { GrSearch } from "react-icons/gr"
 //import ThemeToggler from "./ThemeToggler/ThemeToggler"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
+import AboutImage from "../components/image"
 
 const routes = [
   {
-    title: "Tiendita de juegos",
+    title: "Tienda de juegos",
     active: "border-white",
     slug: "/juegos/todos",
+  },
+  {
+    title: "Recursos",
+    active: "border-white",
+    slug: "/recursos",
+  },
+  {
+    title: "Comunidad",
+    active: "border-white",
+    slug: "/comunidad",
   },
   {
     title: "Quienes somos",
     active: "border-white",
     slug: "/quienes-somos",
   },
+
   {
     title: "Contacto",
     active: "border-white",
     slug: "/contacto",
   },
-  {
-    title: <GrSearch className="mt-1 text-white fill-current" />,
-    active: "border-white",
-    slug: "/buscar",
-  },
+
+  //{
+  // title: <GrSearch className="mt-1 text-white fill-current" />,
+  //active: "border-white",
+  //slug: "/buscar",
+  //},
 ]
 
 const Header = ({ siteTitle }) => (
@@ -36,11 +49,8 @@ const Header = ({ siteTitle }) => (
     <HeaderContainer>
       <InnerHeader>
         <Logo>
-          <Link
-            to="/"
-            className="block py-6 font-mono text-xl font-bold tracking-widest uppercase hover:text-green-200"
-          >
-            {siteTitle}
+          <Link to="/">
+            <AboutImage />
           </Link>
         </Logo>
         <Nav>
@@ -49,7 +59,7 @@ const Header = ({ siteTitle }) => (
               <Link
                 key={i}
                 activeClassName={route.active}
-                className={`hover:${route.active} ml-6 font-mono border-t-2 text-xl font-bold tracking-widest`}
+                className={`hover:${route.active}   font-mono border-t-2 text-xl font-bold tracking-widest`}
                 to={route.slug}
               >
                 {route.title}
@@ -98,10 +108,11 @@ const InnerHeader = styled.div`
 `
 
 const Logo = styled.div`
-  ${tw`m-0 md:absolute md:pl-0 `}
+  ${tw`m-0 md:pl-0 md:relative`}
+  top:2px;
 
   .gatsby-image-wrapper {
-    ${tw`w-40 `}
+    ${tw`w-32 `}
   }
 
   a {

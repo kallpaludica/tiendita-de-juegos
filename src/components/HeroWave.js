@@ -36,7 +36,7 @@ const HeroWave = (props) => (
 export default HeroWave
 
 const HeroContent = styled.div`
-  ${tw`relative z-50 flex flex-col w-full max-w-6xl pt-2 pb-12 mx-auto text-center`}
+  ${tw`relative z-50 flex flex-col w-full max-w-6xl pt-20 pb-12 mx-auto text-center`}
 `
 
 const Title = styled.h1`

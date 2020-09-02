@@ -65,11 +65,17 @@ const IndexPage = () => {
           <AwesomeSlider>
             <div>
               <Fade bottom delay={1000}>
-                <img
-                  alt="Kallpa Lúdica"
-                  src={AboutImage}
-                  className="w-64 mx-auto "
-                />
+                <Title>
+                  Bienvenides
+                  <span
+                    className="emoji"
+                    role="img"
+                    aria-label="Hola! y bienvenide"
+                    aria-hidden="false"
+                  >
+                    👋
+                  </span>
+                </Title>
               </Fade>
               <div className="pt-3">
                 <div className="flex flex-col items-center justify-start max-w-3xl p-3 py-2 mx-auto">
