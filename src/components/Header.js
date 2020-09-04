@@ -26,19 +26,19 @@ const routesLeft = [
     title: "Tienda de juegos",
     active: "opacity-100",
     slug: "/juegos/todos",
-    icon: <FaShoppingCart className="mr-2 text-xl" />,
+    icon: <FaShoppingCart className="text-xl " />,
   },
   {
     title: "Recursos",
     active: "opacity-100",
     slug: "/recursos",
-    icon: <IoIosArchive className="mr-2 text-xl" />,
+    icon: <IoIosArchive className="text-xl " />,
   },
   {
     title: "Comunidad",
     active: "opacity-100",
     slug: "/comunidad",
-    icon: <FaNewspaper className="mr-2 text-xl" />,
+    icon: <FaNewspaper className="text-xl " />,
   },
 
   //{
@@ -53,21 +53,21 @@ const routesRight = [
     title: "Quienes somos",
     active: "opacity-100",
     slug: "/quienes-somos",
-    icon: <IoIosChatbubbles className="mr-2 text-xl" />,
+    icon: <IoIosChatbubbles className="text-xl " />,
   },
 
   {
     title: "Que hacemos",
     active: "opacity-100",
     slug: "/propuestas",
-    icon: <GoBell className="mr-2 text-xl" />,
+    icon: <GoBell className="text-xl " />,
   },
 
   {
     title: "Contacto",
     active: "opacity-100",
     slug: "/contacto",
-    icon: <IoMdMail className="mr-2 text-xl" />,
+    icon: <IoMdMail className="text-xl " />,
   },
 
   //{
