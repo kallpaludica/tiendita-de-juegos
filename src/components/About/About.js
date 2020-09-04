@@ -17,7 +17,7 @@ const AboutAboutComponent = () => {
 
   return (
     <>
-      <h1 className="max-w-4xl pb-6 mx-auto font-serif text-4xl">
+      <h1 className="hidden max-w-4xl pb-6 mx-auto font-serif text-4xl">
         {data.about.title}
       </h1>
 

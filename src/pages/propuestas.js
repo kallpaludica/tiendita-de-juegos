@@ -13,10 +13,8 @@ import { Helmet } from "react-helmet"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import AnchorLink from "react-anchor-link-smooth-scroll"
-import { AiOutlineRocket } from "react-icons/ai"
-import { Link } from "gatsby"
 
-const AboutPage = () => {
+const PropuestasPage = () => {
   return (
     <Layout>
       <Helmet>
@@ -28,12 +26,7 @@ const AboutPage = () => {
       </Helmet>
       <Hero className="text-pink-900 bg-pink-800 pattern-cross-dots-md">
         <HeroContent>
-          <Title>Quienes somos</Title>
-          <Subtitle className="flex items-center max-w-3xl mx-auto font-mono text-white">
-            Somos un equipo transdisciplinario que busca poner sobre la mesa el
-            juego para problematizarlo y apropiarnos de una práctica milenaria
-            imprescindible.
-          </Subtitle>
+          <Title>Propuestas</Title>
         </HeroContent>
         <Wave>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -46,30 +39,21 @@ const AboutPage = () => {
         </Wave>
       </Hero>
 
-      <Section>
-        <AnchorLinks>
-          <AnchorLink href="#mision">Misión</AnchorLink>
-          <Link to="/propuestas">Propuestas</Link>
-          <AnchorLink href="#objectives">Objetivos</AnchorLink>
-        </AnchorLinks>
-        <About />
-      </Section>
-      <Mision />
+      <Proposals />
 
-      <Objectives />
       <Contact />
     </Layout>
   )
 }
 
-export default AboutPage
+export default PropuestasPage
 
 const Section = styled.section`
-  ${tw`relative pb-12`}
+  ${tw`relative pb-12 transform -translate-y-56`}
 `
 
 const AnchorLinks = styled.div`
-  ${tw`relative flex justify-around max-w-2xl p-3 pt-6 mx-auto mb-12 `}
+  ${tw`relative flex justify-around max-w-2xl p-3 pt-6 mx-auto mb-12 border-b-2 border-pink-800`}
   a {
     ${tw`mx-6 font-serif text-xl font-bold text-center text-pink-800 hover:text-pink-500`}
     flex: 1;

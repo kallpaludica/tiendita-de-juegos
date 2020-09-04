@@ -44,7 +44,7 @@ const routesRight = [
   {
     title: "Propuestas",
     active: "border-white",
-    slug: "/quienes-somos",
+    slug: "/propuestas",
   },
 
   {
