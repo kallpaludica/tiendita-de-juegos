@@ -3,11 +3,11 @@ import PropTypes from "prop-types"
 import React from "react"
 import "./header.css"
 import Headroom from "react-headroom"
-import { GrSearch } from "react-icons/gr"
+//import { GrSearch } from "react-icons/gr"
 //import ThemeToggler from "./ThemeToggler/ThemeToggler"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
-import AboutImage from "../components/image"
+//import AboutImage from "../components/image"
 import KallpaLogo from "../assets/logo.svg"
 
 const routesLeft = [
@@ -70,7 +70,7 @@ const Header = ({ siteTitle }) => (
               <Link
                 key={i}
                 activeClassName={route.active}
-                className={`hover:${route.active}   font-mono border-t-2 text-base lg:text-xl font-bold tracking-widest`}
+                className={`hover:${route.active}   font-mono  text-base lg:text-xl font-bold tracking-widest`}
                 to={route.slug}
               >
                 {route.title}
@@ -89,7 +89,7 @@ const Header = ({ siteTitle }) => (
               <Link
                 key={i}
                 activeClassName={route.active}
-                className={`hover:${route.active}   font-mono border-t-2 text-base lg:text-xl font-bold tracking-widest`}
+                className={`hover:${route.active}   font-mono  text-base lg:text-xl font-bold tracking-widest`}
                 to={route.slug}
               >
                 {route.title}
@@ -113,7 +113,7 @@ Header.defaultProps = {
 export default Header
 
 const NavLeft = styled.nav`
-  ${tw`justify-end hidden md:flex`}
+  ${tw`justify-start hidden md:flex`}
   flex:1;
 
   a {
@@ -126,7 +126,7 @@ const NavLeft = styled.nav`
 `
 
 const NavRight = styled.nav`
-  ${tw`justify-start hidden md:flex`}
+  ${tw`justify-end hidden md:flex`}
   flex:1;
 
   a {
@@ -147,7 +147,7 @@ const HeaderContainer = styled.header`
 `
 
 const InnerHeader = styled.div`
-  ${tw`relative flex items-center justify-between max-w-6xl px-0 m-auto md:pb-1 sm:pr-6 md:pr-0`}
+  ${tw`relative flex items-center justify-between w-full px-0 m-auto md:pb-1 sm:pr-6 md:pr-0`}
 `
 
 const Logo = styled.div`

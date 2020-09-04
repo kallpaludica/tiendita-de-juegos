@@ -11,7 +11,7 @@ import Contact from "../components/About/Contact"
 import Publishers from "../components/Games/Publishers"
 import Mision from "../components/About/Mision"
 import AwesomeSlider from "react-awesome-slider"
-import AboutImage from "../images/kallpa-ludica.png"
+//import AboutImage from "../images/kallpa-ludica.png"
 
 import Fade from "react-reveal/Fade"
 import tw from "twin.macro"
