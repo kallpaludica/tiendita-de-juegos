@@ -8,8 +8,9 @@ import { GrSearch } from "react-icons/gr"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import AboutImage from "../components/image"
+import KallpaLogo from "../assets/logo.svg"
 
-const routes = [
+const routesLeft = [
   {
     title: "Tienda de juegos",
     active: "border-white",
@@ -25,8 +26,23 @@ const routes = [
     active: "border-white",
     slug: "/comunidad",
   },
+
+  //{
+  // title: <GrSearch className="mt-1 text-white fill-current" />,
+  //active: "border-white",
+  //slug: "/buscar",
+  //},
+]
+
+const routesRight = [
   {
     title: "Quienes somos",
+    active: "border-white",
+    slug: "/quienes-somos",
+  },
+
+  {
+    title: "Propuestas",
     active: "border-white",
     slug: "/quienes-somos",
   },
@@ -48,25 +64,39 @@ const Header = ({ siteTitle }) => (
   <Headroom disableInlineStyles>
     <HeaderContainer>
       <InnerHeader>
-        <Logo>
-          <Link to="/">
-            <AboutImage />
-          </Link>
-        </Logo>
-        <Nav>
-          {routes.map((route, i) => {
+        <NavLeft>
+          {routesLeft.map((route, i) => {
             return (
               <Link
                 key={i}
                 activeClassName={route.active}
-                className={`hover:${route.active}   font-mono border-t-2 text-xl font-bold tracking-widest`}
+                className={`hover:${route.active}   font-mono border-t-2 text-base lg:text-xl font-bold tracking-widest`}
                 to={route.slug}
               >
                 {route.title}
               </Link>
             )
           })}
-        </Nav>
+        </NavLeft>
+        <Logo>
+          <Link to="/">
+            <KallpaLogo className="w-24" />
+          </Link>
+        </Logo>
+        <NavRight>
+          {routesRight.map((route, i) => {
+            return (
+              <Link
+                key={i}
+                activeClassName={route.active}
+                className={`hover:${route.active}   font-mono border-t-2 text-base lg:text-xl font-bold tracking-widest`}
+                to={route.slug}
+              >
+                {route.title}
+              </Link>
+            )
+          })}
+        </NavRight>
       </InnerHeader>
     </HeaderContainer>
   </Headroom>
@@ -82,8 +112,21 @@ Header.defaultProps = {
 
 export default Header
 
-const Nav = styled.nav`
+const NavLeft = styled.nav`
   ${tw`justify-end hidden md:flex`}
+  flex:1;
+
+  a {
+    ${tw`text-white`}
+
+    .headroom--scrolled & {
+      ${tw`text-green-500`}
+    }
+  }
+`
+
+const NavRight = styled.nav`
+  ${tw`justify-start hidden md:flex`}
   flex:1;
 
   a {
@@ -104,11 +147,11 @@ const HeaderContainer = styled.header`
 `
 
 const InnerHeader = styled.div`
-  ${tw`relative flex items-center justify-between max-w-6xl px-0 m-auto md:py-0 sm:pr-6 md:pr-0`}
+  ${tw`relative flex items-center justify-between max-w-6xl px-0 m-auto md:pb-1 sm:pr-6 md:pr-0`}
 `
 
 const Logo = styled.div`
-  ${tw`m-0 md:pl-0 md:relative`}
+  ${tw`m-0 md:px-6 md:relative`}
   top:2px;
 
   .gatsby-image-wrapper {
