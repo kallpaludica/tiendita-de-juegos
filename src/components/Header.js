@@ -42,7 +42,7 @@ const routesRight = [
   },
 
   {
-    title: "Propuestas",
+    title: "Que hacemos",
     active: "border-white",
     slug: "/propuestas",
   },
