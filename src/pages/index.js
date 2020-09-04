@@ -60,7 +60,7 @@ const IndexPage = () => {
         <body className="home" />
       </Helmet>
       <SEO title="Inicio" />
-      <Hero className="relative overflow-hidden text-indigo-500 bg-indigo-600 pattern-cross-dots-md">
+      <Hero className="relative overflow-hidden bg-purple-700">
         <HeroContent>
           <AwesomeSlider>
             <div>
