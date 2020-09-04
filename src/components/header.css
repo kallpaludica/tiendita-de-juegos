@@ -11,7 +11,7 @@ header nav a svg path {
 header nav a {
   display: inline-block;
   text-decoration: none;
-  @apply py-3 mx-3 text-base tracking-wider transition-all duration-500 border-transparent;
+  @apply tracking-wider transition-all duration-500 border-transparent;
 }
 
 @screen lg {

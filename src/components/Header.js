@@ -9,27 +9,41 @@ import tw from "twin.macro"
 import styled from "@emotion/styled"
 //import AboutImage from "../components/image"
 import KallpaLogo from "../assets/logo.svg"
+import { GoBell } from "react-icons/go"
+
+import { FiShoppingCart, FiSend } from "react-icons/fi"
+import { FaNewspaper, FaShoppingCart } from "react-icons/fa"
+
+import {
+  IoIosChatbubbles,
+  IoIosArchive,
+  IoIosRocket,
+  IoMdMail,
+} from "react-icons/io"
 
 const routesLeft = [
   {
     title: "Tienda de juegos",
-    active: "border-white",
+    active: "opacity-100",
     slug: "/juegos/todos",
+    icon: <FaShoppingCart className="mr-2 text-xl" />,
   },
   {
     title: "Recursos",
-    active: "border-white",
+    active: "opacity-100",
     slug: "/recursos",
+    icon: <IoIosArchive className="mr-2 text-xl" />,
   },
   {
     title: "Comunidad",
-    active: "border-white",
+    active: "opacity-100",
     slug: "/comunidad",
+    icon: <FaNewspaper className="mr-2 text-xl" />,
   },
 
   //{
   // title: <GrSearch className="mt-1 text-white fill-current" />,
-  //active: "border-white",
+  //active: "opacity-100",
   //slug: "/buscar",
   //},
 ]
@@ -37,25 +51,28 @@ const routesLeft = [
 const routesRight = [
   {
     title: "Quienes somos",
-    active: "border-white",
+    active: "opacity-100",
     slug: "/quienes-somos",
+    icon: <IoIosChatbubbles className="mr-2 text-xl" />,
   },
 
   {
     title: "Que hacemos",
-    active: "border-white",
+    active: "opacity-100",
     slug: "/propuestas",
+    icon: <GoBell className="mr-2 text-xl" />,
   },
 
   {
     title: "Contacto",
-    active: "border-white",
+    active: "opacity-100",
     slug: "/contacto",
+    icon: <IoMdMail className="mr-2 text-xl" />,
   },
 
   //{
   // title: <GrSearch className="mt-1 text-white fill-current" />,
-  //active: "border-white",
+  //active: "opacity-100",
   //slug: "/buscar",
   //},
 ]
@@ -70,9 +87,10 @@ const Header = ({ siteTitle }) => (
               <Link
                 key={i}
                 activeClassName={route.active}
-                className={`hover:${route.active}   font-mono  text-base lg:text-xl font-bold tracking-widest`}
+                className={`hover:${route.active} flex items-center flex-col py-3 md:mx-4   font-mono  text-lg  font-bold tracking-widest opacity-75`}
                 to={route.slug}
               >
+                <span>{route.icon}</span>
                 {route.title}
               </Link>
             )
@@ -89,9 +107,11 @@ const Header = ({ siteTitle }) => (
               <Link
                 key={i}
                 activeClassName={route.active}
-                className={`hover:${route.active}   font-mono  text-base lg:text-xl font-bold tracking-widest`}
+                className={`hover:${route.active} flex items-center flex-col py-3 md:mx-4  font-mono  text-lg  font-bold tracking-widest opacity-75`}
                 to={route.slug}
               >
+                <span>{route.icon}</span>
+
                 {route.title}
               </Link>
             )
