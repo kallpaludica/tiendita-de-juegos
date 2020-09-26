@@ -11,7 +11,9 @@ const Bold = ({ children }) => (
 )
 const Text = ({ children }) => (
   <Fade>
-    <p className="w-full my-2 font-mono text-2xl text-gray-900">{children}</p>
+    <p className="w-full mt-2 mb-4 font-mono text-xl text-gray-900">
+      {children}
+    </p>
   </Fade>
 )
 const website_url = "https://www.cooparaje.com.ar"

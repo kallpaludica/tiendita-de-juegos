@@ -180,7 +180,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 </div>
               )}
               <div
-                className="w-full px-5 mt-2 mb-6 text-left md:px-0 article"
+                className="w-full pr-6 mb-6 text-left article"
                 id={post.slug}
               >
                 {Article && (
@@ -214,7 +214,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             </div>
           </div>
         </div>
-        <div className="relative flex flex-col w-full max-w-6xl pb-3 mx-auto mt-6 border-b border-indigo-700 border-dashed md:flex-row">
+        <div className="relative flex flex-col w-full max-w-6xl pb-3 mx-auto mt-6 border-b border-indigo-700 border-dashed ">
           <h1 className="w-full max-w-6xl pt-3 mx-auto font-serif text-3xl font-bold text-center text-indigo-700 md:text-left ">
             Últimos juegos agregados
           </h1>
