@@ -104,7 +104,7 @@ const DurationPage = (props) => {
               className="absolute bottom-0 right-0 flex items-center px-4 py-2 text-white bg-green-500 rounded-tl-lg rounded-tr-lg outline-none focus:outline-none"
               onClick={() => setToggle(!isToggled)}
             >
-              <span className="mr-2">Invertir selección</span>
+              <span className="mr-2">Invertir</span>
               <animated.div style={sortICON}>
                 <FaCaretRight className="text-lg" />
               </animated.div>
@@ -134,11 +134,11 @@ const DurationPage = (props) => {
 export default DurationPage
 
 const Container = styled.div`
-  ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3`}
+  ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
 `
 
 const ContainerDesc = styled.div`
-  ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3`}
+  ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
 `
 
 const PageSticky = styled.div`
