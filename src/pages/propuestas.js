@@ -1,18 +1,11 @@
 import React from "react"
 import Layout from "../components/layout"
-//import HeroWave from "../components/HeroWave"
-//import AboutImage from "../images/kallpa-ludica.png"
-//import AboutImage from "../components/image"
 import Contact from "../components/About/Contact"
-//import Mision from "../components/About/Mision"
-//import Objectives from "../components/About/Objectives"
 import Proposals from "../components/About/Proposals"
-//import About from "../components/About/About"
 import SEO from "../components/seo"
 import { Helmet } from "react-helmet"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
-//import AnchorLink from "react-anchor-link-smooth-scroll"
 
 const PropuestasPage = () => {
   return (
@@ -48,39 +41,12 @@ const PropuestasPage = () => {
 
 export default PropuestasPage
 
-const Section = styled.section`
-  ${tw`relative pb-12 transform -translate-y-56`}
-`
-
-const AnchorLinks = styled.div`
-  ${tw`relative flex justify-around max-w-2xl p-3 pt-6 mx-auto mb-12 border-b-2 border-pink-800`}
-  a {
-    ${tw`mx-6 font-serif text-xl font-bold text-center text-pink-800 hover:text-pink-500`}
-    flex: 1;
-  }
-`
-
 const HeroContent = styled.div`
   ${tw`relative z-50 flex flex-col w-full max-w-6xl pt-16 pb-24 mx-auto text-center`}
 `
 
 const Title = styled.h1`
   ${tw`font-mono text-5xl text-white`}
-`
-
-const Subtitle = styled.h3`
-  ${tw`pb-1 font-serif text-xl text-white`}
-  p {
-    ${tw`text-white `}
-  }
-`
-
-const Back = styled.div`
-  ${tw`py-3`}
-
-  a {
-    ${tw`p-3 font-serif text-base font-bold text-white border-b border-white hover:bg-white hover:text-orange-500`}
-  }
 `
 
 const Hero = styled.div`

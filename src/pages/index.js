@@ -9,9 +9,11 @@ import Layout from "../components/layout"
 import HomeHeroImage from "../images/bg-home.jpg"
 import Contact from "../components/About/Contact"
 import Publishers from "../components/Games/Publishers"
+import QueriesLastGames from "../components/Queries/QueriesLastGames"
 import Mision from "../components/About/Mision"
 import AwesomeSlider from "react-awesome-slider"
 //import AboutImage from "../images/kallpa-ludica.png"
+import GameSort from "../components/Games/GameSort"
 
 import Fade from "react-reveal/Fade"
 import tw from "twin.macro"
@@ -155,14 +157,10 @@ const IndexPage = () => {
           </svg>
         </Wave>
       </Hero>
-
-      <section>
-        <Publishers />
-      </section>
-      <section>
+      <section className="hidden">
         <Mision />
       </section>
-      <section className="relative py-24">
+      <section className="relative hidden py-24">
         <h1 className="max-w-4xl mx-auto font-serif text-4xl font-bold text-orange-500">
           Algunas modalidades de juegos
         </h1>
@@ -202,6 +200,48 @@ const IndexPage = () => {
           </a>
           <b className="mr-1 text-orange-500"> </b>
         </div>
+      </section>
+
+      <section>
+        <div className="relative flex flex-col w-full max-w-6xl mx-auto border-b border-indigo-700 border-dashed md:flex-row">
+          <h1 className="w-full max-w-6xl pt-4 mx-auto font-serif text-3xl font-bold text-center text-indigo-700 md:text-left ">
+            Últimos juegos agregados
+          </h1>
+          <div className="mt-6">
+            <GameSort />
+          </div>
+        </div>
+        <QueriesLastGames />
+      </section>
+
+      <section className="relative py-24 pb-64 text-indigo-200 bg-indigo-100 pattern-diagonal-lines-sm">
+        <h1 className="max-w-6xl pb-12 mx-auto font-serif text-4xl font-bold">
+          Editoriales que nos acompañan
+        </h1>
+        <Publishers />
+        <Wave>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <defs xmlns="http://www.w3.org/2000/svg">
+              <filter id="dropshadow" height="130%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+                <feOffset dx="2" dy="2" result="offsetblur" />
+                <feComponentTransfer>
+                  <feFuncA type="linear" slope="0.2" />
+                </feComponentTransfer>
+                <feMerge>
+                  <feMergeNode />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+            <path
+              fillOpacity="1"
+              filter="url(#dropshadow)"
+              className="text-white fill-current "
+              d="M0,160L80,176C160,192,320,224,480,224C640,224,800,192,960,192C1120,192,1280,224,1360,240L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+            ></path>
+          </svg>
+        </Wave>
       </section>
       <section>
         <Contact />

@@ -1,5 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby"
-import React from "react"
+import React, { useState } from "react"
+
 import { Helmet } from "react-helmet"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
@@ -9,8 +10,10 @@ import HeroWave from "../../components/HeroWave"
 import GameCard from "../../components/GameCard"
 import GamesAside from "../../components/Games/GameMenu"
 import GameSort from "../../components/Games/GameSort"
+import { useSpring, animated } from "react-spring"
+import { FaCaretRight } from "react-icons/fa"
 
-const PreciosPage = () => {
+const PreciosPage = (props) => {
   const data = useStaticQuery(graphql`
     query PreciosQuery {
       collection: allContentfulArticulos(
@@ -38,8 +41,45 @@ const PreciosPage = () => {
           }
         }
       }
+      collectionReverse: allContentfulArticulos(
+        sort: { fields: [GameBuyPrice], order: DESC }
+      ) {
+        edges {
+          node {
+            id
+            title
+            slug
+            GameBuyPrice
+            GamePlayers
+            GameDuration
+            GameAuthor
+            GameAges
+
+            imagenDestacada {
+              fixed(width: 180, height: 230) {
+                ...GatsbyContentfulFixed
+              }
+              fluid(maxWidth: 450) {
+                ...GatsbyContentfulFluid_withWebp
+              }
+            }
+          }
+        }
+      }
     }
   `)
+
+  const [isToggled, setToggle] = useState(false)
+  const sortDESC = useSpring({
+    display: isToggled ? "block" : "none",
+  })
+  const sortASD = useSpring({
+    display: isToggled ? "none" : "block",
+  })
+  const sortICON = useSpring({
+    transform: isToggled ? "scale(1) rotate(90deg)" : "scale(-1) rotate(90deg)",
+    config: { mass: 3, tension: 500, friction: 80 },
+  })
 
   return (
     <Layout>
@@ -47,24 +87,42 @@ const PreciosPage = () => {
       <Helmet>
         <body className="games" />
       </Helmet>
-      <HeroWave
-        pattern="bg-teal-600 text-teal-500"
-        svg="M0,224L80,240C160,256,320,288,480,277.3C640,267,800,213,960,202.7C1120,192,1280,224,1360,240L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-      />
+      <HeroWave pattern="bg-teal-600 text-teal-500" />
       <ContentSidebar>
         <Aside>
           <GamesAside />
         </Aside>
         <Main>
           <PageSticky>
-            <GameSort />
-            <MainTitle>Desde los más ecónomicos</MainTitle>
+            <MainTitle>Ordenado por precio</MainTitle>
           </PageSticky>
-          <Container id="contenido">
-            {data.collection.edges.map((item, i) => (
-              <GameCard card={item.node} key={item.node.slug} />
-            ))}
-          </Container>
+          <div className="relative flex justify-start py-3 pt-6 bg-teal-100 border-b border-teal-300">
+            <GameSort />
+            <button
+              className="absolute bottom-0 right-0 flex items-center px-4 py-2 text-white bg-teal-500 rounded-tl-lg rounded-tr-lg outline-none focus:outline-none"
+              onClick={() => setToggle(!isToggled)}
+            >
+              <span className="mr-2">Invertir selección</span>
+              <animated.div style={sortICON}>
+                <FaCaretRight className="text-lg" />
+              </animated.div>
+            </button>
+          </div>
+          <animated.div style={sortASD}>
+            <Container id="contenido">
+              {data.collection.edges.map((item, i) => (
+                <GameCard card={item.node} key={item.node.slug} />
+              ))}
+            </Container>
+          </animated.div>
+
+          <animated.div style={sortDESC}>
+            <ContainerDesc>
+              {data.collectionReverse.edges.map((item, i) => (
+                <GameCard card={item.node} key={item.node.slug} />
+              ))}
+            </ContainerDesc>
+          </animated.div>
         </Main>
       </ContentSidebar>
     </Layout>
@@ -74,15 +132,19 @@ const PreciosPage = () => {
 export default PreciosPage
 
 const Container = styled.div`
-  ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
+  ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3`}
+`
+
+const ContainerDesc = styled.div`
+  ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3`}
 `
 
 const PageSticky = styled.div`
-  ${tw`sticky top-0 z-50 pt-3 bg-white`}
+  ${tw`top-0 z-50 pt-3 `}
 `
 
 const ContentSidebar = styled.div`
-  ${tw`flex max-w-6xl mx-auto`}
+  ${tw`relative z-10 flex max-w-6xl mx-auto -mt-16`}
 `
 
 const Aside = styled.aside`
@@ -94,6 +156,6 @@ const Main = styled.section`
 `
 
 const MainTitle = styled.h2`
-  ${tw`pl-5 mt-2 font-serif text-3xl font-bold text-left border-b border-teal-300`}
-  ${tw`text-teal-500`}
+  ${tw`pl-5 -mt-4 font-serif text-3xl font-bold text-center border-b border-teal-300 md:text-left`}
+  ${tw`pb-6 text-white`}
 `

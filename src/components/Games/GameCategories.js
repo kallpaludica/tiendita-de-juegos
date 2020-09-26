@@ -32,7 +32,7 @@ const GameCategoriesComponent = () => {
             <Link
               key={node.slug}
               to={`/categorias/${kebabCase(node.slug)}/`}
-              activeClassName="opacity-50"
+              activeclassname="opacity-50"
               className="flex flex-col items-center justify-center mx-12 my-3 font-serif text-xl text-gray-700 hover:text-gray-900"
             >
               {node.icono ? (

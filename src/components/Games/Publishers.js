@@ -27,16 +27,17 @@ const PublishersComponent = () => {
   return (
     <>
       <div
-        className="flex flex-col items-baseline justify-center w-full max-w-6xl mx-auto"
+        className="relative z-50 flex flex-col items-baseline justify-center w-full max-w-6xl mx-auto"
         id="publishers"
       >
         <div className="w-full mb-12 text-center text-gray-800">
-          <div className="flex flex-wrap items-center justify-center max-w-6xl mx-auto ">
+          <div className="grid items-center justify-center max-w-6xl grid-cols-2 gap-3 mx-auto md:grid-cols-4 lg:grid-cols-7 ">
             {data.editoriales.edges.map(({ node }) => {
               return (
                 <Link
                   key={node.slug}
                   to={`/editoriales/${kebabCase(node.slug)}/`}
+                  activeclassname="opacity-25"
                   className="flex items-center justify-center m-6 overflow-hidden text-gray-800 rounded-md "
                 >
                   {node.logo ? (

@@ -10,12 +10,12 @@ const HeroWave = (props) => (
       <HeroContent>
         <Title>{props.heading}</Title>
         {props.subtitle && (
-          <Subtitle className="flex items-center max-w-3xl mx-auto font-mono text-white">
+          <Subtitle className="flex items-start max-w-3xl mx-auto font-mono text-white">
             <FormatText FormatText={props.subtitle} />
           </Subtitle>
         )}
         {props.back && (
-          <Back className="flex items-center max-w-3xl mx-auto ">
+          <Back className="flex items-start justify-start">
             <Link to="/juegos/todos">{props.back}</Link>
           </Back>
         )}
@@ -36,15 +36,15 @@ const HeroWave = (props) => (
 export default HeroWave
 
 const HeroContent = styled.div`
-  ${tw`relative z-50 flex flex-col w-full max-w-6xl pt-20 pb-12 mx-auto text-center`}
+  ${tw`relative z-50 flex flex-col items-start justify-start w-full max-w-6xl pt-0 pb-0 mx-auto text-left md:pt-20`}
 `
 
 const Title = styled.h1`
   ${tw`font-mono text-5xl text-white`}
 `
 
-const Subtitle = styled.h3`
-  ${tw`pb-1 font-serif text-xl text-white`}
+const Subtitle = styled.div`
+  ${tw`w-full max-w-xl pb-1 m-0 font-serif text-xl text-white`}
   p {
     ${tw`text-white `}
   }

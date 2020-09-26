@@ -78,7 +78,7 @@ const ContactComponent = () => {
         >
           <AiOutlineFacebook className="my-6 text-4xl" />
           <b>Facebook</b>
-          <h2 className="my-2 font-serif text-xl">{data.whatsapp.link}</h2>
+          <h2 className="my-2 font-serif text-xl">kallpa.ludica</h2>
         </a>
 
         <a

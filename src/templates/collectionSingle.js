@@ -6,7 +6,6 @@ import { kebabCase } from "lodash"
 import SEO from "../components/seo"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
-import Fade from "react-reveal/Fade"
 import HeroWave from "../components/HeroWave"
 import GameCard from "../components/GameCard"
 //import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
@@ -33,9 +32,7 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
         {collection.CollectionGames ? (
           <Container>
             {collection.CollectionGames.map((item, i) => (
-              <Fade duration={800} delay={600} key={item.slug}>
-                <GameCard card={item} />
-              </Fade>
+              <GameCard card={item} key={item.slug} />
             ))}
           </Container>
         ) : (
@@ -67,7 +64,7 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
 }
 
 const Container = styled.div`
-  ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5`}
+  ${tw`grid max-w-6xl grid-cols-2 gap-6 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4`}
 `
 
 const PageNav = styled.nav`

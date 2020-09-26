@@ -36,10 +36,10 @@ export default ({ card }) => (
         </b>
       </div>
 
-      <Link className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-2 px-3 font-serif text-sm font-bold text-left text-green-800 transition-all duration-500 bg-green-100 hover:text-white hover:bg-green-600">
+      <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-2 px-3 font-serif text-sm font-bold text-left text-green-800 transition-all duration-500 bg-green-100 hover:text-white hover:bg-green-600">
         Consultar
         <FaCaretRight className="text-lg text-green-300" />
-      </Link>
+      </div>
     </Link>
     <Toggle
       title={card.title}
@@ -52,7 +52,7 @@ export default ({ card }) => (
 )
 
 const GameCard = styled.div`
-  ${tw`relative w-full mb-3 overflow-hidden shadow-sm md:max-w-md`}
+  ${tw`relative w-full mb-3 overflow-hidden bg-gray-100 rounded-lg md:max-w-md`}
 
   .image {
     ${tw`relative w-48 h-48 overflow-hidden transition-all duration-500 transform md:w-full`}

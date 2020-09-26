@@ -17,6 +17,8 @@ import { FaUserFriends } from "react-icons/fa"
 import { GiTabletopPlayers } from "react-icons/gi"
 import "../components/VideoReact.css"
 import "../components/AwsBtn.css"
+import QueriesLastGames from "../components/Queries/QueriesLastGames"
+import GameSort from "../components/Games/GameSort"
 
 const options = {
   buttons: {
@@ -93,7 +95,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                     <div className="w-full px-0 pt-6 m-auto md:py-6">
                       <div className="grid grid-cols-3 ">
                         {post.GameGallery.map((item, i) => (
-                          <div className="relative h-24 max-w-xl m-0 overflow-hidden border-2 border-white link">
+                          <div
+                            className="relative h-24 max-w-xl m-0 overflow-hidden border-2 border-white link"
+                            key={item.id}
+                          >
                             <Img
                               title={item.title}
                               alt={item.title}
@@ -209,6 +214,16 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             </div>
           </div>
         </div>
+        <div className="relative flex flex-col w-full max-w-6xl pb-3 mx-auto mt-6 border-b border-indigo-700 border-dashed md:flex-row">
+          <h1 className="w-full max-w-6xl pt-3 mx-auto font-serif text-3xl font-bold text-center text-indigo-700 md:text-left ">
+            Últimos juegos agregados
+          </h1>
+          <div className="mt-6">
+            <GameSort />
+          </div>
+        </div>
+
+        <QueriesLastGames />
       </div>
 
       <div className="hidden max-w-6xl py-12 mx-auto text-2xl">
@@ -264,6 +279,7 @@ export const pageQuery = graphql`
       }
       GameGallery {
         title
+        id
         fluid(maxWidth: 1600) {
           # Choose either the fragment including a small base64ed image, a traced placeholder SVG, or one without.
           ...GatsbyContentfulFluid_withWebp

@@ -31,7 +31,7 @@ const Layout = ({ location, children }) => {
         <Header siteTitle={data.site.siteMetadata.title} />
         <TransitionViews>{children}</TransitionViews>
         <a
-          className="fixed bottom-0 right-0 mb-2 mr-2 overflow-hidden text-white bg-green-500 rounded-md hover:bg-green-600 hover:text-white"
+          className="fixed bottom-0 right-0 p-1 mb-3 mr-3 overflow-hidden text-white bg-green-500 rounded-full hover:bg-green-600 hover:text-white"
           target="_blank"
           rel="noopener noreferrer"
           title="Hacenos una consulta"

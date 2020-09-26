@@ -37,10 +37,6 @@ header nav a {
   @apply bg-white shadow-xs;
 }
 
-.headroom--scrolled a {
-  @apply text-green-500;
-}
-
 .headroom--scrolled header nav a svg path {
   stroke: #48bb78;
 }
@@ -51,16 +47,14 @@ header nav a {
   transform: translateY(0);
 }
 
-.headroom--unpinned a {
-  @apply text-green-500;
-}
-
+/*
 @screen md {
   .headroom--unpinned {
     transform: translateY(-100%);
     background: transparent !important;
   }
 }
+*/
 .headroom--pinned {
   position: fixed;
   transform: translateY(0%);

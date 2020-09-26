@@ -1,19 +1,14 @@
 import React from "react"
 import Layout from "../components/layout"
-//import HeroWave from "../components/HeroWave"
-//import AboutImage from "../images/kallpa-ludica.png"
-//import AboutImage from "../components/image"
 import Contact from "../components/About/Contact"
 import Mision from "../components/About/Mision"
 import Objectives from "../components/About/Objectives"
-//import Proposals from "../components/About/Proposals"
 import About from "../components/About/About"
 import SEO from "../components/seo"
 import { Helmet } from "react-helmet"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import AnchorLink from "react-anchor-link-smooth-scroll"
-//import { AiOutlineRocket } from "react-icons/ai"
 import { Link } from "gatsby"
 
 const AboutPage = () => {
@@ -88,14 +83,6 @@ const Subtitle = styled.h3`
   ${tw`pb-1 font-serif text-xl text-white`}
   p {
     ${tw`text-white `}
-  }
-`
-
-const Back = styled.div`
-  ${tw`py-3`}
-
-  a {
-    ${tw`p-3 font-serif text-base font-bold text-white border-b border-white hover:bg-white hover:text-orange-500`}
   }
 `
 
