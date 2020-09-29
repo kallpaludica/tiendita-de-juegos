@@ -17,6 +17,8 @@ exports.createPages = ({ graphql, actions }) => {
     const categorySingle = path.resolve(`./src/templates/categorySingle.js`)
     const publisherSingle = path.resolve(`./src/templates/publisherSingle.js`)
     const collectionSingle = path.resolve(`./src/templates/collectionSingle.js`)
+    const resourseSingle = path.resolve(`./src/templates/resourseSingle.js`)
+    const blogSingle = path.resolve(`./src/templates/blogSingle.js`)
 
     resolve(
       graphql(
@@ -40,6 +42,22 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
             allContentfulEditorial {
+              edges {
+                node {
+                  title
+                  slug
+                }
+              }
+            }
+            allContentfulComunidad {
+              edges {
+                node {
+                  title
+                  slug
+                }
+              }
+            }
+            allContentfulRecursos {
               edges {
                 node {
                   title
@@ -75,6 +93,8 @@ exports.createPages = ({ graphql, actions }) => {
         const categories = result.data.allContentfulCategoriaDelJuego.edges
         const publishers = result.data.allContentfulEditorial.edges
         const collections = result.data.allContentfulColecciones.edges
+        const resourses = result.data.allContentfulRecursos.edges
+        const blogs = result.data.allContentfulComunidad.edges
 
         posts.forEach((post, index) => {
           createPage({
@@ -129,6 +149,33 @@ exports.createPages = ({ graphql, actions }) => {
                 index === collections.length - 1
                   ? null
                   : collections[index + 1].node,
+            },
+          })
+        })
+
+        blogs.forEach((blog, index) => {
+          createPage({
+            path: `/comunidad/${blog.node.slug}/`,
+            component: blogSingle,
+            context: {
+              slug: blog.node.slug,
+              prev: index === 0 ? null : blogs[index - 1].node,
+              next: index === blogs.length - 1 ? null : blogs[index + 1].node,
+            },
+          })
+        })
+
+        resourses.forEach((resourse, index) => {
+          createPage({
+            path: `/recursos/${resourse.node.slug}/`,
+            component: resourseSingle,
+            context: {
+              slug: resourse.node.slug,
+              prev: index === 0 ? null : resourses[index - 1].node,
+              next:
+                index === resourses.length - 1
+                  ? null
+                  : resourses[index + 1].node,
             },
           })
         })

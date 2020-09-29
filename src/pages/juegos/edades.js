@@ -100,10 +100,10 @@ const EdadesPage = (props) => {
           <PageSticky>
             <MainTitle>Ordenado por edades </MainTitle>
           </PageSticky>
-          <div className="relative flex justify-start py-3 pt-6 bg-indigo-100 border-b border-indigo-300">
+          <div className="relative flex flex-col justify-start px-1 pt-6 bg-indigo-100 border-b border-indigo-300 md:py-3 md:flex-row">
             <GameSort />
             <button
-              className="absolute bottom-0 right-0 flex items-center px-4 py-2 text-white bg-indigo-500 rounded-tl-lg rounded-tr-lg outline-none focus:outline-none"
+              className="relative bottom-0 right-0 flex items-center justify-center px-4 py-2 font-bold text-indigo-800 bg-indigo-300 outline-none md:absolute focus:outline-none"
               onClick={() => setToggle(!isToggled)}
             >
               <span className="mr-2">Invertir</span>
@@ -160,6 +160,6 @@ const Main = styled.section`
 `
 
 const MainTitle = styled.h2`
-  ${tw`pl-5 mt-2 font-serif text-3xl font-bold text-center border-b border-indigo-300 md:text-left`}
+  ${tw`mt-2 font-serif text-3xl font-bold text-center border-b border-indigo-300 md:pl-5 md:text-left`}
   ${tw`text-white`}
 `

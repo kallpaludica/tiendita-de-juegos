@@ -39,7 +39,7 @@ const GamesSort = () => {
         </Link>
 
         <Link
-          activeClassName="text-indigo-100  bg-indigo-500 "
+          activeClassName="text-indigo-100   bg-indigo-500 "
           className="flex items-center px-2 font-bold rounded-full hover:text-indigo-100 hover:bg-indigo-500"
           to="/juegos/edades"
         >
@@ -53,9 +53,9 @@ const GamesSort = () => {
 export default GamesSort
 
 const Sort = styled.div`
-  ${tw`relative top-0 right-0 flex justify-start w-full px-6 py-3 transform md:px-0 md:p-0`}
+  ${tw`relative top-0 right-0 flex flex-wrap justify-between w-full px-1 py-3 transform md:flex-no-wrap md:justify-start md:px-6 md:px-0 md:p-0 `}
 
   a {
-    ${tw`px-3 ml-1`}
+    ${tw`px-2 py-2 my-2 ml-1 text-xs md:text-base md:py-1 md:px-3 md:my-0`}
   }
 `
