@@ -62,7 +62,15 @@ const PreciosPage = (props) => {
             GameDuration
             GameAuthor
             GameAges
-
+            stock
+            categoria {
+              title
+              slug
+            }
+            publisher {
+              title
+              slug
+            }
             imagenDestacada {
               fixed(width: 180, height: 230) {
                 ...GatsbyContentfulFixed

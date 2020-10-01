@@ -6,8 +6,8 @@ import Comunidad from "../components/Queries/QueriesComunidad"
 
 import SEO from "../components/seo"
 import { Helmet } from "react-helmet"
-import tw from "twin.macro"
-import styled from "@emotion/styled"
+//import tw from "twin.macro"
+//import styled from "@emotion/styled"
 
 const ComunidadPage = () => {
   return (
@@ -35,7 +35,3 @@ const ComunidadPage = () => {
 }
 
 export default ComunidadPage
-
-const Section = styled.section`
-  ${tw`relative pb-12 transform -translate-y-56`}
-`

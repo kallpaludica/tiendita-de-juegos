@@ -11,8 +11,7 @@ import HeroWave from "../components/HeroWave"
 
 const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
   const collection = data.contentfulComunidad
-  const Article =
-    data.contentfulComunidad.childContentfulComunidadTextoPrincipalRichTextNode
+
   const { prev, next } = pageContext
   return (
     <Layout location={location}>

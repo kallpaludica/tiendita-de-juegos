@@ -7,9 +7,7 @@ import styled from "@emotion/styled"
 import AboutImage from "../images/kallpa-ludica.png"
 import Toggle from "./GameCardToggle"
 import { FaCaretRight } from "react-icons/fa"
-import { IoMdTime } from "react-icons/io"
-import { FaUserFriends } from "react-icons/fa"
-import { GiTabletopPlayers } from "react-icons/gi"
+
 export default ({ card }) => (
   <GameCard>
     <Link to={`/juegos/${kebabCase(card.slug)}/`}>

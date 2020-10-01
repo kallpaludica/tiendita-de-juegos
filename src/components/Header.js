@@ -6,7 +6,7 @@ import Headroom from "react-headroom"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import KallpaLogo from "../assets/logo.svg"
-import { FaNewspaper, FaShoppingBasket } from "react-icons/fa"
+import { FaNewspaper } from "react-icons/fa"
 import { AiFillShop } from "react-icons/ai"
 
 import { IoIosChatbubbles, IoIosArchive, IoMdMail } from "react-icons/io"
@@ -90,7 +90,7 @@ const Header = ({ siteTitle }) => (
               <Link
                 key={i}
                 activeclassname={route.active}
-                className={`hover:${route.active}  flex items-center py-2 px-4 md:mx-2  font-mono  text-lg  font-bold tracking-widest opacity-100 bg-gray-100 rounded-full shadow-md hover:shadow-lg transition-all transform`}
+                className={`hover:${route.active}  flex items-center py-2 px-4 md:mx-2  font-mono  text-lg  font-bold tracking-widest opacity-100 bg-gray-100 hover:bg-orange-500 hover:text-white rounded-full shadow-md hover:shadow-lg transition-all transform`}
                 to={route.slug}
               >
                 <b>{route.title}</b>

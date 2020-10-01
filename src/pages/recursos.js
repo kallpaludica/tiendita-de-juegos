@@ -6,8 +6,8 @@ import Recursos from "../components/Queries/QueriesRecursos"
 
 import SEO from "../components/seo"
 import { Helmet } from "react-helmet"
-import tw from "twin.macro"
-import styled from "@emotion/styled"
+//import tw from "twin.macro"
+//import styled from "@emotion/styled"
 
 const RecursosPage = () => {
   return (
@@ -36,7 +36,3 @@ const RecursosPage = () => {
 }
 
 export default RecursosPage
-
-const Section = styled.section`
-  ${tw`relative pb-12 transform -translate-y-56`}
-`

@@ -215,10 +215,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </div>
         </div>
         <div className="relative flex flex-col w-full max-w-6xl pb-3 mx-auto mt-6 border-b border-indigo-700 border-dashed ">
-          <h1 className="w-full max-w-6xl pt-3 mx-auto font-serif text-3xl font-bold text-center text-indigo-700 md:text-left ">
+          <h1 className="w-full max-w-6xl pt-3 mx-auto font-serif text-3xl font-bold text-center text-indigo-700 ">
             Últimos juegos agregados
           </h1>
-          <div className="mt-6">
+          <div className="max-w-md mx-auto mt-6">
             <GameSort />
           </div>
         </div>

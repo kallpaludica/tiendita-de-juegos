@@ -11,8 +11,7 @@ import HeroWave from "../components/HeroWave"
 
 const ResoursesSingleTemplate = ({ data, pageContext, location }) => {
   const collection = data.contentfulRecursos
-  const Article =
-    data.contentfulRecursos.childContentfulRecursosTextoPrincipalRichTextNode
+
   const { prev, next } = pageContext
   return (
     <Layout location={location}>

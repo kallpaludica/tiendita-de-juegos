@@ -6,6 +6,8 @@ import "../styles/pattern.css"
 import SimpleReactLightbox from "simple-react-lightbox"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
+import { AiOutlineHeart } from "react-icons/ai"
+import { HiCode } from "react-icons/hi"
 
 const Layout = ({ children }) => {
   return (
@@ -20,17 +22,21 @@ const Layout = ({ children }) => {
             <h3 className="pb-2 text-sm font-bold text-gray-800">
               {new Date().getFullYear()} Kallpa Lúdica
             </h3>
-            <div className="pr-2 text-sm opacity-75">
-              Hecho en
-              {` `}
+            <div className="flex flex-col pr-2 text-sm opacity-75">
               <a
                 rel="noopener noreferrer"
                 target="_blank"
-                className="font-bold"
+                className="inline-block font-bold"
                 href="https://www.cooparaje.com.ar"
               >
-                cooparaje
+                Hecho en Cooparaje con
               </a>
+              <div>
+                <HiCode className="inline-block mx-1 mb-1 text-lg " />
+                <span className="mx-1">&</span>
+                <AiOutlineHeart className="inline-block mx-1 mb-1 text-lg " />
+              </div>
+              {` `}
             </div>
           </Inner>
         </Stn>
