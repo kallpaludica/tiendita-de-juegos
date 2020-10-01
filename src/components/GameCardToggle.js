@@ -29,8 +29,21 @@ const Toggle = (props) => {
         className="absolute inset-0 z-40 flex flex-col items-start justify-start px-3 pt-4 pb-2 pr-4 overflow-hidden bg-orange-100 border-2 border-orange-600 rounded-lg"
         style={fade}
       >
-        <h2 className="w-full h-16 pb-1 mb-3 font-serif text-xl font-bold text-left text-orange-600 border-b border-orange-600">
+        <h2 className="w-full pb-1 mb-3 font-serif text-lg font-bold text-left text-orange-600 border-b border-orange-600">
           <span className="pr-2">{props.title}</span>
+          {props.publisher && (
+            <div className="flex items-center justify-start ">
+              <Link
+                to={`/editoriales/${kebabCase(props.publisher.slug)}/`}
+                className="flex flex-col py-1 mr-2 text-sm opacity-75"
+                key={props.publisher.slug}
+              >
+                <b className="font-serif text-gray-800 underline hover:text-indigo-600">
+                  Editorial {props.publisher.title}
+                </b>
+              </Link>
+            </div>
+          )}
         </h2>
         {props.age && (
           <div className="w-full text-left">

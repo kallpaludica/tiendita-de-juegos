@@ -200,8 +200,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 >
                   Consultá o hacé tu pedido
                 </AwesomeButtonSocial>
-                <div className="mb-3 text-3xl font-bold text-center text-green-500 md:my-0 md:text-right">
-                  ${post.GameBuyPrice}
+                <div className="mb-3 font-sans text-3xl font-bold text-center text-gray-500 md:my-0 md:text-right">
+                  {post.stock ? <>{post.stock}</> : <>${post.GameBuyPrice}</>}
                 </div>
               </div>
               {post.GamePlay && (
@@ -258,6 +258,7 @@ export const pageQuery = graphql`
       childContentfulArticulosTextoPrincipalRichTextNode {
         json
       }
+      stock
       GameBuyPrice
       GamePlayers
       GameDuration

@@ -29,7 +29,15 @@ const EdadesPage = (props) => {
             GameDuration
             GameAuthor
             GameAges
-
+            stock
+            categoria {
+              title
+              slug
+            }
+            publisher {
+              title
+              slug
+            }
             imagenDestacada {
               fixed(width: 180, height: 230) {
                 ...GatsbyContentfulFixed
@@ -100,13 +108,13 @@ const EdadesPage = (props) => {
           <PageSticky>
             <MainTitle>Ordenado por edades </MainTitle>
           </PageSticky>
-          <div className="relative flex flex-col justify-start px-1 pt-6 bg-indigo-100 border-b border-indigo-300 md:py-3 md:flex-row">
+          <div className="relative flex flex-col justify-start border-b-2 border-indigo-300 sm:flex-row sm:py-3 sm:pt-6">
             <GameSort />
             <button
-              className="relative bottom-0 right-0 flex items-center justify-center px-4 py-2 font-bold text-indigo-800 bg-indigo-300 outline-none md:absolute focus:outline-none"
+              className="relative bottom-0 right-0 flex items-center justify-center px-4 py-3 font-bold text-indigo-800 bg-indigo-300 outline-none md:absolute focus:outline-none"
               onClick={() => setToggle(!isToggled)}
             >
-              <span className="mr-2">Invertir</span>
+              <span className="mr-2">Invertir filtros</span>
               <animated.div style={sortICON}>
                 <FaCaretRight className="text-lg" />
               </animated.div>
@@ -137,10 +145,16 @@ export default EdadesPage
 
 const Container = styled.div`
   ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
+  .game-ages {
+    display: block !important;
+  }
 `
 
 const ContainerDesc = styled.div`
   ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
+  .game-ages {
+    display: block !important;
+  }
 `
 
 const PageSticky = styled.div`
@@ -152,7 +166,7 @@ const ContentSidebar = styled.div`
 `
 
 const Aside = styled.aside`
-  ${tw`hidden w-56 pl-3 md:block `}
+  ${tw`hidden w-64 pl-3 md:block `}
 `
 
 const Main = styled.section`

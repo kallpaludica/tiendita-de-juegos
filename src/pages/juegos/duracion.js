@@ -29,7 +29,15 @@ const DurationPage = (props) => {
             GameDuration
             GameAuthor
             GameAges
-
+            stock
+            categoria {
+              title
+              slug
+            }
+            publisher {
+              title
+              slug
+            }
             imagenDestacada {
               fixed(width: 180, height: 230) {
                 ...GatsbyContentfulFixed
@@ -72,10 +80,12 @@ const DurationPage = (props) => {
   const [isToggled, setToggle] = useState(false)
   const sortDESC = useSpring({
     display: isToggled ? "block" : "none",
+    opacity: isToggled ? "1" : "0",
     config: { mass: 3, tension: 500, friction: 80 },
   })
   const sortASD = useSpring({
     display: isToggled ? "none" : "block",
+    opacity: isToggled ? "0" : "1",
     config: { mass: 3, tension: 500, friction: 80 },
   })
   const sortICON = useSpring({
@@ -98,13 +108,13 @@ const DurationPage = (props) => {
           <PageSticky>
             <MainTitle>Ordenado por duración</MainTitle>
           </PageSticky>
-          <div className="relative flex justify-start py-3 pt-6 bg-green-100 border-b border-green-300">
+          <div className="relative flex flex-col justify-start border-b-2 border-green-300 sm:flex-row sm:py-3 sm:pt-6">
             <GameSort />
             <button
-              className="absolute bottom-0 right-0 flex items-center px-4 py-2 text-white bg-green-500 rounded-tl-lg rounded-tr-lg outline-none focus:outline-none"
+              className="relative bottom-0 right-0 flex items-center justify-center px-6 py-3 font-bold text-green-800 bg-green-300 outline-none md:absolute focus:outline-none"
               onClick={() => setToggle(!isToggled)}
             >
-              <span className="mr-2">Invertir</span>
+              <span className="mr-2">Invertir filtros</span>
               <animated.div style={sortICON}>
                 <FaCaretRight className="text-lg" />
               </animated.div>
@@ -135,10 +145,16 @@ export default DurationPage
 
 const Container = styled.div`
   ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
+  .game-duration {
+    display: block !important;
+  }
 `
 
 const ContainerDesc = styled.div`
   ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
+  .game-duration {
+    display: block !important;
+  }
 `
 
 const PageSticky = styled.div`
@@ -150,7 +166,7 @@ const ContentSidebar = styled.div`
 `
 
 const Aside = styled.aside`
-  ${tw`hidden w-56 pl-3 md:block `}
+  ${tw`hidden w-64 pl-3 md:block `}
 `
 
 const Main = styled.section`

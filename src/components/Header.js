@@ -7,6 +7,8 @@ import tw from "twin.macro"
 import styled from "@emotion/styled"
 import KallpaLogo from "../assets/logo.svg"
 import { FaNewspaper, FaShoppingBasket } from "react-icons/fa"
+import { AiFillShop } from "react-icons/ai"
+
 import { IoIosChatbubbles, IoIosArchive, IoMdMail } from "react-icons/io"
 
 const routesLeft = [
@@ -47,7 +49,7 @@ const routesRight = [
     title: "Tienda de juegos",
     active: "opacity-100",
     slug: "/juegos/todos",
-    icon: <FaShoppingBasket className="text-xl " />,
+    icon: <AiFillShop className="text-xl " />,
   },
 
   //{

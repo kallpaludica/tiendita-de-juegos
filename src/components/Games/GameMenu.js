@@ -2,7 +2,7 @@ import React from "react"
 
 import QueryCollections from "../../components/Queries/QueryCollection"
 import QueryCategories from "../../components/Queries/QueryCategories"
-//import QueryPublishers from "../../components/Queries/QueryPublishers"
+import QueryPublishers from "../../components/Queries/QueryPublishers"
 import { Link } from "gatsby"
 
 import tw from "twin.macro"
@@ -16,8 +16,8 @@ const GamesAside = () => {
       <h2>Colecciones</h2>
       <QueryCollections />
       <h2>Editoriales</h2>
-      <Link to="/editoriales/">Ver todas</Link>
-      {/*<QueryPublishers />*/}
+      {/*<Link to="/editoriales/">Ver todas</Link>*/}
+      <QueryPublishers />
     </Aside>
   )
 }

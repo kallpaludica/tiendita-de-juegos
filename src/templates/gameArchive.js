@@ -95,7 +95,7 @@ export const pageQuery = graphql`
           GameDuration
           GameAuthor
           GameAges
-
+          stock
           imagenDestacada {
             fixed(width: 200, height: 230) {
               ...GatsbyContentfulFixed
