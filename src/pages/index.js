@@ -131,7 +131,7 @@ const IndexPage = () => {
           src={HomeHeroImage}
           title="bienvenides"
           alt="bienvenides"
-          className="absolute top-0 w-auto h-screen opacity-25 sm:h-auto sm:w-full"
+          className="absolute top-0 object-cover w-full h-full opacity-25"
         />
         <Wave>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
