@@ -17,7 +17,7 @@ const GamesSort = () => {
         >
           <AiOutlineSortAscending
             activeClassName="text-teal-100 "
-            className="w-6 mx-auto mr-1 text-xl "
+            className="mx-auto mr-1 text-xl "
           />
           Título
         </Link>
@@ -27,7 +27,7 @@ const GamesSort = () => {
           className="flex items-center px-2 font-bold rounded-full hover:text-teal-100 hover:bg-teal-500"
           to="/juegos/precio"
         >
-          <AiOutlineDollar className="w-6 mx-auto mr-1 text-xl " /> Precio
+          <AiOutlineDollar className="mx-auto mr-1 text-xl " /> Precio
         </Link>
 
         <Link
@@ -35,7 +35,7 @@ const GamesSort = () => {
           className="flex items-center px-2 font-bold rounded-full hover:text-green-100 hover:bg-green-500"
           to="/juegos/duracion"
         >
-          <IoMdTime className="w-6 mx-auto mr-1 text-xl " /> Duración
+          <IoMdTime className="mx-auto mr-1 text-xl " /> Duración
         </Link>
 
         <Link
@@ -43,7 +43,7 @@ const GamesSort = () => {
           className="flex items-center px-2 font-bold rounded-full hover:text-indigo-100 hover:bg-indigo-500"
           to="/juegos/edades"
         >
-          <FaUserFriends className="w-6 mx-auto mr-1 text-base " /> Edades
+          <FaUserFriends className="mx-auto mr-1 text-base " /> Edades
         </Link>
       </Sort>
     </>
@@ -53,9 +53,9 @@ const GamesSort = () => {
 export default GamesSort
 
 const Sort = styled.div`
-  ${tw`relative top-0 right-0 flex flex-wrap justify-between w-full px-1 py-3 transform md:flex-no-wrap md:justify-start md:px-6 md:px-0 md:p-0 `}
+  ${tw`relative top-0 right-0 flex flex-wrap justify-between w-full px-1 py-1 transform sm:py-3 md:flex-no-wrap md:justify-start md:px-6 md:px-0 md:p-0 `}
 
   a {
-    ${tw`px-2 py-2 my-2 ml-1 text-xs md:text-base md:py-1 md:px-3 md:my-0`}
+    ${tw`px-2 py-1 my-2 ml-0 text-sm md:text-base md:py-1 md:px-3 md:my-0`}
   }
 `

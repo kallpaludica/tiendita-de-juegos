@@ -42,7 +42,7 @@ const AllPage = (props) => {
               fixed(width: 300, height: 230) {
                 ...GatsbyContentfulFixed
               }
-              fluid(maxWidth: 450) {
+              fluid(maxWidth: 550) {
                 ...GatsbyContentfulFluid_withWebp
               }
             }
@@ -116,7 +116,7 @@ const AllPage = (props) => {
           <PageSticky>
             <MainTitle>Todos los juegos</MainTitle>
           </PageSticky>
-          <div className="relative flex flex-col justify-start border-b-2 border-orange-300 sm:flex-row sm:py-3 sm:pt-6">
+          <div className="relative flex flex-col-reverse justify-start border-b-2 border-orange-300 sm:flex-row sm:py-3 sm:pt-6">
             <GameSort />
             <button
               className="relative bottom-0 right-0 flex items-center justify-center px-4 py-3 font-bold text-orange-800 bg-orange-300 outline-none md:absolute focus:outline-none"
