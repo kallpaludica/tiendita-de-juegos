@@ -14,6 +14,7 @@ import Mision from "../components/About/Mision"
 import AwesomeSlider from "react-awesome-slider"
 //import AboutImage from "../images/kallpa-ludica.png"
 import GameSort from "../components/Games/GameSort"
+import { AiFillShop } from "react-icons/ai"
 
 import Fade from "react-reveal/Fade"
 import tw from "twin.macro"
@@ -68,7 +69,7 @@ const IndexPage = () => {
             <div>
               <Fade bottom delay={1000}>
                 <Title>
-                  Bienvenides
+                  Promoción Día del juego
                   <span
                     className="emoji"
                     role="img"
@@ -80,15 +81,15 @@ const IndexPage = () => {
                 </Title>
               </Fade>
               <div className="pt-3">
-                <div className="flex flex-col items-center justify-start max-w-3xl p-3 py-2 mx-auto">
+                <div className="flex flex-col items-center justify-start max-w-3xl p-3 py-2 mx-auto font-mono font-thin">
                   <Fade bottom delay={1000}>
                     <AwesomeButton
                       action={() => {
-                        navigate(`/quienes-somos`)
+                        navigate(`/juegos/todos`)
                       }}
                       type="secondary"
                     >
-                      Quienes somos
+                      Tiendita de juegos
                       <FiChevronRight className="inline-block mt-1 ml-3" />
                     </AwesomeButton>
                   </Fade>
@@ -114,11 +115,11 @@ const IndexPage = () => {
                   <Fade bottom delay={500}>
                     <AwesomeButton
                       action={() => {
-                        navigate(`/juegos/todos`)
+                        navigate(`/juegos/precio`)
                       }}
                       type="secondary"
                     >
-                      Conocé los juegos
+                      Conocé los más economicos
                       <FiChevronRight className="inline-block mt-1 ml-3" />
                     </AwesomeButton>
                   </Fade>
@@ -157,10 +158,31 @@ const IndexPage = () => {
           </svg>
         </Wave>
       </Hero>
+      <section className="my-12">
+        <h1 className="max-w-4xl mx-auto mb-3 font-serif text-4xl font-bold text-orange-500">
+          Somos Kallpa Lúdica
+        </h1>
+        <h2 className="max-w-4xl mx-auto mb-6 font-serif text-2xl font-bold text-gray-800">
+          Somos un equipo transdisciplinario que busca poner sobre la mesa el
+          juego para problematizarlo y apropiarnos de una práctica milenaria
+          imprescindible.
+        </h2>
+        <Fade bottom delay={1000}>
+          <AwesomeButton
+            action={() => {
+              navigate(`/quienes-somos`)
+            }}
+            type="primary"
+          >
+            Conocér quienes somos
+            <FiChevronRight className="inline-block mt-1 ml-3" />
+          </AwesomeButton>
+        </Fade>
+      </section>
       <section className="hidden">
         <Mision />
       </section>
-      <section className="relative hidden py-24">
+      <section className="relative hidden py-24 mt-12">
         <h1 className="max-w-4xl mx-auto font-serif text-4xl font-bold text-orange-500">
           Algunas modalidades de juegos
         </h1>
@@ -202,10 +224,11 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <section>
-        <div className="relative flex flex-col w-full max-w-6xl mx-auto border-b border-indigo-700 border-dashed md:flex-row">
-          <h1 className="w-full max-w-6xl pt-4 mx-auto font-serif text-3xl font-bold text-center text-indigo-700 md:text-left ">
-            Últimos juegos agregados
+      <section className="mt-24">
+        <div className="relative flex flex-col w-full max-w-6xl mx-auto border-b border-orange-700 border-dashed md:flex-row">
+          <h1 className="flex items-center w-full max-w-6xl pt-4 mx-auto font-serif text-3xl font-bold text-center text-orange-500 md:text-left ">
+            <AiFillShop className="mr-3 text-4xl text-orange-400 transform -translate-y-1" />{" "}
+            Tiendita de Juegos
           </h1>
           <div className="mt-6">
             <GameSort />
@@ -257,7 +280,7 @@ const HeroContent = styled.div`
 `
 
 const Title = styled.h1`
-  ${tw`max-w-xl mx-auto font-sans text-2xl font-bold text-center text-white md:text-4xl`}
+  ${tw`max-w-xl mx-auto font-mono text-2xl text-center text-white md:text-4xl`}
 `
 
 const Hero = styled.div`

@@ -43,12 +43,18 @@ const AboutPage = () => {
 
       <Section>
         <AnchorLinks>
+          <AnchorLink href="#equipo">Equipo</AnchorLink>
           <AnchorLink href="#mision">Misión</AnchorLink>
           <Link to="/propuestas">Propuestas</Link>
           <AnchorLink href="#objectives">Objetivos</AnchorLink>
         </AnchorLinks>
         <About />
       </Section>
+      <section id="equipo">
+        <div className="w-full py-24 text-left bg-orange-100">
+          <h1 className="max-w-4xl mx-auto font-serif text-4xl">Equipo</h1>
+        </div>
+      </section>
       <Mision />
 
       <Objectives />

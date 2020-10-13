@@ -75,10 +75,10 @@ const Header = ({ siteTitle }) => (
               <Link
                 key={i}
                 activeclassname={route.active}
-                className={`hover:${route.active} flex items-center py-3 md:mx-4   font-mono  text-lg  font-bold tracking-widest opacity-75`}
+                className={`hover:${route.active} flex items-center py-3 md:mx-4  font-mono text-base tracking-widest opacity-75`}
                 to={route.slug}
               >
-                <b>{route.title}</b>
+                <span>{route.title}</span>
               </Link>
             )
           })}
@@ -90,10 +90,10 @@ const Header = ({ siteTitle }) => (
               <Link
                 key={i}
                 activeclassname={route.active}
-                className={`hover:${route.active}  flex items-center py-2 px-4 md:mx-2  font-mono  text-lg  font-bold tracking-widest opacity-100 bg-gray-100 hover:bg-orange-500 hover:text-white rounded-full shadow-md hover:shadow-lg transition-all transform`}
+                className={`hover:${route.active}  flex items-center py-2 px-4 md:mx-2  font-mono  text-lg   tracking-widest opacity-100 bg-gray-100 hover:bg-orange-500 hover:text-white rounded-full shadow-md hover:shadow-lg transition-all transform`}
                 to={route.slug}
               >
-                <b>{route.title}</b>
+                <span>{route.title}</span>
                 <span className="ml-2">{route.icon}</span>
               </Link>
             )
@@ -120,10 +120,6 @@ const NavLeft = styled.nav`
 
   a {
     ${tw`text-white`}
-
-    b {
-      ${tw`font-extrabold`}
-    }
 
     .headroom--pinned & {
       ${tw`text-gray-900`}

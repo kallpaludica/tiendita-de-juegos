@@ -182,6 +182,6 @@ const Main = styled.section`
 `
 
 const MainTitle = styled.h2`
-  ${tw`pl-5 mt-2 font-serif text-3xl font-bold text-center border-b border-green-300 md:text-left`}
+  ${tw`pl-5 -mt-4 font-mono text-3xl text-center md:text-left`}
   ${tw`text-white`}
 `

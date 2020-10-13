@@ -32,10 +32,10 @@ const Aside = styled.div`
   }
 
   h3 {
-    ${tw`my-3 font-serif text-base font-bold uppercase`}
+    ${tw`my-3 font-mono text-base uppercase`}
   }
 
   h2 {
-    ${tw`my-3 font-serif text-xl font-bold`}
+    ${tw`my-3 font-mono text-xl `}
   }
 `

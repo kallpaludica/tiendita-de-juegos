@@ -7,11 +7,11 @@ import Fade from "react-reveal/Fade"
 import { Player, BigPlayButton } from "video-react"
 
 const Bold = ({ children }) => (
-  <span className="font-mono font-bold">{children}</span>
+  <span className="font-serif font-bold">{children}</span>
 )
 const Text = ({ children }) => (
   <Fade>
-    <p className="w-full mt-2 mb-4 font-mono text-xl text-gray-900">
+    <p className="w-full mt-2 mb-4 font-serif text-2xl text-gray-900">
       {children}
     </p>
   </Fade>

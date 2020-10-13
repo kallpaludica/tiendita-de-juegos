@@ -49,6 +49,12 @@ module.exports = {
         // Accepts all options defined by `babel-plugin-emotion` plugin.
       },
     },
+    {
+  resolve: `gatsby-plugin-breadcrumb`,
+  options: {
+    useAutoGen: true,
+ },
+},
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

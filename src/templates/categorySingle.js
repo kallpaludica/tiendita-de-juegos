@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { Link } from "gatsby"
 import { kebabCase } from "lodash"
 import Layout from "../components/layout"
+import Bread from "../components/breadcrumb"
 import SEO from "../components/seo"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
@@ -24,7 +25,7 @@ const CategorySingleTemplate = ({ data, pageContext, location }) => {
         pattern="bg-orange-600 text-orange-500 "
         svg="M0,224L80,240C160,256,320,288,480,277.3C640,267,800,213,960,202.7C1120,192,1280,224,1360,240L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
       />
-
+      <Bread breaddata={pageContext.breadcrumb} ></Bread>
       <div className="pb-24">
         {categoria.articulos ? (
           <Container>
