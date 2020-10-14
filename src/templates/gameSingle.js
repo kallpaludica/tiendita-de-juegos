@@ -117,7 +117,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </h3>
             </div>
             <div className="relative flex flex-col w-full px-2 pt-3 md:pl-12">
-              <h1 className="w-full pl-6 font-sans text-4xl font-black text-left text-green-600 md:pl-0 md:text-5xl">
+              <h1 className="w-full pl-6 font-mono text-2xl text-left text-green-600 md:pl-0 md:text-4xl">
                 {post.title}
               </h1>
               <div className="flex flex-col justify-center w-full pl-6 my-2 text-gray-700 md:px-0 md:flex-row md:justify-start">

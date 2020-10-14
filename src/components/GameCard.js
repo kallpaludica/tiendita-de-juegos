@@ -27,8 +27,8 @@ export default ({ card }) => (
           src={AboutImage}
         />
       )}
-      <div className="relative w-full px-3 pb-10 font-sans text-left">
-        <h3 className="block pt-3 pb-1 text-base font-bold sm:pb-8 sm:pr-16 sm:h-16 md:pb-0 ">
+      <div className="relative w-full px-3 pb-12 font-sans text-left">
+        <h3 className="block pt-3 pb-1 font-mono text-xl sm:pb-8 sm:pr-16 sm:h-16 md:pb-0 ">
           {card.title}
         </h3>
         {card.stock ? (

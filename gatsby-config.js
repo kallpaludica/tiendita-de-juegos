@@ -57,7 +57,7 @@ module.exports = {
           location: {
             pathname: "/",
           },
-          crumbLabel: "HomeCustom",
+          crumbLabel: "Inicio",
         },
       },
     },

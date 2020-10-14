@@ -2,6 +2,8 @@ import React from "react"
 import Layout from "../components/layout"
 import Contact from "../components/About/Contact"
 import Mision from "../components/About/Mision"
+import Proposals from "../components/About/Proposals"
+
 import Objectives from "../components/About/Objectives"
 import About from "../components/About/About"
 import SEO from "../components/seo"
@@ -41,12 +43,22 @@ const AboutPage = () => {
         </Wave>
       </Hero>
 
+      <Section></Section>
+
       <Section>
         <AnchorLinks>
-          <AnchorLink href="#equipo">Equipo</AnchorLink>
-          <AnchorLink href="#mision">Misión</AnchorLink>
-          <Link to="/propuestas">Propuestas</Link>
-          <AnchorLink href="#objectives">Objetivos</AnchorLink>
+          <AnchorLink className="font-mono" href="#equipo">
+            Equipo
+          </AnchorLink>
+          <AnchorLink className="font-mono" href="#mision">
+            Misión
+          </AnchorLink>
+          <AnchorLink className="font-mono" href="#objectives">
+            Objetivos
+          </AnchorLink>
+          <AnchorLink className="font-mono" href="#proposals">
+            Propuestas
+          </AnchorLink>
         </AnchorLinks>
         <About />
       </Section>
@@ -56,8 +68,8 @@ const AboutPage = () => {
         </div>
       </section>
       <Mision />
-
       <Objectives />
+      <Proposals />
       <Contact />
     </Layout>
   )

@@ -31,12 +31,7 @@ const Layout = ({ location, children }) => {
         <Sidebar />
         <Header siteTitle={data.site.siteMetadata.title} />
         <TransitionViews>{children}</TransitionViews>
-        <ReactTooltip
-          place="left"
-          type="dark"
-          effect="solid"
-          className="bg-red-500 shadow"
-        />
+        <ReactTooltip place="left" type="dark" effect="solid" />
         <a
           className="fixed bottom-0 right-0 p-1 mb-3 mr-3 overflow-hidden text-white bg-green-500 rounded-full hover:bg-green-600 hover:text-white"
           target="_blank"

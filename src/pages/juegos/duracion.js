@@ -116,13 +116,13 @@ const DurationPage = (props) => {
           <PageSticky>
             <MainTitle>Ordenado por duración</MainTitle>
           </PageSticky>
-          <div className="relative flex flex-col-reverse justify-start border-b-2 border-green-300 sm:flex-row sm:py-3 sm:pt-6">
+          <div className="relative flex flex-col justify-start border-b-2 border-green-300 sm:flex-row sm:py-0 sm:pt-6">
             <GameSort />
             <button
               className="relative bottom-0 right-0 flex items-center justify-center px-6 py-3 font-bold text-green-800 bg-green-300 outline-none md:absolute focus:outline-none"
               onClick={() => setToggle(!isToggled)}
             >
-              <span className="mr-2">Invertir filtros</span>
+              <span className="mr-2 font-sans">Invertir filtros</span>
               <animated.div style={sortICON}>
                 <FaCaretRight className="text-lg" />
               </animated.div>

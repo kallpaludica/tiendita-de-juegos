@@ -57,9 +57,9 @@ const juicyBread = ({ breaddata }) => {
 export default juicyBread
 
 const Breadcrumb = styled.div`
-  ${tw`relative w-full mb-3 `}
+  ${tw`relative w-full max-w-6xl mx-auto mb-3 `}
 `
 
 const List = styled.ol`
-  ${tw`flex inline-flex justify-start p-0 list-none`}
+  ${tw`flex justify-start p-0 list-none`}
 `

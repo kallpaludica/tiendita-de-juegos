@@ -139,6 +139,10 @@ const NavRight = styled.nav`
   a {
     ${tw`text-orange-700`}
 
+    &:hover {
+      ${tw`text-white`}
+    }
+
     .headroom--pinned & {
       ${tw`text-gray-900`}
     }

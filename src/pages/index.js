@@ -158,7 +158,7 @@ const IndexPage = () => {
           </svg>
         </Wave>
       </Hero>
-      <section className="my-12">
+      <section className="my-12 font-mono">
         <h1 className="max-w-4xl mx-auto mb-3 font-sans text-4xl font-bold text-orange-500">
           Somos Kallpa Lúdica
         </h1>
