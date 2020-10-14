@@ -29,7 +29,7 @@ const Toggle = (props) => {
         className="absolute inset-0 z-40 flex flex-col items-start justify-start px-3 pt-4 pb-2 pr-4 overflow-hidden bg-orange-100 border-2 border-orange-600 rounded-lg"
         style={fade}
       >
-        <h2 className="w-full pb-1 mb-3 font-mono text-lg text-left text-orange-600 border-b border-orange-600">
+        <h2 className="w-full pb-1 mb-3 font-sans text-lg text-left text-orange-600 border-b border-orange-600">
           <span className="pr-2">{props.title}</span>
           {props.publisher && (
             <div className="flex items-center justify-start ">

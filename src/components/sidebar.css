@@ -46,7 +46,7 @@
 .home .awssld__controls__arrow-left:before,
 .home .awssld__controls__arrow-right:after,
 .home .awssld__controls__arrow-right:before {
-  @apply bg-white opacity-100 !important;
+  @apply bg-indigo-700 opacity-100 !important;
 }
 
 .home .awssld__content > div {
@@ -83,7 +83,7 @@
 
 .home .awssld__bullets {
   z-index: 999 !important;
-  bottom: -80px !important;
+  bottom: 100px !important;
 }
 .bm-burger-button {
   position: fixed;
@@ -158,13 +158,13 @@
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  @apply bg-green-500;
+  @apply bg-white;
   height: 2px !important;
 }
 
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
-  @apply bg-green-700;
+  @apply bg-gray-300;
   opacity: 1 !important;
 }
 

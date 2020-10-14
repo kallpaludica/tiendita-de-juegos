@@ -64,7 +64,13 @@ module.exports = {
         // Accepts all options defined by `gatsby-plugin-postcss` plugin.
       },
     },
-
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `backgrounds`,
+        path: `${__dirname}/src/bghome`, // wherever background images are stored
+      },
+    },
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {

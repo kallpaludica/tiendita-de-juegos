@@ -14,25 +14,25 @@ import { IoIosChatbubbles, IoIosArchive, IoMdMail } from "react-icons/io"
 const routesLeft = [
   {
     title: "Quienes somos",
-    active: "opacity-100",
+    active: "opacity-100 text-red-500",
     slug: "/quienes-somos",
     icon: <IoIosChatbubbles className="text-2xl " />,
   },
   {
     title: "Comunidad",
-    active: "opacity-100",
+    active: "opacity-100 text-red-500",
     slug: "/comunidad",
     icon: <FaNewspaper className="text-2xl " />,
   },
   {
     title: "Recursos",
-    active: "opacity-100",
+    active: "opacity-100 text-red-500",
     slug: "/recursos",
     icon: <IoIosArchive className="text-2xl " />,
   },
   {
     title: "Contacto",
-    active: "opacity-100",
+    active: "opacity-100 text-red-500",
     slug: "/contacto",
     icon: <IoMdMail className="text-2xl " />,
   },
@@ -77,7 +77,7 @@ const Header = ({ siteTitle }) => (
             return (
               <Link
                 key={i}
-                activeclassname={route.active}
+                activeclassName={route.active}
                 className={`hover:${route.active} flex items-center py-3 md:mx-4  font-mono text-lg`}
                 to={route.slug}
               >
@@ -93,7 +93,7 @@ const Header = ({ siteTitle }) => (
               <Link
                 key={i}
                 activeclassname={route.active}
-                className={`hover:${route.active}  flex items-center py-2 px-4 md:mx-2  font-mono  text-lg   tracking-widest opacity-100 bg-gray-100 hover:bg-orange-500 hover:text-white rounded-full shadow-md hover:shadow-lg transition-all transform`}
+                className={`hover:${route.active} flex items-center py-2 px-4 md:mx-2 font-mono text-lg opacity-100 bg-gray-100 hover:bg-orange-500 hover:text-white rounded-full shadow-md hover:shadow-lg transition-all transform`}
                 to={route.slug}
               >
                 <span className="mr-2">{route.icon}</span>

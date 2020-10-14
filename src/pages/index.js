@@ -15,6 +15,7 @@ import AwesomeSlider from "react-awesome-slider"
 //import AboutImage from "../images/kallpa-ludica.png"
 import GameSort from "../components/Games/GameSort"
 import { AiFillShop } from "react-icons/ai"
+import BackgroundSlider from "../components/HomeSlider"
 
 import Fade from "react-reveal/Fade"
 import tw from "twin.macro"
@@ -63,11 +64,44 @@ const IndexPage = () => {
         <body className="home" />
       </Helmet>
       <SEO title="Inicio" />
-      <Hero className="relative overflow-hidden bg-purple-700">
+      <div className="relative z-50 flex-col items-center justify-center w-full px-2 pt-16 pb-6 m-auto mt-0 overflow-hidden text-center bg-teal-700 md:mt-0 home-hero ">
+        <div className="flex items-center justify-center h-64 pt-48 pb-32">
+          <h2 className="max-w-xl mx-auto font-mono text-2xl text-center text-white md:text-4xl">
+            Kallpa = Potencia
+          </h2>
+          <div className="opacity-50 ">
+            <BackgroundSlider />
+          </div>
+        </div>
+        <Wave>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <defs xmlns="http://www.w3.org/2000/svg">
+              <filter id="dropshadow" height="130%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+                <feOffset dx="2" dy="2" result="offsetblur" />
+                <feComponentTransfer>
+                  <feFuncA type="linear" slope="0.2" />
+                </feComponentTransfer>
+                <feMerge>
+                  <feMergeNode />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+            <path
+              fillOpacity="1"
+              filter="url(#dropshadow)"
+              className="text-white fill-current "
+              d="M0,160L80,176C160,192,320,224,480,224C640,224,800,192,960,192C1120,192,1280,224,1360,240L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+            ></path>
+          </svg>
+        </Wave>
+      </div>
+      <Hero className="relative overflow-hidden bg-white">
         <HeroContent>
           <AwesomeSlider>
             <div>
-              <Fade bottom delay={1000}>
+              <Fade bottom delay={100}>
                 <Title>
                   Promoción Día del juego
                   <span
@@ -82,7 +116,7 @@ const IndexPage = () => {
               </Fade>
               <div className="pt-3">
                 <div className="flex flex-col items-center justify-start max-w-3xl p-3 py-2 mx-auto font-mono font-thin">
-                  <Fade bottom delay={1000}>
+                  <Fade bottom delay={200}>
                     <AwesomeButton
                       action={() => {
                         navigate(`/juegos/todos`)
@@ -97,29 +131,21 @@ const IndexPage = () => {
               </div>
             </div>
             <div>
-              <Fade bottom delay={1000}>
+              <Fade bottom delay={100}>
                 <Title>
-                  Hola!
-                  <span
-                    className="emoji"
-                    role="img"
-                    aria-label="Hola! y bienvenide"
-                    aria-hidden="false"
-                  >
-                    👋
-                  </span>
+                  Más económicos, <br /> jugones y más
                 </Title>
               </Fade>
               <div className="pt-3">
-                <div className="flex flex-col items-center justify-start max-w-3xl p-3 py-2 mx-auto">
-                  <Fade bottom delay={500}>
+                <div className="flex flex-col items-center justify-start max-w-3xl p-3 py-2 mx-auto font-mono font-thin">
+                  <Fade bottom delay={200}>
                     <AwesomeButton
                       action={() => {
                         navigate(`/juegos/precio`)
                       }}
                       type="secondary"
                     >
-                      Conocé los más economicos
+                      conocelos
                       <FiChevronRight className="inline-block mt-1 ml-3" />
                     </AwesomeButton>
                   </Fade>
@@ -132,7 +158,7 @@ const IndexPage = () => {
           src={HomeHeroImage}
           title="bienvenides"
           alt="bienvenides"
-          className="absolute top-0 object-cover w-full h-full opacity-25"
+          className="absolute top-0 hidden object-cover w-full h-full opacity-25"
         />
         <Wave>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -280,7 +306,7 @@ const HeroContent = styled.div`
 `
 
 const Title = styled.h1`
-  ${tw`max-w-xl mx-auto font-mono text-2xl text-center text-white md:text-4xl`}
+  ${tw`max-w-xl mx-auto font-mono text-2xl text-center text-indigo-500 md:text-4xl`}
 `
 
 const Hero = styled.div`

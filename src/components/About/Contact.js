@@ -31,7 +31,7 @@ const ContactComponent = () => {
         link
       }
       contactanos: contentfulSobreElProyecto(
-        title: { eq: "Hacenos tu consulta" }
+        title: { eq: "¿Tenés una pregunta, sugerencia o idea para compartir?" }
       ) {
         id
         title
@@ -44,7 +44,7 @@ const ContactComponent = () => {
 
   return (
     <>
-      <h1 className="max-w-6xl mx-auto mt-6 font-mono text-4xl font-bold text-green-700">
+      <h1 className="max-w-6xl mx-auto mt-6 font-mono text-3xl font-bold text-green-700">
         {data.contactanos.title}
       </h1>
 
