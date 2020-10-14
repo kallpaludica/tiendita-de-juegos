@@ -64,9 +64,9 @@ const Header = ({ siteTitle }) => (
     <HeaderContainer>
       <InnerHeader>
         <Logo>
-          <Link to="/" className="flex mr-12">
-            <KallpaLogo className="w-16 mr-3 kallpa-logo" />
-            <span className="mt-2 font-mono text-3xl leading-7">
+          <Link to="/" className="flex items-center mr-12">
+            <KallpaLogo className="w-16 h-16 mr-3 kallpa-logo" />
+            <span className="font-mono text-2xl leading-5 md:leading-7 md:text-3xl">
               Kallpa <br /> lúdica
             </span>
           </Link>
