@@ -110,7 +110,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         categories.forEach((category, index) => {
           createPage({
-            path: `/categorias/${category.node.slug}/`,
+            path: `/modalidades/${category.node.slug}/`,
             component: categorySingle,
             context: {
               slug: category.node.slug,

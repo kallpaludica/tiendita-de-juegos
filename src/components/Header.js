@@ -67,7 +67,7 @@ const Header = ({ siteTitle }) => (
           <Link to="/" className="flex mr-12">
             <KallpaLogo className="w-16 mr-3 kallpa-logo" />
             <span className="mt-2 font-mono text-3xl leading-7">
-              kallpa <br /> lúdica
+              Kallpa <br /> lúdica
             </span>
           </Link>
         </Logo>
@@ -173,11 +173,11 @@ const Logo = styled.div`
     transition: all 1s;
   }
   .headroom--pinned & .kallpa-logo {
-    transform: scale(0.9) rotate(99deg);
+    transform: scale(0.9) rotate(120deg);
   }
 
   .headroom--unpinned & .kallpa-logo {
-    transform: scale(0.9) rotate(66deg);
+    transform: scale(0.9) rotate(60deg);
   }
 
   .gatsby-image-wrapper {

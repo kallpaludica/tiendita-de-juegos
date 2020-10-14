@@ -40,7 +40,7 @@ const CategorySingleTemplate = ({ data, pageContext, location }) => {
         )}
 
         <h4 className="max-w-6xl py-6 mx-auto mb-6 font-sans text-xl font-bold text-orange-500 border-t border-orange-200">
-          Todas las modalidades de juegos
+          Algunas modalidades de juegos
         </h4>
         <GameCategories />
 
@@ -51,7 +51,7 @@ const CategorySingleTemplate = ({ data, pageContext, location }) => {
           <PageNav>
             <div>
               {prev && (
-                <Link to={`/categorias/${kebabCase(prev.slug)}/`} rel="prev">
+                <Link to={`/modalidades/${kebabCase(prev.slug)}`} rel="prev">
                   ← {prev.title}
                 </Link>
               )}
@@ -59,7 +59,7 @@ const CategorySingleTemplate = ({ data, pageContext, location }) => {
 
             <div style={{ justifySelf: "flex-end" }}>
               {next && (
-                <Link to={`/categorias/${kebabCase(next.slug)}/`} rel="next">
+                <Link to={`/modalidades/${kebabCase(next.slug)}`} rel="next">
                   {next.title} →
                 </Link>
               )}

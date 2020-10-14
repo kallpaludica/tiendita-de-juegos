@@ -53,12 +53,7 @@ module.exports = {
       resolve: `gatsby-plugin-breadcrumb`,
       options: {
         useAutoGen: true,
-        defaultCrumb: {
-          location: {
-            pathname: "/",
-          },
-          crumbLabel: "Inicio",
-        },
+        autoGenHomeLabel: `Inicio`,
       },
     },
     `gatsby-transformer-sharp`,

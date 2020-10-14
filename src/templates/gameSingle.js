@@ -146,7 +146,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   <span className="font-sans font-bold ">Modalidad:</span>
                   {post.categoria.map((item, i) => (
                     <Link
-                      to={`/categorias/${kebabCase(item.slug)}/`}
+                      to={`/modalidades/${kebabCase(item.slug)}`}
                       className="flex flex-col py-1 pr-4 mx-2 my-2 rounded-full "
                       key={i}
                       data-tip={item.title}

@@ -26,7 +26,7 @@ const QueryCategoriesComponent = () => {
     <>
       {data.categories.edges.map(({ node }) => {
         return (
-          <Link key={node.slug} to={`/categorias/${kebabCase(node.slug)}/`}>
+          <Link key={node.slug} to={`/modalidades/${kebabCase(node.slug)}`}>
             {node.title}
           </Link>
         )
