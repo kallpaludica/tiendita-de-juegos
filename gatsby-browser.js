@@ -1,7 +1,7 @@
 require("babel-polyfill")
 require("./src/styles/globals.css")
-require("typeface-fanwood-text")
-require("typeface-quattrocento")
+require("typeface-josefin-sans")
+require("typeface-josefin-slab")
 require("typeface-fredoka-one")
 
 exports.shouldUpdateScroll = () => {

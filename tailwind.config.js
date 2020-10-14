@@ -4,8 +4,8 @@ module.exports = {
   },
   theme: {
     fontFamily: {
-      sans: ["Fanwood Text", "sans-serif"],
-      serif: ["Quattrocento", "sans-serif"],
+      sans: ["Josefin Sans", "sans-serif"],
+      serif: ["Josefin Slab", "sans-serif"],
       mono: ["Fredoka One", "sans-serif"],
     },
   },

@@ -71,6 +71,8 @@
     "twin.macro": "^1.10.0",
     "typeface-fanwood-text": "^1.1.13",
     "typeface-fredoka-one": "^1.1.13",
+    "typeface-josefin-sans": "^1.1.13",
+    "typeface-josefin-slab": "^1.1.13",
     "typeface-quattrocento": "^1.1.13",
     "video-react": "^0.14.1"
   },

@@ -54,7 +54,7 @@ const SearchIndex = (props) => {
       />
       <div className="w-full bg-white">
         <div className="relative w-full max-w-2xl py-2 m-auto mb-2 text-center bg-white searchBox md:pb-6 animated fadeIn slower">
-          <span className="absolute top-0 right-0 p-6 py-5 font-serif text-lg font-bold text-gray-400">
+          <span className="absolute top-0 right-0 p-6 py-5 font-sans text-lg font-bold text-gray-400">
             {totales} juegos
           </span>
 
@@ -80,7 +80,7 @@ const SearchIndex = (props) => {
               >
                 <Link
                   to={`/juegos/${kebabCase(slug)}/`}
-                  className="font-serif text-xl font-bold"
+                  className="font-sans text-xl font-bold"
                 >
                   {title}
                 </Link>

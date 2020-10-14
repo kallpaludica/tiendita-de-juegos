@@ -27,7 +27,7 @@ export default ({ card }) => (
           src={AboutImage}
         />
       )}
-      <div className="relative w-full px-3 pb-10 font-serif text-left">
+      <div className="relative w-full px-3 pb-10 font-sans text-left">
         <h3 className="block pt-3 pb-1 text-base font-bold sm:pb-8 sm:pr-16 sm:h-16 md:pb-0 ">
           {card.title}
         </h3>
@@ -43,7 +43,7 @@ export default ({ card }) => (
 
         {card.GameAges && (
           <div className="hidden w-full pt-1 text-left game-ages">
-            <div className="flex justify-center pb-1 font-serif text-lg font-bold text-left text-gray-800 ">
+            <div className="flex justify-center pb-1 font-sans text-lg font-bold text-left text-gray-800 ">
               <div className="flex flex-col flex-1 text-base opacity-75">
                 {card.GameAges}+ años
                 <small className="text-xs ">Edades sugeridas</small>
@@ -53,7 +53,7 @@ export default ({ card }) => (
         )}
         {card.GameDuration && (
           <div className="hidden w-full pt-1 text-left game-duration">
-            <div className="flex justify-center pb-1 font-serif text-lg font-bold text-left text-gray-800 ">
+            <div className="flex justify-center pb-1 font-sans text-lg font-bold text-left text-gray-800 ">
               <div className="flex flex-col flex-1 text-base opacity-75">
                 {card.GameDuration} min.
                 <small className="text-xs ">Tiempos de partida</small>
@@ -63,7 +63,7 @@ export default ({ card }) => (
         )}
         {card.GamePlayers && (
           <div className="hidden w-full pt-1 text-left game-players">
-            <div className="flex justify-center pb-1 font-serif text-lg font-bold text-left text-gray-800 ">
+            <div className="flex justify-center pb-1 font-sans text-lg font-bold text-left text-gray-800 ">
               <div className="flex items-baseline flex-1">
                 {card.GamePlayers}
                 <span className="pl-1 text-xs ">Jugadores</span>
@@ -73,7 +73,7 @@ export default ({ card }) => (
         )}
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-2 px-3 font-serif text-sm font-bold text-left text-green-800 transition-all duration-500 bg-green-100 hover:text-white hover:bg-green-600">
+      <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-2 px-3 font-sans text-sm font-bold text-left text-green-800 transition-all duration-500 bg-green-100 hover:text-white hover:bg-green-600">
         Consultar
         <FaCaretRight className="text-lg text-green-300" />
       </div>

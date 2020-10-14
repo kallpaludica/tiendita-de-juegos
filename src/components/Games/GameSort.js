@@ -12,7 +12,7 @@ const GamesSort = () => {
       <Sort>
         <Link
           activeClassName="text-orange-100  bg-orange-500 "
-          className="flex items-center px-2 font-bold rounded-full hover:text-orange-100 hover:bg-orange-500"
+          className="flex items-center px-2 font-sans text-xl rounded-full hover:text-orange-100 hover:bg-orange-500"
           to="/juegos/todos"
         >
           <AiOutlineSortAscending
@@ -24,7 +24,7 @@ const GamesSort = () => {
 
         <Link
           activeClassName="text-teal-100  bg-teal-500 "
-          className="flex items-center px-2 font-bold rounded-full hover:text-teal-100 hover:bg-teal-500"
+          className="flex items-center px-2 font-sans text-xl rounded-full hover:text-teal-100 hover:bg-teal-500"
           to="/juegos/precio"
         >
           <AiOutlineDollar className="mx-auto mr-1 text-xl " /> Precio
@@ -32,7 +32,7 @@ const GamesSort = () => {
 
         <Link
           activeClassName="text-green-100  bg-green-500 "
-          className="flex items-center px-2 font-bold rounded-full hover:text-green-100 hover:bg-green-500"
+          className="flex items-center px-2 font-sans text-xl rounded-full hover:text-green-100 hover:bg-green-500"
           to="/juegos/duracion"
         >
           <IoMdTime className="mx-auto mr-1 text-xl " /> Duración
@@ -40,7 +40,7 @@ const GamesSort = () => {
 
         <Link
           activeClassName="text-indigo-100   bg-indigo-500 "
-          className="flex items-center px-2 font-bold rounded-full hover:text-indigo-100 hover:bg-indigo-500"
+          className="flex items-center px-2 font-sans text-xl rounded-full hover:text-indigo-100 hover:bg-indigo-500"
           to="/juegos/edades"
         >
           <FaUserFriends className="mx-auto mr-1 text-base " /> Edades

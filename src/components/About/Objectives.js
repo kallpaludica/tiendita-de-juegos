@@ -23,10 +23,10 @@ const ObjectivesComponent = () => {
         className="w-full py-24 mb-32 text-left bg-indigo-100"
         id="objectives"
       >
-        <h1 className="max-w-4xl mx-auto font-serif text-4xl">
+        <h1 className="max-w-4xl mx-auto font-mono text-4xl">
           {data.objetivos.title}
         </h1>
-        <List className="max-w-4xl mx-auto font-serif text-2xl ">
+        <List className="max-w-4xl mx-auto font-sans text-2xl ">
           <FormatText
             FormatText={
               data.objetivos

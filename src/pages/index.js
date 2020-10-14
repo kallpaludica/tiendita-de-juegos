@@ -159,10 +159,10 @@ const IndexPage = () => {
         </Wave>
       </Hero>
       <section className="my-12">
-        <h1 className="max-w-4xl mx-auto mb-3 font-serif text-4xl font-bold text-orange-500">
+        <h1 className="max-w-4xl mx-auto mb-3 font-sans text-4xl font-bold text-orange-500">
           Somos Kallpa Lúdica
         </h1>
-        <h2 className="max-w-4xl mx-auto mb-6 font-serif text-2xl font-bold text-gray-800">
+        <h2 className="max-w-4xl mx-auto mb-6 font-sans text-2xl font-bold text-gray-800">
           Somos un equipo transdisciplinario que busca poner sobre la mesa el
           juego para problematizarlo y apropiarnos de una práctica milenaria
           imprescindible.
@@ -174,7 +174,7 @@ const IndexPage = () => {
             }}
             type="primary"
           >
-            Conocér quienes somos
+            Conocé quienes somos
             <FiChevronRight className="inline-block mt-1 ml-3" />
           </AwesomeButton>
         </Fade>
@@ -183,7 +183,7 @@ const IndexPage = () => {
         <Mision />
       </section>
       <section className="relative hidden py-24 mt-12">
-        <h1 className="max-w-4xl mx-auto font-serif text-4xl font-bold text-orange-500">
+        <h1 className="max-w-4xl mx-auto font-sans text-4xl font-bold text-orange-500">
           Algunas modalidades de juegos
         </h1>
         <div className="flex flex-wrap justify-center max-w-3xl mx-auto my-12 text-center bg-white md:flex-row">
@@ -192,7 +192,7 @@ const IndexPage = () => {
               <Link
                 key={node.slug}
                 to={`/categorias/${kebabCase(node.slug)}/`}
-                className="flex flex-col items-center justify-center mx-12 my-3 font-serif text-xl text-gray-700 hover:text-gray-900"
+                className="flex flex-col items-center justify-center mx-12 my-3 font-sans text-xl text-gray-700 hover:text-gray-900"
               >
                 {node.icono ? (
                   <div className="relative overflow-hidden transition-all duration-200 transform md:w-full hover:-translate-y-2">
@@ -226,7 +226,7 @@ const IndexPage = () => {
 
       <section className="mt-24">
         <div className="relative flex flex-col w-full max-w-6xl mx-auto border-b border-orange-700 border-dashed md:flex-row">
-          <h1 className="flex items-center w-full max-w-6xl pt-4 mx-auto font-serif text-3xl font-bold text-center text-orange-500 md:text-left ">
+          <h1 className="flex items-center w-full max-w-6xl pt-4 mx-auto font-sans text-3xl font-bold text-center text-orange-500 md:text-left ">
             <AiFillShop className="mr-3 text-4xl text-orange-400 transform -translate-y-1" />{" "}
             Tiendita de Juegos
           </h1>
@@ -238,7 +238,7 @@ const IndexPage = () => {
       </section>
 
       <section className="relative py-24 pb-64 text-indigo-200 bg-indigo-100 pattern-diagonal-lines-sm">
-        <h1 className="max-w-6xl pb-12 mx-auto font-serif text-4xl font-bold">
+        <h1 className="max-w-6xl pb-12 mx-auto font-sans text-4xl font-bold">
           Editoriales que nos acompañan
         </h1>
         <Publishers />

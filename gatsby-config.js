@@ -50,11 +50,17 @@ module.exports = {
       },
     },
     {
-  resolve: `gatsby-plugin-breadcrumb`,
-  options: {
-    useAutoGen: true,
- },
-},
+      resolve: `gatsby-plugin-breadcrumb`,
+      options: {
+        useAutoGen: true,
+        defaultCrumb: {
+          location: {
+            pathname: "/",
+          },
+          crumbLabel: "HomeCustom",
+        },
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

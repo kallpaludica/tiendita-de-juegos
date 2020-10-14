@@ -51,8 +51,8 @@ const AboutPage = () => {
         <About />
       </Section>
       <section id="equipo">
-        <div className="w-full py-24 text-left bg-orange-100">
-          <h1 className="max-w-4xl mx-auto font-serif text-4xl">Equipo</h1>
+        <div className="w-full py-24 text-left bg-green-100">
+          <h1 className="max-w-4xl mx-auto font-mono text-4xl">Equipo</h1>
         </div>
       </section>
       <Mision />
@@ -72,7 +72,7 @@ const Section = styled.section`
 const AnchorLinks = styled.div`
   ${tw`relative flex justify-around max-w-2xl p-3 pt-6 mx-auto mb-12 `}
   a {
-    ${tw`mx-6 font-serif text-xl font-bold text-center text-pink-800 hover:text-pink-500`}
+    ${tw`mx-6 font-sans text-xl font-bold text-center text-pink-800 hover:text-pink-500`}
     flex: 1;
   }
 `
@@ -86,7 +86,7 @@ const Title = styled.h1`
 `
 
 const Subtitle = styled.h3`
-  ${tw`pb-1 font-serif text-xl text-white`}
+  ${tw`pb-1 font-sans text-xl text-white`}
   p {
     ${tw`text-white `}
   }

@@ -17,11 +17,11 @@ const AboutAboutComponent = () => {
 
   return (
     <>
-      <h1 className="hidden max-w-4xl pb-6 mx-auto font-serif text-4xl">
+      <h1 className="hidden max-w-4xl pb-6 mx-auto font-mono text-4xl">
         {data.about.title}
       </h1>
 
-      <div className="max-w-xl mx-auto font-serif text-base text-left ">
+      <div className="max-w-xl mx-auto font-sans text-base text-left ">
         <FormatText
           FormatText={
             data.about.childContentfulSobreElProyectoTextoPrincipalRichTextNode

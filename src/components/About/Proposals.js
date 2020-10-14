@@ -20,10 +20,10 @@ const ProposalsComponent = () => {
   return (
     <>
       <div className="w-full py-24 text-left bg-white" id="proposals">
-        <h1 className="hidden max-w-4xl mx-auto font-serif text-4xl">
+        <h1 className="hidden max-w-4xl mx-auto font-mono text-4xl">
           {data.propuestas.title}
         </h1>
-        <List className="max-w-4xl mx-auto font-serif text-2xl ">
+        <List className="max-w-4xl mx-auto font-sans text-2xl ">
           <FormatText
             FormatText={
               data.propuestas

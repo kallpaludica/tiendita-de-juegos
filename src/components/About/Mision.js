@@ -20,11 +20,11 @@ const MisionComponent = () => {
   return (
     <>
       <div className="w-full py-24 text-left bg-orange-100" id="mision">
-        <h1 className="max-w-4xl mx-auto font-serif text-4xl">
+        <h1 className="max-w-4xl mx-auto font-mono text-4xl">
           {data.mision.title}
         </h1>
         <div className="flex items-center justify-center">
-          <List className="max-w-4xl mx-auto font-serif text-2xl ">
+          <List className="max-w-4xl mx-auto font-sans text-2xl ">
             <FormatText
               FormatText={
                 data.mision

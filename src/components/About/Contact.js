@@ -44,11 +44,11 @@ const ContactComponent = () => {
 
   return (
     <>
-      <h1 className="max-w-6xl mx-auto mt-6 font-serif text-4xl font-bold text-green-700">
+      <h1 className="max-w-6xl mx-auto mt-6 font-mono text-4xl font-bold text-green-700">
         {data.contactanos.title}
       </h1>
 
-      <div className="max-w-6xl mx-auto font-serif text-2xl">
+      <div className="max-w-6xl mx-auto ">
         <FormatText
           FormatText={
             data.contactanos
@@ -67,7 +67,7 @@ const ContactComponent = () => {
         >
           <RiWhatsappLine className="my-6 text-4xl" />
           <b>Teléfono</b>
-          <h2 className="my-2 font-serif text-xl">{data.whatsapp.link}</h2>
+          <h2 className="my-2 font-sans text-xl">{data.whatsapp.link}</h2>
         </a>
         <a
           className="flex flex-col items-center justify-center text-center hover:text-blue-500"
@@ -78,7 +78,7 @@ const ContactComponent = () => {
         >
           <AiOutlineFacebook className="my-6 text-4xl" />
           <b>Facebook</b>
-          <h2 className="my-2 font-serif text-xl">kallpa.ludica</h2>
+          <h2 className="my-2 font-sans text-xl">kallpa.ludica</h2>
         </a>
 
         <a
@@ -90,7 +90,7 @@ const ContactComponent = () => {
         >
           <AiOutlineInstagram className="my-6 text-4xl" />
           <b>Instagram</b>
-          <h2 className="my-2 font-serif text-xl">@kallpaludica</h2>
+          <h2 className="my-2 font-sans text-xl">@kallpaludica</h2>
         </a>
         <a
           className="flex flex-col items-center justify-center text-center hover:text-indigo-500"
@@ -101,7 +101,7 @@ const ContactComponent = () => {
         >
           <GoMail className="my-6 text-4xl" />
           <b>Mail</b>
-          <h2 className="my-2 font-serif text-xl">{data.mail.link}</h2>
+          <h2 className="my-2 font-sans text-xl">{data.mail.link}</h2>
         </a>
       </Socials>
     </>

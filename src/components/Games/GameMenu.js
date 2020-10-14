@@ -25,7 +25,7 @@ const GamesAside = () => {
 export default GamesAside
 
 const Aside = styled.div`
-  ${tw`top-0 flex flex-col w-full pt-20 pr-2 font-serif text-left `}
+  ${tw`top-0 flex flex-col w-full pt-20 pr-2 font-sans text-left `}
 
   a {
     ${tw`py-1 border-b border-gray-300 hover:border-green-300`}

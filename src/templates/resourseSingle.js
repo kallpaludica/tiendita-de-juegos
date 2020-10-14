@@ -22,11 +22,11 @@ const ResoursesSingleTemplate = ({ data, pageContext, location }) => {
       />
       <Link
         to="/recursos"
-        className="block max-w-lg mx-auto font-serif font-bold text-left text-green-500"
+        className="block max-w-lg mx-auto font-sans font-bold text-left text-green-500"
       >
         Ver todos los recursos
       </Link>
-      <h1 className="max-w-lg mx-auto font-serif text-4xl font-bold text-left">
+      <h1 className="max-w-lg mx-auto font-sans text-4xl font-bold text-left">
         {collection.title}
       </h1>
       <div

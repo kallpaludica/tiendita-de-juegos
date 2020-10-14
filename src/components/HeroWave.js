@@ -44,7 +44,7 @@ const Title = styled.h1`
 `
 
 const Subtitle = styled.div`
-  ${tw`w-full max-w-2xl pb-1 m-0 font-serif text-xl text-white`}
+  ${tw`w-full max-w-2xl pb-1 m-0 font-sans text-xl text-white`}
   p {
     ${tw`text-white `}
   }
@@ -54,7 +54,7 @@ const Back = styled.div`
   ${tw`py-3`}
 
   a {
-    ${tw`p-3 font-serif text-base font-bold text-white border-b border-white hover:bg-white hover:text-orange-500`}
+    ${tw`p-3 font-sans text-base font-bold text-white border-b border-white hover:bg-white hover:text-orange-500`}
   }
 `
 

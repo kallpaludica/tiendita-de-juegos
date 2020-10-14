@@ -64,8 +64,11 @@ const Header = ({ siteTitle }) => (
     <HeaderContainer>
       <InnerHeader>
         <Logo>
-          <Link to="/">
-            <KallpaLogo className="w-24" />
+          <Link to="/" className="flex mr-12">
+            <KallpaLogo className="w-16 mr-3 kallpa-logo" />
+            <span className="mt-2 font-mono text-3xl leading-7">
+              kallpa <br /> lúdica
+            </span>
           </Link>
         </Logo>
 
@@ -75,7 +78,7 @@ const Header = ({ siteTitle }) => (
               <Link
                 key={i}
                 activeclassname={route.active}
-                className={`hover:${route.active} flex items-center py-3 md:mx-4  font-mono text-base tracking-widest opacity-75`}
+                className={`hover:${route.active} flex items-center py-3 md:mx-4  font-mono text-lg`}
                 to={route.slug}
               >
                 <span>{route.title}</span>
@@ -93,8 +96,8 @@ const Header = ({ siteTitle }) => (
                 className={`hover:${route.active}  flex items-center py-2 px-4 md:mx-2  font-mono  text-lg   tracking-widest opacity-100 bg-gray-100 hover:bg-orange-500 hover:text-white rounded-full shadow-md hover:shadow-lg transition-all transform`}
                 to={route.slug}
               >
+                <span className="mr-2">{route.icon}</span>
                 <span>{route.title}</span>
-                <span className="ml-2">{route.icon}</span>
               </Link>
             )
           })}
@@ -115,7 +118,7 @@ Header.defaultProps = {
 export default Header
 
 const NavLeft = styled.nav`
-  ${tw`justify-start hidden w-full md:flex`}
+  ${tw`justify-center hidden w-full md:flex`}
   flex:1;
 
   a {
@@ -146,7 +149,7 @@ const NavRight = styled.nav`
 `
 
 const HeaderContainer = styled.header`
-  ${tw`z-50 px-2 py-0 transition-all duration-500 md:py-0 `}
+  ${tw`z-50 px-2 py-0 transition-all duration-500 md:py-2 `}
 
   body.ingame & a {
     ${tw`text-gray-800`} !important
@@ -154,7 +157,7 @@ const HeaderContainer = styled.header`
 `
 
 const InnerHeader = styled.div`
-  ${tw`relative flex items-center justify-between w-full max-w-6xl px-0 mx-auto md:pb-1 sm:pr-6 md:pr-0`}
+  ${tw`relative flex items-center justify-between w-full px-0 mx-auto md:pb-1 sm:pr-6 md:pr-0`}
 `
 
 const Logo = styled.div`
@@ -162,12 +165,15 @@ const Logo = styled.div`
   top:2px;
   transition: all 1s;
 
-  .headroom--pinned & {
-    transform: scale(0.9) rotate(-8deg);
+  .kallpa-logo {
+    transition: all 1s;
+  }
+  .headroom--pinned & .kallpa-logo {
+    transform: scale(0.9) rotate(99deg);
   }
 
-  .headroom--unpinned & {
-    transform: scale(0.9) rotate(8deg);
+  .headroom--unpinned & .kallpa-logo {
+    transform: scale(0.9) rotate(66deg);
   }
 
   .gatsby-image-wrapper {
@@ -179,6 +185,10 @@ const Logo = styled.div`
 
     &:hover {
       ${tw`text-gray-100`}
+    }
+
+    .headroom--unpinned & {
+      ${tw`text-gray-800`}
     }
 
     .headroom--scrolled & {

@@ -112,12 +112,12 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   </div>
                 )}
               </SRLWrapper>
-              <h3 className="hidden w-full mb-3 font-serif text-base italic font-bold text-center text-gray-700 md:block">
+              <h3 className="hidden w-full mb-3 font-sans text-base italic font-bold text-center text-gray-700 md:block">
                 Juego creado por {post.GameAuthor}
               </h3>
             </div>
             <div className="relative flex flex-col w-full px-2 pt-3 md:pl-12">
-              <h1 className="w-full pl-6 font-serif text-4xl font-black text-left text-green-600 md:pl-0 md:text-5xl">
+              <h1 className="w-full pl-6 font-sans text-4xl font-black text-left text-green-600 md:pl-0 md:text-5xl">
                 {post.title}
               </h1>
               <div className="flex flex-col justify-center w-full pl-6 my-2 text-gray-700 md:px-0 md:flex-row md:justify-start">
@@ -143,7 +143,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </div>
               {post.categoria && (
                 <div className="flex items-center justify-start text-lg text-center">
-                  <span className="font-serif font-bold ">Modalidad:</span>
+                  <span className="font-sans font-bold ">Modalidad:</span>
                   {post.categoria.map((item, i) => (
                     <Link
                       to={`/categorias/${kebabCase(item.slug)}/`}
@@ -151,7 +151,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                       key={i}
                       data-tip={item.title}
                     >
-                      <b className="font-serif text-indigo-500 hover:text-indigo-700">
+                      <b className="font-sans text-indigo-500 hover:text-indigo-700">
                         {item.title}
                       </b>
                     </Link>
@@ -166,7 +166,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                       className="flex flex-col py-1 my-2 mr-2 rounded-full "
                       key={post.publisher.slug}
                     >
-                      <b className="font-serif text-gray-800 underline hover:text-indigo-600">
+                      <b className="font-sans text-gray-800 underline hover:text-indigo-600">
                         Editorial {post.publisher.title}
                       </b>
                     </Link>
@@ -215,7 +215,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </div>
         </div>
         <div className="relative flex flex-col w-full max-w-6xl pb-3 mx-auto mt-6 border-b border-indigo-700 border-dashed ">
-          <h1 className="w-full max-w-6xl pt-3 mx-auto font-serif text-3xl font-bold text-center text-indigo-700 ">
+          <h1 className="w-full max-w-6xl pt-3 mx-auto font-sans text-3xl font-bold text-center text-indigo-700 ">
             Últimos juegos agregados
           </h1>
           <div className="max-w-md mx-auto mt-6">
