@@ -158,8 +158,8 @@
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  @apply bg-white;
-  height: 2px !important;
+  @apply bg-black;
+  height: 3px !important;
 }
 
 /* Color/shape of burger icon bars on hover*/

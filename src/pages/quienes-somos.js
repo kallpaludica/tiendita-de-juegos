@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import AnchorLink from "react-anchor-link-smooth-scroll"
-import { Link } from "gatsby"
+//import { Link } from "gatsby"
 
 const AboutPage = () => {
   return (

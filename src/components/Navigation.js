@@ -18,14 +18,19 @@ const routes = [
     slug: "/quienes-somos",
   },
   {
+    title: "Comunidad",
+    active: "text-pink-500",
+    slug: "/comunidad",
+  },
+  {
+    title: "Recursos",
+    active: "text-pink-500",
+    slug: "/recursos",
+  },
+  {
     title: "Contacto",
     active: "text-indigo-500",
     slug: "/contacto",
-  },
-  {
-    title: "Buscar",
-    active: "text-indigo-200",
-    slug: "/buscar",
   },
 ]
 
@@ -38,7 +43,7 @@ const Navigation = ({ closeMenu }) => (
           onClick={closeMenu}
           to={route.slug}
           activeclassname={route.active}
-          className={`hover:${route.active} my-5 font-mono text-2xl font-bold text-gray-800 text-right  cursor-pointer `}
+          className={`hover:${route.active} my-3 font-mono text-xl text-gray-800 text-right cursor-pointer`}
         >
           {route.title}
         </Link>

@@ -153,7 +153,7 @@ const NavRight = styled.nav`
 `
 
 const HeaderContainer = styled.header`
-  ${tw`z-50 px-2 py-0 transition-all duration-500 md:py-2 `}
+  ${tw`z-50 px-2 py-2 transition-all duration-500 md:py-2 `}
 
   body.ingame & a {
     ${tw`text-gray-800`} !important

@@ -302,7 +302,7 @@ const IndexPage = () => {
 export default IndexPage
 
 const HeroContent = styled.div`
-  ${tw`relative z-50 flex flex-col w-full pt-12 mx-auto text-left md:pb-24`}
+  ${tw`relative z-50 flex flex-col w-full pt-0 mx-auto text-left md:pb-0`}
 `
 
 const Title = styled.h1`
