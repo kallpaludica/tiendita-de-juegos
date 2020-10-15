@@ -15,7 +15,7 @@ import AwesomeSlider from "react-awesome-slider"
 //import AboutImage from "../images/kallpa-ludica.png"
 import GameSort from "../components/Games/GameSort"
 import { AiFillShop } from "react-icons/ai"
-import BackgroundSlider from "../components/HomeSlider"
+import HomeHero from "../components/About/HomeHero"
 
 import Fade from "react-reveal/Fade"
 import tw from "twin.macro"
@@ -65,14 +65,7 @@ const IndexPage = () => {
       </Helmet>
       <SEO title="Inicio" />
       <div className="relative z-50 flex-col items-center justify-center w-full px-2 pt-16 pb-6 m-auto mt-0 overflow-hidden text-center bg-teal-700 md:mt-0 home-hero ">
-        <div className="flex items-center justify-center h-64 pt-48 pb-32">
-          <h2 className="max-w-xl mx-auto font-mono text-2xl text-center text-white md:text-4xl">
-            Kallpa = Potencia
-          </h2>
-          <div className="opacity-50 ">
-            <BackgroundSlider />
-          </div>
-        </div>
+        <HomeHero />
         <Wave>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <defs xmlns="http://www.w3.org/2000/svg">
@@ -97,6 +90,28 @@ const IndexPage = () => {
           </svg>
         </Wave>
       </div>
+
+      <section className="my-12 font-mono">
+        <h1 className="max-w-4xl mx-auto mb-3 font-mono text-4xl font-bold text-orange-500">
+          Somos Kallpa Lúdica
+        </h1>
+        <h2 className="max-w-4xl mx-auto mb-6 font-sans text-2xl font-bold text-gray-800">
+          Somos un equipo transdisciplinario que busca poner sobre la mesa el
+          juego para problematizarlo y apropiarnos de una práctica milenaria
+          imprescindible.
+        </h2>
+        <Fade bottom delay={1000}>
+          <AwesomeButton
+            action={() => {
+              navigate(`/quienes-somos`)
+            }}
+            type="primary"
+          >
+            Conocé quienes somos
+            <FiChevronRight className="inline-block mt-1 ml-3" />
+          </AwesomeButton>
+        </Fade>
+      </section>
       <Hero className="relative overflow-hidden bg-white">
         <HeroContent>
           <AwesomeSlider>
@@ -184,27 +199,6 @@ const IndexPage = () => {
           </svg>
         </Wave>
       </Hero>
-      <section className="my-12 font-mono">
-        <h1 className="max-w-4xl mx-auto mb-3 font-sans text-4xl font-bold text-orange-500">
-          Somos Kallpa Lúdica
-        </h1>
-        <h2 className="max-w-4xl mx-auto mb-6 font-sans text-2xl font-bold text-gray-800">
-          Somos un equipo transdisciplinario que busca poner sobre la mesa el
-          juego para problematizarlo y apropiarnos de una práctica milenaria
-          imprescindible.
-        </h2>
-        <Fade bottom delay={1000}>
-          <AwesomeButton
-            action={() => {
-              navigate(`/quienes-somos`)
-            }}
-            type="primary"
-          >
-            Conocé quienes somos
-            <FiChevronRight className="inline-block mt-1 ml-3" />
-          </AwesomeButton>
-        </Fade>
-      </section>
       <section className="hidden">
         <Mision />
       </section>

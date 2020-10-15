@@ -1,4 +1,3 @@
-import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
@@ -6,7 +5,9 @@ import FormatText from "../wysiwyg"
 import { RiWhatsappLine } from "react-icons/ri"
 import { GoMail } from "react-icons/go"
 import { AiOutlineInstagram, AiOutlineFacebook } from "react-icons/ai"
-
+import lottie from "lottie-web"
+import reactLogo from "../../animations/girl-bike.json"
+import React, { useEffect } from "react"
 const ContactComponent = () => {
   const data = useStaticQuery(graphql`
     query ContactQuery {
@@ -42,8 +43,19 @@ const ContactComponent = () => {
     }
   `)
 
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: document.querySelector("#react-logo"),
+      animationData: reactLogo,
+    })
+  }, [])
+
   return (
     <>
+      <div className="flex justify-center max-w-lg mx-auto">
+        <div id="react-logo" style={{ width: 300, height: 300 }} />
+      </div>
+
       <h1 className="max-w-6xl mx-auto mt-6 font-mono text-3xl font-bold text-green-700">
         {data.contactanos.title}
       </h1>
@@ -111,7 +123,7 @@ const ContactComponent = () => {
 export default ContactComponent
 
 const Socials = styled.div`
-  ${tw`flex flex-col justify-center max-w-5xl pb-12 mx-auto text-center md:flex-row`}
+  ${tw`flex flex-col justify-center max-w-5xl py-12 mx-auto text-center md:flex-row`}
   a {
     ${tw`w-full max-w-sm mx-auto md:mx-3`}
   }
