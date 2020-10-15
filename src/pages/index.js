@@ -92,12 +92,12 @@ const IndexPage = () => {
       </div>
 
       <section className="my-12 font-mono">
-        <h1 className="max-w-4xl mx-auto mb-3 font-mono text-4xl font-bold text-orange-500">
+        <h1 className="max-w-4xl mx-auto mb-3 font-mono text-4xl font-bold text-indigo-700">
           Somos Kallpa Lúdica
         </h1>
         <h2 className="max-w-4xl mx-auto mb-6 font-sans text-2xl font-bold text-gray-800">
-          Somos un equipo transdisciplinario que busca poner sobre la mesa el
-          juego para problematizarlo y apropiarnos de una práctica milenaria
+          Un equipo transdisciplinario que busca poner sobre la mesa el juego
+          para problematizarlo y apropiarnos de una práctica milenaria
           imprescindible.
         </h2>
         <Fade bottom delay={1000}>

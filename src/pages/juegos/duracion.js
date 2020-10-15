@@ -114,7 +114,7 @@ const DurationPage = (props) => {
         </Aside>
         <Main>
           <PageSticky>
-            <MainTitle>Ordenado por duración</MainTitle>
+            <MainTitle>Para gestionar la manija</MainTitle>
           </PageSticky>
           <div className="relative flex flex-col justify-start border-b-2 border-green-300 sm:flex-row sm:py-0 sm:pt-6">
             <GameSort />

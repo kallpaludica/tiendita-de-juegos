@@ -73,7 +73,8 @@ const Toggle = (props) => {
             <div className="flex justify-center pb-1 font-sans text-lg font-bold text-left text-gray-800 ">
               <GiTabletopPlayers className="w-6 mx-auto mb-1 text-2xl text-orange-600" />
               <div className="flex items-baseline flex-1 pl-3">
-                {props.players} <span className="pl-1 text-xs ">Jugadores</span>
+                {props.players}{" "}
+                <span className="pl-1 text-xs "> jugadores/as</span>
               </div>
             </div>
           </div>

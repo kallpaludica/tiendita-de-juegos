@@ -114,7 +114,7 @@ const AllPage = (props) => {
         </Aside>
         <Main>
           <PageSticky>
-            <MainTitle>Todos los juegos</MainTitle>
+            <MainTitle>Para jugar de la A a la Z</MainTitle>
           </PageSticky>
           <div className="relative flex flex-col justify-start border-b-2 border-orange-300 sm:flex-row sm:py-0 sm:pt-6">
             <GameSort />

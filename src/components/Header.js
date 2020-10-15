@@ -13,12 +13,6 @@ import { IoIosChatbubbles, IoIosArchive, IoMdMail } from "react-icons/io"
 
 const routesLeft = [
   {
-    title: "Quienes somos",
-    active: "opacity-100 text-red-500",
-    slug: "/quienes-somos",
-    icon: <IoIosChatbubbles className="text-2xl " />,
-  },
-  {
     title: "Comunidad",
     active: "opacity-100 text-red-500",
     slug: "/comunidad",
@@ -29,6 +23,12 @@ const routesLeft = [
     active: "opacity-100 text-red-500",
     slug: "/recursos",
     icon: <IoIosArchive className="text-2xl " />,
+  },
+  {
+    title: "Quienes somos",
+    active: "opacity-100 text-red-500",
+    slug: "/quienes-somos",
+    icon: <IoIosChatbubbles className="text-2xl " />,
   },
   {
     title: "Contacto",

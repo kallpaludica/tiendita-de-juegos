@@ -114,7 +114,7 @@ const PreciosPage = (props) => {
         </Aside>
         <Main>
           <PageSticky>
-            <MainTitle>Ordenado por precio</MainTitle>
+            <MainTitle>Empezando por lo popular</MainTitle>
           </PageSticky>
           <div className="relative flex flex-col justify-start border-b-2 border-teal-300 sm:flex-row sm:py-0 sm:pt-6">
             <GameSort />

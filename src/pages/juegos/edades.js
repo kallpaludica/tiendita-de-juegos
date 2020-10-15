@@ -114,7 +114,7 @@ const EdadesPage = (props) => {
         </Aside>
         <Main>
           <PageSticky>
-            <MainTitle>Ordenado por edades </MainTitle>
+            <MainTitle>Para les más peques</MainTitle>
           </PageSticky>
           <div className="relative flex flex-col justify-start border-b-2 border-indigo-300 sm:flex-row sm:py-0 sm:pt-6">
             <GameSort />
