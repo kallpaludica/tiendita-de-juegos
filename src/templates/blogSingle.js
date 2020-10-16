@@ -1,4 +1,3 @@
-import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { Link } from "gatsby"
@@ -8,9 +7,19 @@ import FormatText from "../components/wysiwyg"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import HeroWave from "../components/HeroWave"
+import lottie from "lottie-web"
+import reactLogo from "../animations/left-arrow.json"
+import React, { useEffect } from "react"
 
 const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
   const collection = data.contentfulComunidad
+
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: document.querySelector("#react-logo"),
+      animationData: reactLogo,
+    })
+  }, [])
 
   const { prev, next } = pageContext
   return (
@@ -22,9 +31,10 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
       />
       <Link
         to="/comunidad"
-        className="block max-w-lg mx-auto font-sans font-bold text-left text-green-500"
+        className="flex items-center max-w-lg mx-auto mb-6 font-sans font-bold text-left text-green-500"
       >
-        Volver a comunidad
+        <div id="react-logo" style={{ width: 30, height: 30 }} />
+        <span className="mt-1 ml-4 text-xl">Volver a comunidad</span>
       </Link>
       <h1 className="max-w-lg mx-auto font-sans text-4xl font-bold text-left">
         {collection.title}

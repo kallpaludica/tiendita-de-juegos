@@ -91,7 +91,7 @@ const IndexPage = () => {
         </Wave>
       </div>
 
-      <section className="my-12 font-mono">
+      <section className="px-6 my-12 font-mono">
         <h1 className="max-w-4xl mx-auto mb-3 font-mono text-4xl font-bold text-indigo-700">
           Somos Kallpa Lúdica
         </h1>

@@ -30,7 +30,7 @@ const QueryRecursosComponent = () => {
     <>
       {data.collections.edges.map(({ node }) => {
         return (
-          <div class="max-w-sm rounded overflow-hidden shadow-lg">
+          <div class="w-full rounded overflow-hidden shadow-lg">
             <Img
               title={node.title}
               className="w-full"

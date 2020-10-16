@@ -5,7 +5,7 @@ import BackgroundSlider from "../HomeSlider"
 const HomeHeroCompoent = () => {
   return (
     <>
-      <div class="w-full py-6 md:py-20 flex flex-col relative z-50 ">
+      <div class="w-full justify-center items-center py-20 flex flex-col relative z-50 ">
         <section class="container mx-auto h-full flex-1 flex flex-col">
           <div class="px-6 h-full flex flex-col flex-1">
             <div class="flex items-center flex-1">

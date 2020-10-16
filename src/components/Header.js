@@ -13,6 +13,12 @@ import { IoIosChatbubbles, IoIosArchive, IoMdMail } from "react-icons/io"
 
 const routesLeft = [
   {
+    title: "Tiendita de juegos",
+    active: "opacity-100",
+    slug: "/juegos/todos",
+    icon: <AiFillShop className="text-xl " />,
+  },
+  {
     title: "Comunidad",
     active: "opacity-100 text-red-500",
     slug: "/comunidad",
@@ -43,7 +49,7 @@ const routesLeft = [
   //slug: "/buscar",
   //},
 ]
-
+/*
 const routesRight = [
   {
     title: "Tiendita de juegos",
@@ -58,6 +64,7 @@ const routesRight = [
   //slug: "/buscar",
   //},
 ]
+*/
 
 const Header = ({ siteTitle }) => (
   <Headroom disableInlineStyles>
@@ -78,7 +85,7 @@ const Header = ({ siteTitle }) => (
               <Link
                 key={i}
                 activeclassName={route.active}
-                className={`hover:${route.active} flex items-center py-3 md:mx-4  font-mono text-lg`}
+                className={`hover:${route.active} text-center flex items-center py-3 md:mx-4 text-sm font-mono lg:text-lg`}
                 to={route.slug}
               >
                 <span>{route.title}</span>
@@ -87,7 +94,7 @@ const Header = ({ siteTitle }) => (
           })}
         </NavLeft>
 
-        <NavRight>
+        {/*<NavRight>
           {routesRight.map((route, i) => {
             return (
               <Link
@@ -101,7 +108,7 @@ const Header = ({ siteTitle }) => (
               </Link>
             )
           })}
-        </NavRight>
+        </NavRight>*/}
       </InnerHeader>
     </HeaderContainer>
   </Headroom>
@@ -118,7 +125,7 @@ Header.defaultProps = {
 export default Header
 
 const NavLeft = styled.nav`
-  ${tw`justify-center hidden w-full md:flex`}
+  ${tw`justify-end hidden w-full md:flex`}
   flex:1;
 
   a {
@@ -165,7 +172,7 @@ const InnerHeader = styled.div`
 `
 
 const Logo = styled.div`
-  ${tw`m-0 md:px-6 md:relative`}
+  ${tw`m-0 md:px-3 md:relative`}
   top:2px;
   transition: all 1s;
 
