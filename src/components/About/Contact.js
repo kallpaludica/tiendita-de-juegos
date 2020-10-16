@@ -52,10 +52,6 @@ const ContactComponent = () => {
 
   return (
     <>
-      <div className="flex justify-center max-w-lg mx-auto">
-        <div id="react-logo" style={{ width: 300, height: 300 }} />
-      </div>
-
       <h1 className="max-w-6xl mx-auto mt-6 font-mono text-3xl font-bold text-green-700">
         {data.contactanos.title}
       </h1>
@@ -116,6 +112,9 @@ const ContactComponent = () => {
           <h2 className="my-2 font-sans text-xl">{data.mail.link}</h2>
         </a>
       </Socials>
+      <div className="flex justify-center max-w-lg mx-auto">
+        <div id="react-logo" style={{ width: 300, height: 300 }} />
+      </div>
     </>
   )
 }

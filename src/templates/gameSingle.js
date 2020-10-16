@@ -162,7 +162,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 {post.publisher && (
                   <div className="flex items-center justify-center text-lg">
                     <Link
-                      to={`/editoriales/${kebabCase(post.publisher.slug)}/`}
+                      to={`/editoriales/${kebabCase(post.publisher.slug)}`}
                       className="flex flex-col py-1 my-2 mr-2 rounded-full "
                       key={post.publisher.slug}
                     >
@@ -230,14 +230,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <nav style={{ display: "flex", justifyContent: "space-between" }}>
           <div>
             {next && (
-              <Link to={`/juegos/${kebabCase(next.slug)}/`} rel="next">
+              <Link to={`/juegos/${kebabCase(next.slug)}`} rel="next">
                 ← {next.title}
               </Link>
             )}
           </div>
           <div style={{ justifySelf: "flex-end" }}>
             {prev && (
-              <Link to={`/juegos/${kebabCase(prev.slug)}/`} rel="prev">
+              <Link to={`/juegos/${kebabCase(prev.slug)}`} rel="prev">
                 {prev.title} →
               </Link>
             )}

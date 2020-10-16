@@ -46,7 +46,7 @@ const routesLeft = [
 
 const routesRight = [
   {
-    title: "Tienda de juegos",
+    title: "Tiendita de juegos",
     active: "opacity-100",
     slug: "/juegos/todos",
     icon: <AiFillShop className="text-xl " />,

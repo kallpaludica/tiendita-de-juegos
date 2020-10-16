@@ -26,7 +26,7 @@ const RecursosPage = () => {
       <h1 className="max-w-lg mx-auto font-mono text-4xl font-bold text-center">
         Recursos
       </h1>
-      <div className="my-3 mb-24">
+      <div className="grid justify-center grid-cols-4 px-6 my-3 mb-24">
         <Recursos />
       </div>
 

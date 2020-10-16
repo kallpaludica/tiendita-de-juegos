@@ -152,11 +152,11 @@ const AllPage = (props) => {
 export default AllPage
 
 const Container = styled.div`
-  ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
+  ${tw`grid w-full grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
 `
 
 const ContainerDesc = styled.div`
-  ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
+  ${tw`grid w-full grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
 `
 
 const PageSticky = styled.div`
@@ -164,18 +164,18 @@ const PageSticky = styled.div`
 `
 
 const ContentSidebar = styled.div`
-  ${tw`relative z-10 flex max-w-6xl mx-auto -mt-16`}
+  ${tw`relative z-10 flex flex-row-reverse w-full mx-auto -mt-16`}
 `
 
 const Aside = styled.aside`
-  ${tw`hidden w-64 pl-3 md:block `}
+  ${tw`hidden w-64 px-6 pr-12 md:block `}
 `
 
 const Main = styled.section`
-  ${tw`relative`}
+  ${tw`relative px-6`}
 `
 
 const MainTitle = styled.h2`
-  ${tw`pl-5 -mt-4 font-mono text-3xl text-center border-b border-orange-300 md:text-left`}
+  ${tw`-mt-4 font-mono text-3xl text-center border-b border-orange-300 md:text-left`}
   ${tw`pb-6 text-white`}
 `

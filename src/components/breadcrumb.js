@@ -26,7 +26,8 @@ const juicyBread = ({ breaddata }) => {
                   <Link
                     key={index}
                     to={`${value.pathname}`}
-                    activeClassName="text-blue-600"
+                    className="hover:text-gray-600"
+                    activeClassName="text-gray-600"
                   >
                     {value.crumlabel}
                   </Link>

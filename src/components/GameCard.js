@@ -28,7 +28,7 @@ export default ({ card }) => (
         />
       )}
       <div className="relative w-full px-3 pb-12 font-sans text-left">
-        <h3 className="block pt-3 pb-1 font-sans text-xl font-bold leading-6 sm:pb-8 sm:pr-16 sm:h-16 md:pb-0 ">
+        <h3 className="block pt-3 pb-1 font-sans text-lg font-bold leading-6 sm:pb-8 sm:pr-16 sm:h-16 md:pb-0 ">
           {card.title}
         </h3>
         {card.stock ? (
@@ -91,7 +91,7 @@ export default ({ card }) => (
 )
 
 const GameCard = styled.div`
-  ${tw`relative w-full mb-3 overflow-hidden bg-gray-100 rounded-lg md:max-w-md`}
+  ${tw`relative w-full mb-3 overflow-hidden bg-white rounded-md shadow-lg md:max-w-md`}
 
   .image {
     ${tw`relative w-48 h-48 overflow-hidden transition-all duration-500 transform scale-90 md:w-full`}
