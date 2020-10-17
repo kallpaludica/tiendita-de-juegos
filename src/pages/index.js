@@ -100,7 +100,7 @@ const IndexPage = () => {
           para problematizarlo y apropiarnos de una práctica milenaria
           imprescindible.
         </h2>
-        <Fade bottom delay={1000}>
+        <Fade bottom delay={100}>
           <AwesomeButton
             action={() => {
               navigate(`/quienes-somos`)

@@ -11,7 +11,7 @@ const Bold = ({ children }) => (
 )
 const Text = ({ children }) => (
   <Fade>
-    <p className="w-full mt-2 mb-4 font-sans text-2xl text-gray-900">
+    <p className="w-full mt-2 mb-4 font-sans text-xl leading-8 text-gray-900">
       {children}
     </p>
   </Fade>

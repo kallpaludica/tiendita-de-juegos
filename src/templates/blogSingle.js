@@ -29,18 +29,20 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
         pattern="bg-green-600 text-green-500 "
         svg="M0,224L80,240C160,256,320,288,480,277.3C640,267,800,213,960,202.7C1120,192,1280,224,1360,240L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
       />
-      <Link
-        to="/comunidad"
-        className="flex items-center max-w-lg mx-auto mb-6 font-sans font-bold text-left text-green-500"
-      >
-        <div id="react-logo" style={{ width: 30, height: 30 }} />
-        <span className="mt-1 ml-4 text-xl">Volver a comunidad</span>
-      </Link>
-      <h1 className="max-w-lg mx-auto font-sans text-4xl font-bold text-left">
+      <Meta>
+        <Link
+          to="/comunidad"
+          className="flex items-center max-w-lg mx-auto mb-6 font-sans font-bold text-left text-green-500 lottie-left-arrow"
+        >
+          <div id="react-logo" style={{ width: 30, height: 30 }} />
+          <span className="mt-1 ml-4 text-xl">Volver a comunidad</span>
+        </Link>
+      </Meta>
+      <h1 className="max-w-lg px-3 mx-auto mb-6 font-sans text-4xl font-bold text-left">
         {collection.title}
       </h1>
       <div
-        className="w-full max-w-lg pr-6 mx-auto mb-6 text-left article"
+        className="w-full max-w-lg px-3 pr-6 mx-auto mb-6 text-left article"
         id={collection.slug}
       >
         {collection.childContentfulComunidadTextoPrincipalRichTextNode && (
@@ -84,6 +86,12 @@ const PageNav = styled.nav`
   }
   body.dark & a {
     ${tw`text-green-300`}
+  }
+`
+
+const Meta = styled.div`
+  .lottie-left-arrow path {
+    stroke: #48bb78;
   }
 `
 

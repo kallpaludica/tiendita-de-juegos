@@ -16,7 +16,7 @@ const QueryRecursosComponent = () => {
               fixed(width: 300, height: 230) {
                 ...GatsbyContentfulFixed
               }
-              fluid(maxWidth: 300) {
+              fluid(maxWidth: 500) {
                 ...GatsbyContentfulFluid_withWebp
               }
             }
@@ -30,14 +30,14 @@ const QueryRecursosComponent = () => {
     <>
       {data.collections.edges.map(({ node }) => {
         return (
-          <div class="w-full rounded overflow-hidden shadow-lg">
+          <div class="w-full rounded overflow-hidden shadow-lg m-2 relative">
             <Img
               title={node.title}
-              className="w-full"
+              className="relative z-40 object-cover w-full h-full"
               alt={node.title}
               fluid={node.featuredImg.fluid}
             />
-            <div class="px-6 py-4">
+            <div class="px-6 py-4 absolute bottom-0 bg-white left-0 right-0 z-50">
               <Link
                 className="mb-2 font-sans text-xl font-bold text-green-600 hover:text-green-800"
                 key={node.slug}
