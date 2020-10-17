@@ -32,7 +32,7 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
       <Meta>
         <Link
           to="/comunidad"
-          className="flex items-center max-w-lg mx-auto mb-6 font-sans font-bold text-left text-green-500 lottie-left-arrow"
+          className="flex items-center max-w-lg px-3 mx-auto my-6 font-sans font-bold text-left text-green-500 lottie-left-arrow"
         >
           <div id="react-logo" style={{ width: 30, height: 30 }} />
           <span className="mt-1 ml-4 text-xl">Volver a comunidad</span>
