@@ -156,7 +156,7 @@ const Container = styled.div`
 `
 
 const ContainerDesc = styled.div`
-  ${tw`grid w-full grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
+  ${tw`grid w-full grid-cols-1 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
 `
 
 const PageSticky = styled.div`

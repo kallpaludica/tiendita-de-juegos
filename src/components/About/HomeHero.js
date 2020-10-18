@@ -15,8 +15,8 @@ const HomeHeroCompoent = () => {
                     Potencia = Kallpa
                   </h1>
                   <p class="pt-6 text-white text-xl font-sans">
-                    Un entramado donde nos encontramos caminando siempre en
-                    relación al juego, el aprendizaje y la recreación.
+                    Un entramado donde nos encontramos caminando en relación al
+                    juego, el aprendizaje y la recreación.
                   </p>
                 </div>
               </div>
