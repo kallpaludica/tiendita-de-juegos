@@ -74,13 +74,18 @@ export default ({ card }) => (
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-2 px-3 font-sans text-sm font-bold text-left text-blue-800 transition-all duration-500 bg-blue-100 hover:text-white hover:bg-blue-600">
-        Consulta este juego
+        {card.stock ? (
+          <span>Pedilo por encargo</span>
+        ) : (
+          <span>Consulta este juego</span>
+        )}
         <FaCaretRight className="text-lg text-blue-300" />
       </div>
     </Link>
     <Toggle
       title={card.title}
       slug={card.slug}
+      stock={card.stock}
       age={card.GameAges}
       publisher={card.publisher}
       categoria={card.categoria}

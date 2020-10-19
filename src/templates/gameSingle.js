@@ -199,7 +199,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Consultá por stock y hacé tu pedido
+                  {post.stock ? <>Pedilo por encargo</> : <>Hacé tu pedido</>}
                 </AwesomeButtonSocial>
                 <div className="mb-3 font-sans text-3xl font-bold text-center text-green-900 md:my-0 md:text-right">
                   {post.stock ? <>{post.stock}</> : <>${post.GameBuyPrice}</>}
@@ -215,8 +215,26 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             </div>
           </div>
         </div>
+        <div className="max-w-6xl py-12 mx-auto font-mono text-lg">
+          <nav style={{ display: "flex", justifyContent: "space-between" }}>
+            <div>
+              {next && (
+                <Link to={`/juegos/${kebabCase(next.slug)}`} rel="next">
+                  ← {next.title}
+                </Link>
+              )}
+            </div>
+            <div style={{ justifySelf: "flex-end" }}>
+              {prev && (
+                <Link to={`/juegos/${kebabCase(prev.slug)}`} rel="prev">
+                  {prev.title} →
+                </Link>
+              )}
+            </div>
+          </nav>
+        </div>
         <div className="relative flex flex-col items-center w-full max-w-6xl px-2 pb-1 mx-auto mt-6 bg-blue-100 border-t-4 border-b-2 border-blue-500 border-dotted">
-          <h1 className="w-full max-w-6xl pt-3 mx-auto font-mono text-3xl font-bold text-center text-blue-500 ">
+          <h1 className="w-full max-w-6xl pt-3 mx-auto font-mono text-3xl text-center text-blue-500 ">
             Juegos recién llegados.
           </h1>
           <div className="max-w-md mx-auto mt-0">
@@ -225,25 +243,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </div>
 
         <QueriesLastGames />
-      </div>
-
-      <div className="hidden max-w-6xl py-12 mx-auto text-2xl">
-        <nav style={{ display: "flex", justifyContent: "space-between" }}>
-          <div>
-            {next && (
-              <Link to={`/juegos/${kebabCase(next.slug)}`} rel="next">
-                ← {next.title}
-              </Link>
-            )}
-          </div>
-          <div style={{ justifySelf: "flex-end" }}>
-            {prev && (
-              <Link to={`/juegos/${kebabCase(prev.slug)}`} rel="prev">
-                {prev.title} →
-              </Link>
-            )}
-          </div>
-        </nav>
       </div>
     </Layout>
   )

@@ -8,14 +8,14 @@ import BackgroundSlider2 from "gatsby-image-background-slider"
 const HomeHeroCompoent = () => {
   return (
     <>
-      <div className="relative z-50 flex flex-col items-center w-full py-20 pt-12 justify-starts ">
+      <div className="relative z-50 flex flex-col items-center justify-start w-full py-20 pt-12">
         <section className="container flex flex-col flex-1 h-full mx-auto">
           <div className="flex flex-col flex-1 w-full h-full max-w-6xl px-3 mx-auto">
             <div className="flex items-start flex-1 pb-12">
               <div className="flex items-center flex-1 max-w-sm py-8 font-mono">
                 <div className="col-span-2 text-left">
-                  <h1 className="text-2xl leading-tight text-left text-white md:text-4xl">
-                    .Compartiendo la <br />
+                  <h1 className="text-3xl leading-tight text-left text-white md:text-4xl">
+                    Compartiendo la <br />
                     potencia de jugar.
                   </h1>
                   <p className="pt-6 font-sans text-2xl text-left text-white">

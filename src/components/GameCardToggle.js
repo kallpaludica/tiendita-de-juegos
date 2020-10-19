@@ -84,7 +84,11 @@ const Toggle = (props) => {
           to={`/juegos/${kebabCase(props.slug)}/`}
           className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-2 px-3 font-sans text-sm font-bold text-left text-white transition-all duration-500 bg-blue-600 hover:text-white hover:bg-blue-500"
         >
-          Consulta este juego
+          {props.stock ? (
+            <span>Pedilo por encargo</span>
+          ) : (
+            <span>Consulta este juego</span>
+          )}
           <FaCaretRight className="text-lg text-blue-200" />
         </Link>
       </animated.div>

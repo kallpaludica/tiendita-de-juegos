@@ -30,7 +30,7 @@ header nav a {
   right: 0;
   z-index: 999;
   position: fixed !important;
-  @apply transition-all duration-500 bg-white;
+  @apply transition-all duration-500 bg-transparent;
 }
 
 @screen md {
