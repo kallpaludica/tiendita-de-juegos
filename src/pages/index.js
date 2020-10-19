@@ -93,14 +93,14 @@ const IndexPage = () => {
 
       <section className="px-6 my-12">
         <div className="max-w-lg mx-auto mb-5">
-          <h1 class="text-2xl md:text-4xl leading-tight text-indigo-500  font-mono text-center">
+          <h1 className="font-mono text-2xl leading-tight text-center text-indigo-500 md:text-4xl">
             .Kallpa{" "}
             <span className="text-gray-800 transition-all duration-200 hover:text-indigo-400">
               es potencia.
             </span>{" "}
           </h1>
           <Fade bottom delay={100}>
-            <h2 class="pt-6 text-indigo-900 text-3xl font-sans text-center">
+            <h2 className="pt-6 font-sans text-2xl text-center text-indigo-900">
               Somos un entramado donde nos encontramos caminando en relación al
               juego, el aprendizaje y la recreación.
             </h2>
@@ -112,7 +112,7 @@ const IndexPage = () => {
             action={() => {
               navigate(`/quienes-somos`)
             }}
-            type="primary"
+            type="secondary"
           >
             Quienes somos
             <FiChevronRight className="inline-block mt-1 ml-3" />
@@ -266,7 +266,7 @@ const IndexPage = () => {
 
       <section className="relative py-24 pb-64 text-indigo-200 bg-indigo-100 pattern-diagonal-lines-sm">
         <h1 className="max-w-6xl pb-12 mx-auto font-sans text-4xl font-bold">
-          Editoriales que nos acompañan
+          Editoriales
         </h1>
         <Publishers />
         <Wave>

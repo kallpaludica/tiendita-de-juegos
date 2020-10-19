@@ -53,7 +53,7 @@ const GamesSort = () => {
 export default GamesSort
 
 const Sort = styled.div`
-  ${tw`relative top-0 right-0 flex flex-wrap justify-between w-full px-1 py-1 transform sm:py-3 md:flex-no-wrap md:justify-start md:px-6 md:px-0 md:p-0 `}
+  ${tw`relative top-0 right-0 flex flex-wrap justify-between w-full px-1 py-1 transform sm:py-3 lg:flex-no-wrap md:justify-start md:px-6 md:px-0 md:p-0 `}
 
   a {
     ${tw`px-2 py-1 my-2 ml-0 text-sm md:text-lg md:py-1 md:px-3 md:mr-1`}

@@ -18,6 +18,7 @@ const routesLeft = [
     slug: "/juegos/todos",
     icon: <AiFillShop className="text-xl " />,
   },
+  /*
   {
     title: "Comunidad",
     active: "opacity-100 text-red-500",
@@ -29,7 +30,7 @@ const routesLeft = [
     active: "opacity-100 text-red-500",
     slug: "/recursos",
     icon: <IoIosArchive className="text-2xl " />,
-  },
+  }*/
   {
     title: "Quienes somos",
     active: "opacity-100 text-red-500",
@@ -168,7 +169,7 @@ const HeaderContainer = styled.header`
 `
 
 const InnerHeader = styled.div`
-  ${tw`relative flex items-center justify-between w-full px-0 mx-auto md:pb-1 sm:pr-6 md:pr-0`}
+  ${tw`relative flex items-center justify-between w-full max-w-6xl px-0 mx-auto md:pb-1 sm:pr-6 md:pr-0`}
 `
 
 const Logo = styled.div`

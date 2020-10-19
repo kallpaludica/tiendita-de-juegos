@@ -17,6 +17,7 @@ const routes = [
     active: "text-pink-500",
     slug: "/quienes-somos",
   },
+  /*
   {
     title: "Comunidad",
     active: "text-pink-500",
@@ -26,7 +27,7 @@ const routes = [
     title: "Recursos",
     active: "text-pink-500",
     slug: "/recursos",
-  },
+  },*/
   {
     title: "Contacto",
     active: "text-indigo-500",

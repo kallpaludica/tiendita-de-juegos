@@ -94,7 +94,7 @@ const GameCard = styled.div`
   ${tw`relative w-full mb-3 overflow-hidden bg-white rounded-md shadow-lg md:max-w-md`}
 
   .image {
-    ${tw`relative w-48 h-48 overflow-hidden transition-all duration-500 transform scale-90 md:w-full`}
+    ${tw`relative w-full h-48 overflow-hidden transition-all duration-500 transform scale-90 md:w-48 md:w-full`}
   }
 
   .image:hover {

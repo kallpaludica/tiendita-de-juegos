@@ -15,13 +15,13 @@ const juicyBread = ({ breaddata }) => {
   return (
     <>
       <Breadcrumb>
-        <nav class="text-black font-bold my-8 px-6" aria-label="Breadcrumb">
-          <List class="">
+        <nav className="px-6 my-8 font-bold text-black" aria-label="Breadcrumb">
+          <List className="">
             {elementsNew.map((value, index) => {
               return (
                 <li
                   key={index}
-                  class="flex items-center gjbreadcrumb capitalize"
+                  className="flex items-center capitalize gjbreadcrumb"
                 >
                   <Link
                     key={index}
@@ -38,7 +38,7 @@ const juicyBread = ({ breaddata }) => {
                     to={`${value.pathname}`}
                   >
                     <svg
-                      class="fill-current w-3 h-3 mx-3"
+                      className="w-3 h-3 mx-3 fill-current"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 320 512"
                     >

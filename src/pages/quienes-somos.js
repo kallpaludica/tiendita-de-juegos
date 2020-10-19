@@ -26,7 +26,7 @@ const AboutPage = () => {
       <Hero className="text-pink-900 bg-pink-800 pattern-cross-dots-md">
         <HeroContent>
           <Title>Quienes somos</Title>
-          <Subtitle className="flex items-center max-w-3xl mx-auto font-mono text-white">
+          <Subtitle className="flex items-center max-w-3xl px-2 mx-auto font-mono text-white">
             Somos un equipo transdisciplinario que busca poner sobre la mesa el
             juego para problematizarlo y apropiarnos de una práctica milenaria
             imprescindible.
@@ -43,9 +43,7 @@ const AboutPage = () => {
         </Wave>
       </Hero>
 
-      <Section></Section>
-
-      <Section>
+      <Section className="px-2 ">
         <AnchorLinks>
           <AnchorLink className="font-mono" href="#equipo">
             Equipo
@@ -62,14 +60,20 @@ const AboutPage = () => {
         </AnchorLinks>
         <About />
       </Section>
-      <section id="equipo">
+      <section id="equipo" className="px-2">
         <div className="w-full py-24 text-left bg-green-100">
           <h1 className="max-w-4xl mx-auto font-mono text-4xl">Equipo</h1>
         </div>
       </section>
-      <Mision />
-      <Objectives />
-      <Proposals />
+      <section className="px-2">
+        <Mision />
+      </section>
+      <section className="px-2">
+        <Objectives />
+      </section>
+      <section className="px-2">
+        <Proposals />
+      </section>
       <Contact />
     </Layout>
   )
@@ -82,9 +86,9 @@ const Section = styled.section`
 `
 
 const AnchorLinks = styled.div`
-  ${tw`relative flex justify-around max-w-2xl p-3 pt-6 mx-auto mb-12 `}
+  ${tw`relative flex flex-wrap justify-around max-w-2xl p-3 pt-6 mx-auto mb-12 `}
   a {
-    ${tw`mx-6 font-sans text-xl font-bold text-center text-pink-800 hover:text-pink-500`}
+    ${tw`w-full mx-8 my-6 mt-2 font-sans text-xl font-bold text-center text-pink-800 hover:text-pink-500`}
     flex: 1;
   }
 `

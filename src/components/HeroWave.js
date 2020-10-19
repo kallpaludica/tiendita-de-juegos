@@ -7,19 +7,22 @@ import { Link } from "gatsby"
 const HeroWave = (props) => (
   <>
     <Hero className={`${props.pattern} pattern-cross-dots-md`}>
-      <HeroContent>
-        <Title>{props.heading}</Title>
-        {props.subtitle && (
-          <Subtitle className="flex items-start max-w-3xl mx-auto font-mono text-white">
-            <FormatText FormatText={props.subtitle} />
-          </Subtitle>
-        )}
-        {props.back && (
-          <Back className="flex items-start justify-start">
-            <Link to="/juegos/todos">{props.back}</Link>
-          </Back>
-        )}
-      </HeroContent>
+      {props.heading && (
+        <HeroContent>
+          <Title>{props.heading}</Title>
+          {props.subtitle && (
+            <Subtitle className="flex items-start max-w-3xl mx-auto font-mono text-white">
+              <FormatText FormatText={props.subtitle} />
+            </Subtitle>
+          )}
+          {props.back && (
+            <Back className="flex items-start justify-start">
+              <Link to="/juegos/todos">{props.back}</Link>
+            </Back>
+          )}
+        </HeroContent>
+      )}
+
       <Wave>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
@@ -59,7 +62,7 @@ const Back = styled.div`
 `
 
 const Hero = styled.div`
-  ${tw`relative flex flex-col items-start justify-center w-full pt-24 pb-16 mx-auto`}
+  ${tw`relative flex flex-col items-start justify-center w-full pt-32 pb-16 mx-auto`}
 `
 
 const Wave = styled.div`

@@ -116,10 +116,10 @@ const DurationPage = (props) => {
           <PageSticky>
             <MainTitle>Para gestionar la manija</MainTitle>
           </PageSticky>
-          <div className="relative flex flex-col justify-start border-b-2 border-green-300 sm:flex-row sm:py-0 sm:pt-6">
+          <div className="relative flex flex-col justify-start border-b-2 border-green-300 md:flex-row sm:py-0 sm:pt-6">
             <GameSort />
             <button
-              className="relative bottom-0 right-0 flex items-center justify-center px-6 py-3 font-bold text-green-800 bg-green-300 outline-none md:absolute focus:outline-none"
+              className="relative bottom-0 right-0 flex items-center justify-center px-6 py-3 font-bold text-green-800 bg-green-100 outline-none md:absolute focus:outline-none"
               onClick={() => setToggle(!isToggled)}
             >
               <span className="mr-2 font-sans">Invertir filtros</span>
@@ -152,14 +152,14 @@ const DurationPage = (props) => {
 export default DurationPage
 
 const Container = styled.div`
-  ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
+  ${tw`grid max-w-6xl grid-cols-1 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
   .game-duration {
     display: block !important;
   }
 `
 
 const ContainerDesc = styled.div`
-  ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
+  ${tw`grid max-w-6xl grid-cols-1 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
   .game-duration {
     display: block !important;
   }
@@ -170,7 +170,7 @@ const PageSticky = styled.div`
 `
 
 const ContentSidebar = styled.div`
-  ${tw`relative z-10 flex max-w-6xl mx-auto -mt-16`}
+  ${tw`relative z-10 flex flex-row-reverse w-full max-w-6xl mx-auto -mt-16`}
 `
 
 const Aside = styled.aside`
@@ -178,10 +178,10 @@ const Aside = styled.aside`
 `
 
 const Main = styled.section`
-  ${tw`relative`}
+  ${tw`relative w-full px-2 mx-auto`}
 `
 
 const MainTitle = styled.h2`
-  ${tw`pl-5 -mt-4 font-mono text-3xl text-center md:text-left`}
-  ${tw`text-white`}
+  ${tw`-mt-4 font-mono text-3xl text-center border-b border-orange-300 md:text-left`}
+  ${tw`pb-6 text-white`}
 `
