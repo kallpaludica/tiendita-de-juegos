@@ -1,23 +1,41 @@
-import React from "react"
+import { AwesomeButton } from "react-awesome-button"
+import { useStaticQuery, graphql, navigate, Link } from "gatsby"
 
+import React, { useEffect } from "react"
 import BackgroundSlider from "../HomeSlider"
 
 const HomeHeroCompoent = () => {
   return (
     <>
-      <div class="w-full justify-center items-center py-20 flex flex-col relative z-50 ">
+      <div class="w-full justify-starts items-center py-20 pt-12 flex flex-col relative z-50 ">
         <section class="container mx-auto h-full flex-1 flex flex-col">
           <div class="px-6 h-full flex flex-col flex-1">
-            <div class="flex items-center flex-1">
-              <div class="flex-1 py-8 pt-12 flex max-w-lg mx-auto items-center font-mono">
-                <div class="col-span-2">
-                  <h1 class="font-extrabold text-4xl md:text-5xl leading-tight text-white">
-                    Potencia = Kallpa
+            <div class="flex items-start flex-1 pb-12">
+              <div class="flex-1 py-8  flex max-w-sm items-center font-mono">
+                <div class="col-span-2 text-left">
+                  <h1 class="text-2xl md:text-4xl leading-tight text-white text-left">
+                    .Compartiendo la <br />
+                    potencia de jugar.
                   </h1>
-                  <p class="pt-6 text-white text-xl font-sans">
-                    Un entramado donde nos encontramos caminando en relación al
-                    juego, el aprendizaje y la recreación.
+                  <p class="pt-6 text-white text-2xl font-sans text-left">
+                    Abrimos nuestra tienda de juegos para la provincia de Salta.
                   </p>
+
+                  <div className="flex flex-col justify-start mt-5">
+                    <div className="mr-3 ">
+                      <AwesomeButton
+                        action={() => {
+                          navigate(`/quienes-somos`)
+                        }}
+                        type="primary"
+                      >
+                        Ingresar a la tiendita
+                      </AwesomeButton>
+                    </div>
+                    <span className="flex-1 inline-block mt-3 font-sans text-sm text-left text-white uppercase">
+                      (para ventas por menor en la provincia)
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

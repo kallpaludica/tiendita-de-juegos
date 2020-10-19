@@ -64,7 +64,7 @@ const IndexPage = () => {
         <body className="home" />
       </Helmet>
       <SEO title="Inicio" />
-      <div className="relative z-50 flex-col items-center justify-center w-full px-2 pt-16 pb-6 m-auto mt-0 overflow-hidden text-center bg-teal-700 md:mt-0 home-hero ">
+      <div className="relative z-50 flex-col items-center justify-center w-full px-2 pt-16 pb-6 m-auto mt-0 overflow-hidden text-center bg-gray-800 md:mt-0 home-hero ">
         <HomeHero />
         <Wave>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -91,15 +91,22 @@ const IndexPage = () => {
         </Wave>
       </div>
 
-      <section className="px-6 my-12 font-mono">
-        <h1 className="max-w-4xl mx-auto mb-3 font-mono text-4xl font-bold text-indigo-700">
-          Somos Kallpa Lúdica
-        </h1>
-        <h2 className="max-w-4xl mx-auto mb-6 font-sans text-2xl font-bold text-gray-800">
-          Un equipo transdisciplinario que busca poner sobre la mesa el juego
-          para problematizarlo y apropiarnos de una práctica milenaria
-          imprescindible.
-        </h2>
+      <section className="px-6 my-12">
+        <div className="max-w-lg mx-auto mb-5">
+          <h1 class="text-2xl md:text-4xl leading-tight text-indigo-500  font-mono text-center">
+            .Kallpa{" "}
+            <span className="text-gray-800 transition-all duration-200 hover:text-indigo-400">
+              es potencia.
+            </span>{" "}
+          </h1>
+          <Fade bottom delay={100}>
+            <h2 class="pt-6 text-indigo-900 text-3xl font-sans text-center">
+              Somos un entramado donde nos encontramos caminando en relación al
+              juego, el aprendizaje y la recreación.
+            </h2>
+          </Fade>
+        </div>
+
         <Fade bottom delay={100}>
           <AwesomeButton
             action={() => {
@@ -107,12 +114,12 @@ const IndexPage = () => {
             }}
             type="primary"
           >
-            Conocé quienes somos
+            Quienes somos
             <FiChevronRight className="inline-block mt-1 ml-3" />
           </AwesomeButton>
         </Fade>
       </section>
-      <Hero className="relative overflow-hidden bg-white">
+      <Hero className="relative hidden overflow-hidden bg-white">
         <HeroContent>
           <AwesomeSlider>
             <div>
@@ -304,7 +311,7 @@ const Title = styled.h1`
 `
 
 const Hero = styled.div`
-  ${tw`relative flex flex-col items-start justify-center w-full mx-auto`}
+  ${tw`relative flex-col items-start justify-center hidden w-full mx-auto`}
 `
 
 const Wave = styled.div`
