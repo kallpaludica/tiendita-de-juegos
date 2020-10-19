@@ -1,7 +1,7 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import tw from "twin.macro"
 import styled from "@emotion/styled"
+import { graphql, useStaticQuery } from "gatsby"
+import React from "react"
+import tw from "twin.macro"
 import FormatText from "../wysiwyg"
 
 const ProposalsComponent = () => {

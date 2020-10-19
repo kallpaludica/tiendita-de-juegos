@@ -1,19 +1,28 @@
-import React from "react"
-import Layout from "../components/layout"
+import styled from "@emotion/styled"
+import { graphql, useStaticQuery } from "gatsby"
+import AboutSlider from "gatsby-image-background-slider"
+import lottie from "lottie-web"
+import React, { useEffect } from "react"
+import AnchorLink from "react-anchor-link-smooth-scroll"
+import { Helmet } from "react-helmet"
+import Fade from "react-reveal/Fade"
+import tw from "twin.macro"
+import kallpaPotencia from "../animations/kalla-potencia.json"
+import About from "../components/About/About"
 import Contact from "../components/About/Contact"
 import Mision from "../components/About/Mision"
-import Proposals from "../components/About/Proposals"
-
 import Objectives from "../components/About/Objectives"
-import About from "../components/About/About"
+import Proposals from "../components/About/Proposals"
+import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Helmet } from "react-helmet"
-import tw from "twin.macro"
-import styled from "@emotion/styled"
-import AnchorLink from "react-anchor-link-smooth-scroll"
-//import { Link } from "gatsby"
-
 const AboutPage = () => {
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: document.querySelector("#kallpa-Potencia"),
+      animationData: kallpaPotencia,
+    })
+  }, [])
+
   return (
     <Layout>
       <Helmet>
@@ -23,15 +32,56 @@ const AboutPage = () => {
       <Helmet>
         <body className="about" />
       </Helmet>
-      <Hero className="text-pink-900 bg-pink-800 pattern-cross-dots-md">
+      <Hero className="text-green-900 bg-green-800 pattern-cross-dots-md">
         <HeroContent>
-          <Title>Quienes somos</Title>
+          <Title>Somos Kallpa Lúdica</Title>
           <Subtitle className="flex items-center max-w-3xl px-2 mx-auto font-mono text-white">
-            Somos un equipo transdisciplinario que busca poner sobre la mesa el
-            juego para problematizarlo y apropiarnos de una práctica milenaria
-            imprescindible.
+            Nuestra misión es fomentar vínculos saludables, pensados desde el
+            juego y la lúdica, donde cada quien pueda desarrollarse desde la
+            diversidad e integración, donde haya espacios de ensayos
+            comunitarios y el diálogo sea la base de la construcción de la
+            ciudadanía.
           </Subtitle>
+          <AnchorLinks>
+            <AnchorLink className="font-mono text-white" href="#equipo">
+              Nuestro <br /> Equipo
+            </AnchorLink>
+            <AnchorLink className="hidden font-mono text-white" href="#mision">
+              Misión
+            </AnchorLink>
+            <AnchorLink className="font-mono text-white" href="#objectives">
+              Nuestros <br /> Objetivos
+            </AnchorLink>
+            <AnchorLink className="font-mono text-white" href="#proposals">
+              Nuestras <br /> Propuestas
+            </AnchorLink>
+          </AnchorLinks>
         </HeroContent>
+
+        <div className="absolute inset-0 z-40 opacity-25">
+          <AboutSlider
+            initDelay={3}
+            transition={3}
+            duration={5}
+            images={["32.png", "33.png", "38.png"]}
+            query={useStaticQuery(graphql`
+              query {
+                backgrounds: allFile(
+                  filter: { sourceInstanceName: { eq: "backgrounds" } }
+                ) {
+                  nodes {
+                    relativePath
+                    childImageSharp {
+                      fluid(maxWidth: 4000, quality: 100) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
+                }
+              }
+            `)}
+          />
+        </div>
         <Wave>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path
@@ -44,28 +94,34 @@ const AboutPage = () => {
       </Hero>
 
       <Section className="px-2 ">
-        <AnchorLinks>
-          <AnchorLink className="font-mono" href="#equipo">
-            Equipo
-          </AnchorLink>
-          <AnchorLink className="font-mono" href="#mision">
-            Misión
-          </AnchorLink>
-          <AnchorLink className="font-mono" href="#objectives">
-            Objetivos
-          </AnchorLink>
-          <AnchorLink className="font-mono" href="#proposals">
-            Propuestas
-          </AnchorLink>
-        </AnchorLinks>
         <About />
       </Section>
-      <section id="equipo" className="px-2">
-        <div className="w-full py-24 text-left bg-green-100">
-          <h1 className="max-w-4xl mx-auto font-mono text-4xl">Equipo</h1>
+
+      <section id="equipo" className="px-2 bg-indigo-100">
+        <div className="w-full px-6 py-12 md:py-20">
+          <section className="container mx-auto">
+            <Fade delay={100}>
+              <div className="flex justify-center ">
+                <div id="kallpa-Potencia" style={{ width: 100, height: 100 }} />
+              </div>
+            </Fade>
+            <div className="flex flex-col items-center">
+              <div className="text-center">
+                <h2 className="max-w-xl mx-auto font-mono leading-tight text-indigo-600 md:text-5xl">
+                  Equipo
+                </h2>
+                <p className="max-w-3xl pt-4 mx-auto font-sans text-xl text-gray-800">
+                  Somos un equipo transdisciplinario que busca poner sobre la
+                  mesa el juego para problematizarlo y apropiarnos de una
+                  práctica milenaria imprescindible.
+                </p>
+                <hr className="w-16 mx-auto my-8 border-t-4 border-indigo-500" />
+              </div>
+            </div>
+          </section>
         </div>
       </section>
-      <section className="px-2">
+      <section className="hidden px-2">
         <Mision />
       </section>
       <section className="px-2">
@@ -86,9 +142,9 @@ const Section = styled.section`
 `
 
 const AnchorLinks = styled.div`
-  ${tw`relative flex flex-wrap justify-around max-w-2xl p-3 pt-6 mx-auto mb-12 `}
+  ${tw`relative z-50 flex flex-wrap justify-around w-full max-w-3xl p-3 pt-6 mx-auto mt-6 mb-2 `}
   a {
-    ${tw`w-full mx-8 my-6 mt-2 font-sans text-xl font-bold text-center text-pink-800 hover:text-pink-500`}
+    ${tw`w-full mx-8 my-6 mt-2 font-sans text-xl font-bold text-center text-green-200 hover:text-gray-200`}
     flex: 1;
   }
 `
@@ -119,7 +175,7 @@ const Wave = styled.div`
   width: 100%;
   overflow: hidden;
   line-height: 0;
-
+  z-index: 49;
   .svg {
     position: relative;
     display: block;

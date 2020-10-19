@@ -1,30 +1,28 @@
-import { useStaticQuery, graphql, navigate, Link } from "gatsby"
-import { kebabCase } from "lodash"
-import { Helmet } from "react-helmet"
-import { AwesomeButton } from "react-awesome-button"
+import styled from "@emotion/styled"
+import { graphql, Link, navigate, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-import SEO from "../components/seo"
-import Layout from "../components/layout"
-import HomeHeroImage from "../images/bg-home.jpg"
-import Contact from "../components/About/Contact"
-import Publishers from "../components/Games/Publishers"
-import QueriesLastGames from "../components/Queries/QueriesLastGames"
-import Mision from "../components/About/Mision"
+import { kebabCase } from "lodash"
+import lottie from "lottie-web"
+import React, { useEffect } from "react"
+import { AwesomeButton } from "react-awesome-button"
 import AwesomeSlider from "react-awesome-slider"
-//import AboutImage from "../images/kallpa-ludica.png"
-import GameSort from "../components/Games/GameSort"
+import { Helmet } from "react-helmet"
 import { AiFillShop } from "react-icons/ai"
-import HomeHero from "../components/About/HomeHero"
-
+import { FiChevronRight } from "react-icons/fi"
 import Fade from "react-reveal/Fade"
 import tw from "twin.macro"
-import styled from "@emotion/styled"
-import { FiChevronRight } from "react-icons/fi"
-import "../components/AwsBtn.css"
-
-import lottie from "lottie-web"
 import kallpaPotencia from "../animations/kalla-potencia.json"
-import React, { useEffect } from "react"
+import Contact from "../components/About/Contact"
+import HomeHero from "../components/About/HomeHero"
+import Mision from "../components/About/Mision"
+import "../components/AwsBtn.css"
+//import AboutImage from "../images/kallpa-ludica.png"
+import GameSort from "../components/Games/GameSort"
+import Publishers from "../components/Games/Publishers"
+import Layout from "../components/layout"
+import QueriesLastGames from "../components/Queries/QueriesLastGames"
+import SEO from "../components/seo"
+import HomeHeroImage from "../images/bg-home.jpg"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -233,11 +231,11 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <section className="mt-2">
+      <section className="px-6 mt-2">
         <div className="relative flex flex-col w-full max-w-6xl mx-auto border-b border-orange-700 border-dashed md:flex-row">
           <h1 className="flex items-center w-full max-w-6xl pt-4 mx-auto font-sans text-3xl font-bold text-center text-orange-500 md:text-left ">
             <AiFillShop className="mr-3 text-4xl text-orange-400 transform -translate-y-1" />{" "}
-            Juegos recién llegados.
+            Recién llegados
           </h1>
           <div className="mt-6">
             <GameSort />
@@ -246,7 +244,7 @@ const IndexPage = () => {
         <QueriesLastGames />
       </section>
 
-      <section className="px-6 my-12">
+      <section className="px-6 pb-24 my-12">
         <Fade delay={100}>
           <div className="flex justify-center max-w-lg mx-auto">
             <div id="kallpa-Potencia" style={{ width: 150, height: 150 }} />
@@ -287,7 +285,7 @@ const IndexPage = () => {
         </Fade>
       </section>
 
-      <section className="relative py-32 pb-56 text-indigo-200 bg-indigo-100 pattern-diagonal-lines-sm">
+      <section className="relative py-32 pb-56 bg-yellow-100 ">
         <h1 className="max-w-6xl pb-12 mx-auto font-sans text-4xl font-bold">
           Editoriales
         </h1>

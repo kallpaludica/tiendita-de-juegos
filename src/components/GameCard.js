@@ -1,12 +1,12 @@
-import React from "react"
-import { kebabCase } from "lodash"
-import Img from "gatsby-image"
-import { Link } from "gatsby"
-import tw from "twin.macro"
 import styled from "@emotion/styled"
+import { Link } from "gatsby"
+import Img from "gatsby-image"
+import { kebabCase } from "lodash"
+import React from "react"
+import { FaCaretRight } from "react-icons/fa"
+import tw from "twin.macro"
 import AboutImage from "../images/kallpa-ludica.png"
 import Toggle from "./GameCardToggle"
-import { FaCaretRight } from "react-icons/fa"
 
 export default ({ card }) => (
   <GameCard>
@@ -28,11 +28,11 @@ export default ({ card }) => (
         />
       )}
       <div className="relative w-full px-3 pb-12 font-sans text-left">
-        <h3 className="block pt-3 pb-1 font-sans text-lg font-bold leading-6 sm:pb-8 sm:pr-16 sm:h-16 md:pb-0 ">
+        <h3 className="block pt-3 pb-1 font-sans text-lg font-bold leading-6 sm:pb-8 sm:pr-16 md:pb-0 ">
           {card.title}
         </h3>
         {card.stock ? (
-          <b className="top-0 right-0 block pb-6 pr-1 font-bold text-gray-600 sm:pt-3 sm:absolute text-md">
+          <b className="top-0 right-0 block pb-6 pr-1 text-sm font-bold text-gray-600 sm:pt-3 sm:absolute">
             {card.stock}
           </b>
         ) : (
@@ -73,14 +73,17 @@ export default ({ card }) => (
         )}
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-2 px-3 font-sans text-sm font-bold text-left text-blue-800 transition-all duration-500 bg-blue-100 hover:text-white hover:bg-blue-600">
-        {card.stock ? (
+      {card.stock ? (
+        <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-2 px-3 font-sans text-sm font-bold text-left text-blue-800 transition-all duration-500 bg-gray-300 hover:text-white hover:bg-gray-600">
           <span>Pedilo por encargo</span>
-        ) : (
+          <FaCaretRight className="text-lg text-gray-800" />
+        </div>
+      ) : (
+        <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-2 px-3 font-sans text-sm font-bold text-left text-blue-800 transition-all duration-500 bg-blue-100 hover:text-white hover:bg-blue-600">
           <span>Consulta este juego</span>
-        )}
-        <FaCaretRight className="text-lg text-blue-300" />
-      </div>
+          <FaCaretRight className="text-lg text-blue-300" />
+        </div>
+      )}
     </Link>
     <Toggle
       title={card.title}

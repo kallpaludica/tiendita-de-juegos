@@ -1,13 +1,10 @@
 import React from "react"
-import Layout from "../components/layout"
-import HeroWave from "../components/HeroWave"
-import Contact from "../components/About/Contact"
-import Comunidad from "../components/Queries/QueriesComunidad"
-
-import SEO from "../components/seo"
 import { Helmet } from "react-helmet"
-//import tw from "twin.macro"
-//import styled from "@emotion/styled"
+import Contact from "../components/About/Contact"
+import HeroWave from "../components/HeroWave"
+import Layout from "../components/layout"
+import Comunidad from "../components/Queries/QueriesComunidad"
+import SEO from "../components/seo"
 
 const ComunidadPage = () => {
   return (

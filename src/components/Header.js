@@ -14,39 +14,39 @@ import { IoIosChatbubbles, IoIosArchive, IoMdMail } from "react-icons/io"
 const routesLeft = [
   {
     title: "Tiendita de juegos",
-    active: "opacity-100",
+    active: "opacity-50",
     slug: "/juegos/todos",
     icon: <AiFillShop className="text-xl " />,
   },
   /*
   {
     title: "Comunidad",
-    active: "opacity-100 text-red-500",
+    active: "opacity-50",
     slug: "/comunidad",
     icon: <FaNewspaper className="text-2xl " />,
   },
   {
     title: "Recursos",
-    active: "opacity-100 text-red-500",
+    active: "opacity-50",
     slug: "/recursos",
     icon: <IoIosArchive className="text-2xl " />,
   }*/
   {
     title: "Quienes somos",
-    active: "opacity-100 text-red-500",
+    active: "opacity-50",
     slug: "/quienes-somos",
     icon: <IoIosChatbubbles className="text-2xl " />,
   },
   {
     title: "Contacto",
-    active: "opacity-100 text-red-500",
+    active: "opacity-50",
     slug: "/contacto",
     icon: <IoMdMail className="text-2xl " />,
   },
 
   //{
   // title: <GrSearch className="mt-1 text-white fill-current" />,
-  //active: "opacity-100",
+  //active: "opacity-50",
   //slug: "/buscar",
   //},
 ]
@@ -54,7 +54,7 @@ const routesLeft = [
 const routesRight = [
   {
     title: "Tiendita de juegos",
-    active: "opacity-100",
+    active: "opacity-50",
     slug: "/juegos/todos",
     icon: <AiFillShop className="text-xl " />,
   },
@@ -85,8 +85,8 @@ const Header = ({ siteTitle }) => (
             return (
               <Link
                 key={i}
-                activeclassName={route.active}
-                className={`hover:${route.active} text-center flex items-center py-3 md:mx-4 text-sm font-mono lg:text-lg`}
+                activeClassName={route.active}
+                className={`hover:${route.active} text-center flex items-center py-3 md:mx-4 text-sm font-mono lg:text-lg opacity-100`}
                 to={route.slug}
               >
                 <span>{route.title}</span>
@@ -100,7 +100,7 @@ const Header = ({ siteTitle }) => (
             return (
               <Link
                 key={i}
-                activeclassname={route.active}
+                activeclassactiveClassNamename={route.active}
                 className={`hover:${route.active} flex items-center py-2 px-4 md:mx-2 font-mono text-lg opacity-100 bg-gray-100 hover:bg-orange-500 hover:text-white rounded-full shadow-md hover:shadow-lg transition-all transform`}
                 to={route.slug}
               >

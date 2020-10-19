@@ -1,13 +1,14 @@
-import { useStaticQuery, graphql } from "gatsby"
-import tw from "twin.macro"
 import styled from "@emotion/styled"
-import FormatText from "../wysiwyg"
-import { RiWhatsappLine } from "react-icons/ri"
-import { GoMail } from "react-icons/go"
-import { AiOutlineInstagram, AiOutlineFacebook } from "react-icons/ai"
+import { graphql, useStaticQuery } from "gatsby"
 import lottie from "lottie-web"
-import reactLogo from "../../animations/girl-bike.json"
 import React, { useEffect } from "react"
+import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai"
+import { GoMail } from "react-icons/go"
+import { RiWhatsappLine } from "react-icons/ri"
+import tw from "twin.macro"
+import reactLogo from "../../animations/girl-bike.json"
+import FormatText from "../wysiwyg"
+
 const ContactComponent = () => {
   const data = useStaticQuery(graphql`
     query ContactQuery {
@@ -31,9 +32,7 @@ const ContactComponent = () => {
         titulo
         link
       }
-      contactanos: contentfulSobreElProyecto(
-        slug: { eq: "contacto" }
-      ) {
+      contactanos: contentfulSobreElProyecto(slug: { eq: "contacto" }) {
         id
         title
         childContentfulSobreElProyectoTextoPrincipalRichTextNode {
@@ -52,7 +51,10 @@ const ContactComponent = () => {
 
   return (
     <>
-      <h1 className="max-w-6xl mx-auto mt-6 font-mono text-3xl font-bold text-green-700">
+      <div className="flex justify-center max-w-lg mx-auto">
+        <div id="react-logo" style={{ width: 300, height: 300 }} />
+      </div>
+      <h1 className="max-w-6xl mx-auto mt-2 font-mono text-3xl font-bold text-green-700">
         {data.contactanos.title}
       </h1>
       <div className="max-w-6xl mx-auto ">
@@ -110,10 +112,6 @@ const ContactComponent = () => {
           <h2 className="my-2 font-sans text-xl">{data.mail.link}</h2>
         </a>
       </Socials>
-
-      <div className="flex justify-center max-w-lg mx-auto">
-        <div id="react-logo" style={{ width: 300, height: 300 }} />
-      </div>
     </>
   )
 }
@@ -123,6 +121,6 @@ export default ContactComponent
 const Socials = styled.div`
   ${tw`flex flex-col justify-center max-w-5xl py-12 mx-auto text-center md:flex-row`}
   a {
-    ${tw`w-full max-w-sm mx-auto md:mx-3`}
+    ${tw`w-full max-w-sm p-2 mx-auto mb-3 bg-green-100 rounded-md shadow-md md:mx-3`}
   }
 `

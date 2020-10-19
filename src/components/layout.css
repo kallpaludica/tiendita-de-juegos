@@ -16,6 +16,12 @@ a {
   min-height: 95vh;
 }
 
+@screen lg {
+  .home-hero {
+    min-height: 70vh;
+  }
+}
+
 a:hover {
   @apply text-green-600;
 }

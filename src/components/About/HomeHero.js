@@ -1,9 +1,8 @@
-import { AwesomeButton } from "react-awesome-button"
-import { useStaticQuery, graphql, navigate, Link } from "gatsby"
-
-import React, { useEffect } from "react"
-import BackgroundSlider from "../HomeSlider"
+import { graphql, navigate, useStaticQuery } from "gatsby"
 import BackgroundSlider2 from "gatsby-image-background-slider"
+import React from "react"
+import { AwesomeButton } from "react-awesome-button"
+import BackgroundSlider from "../HomeSlider"
 
 const HomeHeroCompoent = () => {
   return (
@@ -46,12 +45,19 @@ const HomeHeroCompoent = () => {
       <div className="opacity-75">
         <BackgroundSlider />
       </div>
-      <div className="opacity-25">
+      <div className="opacity-50">
         <BackgroundSlider2
           initDelay={3}
           transition={3}
           duration={5}
-          images={["juegos.png", "3.png", "32.png", "38.png", "42.png"]}
+          images={[
+            "juegos.png",
+            "22.png",
+            "3.png",
+            "34.png",
+            "40.png",
+            "42.png",
+          ]}
           query={useStaticQuery(graphql`
             query {
               backgrounds: allFile(
