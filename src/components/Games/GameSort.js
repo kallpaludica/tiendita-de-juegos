@@ -11,36 +11,36 @@ const GamesSort = () => {
     <>
       <Sort>
         <Link
-          activeClassName="text-orange-100  bg-orange-500 "
-          className="flex items-center px-2 font-sans rounded-full hover:text-orange-100 hover:bg-orange-500"
+          activeClassName="text-blue-100  bg-blue-500 "
+          className="flex items-center px-2 font-sans rounded-full hover:text-blue-100 hover:bg-blue-500"
           to="/juegos/todos"
         >
           <AiOutlineSortAscending
-            activeClassName="text-teal-100 "
+            activeClassName="text-blue-100 "
             className="mx-auto mr-1 text-xl "
           />
           Título
         </Link>
 
         <Link
-          activeClassName="text-teal-100  bg-teal-500 "
-          className="flex items-center px-2 font-sans rounded-full hover:text-teal-100 hover:bg-teal-500"
+          activeClassName="text-blue-100  bg-blue-500 "
+          className="flex items-center px-2 font-sans rounded-full hover:text-blue-100 hover:bg-blue-500"
           to="/juegos/precio"
         >
           <AiOutlineDollar className="mx-auto mr-1 text-xl " /> Precio
         </Link>
 
         <Link
-          activeClassName="text-green-100  bg-green-500 "
-          className="flex items-center px-2 font-sans rounded-full hover:text-green-100 hover:bg-green-500"
+          activeClassName="text-blue-100  bg-blue-500 "
+          className="flex items-center px-2 font-sans rounded-full hover:text-blue-100 hover:bg-blue-500"
           to="/juegos/duracion"
         >
           <IoMdTime className="mx-auto mr-1 text-xl " /> Duración
         </Link>
 
         <Link
-          activeClassName="text-indigo-100   bg-indigo-500 "
-          className="flex items-center px-2 font-sans rounded-full hover:text-indigo-100 hover:bg-indigo-500"
+          activeClassName="text-blue-100   bg-blue-500 "
+          className="flex items-center px-2 font-sans rounded-full hover:text-blue-100 hover:bg-blue-500"
           to="/juegos/edades"
         >
           <FaUserFriends className="mx-auto mr-1 text-base " /> Edades

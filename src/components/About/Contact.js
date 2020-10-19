@@ -32,7 +32,7 @@ const ContactComponent = () => {
         link
       }
       contactanos: contentfulSobreElProyecto(
-        title: { eq: "¿Tenés una pregunta, sugerencia o idea para compartir?" }
+        slug: { eq: "contacto" }
       ) {
         id
         title

@@ -8,8 +8,8 @@ const QueriesLastGamesComponent = () => {
   const data = useStaticQuery(graphql`
     query QueriesLastGamesQuery {
       GamesSorted: allContentfulArticulos(
-        sort: { fields: [createdAt], order: DESC }
-        limit: 8
+        sort: { fields: [updatedAt], order: DESC }
+        limit: 4
       ) {
         edges {
           node {

@@ -7,7 +7,7 @@ import FormatText from "../wysiwyg"
 const MisionComponent = () => {
   const data = useStaticQuery(graphql`
     query MisionQuery {
-      mision: contentfulSobreElProyecto(title: { eq: "Misión" }) {
+      mision: contentfulSobreElProyecto(slug: { eq: "mision" }) {
         id
         title
         childContentfulSobreElProyectoTextoPrincipalRichTextNode {

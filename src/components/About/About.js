@@ -5,7 +5,7 @@ import FormatText from "../wysiwyg"
 const AboutAboutComponent = () => {
   const data = useStaticQuery(graphql`
     query AboutAboutQuery {
-      about: contentfulSobreElProyecto(title: { eq: "Quienes Somos" }) {
+      about: contentfulSobreElProyecto(slug: { eq: "quienes-somos" }) {
         id
         title
         childContentfulSobreElProyectoTextoPrincipalRichTextNode {

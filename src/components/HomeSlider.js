@@ -8,6 +8,7 @@ const HomeSlider = (props) => (
     initDelay={2}
     transition={2}
     duration={3}
+    images={["dafault-kallpa.jpg"]}
     query={useStaticQuery(graphql`
       query {
         backgrounds: allFile(

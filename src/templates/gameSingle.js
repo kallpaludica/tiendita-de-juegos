@@ -117,10 +117,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </h3>
             </div>
             <div className="relative flex flex-col w-full px-2 pt-3 md:pl-12">
-              <h1 className="w-full pl-6 font-mono text-2xl text-left text-green-600 md:pl-0 md:text-4xl">
+              <h1 className="w-full pt-12 pl-2 font-mono text-3xl text-left text-gray-800 md:pt-0 md:pl-0 md:text-5xl">
                 {post.title}
               </h1>
-              <div className="flex flex-col justify-center w-full pl-6 my-2 text-gray-700 md:px-0 md:flex-row md:justify-start">
+              <h2 className="w-full pt-12 pl-2 mt-2 font-mono text-2xl text-left text-green-600 md:pt-0 md:pl-0 md:text-3xl">
+                ${post.GameBuyPrice}
+              </h2>
+              <div className="flex flex-col justify-center w-full pl-2 my-2 text-gray-700 md:pl-6 md:px-0 md:flex-row md:justify-start">
                 {post.GameAges && (
                   <div className="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
                     <FaUserFriends className="mr-3 text-2xl " />
@@ -143,7 +146,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </div>
               {post.categoria && (
                 <div className="flex items-center justify-start text-lg text-center">
-                  <span className="font-sans font-bold ">Modalidad:</span>
                   {post.categoria.map((item, i) => (
                     <Link
                       to={`/modalidades/${kebabCase(item.slug)}`}
@@ -163,24 +165,23 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   <div className="flex items-center justify-center text-lg">
                     <Link
                       to={`/editoriales/${kebabCase(post.publisher.slug)}`}
-                      className="flex flex-col py-1 my-2 mr-2 rounded-full "
+                      className="flex flex-col py-1 pl-2 my-2 mr-2 rounded-full "
                       key={post.publisher.slug}
                     >
-                      <b className="font-sans text-gray-800 underline hover:text-indigo-600">
+                      <b className="font-sans text-indigo-500 underline hover:text-indigo-800">
                         Editorial {post.publisher.title}
                       </b>
                     </Link>
                   </div>
                 )}
               </div>
-
               {post.GameGallery && (
                 <div className="hidden pl-6 my-6 mb-8 md:px-0">
                   <OpenGallery />
                 </div>
               )}
               <div
-                className="w-full pr-6 mb-6 text-left article"
+                className="w-full pl-2 pr-6 mb-6 text-left article"
                 id={post.slug}
               >
                 {Article && (
@@ -198,9 +199,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Consultá o hacé tu pedido
+                  Consultá por stock y hacé tu pedido
                 </AwesomeButtonSocial>
-                <div className="mb-3 font-sans text-3xl font-bold text-center text-gray-500 md:my-0 md:text-right">
+                <div className="mb-3 font-sans text-3xl font-bold text-center text-green-900 md:my-0 md:text-right">
                   {post.stock ? <>{post.stock}</> : <>${post.GameBuyPrice}</>}
                 </div>
               </div>
@@ -214,11 +215,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             </div>
           </div>
         </div>
-        <div className="relative flex flex-col w-full max-w-6xl pb-3 mx-auto mt-6 border-b border-indigo-700 border-dashed ">
-          <h1 className="w-full max-w-6xl pt-3 mx-auto font-sans text-3xl font-bold text-center text-indigo-700 ">
-            Últimos juegos agregados
+        <div className="relative flex flex-col items-center w-full max-w-6xl px-2 pb-1 mx-auto mt-6 bg-blue-100 border-t-4 border-b-2 border-blue-500 border-dotted">
+          <h1 className="w-full max-w-6xl pt-3 mx-auto font-mono text-3xl font-bold text-center text-blue-500 ">
+            Juegos recién llegados.
           </h1>
-          <div className="max-w-md mx-auto mt-6">
+          <div className="max-w-md mx-auto mt-0">
             <GameSort />
           </div>
         </div>

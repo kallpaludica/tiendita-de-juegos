@@ -107,7 +107,7 @@ const EdadesPage = (props) => {
       <Helmet>
         <body className="games" />
       </Helmet>
-      <HeroWave pattern="bg-indigo-600 text-indigo-500 pb-0" />
+      <HeroWave pattern="bg-blue-600 text-blue-500 pb-0" />
       <ContentSidebar>
         <Aside>
           <GamesAside />
@@ -116,10 +116,10 @@ const EdadesPage = (props) => {
           <PageSticky>
             <MainTitle>Para peques</MainTitle>
           </PageSticky>
-          <div className="relative flex flex-col justify-start border-b-2 border-indigo-300 md:flex-row sm:py-0 sm:pt-6">
+          <div className="relative flex flex-col justify-start border-b-2 border-blue-300 md:flex-row sm:py-0 sm:pt-6">
             <GameSort />
             <button
-              className="relative bottom-0 right-0 flex items-center justify-center px-4 py-3 font-bold text-indigo-800 bg-indigo-100 outline-none md:absolute focus:outline-none"
+              className="relative bottom-0 right-0 flex items-center justify-center px-4 py-3 font-bold text-blue-800 bg-blue-100 outline-none md:absolute focus:outline-none"
               onClick={() => setToggle(!isToggled)}
             >
               <span className="mr-2 font-sans text-base">Invertir filtros</span>

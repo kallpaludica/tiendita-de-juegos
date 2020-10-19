@@ -66,16 +66,16 @@ export default ({ card }) => (
             <div className="flex justify-center pb-1 font-sans text-lg font-bold text-left text-gray-800 ">
               <div className="flex items-baseline flex-1">
                 {card.GamePlayers}
-                <span className="pl-1 text-xs ">Jugadores</span>
+                <span className="pl-1 text-xs ">jugadores/as</span>
               </div>
             </div>
           </div>
         )}
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-2 px-3 font-sans text-sm font-bold text-left text-green-800 transition-all duration-500 bg-green-100 hover:text-white hover:bg-green-600">
-        Consultar
-        <FaCaretRight className="text-lg text-green-300" />
+      <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-2 px-3 font-sans text-sm font-bold text-left text-blue-800 transition-all duration-500 bg-blue-100 hover:text-white hover:bg-blue-600">
+        Consulta este juego
+        <FaCaretRight className="text-lg text-blue-300" />
       </div>
     </Link>
     <Toggle

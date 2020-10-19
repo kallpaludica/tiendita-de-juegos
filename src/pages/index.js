@@ -1,4 +1,3 @@
-import React from "react"
 import { useStaticQuery, graphql, navigate, Link } from "gatsby"
 import { kebabCase } from "lodash"
 import { Helmet } from "react-helmet"
@@ -22,6 +21,10 @@ import tw from "twin.macro"
 import styled from "@emotion/styled"
 import { FiChevronRight } from "react-icons/fi"
 import "../components/AwsBtn.css"
+
+import lottie from "lottie-web"
+import kallpaPotencia from "../animations/kalla-potencia.json"
+import React, { useEffect } from "react"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -58,6 +61,13 @@ const IndexPage = () => {
     }
   `)
 
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: document.querySelector("#kallpa-Potencia"),
+      animationData: kallpaPotencia,
+    })
+  }, [])
+
   return (
     <Layout>
       <Helmet>
@@ -91,34 +101,6 @@ const IndexPage = () => {
         </Wave>
       </div>
 
-      <section className="px-6 my-12">
-        <div className="max-w-lg mx-auto mb-5">
-          <h1 className="font-mono text-2xl leading-tight text-center text-indigo-500 md:text-4xl">
-            .Kallpa{" "}
-            <span className="text-gray-800 transition-all duration-200 hover:text-indigo-400">
-              es potencia.
-            </span>{" "}
-          </h1>
-          <Fade bottom delay={100}>
-            <h2 className="pt-6 font-sans text-2xl text-center text-indigo-900">
-              Somos un entramado donde nos encontramos caminando en relación al
-              juego, el aprendizaje y la recreación.
-            </h2>
-          </Fade>
-        </div>
-
-        <Fade bottom delay={100}>
-          <AwesomeButton
-            action={() => {
-              navigate(`/quienes-somos`)
-            }}
-            type="secondary"
-          >
-            Quienes somos
-            <FiChevronRight className="inline-block mt-1 ml-3" />
-          </AwesomeButton>
-        </Fade>
-      </section>
       <Hero className="relative hidden overflow-hidden bg-white">
         <HeroContent>
           <AwesomeSlider>
@@ -251,11 +233,11 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <section className="mt-24">
+      <section className="mt-2">
         <div className="relative flex flex-col w-full max-w-6xl mx-auto border-b border-orange-700 border-dashed md:flex-row">
           <h1 className="flex items-center w-full max-w-6xl pt-4 mx-auto font-sans text-3xl font-bold text-center text-orange-500 md:text-left ">
             <AiFillShop className="mr-3 text-4xl text-orange-400 transform -translate-y-1" />{" "}
-            Tiendita de Juegos
+            Juegos recién llegados.
           </h1>
           <div className="mt-6">
             <GameSort />
@@ -264,7 +246,48 @@ const IndexPage = () => {
         <QueriesLastGames />
       </section>
 
-      <section className="relative py-24 pb-64 text-indigo-200 bg-indigo-100 pattern-diagonal-lines-sm">
+      <section className="px-6 my-12">
+        <Fade delay={100}>
+          <div className="flex justify-center max-w-lg mx-auto">
+            <div id="kallpa-Potencia" style={{ width: 150, height: 150 }} />
+          </div>
+        </Fade>
+
+        <div className="max-w-lg mx-auto mb-5">
+          <Fade bottom delay={100}>
+            <h1 className="font-mono text-2xl leading-tight text-center text-blue-500 md:text-4xl">
+              <span className="relative inline-block transform -translate-y-2">
+                .
+              </span>
+              Kallpa es potencia
+              <span className="relative inline-block ml-1 transform -translate-y-2">
+                .
+              </span>
+            </h1>
+          </Fade>
+
+          <Fade bottom delay={100}>
+            <h2 className="pt-6 font-sans text-2xl text-center text-indigo-900">
+              Somos un entramado donde nos encontramos caminando en relación al
+              juego, el aprendizaje y la recreación.
+            </h2>
+          </Fade>
+        </div>
+
+        <Fade bottom delay={100}>
+          <AwesomeButton
+            action={() => {
+              navigate(`/quienes-somos`)
+            }}
+            type="secondary"
+          >
+            Quienes somos
+            <FiChevronRight className="inline-block mt-1 ml-3" />
+          </AwesomeButton>
+        </Fade>
+      </section>
+
+      <section className="relative py-32 pb-56 text-indigo-200 bg-indigo-100 pattern-diagonal-lines-sm">
         <h1 className="max-w-6xl pb-12 mx-auto font-sans text-4xl font-bold">
           Editoriales
         </h1>

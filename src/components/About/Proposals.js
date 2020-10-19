@@ -7,7 +7,7 @@ import FormatText from "../wysiwyg"
 const ProposalsComponent = () => {
   const data = useStaticQuery(graphql`
     query ProposalsQuery {
-      propuestas: contentfulSobreElProyecto(title: { eq: "Propuestas" }) {
+      propuestas: contentfulSobreElProyecto(slug: { eq: "propuestas" }) {
         id
         title
         childContentfulSobreElProyectoTextoPrincipalRichTextNode {

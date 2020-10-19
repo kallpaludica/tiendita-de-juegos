@@ -7,7 +7,7 @@ import FormatText from "../wysiwyg"
 const ObjectivesComponent = () => {
   const data = useStaticQuery(graphql`
     query ObjectivesQuery {
-      objetivos: contentfulSobreElProyecto(title: { eq: "Objetivos" }) {
+      objetivos: contentfulSobreElProyecto(slug: { eq: "objetivos" }) {
         id
         title
         childContentfulSobreElProyectoTextoPrincipalRichTextNode {
