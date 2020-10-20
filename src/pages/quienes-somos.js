@@ -7,7 +7,10 @@ import AnchorLink from "react-anchor-link-smooth-scroll"
 import { Helmet } from "react-helmet"
 import Fade from "react-reveal/Fade"
 import tw from "twin.macro"
-import kallpaPotencia from "../animations/kalla-potencia.json"
+import kallpaEnergia from "../animations/kallpa-energia.json"
+import kallpaMovimiento from "../animations/kallpa-movimiento.json"
+import kallpaPotencia from "../animations/kallpa-potencia.json"
+import kallpaUnion from "../animations/kallpa-union.json"
 import About from "../components/About/About"
 import Contact from "../components/About/Contact"
 import Mision from "../components/About/Mision"
@@ -15,11 +18,24 @@ import Objectives from "../components/About/Objectives"
 import Proposals from "../components/About/Proposals"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
 const AboutPage = () => {
   useEffect(() => {
     lottie.loadAnimation({
       container: document.querySelector("#kallpa-Potencia"),
       animationData: kallpaPotencia,
+    })
+    lottie.loadAnimation({
+      container: document.querySelector("#kallpa-Union"),
+      animationData: kallpaUnion,
+    })
+    lottie.loadAnimation({
+      container: document.querySelector("#kallpa-Energia"),
+      animationData: kallpaEnergia,
+    })
+    lottie.loadAnimation({
+      container: document.querySelector("#kallpa-Movimiento"),
+      animationData: kallpaMovimiento,
     })
   }, [])
 
@@ -32,30 +48,14 @@ const AboutPage = () => {
       <Helmet>
         <body className="about" />
       </Helmet>
-      <Hero className="text-green-900 bg-green-800 pattern-cross-dots-md">
+      <Hero className="text-yellow-900 bg-yellow-800 pattern-cross-dots-md">
         <HeroContent>
           <Title>Somos Kallpa Lúdica</Title>
           <Subtitle className="flex items-center max-w-3xl px-2 mx-auto font-mono text-white">
-            Nuestra misión es fomentar vínculos saludables, pensados desde el
-            juego y la lúdica, donde cada quien pueda desarrollarse desde la
-            diversidad e integración, donde haya espacios de ensayos
-            comunitarios y el diálogo sea la base de la construcción de la
-            ciudadanía.
+            Somos un equipo transdisciplinario que busca poner sobre la mesa el
+            juego para problematizarlo y apropiarnos de una práctica milenaria
+            imprescindible.
           </Subtitle>
-          <AnchorLinks>
-            <AnchorLink className="font-mono text-white" href="#equipo">
-              Nuestro <br /> Equipo
-            </AnchorLink>
-            <AnchorLink className="hidden font-mono text-white" href="#mision">
-              Misión
-            </AnchorLink>
-            <AnchorLink className="font-mono text-white" href="#objectives">
-              Nuestros <br /> Objetivos
-            </AnchorLink>
-            <AnchorLink className="font-mono text-white" href="#proposals">
-              Nuestras <br /> Propuestas
-            </AnchorLink>
-          </AnchorLinks>
         </HeroContent>
 
         <div className="absolute inset-0 z-40 opacity-25">
@@ -93,21 +93,42 @@ const AboutPage = () => {
         </Wave>
       </Hero>
 
+      <section>
+        <AnchorLinks>
+          <AnchorLink className="font-mono" href="#equipo">
+            Equipo
+          </AnchorLink>
+          <AnchorLink className="font-mono " href="#mision">
+            Misión
+          </AnchorLink>
+          <AnchorLink className="font-mono" href="#objectives">
+            Objetivos
+          </AnchorLink>
+          <AnchorLink className="font-mono" href="#proposals">
+            Propuestas
+          </AnchorLink>
+        </AnchorLinks>
+      </section>
+
       <Section className="px-2 ">
         <About />
       </Section>
 
-      <section id="equipo" className="px-2 bg-indigo-100">
-        <div className="w-full px-6 py-12 md:py-20">
+      <section id="equipo" className="px-2 bg-orange-100">
+        <div className="w-full px-6 py-12 md:py-2">
           <section className="container mx-auto">
-            <Fade delay={100}>
-              <div className="flex justify-center ">
-                <div id="kallpa-Potencia" style={{ width: 100, height: 100 }} />
-              </div>
-            </Fade>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center ">
+              <Fade delay={100}>
+                <div className="relative h-64">
+                  <div
+                    id="kallpa-Movimiento"
+                    className="flex justify-center "
+                    style={{ width: 300, height: 300, top: "25px" }}
+                  />
+                </div>
+              </Fade>
               <div className="text-center">
-                <h2 className="max-w-xl mx-auto font-mono leading-tight text-indigo-600 md:text-5xl">
+                <h2 className="max-w-xl mx-auto font-mono leading-tight text-orange-600 md:text-5xl">
                   Equipo
                 </h2>
                 <p className="max-w-3xl pt-4 mx-auto font-sans text-xl text-gray-800">
@@ -115,19 +136,56 @@ const AboutPage = () => {
                   mesa el juego para problematizarlo y apropiarnos de una
                   práctica milenaria imprescindible.
                 </p>
-                <hr className="w-16 mx-auto my-8 border-t-4 border-indigo-500" />
+                <hr className="w-16 mx-auto my-8 border-t-4 border-orange-500" />
+                <div className="grid grid-cols-2 gap-3 pt-12 pb-24 md:grid-cols-4 lg:grid-cols-5">
+                  <div className="flex flex-col items-center justify-center font-sans text-2xl transition-all duration-200 transform cursor-pointer hover:-translate-y-2">
+                    <div className="w-24 h-24 mb-2 bg-orange-500 rounded-full"></div>
+                    Eli
+                  </div>
+                  <div className="flex flex-col items-center justify-center font-sans text-2xl transition-all duration-200 transform cursor-pointer hover:-translate-y-2">
+                    <div className="w-24 h-24 mb-2 bg-orange-500 rounded-full"></div>
+                    Emilio
+                  </div>
+                  <div className="flex flex-col items-center justify-center font-sans text-2xl transition-all duration-200 transform cursor-pointer hover:-translate-y-2">
+                    <div className="w-24 h-24 mb-2 bg-orange-500 rounded-full"></div>
+                    Lucila
+                  </div>
+                  <div className="flex flex-col items-center justify-center font-sans text-2xl transition-all duration-200 transform cursor-pointer hover:-translate-y-2">
+                    <div className="w-24 h-24 mb-2 bg-orange-500 rounded-full"></div>
+                    Luis
+                  </div>
+                  <div className="flex flex-col items-center justify-center font-sans text-2xl transition-all duration-200 transform cursor-pointer hover:-translate-y-2">
+                    <div className="w-24 h-24 mb-2 bg-orange-500 rounded-full"></div>
+                    Manza
+                  </div>
+                </div>
               </div>
             </div>
           </section>
         </div>
       </section>
-      <section className="hidden px-2">
+      <section className="px-2 py-12 bg-orange-100">
+        <Fade delay={100}>
+          <div className="flex justify-center ">
+            <div id="kallpa-Potencia" style={{ width: 200, height: 200 }} />
+          </div>
+        </Fade>
         <Mision />
       </section>
-      <section className="px-2">
+      <section className="px-2 py-12 bg-orange-200">
+        <Fade delay={100}>
+          <div className="flex justify-center ">
+            <div id="kallpa-Union" style={{ width: 200, height: 200 }} />
+          </div>
+        </Fade>
         <Objectives />
       </section>
-      <section className="px-2">
+      <section className="px-2 py-12 bg-orange-100 ">
+        <Fade delay={100}>
+          <div className="flex justify-center ">
+            <div id="kallpa-Energia" style={{ width: 200, height: 200 }} />
+          </div>
+        </Fade>
         <Proposals />
       </section>
       <Contact />
@@ -142,9 +200,9 @@ const Section = styled.section`
 `
 
 const AnchorLinks = styled.div`
-  ${tw`relative z-50 flex flex-wrap justify-around w-full max-w-3xl p-3 pt-6 mx-auto mt-6 mb-2 `}
+  ${tw`relative z-50 flex flex-wrap justify-around w-full max-w-3xl p-3 pt-0 mx-auto mt-0 mb-2 `}
   a {
-    ${tw`w-full mx-8 my-6 mt-2 font-sans text-xl font-bold text-center text-green-200 hover:text-gray-200`}
+    ${tw`w-full mx-8 my-6 mt-2 font-sans text-xl font-bold text-center text-orange-600 hover:text-orange-700`}
     flex: 1;
   }
 `

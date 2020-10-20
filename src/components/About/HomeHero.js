@@ -42,15 +42,16 @@ const HomeHeroCompoent = () => {
           </div>
         </section>
       </div>
-      <div className="opacity-75">
+      <div style={{ opacity: 0.9 }}>
         <BackgroundSlider />
       </div>
-      <div className="opacity-50">
+      <div className="opacity-25">
         <BackgroundSlider2
           initDelay={3}
           transition={3}
           duration={5}
           images={[
+            "dafault-kallpa.jpg",
             "juegos.png",
             "22.png",
             "3.png",

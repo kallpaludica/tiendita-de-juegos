@@ -19,14 +19,11 @@ const ObjectivesComponent = () => {
 
   return (
     <>
-      <div
-        className="w-full py-24 mb-32 text-left bg-green-100"
-        id="objectives"
-      >
-        <h1 className="max-w-4xl mx-auto font-mono text-4xl text-center text-green-500">
+      <div className="w-full text-left " id="objectives">
+        <h1 className="max-w-4xl pb-6 mx-auto font-mono text-4xl text-center text-orange-500">
           {data.objetivos.title}
         </h1>
-        <hr className="w-16 mx-auto my-8 border-t-4 border-green-500" />
+        <hr className="w-16 mx-auto my-8 border-t-4 border-orange-500" />
 
         <List className="max-w-4xl mx-auto font-sans text-2xl ">
           <FormatText
@@ -45,7 +42,7 @@ export default ObjectivesComponent
 
 const List = styled.div`
   ul {
-    ${tw`grid grid-cols-3 gap-3 pl-6 text-center `}
+    ${tw`grid grid-cols-1 gap-3 pl-0 text-center md:grid-cols-3 `}
 
     li {
       ${tw`mx-2`}

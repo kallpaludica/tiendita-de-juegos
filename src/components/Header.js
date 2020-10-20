@@ -1,15 +1,14 @@
+import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import "./header.css"
 import Headroom from "react-headroom"
-import tw from "twin.macro"
-import styled from "@emotion/styled"
-import KallpaLogo from "../assets/logo.svg"
-import { FaNewspaper } from "react-icons/fa"
+//import { FaNewspaper } from "react-icons/fa"
 import { AiFillShop } from "react-icons/ai"
-
-import { IoIosChatbubbles, IoIosArchive, IoMdMail } from "react-icons/io"
+import { IoIosChatbubbles, IoMdMail } from "react-icons/io"
+import tw from "twin.macro"
+import KallpaLogo from "../assets/logo.svg"
+import "./header.css"
 
 const routesLeft = [
   {
@@ -140,7 +139,7 @@ const NavLeft = styled.nav`
     }
   }
 `
-
+/*
 const NavRight = styled.nav`
   ${tw`justify-end hidden md:flex`}
 
@@ -159,7 +158,7 @@ const NavRight = styled.nav`
     }
   }
 `
-
+*/
 const HeaderContainer = styled.header`
   ${tw`z-50 px-2 py-2 transition-all duration-500 md:py-2 `}
 

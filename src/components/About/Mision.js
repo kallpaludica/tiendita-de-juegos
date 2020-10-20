@@ -1,7 +1,7 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import tw from "twin.macro"
 import styled from "@emotion/styled"
+import { graphql, useStaticQuery } from "gatsby"
+import React from "react"
+import tw from "twin.macro"
 import FormatText from "../wysiwyg"
 
 const MisionComponent = () => {
@@ -19,7 +19,7 @@ const MisionComponent = () => {
 
   return (
     <>
-      <div className="w-full py-24 text-left bg-orange-100" id="mision">
+      <div className="w-full text-center " id="mision">
         <h1 className="max-w-4xl mx-auto font-mono text-4xl">
           {data.mision.title}
         </h1>

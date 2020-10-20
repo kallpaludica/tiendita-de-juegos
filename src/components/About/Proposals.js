@@ -19,8 +19,8 @@ const ProposalsComponent = () => {
 
   return (
     <>
-      <div className="w-full py-24 text-left bg-white" id="proposals">
-        <h1 className="max-w-4xl mx-auto font-mono text-4xl ">
+      <div className="w-full text-center" id="proposals">
+        <h1 className="max-w-4xl pb-6 mx-auto font-mono text-4xl">
           {data.propuestas.title}
         </h1>
         <List className="max-w-4xl mx-auto font-sans text-2xl ">
@@ -40,6 +40,10 @@ export default ProposalsComponent
 
 const List = styled.div`
   ul {
-    ${tw`pl-6 list-disc `}
+    ${tw`grid grid-cols-1 gap-3 pl-0 text-center md:grid-cols-3 `}
+
+    li {
+      ${tw`mx-2`}
+    }
   }
 `
