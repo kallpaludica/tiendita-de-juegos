@@ -1,0 +1,69 @@
+/*
+.swiper-container {
+  overflow: visible !important;
+}
+*/
+
+.swiper-pagination-bullet-active {
+  @apply bg-red-500 !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  filter: hue-rotate(145deg);
+  top: 0 !important;
+  @apply transition-all duration-200;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  filter: grayscale(1) hue-rotate(-50deg) sepia(1);
+  top: 0 !important;
+}
+
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+  right: 60px !important;
+  left: auto !important;
+}
+
+.swiper-slide {
+  min-height: 220px !important;
+  transform: scale(1);
+  transition: all 0.8s;
+  cursor: grab;
+}
+
+.swiper-slide:active {
+  cursor: grabbing;
+}
+
+.swiper-slide:hover {
+  transform: scale(1.05);
+}
+
+.swiper-slide .gatsby-image-wrapper {
+  transform: scale(1);
+}
+
+.swiper-slide .gatsby-image-wrapper,
+.swiper-slide .description {
+  transition: all 0.8s;
+}
+
+.swiper-slide:hover .gatsby-image-wrapper {
+  opacity: 0.2 !important;
+  transform: scale(1.1);
+}
+
+.swiper-slide:hover .description {
+  opacity: 0 !important;
+}
+
+.swiper-slide .title {
+  transition: all 0.8s;
+}
+
+.swiper-slide:hover .title {
+  transform: scale(1.1) translateX(5px);
+}
