@@ -1,8 +1,7 @@
-import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import { kebabCase } from "lodash"
-
+import { graphql, Link, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import { kebabCase } from "lodash"
+import React from "react"
 
 const GameCategoriesComponent = () => {
   const data = useStaticQuery(graphql`

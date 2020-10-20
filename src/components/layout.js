@@ -1,13 +1,13 @@
-import React from "react"
-import PropTypes from "prop-types"
-import "./layout.css"
-import "../styles/pattern.css"
-
-import SimpleReactLightbox from "simple-react-lightbox"
-import tw from "twin.macro"
 import styled from "@emotion/styled"
+import PropTypes from "prop-types"
+import React from "react"
 import { AiOutlineHeart } from "react-icons/ai"
 import { HiCode } from "react-icons/hi"
+import SimpleReactLightbox from "simple-react-lightbox"
+import tw from "twin.macro"
+import "../styles/pattern.css"
+import "./layout.css"
+
 
 const Layout = ({ children }) => {
   return (

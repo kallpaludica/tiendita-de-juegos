@@ -12,8 +12,13 @@ a {
 }
 
 .home-hero {
-  max-height: 100vh;
-  min-height: 95vh;
+  min-height: 150vh;
+}
+
+@screen md {
+  .home-hero {
+    min-height: 95vh;
+  }
 }
 
 @screen lg {

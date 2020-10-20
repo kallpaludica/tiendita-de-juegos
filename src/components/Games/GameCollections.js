@@ -1,4 +1,5 @@
 import { graphql, Link, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 import { kebabCase } from "lodash"
 import React from "react"
 
@@ -11,6 +12,14 @@ const GameCollectionComponent = () => {
             id
             title
             slug
+            CollectionDescription {
+              CollectionDescription
+            }
+            icono {
+              fixed(width: 80, height: 80) {
+                ...GatsbyContentfulFixed
+              }
+            }
           }
         }
       }
@@ -19,20 +28,32 @@ const GameCollectionComponent = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center max-w-6xl mx-auto mt-12">
-        <h2 className="font-mono text-xl font-bold text-right text-gray-800">
-          Colecciones
-        </h2>
-        <div className="font-mono text-xl font-bold text-right text-gray-800">
+      <div className="flex flex-col items-center justify-center max-w-6xl px-6 mx-auto">
+        <div className="grid grid-cols-2 gap-6 my-12 font-sans text-gray-800 md:grid-cols-4">
           {data.collections.edges.map(({ node }) => {
             return (
-              <Link
-                key={node.slug}
-                to={`/colecciones/${kebabCase(node.slug)}/`}
-                className="ml-2 text-orange-500 underline"
-              >
-                {node.title}
-              </Link>
+              <div className="flex flex-col text-left">
+                <Link
+                  key={node.slug}
+                  to={`/colecciones/${kebabCase(node.slug)}/`}
+                  className="flex flex-col justify-center text-2xl font-bold text-blue-500 underline"
+                >
+                  {node.icono && (
+                    <div className="relative overflow-hidden text-left transition-all duration-200 transform md:w-full hover:-translate-y-2">
+                      <Img
+                        title={node.title}
+                        className="w-full"
+                        alt={node.title}
+                        fixed={node.icono.fixed}
+                      />
+                    </div>
+                  )}
+                  {node.title}
+                </Link>
+                <p className="font-sans text-xl">
+                  {node.CollectionDescription.CollectionDescription}
+                </p>
+              </div>
             )
           })}
         </div>

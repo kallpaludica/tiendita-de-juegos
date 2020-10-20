@@ -12,22 +12,22 @@ const routes = [
     active: "text-green-500",
     slug: "/juegos/todos",
   },
+
+  {
+    title: "Colecciones",
+    active: "text-pink-500",
+    slug: "/colecciones",
+  },
+  {
+    title: "Editoriales",
+    active: "text-pink-500",
+    slug: "/editoriales",
+  },
   {
     title: "Quienes somos",
     active: "text-pink-500",
     slug: "/quienes-somos",
   },
-  /*
-  {
-    title: "Comunidad",
-    active: "text-pink-500",
-    slug: "/comunidad",
-  },
-  {
-    title: "Recursos",
-    active: "text-pink-500",
-    slug: "/recursos",
-  },*/
   {
     title: "Contacto",
     active: "text-indigo-500",

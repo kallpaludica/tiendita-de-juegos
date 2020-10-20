@@ -47,7 +47,7 @@ const HomeHeroCompoent = () => {
       </div>
       <div className="opacity-25">
         <BackgroundSlider2
-          initDelay={3}
+          initDelay={1}
           transition={3}
           duration={5}
           images={[
