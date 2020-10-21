@@ -1,24 +1,23 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { Link } from "gatsby"
-import { kebabCase } from "lodash"
-import Layout from "../components/layout"
+import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
-import SEO from "../components/seo"
-import OpenGallery from "../components/OpenGallery"
-import FormatText from "../components/wysiwyg"
-import AboutImage from "../images/kallpa-ludica.png"
-import { SRLWrapper } from "simple-react-lightbox"
-import { Helmet } from "react-helmet"
+import { kebabCase } from "lodash"
+import React from "react"
 import { AwesomeButtonSocial } from "react-awesome-button"
-import { Player, BigPlayButton } from "video-react"
-import { IoMdTime } from "react-icons/io"
+import { Helmet } from "react-helmet"
 import { FaUserFriends } from "react-icons/fa"
 import { GiTabletopPlayers } from "react-icons/gi"
-import "../components/VideoReact.css"
+import { IoMdTime } from "react-icons/io"
+import { SRLWrapper } from "simple-react-lightbox"
+import { BigPlayButton, Player } from "video-react"
 import "../components/AwsBtn.css"
-import QueriesLastGames from "../components/Queries/QueriesLastGames"
 import GameSort from "../components/Games/GameSort"
+import Layout from "../components/layout"
+import OpenGallery from "../components/OpenGallery"
+import QueriesLastGames from "../components/Queries/QueriesLastGames"
+import SEO from "../components/seo"
+import "../components/VideoReact.css"
+import FormatText from "../components/wysiwyg"
+import AboutImage from "../images/kallpa-ludica.png"
 
 const options = {
   buttons: {
@@ -235,7 +234,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </div>
         <div className="relative flex flex-col items-center w-full max-w-6xl px-2 pb-1 mx-auto mt-6 bg-blue-100 border-t-4 border-b-2 border-blue-500 border-dotted">
           <h1 className="w-full max-w-6xl pt-3 mx-auto font-mono text-3xl text-center text-blue-500 ">
-            Juegos recién llegados.
+            Juegos recomendados
           </h1>
           <div className="max-w-md mx-auto mt-0">
             <GameSort />

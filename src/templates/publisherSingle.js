@@ -1,14 +1,14 @@
-import React from "react"
+import styled from "@emotion/styled"
 import { graphql } from "gatsby"
+import React from "react"
+import Fade from "react-reveal/Fade"
+import tw from "twin.macro"
+import Bread from "../components/breadcrumb"
+import GameCard from "../components/GameCard"
+import HeroWave from "../components/HeroWave"
+import Publishers from "../components/Home/Publishers"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import HeroWave from "../components/HeroWave"
-import GameCard from "../components/GameCard"
-import tw from "twin.macro"
-import styled from "@emotion/styled"
-import Fade from "react-reveal/Fade"
-import Publishers from "../components/Games/Publishers"
-import Bread from "../components/breadcrumb"
 
 const PublisherSingleTemplate = ({ data, pageContext, location }) => {
   const publisher = data.contentfulEditorial
@@ -37,7 +37,12 @@ const PublisherSingleTemplate = ({ data, pageContext, location }) => {
           </div>
         )}
       </div>
-      <Publishers />
+      <section className="relative py-12 pb-24 ">
+        <h1 className="max-w-6xl pb-12 mx-auto font-mono text-4xl font-bold">
+          Editoriales
+        </h1>
+        <Publishers />
+      </section>
     </Layout>
   )
 }

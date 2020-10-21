@@ -18,7 +18,7 @@ import Mision from "../components/About/Mision"
 import "../components/AwsBtn.css"
 //import AboutImage from "../images/kallpa-ludica.png"
 import GameSort from "../components/Games/GameSort"
-import Publishers from "../components/Games/Publishers"
+import Publishers from "../components/Home/Publishers"
 import Layout from "../components/layout"
 import QueriesLastGames from "../components/Queries/QueriesLastGames"
 import SEO from "../components/seo"
@@ -27,21 +27,6 @@ import HomeHeroImage from "../images/bg-home.jpg"
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query HomeQuery {
-      editoriales: allContentfulEditorial {
-        edges {
-          node {
-            id
-            title
-            slug
-            logo {
-              fluid(maxWidth: 450) {
-                ...GatsbyContentfulFluid_withWebp
-              }
-            }
-          }
-        }
-      }
-
       allContentfulCategoriaDelJuego {
         edges {
           node {
@@ -235,7 +220,7 @@ const IndexPage = () => {
         <div className="relative flex flex-col w-full max-w-6xl mx-auto border-b border-orange-700 border-dashed md:flex-row">
           <h1 className="flex items-center w-full max-w-6xl pt-4 mx-auto font-sans text-3xl font-bold text-center text-orange-500 md:text-left ">
             <AiFillShop className="mr-3 text-4xl text-orange-400 transform -translate-y-1" />{" "}
-            Recién llegados
+            Juegos recomendados
           </h1>
           <div className="mt-6">
             <GameSort />
@@ -244,7 +229,7 @@ const IndexPage = () => {
         <QueriesLastGames />
       </section>
 
-      <section className="px-6 pb-24 my-12">
+      <section className="px-6 py-20 mt-12 bg-yellow-100">
         <Fade delay={100}>
           <div className="flex justify-center max-w-lg mx-auto">
             <div id="kallpa-Potencia" style={{ width: 150, height: 150 }} />
@@ -253,7 +238,7 @@ const IndexPage = () => {
 
         <div className="max-w-lg mx-auto mb-5">
           <Fade bottom delay={100}>
-            <h1 className="font-mono text-2xl leading-tight text-center text-blue-500 md:text-4xl">
+            <h1 className="font-mono text-2xl leading-tight text-center text-orange-600 md:text-4xl">
               <span className="relative inline-block transform -translate-y-2">
                 .
               </span>
@@ -285,8 +270,8 @@ const IndexPage = () => {
         </Fade>
       </section>
 
-      <section className="relative py-32 pb-56 bg-yellow-100 ">
-        <h1 className="max-w-6xl pb-12 mx-auto font-sans text-4xl font-bold">
+      <section className="relative py-24 pb-40 bg-white ">
+        <h1 className="max-w-6xl pb-12 mx-auto font-mono text-4xl font-bold">
           Editoriales
         </h1>
         <Publishers />

@@ -1,20 +1,22 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import GameCard from "../../components/GameCard"
-import tw from "twin.macro"
 import styled from "@emotion/styled"
+import { graphql, useStaticQuery } from "gatsby"
+import React from "react"
+import tw from "twin.macro"
+import GameCard from "../../components/GameCard"
 
 const QueriesLastGamesComponent = () => {
   const data = useStaticQuery(graphql`
     query QueriesLastGamesQuery {
       GamesSorted: allContentfulArticulos(
-        sort: { fields: [updatedAt], order: DESC }
-        limit: 4
+        sort: { fields: [GameBuyPrice], order: DESC }
+        limit: 8
+        filter: { articuloDestacado: { eq: "destacar" } }
       ) {
         edges {
           node {
             id
             title
+            articuloDestacado
             slug
             GameBuyPrice
             GamePlayers
