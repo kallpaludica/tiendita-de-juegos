@@ -9,7 +9,7 @@ const QueriesLastGamesComponent = () => {
     query QueriesLastGamesQuery {
       GamesSorted: allContentfulArticulos(
         sort: { fields: [GameBuyPrice], order: DESC }
-        limit: 8
+        limit: 4
         filter: { articuloDestacado: { eq: "destacar" } }
       ) {
         edges {

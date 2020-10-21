@@ -119,14 +119,14 @@ const AboutPage = () => {
           <section className="container mx-auto">
             <div className="flex flex-col items-center ">
               <Fade delay={100}>
-                <div className="relative h-64">
+                <div className="flex justify-center ">
                   <div
-                    id="kallpa-Movimiento"
-                    className="flex justify-center "
-                    style={{ width: 300, height: 300, top: "25px" }}
+                    id="kallpa-Potencia"
+                    style={{ width: 200, height: 200, top: "25px" }}
                   />
                 </div>
               </Fade>
+
               <div className="text-center">
                 <h2 className="max-w-xl mx-auto font-mono leading-tight text-orange-600 md:text-5xl">
                   Equipo
@@ -167,9 +167,14 @@ const AboutPage = () => {
       <section className="px-2 py-12 bg-orange-100">
         <Fade delay={100}>
           <div className="flex justify-center ">
-            <div id="kallpa-Potencia" style={{ width: 200, height: 200 }} />
+            <div
+              id="kallpa-Movimiento"
+              className="flex justify-center "
+              style={{ width: 300, height: 300 }}
+            />
           </div>
         </Fade>
+
         <Mision />
       </section>
       <section className="px-2 py-12 bg-orange-200">

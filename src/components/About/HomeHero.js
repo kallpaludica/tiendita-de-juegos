@@ -53,11 +53,11 @@ const HomeHeroCompoent = () => {
           images={[
             "dafault-kallpa.jpg",
             "juegos.png",
-            "22.png",
+            "38.png",
+            "47.png",
+            "23.png",
+            "29.png",
             "3.png",
-            "34.png",
-            "40.png",
-            "42.png",
           ]}
           query={useStaticQuery(graphql`
             query {

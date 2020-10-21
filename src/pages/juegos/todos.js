@@ -1,17 +1,16 @@
-import { useStaticQuery, graphql } from "gatsby"
-import React, { useState } from "react"
-
-import { Helmet } from "react-helmet"
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import tw from "twin.macro"
 import styled from "@emotion/styled"
-import HeroWave from "../../components/HeroWave"
+import { graphql, useStaticQuery } from "gatsby"
+import React, { useState } from "react"
+import { Helmet } from "react-helmet"
+import { FaCaretRight } from "react-icons/fa"
+import { animated, useSpring } from "react-spring"
+import tw from "twin.macro"
 import GameCard from "../../components/GameCard"
 import GamesAside from "../../components/Games/GameMenu"
 import GameSort from "../../components/Games/GameSort"
-import { useSpring, animated } from "react-spring"
-import { FaCaretRight } from "react-icons/fa"
+import HeroWave from "../../components/HeroWave"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
 
 const AllPage = (props) => {
   const data = useStaticQuery(graphql`
