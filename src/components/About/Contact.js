@@ -67,49 +67,49 @@ const ContactComponent = () => {
       </div>
       <Socials>
         <a
-          className="flex flex-col items-center justify-center text-center bg-green-100 "
+          className="flex flex-col items-center justify-center text-center text-green-500 bg-green-100 "
           target="_blank"
           rel="noopener noreferrer"
           title={data.whatsapp.titulo}
           href={`https://api.whatsapp.com/send?phone=${data.whatsapp.link}&text=%C2%A1Hola!%F0%9F%A4%97%20`}
         >
           <RiWhatsappLine className="my-6 text-4xl" />
-          <b>Teléfono</b>
           <h2 className="my-2 font-sans text-xl">{data.whatsapp.link}</h2>
+          <b>Teléfono</b>
         </a>
         <a
-          className="flex flex-col items-center justify-center text-center bg-blue-100 hover:text-blue-500"
+          className="flex flex-col items-center justify-center text-center text-blue-500 bg-blue-100"
           target="_blank"
           rel="noopener noreferrer"
           title={data.facebook.titulo}
           href={data.facebook.link}
         >
           <AiOutlineFacebook className="my-6 text-4xl" />
-          <b>Facebook</b>
           <h2 className="my-2 font-sans text-xl">kallpa.ludica</h2>
+          <b>Facebook</b>
         </a>
 
         <a
-          className="flex flex-col items-center justify-center text-center bg-orange-100 hover:text-orange-600"
+          className="flex flex-col items-center justify-center text-center text-orange-600 bg-orange-100"
           target="_blank"
           rel="noopener noreferrer"
           title={data.instagram.titulo}
           href={data.instagram.link}
         >
           <AiOutlineInstagram className="my-6 text-4xl" />
-          <b>Instagram</b>
           <h2 className="my-2 font-sans text-xl">@kallpaludica</h2>
+          <b>Instagram</b>
         </a>
         <a
-          className="flex flex-col items-center justify-center text-center bg-indigo-100 hover:text-indigo-500"
+          className="flex flex-col items-center justify-center text-center text-indigo-500 bg-indigo-100"
           target="_blank"
           rel="noopener noreferrer"
           title={data.mail.titulo}
           href={`mailto:${data.mail.link}`}
         >
           <GoMail className="my-6 text-4xl" />
-          <b>Mail</b>
           <h2 className="my-2 font-sans text-xl">{data.mail.link}</h2>
+          <b>Mail</b>
         </a>
       </Socials>
     </>
@@ -122,5 +122,9 @@ const Socials = styled.div`
   ${tw`flex flex-col justify-center max-w-5xl py-12 mx-auto text-center md:flex-row`}
   a {
     ${tw`w-full max-w-sm p-2 mx-auto mb-3 rounded-md shadow-md md:mx-3`}
+  }
+
+  b {
+    ${tw`mb-3 font-mono text-sm font-light`}
   }
 `

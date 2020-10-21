@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import React from "react"
 import Fade from "react-reveal/Fade"
 import tw from "twin.macro"
@@ -38,9 +38,12 @@ const PublisherSingleTemplate = ({ data, pageContext, location }) => {
         )}
       </div>
       <section className="relative py-12 pb-24 ">
-        <h1 className="max-w-6xl pb-12 mx-auto font-mono text-4xl font-bold">
-          Editoriales
-        </h1>
+        <Link
+          to={`/editoriales`}
+          className="block max-w-6xl pb-12 mx-auto font-mono text-2xl"
+        >
+          Ver Editoriales
+        </Link>
         <Publishers />
       </section>
     </Layout>

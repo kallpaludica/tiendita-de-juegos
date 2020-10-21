@@ -16,6 +16,7 @@ import Contact from "../components/About/Contact"
 import Mision from "../components/About/Mision"
 import Objectives from "../components/About/Objectives"
 import Proposals from "../components/About/Proposals"
+import Team from "../components/About/Team"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -138,26 +139,7 @@ const AboutPage = () => {
                 </p>
                 <hr className="w-16 mx-auto my-8 border-t-4 border-orange-500" />
                 <div className="grid grid-cols-2 gap-3 pt-12 pb-24 md:grid-cols-4 lg:grid-cols-5">
-                  <div className="flex flex-col items-center justify-center font-sans text-2xl transition-all duration-200 transform cursor-pointer hover:-translate-y-2">
-                    <div className="w-24 h-24 mb-2 bg-orange-500 rounded-full"></div>
-                    Eli
-                  </div>
-                  <div className="flex flex-col items-center justify-center font-sans text-2xl transition-all duration-200 transform cursor-pointer hover:-translate-y-2">
-                    <div className="w-24 h-24 mb-2 bg-orange-500 rounded-full"></div>
-                    Emilio
-                  </div>
-                  <div className="flex flex-col items-center justify-center font-sans text-2xl transition-all duration-200 transform cursor-pointer hover:-translate-y-2">
-                    <div className="w-24 h-24 mb-2 bg-orange-500 rounded-full"></div>
-                    Lucila
-                  </div>
-                  <div className="flex flex-col items-center justify-center font-sans text-2xl transition-all duration-200 transform cursor-pointer hover:-translate-y-2">
-                    <div className="w-24 h-24 mb-2 bg-orange-500 rounded-full"></div>
-                    Luis
-                  </div>
-                  <div className="flex flex-col items-center justify-center font-sans text-2xl transition-all duration-200 transform cursor-pointer hover:-translate-y-2">
-                    <div className="w-24 h-24 mb-2 bg-orange-500 rounded-full"></div>
-                    Manza
-                  </div>
+                  <Team />
                 </div>
               </div>
             </div>
@@ -165,16 +147,6 @@ const AboutPage = () => {
         </div>
       </section>
       <section className="px-2 py-12 bg-orange-100">
-        <Fade delay={100}>
-          <div className="flex justify-center ">
-            <div
-              id="kallpa-Movimiento"
-              className="flex justify-center "
-              style={{ width: 300, height: 300 }}
-            />
-          </div>
-        </Fade>
-
         <Mision />
       </section>
       <section className="px-2 py-12 bg-orange-200">

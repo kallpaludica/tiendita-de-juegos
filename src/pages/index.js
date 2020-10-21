@@ -274,7 +274,18 @@ const IndexPage = () => {
         <h1 className="max-w-6xl pb-12 mx-auto font-mono text-4xl font-bold">
           Editoriales
         </h1>
-        <Publishers />
+        <div className="mb-3">
+          <Publishers />
+        </div>
+        <AwesomeButton
+          action={() => {
+            navigate(`/editoriales`)
+          }}
+          type="secondary"
+        >
+          Ver juegos por editoriales
+          <FiChevronRight className="inline-block mt-1 ml-3" />
+        </AwesomeButton>
         <Wave>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <defs xmlns="http://www.w3.org/2000/svg">
