@@ -216,7 +216,7 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <section className="px-6 mt-2">
+      <section className="px-2 mt-2">
         <div className="relative flex flex-col w-full max-w-6xl mx-auto border-b border-orange-700 border-dashed md:flex-row">
           <h1 className="flex items-center w-full max-w-6xl pt-4 mx-auto font-sans text-3xl font-bold text-center text-orange-500 md:text-left ">
             <AiFillShop className="mr-3 text-4xl text-orange-400 transform -translate-y-1" />{" "}

@@ -67,7 +67,7 @@ const ContactComponent = () => {
       </div>
       <Socials>
         <a
-          className="flex flex-col items-center justify-center text-center "
+          className="flex flex-col items-center justify-center text-center bg-green-100 "
           target="_blank"
           rel="noopener noreferrer"
           title={data.whatsapp.titulo}
@@ -78,7 +78,7 @@ const ContactComponent = () => {
           <h2 className="my-2 font-sans text-xl">{data.whatsapp.link}</h2>
         </a>
         <a
-          className="flex flex-col items-center justify-center text-center hover:text-blue-500"
+          className="flex flex-col items-center justify-center text-center bg-blue-100 hover:text-blue-500"
           target="_blank"
           rel="noopener noreferrer"
           title={data.facebook.titulo}
@@ -90,7 +90,7 @@ const ContactComponent = () => {
         </a>
 
         <a
-          className="flex flex-col items-center justify-center text-center hover:text-orange-600"
+          className="flex flex-col items-center justify-center text-center bg-orange-100 hover:text-orange-600"
           target="_blank"
           rel="noopener noreferrer"
           title={data.instagram.titulo}
@@ -101,7 +101,7 @@ const ContactComponent = () => {
           <h2 className="my-2 font-sans text-xl">@kallpaludica</h2>
         </a>
         <a
-          className="flex flex-col items-center justify-center text-center hover:text-indigo-500"
+          className="flex flex-col items-center justify-center text-center bg-indigo-100 hover:text-indigo-500"
           target="_blank"
           rel="noopener noreferrer"
           title={data.mail.titulo}
@@ -121,6 +121,6 @@ export default ContactComponent
 const Socials = styled.div`
   ${tw`flex flex-col justify-center max-w-5xl py-12 mx-auto text-center md:flex-row`}
   a {
-    ${tw`w-full max-w-sm p-2 mx-auto mb-3 bg-green-100 rounded-md shadow-md md:mx-3`}
+    ${tw`w-full max-w-sm p-2 mx-auto mb-3 rounded-md shadow-md md:mx-3`}
   }
 `
