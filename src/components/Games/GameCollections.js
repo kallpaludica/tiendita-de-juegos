@@ -32,14 +32,14 @@ const GameCollectionComponent = () => {
         <div className="grid grid-cols-2 gap-6 my-12 font-sans text-gray-800 md:grid-cols-4">
           {data.collections.edges.map(({ node }) => {
             return (
-              <div className="flex flex-col text-left">
+              <div className="flex flex-col text-center">
                 <Link
                   key={node.slug}
                   to={`/colecciones/${kebabCase(node.slug)}/`}
-                  className="flex flex-col justify-center text-2xl font-bold text-blue-500 underline"
+                  className="flex flex-col justify-center text-2xl font-bold text-blue-500 "
                 >
                   {node.icono && (
-                    <div className="relative overflow-hidden text-left transition-all duration-200 transform md:w-full hover:-translate-y-2">
+                    <div className="relative overflow-hidden text-center transition-all duration-200 transform md:w-full hover:-translate-y-2">
                       <Img
                         title={node.title}
                         className="w-full"
@@ -48,7 +48,7 @@ const GameCollectionComponent = () => {
                       />
                     </div>
                   )}
-                  {node.title}
+                  <span className="text-blue-500 ">{node.title}</span>
                 </Link>
                 <p className="font-sans text-xl">
                   {node.CollectionDescription.CollectionDescription}

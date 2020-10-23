@@ -11,6 +11,7 @@ import kallpaEnergia from "../animations/kallpa-energia.json"
 import kallpaMovimiento from "../animations/kallpa-movimiento.json"
 import kallpaPotencia from "../animations/kallpa-potencia.json"
 import kallpaUnion from "../animations/kallpa-union.json"
+import KallpaLogo from "../assets/logo.svg"
 import About from "../components/About/About"
 import Contact from "../components/About/Contact"
 import Mision from "../components/About/Mision"
@@ -120,7 +121,7 @@ const AboutPage = () => {
           <section className="container mx-auto">
             <div className="flex flex-col items-center ">
               <Fade delay={100}>
-                <div className="flex justify-center ">
+                <div className="flex justify-start ">
                   <div
                     id="kallpa-Potencia"
                     style={{ width: 200, height: 200, top: "25px" }}
@@ -129,17 +130,23 @@ const AboutPage = () => {
               </Fade>
 
               <div className="text-center">
-                <h2 className="max-w-xl mx-auto font-mono leading-tight text-orange-600 md:text-5xl">
+                <h2 className="max-w-6xl mx-auto font-mono leading-tight text-orange-600 md:text-5xl">
                   Equipo
                 </h2>
-                <p className="max-w-3xl pt-4 mx-auto font-sans text-xl text-gray-800">
-                  Somos un equipo transdisciplinario que busca poner sobre la
-                  mesa el juego para problematizarlo y apropiarnos de una
-                  práctica milenaria imprescindible.
-                </p>
-                <hr className="w-16 mx-auto my-8 border-t-4 border-orange-500" />
-                <div className="grid grid-cols-2 gap-3 pt-12 pb-24 md:grid-cols-4 lg:grid-cols-5">
+
+                <div className="flex flex-wrap justify-center max-w-6xl pt-12 pb-24 mx-auto">
                   <Team />
+                </div>
+
+                <hr className="w-16 mx-auto my-8 border-t-4 border-orange-500" />
+                <p className="max-w-3xl py-4 mx-auto font-sans text-2xl italic text-orage-500">
+                  Encontrarnos a jugar o jugar a encontrarnos.. conocernos,
+                  afectarnos.. son búsquedas para potenciarnos y caminar hacia
+                  construcciones más cuidadas.. comunitarias, alterativas,
+                  libres, diversas, dinámicas..
+                </p>
+                <div className="flex flex-wrap justify-center max-w-6xl py-12 mx-auto">
+                  <KallpaLogo className="w-32 h-32 mr-3 kallpa-logo" />
                 </div>
               </div>
             </div>

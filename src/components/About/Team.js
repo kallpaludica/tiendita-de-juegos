@@ -1,15 +1,19 @@
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import React from "react"
+import FormatText from "../wysiwyg"
 
 const QueryTeamComponent = () => {
   const data = useStaticQuery(graphql`
     query QueryTeamQuery {
-      editoriales: allContentfulEquipo(sort: { fields: title }) {
+      editoriales: allContentfulEquipo(sort: { fields: id }) {
         edges {
           node {
             id
             title
+            childContentfulEquipoTextoPrincipalRichTextNode {
+              json
+            }
             imagenDestacada {
               fluid(maxWidth: 200) {
                 ...GatsbyContentfulFluid_withWebp
@@ -27,17 +31,23 @@ const QueryTeamComponent = () => {
         return (
           <div
             key={node.id}
-            className="flex flex-col items-center justify-center font-sans text-2xl transition-all duration-200 transform cursor-pointer hover:-translate-y-2"
+            className="flex flex-col items-start justify-start w-full max-w-lg p-3 mx-auto my-6 font-sans bg-white md:flex-row"
           >
-            <div className="mb-3 bg-orange-500 rounded-full shadow-lg">
+            <div className="flex items-center justify-center mb-3 text-orange-500 transition-all duration-200 transform translate-x-0 translate-y-2 hover:text-blue-500 pattern-dots-sm md:-translate-x-6 md:-translate-y-6">
               <Img
                 title={node.title}
-                className="block object-cover w-32 h-auto "
+                className="block object-cover w-32 h-auto transform scale-90 "
                 alt={node.title}
                 fluid={node.imagenDestacada.fluid}
               />
             </div>
-            {node.title}
+            <div className="text-sm text-left">
+              <FormatText
+                FormatText={
+                  node.childContentfulEquipoTextoPrincipalRichTextNode
+                }
+              />
+            </div>
           </div>
         )
       })}

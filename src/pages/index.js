@@ -16,6 +16,7 @@ import Contact from "../components/About/Contact"
 import HomeHero from "../components/About/HomeHero"
 import Mision from "../components/About/Mision"
 import "../components/AwsBtn.css"
+import Collections from "../components/Games/GameCollections"
 //import AboutImage from "../images/kallpa-ludica.png"
 import GameSort from "../components/Games/GameSort"
 import Publishers from "../components/Home/Publishers"
@@ -229,6 +230,14 @@ const IndexPage = () => {
         <QueriesLastGames />
       </section>
 
+      <section className="pt-12">
+        <Fade bottom delay={100}>
+          <h1 className="font-mono text-2xl leading-tight text-center text-blue-600 md:text-4xl">
+            Colecciones para empezar
+          </h1>
+        </Fade>
+        <Collections />
+      </section>
       <section className="px-6 py-20 mt-12 bg-yellow-100">
         <Fade delay={100}>
           <div className="flex justify-center max-w-lg mx-auto">
