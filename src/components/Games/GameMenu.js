@@ -31,6 +31,6 @@ const Aside = styled.div`
   }
 
   h2 {
-    ${tw`pt-6 pl-6 my-3 font-mono text-xl text-left `}
+    ${tw`pt-0 pl-6 my-3 font-mono text-xl text-left `}
   }
 `

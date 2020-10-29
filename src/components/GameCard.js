@@ -34,7 +34,7 @@ export default ({ card }) => (
           {card.title}
         </h3>
         {card.stock ? (
-          <b className="top-0 right-0 block text-xl font-bold text-gray-600 sm:pt-1">
+          <b className="top-0 right-0 block text-xl font-bold text-blue-500 sm:pt-1">
             {card.stock}
           </b>
         ) : (
@@ -76,17 +76,18 @@ export default ({ card }) => (
       </div>
 
       {card.stock ? (
-        <div className="bottom-0 left-0 right-0 flex items-center justify-center p-2 px-3 font-sans text-base font-bold text-center text-blue-800 transition-all duration-500 bg-gray-300 hover:text-white hover:bg-gray-600">
-          <span>Podés encargarlo</span>
-          <FaCaretRight className="text-lg text-gray-500" />
+        <div className="bottom-0 left-0 right-0 flex items-center justify-center p-2 px-3 font-sans text-base font-bold text-center text-blue-800 transition-all duration-500 bg-blue-300 hover:text-white hover:bg-blue-600">
+          <span>Pedidos por encargo</span>
+          <FaCaretRight className="text-lg text-blue-500" />
         </div>
       ) : (
-        <div className="bottom-0 left-0 right-0 flex items-center justify-center p-2 px-3 font-sans text-base font-bold text-center text-blue-800 transition-all duration-500 bg-blue-100 hover:text-white hover:bg-blue-600">
+        <div className="bottom-0 left-0 right-0 flex items-center justify-center p-2 px-3 font-sans text-base font-bold text-center text-green-800 transition-all duration-500 bg-green-100 hover:text-white hover:bg-green-600">
           <span>Consulta este juego</span>
-          <FaCaretRight className="text-lg text-blue-300" />
+          <FaCaretRight className="text-lg text-green-300" />
         </div>
       )}
     </Link>
+
     <div className="hidden">
       <Toggle
         title={card.title}

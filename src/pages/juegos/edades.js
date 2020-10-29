@@ -11,7 +11,7 @@ import GameCard from "../../components/GameCard"
 import GamesAside from "../../components/Games/GameMenu"
 import GameSort from "../../components/Games/GameSort"
 import { useSpring, animated } from "react-spring"
-import { FaCaretRight } from "react-icons/fa"
+import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai"
 
 const EdadesPage = (props) => {
   const data = useStaticQuery(graphql`
@@ -114,23 +114,24 @@ const EdadesPage = (props) => {
         </Aside>
         <Main>
           <PageSticky>
-            <animated.div style={sortDESC}>
-              <MainTitle>De mayor a menor</MainTitle>
-            </animated.div>
-            <animated.div style={sortASD}>
-              <MainTitle>De menor a mayor</MainTitle>
-            </animated.div>
+            <MainTitle>Por Edades</MainTitle>
           </PageSticky>
-          <div className="relative flex flex-col justify-start border-b-2 border-blue-300 md:flex-row sm:py-0 sm:pt-6">
+          <div className="relative flex flex-col justify-start border-b-2 border-blue-300 md:flex-row sm:py-0 sm:pt-0">
             <GameSort />
             <button
               className="relative bottom-0 right-0 flex items-center justify-center px-4 py-3 text-white bg-blue-500 outline-none md:absolute focus:outline-none hover:bg-blue-600"
               onClick={() => setToggle(!isToggled)}
             >
-              <span className="font-sans font-bold">Invertir orden</span>
-              <animated.div style={sortICON}>
-                <FaCaretRight className="text-lg" />
-              </animated.div>
+              <span className="font-sans font-bold">
+                <animated.div style={sortDESC}>
+                  De mayor a menor{" "}
+                  <AiOutlineArrowUp className="inline-block text-lg" />
+                </animated.div>
+                <animated.div style={sortASD}>
+                  De menor a mayor{" "}
+                  <AiOutlineArrowDown className="inline-block text-lg" />
+                </animated.div>
+              </span>
             </button>
           </div>
           <animated.div style={sortASD}>
@@ -187,6 +188,6 @@ const Main = styled.section`
 `
 
 const MainTitle = styled.h2`
-  ${tw`-mt-4 font-sans text-3xl font-bold text-center`}
-  ${tw`pb-6 text-white`}
+  ${tw`font-sans text-3xl font-bold text-center md:text-left `}
+  ${tw`pb-6 text-white md:pl-3`}
 `

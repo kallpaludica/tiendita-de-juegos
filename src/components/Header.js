@@ -13,32 +13,27 @@ import "./header.css"
 const routesLeft = [
   {
     title: "Tiendita de juegos",
-    active: "opacity-50",
     slug: "/juegos/todos",
     icon: <AiFillShop className="text-xl " />,
   },
   /*
   {
     title: "Comunidad",
-    active: "opacity-50",
     slug: "/comunidad",
     icon: <FaNewspaper className="text-2xl " />,
   },
   {
     title: "Recursos",
-    active: "opacity-50",
     slug: "/recursos",
     icon: <IoIosArchive className="text-2xl " />,
   }*/
   {
     title: "Quienes somos",
-    active: "opacity-50",
     slug: "/quienes-somos",
     icon: <IoIosChatbubbles className="text-2xl " />,
   },
   {
     title: "Contacto",
-    active: "opacity-50",
     slug: "/contacto",
     icon: <IoMdMail className="text-2xl " />,
   },
@@ -84,8 +79,8 @@ const Header = ({ siteTitle }) => (
             return (
               <Link
                 key={i}
-                activeClassName={route.active}
-                className={`hover:${route.active} text-center flex items-center py-3 md:mx-4 text-sm font-mono lg:text-lg opacity-100`}
+                activeClassName="opacity-100 border-white"
+                className={`hover:${route.active} text-center flex items-center py-3 md:mx-4 text-sm font-mono lg:text-lg opacity-75 border-b border-transparent`}
                 to={route.slug}
               >
                 <span>{route.title}</span>

@@ -60,7 +60,7 @@ const QueryTeamComponent = () => {
 export default QueryTeamComponent
 
 const Person = styled.div`
-  ${tw`flex flex-col items-start justify-start w-full max-w-lg p-3 mx-auto my-6 font-sans bg-white`}
+  ${tw`flex flex-col items-start justify-start w-full max-w-lg p-3 mx-auto my-6 font-sans transition-all duration-500 transform bg-white shadow-md hover:shadow-xl`}
   p {
     font-size: 1rem !important;
     line-height: 1.5rem !important;

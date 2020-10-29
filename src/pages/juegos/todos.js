@@ -11,6 +11,7 @@ import GameSort from "../../components/Games/GameSort"
 import HeroWave from "../../components/HeroWave"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
+import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai"
 
 const AllPage = (props) => {
   const data = useStaticQuery(graphql`
@@ -113,23 +114,24 @@ const AllPage = (props) => {
         </Aside>
         <Main>
           <PageSticky>
-            <animated.div style={sortDESC}>
-              <MainTitle>Z a la A</MainTitle>
-            </animated.div>
-            <animated.div style={sortASD}>
-              <MainTitle>A a la Z</MainTitle>
-            </animated.div>
+            <MainTitle>Por Título</MainTitle>
           </PageSticky>
-          <div className="relative flex flex-col justify-start border-b-2 border-blue-300 md:flex-row sm:py-0 sm:pt-6">
+          <div className="relative flex flex-col justify-start border-b-2 border-blue-300 md:flex-row sm:py-0 sm:pt-0">
             <GameSort />
             <button
-              className="relative bottom-0 right-0 flex items-center justify-center px-4 py-3 text-white bg-blue-500 outline-none md:absolute focus:outline-none hover:bg-blue-600"
+              className="relative bottom-0 right-0 flex items-baseline justify-center px-4 py-3 text-white bg-blue-500 outline-none md:absolute focus:outline-none hover:bg-blue-600"
               onClick={() => setToggle(!isToggled)}
             >
-              <span className="font-sans font-bold">Invertir orden</span>
-              <animated.div style={sortICON}>
-                <FaCaretRight className="text-lg" />
-              </animated.div>
+              <span className="font-sans font-bold">
+                <animated.div style={sortDESC}>
+                  De la Z a la A
+                  <AiOutlineArrowUp className="inline-block ml-1 text-lg" />
+                </animated.div>
+                <animated.div style={sortASD}>
+                  De la A a la Z
+                  <AiOutlineArrowDown className="inline-block ml-1 text-lg" />
+                </animated.div>
+              </span>
             </button>
           </div>
           <animated.div style={sortASD}>
@@ -180,6 +182,6 @@ const Main = styled.section`
 `
 
 const MainTitle = styled.h2`
-  ${tw`-mt-4 font-sans text-3xl font-bold text-center`}
-  ${tw`pb-6 text-white`}
+  ${tw`font-sans text-3xl font-bold text-center md:text-left `}
+  ${tw`pb-6 text-white md:pl-3`}
 `

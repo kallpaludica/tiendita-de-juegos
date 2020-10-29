@@ -2,7 +2,7 @@ import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import { kebabCase } from "lodash"
 import React from "react"
-import { AwesomeButtonSocial } from "react-awesome-button"
+import { AwesomeButton, AwesomeButtonSocial } from "react-awesome-button"
 import { Helmet } from "react-helmet"
 import { FaUserFriends } from "react-icons/fa"
 import { BsDot } from "react-icons/bs"
@@ -117,10 +117,21 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               <h1 className="w-full pt-2 pl-2 font-mono text-3xl text-left text-gray-800 md:pt-3 md:pl-0 md:text-5xl">
                 {post.title}
               </h1>
-              <h2 className="w-full pt-2 pl-2 mt-2 font-mono text-2xl text-left text-green-600 md:pt-0 md:pl-0 md:text-3xl">
-                ${post.GameBuyPrice}
-              </h2>
-              <div className="flex items-center justify-start mt-6 text-lg text-center">
+
+              {post.stock ? (
+                <>
+                  <h2 className="w-full pt-2 pl-2 mt-2 font-mono text-2xl text-left text-blue-600 md:pt-0 md:pl-0 md:text-3xl">
+                    ${post.GameBuyPrice}
+                  </h2>
+                </>
+              ) : (
+                <>
+                  <h2 className="w-full pt-2 pl-2 mt-2 font-mono text-2xl text-left text-green-600 md:pt-0 md:pl-0 md:text-3xl">
+                    ${post.GameBuyPrice}
+                  </h2>
+                </>
+              )}
+              <div className="flex flex-col items-center justify-start mt-6 text-lg text-center md:flex-row">
                 {post.publisher && (
                   <div className="flex items-center justify-center text-lg">
                     <Link
@@ -130,14 +141,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                     >
                       <b className="font-sans text-indigo-500 underline hover:text-indigo-800">
                         Editorial {post.publisher.title}
-                        <BsDot className="inline-block transform -translate-y-1" />
                       </b>
                     </Link>
                   </div>
                 )}
-                <div className="font-sans text-base italic font-bold text-left text-gray-700 ">
-                  Creado por {post.GameAuthor}
-                </div>
+              </div>
+              <div className="font-sans text-base italic font-bold text-left text-gray-700 ">
+                Creado por {post.GameAuthor}
               </div>
 
               <div className="flex flex-col justify-center w-full pl-2 my-2 text-gray-700 md:pl-0 md:px-0 md:flex-row md:justify-start">
@@ -205,19 +215,36 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 )}
               </div>
 
-              <div className="flex flex-col-reverse justify-between w-full px-3 py-6 mb-0 bg-green-100 border-t-2 border-b-2 border-green-500 md:flex-row">
-                <AwesomeButtonSocial
-                  type="whatsapp"
-                  href={`https://api.whatsapp.com/send?phone=5493876034627&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20consultar%20por%20el%20juego%20${post.title}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {post.stock ? <>Pedilo por encargo</> : <>Hacé tu pedido</>}
-                </AwesomeButtonSocial>
-                <div className="mb-3 font-sans text-3xl font-bold text-center text-green-900 md:my-0 md:text-right">
-                  {post.stock ? <>{post.stock}</> : <>${post.GameBuyPrice}</>}
+              {post.stock ? (
+                <div className="flex flex-col-reverse justify-between w-full px-3 py-6 mb-0 bg-blue-100 border-t-2 border-b-2 border-blue-500 md:flex-row">
+                  <AwesomeButton
+                    href={`https://api.whatsapp.com/send?phone=5493876034627&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20encargar%20el%20juego%20${post.title}`}
+                    target="_blank"
+                    type="secondary"
+                    rel="noopener noreferrer"
+                  >
+                    Pedilo por encargo
+                  </AwesomeButton>
+                  <div className="mb-3 font-sans text-3xl font-bold text-center text-blue-500 md:my-0 md:text-right">
+                    {post.stock}
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className="flex flex-col-reverse justify-between w-full px-3 py-6 mb-0 bg-green-100 border-t-2 border-b-2 border-green-500 md:flex-row">
+                  <AwesomeButtonSocial
+                    type="whatsapp"
+                    href={`https://api.whatsapp.com/send?phone=5493876034627&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20consultar%20por%20el%20juego%20${post.title}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Hace tu pedido
+                  </AwesomeButtonSocial>
+                  <div className="mb-3 font-sans text-3xl font-bold text-center text-green-900 md:my-0 md:text-right">
+                    ${post.GameBuyPrice}
+                  </div>
+                </div>
+              )}
+
               {post.GamePlay && (
                 <div className="mt-12">
                   <Player src={post.GamePlay.file.url}>
