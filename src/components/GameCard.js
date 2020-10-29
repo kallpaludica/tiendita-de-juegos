@@ -7,6 +7,8 @@ import { FaCaretRight } from "react-icons/fa"
 import tw from "twin.macro"
 import AboutImage from "../images/kallpa-ludica.png"
 import Toggle from "./GameCardToggle"
+import { IoMdTime } from "react-icons/io"
+import { FaUserFriends } from "react-icons/fa"
 
 export default ({ card }) => (
   <GameCard>
@@ -27,46 +29,46 @@ export default ({ card }) => (
           src={AboutImage}
         />
       )}
-      <div className="relative w-full px-3 pb-12 font-sans text-left">
-        <h3 className="block pt-3 pb-1 font-sans text-lg font-bold leading-6 sm:pb-8 sm:pr-16 md:pb-0 ">
+      <div className="relative w-full px-3 pb-5 font-sans text-center">
+        <h3 className="block pt-3 pb-1 font-sans text-xl font-bold leading-6 sm:pb-0 md:pb-0 ">
           {card.title}
         </h3>
         {card.stock ? (
-          <b className="top-0 right-0 block pb-6 pr-1 text-sm font-bold text-gray-600 sm:pt-3 sm:absolute">
+          <b className="top-0 right-0 block text-xl font-bold text-gray-600 sm:pt-1">
             {card.stock}
           </b>
         ) : (
-          <b className="top-0 right-0 block text-xl font-bold text-green-600 sm:absolute sm:pt-3 sm:pb-6 sm:pr-1">
+          <b className="top-0 right-0 block text-xl font-bold text-green-600 sm:pt-1">
             ${card.GameBuyPrice}
           </b>
         )}
 
         {card.GameAges && (
-          <div className="hidden w-full pt-1 text-left game-ages">
-            <div className="flex justify-center pb-1 font-sans text-lg font-bold text-left text-gray-800 ">
+          <div className="hidden w-full pt-1 text-center game-ages">
+            <div className="flex justify-center pb-1 font-sans text-lg font-bold text-center text-gray-800 ">
               <div className="flex flex-col flex-1 text-base opacity-75">
+                <FaUserFriends className="w-6 mx-auto mb-1 text-2xl" />
                 {card.GameAges}+ años
-                <small className="text-xs ">Edades sugeridas</small>
               </div>
             </div>
           </div>
         )}
         {card.GameDuration && (
-          <div className="hidden w-full pt-1 text-left game-duration">
-            <div className="flex justify-center pb-1 font-sans text-lg font-bold text-left text-gray-800 ">
+          <div className="hidden w-full pt-1 text-center game-duration">
+            <div className="flex justify-center pb-1 font-sans text-lg font-bold text-center text-gray-800 ">
               <div className="flex flex-col flex-1 text-base opacity-75">
-                {card.GameDuration} min.
-                <small className="text-xs ">Tiempos de partida</small>
+                <IoMdTime className="w-6 mx-auto mt-3 mb-1 text-2xl " />
+                {card.GameDuration}min.
               </div>
             </div>
           </div>
         )}
         {card.GamePlayers && (
-          <div className="hidden w-full pt-1 text-left game-players">
-            <div className="flex justify-center pb-1 font-sans text-lg font-bold text-left text-gray-800 ">
+          <div className="hidden w-full pt-1 text-center game-players">
+            <div className="flex justify-center pb-1 font-sans text-lg font-bold text-center text-gray-800 ">
               <div className="flex items-baseline flex-1">
                 {card.GamePlayers}
-                <span className="pl-1 text-xs ">jugadores/as</span>
+                jugadores/as
               </div>
             </div>
           </div>
@@ -74,12 +76,12 @@ export default ({ card }) => (
       </div>
 
       {card.stock ? (
-        <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-2 px-3 font-sans text-sm font-bold text-left text-blue-800 transition-all duration-500 bg-gray-300 hover:text-white hover:bg-gray-600">
-          <span>Pedilo por encargo</span>
-          <FaCaretRight className="text-lg text-gray-800" />
+        <div className="bottom-0 left-0 right-0 flex items-center justify-center p-2 px-3 font-sans text-base font-bold text-center text-blue-800 transition-all duration-500 bg-gray-300 hover:text-white hover:bg-gray-600">
+          <span>Podés encargarlo</span>
+          <FaCaretRight className="text-lg text-gray-500" />
         </div>
       ) : (
-        <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-2 px-3 font-sans text-sm font-bold text-left text-blue-800 transition-all duration-500 bg-blue-100 hover:text-white hover:bg-blue-600">
+        <div className="bottom-0 left-0 right-0 flex items-center justify-center p-2 px-3 font-sans text-base font-bold text-center text-blue-800 transition-all duration-500 bg-blue-100 hover:text-white hover:bg-blue-600">
           <span>Consulta este juego</span>
           <FaCaretRight className="text-lg text-blue-300" />
         </div>
@@ -99,13 +101,13 @@ export default ({ card }) => (
 )
 
 const GameCard = styled.div`
-  ${tw`relative w-full mb-3 overflow-hidden bg-white rounded-md shadow-lg md:max-w-md`}
+  ${tw`relative w-full mb-3 overflow-hidden transition-all duration-500 transform bg-white rounded-md shadow-lg hover:shadow-2xl md:max-w-md`}
 
   .image {
-    ${tw`relative w-full h-48 overflow-hidden transition-all duration-500 transform scale-90 md:w-48 md:w-full`}
+    ${tw`relative w-full h-48 overflow-hidden transition-all duration-500 transform scale-90 md:h-64 md:w-48 md:w-full`}
   }
 
   .image:hover {
-    ${tw`scale-105`}
+    transform: scale(0.95);
   }
 `

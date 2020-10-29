@@ -8,7 +8,6 @@ import tw from "twin.macro"
 import "../styles/pattern.css"
 import "./layout.css"
 
-
 const Layout = ({ children }) => {
   return (
     <>
@@ -19,22 +18,22 @@ const Layout = ({ children }) => {
 
         <Stn>
           <Inner>
-            <h3 className="pb-2 text-sm font-bold text-gray-800">
+            <h3 className="pb-2 text-base font-bold ">
               {new Date().getFullYear()} Kallpa Lúdica
             </h3>
-            <div className="flex flex-col pr-2 text-sm opacity-75">
+            <div className="flex justify-center pr-2 text-base opacity-75">
               <a
                 rel="noopener noreferrer"
                 target="_blank"
                 className="inline-block font-bold"
                 href="https://www.cooparaje.com.ar"
               >
-                Hecho en Cooparaje con
+                Realizado cooperativamente con
               </a>
               <div>
-                <HiCode className="inline-block mx-1 mb-1 text-lg " />
+                <HiCode className="inline-block mx-1 text-lg " />
                 <span className="mx-1">&</span>
-                <AiOutlineHeart className="inline-block mx-1 mb-1 text-lg " />
+                <AiOutlineHeart className="inline-block mx-1 text-lg " />
               </div>
               {` `}
             </div>
@@ -60,5 +59,5 @@ const Stn = styled.div`
 `
 
 const Inner = styled.div`
-  ${tw`flex justify-between max-w-6xl p-2 py-3 mx-auto text-center text-gray-800 `}
+  ${tw`flex flex-col justify-between max-w-6xl p-2 py-3 mx-auto text-center text-gray-800 `}
 `

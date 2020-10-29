@@ -25,7 +25,7 @@ const GameCategoriesComponent = () => {
 
   return (
     <>
-      <div className="flex flex-wrap justify-center max-w-6xl mx-auto my-0 text-center bg-white md:flex-row">
+      <div className="flex flex-wrap justify-center max-w-6xl mx-auto my-0 text-center md:flex-row">
         {data.categories.edges.map(({ node }) => {
           return (
             <Link

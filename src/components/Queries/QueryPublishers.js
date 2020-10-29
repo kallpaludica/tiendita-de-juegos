@@ -26,7 +26,11 @@ const QueryPublisherComponent = () => {
     <>
       {data.editoriales.edges.map(({ node }) => {
         return (
-          <Link key={node.slug} to={`/editoriales/${kebabCase(node.slug)}/`}>
+          <Link
+            key={node.slug}
+            to={`/editoriales/${kebabCase(node.slug)}/`}
+            className="hover:text-indigo-500 hover:border-indigo-500"
+          >
             {node.title}
           </Link>
         )

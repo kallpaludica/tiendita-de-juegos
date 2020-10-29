@@ -16,7 +16,7 @@ const Text = ({ children }) => (
     </p>
   </Fade>
 )
-const website_url = "https://www.cooparaje.com.ar"
+const website_url = "https://www.kallpaludica.com.ar"
 const options = {
   renderMark: {
     [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,

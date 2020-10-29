@@ -66,4 +66,12 @@ header nav a {
   transform: translateY(0%);
 }
 
+body.about .headroom--pinned {
+  transform: translateY(0);
+}
+
+body.about .headroom--unpinned {
+  transform: translateY(-100%);
+}
+
 /* purgecss end ignore */

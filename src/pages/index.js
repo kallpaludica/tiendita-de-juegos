@@ -14,10 +14,10 @@ import tw from "twin.macro"
 import kallpaPotencia from "../animations/kallpa-potencia.json"
 import Contact from "../components/About/Contact"
 import HomeHero from "../components/About/HomeHero"
-import Mision from "../components/About/Mision"
+
 import "../components/AwsBtn.css"
 import Collections from "../components/Games/GameCollections"
-//import AboutImage from "../images/kallpa-ludica.png"
+
 import GameSort from "../components/Games/GameSort"
 import Publishers from "../components/Home/Publishers"
 import Layout from "../components/layout"
@@ -172,14 +172,33 @@ const IndexPage = () => {
           </svg>
         </Wave>
       </Hero>
-      <section className="hidden">
-        <Mision />
+
+      <section className="px-2 mt-2">
+        <div className="relative flex flex-col w-full max-w-6xl mx-auto border-b border-blue-500 border-dashed md:flex-row">
+          <h1 className="flex items-center w-full max-w-6xl pt-4 mx-auto font-mono text-3xl text-center text-blue-500 md:text-left ">
+            <AiFillShop className="mr-3 text-3xl text-blue-500 transform " />
+            Los que más jugamos
+          </h1>
+          <div className="mt-6">
+            <GameSort />
+          </div>
+        </div>
+        <QueriesLastGames />
       </section>
-      <section className="relative hidden py-24 mt-12">
-        <h1 className="max-w-4xl mx-auto font-sans text-4xl font-bold text-orange-500">
+
+      <section className="pt-12">
+        <Fade bottom delay={100}>
+          <h1 className="font-mono text-2xl leading-tight text-center text-blue-500 md:text-4xl">
+            Colecciones para empezar
+          </h1>
+        </Fade>
+        <Collections />
+      </section>
+      <section className="relative mt-6">
+        <h1 className="font-mono text-2xl leading-tight text-center text-orange-500 md:text-4xl">
           Algunas modalidades de juegos
         </h1>
-        <div className="flex flex-wrap justify-center max-w-3xl mx-auto my-12 text-center bg-white md:flex-row">
+        <div className="grid max-w-6xl grid-cols-2 gap-6 mx-auto my-12 font-sans text-center text-gray-800 bg-white md:grid-cols-4 md:flex-row">
           {data.allContentfulCategoriaDelJuego.edges.map(({ node }) => {
             return (
               <Link
@@ -204,41 +223,8 @@ const IndexPage = () => {
             )
           })}
         </div>
-        <div className="">
-          <a
-            href="https://game-icons.net/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-1 text-teal-800 border border-teal-500 border-dashed opacity-75 hover:text-teal-900 hover:bg-teal-300"
-          >
-            Recurso: GameIcons.net
-          </a>
-          <b className="mr-1 text-orange-500"> </b>
-        </div>
       </section>
-
-      <section className="px-2 mt-2">
-        <div className="relative flex flex-col w-full max-w-6xl mx-auto border-b border-orange-700 border-dashed md:flex-row">
-          <h1 className="flex items-center w-full max-w-6xl pt-4 mx-auto font-sans text-3xl font-bold text-center text-orange-500 md:text-left ">
-            <AiFillShop className="mr-3 text-4xl text-orange-400 transform -translate-y-1" />{" "}
-            Juegos recomendados
-          </h1>
-          <div className="mt-6">
-            <GameSort />
-          </div>
-        </div>
-        <QueriesLastGames />
-      </section>
-
-      <section className="pt-12">
-        <Fade bottom delay={100}>
-          <h1 className="font-mono text-2xl leading-tight text-center text-blue-600 md:text-4xl">
-            Colecciones para empezar
-          </h1>
-        </Fade>
-        <Collections />
-      </section>
-      <section className="px-6 py-20 mt-12 bg-yellow-100">
+      <section className="px-6 py-10 mt-12 bg-yellow-100">
         <Fade delay={100}>
           <div className="flex justify-center max-w-lg mx-auto">
             <div id="kallpa-Potencia" style={{ width: 150, height: 150 }} />

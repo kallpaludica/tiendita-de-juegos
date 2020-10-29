@@ -45,11 +45,12 @@ const CategorySingleTemplate = ({ data, pageContext, location }) => {
                 Aún no hay juegos asignados a esta modalidad
               </div>
             )}
-
-            <h4 className="max-w-6xl py-6 mx-auto mb-6 font-sans text-xl font-bold text-orange-500 border-t border-orange-200">
-              Algunas modalidades de juegos
-            </h4>
-            <GameCategories />
+            <div className="pb-6 bg-orange-100">
+              <h4 className="max-w-6xl py-6 mx-auto mb-6 font-sans text-xl font-bold text-gray-900 border-t border-orange-200">
+                Más modalidades
+              </h4>
+              <GameCategories />
+            </div>
 
             <div
               className="hidden w-full max-w-2xl m-auto article"

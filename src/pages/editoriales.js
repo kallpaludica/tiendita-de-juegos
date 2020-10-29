@@ -5,6 +5,7 @@ import Publishers from "../components/Games/Publishers"
 import SEO from "../components/seo"
 import { Helmet } from "react-helmet"
 import Bread from "../components/breadcrumb"
+import Contact from "../components/About/Contact"
 
 const PublishersPages = ({ data, pageContext, location }) => {
   return (
@@ -21,6 +22,7 @@ const PublishersPages = ({ data, pageContext, location }) => {
       <Bread breaddata={pageContext.breadcrumb}></Bread>
 
       <Publishers />
+      <Contact />
     </Layout>
   )
 }

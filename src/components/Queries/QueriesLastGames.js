@@ -8,8 +8,8 @@ const QueriesLastGamesComponent = () => {
   const data = useStaticQuery(graphql`
     query QueriesLastGamesQuery {
       GamesSorted: allContentfulArticulos(
-        sort: { fields: [GameBuyPrice], order: DESC }
-        limit: 4
+        sort: { fields: [GameBuyPrice], order: ASC }
+        limit: 8
         filter: { articuloDestacado: { eq: "destacar" } }
       ) {
         edges {

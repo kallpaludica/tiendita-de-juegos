@@ -11,12 +11,11 @@ import styled from "@emotion/styled"
 const GamesAside = () => {
   return (
     <Aside>
-      <h2>Colecciones</h2>
+      <h2 className="text-blue-500">Colecciones</h2>
       <QueryCollections />
-      <h2>Modalidades</h2>
+      <h2 className="text-orange-500">Modalidades</h2>
       <QueryCategories />
-      <h2>Editoriales</h2>
-      {/*<Link to="/editoriales/">Ver todas</Link>*/}
+      <h2 className="text-indigo-500">Editoriales</h2>
       <QueryPublishers />
     </Aside>
   )
@@ -25,17 +24,13 @@ const GamesAside = () => {
 export default GamesAside
 
 const Aside = styled.div`
-  ${tw`top-0 flex flex-col w-full pt-20 pr-2 font-sans text-left `}
+  ${tw`top-0 flex flex-col w-full mt-20 font-sans text-left border-l border-gray-300 `}
 
   a {
-    ${tw`py-1 transition-all duration-200 border-b border-gray-300 hover:text-blue-500 hover:border-blue-300`}
-  }
-
-  h3 {
-    ${tw`my-3 font-mono text-base uppercase`}
+    ${tw`py-1 pl-6 text-lg text-left transition-all duration-200 border-b border-gray-300`}
   }
 
   h2 {
-    ${tw`my-3 font-mono text-xl text-blue-400 `}
+    ${tw`pt-6 pl-6 my-3 font-mono text-xl text-left `}
   }
 `

@@ -17,8 +17,9 @@ const HomeHeroCompoent = () => {
                     Compartiendo la <br />
                     potencia de jugar.
                   </h1>
-                  <p className="pt-6 font-sans text-2xl text-left text-white">
-                    Abrimos nuestra tienda de juegos para la provincia de Salta.
+                  <p className="block pt-6 font-sans text-2xl leading-9 text-left text-white">
+                    Abrimos nuestra tienda de juegos en la{" "}
+                    <b>Provincia de Salta</b>.
                   </p>
 
                   <div className="flex flex-col justify-start mt-5">
@@ -32,9 +33,6 @@ const HomeHeroCompoent = () => {
                         Ingresar a la tiendita
                       </AwesomeButton>
                     </div>
-                    <span className="flex-1 inline-block mt-3 font-sans text-sm text-left text-white uppercase">
-                      (para ventas por menor en la provincia)
-                    </span>
                   </div>
                 </div>
               </div>
@@ -42,18 +40,17 @@ const HomeHeroCompoent = () => {
           </div>
         </section>
       </div>
-      <div style={{ opacity: 0.9 }}>
+      <div style={{ opacity: 0.95 }}>
         <BackgroundSlider />
       </div>
-      <div className="opacity-25">
+      <div style={{ opacity: 0.35 }}>
         <BackgroundSlider2
-          initDelay={1}
-          transition={3}
+          initDelay={2}
+          transition={2}
           duration={5}
           images={[
             "dafault-kallpa.jpg",
             "juegos.png",
-            "38.png",
             "47.png",
             "23.png",
             "29.png",

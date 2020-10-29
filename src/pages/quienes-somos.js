@@ -20,6 +20,7 @@ import Proposals from "../components/About/Proposals"
 import Team from "../components/About/Team"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { ImQuotesLeft, ImQuotesRight } from "react-icons/im"
 
 const AboutPage = () => {
   useEffect(() => {
@@ -43,9 +44,6 @@ const AboutPage = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <body className="home" />
-      </Helmet>
       <SEO title="Inicio" />
       <Helmet>
         <body className="about" />
@@ -94,15 +92,15 @@ const AboutPage = () => {
           </svg>
         </Wave>
       </Hero>
-
-      <section>
+      <section className="sticky top-0 z-50 py-3 bg-white">
         <AnchorLinks>
+          <AnchorLink className="font-mono" href="#mision">
+            Misión
+          </AnchorLink>
           <AnchorLink className="font-mono" href="#equipo">
             Equipo
           </AnchorLink>
-          <AnchorLink className="font-mono " href="#mision">
-            Misión
-          </AnchorLink>
+
           <AnchorLink className="font-mono" href="#objectives">
             Objetivos
           </AnchorLink>
@@ -111,12 +109,17 @@ const AboutPage = () => {
           </AnchorLink>
         </AnchorLinks>
       </section>
+      <section className="px-2 pb-6 " id="mision">
+        <div className="flex flex-wrap justify-center max-w-6xl py-12 mx-auto">
+          <KallpaLogo className="w-32 h-32 mt-12 mr-3 transform rotate-90 kallpa-logo" />
+        </div>
+        <Mision />
+      </section>
 
-      <Section className="px-2 ">
+      <Section className="px-2 py-24 text-orange-700 bg-orange-600 pattern-cross-dots-xl">
         <About />
       </Section>
-
-      <section id="equipo" className="px-2 bg-orange-100">
+      <section id="equipo" className="px-2 pt-24 bg-orange-100">
         <div className="w-full px-6 py-12 md:py-2">
           <section className="container mx-auto">
             <div className="flex flex-col items-center ">
@@ -134,29 +137,16 @@ const AboutPage = () => {
                   Equipo
                 </h2>
 
-                <div className="flex flex-wrap justify-center max-w-6xl pt-12 pb-24 mx-auto">
+                <div className="grid max-w-6xl grid-cols-3 gap-3 pt-12 pb-24 mx-auto">
                   <Team />
-                </div>
-
-                <hr className="w-16 mx-auto my-8 border-t-4 border-orange-500" />
-                <p className="max-w-3xl py-4 mx-auto font-sans text-2xl italic text-orage-500">
-                  Encontrarnos a jugar o jugar a encontrarnos.. conocernos,
-                  afectarnos.. son búsquedas para potenciarnos y caminar hacia
-                  construcciones más cuidadas.. comunitarias, alterativas,
-                  libres, diversas, dinámicas..
-                </p>
-                <div className="flex flex-wrap justify-center max-w-6xl py-12 mx-auto">
-                  <KallpaLogo className="w-32 h-32 mr-3 kallpa-logo" />
                 </div>
               </div>
             </div>
           </section>
         </div>
       </section>
-      <section className="px-2 py-12 bg-orange-100">
-        <Mision />
-      </section>
-      <section className="px-2 py-12 bg-orange-200">
+
+      <section className="px-2 pt-24 pb-12 bg-orange-200" id="objectives">
         <Fade delay={100}>
           <div className="flex justify-center ">
             <div id="kallpa-Union" style={{ width: 200, height: 200 }} />
@@ -164,7 +154,8 @@ const AboutPage = () => {
         </Fade>
         <Objectives />
       </section>
-      <section className="px-2 py-12 bg-orange-100 ">
+
+      <section className="px-2 pt-24 pb-12 bg-orange-100 " id="proposals">
         <Fade delay={100}>
           <div className="flex justify-center ">
             <div id="kallpa-Energia" style={{ width: 200, height: 200 }} />
@@ -172,6 +163,23 @@ const AboutPage = () => {
         </Fade>
         <Proposals />
       </section>
+      <section className="flex flex-col items-center justify-center pt-24 pb-3 text-center">
+        <Fade delay={100}>
+          <ImQuotesLeft className="pb-4 text-4xl text-orange-500" />
+        </Fade>
+        <Fade delay={200}>
+          <p className="max-w-3xl mx-auto font-serif text-3xl font-bold text-orange-500">
+            Encontrarnos a jugar o jugar a encontrarnos.. conocernos,
+            afectarnos.. son búsquedas para potenciarnos y caminar hacia
+            construcciones más cuidadas.. comunitarias, alterativas, libres,
+            diversas, dinámicas..
+          </p>
+        </Fade>
+        <Fade delay={300}>
+          <ImQuotesRight className="pt-4 text-4xl text-orange-500" />
+        </Fade>
+      </section>
+
       <Contact />
     </Layout>
   )
@@ -184,9 +192,9 @@ const Section = styled.section`
 `
 
 const AnchorLinks = styled.div`
-  ${tw`relative z-50 flex flex-wrap justify-around w-full max-w-3xl p-3 pt-0 mx-auto mt-0 mb-2 `}
+  ${tw`relative z-50 flex flex-wrap justify-around w-full max-w-6xl p-3 pt-0 mx-auto mt-0 mb-2 `}
   a {
-    ${tw`w-full mx-8 my-6 mt-2 font-sans text-xl font-bold text-center text-orange-600 hover:text-orange-700`}
+    ${tw`w-full mx-8 my-2 font-sans text-xl font-bold text-center text-orange-600 hover:text-orange-700`}
     flex: 1;
   }
 `
@@ -207,7 +215,7 @@ const Subtitle = styled.h3`
 `
 
 const Hero = styled.div`
-  ${tw`relative flex flex-col items-start justify-center w-full pt-24 pb-16 mx-auto`}
+  ${tw`relative flex flex-col items-start justify-center w-full pt-24 pb-32 mx-auto`}
 `
 
 const Wave = styled.div`

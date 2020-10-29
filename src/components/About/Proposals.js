@@ -19,7 +19,7 @@ const ProposalsComponent = () => {
 
   return (
     <>
-      <div className="w-full text-center" id="proposals">
+      <div className="w-full text-center">
         <h1 className="max-w-4xl pb-6 mx-auto font-mono text-4xl">
           {data.propuestas.title}
         </h1>

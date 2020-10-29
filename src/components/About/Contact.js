@@ -6,7 +6,7 @@ import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai"
 import { GoMail } from "react-icons/go"
 import { RiWhatsappLine } from "react-icons/ri"
 import tw from "twin.macro"
-import reactLogo from "../../animations/girl-bike.json"
+import reactLogo from "../../animations/ogam.json"
 import FormatText from "../wysiwyg"
 
 const ContactComponent = () => {
@@ -52,9 +52,9 @@ const ContactComponent = () => {
   return (
     <>
       <div className="flex justify-center max-w-lg mx-auto">
-        <div id="react-logo" style={{ width: 300, height: 300 }} />
+        <div id="react-logo" style={{ width: 400, height: 300 }} />
       </div>
-      <h1 className="max-w-6xl mx-auto mt-2 font-mono text-3xl font-bold text-green-700">
+      <h1 className="max-w-6xl mx-auto mt-0 font-mono text-3xl font-bold text-green-700">
         {data.contactanos.title}
       </h1>
       <div className="max-w-6xl mx-auto ">
@@ -85,7 +85,7 @@ const ContactComponent = () => {
           href={data.facebook.link}
         >
           <AiOutlineFacebook className="my-6 text-4xl" />
-          <h2 className="my-2 font-sans text-xl">kallpa.ludica</h2>
+          <h2 className="my-2 font-sans text-xl">kallpaludicaa</h2>
           <b>Facebook</b>
         </a>
 

@@ -48,7 +48,9 @@ const GameCollectionComponent = () => {
                       />
                     </div>
                   )}
-                  <span className="text-blue-500 ">{node.title}</span>
+                  <span className="text-blue-500 hover:underline">
+                    {node.title}
+                  </span>
                 </Link>
                 <p className="font-sans text-xl">
                   {node.CollectionDescription.CollectionDescription}

@@ -1,6 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import FormatText from "../wysiwyg"
+import styled from "@emotion/styled"
+import tw from "twin.macro"
 
 const AboutAboutComponent = () => {
   const data = useStaticQuery(graphql`
@@ -21,15 +23,22 @@ const AboutAboutComponent = () => {
         {data.about.title}
       </h1>
 
-      <div className="max-w-xl mx-auto font-sans text-base text-left ">
+      <About className="">
         <FormatText
           FormatText={
             data.about.childContentfulSobreElProyectoTextoPrincipalRichTextNode
           }
         />
-      </div>
+      </About>
     </>
   )
 }
 
 export default AboutAboutComponent
+
+const About = styled.div`
+  ${tw`max-w-xl mx-auto font-sans text-base text-left `}
+  p {
+    ${tw`text-white`}
+  }
+`

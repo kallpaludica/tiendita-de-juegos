@@ -114,15 +114,20 @@ const DurationPage = (props) => {
         </Aside>
         <Main>
           <PageSticky>
-            <MainTitle>Para gestionar la manija</MainTitle>
+            <animated.div style={sortDESC}>
+              <MainTitle>Partidas largas</MainTitle>
+            </animated.div>
+            <animated.div style={sortASD}>
+              <MainTitle>Partidas rápidos</MainTitle>
+            </animated.div>
           </PageSticky>
           <div className="relative flex flex-col justify-start border-b-2 border-blue-300 md:flex-row sm:py-0 sm:pt-6">
             <GameSort />
             <button
-              className="relative bottom-0 right-0 flex items-center justify-center px-6 py-3 font-bold text-blue-800 bg-blue-100 outline-none md:absolute focus:outline-none"
+              className="relative bottom-0 right-0 flex items-center justify-center px-4 py-3 text-white bg-blue-500 outline-none md:absolute focus:outline-none hover:bg-blue-600"
               onClick={() => setToggle(!isToggled)}
             >
-              <span className="mr-2 font-sans">Invertir filtros</span>
+              <span className="font-sans font-bold">Invertir orden</span>
               <animated.div style={sortICON}>
                 <FaCaretRight className="text-lg" />
               </animated.div>
@@ -152,14 +157,14 @@ const DurationPage = (props) => {
 export default DurationPage
 
 const Container = styled.div`
-  ${tw`grid max-w-6xl grid-cols-1 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
+  ${tw`grid w-full grid-cols-1 gap-4 p-3 pt-6 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3`}
   .game-duration {
     display: block !important;
   }
 `
 
 const ContainerDesc = styled.div`
-  ${tw`grid max-w-6xl grid-cols-1 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
+  ${tw`grid w-full grid-cols-1 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3`}
   .game-duration {
     display: block !important;
   }
@@ -174,14 +179,14 @@ const ContentSidebar = styled.div`
 `
 
 const Aside = styled.aside`
-  ${tw`hidden w-64 pl-3 md:block `}
+  ${tw`hidden w-64 md:block `}
 `
 
 const Main = styled.section`
-  ${tw`relative w-full px-2 mx-auto`}
+  ${tw`relative w-full px-2 mx-auto md:px-0`}
 `
 
 const MainTitle = styled.h2`
-  ${tw`-mt-4 font-mono text-3xl text-center border-b border-orange-300 md:text-left`}
+  ${tw`-mt-4 font-sans text-3xl font-bold text-center`}
   ${tw`pb-6 text-white`}
 `

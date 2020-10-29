@@ -88,16 +88,16 @@ const AllPage = (props) => {
   const sortDESC = useSpring({
     display: isToggled ? "block" : "none",
     opacity: isToggled ? "1" : "0",
-    config: { mass: 3, tension: 500, friction: 80 },
+    config: { mass: 5, tension: 200, friction: 80 },
   })
   const sortASD = useSpring({
     display: isToggled ? "none" : "block",
     opacity: isToggled ? "0" : "1",
-    config: { mass: 3, tension: 500, friction: 80 },
+    config: { mass: 5, tension: 200, friction: 80 },
   })
   const sortICON = useSpring({
     transform: isToggled ? "scale(1) rotate(90deg)" : "scale(-1) rotate(90deg)",
-    config: { mass: 3, tension: 500, friction: 80 },
+    config: { mass: 5, tension: 200, friction: 80 },
   })
 
   return (
@@ -113,15 +113,20 @@ const AllPage = (props) => {
         </Aside>
         <Main>
           <PageSticky>
-            <MainTitle>Para jugar de la A a la Z</MainTitle>
+            <animated.div style={sortDESC}>
+              <MainTitle>Para jugar de la Z a la A</MainTitle>
+            </animated.div>
+            <animated.div style={sortASD}>
+              <MainTitle>Para jugar de la A a la Z</MainTitle>
+            </animated.div>
           </PageSticky>
           <div className="relative flex flex-col justify-start border-b-2 border-blue-300 md:flex-row sm:py-0 sm:pt-6">
             <GameSort />
             <button
-              className="relative bottom-0 right-0 flex items-center justify-center px-4 py-3 font-bold text-blue-800 bg-blue-100 outline-none md:absolute focus:outline-none hover:bg-blue-600 hover:text-white"
+              className="relative bottom-0 right-0 flex items-center justify-center px-4 py-3 text-white bg-blue-500 outline-none md:absolute focus:outline-none hover:bg-blue-600"
               onClick={() => setToggle(!isToggled)}
             >
-              <span className="mr-2 font-sans">Invertir filtros</span>
+              <span className="font-sans font-bold">Invertir orden</span>
               <animated.div style={sortICON}>
                 <FaCaretRight className="text-lg" />
               </animated.div>
@@ -151,11 +156,11 @@ const AllPage = (props) => {
 export default AllPage
 
 const Container = styled.div`
-  ${tw`grid w-full grid-cols-1 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
+  ${tw`grid w-full grid-cols-1 gap-4 p-3 pt-6 pb-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3`}
 `
 
 const ContainerDesc = styled.div`
-  ${tw`grid w-full grid-cols-1 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
+  ${tw`grid w-full grid-cols-1 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3`}
 `
 
 const PageSticky = styled.div`
@@ -167,14 +172,14 @@ const ContentSidebar = styled.div`
 `
 
 const Aside = styled.aside`
-  ${tw`hidden w-64 px-6 pr-12 md:block `}
+  ${tw`hidden w-64 md:block `}
 `
 
 const Main = styled.section`
-  ${tw`relative w-full px-2 mx-auto`}
+  ${tw`relative w-full px-2 mx-auto md:px-0`}
 `
 
 const MainTitle = styled.h2`
-  ${tw`-mt-4 font-mono text-3xl text-center border-b border-blue-300 md:text-left`}
+  ${tw`-mt-4 font-sans text-3xl font-bold text-center`}
   ${tw`pb-6 text-white`}
 `

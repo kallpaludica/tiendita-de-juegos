@@ -19,7 +19,7 @@ const ObjectivesComponent = () => {
 
   return (
     <>
-      <div className="w-full text-left " id="objectives">
+      <div className="w-full text-left ">
         <h1 className="max-w-4xl pb-6 mx-auto font-mono text-4xl text-center text-orange-500">
           {data.objetivos.title}
         </h1>
