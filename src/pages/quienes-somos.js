@@ -137,7 +137,7 @@ const AboutPage = () => {
                   Equipo
                 </h2>
 
-                <div className="grid max-w-6xl grid-cols-3 gap-3 pt-12 pb-24 mx-auto">
+                <div className="grid max-w-6xl grid-cols-1 gap-3 pt-12 pb-24 mx-auto sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
                   <Team />
                 </div>
               </div>
@@ -192,9 +192,9 @@ const Section = styled.section`
 `
 
 const AnchorLinks = styled.div`
-  ${tw`relative z-50 flex flex-wrap justify-around w-full max-w-6xl p-3 pt-0 mx-auto mt-0 mb-2 `}
+  ${tw`relative z-50 flex flex-wrap justify-around w-full max-w-6xl pt-0 pr-12 mx-auto mt-0 mb-2 md:p-3 `}
   a {
-    ${tw`w-full mx-8 my-2 font-sans text-xl font-bold text-center text-orange-600 hover:text-orange-700`}
+    ${tw`w-full mx-3 my-2 font-sans text-sm font-bold text-center text-orange-600 md:mx-8 md:text-xl hover:text-orange-700`}
     flex: 1;
   }
 `

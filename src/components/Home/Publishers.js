@@ -2,8 +2,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import React from "react"
 import Slider from "react-slick"
-//import "~slick-carousel/slick/slick-theme.css"
-//import "~slick-carousel/slick/slick.css"
+
 
 const HomePublishersComponent = () => {
   const settings = {
