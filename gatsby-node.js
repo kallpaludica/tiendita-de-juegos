@@ -84,7 +84,7 @@ exports.createPages = ({ graphql, actions }) => {
         paginate({
           createPage,
           items: result.data.allContentfulArticulos.edges,
-          itemsPerPage: 25,
+          itemsPerPage: 200,
           pathPrefix: "/juegos",
           component: path.resolve("src/templates/gameArchive.js"),
         })

@@ -5,6 +5,7 @@ import React from "react"
 import { AwesomeButtonSocial } from "react-awesome-button"
 import { Helmet } from "react-helmet"
 import { FaUserFriends } from "react-icons/fa"
+import { BsDot } from "react-icons/bs"
 import { GiTabletopPlayers } from "react-icons/gi"
 import { IoMdTime } from "react-icons/io"
 import { SRLWrapper } from "simple-react-lightbox"
@@ -68,9 +69,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <body className="ingame" />
       </Helmet>
 
-      <div className="w-full py-12">
-        <div className="max-w-6xl pt-12 mx-auto">
-          <div className="flex flex-col pt-6 border-t-2 border-green-500 sm:flex-row">
+      <div className="w-full py-12 bg-orange-100">
+        <div className="max-w-6xl mx-auto mt-16 bg-white shadow-lg">
+          <div className="flex flex-col p-5 pt-6 sm:flex-row">
             <div className="w-full md:w-2/3">
               {post.imagenDestacada ? (
                 <div className="w-full mx-auto text-center ">
@@ -111,18 +112,35 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   </div>
                 )}
               </SRLWrapper>
-              <h3 className="hidden w-full mb-3 font-sans text-base italic font-bold text-center text-gray-700 md:block">
-                Juego creado por {post.GameAuthor}
-              </h3>
             </div>
-            <div className="relative flex flex-col w-full px-2 pt-3 md:pl-12">
-              <h1 className="w-full pt-12 pl-2 font-mono text-3xl text-left text-gray-800 md:pt-0 md:pl-0 md:text-5xl">
+            <div className="relative flex flex-col w-full pt-3 md:pl-12">
+              <h1 className="w-full pt-2 pl-2 font-mono text-3xl text-left text-gray-800 md:pt-3 md:pl-0 md:text-5xl">
                 {post.title}
               </h1>
-              <h2 className="w-full pt-12 pl-2 mt-2 font-mono text-2xl text-left text-green-600 md:pt-0 md:pl-0 md:text-3xl">
+              <h2 className="w-full pt-2 pl-2 mt-2 font-mono text-2xl text-left text-green-600 md:pt-0 md:pl-0 md:text-3xl">
                 ${post.GameBuyPrice}
               </h2>
-              <div className="flex flex-col justify-center w-full pl-2 my-2 text-gray-700 md:pl-6 md:px-0 md:flex-row md:justify-start">
+              <div className="flex items-center justify-start mt-6 text-lg text-center">
+                {post.publisher && (
+                  <div className="flex items-center justify-center text-lg">
+                    <Link
+                      to={`/editoriales/${kebabCase(post.publisher.slug)}`}
+                      className="flex flex-col py-1 mr-2"
+                      key={post.publisher.slug}
+                    >
+                      <b className="font-sans text-indigo-500 underline hover:text-indigo-800">
+                        Editorial {post.publisher.title}
+                        <BsDot className="inline-block transform -translate-y-1" />
+                      </b>
+                    </Link>
+                  </div>
+                )}
+                <div className="font-sans text-base italic font-bold text-left text-gray-700 ">
+                  Creado por {post.GameAuthor}
+                </div>
+              </div>
+
+              <div className="flex flex-col justify-center w-full pl-2 my-2 text-gray-700 md:pl-0 md:px-0 md:flex-row md:justify-start">
                 {post.GameAges && (
                   <div className="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
                     <FaUserFriends className="mr-3 text-2xl " />
@@ -148,39 +166,34 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   {post.categoria.map((item, i) => (
                     <Link
                       to={`/modalidades/${kebabCase(item.slug)}`}
-                      className="flex flex-col py-1 pr-4 mx-2 my-2 rounded-full "
+                      className="flex flex-col py-1 pr-4 my-2 mr-2 rounded-full "
                       key={i}
                       data-tip={item.title}
                     >
-                      <b className="font-sans text-indigo-500 hover:text-indigo-700">
+                      <div className="relative overflow-hidden transition-all duration-200 transform md:w-full hover:-translate-y-2">
+                        <Img
+                          title={item.title}
+                          className="w-16 h-16"
+                          alt={item.title}
+                          fixed={item.icono.fixed}
+                        />
+                      </div>
+                      <b className="font-sans text-orange-500 hover:text-orange-700">
                         {item.title}
                       </b>
                     </Link>
                   ))}
                 </div>
               )}
-              <div className="flex items-center justify-start text-lg text-center">
-                {post.publisher && (
-                  <div className="flex items-center justify-center text-lg">
-                    <Link
-                      to={`/editoriales/${kebabCase(post.publisher.slug)}`}
-                      className="flex flex-col py-1 pl-2 my-2 mr-2 rounded-full "
-                      key={post.publisher.slug}
-                    >
-                      <b className="font-sans text-indigo-500 underline hover:text-indigo-800">
-                        Editorial {post.publisher.title}
-                      </b>
-                    </Link>
-                  </div>
-                )}
-              </div>
+
               {post.GameGallery && (
                 <div className="hidden pl-6 my-6 mb-8 md:px-0">
                   <OpenGallery />
                 </div>
               )}
+
               <div
-                className="w-full pl-2 pr-6 mb-6 text-left article"
+                className="w-full pl-0 pr-6 mb-6 text-left article"
                 id={post.slug}
               >
                 {Article && (
@@ -191,6 +204,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   />
                 )}
               </div>
+
               <div className="flex flex-col-reverse justify-between w-full px-3 py-6 mb-0 bg-green-100 border-t-2 border-b-2 border-green-500 md:flex-row">
                 <AwesomeButtonSocial
                   type="whatsapp"
@@ -213,27 +227,35 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               )}
             </div>
           </div>
+          <div className="max-w-6xl px-6 py-12 mx-auto font-sans ">
+            <nav style={{ display: "flex", justifyContent: "space-between" }}>
+              <div>
+                {next && (
+                  <Link
+                    to={`/juegos/${kebabCase(next.slug)}`}
+                    rel="next"
+                    className="text-xl font-bold"
+                  >
+                    ← {next.title}
+                  </Link>
+                )}
+              </div>
+              <div style={{ justifySelf: "flex-end" }}>
+                {prev && (
+                  <Link
+                    to={`/juegos/${kebabCase(prev.slug)}`}
+                    rel="prev"
+                    className="text-xl font-bold"
+                  >
+                    {prev.title} →
+                  </Link>
+                )}
+              </div>
+            </nav>
+          </div>
         </div>
-        <div className="max-w-6xl py-12 mx-auto font-mono text-lg">
-          <nav style={{ display: "flex", justifyContent: "space-between" }}>
-            <div>
-              {next && (
-                <Link to={`/juegos/${kebabCase(next.slug)}`} rel="next">
-                  ← {next.title}
-                </Link>
-              )}
-            </div>
-            <div style={{ justifySelf: "flex-end" }}>
-              {prev && (
-                <Link to={`/juegos/${kebabCase(prev.slug)}`} rel="prev">
-                  {prev.title} →
-                </Link>
-              )}
-            </div>
-          </nav>
-        </div>
-        <div className="relative flex flex-col items-center w-full max-w-6xl px-2 pb-1 mx-auto mt-6 bg-blue-100 border-t-4 border-b-2 border-blue-500 border-dotted">
-          <h1 className="w-full max-w-6xl pt-3 mx-auto font-mono text-3xl text-center text-blue-500 ">
+        <div className="relative flex flex-col items-center w-full max-w-6xl px-2 pb-1 mx-auto mt-12 ">
+          <h1 className="w-full max-w-6xl pt-3 pb-3 mx-auto font-mono text-3xl text-center text-blue-500 ">
             Juegos recomendados
           </h1>
           <div className="max-w-md mx-auto mt-0">
@@ -272,6 +294,11 @@ export const pageQuery = graphql`
       categoria {
         title
         slug
+        icono {
+          fixed(width: 50, height: 50) {
+            ...GatsbyContentfulFixed
+          }
+        }
       }
       publisher {
         title

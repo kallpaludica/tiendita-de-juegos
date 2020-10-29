@@ -94,7 +94,7 @@ const Toggle = (props) => {
       </animated.div>
 
       <button
-        className="absolute top-0 right-0 z-40 flex justify-center px-1 py-1 text-gray-800 duration-500 transform border-none rounded-bl-lg focus:outline-none hover:text-blue-500 hover:bg-gray-600"
+        className="top-0 right-0 z-40 flex justify-center px-1 py-1 text-gray-800 duration-500 transform border-none rounded-bl-lg focus:outline-none hover:text-blue-500 hover:bg-gray-600"
         onClick={() => setToggle(!isToggled)}
         style={{ backgroundColor: "rgba(255,255,255,.3)" }}
       >

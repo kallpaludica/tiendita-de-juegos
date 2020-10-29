@@ -7,6 +7,7 @@ import SimpleReactLightbox from "simple-react-lightbox"
 import tw from "twin.macro"
 import "../styles/pattern.css"
 import "./layout.css"
+import KallpaLogo from "../assets/logo.svg"
 
 const Layout = ({ children }) => {
   return (
@@ -18,6 +19,7 @@ const Layout = ({ children }) => {
 
         <Stn>
           <Inner>
+            <KallpaLogo className="w-20 h-20 max-w-xs mx-auto mb-6" />
             <h3 className="pb-2 text-base font-bold ">
               {new Date().getFullYear()} Kallpa Lúdica
             </h3>

@@ -29,8 +29,8 @@ export default ({ card }) => (
           src={AboutImage}
         />
       )}
-      <div className="relative w-full px-3 pb-5 font-sans text-center">
-        <h3 className="block pt-3 pb-1 font-sans text-xl font-bold leading-6 sm:pb-0 md:pb-0 ">
+      <div className="relative w-full px-3 pb-2 font-sans text-center">
+        <h3 className="block pt-3 pb-1 font-sans text-base font-bold leading-6 sm:pb-0 md:pb-0 ">
           {card.title}
         </h3>
         {card.stock ? (
@@ -87,16 +87,18 @@ export default ({ card }) => (
         </div>
       )}
     </Link>
-    <Toggle
-      title={card.title}
-      slug={card.slug}
-      stock={card.stock}
-      age={card.GameAges}
-      publisher={card.publisher}
-      categoria={card.categoria}
-      duration={card.GameDuration}
-      players={card.GamePlayers}
-    />
+    <div className="hidden">
+      <Toggle
+        title={card.title}
+        slug={card.slug}
+        stock={card.stock}
+        age={card.GameAges}
+        publisher={card.publisher}
+        categoria={card.categoria}
+        duration={card.GameDuration}
+        players={card.GamePlayers}
+      />
+    </div>
   </GameCard>
 )
 

@@ -92,7 +92,7 @@ const AboutPage = () => {
           </svg>
         </Wave>
       </Hero>
-      <section className="sticky top-0 z-50 py-3 bg-white">
+      <section className="top-0 z-50 py-1 bg-white md:sticky">
         <AnchorLinks>
           <AnchorLink className="font-mono" href="#mision">
             Misión
@@ -192,9 +192,9 @@ const Section = styled.section`
 `
 
 const AnchorLinks = styled.div`
-  ${tw`relative z-50 flex flex-wrap justify-around w-full max-w-6xl pt-0 pr-12 mx-auto mt-0 mb-2 md:p-3 `}
+  ${tw`relative z-50 flex flex-wrap justify-around w-full max-w-6xl px-3 pt-0 mx-auto mt-0 md:p-3 `}
   a {
-    ${tw`w-full mx-3 my-2 font-sans text-sm font-bold text-center text-orange-600 md:mx-8 md:text-xl hover:text-orange-700`}
+    ${tw`w-full mx-3 my-2 font-sans text-base font-bold text-center text-orange-600 md:mx-8 md:text-xl hover:text-orange-700 focus:text-gray-900`}
     flex: 1;
   }
 `
