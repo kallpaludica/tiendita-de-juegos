@@ -114,10 +114,10 @@ const AllPage = (props) => {
         <Main>
           <PageSticky>
             <animated.div style={sortDESC}>
-              <MainTitle>Para jugar de la Z a la A</MainTitle>
+              <MainTitle>Z a la A</MainTitle>
             </animated.div>
             <animated.div style={sortASD}>
-              <MainTitle>Para jugar de la A a la Z</MainTitle>
+              <MainTitle>A a la Z</MainTitle>
             </animated.div>
           </PageSticky>
           <div className="relative flex flex-col justify-start border-b-2 border-blue-300 md:flex-row sm:py-0 sm:pt-6">

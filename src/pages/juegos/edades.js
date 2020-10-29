@@ -115,10 +115,10 @@ const EdadesPage = (props) => {
         <Main>
           <PageSticky>
             <animated.div style={sortDESC}>
-              <MainTitle>Sugerido para grandes</MainTitle>
+              <MainTitle>De mayor a menor</MainTitle>
             </animated.div>
             <animated.div style={sortASD}>
-              <MainTitle>Sugerido para peques</MainTitle>
+              <MainTitle>De menor a mayor</MainTitle>
             </animated.div>
           </PageSticky>
           <div className="relative flex flex-col justify-start border-b-2 border-blue-300 md:flex-row sm:py-0 sm:pt-6">
