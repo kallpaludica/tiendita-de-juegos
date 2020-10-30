@@ -10,7 +10,8 @@ import tw from "twin.macro"
 import kallpaEnergia from "../animations/kallpa-energia.json"
 import kallpaMovimiento from "../animations/kallpa-movimiento.json"
 import kallpaPotencia from "../animations/kallpa-potencia.json"
-import kallpaUnion from "../animations/kallpa-propuestas.json"
+import kallpaUnion from "../animations/kallpa-union.json"
+import kallpaPropuestas from "../animations/kallpa-propuestas.json"
 import KallpaLogo from "../assets/logo.svg"
 import About from "../components/About/About"
 import Contact from "../components/About/Contact"
@@ -35,6 +36,10 @@ const AboutPage = () => {
     lottie.loadAnimation({
       container: document.querySelector("#kallpa-Energia"),
       animationData: kallpaEnergia,
+    })
+    lottie.loadAnimation({
+      container: document.querySelector("#kallpa-Propuestas"),
+      animationData: kallpaPropuestas,
     })
     lottie.loadAnimation({
       container: document.querySelector("#kallpa-Movimiento"),
@@ -157,7 +162,7 @@ const AboutPage = () => {
       <section className="px-2 pt-24 pb-12 bg-orange-100 " id="proposals">
         <Fade delay={100}>
           <div className="flex justify-center ">
-            <div id="kallpa-Energia" style={{ width: 200, height: 200 }} />
+            <div id="kallpa-Propuestas" style={{ width: 200, height: 200 }} />
           </div>
         </Fade>
         <Proposals />
