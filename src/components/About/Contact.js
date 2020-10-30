@@ -90,7 +90,7 @@ const ContactComponent = () => {
         </a>
 
         <a
-          className="flex flex-col items-center justify-center text-center text-orange-600 bg-orange-100"
+          className="flex flex-col items-center justify-center text-center text-purple-600 bg-purple-100"
           target="_blank"
           rel="noopener noreferrer"
           title={data.instagram.titulo}
@@ -101,7 +101,7 @@ const ContactComponent = () => {
           <b>Instagram</b>
         </a>
         <a
-          className="flex flex-col items-center justify-center text-center text-indigo-500 bg-indigo-100"
+          className="flex flex-col items-center justify-center text-center text-orange-500 bg-orange-100"
           target="_blank"
           rel="noopener noreferrer"
           title={data.mail.titulo}

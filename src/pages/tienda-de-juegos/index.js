@@ -1,23 +1,22 @@
-import { useStaticQuery, graphql } from "gatsby"
-import React, { useState } from "react"
-
-import { Helmet } from "react-helmet"
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import tw from "twin.macro"
 import styled from "@emotion/styled"
-import HeroWave from "../../components/HeroWave"
+import { graphql, useStaticQuery } from "gatsby"
+import React, { useState } from "react"
+import { Helmet } from "react-helmet"
+import { animated, useSpring } from "react-spring"
+import tw from "twin.macro"
 import GameCard from "../../components/GameCard"
 import GamesAside from "../../components/Games/GameMenu"
 import GameSort from "../../components/Games/GameSort"
-import { useSpring, animated } from "react-spring"
+import HeroWave from "../../components/HeroWave"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai"
 
-const DurationPage = (props) => {
+const AllPage = (props) => {
   const data = useStaticQuery(graphql`
-    query DurationQuery {
+    query AllQuery {
       collection: allContentfulArticulos(
-        sort: { fields: [GameDuration], order: ASC }
+        sort: { fields: [title], order: ASC }
       ) {
         edges {
           node {
@@ -39,10 +38,10 @@ const DurationPage = (props) => {
               slug
             }
             imagenDestacada {
-              fixed(width: 180, height: 230) {
+              fixed(width: 300, height: 230) {
                 ...GatsbyContentfulFixed
               }
-              fluid(maxWidth: 450) {
+              fluid(maxWidth: 550) {
                 ...GatsbyContentfulFluid_withWebp
               }
             }
@@ -50,7 +49,7 @@ const DurationPage = (props) => {
         }
       }
       collectionReverse: allContentfulArticulos(
-        sort: { fields: [GameDuration], order: DESC }
+        sort: { fields: [title], order: DESC }
       ) {
         edges {
           node {
@@ -89,16 +88,12 @@ const DurationPage = (props) => {
   const sortDESC = useSpring({
     display: isToggled ? "block" : "none",
     opacity: isToggled ? "1" : "0",
-    config: { mass: 3, tension: 500, friction: 80 },
+    config: { mass: 5, tension: 200, friction: 80 },
   })
   const sortASD = useSpring({
     display: isToggled ? "none" : "block",
     opacity: isToggled ? "0" : "1",
-    config: { mass: 3, tension: 500, friction: 80 },
-  })
-  const sortICON = useSpring({
-    transform: isToggled ? "scale(1) rotate(90deg)" : "scale(-1) rotate(90deg)",
-    config: { mass: 3, tension: 500, friction: 80 },
+    config: { mass: 5, tension: 200, friction: 80 },
   })
 
   return (
@@ -114,22 +109,22 @@ const DurationPage = (props) => {
         </Aside>
         <Main>
           <PageSticky>
-            <MainTitle>Por duración</MainTitle>
+            <MainTitle>Por Título</MainTitle>
           </PageSticky>
           <div className="relative flex flex-col justify-start border-b-2 border-blue-300 md:flex-row sm:py-0 sm:pt-0">
             <GameSort />
             <button
-              className="relative bottom-0 right-0 flex items-center justify-center px-4 py-3 text-white bg-blue-500 outline-none md:absolute focus:outline-none hover:bg-blue-600"
+              className="relative bottom-0 right-0 flex items-baseline justify-center px-4 py-3 text-white bg-blue-500 outline-none md:absolute focus:outline-none hover:bg-blue-600"
               onClick={() => setToggle(!isToggled)}
             >
               <span className="font-sans font-bold">
                 <animated.div style={sortDESC}>
-                  De mayor a menor{" "}
-                  <AiOutlineArrowUp className="inline-block text-lg" />
+                  De la Z a la A
+                  <AiOutlineArrowUp className="inline-block ml-1 text-lg" />
                 </animated.div>
                 <animated.div style={sortASD}>
-                  De menor a mayor{" "}
-                  <AiOutlineArrowDown className="inline-block text-lg" />
+                  De la A a la Z
+                  <AiOutlineArrowDown className="inline-block ml-1 text-lg" />
                 </animated.div>
               </span>
             </button>
@@ -155,20 +150,14 @@ const DurationPage = (props) => {
   )
 }
 
-export default DurationPage
+export default AllPage
 
 const Container = styled.div`
-  ${tw`grid w-full grid-cols-1 gap-4 p-3 pt-6 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3`}
-  .game-duration {
-    display: block !important;
-  }
+  ${tw`grid w-full grid-cols-1 gap-4 p-3 pt-6 pb-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3`}
 `
 
 const ContainerDesc = styled.div`
-  ${tw`grid w-full grid-cols-1 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3`}
-  .game-duration {
-    display: block !important;
-  }
+  ${tw`grid w-full grid-cols-1 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3`}
 `
 
 const PageSticky = styled.div`

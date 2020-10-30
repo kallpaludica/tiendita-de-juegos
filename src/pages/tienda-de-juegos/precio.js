@@ -1,23 +1,23 @@
-import styled from "@emotion/styled"
-import { graphql, useStaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import React, { useState } from "react"
+
 import { Helmet } from "react-helmet"
-import { FaCaretRight } from "react-icons/fa"
-import { animated, useSpring } from "react-spring"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
 import tw from "twin.macro"
+import styled from "@emotion/styled"
+import HeroWave from "../../components/HeroWave"
 import GameCard from "../../components/GameCard"
 import GamesAside from "../../components/Games/GameMenu"
 import GameSort from "../../components/Games/GameSort"
-import HeroWave from "../../components/HeroWave"
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
+import { useSpring, animated } from "react-spring"
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai"
 
-const AllPage = (props) => {
+const PreciosPage = (props) => {
   const data = useStaticQuery(graphql`
-    query AllQuery {
+    query PreciosQuery {
       collection: allContentfulArticulos(
-        sort: { fields: [title], order: ASC }
+        sort: { fields: [GameBuyPrice], order: ASC }
       ) {
         edges {
           node {
@@ -39,10 +39,10 @@ const AllPage = (props) => {
               slug
             }
             imagenDestacada {
-              fixed(width: 300, height: 230) {
+              fixed(width: 180, height: 230) {
                 ...GatsbyContentfulFixed
               }
-              fluid(maxWidth: 550) {
+              fluid(maxWidth: 450) {
                 ...GatsbyContentfulFluid_withWebp
               }
             }
@@ -50,7 +50,7 @@ const AllPage = (props) => {
         }
       }
       collectionReverse: allContentfulArticulos(
-        sort: { fields: [title], order: DESC }
+        sort: { fields: [GameBuyPrice], order: DESC }
       ) {
         edges {
           node {
@@ -89,16 +89,12 @@ const AllPage = (props) => {
   const sortDESC = useSpring({
     display: isToggled ? "block" : "none",
     opacity: isToggled ? "1" : "0",
-    config: { mass: 5, tension: 200, friction: 80 },
+    config: { mass: 3, tension: 500, friction: 80 },
   })
   const sortASD = useSpring({
     display: isToggled ? "none" : "block",
     opacity: isToggled ? "0" : "1",
-    config: { mass: 5, tension: 200, friction: 80 },
-  })
-  const sortICON = useSpring({
-    transform: isToggled ? "scale(1) rotate(90deg)" : "scale(-1) rotate(90deg)",
-    config: { mass: 5, tension: 200, friction: 80 },
+    config: { mass: 3, tension: 500, friction: 80 },
   })
 
   return (
@@ -114,22 +110,22 @@ const AllPage = (props) => {
         </Aside>
         <Main>
           <PageSticky>
-            <MainTitle>Por Título</MainTitle>
+            <MainTitle>Por Precio</MainTitle>
           </PageSticky>
           <div className="relative flex flex-col justify-start border-b-2 border-blue-300 md:flex-row sm:py-0 sm:pt-0">
             <GameSort />
             <button
-              className="relative bottom-0 right-0 flex items-baseline justify-center px-4 py-3 text-white bg-blue-500 outline-none md:absolute focus:outline-none hover:bg-blue-600"
+              className="relative bottom-0 right-0 flex items-center justify-center px-4 py-3 text-white bg-blue-500 outline-none md:absolute focus:outline-none hover:bg-blue-600"
               onClick={() => setToggle(!isToggled)}
             >
               <span className="font-sans font-bold">
                 <animated.div style={sortDESC}>
-                  De la Z a la A
-                  <AiOutlineArrowUp className="inline-block ml-1 text-lg" />
+                  De mayor a menor{" "}
+                  <AiOutlineArrowUp className="inline-block text-lg" />
                 </animated.div>
                 <animated.div style={sortASD}>
-                  De la A a la Z
-                  <AiOutlineArrowDown className="inline-block ml-1 text-lg" />
+                  De menor a mayor{" "}
+                  <AiOutlineArrowDown className="inline-block text-lg" />
                 </animated.div>
               </span>
             </button>
@@ -155,14 +151,14 @@ const AllPage = (props) => {
   )
 }
 
-export default AllPage
+export default PreciosPage
 
 const Container = styled.div`
-  ${tw`grid w-full grid-cols-1 gap-4 p-3 pt-6 pb-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3`}
+  ${tw`grid w-full grid-cols-1 gap-4 p-3 pt-6 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3`}
 `
 
 const ContainerDesc = styled.div`
-  ${tw`grid w-full grid-cols-1 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3`}
+  ${tw`grid w-full grid-cols-1 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3`}
 `
 
 const PageSticky = styled.div`

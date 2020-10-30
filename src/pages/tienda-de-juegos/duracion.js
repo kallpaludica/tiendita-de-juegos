@@ -13,11 +13,11 @@ import GameSort from "../../components/Games/GameSort"
 import { useSpring, animated } from "react-spring"
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai"
 
-const EdadesPage = (props) => {
+const DurationPage = (props) => {
   const data = useStaticQuery(graphql`
-    query EdadesQuery {
+    query DurationQuery {
       collection: allContentfulArticulos(
-        sort: { fields: [GameAges], order: ASC }
+        sort: { fields: [GameDuration], order: ASC }
       ) {
         edges {
           node {
@@ -50,7 +50,7 @@ const EdadesPage = (props) => {
         }
       }
       collectionReverse: allContentfulArticulos(
-        sort: { fields: [GameAges], order: DESC }
+        sort: { fields: [GameDuration], order: DESC }
       ) {
         edges {
           node {
@@ -96,10 +96,6 @@ const EdadesPage = (props) => {
     opacity: isToggled ? "0" : "1",
     config: { mass: 3, tension: 500, friction: 80 },
   })
-  const sortICON = useSpring({
-    transform: isToggled ? "scale(1) rotate(90deg)" : "scale(-1) rotate(90deg)",
-    config: { mass: 3, tension: 500, friction: 80 },
-  })
 
   return (
     <Layout>
@@ -114,7 +110,7 @@ const EdadesPage = (props) => {
         </Aside>
         <Main>
           <PageSticky>
-            <MainTitle>Por Edades</MainTitle>
+            <MainTitle>Por duración</MainTitle>
           </PageSticky>
           <div className="relative flex flex-col justify-start border-b-2 border-blue-300 md:flex-row sm:py-0 sm:pt-0">
             <GameSort />
@@ -155,18 +151,18 @@ const EdadesPage = (props) => {
   )
 }
 
-export default EdadesPage
+export default DurationPage
 
 const Container = styled.div`
-  ${tw`grid w-full grid-cols-1 gap-4 p-3 pt-6 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3`}
-  .game-ages {
+  ${tw`grid w-full grid-cols-1 gap-4 p-3 pt-6 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3`}
+  .game-duration {
     display: block !important;
   }
 `
 
 const ContainerDesc = styled.div`
-  ${tw`grid w-full grid-cols-1 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3`}
-  .game-ages {
+  ${tw`grid w-full grid-cols-1 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3`}
+  .game-duration {
     display: block !important;
   }
 `

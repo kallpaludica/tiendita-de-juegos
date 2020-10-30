@@ -31,7 +31,9 @@ const CategorySingleTemplate = ({ data, pageContext, location }) => {
           <GamesAside />
         </Aside>
         <Main>
-          <Bread breaddata={pageContext.breadcrumb}></Bread>
+          <div className="max-w-6xl px-6 mx-auto">
+            <Bread breaddata={pageContext.breadcrumb}></Bread>
+          </div>
 
           <div className="pb-24">
             {categoria.articulos ? (
@@ -60,7 +62,9 @@ const CategorySingleTemplate = ({ data, pageContext, location }) => {
                 <div>
                   {prev && (
                     <Link
-                      to={`/modalidades/${kebabCase(prev.slug)}`}
+                      to={`/tienda-de-juegos/modalidades/${kebabCase(
+                        prev.slug
+                      )}`}
                       rel="prev"
                     >
                       ← {prev.title}
@@ -71,7 +75,9 @@ const CategorySingleTemplate = ({ data, pageContext, location }) => {
                 <div style={{ justifySelf: "flex-end" }}>
                   {next && (
                     <Link
-                      to={`/modalidades/${kebabCase(next.slug)}`}
+                      to={`/tienda-de-juegos/modalidades/${kebabCase(
+                        next.slug
+                      )}`}
                       rel="next"
                     >
                       {next.title} →

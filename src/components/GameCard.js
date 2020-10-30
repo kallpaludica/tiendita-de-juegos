@@ -12,7 +12,7 @@ import { FaUserFriends } from "react-icons/fa"
 
 export default ({ card }) => (
   <GameCard>
-    <Link to={`/juegos/${kebabCase(card.slug)}/`}>
+    <Link to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}>
       {card.imagenDestacada ? (
         <div className="image">
           <Img

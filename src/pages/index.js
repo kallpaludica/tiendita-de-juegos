@@ -107,7 +107,7 @@ const IndexPage = () => {
                   <Fade bottom delay={200}>
                     <AwesomeButton
                       action={() => {
-                        navigate(`/juegos/todos`)
+                        navigate(`/tienda-de-juegos/`)
                       }}
                       type="secondary"
                     >
@@ -129,7 +129,7 @@ const IndexPage = () => {
                   <Fade bottom delay={200}>
                     <AwesomeButton
                       action={() => {
-                        navigate(`/juegos/precio`)
+                        navigate(`/tienda-de-juegos/precio`)
                       }}
                       type="secondary"
                     >
@@ -203,7 +203,7 @@ const IndexPage = () => {
             return (
               <Link
                 key={node.slug}
-                to={`/modalidades/${kebabCase(node.slug)}/`}
+                to={`/tienda-de-juegos/modalidades/${kebabCase(node.slug)}/`}
                 className="flex flex-col items-center justify-center mx-12 my-3 font-sans text-xl text-gray-700 hover:text-gray-900"
               >
                 {node.icono ? (
@@ -274,7 +274,7 @@ const IndexPage = () => {
         </div>
         <AwesomeButton
           action={() => {
-            navigate(`/editoriales`)
+            navigate(`/tienda-de-juegos/editoriales`)
           }}
           type="secondary"
         >

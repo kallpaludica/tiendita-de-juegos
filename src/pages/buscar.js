@@ -79,7 +79,7 @@ const SearchIndex = (props) => {
                 className="flex justify-between w-full p-6 my-3 text-center transition-all duration-500 transform bg-white shadow-md animated fadeIn hover:-translate-y-1 hover:shadow-2xl"
               >
                 <Link
-                  to={`/juegos/${kebabCase(slug)}/`}
+                  to={`/tienda-de-juegos/${kebabCase(slug)}/`}
                   className="font-sans text-xl font-bold"
                 >
                   {title}

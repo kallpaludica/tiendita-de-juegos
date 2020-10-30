@@ -10,18 +10,18 @@ const routes = [
   {
     title: "Tiendita de juegos",
     active: "text-green-500",
-    slug: "/juegos/todos",
+    slug: "/tienda-de-juegos/",
   },
 
   {
     title: "Colecciones",
     active: "text-pink-500",
-    slug: "/colecciones",
+    slug: "/tienda-de-juegos/colecciones",
   },
   {
     title: "Editoriales",
     active: "text-pink-500",
-    slug: "/editoriales",
+    slug: "/tienda-de-juegos/editoriales",
   },
   {
     title: "Quienes somos",

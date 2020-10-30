@@ -13,7 +13,7 @@ const GamesSort = () => {
         <Link
           activeClassName="text-blue-100  bg-blue-500 "
           className="flex items-center px-2 font-sans rounded-full hover:text-blue-100 hover:bg-blue-500"
-          to="/juegos/todos"
+          to="/tienda-de-juegos/"
         >
           <AiOutlineSortAscending
             activeClassName="text-blue-100 "
@@ -25,7 +25,7 @@ const GamesSort = () => {
         <Link
           activeClassName="text-blue-100  bg-blue-500 "
           className="flex items-center px-2 font-sans rounded-full hover:text-blue-100 hover:bg-blue-500"
-          to="/juegos/precio"
+          to="/tienda-de-juegos/precio"
         >
           <AiOutlineDollar className="mx-auto mr-1 text-xl " /> Precio
         </Link>
@@ -33,7 +33,7 @@ const GamesSort = () => {
         <Link
           activeClassName="text-blue-100  bg-blue-500 "
           className="flex items-center px-2 font-sans rounded-full hover:text-blue-100 hover:bg-blue-500"
-          to="/juegos/duracion"
+          to="/tienda-de-juegos/duracion"
         >
           <IoMdTime className="mx-auto mr-1 text-xl " /> Duración
         </Link>
@@ -41,7 +41,7 @@ const GamesSort = () => {
         <Link
           activeClassName="text-blue-100   bg-blue-500 "
           className="flex items-center px-2 font-sans rounded-full hover:text-blue-100 hover:bg-blue-500"
-          to="/juegos/edades"
+          to="/tienda-de-juegos/edades"
         >
           <FaUserFriends className="mx-auto mr-1 text-base " /> Edades
         </Link>

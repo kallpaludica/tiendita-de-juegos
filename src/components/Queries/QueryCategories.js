@@ -28,8 +28,9 @@ const QueryCategoriesComponent = () => {
         return (
           <Link
             key={node.slug}
-            to={`/modalidades/${kebabCase(node.slug)}`}
+            to={`/tienda-de-juegos/modalidades/${kebabCase(node.slug)}`}
             className="hover:text-orange-500 hover:border-orange-500"
+            activeClassName="text-orange-500"
           >
             {node.title}
           </Link>

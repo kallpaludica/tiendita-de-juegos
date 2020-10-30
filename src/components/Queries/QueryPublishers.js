@@ -28,7 +28,7 @@ const QueryPublisherComponent = () => {
         return (
           <Link
             key={node.slug}
-            to={`/editoriales/${kebabCase(node.slug)}/`}
+            to={`/tienda-de-juegos/editoriales/${kebabCase(node.slug)}/`}
             className="hover:text-indigo-500 hover:border-indigo-500"
           >
             {node.title}

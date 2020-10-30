@@ -17,7 +17,7 @@ const HeroWave = (props) => (
           )}
           {props.back && (
             <Back className="flex items-start justify-start">
-              <Link to="/juegos/todos">{props.back}</Link>
+              <Link to="/tienda-de-juegos">{props.back}</Link>
             </Back>
           )}
         </HeroContent>

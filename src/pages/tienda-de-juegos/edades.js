@@ -11,14 +11,13 @@ import GameCard from "../../components/GameCard"
 import GamesAside from "../../components/Games/GameMenu"
 import GameSort from "../../components/Games/GameSort"
 import { useSpring, animated } from "react-spring"
-import { FaCaretRight } from "react-icons/fa"
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai"
 
-const PreciosPage = (props) => {
+const EdadesPage = (props) => {
   const data = useStaticQuery(graphql`
-    query PreciosQuery {
+    query EdadesQuery {
       collection: allContentfulArticulos(
-        sort: { fields: [GameBuyPrice], order: ASC }
+        sort: { fields: [GameAges], order: ASC }
       ) {
         edges {
           node {
@@ -51,7 +50,7 @@ const PreciosPage = (props) => {
         }
       }
       collectionReverse: allContentfulArticulos(
-        sort: { fields: [GameBuyPrice], order: DESC }
+        sort: { fields: [GameAges], order: DESC }
       ) {
         edges {
           node {
@@ -97,10 +96,7 @@ const PreciosPage = (props) => {
     opacity: isToggled ? "0" : "1",
     config: { mass: 3, tension: 500, friction: 80 },
   })
-  const sortICON = useSpring({
-    transform: isToggled ? "scale(1) rotate(90deg)" : "scale(-1) rotate(90deg)",
-    config: { mass: 3, tension: 500, friction: 80 },
-  })
+
 
   return (
     <Layout>
@@ -115,7 +111,7 @@ const PreciosPage = (props) => {
         </Aside>
         <Main>
           <PageSticky>
-            <MainTitle>Por Precio</MainTitle>
+            <MainTitle>Por Edades</MainTitle>
           </PageSticky>
           <div className="relative flex flex-col justify-start border-b-2 border-blue-300 md:flex-row sm:py-0 sm:pt-0">
             <GameSort />
@@ -156,14 +152,20 @@ const PreciosPage = (props) => {
   )
 }
 
-export default PreciosPage
+export default EdadesPage
 
 const Container = styled.div`
-  ${tw`grid w-full grid-cols-1 gap-4 p-3 pt-6 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3`}
+  ${tw`grid w-full grid-cols-1 gap-4 p-3 pt-6 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3`}
+  .game-ages {
+    display: block !important;
+  }
 `
 
 const ContainerDesc = styled.div`
-  ${tw`grid w-full grid-cols-1 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3`}
+  ${tw`grid w-full grid-cols-1 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3`}
+  .game-ages {
+    display: block !important;
+  }
 `
 
 const PageSticky = styled.div`

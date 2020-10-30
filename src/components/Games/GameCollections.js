@@ -35,7 +35,7 @@ const GameCollectionComponent = () => {
               <div className="flex flex-col text-center">
                 <Link
                   key={node.slug}
-                  to={`/colecciones/${kebabCase(node.slug)}/`}
+                  to={`/tienda-de-juegos/colecciones/${kebabCase(node.slug)}/`}
                   className="flex flex-col justify-center text-2xl font-bold text-blue-500 "
                 >
                   {node.icono && (

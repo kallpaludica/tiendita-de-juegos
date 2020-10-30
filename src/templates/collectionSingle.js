@@ -47,7 +47,9 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
                 <div>
                   {prev && (
                     <Link
-                      to={`/colecciones/${kebabCase(prev.slug)}/`}
+                      to={`/tienda-de-juegos/colecciones/${kebabCase(
+                        prev.slug
+                      )}/`}
                       rel="prev"
                     >
                       ← {prev.title}
@@ -58,7 +60,9 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
                 <div style={{ justifySelf: "flex-end" }}>
                   {next && (
                     <Link
-                      to={`/colecciones/${kebabCase(next.slug)}/`}
+                      to={`/tienda-de-juegos/colecciones/${kebabCase(
+                        next.slug
+                      )}/`}
                       rel="next"
                     >
                       {next.title} →

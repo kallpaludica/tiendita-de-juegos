@@ -5,7 +5,6 @@ import React from "react"
 import { AwesomeButton, AwesomeButtonSocial } from "react-awesome-button"
 import { Helmet } from "react-helmet"
 import { FaUserFriends } from "react-icons/fa"
-import { BsDot } from "react-icons/bs"
 import { GiTabletopPlayers } from "react-icons/gi"
 import { IoMdTime } from "react-icons/io"
 import { SRLWrapper } from "simple-react-lightbox"
@@ -19,6 +18,7 @@ import SEO from "../components/seo"
 import "../components/VideoReact.css"
 import FormatText from "../components/wysiwyg"
 import AboutImage from "../images/kallpa-ludica.png"
+import Bread from "../components/breadcrumb"
 
 const options = {
   buttons: {
@@ -114,7 +114,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </SRLWrapper>
             </div>
             <div className="relative flex flex-col w-full pt-3 md:pl-12">
-              <h1 className="w-full pt-2 pl-2 font-mono text-3xl text-left text-gray-800 md:pt-3 md:pl-0 md:text-5xl">
+              <Bread breaddata={pageContext.breadcrumb}></Bread>
+
+              <h1 className="w-full pt-2 pl-2 font-mono text-3xl text-left text-gray-800 md:pt-0 md:pl-0 md:text-5xl">
                 {post.title}
               </h1>
 
@@ -135,7 +137,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 {post.publisher && (
                   <div className="flex items-center justify-center text-lg">
                     <Link
-                      to={`/editoriales/${kebabCase(post.publisher.slug)}`}
+                      to={`/tienda-de-juegos/editoriales/${kebabCase(
+                        post.publisher.slug
+                      )}`}
                       className="flex flex-col py-1 mr-2"
                       key={post.publisher.slug}
                     >
@@ -175,7 +179,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 <div className="flex items-center justify-start text-lg text-center">
                   {post.categoria.map((item, i) => (
                     <Link
-                      to={`/modalidades/${kebabCase(item.slug)}`}
+                      to={`/tienda-de-juegos/modalidades/${kebabCase(
+                        item.slug
+                      )}`}
                       className="flex flex-col py-1 pr-4 my-2 mr-2 rounded-full "
                       key={i}
                       data-tip={item.title}
@@ -259,7 +265,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               <div>
                 {next && (
                   <Link
-                    to={`/juegos/${kebabCase(next.slug)}`}
+                    to={`/tienda-de-juegos/${kebabCase(next.slug)}`}
                     rel="next"
                     className="text-xl font-bold"
                   >
@@ -270,7 +276,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               <div style={{ justifySelf: "flex-end" }}>
                 {prev && (
                   <Link
-                    to={`/juegos/${kebabCase(prev.slug)}`}
+                    to={`/tienda-de-juegos/${kebabCase(prev.slug)}`}
                     rel="prev"
                     className="text-xl font-bold"
                   >

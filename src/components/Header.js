@@ -13,7 +13,7 @@ import "./header.css"
 const routesLeft = [
   {
     title: "Tiendita de juegos",
-    slug: "/juegos/todos",
+    slug: "/tienda-de-juegos/",
     icon: <AiFillShop className="text-xl " />,
   },
   /*
@@ -49,7 +49,7 @@ const routesRight = [
   {
     title: "Tiendita de juegos",
     active: "opacity-50",
-    slug: "/juegos/todos",
+    slug: "/tienda-de-juegos/",
     icon: <AiFillShop className="text-xl " />,
   },
 
@@ -80,6 +80,7 @@ const Header = ({ siteTitle }) => (
               <Link
                 key={i}
                 activeClassName="opacity-100 border-white"
+                partiallyActive={true}
                 className={`hover:${route.active} text-center flex items-center py-3 md:mx-4 text-sm font-mono lg:text-lg opacity-75 border-b border-transparent`}
                 to={route.slug}
               >

@@ -15,7 +15,10 @@ const juicyBread = ({ breaddata }) => {
   return (
     <>
       <Breadcrumb>
-        <nav className="px-6 my-8 font-bold text-black" aria-label="Breadcrumb">
+        <nav
+          className="mt-2 mb-3 font-bold text-black "
+          aria-label="Breadcrumb"
+        >
           <List className="">
             {elementsNew.map((value, index) => {
               return (

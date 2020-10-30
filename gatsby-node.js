@@ -85,7 +85,7 @@ exports.createPages = ({ graphql, actions }) => {
           createPage,
           items: result.data.allContentfulArticulos.edges,
           itemsPerPage: 200,
-          pathPrefix: "/juegos",
+          pathPrefix: "/juegosss",
           component: path.resolve("src/templates/gameArchive.js"),
         })
 
@@ -98,7 +98,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         posts.forEach((post, index) => {
           createPage({
-            path: `/juegos/${post.node.slug}/`,
+            path: `/tienda-de-juegos/${post.node.slug}/`,
             component: gameSingle,
             context: {
               slug: post.node.slug,
@@ -110,7 +110,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         categories.forEach((category, index) => {
           createPage({
-            path: `/modalidades/${category.node.slug}/`,
+            path: `/tienda-de-juegos/modalidades/${category.node.slug}/`,
             component: categorySingle,
             context: {
               slug: category.node.slug,
@@ -125,7 +125,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         publishers.forEach((publisher, index) => {
           createPage({
-            path: `/editoriales/${publisher.node.slug}/`,
+            path: `/tienda-de-juegos/editoriales/${publisher.node.slug}/`,
             component: publisherSingle,
             context: {
               slug: publisher.node.slug,
@@ -140,7 +140,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         collections.forEach((collection, index) => {
           createPage({
-            path: `/colecciones/${collection.node.slug}/`,
+            path: `/tienda-de-juegos/colecciones/${collection.node.slug}/`,
             component: collectionSingle,
             context: {
               slug: collection.node.slug,

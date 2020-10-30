@@ -34,7 +34,9 @@ const Toggle = (props) => {
           {props.publisher && (
             <div className="flex items-center justify-start ">
               <Link
-                to={`/editoriales/${kebabCase(props.publisher.slug)}/`}
+                to={`/tienda-de-juegos/editoriales/${kebabCase(
+                  props.publisher.slug
+                )}/`}
                 className="flex flex-col py-1 mr-2 text-sm opacity-75"
                 key={props.publisher.slug}
               >
@@ -81,7 +83,7 @@ const Toggle = (props) => {
         )}
 
         <Link
-          to={`/juegos/${kebabCase(props.slug)}/`}
+          to={`/tienda-de-juegos/${kebabCase(props.slug)}/`}
           className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-2 px-3 font-sans text-sm font-bold text-left text-white transition-all duration-500 bg-blue-600 hover:text-white hover:bg-blue-500"
         >
           {props.stock ? (

@@ -10,7 +10,7 @@ import tw from "twin.macro"
 import kallpaEnergia from "../animations/kallpa-energia.json"
 import kallpaMovimiento from "../animations/kallpa-movimiento.json"
 import kallpaPotencia from "../animations/kallpa-potencia.json"
-import kallpaUnion from "../animations/kallpa-union.json"
+import kallpaUnion from "../animations/kallpa-propuestas.json"
 import KallpaLogo from "../assets/logo.svg"
 import About from "../components/About/About"
 import Contact from "../components/About/Contact"
@@ -100,7 +100,6 @@ const AboutPage = () => {
           <AnchorLink className="font-mono" href="#equipo">
             Equipo
           </AnchorLink>
-
           <AnchorLink className="font-mono" href="#objectives">
             Objetivos
           </AnchorLink>

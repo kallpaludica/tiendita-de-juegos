@@ -67,7 +67,7 @@ header nav a {
 }
 
 body.about .headroom--pinned {
-  transform: translateY(0);
+  transform: translateY(-100%);
 }
 
 body.about .headroom--unpinned {
