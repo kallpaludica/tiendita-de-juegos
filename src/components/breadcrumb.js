@@ -16,7 +16,7 @@ const juicyBread = ({ breaddata }) => {
     <>
       <Breadcrumb>
         <nav
-          className="mt-2 mb-3 font-bold text-black "
+          className="hidden mt-2 mb-3 font-bold text-black md:block "
           aria-label="Breadcrumb"
         >
           <List className="">

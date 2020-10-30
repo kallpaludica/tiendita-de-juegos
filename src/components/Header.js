@@ -44,22 +44,6 @@ const routesLeft = [
   //slug: "/buscar",
   //},
 ]
-/*
-const routesRight = [
-  {
-    title: "Tiendita de juegos",
-    active: "opacity-50",
-    slug: "/tienda-de-juegos/",
-    icon: <AiFillShop className="text-xl " />,
-  },
-
-  //{
-  // title: <GrSearch className="mt-1 text-white fill-current" />,
-  //active: "opacity-100",
-  //slug: "/buscar",
-  //},
-]
-*/
 
 const Header = ({ siteTitle }) => (
   <Headroom disableInlineStyles>
@@ -81,7 +65,7 @@ const Header = ({ siteTitle }) => (
                 key={i}
                 activeClassName="opacity-100 border-white"
                 partiallyActive={true}
-                className={`hover:${route.active} text-center flex items-center py-3 md:mx-4 text-sm font-mono lg:text-lg opacity-75 border-b border-transparent`}
+                className="flex items-center py-3 font-mono text-sm text-center border-b border-transparent opacity-75 hover:opacity-100 md:mx-4 lg:text-lg"
                 to={route.slug}
               >
                 <span>{route.title}</span>
@@ -89,22 +73,6 @@ const Header = ({ siteTitle }) => (
             )
           })}
         </NavLeft>
-
-        {/*<NavRight>
-          {routesRight.map((route, i) => {
-            return (
-              <Link
-                key={i}
-                activeclassactiveClassNamename={route.active}
-                className={`hover:${route.active} flex items-center py-2 px-4 md:mx-2 font-mono text-lg opacity-100 bg-gray-100 hover:bg-orange-500 hover:text-white rounded-full shadow-md hover:shadow-lg transition-all transform`}
-                to={route.slug}
-              >
-                <span className="mr-2">{route.icon}</span>
-                <span>{route.title}</span>
-              </Link>
-            )
-          })}
-        </NavRight>*/}
       </InnerHeader>
     </HeaderContainer>
   </Headroom>
@@ -135,26 +103,7 @@ const NavLeft = styled.nav`
     }
   }
 `
-/*
-const NavRight = styled.nav`
-  ${tw`justify-end hidden md:flex`}
 
-  a {
-    ${tw`text-orange-700`}
-
-    &:hover {
-      ${tw`text-white`}
-    }
-
-    .headroom--pinned & {
-      ${tw`text-gray-900`}
-    }
-    .headroom--unpinned & {
-      ${tw`text-gray-900`}
-    }
-  }
-`
-*/
 const HeaderContainer = styled.header`
   ${tw`z-50 px-2 py-2 transition-all duration-500 md:py-2 `}
 
