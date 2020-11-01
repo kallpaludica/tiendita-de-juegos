@@ -19,7 +19,7 @@ import "../components/AwsBtn.css"
 import Collections from "../components/Games/GameCollections"
 
 import GameSort from "../components/Games/GameSort"
-import Publishers from "../components/Home/Publishers"
+import Publishers from "../components/Publishers/FeaturedPublishers"
 import Layout from "../components/layout"
 import QueriesLastGames from "../components/Queries/QueriesLastGames"
 import SEO from "../components/seo"
@@ -278,7 +278,7 @@ const IndexPage = () => {
           }}
           type="secondary"
         >
-          Ver juegos por editoriales
+          Ver todas las editoriales
           <FiChevronRight className="inline-block mt-1 ml-3" />
         </AwesomeButton>
         <Wave>

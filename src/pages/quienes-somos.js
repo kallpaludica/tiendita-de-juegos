@@ -137,7 +137,7 @@ const AboutPage = () => {
               </Fade>
 
               <div className="text-center">
-                <h2 className="max-w-6xl mx-auto font-mono leading-tight text-orange-600 md:text-5xl">
+                <h2 className="max-w-6xl mx-auto font-mono leading-tight text-orange-600 text-4xl md:text-5xl">
                   Equipo
                 </h2>
 

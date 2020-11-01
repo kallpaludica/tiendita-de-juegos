@@ -33,8 +33,8 @@ const QueryTeamComponent = () => {
       {data.editoriales.edges.map(({ node }) => {
         return (
           <Person key={node.id} className="">
-            <div className="p-3 text-orange-300 transform translate-x-0 translate-y-2 md:flex-row pattern-dots-sm md:translate-x-6 md:translate-y-6 ">
-              <div className="flex items-center justify-center mb-3 transform -translate-x-6 -translate-y-6">
+            <div className="p-2 text-orange-300 transform translate-x-0 translate-y-2 md:flex-row pattern-dots-sm md:translate-x-6 md:translate-y-6 ">
+              <div className="flex items-center justify-center mb-3 transform md:-translate-x-6 -md:translate-y-6">
                 <Img
                   title={node.title}
                   className="block object-cover w-32 h-auto transform scale-90 "
@@ -42,7 +42,7 @@ const QueryTeamComponent = () => {
                   fluid={node.imagenDestacada.fluid}
                 />
               </div>
-              <div className="mt-3 text-left transform -translate-x-6 -translate-y-6">
+              <div className="mt-3 text-center transform md:-translate-x-6 md:-translate-y-4">
                 <FormatText
                   FormatText={
                     node.childContentfulEquipoTextoPrincipalRichTextNode
