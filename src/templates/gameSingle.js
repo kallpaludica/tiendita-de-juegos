@@ -18,7 +18,7 @@ import SEO from "../components/seo"
 import "../components/VideoReact.css"
 import FormatText from "../components/wysiwyg"
 import AboutImage from "../images/kallpa-ludica.png"
-import Bread from "../components/breadcrumb"
+import { RiZoomInLine } from "react-icons/ri"
 
 const options = {
   buttons: {
@@ -73,32 +73,33 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <div className="max-w-6xl mx-auto mt-16 bg-white shadow-lg">
           <div className="flex flex-col p-5 pt-6 sm:flex-row">
             <div className="w-full md:w-2/3">
-              {post.imagenDestacada ? (
-                <div className="w-full mx-auto text-center ">
-                  <Img
-                    fluid={post.imagenDestacada.fluid}
-                    alt={post.title}
-                    title={post.title}
-                  />
-                </div>
-              ) : (
-                <img
-                  className="w-48 h-48 mx-auto my-6 opacity-25 "
-                  alt="Kallpa Lúdica"
-                  src={AboutImage}
-                />
-              )}
-
               <SRLWrapper options={options}>
+                {post.imagenDestacada ? (
+                  <div className="w-full mx-auto mb-2 text-center shadow-md cursor-pointer link">
+                    <Img
+                      fluid={post.imagenDestacada.fluid}
+                      alt={post.title}
+                      title={post.title}
+                    />
+                  </div>
+                ) : (
+                  <img
+                    className="w-48 h-48 mx-auto my-6 opacity-25 "
+                    alt="Kallpa Lúdica"
+                    src={AboutImage}
+                  />
+                )}
+
                 {post.GameGallery && (
                   <div className="w-full text-center ">
-                    <div className="w-full px-0 pt-6 m-auto md:py-6">
-                      <div className="grid grid-cols-3 ">
+                    <div className="w-full px-0 pt-6 m-auto md:py-0">
+                      <div className="grid grid-cols-3 gap-2">
                         {post.GameGallery.map((item, i) => (
                           <div
-                            className="relative h-24 max-w-xl m-0 overflow-hidden border-2 border-white link"
+                            className="relative h-24 max-w-xl m-0 overflow-hidden transition-all duration-200 transform shadow-md hover:opacity-75 link"
                             key={item.id}
                           >
+                            <RiZoomInLine className="absolute top-0 right-0 z-30 m-2 text-xl text-gray-400" />
                             <Img
                               title={item.title}
                               alt={item.title}
@@ -114,26 +115,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </SRLWrapper>
             </div>
             <div className="relative flex flex-col w-full pt-3 md:pl-12">
-              <Bread breaddata={pageContext.breadcrumb}></Bread>
-
-              <h1 className="w-full pt-2 pl-2 font-mono text-3xl text-left text-gray-800 md:pt-0 md:pl-0 md:text-5xl">
-                {post.title}
-              </h1>
-
-              {post.stock ? (
-                <>
-                  <h2 className="w-full pt-2 pl-2 mt-2 font-mono text-2xl text-left text-blue-600 md:pt-0 md:pl-0 md:text-3xl">
-                    ${post.GameBuyPrice}
-                  </h2>
-                </>
-              ) : (
-                <>
-                  <h2 className="w-full pt-2 pl-2 mt-2 font-mono text-2xl text-left text-green-600 md:pt-0 md:pl-0 md:text-3xl">
-                    ${post.GameBuyPrice}
-                  </h2>
-                </>
-              )}
-              <div className="flex flex-col items-center justify-start mt-6 text-lg text-center md:flex-row">
+              <div className="flex flex-col items-start justify-start mt-6 text-lg text-center md:flex-row">
                 {post.publisher && (
                   <div className="flex items-center justify-center text-lg">
                     <Link
@@ -150,9 +132,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   </div>
                 )}
               </div>
-              <div className="font-sans text-base italic font-bold text-left text-gray-700 ">
-                Creado por {post.GameAuthor}
-              </div>
+              <h1 className="w-full pt-2 pl-2 font-mono text-3xl text-left text-gray-800 md:pt-0 md:pl-0 md:text-5xl md:mb-3">
+                {post.title}
+              </h1>
 
               <div className="flex flex-col justify-center w-full pl-2 my-2 text-gray-700 md:pl-0 md:px-0 md:flex-row md:justify-start">
                 {post.GameAges && (
@@ -175,6 +157,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   </div>
                 )}
               </div>
+
+
+
               {post.categoria && (
                 <div className="flex items-center justify-start text-lg text-center">
                   {post.categoria.map((item, i) => (
@@ -208,19 +193,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 </div>
               )}
 
-              <div
-                className="w-full pl-0 pr-6 mb-6 text-left article"
-                id={post.slug}
-              >
-                {Article && (
-                  <FormatText
-                    FormatText={
-                      post.childContentfulArticulosTextoPrincipalRichTextNode
-                    }
-                  />
-                )}
-              </div>
-
               {post.stock ? (
                 <div className="flex flex-col-reverse justify-between w-full px-3 py-6 mb-0 bg-blue-100 border-t-2 border-b-2 border-blue-500 md:flex-row">
                   <AwesomeButton
@@ -231,7 +203,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   >
                     Pedilo por encargo
                   </AwesomeButton>
-                  <div className="mb-3 font-sans text-3xl font-bold text-center text-blue-500 md:my-0 md:text-right">
+                  <div className="mb-3 font-sans text-2xl font-bold text-center text-blue-500 md:my-0 md:text-right">
                     {post.stock}
                   </div>
                 </div>
@@ -251,6 +223,25 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 </div>
               )}
 
+              {post.GameAuthor && (
+                <div className="block mt-8 mb-4 font-sans text-base italic font-bold text-left text-gray-700 ">
+                  Creado por {post.GameAuthor}
+                </div>
+              )}
+
+              <div
+                className="w-full pl-0 pr-6 my-6 text-left article"
+                id={post.slug}
+              >
+                {Article && (
+                  <FormatText
+                    FormatText={
+                      post.childContentfulArticulosTextoPrincipalRichTextNode
+                    }
+                  />
+                )}
+              </div>
+
               {post.GamePlay && (
                 <div className="mt-12">
                   <Player src={post.GamePlay.file.url}>
@@ -260,25 +251,25 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               )}
             </div>
           </div>
-          <div className="max-w-6xl px-6 py-12 mx-auto font-sans ">
+          <div className="max-w-6xl mx-auto font-sans border-t border-gray-300 ">
             <nav style={{ display: "flex", justifyContent: "space-between" }}>
-              <div>
+              <div className="flex-1 py-6 text-center border-r border-gray-300 hover:bg-green-100" >
                 {next && (
                   <Link
                     to={`/tienda-de-juegos/${kebabCase(next.slug)}`}
                     rel="next"
-                    className="text-xl font-bold"
+                    className="text-xl font-bold transition-all duration-200 transform hover:-translate-x-2"
                   >
                     ← {next.title}
                   </Link>
                 )}
               </div>
-              <div style={{ justifySelf: "flex-end" }}>
+              <div className="flex-1 py-6 text-center hover:bg-green-100 " style={{ justifySelf: "flex-end" }}>
                 {prev && (
                   <Link
                     to={`/tienda-de-juegos/${kebabCase(prev.slug)}`}
                     rel="prev"
-                    className="text-xl font-bold"
+                    className="text-xl font-bold transition-all duration-200 transform hover:translate-x-2"
                   >
                     {prev.title} →
                   </Link>
@@ -349,7 +340,7 @@ export const pageQuery = graphql`
         }
       }
       imagenDestacada {
-        fixed(width: 500, height: 500) {
+        fixed(width: 800, height: 800) {
           ...GatsbyContentfulFixed
         }
         file {

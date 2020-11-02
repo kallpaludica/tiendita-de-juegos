@@ -29,7 +29,7 @@ const PublishersFeaturedComponent = () => {
 
   return (
     <>
-      <div className="relative z-50 overflow-hidden grid grid-cols-6 gap-2 max-w-6xl mx-auto mb-12">
+      <div className="relative z-50 overflow-hidden grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 max-w-6xl mx-auto mb-12">
         {data.editoriales.edges.map(({ node }) => {
           return (
             <Link
