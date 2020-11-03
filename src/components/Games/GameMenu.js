@@ -1,22 +1,41 @@
 import React from "react"
 
-import QueryCollections from "../../components/Queries/QueryCollection"
-import QueryCategories from "../../components/Queries/QueryCategories"
-import QueryPublishers from "../../components/Queries/QueryPublishers"
-//import { Link } from "gatsby"
-
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 
-const GamesAside = () => {
+const GamesAside = (props) => {
   return (
     <Aside>
       <h2 className="text-blue-500">Colecciones</h2>
-      <QueryCollections />
+      {
+        props.colecciones.map(c => (
+          <FilterItem key={c.node.slug} 
+            onClick={() => props.setFilter({ key: 'colecciones', value: c.node.slug})}
+          >
+            {c.node.title}
+          </FilterItem> 
+        ))
+      }
       <h2 className="text-orange-500">Modalidades</h2>
-      <QueryCategories />
+      {
+        props.categorias.map(m => (
+          <FilterItem key={m.node.slug} 
+            onClick={() => props.setFilter({ key: 'categoria', value: m.node.slug})}
+          >
+            {m.node.title}
+          </FilterItem>
+        ))
+      }
       <h2 className="text-indigo-500">Editoriales</h2>
-      <QueryPublishers />
+      {
+        props.publishers.map(e => (
+          <FilterItem key={e.node.slug} 
+            onClick={() => props.setFilter({ key: 'publisher', value: e.node.slug})}
+          >
+            {e.node.title}
+          </FilterItem>
+        ))
+      }
     </Aside>
   )
 }
@@ -32,5 +51,12 @@ const Aside = styled.div`
 
   h2 {
     ${tw`pt-0 pl-6 my-3 font-mono text-xl text-left `}
+  }
+`
+const FilterItem = styled.div`
+  ${tw`mx-auto cursor-pointer`}
+  :hover {
+    transform: scale(1.2);
+    transition: ease-in-out all 0.2s
   }
 `
