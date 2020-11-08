@@ -158,8 +158,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 )}
               </div>
 
-
-
               {post.categoria && (
                 <div className="flex items-center justify-start text-lg text-center">
                   {post.categoria.map((item, i) => (
@@ -198,13 +196,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   <AwesomeButton
                     href={`https://api.whatsapp.com/send?phone=5493876034627&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20encargar%20el%20juego%20${post.title}`}
                     target="_blank"
-                    type="secondary"
+                    type="primary"
                     rel="noopener noreferrer"
                   >
-                    Pedilo por encargo
+                    Consultar encargo por Whatsapp
                   </AwesomeButton>
                   <div className="mb-3 font-sans text-2xl font-bold text-center text-blue-500 md:my-0 md:text-right">
-                    {post.stock}
+                    ${post.GameBuyPrice}
                   </div>
                 </div>
               ) : (
@@ -253,7 +251,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </div>
           <div className="max-w-6xl mx-auto font-sans border-t border-gray-300 ">
             <nav style={{ display: "flex", justifyContent: "space-between" }}>
-              <div className="flex-1 py-6 text-center border-r border-gray-300 hover:bg-green-100" >
+              <div className="flex-1 py-6 text-center border-r border-gray-300 hover:bg-green-100">
                 {next && (
                   <Link
                     to={`/tienda-de-juegos/${kebabCase(next.slug)}`}
@@ -264,7 +262,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   </Link>
                 )}
               </div>
-              <div className="flex-1 py-6 text-center hover:bg-green-100 " style={{ justifySelf: "flex-end" }}>
+              <div
+                className="flex-1 py-6 text-center hover:bg-green-100 "
+                style={{ justifySelf: "flex-end" }}
+              >
                 {prev && (
                   <Link
                     to={`/tienda-de-juegos/${kebabCase(prev.slug)}`}

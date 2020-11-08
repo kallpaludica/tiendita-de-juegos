@@ -23,11 +23,13 @@ export default ({ card }) => (
           />
         </div>
       ) : (
-        <img
-          className="w-48 h-48 mx-auto my-6 opacity-25 "
-          alt="Kallpa Lúdica"
-          src={AboutImage}
-        />
+        <div className="image">
+          <img
+            className="w-full h-full mx-auto my-6 opacity-25 "
+            alt="Kallpa Lúdica"
+            src={AboutImage}
+          />
+        </div>
       )}
       <div className="relative w-full px-3 pb-2 font-sans text-center">
         <h3 className="block pt-3 pb-1 font-sans text-base font-bold leading-6 sm:pb-0 md:pb-0 ">
@@ -35,7 +37,7 @@ export default ({ card }) => (
         </h3>
         {card.stock ? (
           <b className="top-0 right-0 block text-xl font-bold text-blue-500 sm:pt-1">
-            {card.stock}
+            ${card.GameBuyPrice}
           </b>
         ) : (
           <b className="top-0 right-0 block text-xl font-bold text-green-600 sm:pt-1">
@@ -77,12 +79,12 @@ export default ({ card }) => (
 
       {card.stock ? (
         <div className="bottom-0 left-0 right-0 flex items-center justify-center p-2 px-3 font-sans text-base font-bold text-center text-blue-800 transition-all duration-500 bg-blue-300 hover:text-white hover:bg-blue-600">
-          <span>Pedidos por encargo</span>
+          <span>Consultar encargo</span>
           <FaCaretRight className="text-lg text-blue-500" />
         </div>
       ) : (
         <div className="bottom-0 left-0 right-0 flex items-center justify-center p-2 px-3 font-sans text-base font-bold text-center text-green-800 transition-all duration-500 bg-green-100 hover:text-white hover:bg-green-600">
-          <span>Consulta este juego</span>
+          <span>Juego disponible</span>
           <FaCaretRight className="text-lg text-green-300" />
         </div>
       )}

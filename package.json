@@ -34,6 +34,7 @@
     "gatsby-plugin-manifest": "^2.4.34",
     "gatsby-plugin-mdx": "^1.2.46",
     "gatsby-plugin-netlify": "^2.3.17",
+    "gatsby-plugin-nprogress": "^2.3.13",
     "gatsby-plugin-offline": "^3.2.31",
     "gatsby-plugin-postcss": "^2.3.5",
     "gatsby-plugin-purgecss": "^5.0.0",
