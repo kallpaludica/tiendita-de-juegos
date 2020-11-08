@@ -78,12 +78,12 @@ export default ({ card }) => (
       </div>
 
       {card.stock ? (
-        <div className="bottom-0 left-0 right-0 flex items-center justify-center p-2 px-3 font-sans text-base font-bold text-center text-blue-800 transition-all duration-500 bg-blue-300 hover:text-white hover:bg-blue-600">
+        <div className="bottom-0 left-0 right-0 flex items-center justify-center p-2 px-3 font-sans text-base font-bold text-center text-blue-800 transition-all duration-500 bg-blue-300 hover:text-white hover:bg-blue-700">
           <span>Consultar encargo</span>
           <FaCaretRight className="text-lg text-blue-500" />
         </div>
       ) : (
-        <div className="bottom-0 left-0 right-0 flex items-center justify-center p-2 px-3 font-sans text-base font-bold text-center text-green-800 transition-all duration-500 bg-green-100 hover:text-white hover:bg-green-600">
+        <div className="bottom-0 left-0 right-0 flex items-center justify-center p-2 px-3 font-sans text-base font-bold text-center text-green-800 transition-all duration-500 bg-green-300 hover:text-white hover:bg-green-700">
           <span>Juego disponible</span>
           <FaCaretRight className="text-lg text-green-300" />
         </div>

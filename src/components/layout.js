@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import React, { useEffect } from "react"
 import lottie from "lottie-web"
 
-import reactLogo from "../animations/whatsapp.json"
+import AnimatedWhatsapp from "../animations/whatsapp.json"
 import Sidebar from "../components/Sidebar"
 import Header from "../components/Header"
 import { AiOutlineHeart } from "react-icons/ai"
@@ -28,8 +28,8 @@ const Layout = ({ location, children }) => {
   `)
   useEffect(() => {
     lottie.loadAnimation({
-      container: document.querySelector("#react-logo"),
-      animationData: reactLogo,
+      container: document.querySelector("#animated-whatsapp"),
+      animationData: AnimatedWhatsapp,
     })
   }, [])
   return (
@@ -75,7 +75,7 @@ const Layout = ({ location, children }) => {
         data-tip="Consultas por Whatsapp"
         href="https://api.whatsapp.com/send?phone=+549%203876034627&text=%C2%A1Hola!%F0%9F%A4%97%20"
       >
-        <div id="react-logo" style={{ width: 60, height: 60 }} />
+        <div id="animated-whatsapp" style={{ width: 60, height: 60 }} />
       </a>
     </>
   )

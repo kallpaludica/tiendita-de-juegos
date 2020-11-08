@@ -46,10 +46,12 @@ const GamesSort = () => {
           <FaUserFriends className="mx-auto mr-1 text-base " /> Edades
         </Link>
         <Link
-          activeClassName="text-green-100 bg-green-500 "
+          activeClassName="text-green-100 bg-green-500 border-green-500"
           to="/tienda-de-juegos/disponibles"
+          className="game-available"
         >
-          <AiOutlineCheck className="mx-auto mr-1 text-base " /> Disponibles
+          <AiOutlineCheck className="mx-auto mr-1 text-base " />
+          Disponibles
         </Link>
       </Sort>
     </>
@@ -64,5 +66,9 @@ const Sort = styled.div`
   a {
     ${tw`px-2 py-1 my-2 ml-0 text-base border border-blue-500 md:text-lg md:py-1 md:px-3 md:mr-1`}
     ${tw`flex items-center px-2 font-sans rounded-full hover:text-blue-100 hover:bg-blue-500`}
+  }
+
+  .game-available {
+    ${tw`border-green-500 hover:text-green-100 hover:bg-green-500`}
   }
 `

@@ -85,7 +85,7 @@ export const pageQuery = graphql`
             url
           }
         }
-
+        stock
         categoria {
           title
           slug
