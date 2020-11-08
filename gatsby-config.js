@@ -50,7 +50,6 @@ module.exports = {
         showSpinner: false,
       },
     },
-    `gatsby-plugin-layout`,
     {
       resolve: `gatsby-plugin-emotion`,
       options: {
