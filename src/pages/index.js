@@ -5,12 +5,12 @@ import { kebabCase } from "lodash"
 import lottie from "lottie-web"
 import React, { useEffect } from "react"
 import { AwesomeButton } from "react-awesome-button"
-import AwesomeSlider from "react-awesome-slider"
+//import AwesomeSlider from "react-awesome-slider"
 import { Helmet } from "react-helmet"
 import { AiFillShop } from "react-icons/ai"
 import { FiChevronRight } from "react-icons/fi"
 import Fade from "react-reveal/Fade"
-import tw from "twin.macro"
+//import tw from "twin.macro"
 import kallpaPotencia from "../animations/kallpa-potencia.json"
 import Contact from "../components/About/Contact"
 import HomeHero from "../components/About/HomeHero"
@@ -23,7 +23,7 @@ import Publishers from "../components/Publishers/FeaturedPublishers"
 import Layout from "../components/layout"
 import QueriesLastGames from "../components/Queries/QueriesLastGames"
 import SEO from "../components/seo"
-import HomeHeroImage from "../images/bg-home.jpg"
+//import HomeHeroImage from "../images/bg-home.jpg"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -85,99 +85,11 @@ const IndexPage = () => {
         </Wave>
       </div>
 
-      <Hero className="relative hidden overflow-hidden bg-white">
-        <HeroContent>
-          <AwesomeSlider>
-            <div>
-              <Fade bottom delay={100}>
-                <Title>
-                  Promoción Día del juego
-                  <span
-                    className="emoji"
-                    role="img"
-                    aria-label="Hola! y bienvenide"
-                    aria-hidden="false"
-                  >
-                    👋
-                  </span>
-                </Title>
-              </Fade>
-              <div className="pt-3">
-                <div className="flex flex-col items-center justify-start max-w-3xl p-3 py-2 mx-auto font-mono font-thin">
-                  <Fade bottom delay={200}>
-                    <AwesomeButton
-                      action={() => {
-                        navigate(`/tienda-de-juegos/`)
-                      }}
-                      type="secondary"
-                    >
-                      Tiendita de juegos
-                      <FiChevronRight className="inline-block mt-1 ml-3" />
-                    </AwesomeButton>
-                  </Fade>
-                </div>
-              </div>
-            </div>
-            <div>
-              <Fade bottom delay={100}>
-                <Title>
-                  Más económicos, <br /> jugones y más
-                </Title>
-              </Fade>
-              <div className="pt-3">
-                <div className="flex flex-col items-center justify-start max-w-3xl p-3 py-2 mx-auto font-mono font-thin">
-                  <Fade bottom delay={200}>
-                    <AwesomeButton
-                      action={() => {
-                        navigate(`/tienda-de-juegos/precio`)
-                      }}
-                      type="secondary"
-                    >
-                      conocelos
-                      <FiChevronRight className="inline-block mt-1 ml-3" />
-                    </AwesomeButton>
-                  </Fade>
-                </div>
-              </div>
-            </div>
-          </AwesomeSlider>
-        </HeroContent>
-        <img
-          src={HomeHeroImage}
-          title="bienvenides"
-          alt="bienvenides"
-          className="absolute top-0 hidden object-cover w-full h-full opacity-25"
-        />
-        <Wave>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <defs xmlns="http://www.w3.org/2000/svg">
-              <filter id="dropshadow" height="130%">
-                <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
-                <feOffset dx="2" dy="2" result="offsetblur" />
-                <feComponentTransfer>
-                  <feFuncA type="linear" slope="0.2" />
-                </feComponentTransfer>
-                <feMerge>
-                  <feMergeNode />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-            </defs>
-            <path
-              fillOpacity="1"
-              filter="url(#dropshadow)"
-              className="text-white fill-current "
-              d="M0,160L80,176C160,192,320,224,480,224C640,224,800,192,960,192C1120,192,1280,224,1360,240L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-            ></path>
-          </svg>
-        </Wave>
-      </Hero>
-
       <section className="px-2 mt-2">
         <div className="relative flex flex-col w-full max-w-6xl mx-auto border-b border-blue-500 border-dashed md:flex-row">
           <h1 className="flex items-center w-full max-w-6xl pt-4 mx-auto font-mono text-3xl text-center text-blue-500 md:text-left ">
             <AiFillShop className="mr-3 text-3xl text-blue-500 transform " />
-            Los que más jugamos
+            Los que más se juegan en Salta
           </h1>
           <div className="mt-6">
             <GameSort />
@@ -313,18 +225,6 @@ const IndexPage = () => {
 }
 
 export default IndexPage
-
-const HeroContent = styled.div`
-  ${tw`relative z-50 flex flex-col w-full pt-0 mx-auto text-left md:pb-0`}
-`
-
-const Title = styled.h1`
-  ${tw`max-w-xl mx-auto font-mono text-2xl text-center text-indigo-500 md:text-4xl`}
-`
-
-const Hero = styled.div`
-  ${tw`relative flex-col items-start justify-center hidden w-full mx-auto`}
-`
 
 const Wave = styled.div`
   position: absolute;

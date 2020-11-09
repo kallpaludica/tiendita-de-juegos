@@ -281,7 +281,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </div>
         <div className="relative flex flex-col items-center w-full max-w-6xl px-2 pb-1 mx-auto mt-12 ">
           <h1 className="w-full max-w-6xl pt-3 pb-3 mx-auto font-mono text-3xl text-center text-blue-500 ">
-            Juegos recomendados
+            Los que más se juegan en Salta
           </h1>
           <div className="max-w-md mx-auto mt-0">
             <GameSort />
