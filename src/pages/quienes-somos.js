@@ -55,11 +55,10 @@ const AboutPage = () => {
       </Helmet>
       <Hero className="text-yellow-900 bg-yellow-800 pattern-cross-dots-md">
         <HeroContent>
-          <Title>Somos Kallpa Lúdica</Title>
-          <Subtitle className="flex items-center max-w-3xl px-2 mx-auto font-mono text-white">
-            Somos un equipo transdisciplinario que busca poner sobre la mesa el
-            juego para problematizarlo y apropiarnos de una práctica milenaria
-            imprescindible.
+          <Title>Un equipo transdisciplinario</Title>
+          <Subtitle className="flex items-center max-w-xl px-2 mx-auto font-mono text-white">
+            Buscamos poner sobre la mesa el juego para problematizarlo y
+            apropiarnos de una práctica milenaria imprescindible.
           </Subtitle>
         </HeroContent>
 

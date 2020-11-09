@@ -18,7 +18,7 @@ import HomeHero from "../components/About/HomeHero"
 import "../components/AwsBtn.css"
 import Collections from "../components/Games/GameCollections"
 
-import GameSort from "../components/Games/GameSort"
+//import GameSort from "../components/Games/GameSort"
 import Publishers from "../components/Publishers/FeaturedPublishers"
 import Layout from "../components/layout"
 import QueriesLastGames from "../components/Queries/QueriesLastGames"
@@ -87,13 +87,10 @@ const IndexPage = () => {
 
       <section className="px-2 mt-2">
         <div className="relative flex flex-col w-full max-w-6xl mx-auto border-b border-blue-500 border-dashed md:flex-row">
-          <h1 className="flex items-center w-full max-w-6xl pt-4 mx-auto font-mono text-3xl text-center text-blue-500 md:text-left ">
+          <h1 className="flex flex-col items-center w-full max-w-6xl pt-4 mx-auto font-mono text-3xl text-center text-blue-500 md:flex-row md:text-left ">
             <AiFillShop className="mr-3 text-3xl text-blue-500 transform " />
-            Los que más se juegan en Salta
+            Los que más jugamos en Salta
           </h1>
-          <div className="mt-6">
-            <GameSort />
-          </div>
         </div>
         <QueriesLastGames />
       </section>

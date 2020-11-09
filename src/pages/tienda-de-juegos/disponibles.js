@@ -11,7 +11,7 @@ import GameCard from "../../components/GameCard"
 import GamesAside from "../../components/Games/GameMenu"
 import GameSort from "../../components/Games/GameSort"
 import { useSpring, animated } from "react-spring"
-import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai"
+import { FaSortAmountDownAlt, FaSortAmountDown } from "react-icons/fa"
 
 const DisponiblePage = (props) => {
   const data = useStaticQuery(graphql`
@@ -90,12 +90,10 @@ const DisponiblePage = (props) => {
   const [isToggled, setToggle] = useState(false)
   const sortDESC = useSpring({
     display: isToggled ? "block" : "none",
-    opacity: isToggled ? "1" : "0",
     config: { mass: 3, tension: 500, friction: 80 },
   })
   const sortASD = useSpring({
     display: isToggled ? "none" : "block",
-    opacity: isToggled ? "0" : "1",
     config: { mass: 3, tension: 500, friction: 80 },
   })
 
@@ -105,29 +103,38 @@ const DisponiblePage = (props) => {
       <Helmet>
         <body className="games" />
       </Helmet>
-      <HeroWave pattern="bg-green-600 text-green-500" />
+      <HeroWave pattern="bg-blue-600 text-blue-500" />
       <ContentSidebar>
         <Aside>
           <GamesAside />
         </Aside>
         <Main>
           <PageSticky>
-            <MainTitle>Disponibles por precio</MainTitle>
+            <MainTitle>
+              <animated.div style={sortDESC}>
+                <FaSortAmountDown className="inline-block mb-1 mr-2" />
+                Con Stock disponible
+              </animated.div>
+              <animated.div style={sortASD}>
+                <FaSortAmountDownAlt className="inline-block mb-1 mr-2" />
+                Con Stock disponible
+              </animated.div>
+            </MainTitle>
           </PageSticky>
-          <div className="relative flex flex-col justify-start border-b-2 border-green-300 md:flex-row sm:py-0 sm:pt-0">
+          <div className="relative flex flex-col justify-start border-b-2 border-blue-300 md:flex-row sm:py-0 sm:pt-0">
             <GameSort />
             <button
-              className="relative bottom-0 right-0 flex items-center justify-center px-4 py-3 text-white bg-green-500 outline-none md:absolute focus:outline-none hover:bg-green-600"
+              className="relative bottom-0 right-0 flex items-center justify-center px-3 py-1 mb-2 mr-1 text-blue-500 border border-blue-500 rounded-full outline-none md:absolute focus:outline-none hover:bg-blue-500 hover:text-white"
               onClick={() => setToggle(!isToggled)}
             >
               <span className="font-sans font-bold">
                 <animated.div style={sortDESC}>
-                  De mayor a menor{" "}
-                  <AiOutlineArrowUp className="inline-block text-lg" />
+                  Precio de mayor a menor
+                  <FaSortAmountDown className="inline-block ml-2 text-lg" />
                 </animated.div>
                 <animated.div style={sortASD}>
-                  De menor a mayor{" "}
-                  <AiOutlineArrowDown className="inline-block text-lg" />
+                  Precio de menor a mayor
+                  <FaSortAmountDownAlt className="inline-block ml-2 text-lg" />
                 </animated.div>
               </span>
             </button>

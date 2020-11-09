@@ -3,6 +3,8 @@ import BackgroundSlider2 from "gatsby-image-background-slider"
 import React from "react"
 import { AwesomeButton } from "react-awesome-button"
 import BackgroundSlider from "../HomeSlider"
+import TextLoop from "react-text-loop"
+import { Link } from "gatsby"
 
 const HomeHeroCompoent = () => {
   return (
@@ -11,22 +13,45 @@ const HomeHeroCompoent = () => {
         <section className="container flex flex-col flex-1 h-full mx-auto">
           <div className="flex flex-col flex-1 w-full h-full max-w-6xl px-3 mx-auto">
             <div className="flex items-start flex-1 pb-12">
-              <div className="flex items-center flex-1 max-w-sm py-8 font-mono">
+              <div className="flex items-center flex-1 max-w-xl py-8 font-mono">
                 <div className="col-span-2 text-left">
-                  <h1 className="text-3xl leading-tight text-left text-white md:text-4xl">
-                    Compartiendo la <br />
-                    potencia de jugar.
+                  <h1 className="text-3xl leading-9 text-left text-white md:text-4xl">
+                    Tienda de juegos{" "}
+                    <TextLoop interval={2500} fade={true}>
+                      <Link
+                        to={`/tienda-de-juegos/colecciones/familiares`}
+                        className="text-blue-300 hover:text-white hover:underline"
+                      >
+                        familiares
+                      </Link>
+                      <Link
+                        to={`/tienda-de-juegos/colecciones/educativos`}
+                        className="text-orange-300 hover:text-white hover:underline"
+                      >
+                        educativos
+                      </Link>
+                      <Link
+                        to={`/tienda-de-juegos/colecciones/cooperativos`}
+                        className="text-indigo-300 hover:text-white hover:underline"
+                      >
+                        cooperativos
+                      </Link>
+                      <Link
+                        to={`/tienda-de-juegos/colecciones/terapeuticos`}
+                        className="text-green-300 hover:text-white hover:underline"
+                      >
+                        terapéuticos
+                      </Link>
+                    </TextLoop>{" "}
+                    <br />
+                    en la Provincia de Salta.
                   </h1>
-                  <p className="block pt-6 font-sans text-2xl leading-9 text-left text-white">
-                    Abrimos nuestra tienda de juegos en la{" "}
-                    <b>Provincia de Salta</b>.
-                  </p>
 
                   <div className="flex flex-col justify-start mt-5">
                     <div className="mr-3 ">
                       <AwesomeButton
                         action={() => {
-                          navigate(`/tienda-de-juegos/`)
+                          navigate(`/tienda-de-juegos/disponibles`)
                         }}
                         type="primary"
                       >
@@ -34,6 +59,14 @@ const HomeHeroCompoent = () => {
                       </AwesomeButton>
                     </div>
                   </div>
+                  <p className="block pt-6 font-sans text-xl text-left text-white transition-all duration-200 transform opacity-50 hover:opacity-100">
+                    <Link
+                      to={`/quienes-somos`}
+                      className="inline-block text-white underline hover:text-white"
+                    >
+                      Compartir la potencia de jugar.
+                    </Link>
+                  </p>
                 </div>
               </div>
             </div>

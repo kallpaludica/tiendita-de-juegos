@@ -17,6 +17,7 @@ import QueriesLastGames from "../components/Queries/QueriesLastGames"
 import SEO from "../components/seo"
 import "../components/VideoReact.css"
 import FormatText from "../components/wysiwyg"
+import GoBack from "../components/GoBack"
 import AboutImage from "../images/kallpa-ludica.png"
 import { RiZoomInLine } from "react-icons/ri"
 
@@ -115,6 +116,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </SRLWrapper>
             </div>
             <div className="relative flex flex-col w-full pt-3 md:pl-12">
+              <GoBack />
+
               <div className="flex flex-col items-start justify-start mt-6 text-lg text-center md:flex-row">
                 {post.publisher && (
                   <div className="flex items-center justify-center text-lg">
@@ -167,7 +170,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                       )}`}
                       className="flex flex-col py-1 pr-4 my-2 mr-2 rounded-full "
                       key={i}
-                      data-tip={item.title}
                     >
                       <div className="relative overflow-hidden transition-all duration-200 transform md:w-full hover:-translate-y-2">
                         <Img
@@ -280,10 +282,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </div>
         </div>
         <div className="relative flex flex-col items-center w-full max-w-6xl px-2 pb-1 mx-auto mt-12 ">
-          <h1 className="w-full max-w-6xl pt-3 pb-3 mx-auto font-mono text-3xl text-center text-blue-500 ">
-            Los que más se juegan en Salta
+          <h1 className="w-full max-w-6xl pt-3 pb-3 mx-auto font-mono text-3xl text-left text-blue-500 ">
+            Los que más jugamos en Salta
           </h1>
-          <div className="max-w-md mx-auto mt-0">
+          <div className="w-full mx-auto mt-0">
             <GameSort />
           </div>
         </div>
