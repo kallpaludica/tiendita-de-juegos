@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.article ol {
+  list-style: decimal;
+  padding-left: 1rem;
+}
+
+.article ul {
+  list-style: bullet;
+  padding-left: 1rem;
+}
+
+.article ol p,
+.article ul p {
+  @apply mb-1;
+}

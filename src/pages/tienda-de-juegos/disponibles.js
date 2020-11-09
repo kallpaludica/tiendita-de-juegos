@@ -112,7 +112,7 @@ const DisponiblePage = (props) => {
           <PageSticky>
             <MainTitle>
               <button
-                className="relative bottom-0 right-0 flex items-center justify-center px-3 py-1 mb-2 mr-1 text-white outline-none focus:outline-none hover:underline"
+                className="relative bottom-0 right-0 flex items-center justify-center px-0 py-1 mb-2 mr-1 text-white outline-none focus:outline-none hover:underline"
                 onClick={() => setToggle(!isToggled)}
               >
                 <span className="font-sans text-lg font-bold lg:text-3xl">
@@ -155,11 +155,11 @@ const DisponiblePage = (props) => {
 export default DisponiblePage
 
 const Container = styled.div`
-  ${tw`grid w-full grid-cols-2 gap-4 p-3 pt-6 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3`}
+  ${tw`grid w-full grid-cols-1 gap-4 p-3 pt-6 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3`}
 `
 
 const ContainerDesc = styled.div`
-  ${tw`grid w-full grid-cols-2 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3`}
+  ${tw`grid w-full grid-cols-1 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3`}
 `
 
 const PageSticky = styled.div`

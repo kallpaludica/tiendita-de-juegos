@@ -79,7 +79,7 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
 }
 
 const Container = styled.div`
-  ${tw`grid max-w-6xl grid-cols-2 gap-6 p-3 py-12 mx-auto bg-white sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3`}
+  ${tw`grid max-w-6xl grid-cols-1 gap-4 p-3 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 `}
 `
 
 const Title = styled.h1`

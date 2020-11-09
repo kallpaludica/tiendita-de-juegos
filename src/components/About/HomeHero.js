@@ -65,7 +65,7 @@ const HomeHeroCompoent = () => {
                       </AwesomeButton>
                     </div>
                   </div>
-                  <p className="block pt-6 font-sans text-xl text-left text-white transition-all duration-200 transform opacity-50 hover:opacity-100">
+                  <p className="block pt-6 font-sans text-xl text-left text-white transition-all duration-200 transform opacity-75 hover:opacity-100">
                     <Link
                       to={`/quienes-somos`}
                       className="inline-block text-white underline hover:text-white"

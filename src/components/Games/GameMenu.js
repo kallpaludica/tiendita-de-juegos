@@ -13,9 +13,9 @@ const GamesAside = () => {
     <Aside>
       <h2 className="text-blue-500">Colecciones</h2>
       <QueryCollections />
-      <h2 className="text-orange-500">Modalidades</h2>
+      <h2 className="text-blue-500">Modalidades</h2>
       <QueryCategories />
-      <h2 className="text-indigo-500">Editoriales</h2>
+      <h2 className="text-blue-500">Editoriales</h2>
       <QueryPublishers />
     </Aside>
   )

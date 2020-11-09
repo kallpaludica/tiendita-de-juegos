@@ -207,7 +207,7 @@ const HeroContent = styled.div`
 `
 
 const Title = styled.h1`
-  ${tw`font-mono text-5xl text-white`}
+  ${tw`font-mono text-2xl text-white md:text-5xl`}
 `
 
 const Subtitle = styled.h3`

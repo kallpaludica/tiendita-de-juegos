@@ -89,7 +89,7 @@ const IndexPage = () => {
         <div className="relative flex flex-col w-full max-w-6xl mx-auto border-b border-blue-500 border-dashed md:flex-row">
           <h1 className="flex flex-col items-center w-full max-w-6xl pt-4 mx-auto font-mono text-3xl text-center text-blue-500 md:flex-row md:text-left ">
             <AiFillShop className="mr-3 text-3xl text-blue-500 transform " />
-            Los que más jugamos en Salta
+            Lo que se anda jugando
           </h1>
         </div>
         <QueriesLastGames />

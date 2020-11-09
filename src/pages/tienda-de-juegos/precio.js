@@ -154,11 +154,11 @@ const PreciosPage = (props) => {
 export default PreciosPage
 
 const Container = styled.div`
-  ${tw`grid w-full grid-cols-1 gap-4 p-3 pt-6 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3`}
+  ${tw`grid w-full grid-cols-1 gap-4 p-3 pt-6 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3`}
 `
 
 const ContainerDesc = styled.div`
-  ${tw`grid w-full grid-cols-1 gap-4 p-3 py-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3`}
+  ${tw`grid w-full grid-cols-1 gap-4 p-3 pt-6 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3`}
 `
 
 const PageSticky = styled.div`

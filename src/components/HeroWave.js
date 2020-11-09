@@ -62,7 +62,7 @@ const Back = styled.div`
 `
 
 const Hero = styled.div`
-  ${tw`relative flex flex-col items-start justify-center w-full pt-32 pb-16 mx-auto`}
+  ${tw`relative flex flex-col items-start justify-center w-full pt-20 pb-16 mx-auto md:pt-32`}
 `
 
 const Wave = styled.div`
