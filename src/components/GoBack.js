@@ -11,9 +11,10 @@ const goBackButton = () => {
     <>
       <button
         onClick={goBack}
-        className="flex text-green-500 outline-none lottie-left-arrow focus:outline-none"
+        className="flex items-center text-gray-800 outline-none lottie-left-arrow focus:outline-none hover:text-gray-900"
       >
         <AnimatedBack />
+        <span className="ml-2 font-sans font-bold">Retrodecer una página</span>
       </button>
     </>
   )

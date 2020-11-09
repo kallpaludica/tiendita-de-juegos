@@ -11,7 +11,7 @@ import {
   AiOutlineDollar,
 } from "react-icons/ai"
 const GamesSort = () => {
-  return (
+  return ( 
     <>
       <Sort>
         <Link
@@ -20,7 +20,7 @@ const GamesSort = () => {
           className="game-available"
         >
           <AiOutlineCheck className="mx-auto mr-1 text-base " />
-          Stock disponible
+          En Stock
         </Link>
         <Link
           activeClassName="text-blue-100 bg-blue-500 "

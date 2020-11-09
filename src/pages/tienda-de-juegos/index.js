@@ -41,7 +41,7 @@ const AllPage = (props) => {
               fixed(width: 300, height: 230) {
                 ...GatsbyContentfulFixed
               }
-              fluid(maxWidth: 550) {
+              fluid(maxWidth: 450) {
                 ...GatsbyContentfulFluid_withWebp
               }
             }

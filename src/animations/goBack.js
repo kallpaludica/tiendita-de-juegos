@@ -12,7 +12,7 @@ const AnimateBackComponent = () => {
   }, [])
   return (
     <Button className="lottie-left-arrow">
-      <div id="animate-arrow-back" style={{ width: 30, height: 30 }} />
+      <div id="animate-arrow-back" style={{ width: 25, height: 25 }} />
     </Button>
   )
 }
@@ -20,9 +20,9 @@ const AnimateBackComponent = () => {
 export default AnimateBackComponent
 
 const Button = styled.div`
-  ${tw`text-green-500 `}
+  ${tw`text-gray-800 `}
 
-  .lottie-left-arrow path {
-    stroke: #48bb78 !important;
+  path {
+    stroke: #999 !important;
   }
 `

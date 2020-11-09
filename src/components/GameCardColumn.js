@@ -3,16 +3,13 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { kebabCase } from "lodash"
 import React from "react"
-//import { FaCaretRight } from "react-icons/fa"
+import { FaCaretRight } from "react-icons/fa"
 import tw from "twin.macro"
 import AboutImage from "../images/kallpa-ludica.png"
 import Toggle from "./GameCardToggle"
-//import { IoMdTime } from "react-icons/io"
-import { FaShippingFast } from "react-icons/fa"
-//import { FaUserFriends, FaShippingFast } from "react-icons/fa"
-import { AiFillCheckCircle } from "react-icons/ai"
+import { IoMdTime } from "react-icons/io"
+import { FaUserFriends } from "react-icons/fa"
 
-import Flash from "react-reveal/Flash"
 export default ({ card }) => (
   <GameCard>
     <Link to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}>
@@ -34,7 +31,7 @@ export default ({ card }) => (
           />
         </div>
       )}
-      <div className="relative w-full px-3 pb-2 font-sans text-left">
+      <div className="relative w-full px-3 pb-2 font-sans text-center">
         <h3 className="block pt-3 pb-1 font-sans text-base font-bold leading-6 sm:pb-0 md:pb-0 ">
           {card.title}
         </h3>
@@ -50,8 +47,9 @@ export default ({ card }) => (
 
         {card.GameAges && (
           <div className="hidden w-full pt-1 text-center game-ages">
-            <div className="flex justify-start pb-1 font-sans text-lg font-bold text-left text-gray-800 ">
-              <div className="flex flex-1 text-base opacity-75">
+            <div className="flex justify-center pb-1 font-sans text-lg font-bold text-center text-gray-800 ">
+              <div className="flex flex-col flex-1 text-base opacity-75">
+                <FaUserFriends className="w-6 mx-auto mb-1 text-2xl" />
                 {card.GameAges}+ años
               </div>
             </div>
@@ -60,8 +58,9 @@ export default ({ card }) => (
         {card.GameDuration && (
           <div className="hidden w-full pt-1 text-center game-duration">
             <div className="flex justify-center pb-1 font-sans text-lg font-bold text-center text-gray-800 ">
-              <div className="flex flex-1 text-base opacity-75">
-                Duración: {card.GameDuration}min.
+              <div className="flex flex-col flex-1 text-base opacity-75">
+                <IoMdTime className="w-6 mx-auto mt-3 mb-1 text-2xl " />
+                {card.GameDuration}min.
               </div>
             </div>
           </div>
@@ -79,16 +78,14 @@ export default ({ card }) => (
       </div>
 
       {card.stock ? (
-        <div className="bottom-0 left-0 right-0 flex items-center justify-start p-2 px-3 font-sans text-base font-bold text-left text-blue-800 transition-all duration-500 bg-blue-300 hover:text-white hover:bg-blue-700">
-          <FaShippingFast className="inline-block mb-1 mr-2 " />
-          <span>Por encargo</span>
+        <div className="bottom-0 left-0 right-0 flex items-center justify-center p-2 px-3 font-sans text-base font-bold text-center text-blue-800 transition-all duration-500 bg-blue-300 hover:text-white hover:bg-blue-700">
+          <span>Consultar encargo</span>
+          <FaCaretRight className="text-lg text-blue-500" />
         </div>
       ) : (
-        <div className="bottom-0 left-0 right-0 flex items-center justify-start p-2 px-3 font-sans text-base font-bold text-left text-green-800 transition-all duration-500 bg-green-100 hover:text-white hover:bg-green-700">
-          <Flash forever duration={5000}>
-            <AiFillCheckCircle className="inline-block mb-1 mr-2 " />
-          </Flash>
+        <div className="bottom-0 left-0 right-0 flex items-center justify-center p-2 px-3 font-sans text-base font-bold text-center text-green-800 transition-all duration-500 bg-green-300 hover:text-white hover:bg-green-700">
           <span>Stock disponible</span>
+          <FaCaretRight className="text-lg text-green-300" />
         </div>
       )}
     </Link>

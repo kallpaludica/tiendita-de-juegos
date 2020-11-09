@@ -10,7 +10,7 @@ const routes = [
   {
     title: "Tiendita de juegos",
     active: "text-green-500",
-    slug: "/tienda-de-juegos/",
+    slug: "/tienda-de-juegos/disponibles",
   },
 
   {

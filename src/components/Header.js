@@ -13,7 +13,7 @@ import "./header.css"
 const routesLeft = [
   {
     title: "Tiendita de juegos",
-    slug: "/tienda-de-juegos/",
+    slug: "/tienda-de-juegos/disponibles",
     icon: <AiFillShop className="text-xl " />,
   },
   /*

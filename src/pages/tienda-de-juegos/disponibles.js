@@ -111,33 +111,25 @@ const DisponiblePage = (props) => {
         <Main>
           <PageSticky>
             <MainTitle>
-              <animated.div style={sortDESC}>
-                <FaSortAmountDown className="inline-block mb-1 mr-2" />
-                Con Stock disponible
-              </animated.div>
-              <animated.div style={sortASD}>
-                <FaSortAmountDownAlt className="inline-block mb-1 mr-2" />
-                Con Stock disponible
-              </animated.div>
+              <button
+                className="relative bottom-0 right-0 flex items-center justify-center px-3 py-1 mb-2 mr-1 text-white outline-none focus:outline-none hover:underline"
+                onClick={() => setToggle(!isToggled)}
+              >
+                <span className="font-sans text-lg font-bold lg:text-3xl">
+                  <animated.div style={sortDESC}>
+                    <FaSortAmountDown className="inline-block mb-1 mr-2" />
+                    Con stock de mayor a menor precio
+                  </animated.div>
+                  <animated.div style={sortASD}>
+                    <FaSortAmountDownAlt className="inline-block mb-1 mr-2" />
+                    Con stock de menor a mayor precio
+                  </animated.div>
+                </span>
+              </button>
             </MainTitle>
           </PageSticky>
           <div className="relative flex flex-col justify-start border-b-2 border-blue-300 md:flex-row sm:py-0 sm:pt-0">
             <GameSort />
-            <button
-              className="relative bottom-0 right-0 flex items-center justify-center px-3 py-1 mb-2 mr-1 text-blue-500 border border-blue-500 rounded-full outline-none md:absolute focus:outline-none hover:bg-blue-500 hover:text-white"
-              onClick={() => setToggle(!isToggled)}
-            >
-              <span className="font-sans font-bold">
-                <animated.div style={sortDESC}>
-                  Precio de mayor a menor
-                  <FaSortAmountDown className="inline-block ml-2 text-lg" />
-                </animated.div>
-                <animated.div style={sortASD}>
-                  Precio de menor a mayor
-                  <FaSortAmountDownAlt className="inline-block ml-2 text-lg" />
-                </animated.div>
-              </span>
-            </button>
           </div>
           <animated.div style={sortASD}>
             <Container id="contenido">

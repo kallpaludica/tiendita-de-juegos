@@ -100,7 +100,7 @@ export const pageQuery = graphql`
             fixed(width: 200, height: 230) {
               ...GatsbyContentfulFixed
             }
-            fluid(maxWidth: 450) {
+            fluid(maxWidth: 600) {
               ...GatsbyContentfulFluid_withWebp
             }
           }
