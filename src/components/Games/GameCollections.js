@@ -29,10 +29,10 @@ const GameCollectionComponent = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center max-w-6xl px-6 mx-auto">
-        <div className="grid grid-cols-2 gap-6 my-12 font-sans text-gray-800 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-2 my-12 font-sans text-gray-800 md:grid-cols-4">
           {data.collections.edges.map(({ node }) => {
             return (
-              <div className="flex flex-col p-3 text-center transition-all duration-200 transform shadow-xl hover:shadow-2xl hover:-translate-y-2">
+              <div className="flex flex-col p-1 text-center transition-all duration-200 transform shadow-xl hover:shadow-2xl hover:-translate-y-2">
                 <Link
                   key={node.slug}
                   to={`/tienda-de-juegos/colecciones/${kebabCase(node.slug)}/`}

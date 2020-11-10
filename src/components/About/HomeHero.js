@@ -6,7 +6,7 @@ import BackgroundSlider from "../HomeSlider"
 import TextLoop from "react-text-loop"
 import { Link } from "gatsby"
 import AnchorLink from "react-anchor-link-smooth-scroll"
-import { BsChevronDoubleDown } from "react-icons/bs"
+import { AiOutlineArrowRight } from "react-icons/ai"
 
 const HomeHeroCompoent = () => {
   return (
@@ -64,6 +64,7 @@ const HomeHeroCompoent = () => {
                         type="primary"
                       >
                         Ingresar a la tiendita
+                        <AiOutlineArrowRight className="inline-block ml-2 text-2xl" />
                       </AwesomeButton>
                     </div>
                   </div>
@@ -72,7 +73,6 @@ const HomeHeroCompoent = () => {
                       className="inline-block text-white hover:text-white"
                       href="#redes"
                     >
-                      <BsChevronDoubleDown className="inline-block mr-2 text-3xl" />
                       Compartimos la potencia de jugar.
                     </AnchorLink>
                   </p>

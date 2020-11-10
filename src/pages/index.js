@@ -118,8 +118,18 @@ const IndexPage = () => {
         <Collections />
       </section>
 
+      <section className="px-2 mt-2">
+        <div className="relative flex flex-col w-full max-w-6xl mx-auto md:flex-row">
+          <h1 className="flex flex-col items-center w-full max-w-6xl pt-4 mx-auto font-sans text-2xl leading-tight text-center text-gray-600 md:text-4xl">
+            <AiFillShop className="mt-6 text-6xl text-blue-500 transform " />
+            lo que se andan jugando
+          </h1>
+        </div>
+        <QueriesLastGames />
+      </section>
+
       <section
-        className="py-24 mb-12 text-blue-200 bg-blue-100 pattern-grid-lg"
+        className="py-24 mb-0 text-blue-200 bg-blue-100 pattern-grid-lg"
         id="redes"
       >
         <Fade bottom delay={100}>
@@ -144,7 +154,7 @@ const IndexPage = () => {
             </a>
           </h1>
         </Fade>
-        <div className="grid max-w-6xl grid-cols-2 gap-2 mx-auto md:grid-cols-4 ">
+        <div className="grid max-w-5xl grid-cols-2 gap-1 mx-auto md:grid-cols-4 ">
           {data.allInstaNode.edges.map(({ node }) => {
             return (
               <div className="relative">
@@ -178,16 +188,6 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <section className="px-2 mt-2">
-        <div className="relative flex-col hidden w-full max-w-6xl mx-auto md:flex-row">
-          <h1 className="flex flex-col items-center w-full max-w-6xl pt-4 mx-auto font-mono text-3xl text-center text-blue-500 ">
-            <AiFillShop className="mr-3 text-3xl text-blue-500 transform " />
-            Los que se andan jugando
-          </h1>
-        </div>
-        <QueriesLastGames />
-      </section>
-
       <section className="relative hidden py-24 mt-6">
         <h1 className="font-mono text-2xl leading-tight text-center text-orange-500 md:text-4xl">
           Varias modalidades para elegir
@@ -218,7 +218,7 @@ const IndexPage = () => {
           })}
         </div>
       </section>
-      <section className="px-6 py-24 mt-12 text-orange-200 bg-orange-100 pattern-grid-lg">
+      <section className="px-6 py-24 mt-0 text-orange-200 bg-orange-100 pattern-grid-lg">
         <Fade delay={100}>
           <div className="flex justify-center max-w-lg mx-auto">
             <div id="kallpa-Potencia" style={{ width: 150, height: 150 }} />
@@ -265,7 +265,7 @@ const IndexPage = () => {
 
       <section className="relative py-24 pb-40 bg-white ">
         <h1 className="max-w-6xl pb-12 mx-auto font-sans text-4xl font-bold opacity-50">
-          - editoriales que nos acompañan -
+          . Nos acompañan .
         </h1>
         <div className="mb-3">
           <Publishers />
@@ -276,7 +276,7 @@ const IndexPage = () => {
           }}
           type="secondary"
         >
-          Ver todas
+          Ver juegos por editoriales
           <FiChevronRight className="inline-block mt-1 ml-3" />
         </AwesomeButton>
         <Wave>
