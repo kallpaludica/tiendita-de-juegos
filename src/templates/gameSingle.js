@@ -2,7 +2,7 @@ import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import { kebabCase } from "lodash"
 import React from "react"
-import { AwesomeButton, AwesomeButtonSocial } from "react-awesome-button"
+import { AwesomeButtonSocial } from "react-awesome-button"
 import { Helmet } from "react-helmet"
 import { FaUserFriends } from "react-icons/fa"
 import { GiTabletopPlayers } from "react-icons/gi"
@@ -118,23 +118,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             <div className="relative flex flex-col w-full pt-3 md:pl-12">
               <GoBack />
 
-              <div className="flex flex-col items-start justify-start mt-6 text-lg text-center md:flex-row">
-                {post.publisher && (
-                  <div className="flex items-center justify-center text-lg">
-                    <Link
-                      to={`/tienda-de-juegos/editoriales/${kebabCase(
-                        post.publisher.slug
-                      )}`}
-                      className="flex flex-col py-1 mr-2"
-                      key={post.publisher.slug}
-                    >
-                      <b className="font-sans text-indigo-500 underline hover:text-indigo-800">
-                        Editorial {post.publisher.title}
-                      </b>
-                    </Link>
-                  </div>
-                )}
-              </div>
               <h1 className="w-full pt-2 pl-2 font-mono text-3xl text-left text-gray-800 md:pt-0 md:pl-0 md:text-5xl md:mb-3">
                 {post.title}
               </h1>
@@ -161,31 +144,58 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 )}
               </div>
 
-              {post.categoria && (
-                <div className="flex items-center justify-start text-lg text-center">
-                  {post.categoria.map((item, i) => (
-                    <Link
-                      to={`/tienda-de-juegos/modalidades/${kebabCase(
-                        item.slug
-                      )}`}
-                      className="flex flex-col py-1 pr-4 my-2 mr-2 rounded-full "
-                      key={i}
-                    >
-                      <div className="relative overflow-hidden transition-all duration-200 transform md:w-full hover:-translate-y-2">
-                        <Img
-                          title={item.title}
-                          className="w-16 h-16"
-                          alt={item.title}
-                          fixed={item.icono.fixed}
-                        />
-                      </div>
-                      <b className="font-sans text-orange-500 hover:text-orange-700">
-                        {item.title}
-                      </b>
-                    </Link>
-                  ))}
-                </div>
-              )}
+              <div className="flex items-center justify-start text-lg text-center">
+                {post.categoria && (
+                  <>
+                    {post.categoria.map((item, i) => (
+                      <Link
+                        to={`/tienda-de-juegos/modalidades/${kebabCase(
+                          item.slug
+                        )}`}
+                        className="flex flex-col py-1 pr-4 my-2 mr-2 rounded-full "
+                        key={i}
+                      >
+                        <div className="relative overflow-hidden transition-all duration-200 transform md:w-full hover:-translate-y-2">
+                          <Img
+                            title={item.title}
+                            className="w-16 h-16"
+                            alt={item.title}
+                            fixed={item.icono.fixed}
+                          />
+                        </div>
+                        <b className="font-sans text-orange-500 hover:text-orange-700">
+                          {item.title}
+                        </b>
+                      </Link>
+                    ))}
+                  </>
+                )}
+                {post.colecciones && (
+                  <>
+                    {post.colecciones.map((item, i) => (
+                      <Link
+                        to={`/tienda-de-juegos/colecciones/${kebabCase(
+                          item.slug
+                        )}`}
+                        className="flex flex-col py-1 pr-4 my-2 mr-2 rounded-full "
+                        key={i}
+                      >
+                        <div className="relative overflow-hidden transition-all duration-200 transform md:w-full hover:-translate-y-2">
+                          <Img
+                            title={item.title}
+                            className="w-16 h-16"
+                            alt={item.title}
+                            fixed={item.icono.fixed}
+                          />
+                        </div>
+                        <b className="font-sans text-blue-500 hover:text-blue-700">
+                          {item.title}
+                        </b>
+                      </Link>
+                    ))}
+                  </>
+                )}
+              </div>
 
               {post.GameGallery && (
                 <div className="hidden pl-6 my-6 mb-8 md:px-0">
@@ -194,18 +204,20 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               )}
 
               {post.stock ? (
-                <div className="flex flex-col-reverse justify-between w-full px-3 py-6 mb-0 bg-blue-100 border-t-2 border-b-2 border-blue-500 md:flex-row">
-                  <AwesomeButton
+                <div className="flex flex-col-reverse justify-between w-full px-3 py-6 mb-0 bg-green-100 border-t-2 border-b-2 border-green-500 md:flex-row">
+                  <AwesomeButtonSocial
                     href={`https://api.whatsapp.com/send?phone=5493876034627&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20encargar%20el%20juego%20${post.title}`}
                     target="_blank"
-                    type="primary"
+                    type="whatsapp"
                     rel="noopener noreferrer"
                   >
-                    Consultar encargo por Whatsapp
-                  </AwesomeButton>
-                  <div className="mb-3 font-sans text-2xl font-bold text-center text-blue-500 md:my-0 md:text-right">
-                    ${post.GameBuyPrice}
-                  </div>
+                    Hacenos tu consulta
+                  </AwesomeButtonSocial>
+                  {post.GameBuyPrice && (
+                    <div className="mb-3 font-sans text-2xl font-bold text-center text-blue-500 md:my-0 md:text-right">
+                      ${post.GameBuyPrice}
+                    </div>
+                  )}
                 </div>
               ) : (
                 <div className="flex flex-col-reverse justify-between w-full px-3 py-6 mb-0 bg-green-100 border-t-2 border-b-2 border-green-500 md:flex-row">
@@ -215,7 +227,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Hace tu pedido
+                    Hacenos tu consulta
                   </AwesomeButtonSocial>
                   <div className="mb-3 font-sans text-3xl font-bold text-center text-green-900 md:my-0 md:text-right">
                     ${post.GameBuyPrice}
@@ -223,8 +235,26 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 </div>
               )}
 
+              <div className="flex flex-col items-start justify-start mt-6 text-lg text-center md:flex-row">
+                {post.publisher && (
+                  <div className="flex items-center justify-center text-lg">
+                    <Link
+                      to={`/tienda-de-juegos/editoriales/${kebabCase(
+                        post.publisher.slug
+                      )}`}
+                      className="flex flex-col py-1 mr-2"
+                      key={post.publisher.slug}
+                    >
+                      <b className="font-sans text-indigo-500 underline hover:text-indigo-800">
+                        Editorial {post.publisher.title}
+                      </b>
+                    </Link>
+                  </div>
+                )}
+              </div>
+
               {post.GameAuthor && (
-                <div className="block mt-8 mb-4 font-sans text-base italic font-bold text-left text-gray-700 ">
+                <div className="block mt-1 mb-4 font-sans text-base italic font-bold text-left text-gray-700 ">
                   Creado por {post.GameAuthor}
                 </div>
               )}
@@ -283,7 +313,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </div>
         <div className="relative flex flex-col items-center w-full max-w-6xl px-2 pb-1 mx-auto mt-12 ">
           <h1 className="w-full max-w-6xl pt-3 pb-3 mx-auto font-mono text-3xl text-left text-blue-500 ">
-            Lo que se anda jugando
+            Los que se andan jugando
           </h1>
           <div className="w-full mx-auto mt-0">
             <GameSort />
@@ -317,7 +347,14 @@ export const pageQuery = graphql`
           url
         }
       }
-
+      colecciones {
+        title
+        icono {
+          fixed(width: 50, height: 50) {
+            ...GatsbyContentfulFixed
+          }
+        }
+      }
       categoria {
         title
         slug

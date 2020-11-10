@@ -18,6 +18,7 @@ const QueriesLastGamesComponent = () => {
             title
             articuloDestacado
             slug
+            stock
             GameBuyPrice
             GamePlayers
             GameDuration
@@ -52,5 +53,5 @@ const QueriesLastGamesComponent = () => {
 export default QueriesLastGamesComponent
 
 const Container = styled.div`
-  ${tw`grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto md:px-0 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4`}
+  ${tw`grid max-w-6xl grid-cols-1 gap-4 p-3 py-12 mx-auto md:px-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4`}
 `

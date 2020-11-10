@@ -11,8 +11,40 @@ a {
   /*background-image: none !important;*/
 }
 
+.bm-overlay + div {
+  background: white;
+  padding: 0;
+  position: fixed;
+  right: 0;
+  width: 120px;
+  height: 50px;
+  top: 18px;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  @apply rounded-tl-lg rounded-bl-lg;
+}
+
+.bm-overlay + div::before {
+  right: 60px;
+  position: absolute;
+  content: "Menu";
+  @apply font-sans text-lg;
+}
+
+@screen md {
+  .bm-overlay + div {
+    background: transparent;
+  }
+  .bm-overlay + div::before {
+    @apply hidden;
+  }
+}
+
 .home-hero {
-  min-height: 120vh;
+  min-height: 40vh;
 }
 
 @screen md {

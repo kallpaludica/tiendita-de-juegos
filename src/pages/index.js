@@ -17,6 +17,8 @@ import HomeHero from "../components/About/HomeHero"
 
 import "../components/AwsBtn.css"
 import Collections from "../components/Games/GameCollections"
+import { AiTwotoneHeart } from "react-icons/ai"
+import { FaComment } from "react-icons/fa"
 
 //import GameSort from "../components/Games/GameSort"
 import Publishers from "../components/Publishers/FeaturedPublishers"
@@ -38,6 +40,28 @@ const IndexPage = () => {
               fixed(width: 80, height: 80) {
                 ...GatsbyContentfulFixed
               }
+            }
+          }
+        }
+      }
+      allInstaNode(limit: 8, sort: { order: DESC, fields: likes }, skip: 6) {
+        edges {
+          node {
+            id
+            likes
+            comments
+            caption
+            mediaType
+            timestamp
+            original
+            thumbnails {
+              src
+              config_width
+              config_height
+            }
+            dimensions {
+              height
+              width
             }
           }
         }
@@ -85,16 +109,6 @@ const IndexPage = () => {
         </Wave>
       </div>
 
-      <section className="px-2 mt-2">
-        <div className="relative flex flex-col w-full max-w-6xl mx-auto border-b border-blue-500 border-dashed md:flex-row">
-          <h1 className="flex flex-col items-center w-full max-w-6xl pt-4 mx-auto font-mono text-3xl text-center text-blue-500 md:flex-row md:text-left ">
-            <AiFillShop className="mr-3 text-3xl text-blue-500 transform " />
-            Lo que se anda jugando
-          </h1>
-        </div>
-        <QueriesLastGames />
-      </section>
-
       <section className="pt-12">
         <Fade bottom delay={100}>
           <h1 className="font-mono text-2xl leading-tight text-center text-blue-500 md:text-4xl">
@@ -103,11 +117,82 @@ const IndexPage = () => {
         </Fade>
         <Collections />
       </section>
-      <section className="relative mt-6">
+
+      <section
+        className="py-24 mb-12 text-blue-200 bg-blue-100 pattern-grid-lg"
+        id="redes"
+      >
+        <Fade bottom delay={100}>
+          <h1 className="pt-12 pb-12 font-sans text-3xl font-bold leading-tight text-center text-gray-800 md:text-4xl">
+            Seguinos en <br />
+            <a
+              href="https://www.instagram.com/kallpaludica/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 underline hover:opacity-75 hover:text-blue-500"
+            >
+              instagram
+            </a>{" "}
+            y{" "}
+            <a
+              href="https://www.facebook.com/kallpaludicaa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 underline hover:opacity-75 hover:text-blue-500"
+            >
+              facebook
+            </a>
+          </h1>
+        </Fade>
+        <div className="grid max-w-6xl grid-cols-2 gap-2 mx-auto md:grid-cols-4 ">
+          {data.allInstaNode.edges.map(({ node }) => {
+            return (
+              <div className="relative">
+                <a
+                  href="https://www.instagram.com/kallpaludica/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute z-40 flex items-center justify-center w-full h-full transition-all duration-200 transform opacity-0 hover:opacity-100"
+                >
+                  <div className="flex flex-col items-center justify-center w-12 h-12 px-2 m-3 font-sans text-xl font-bold text-white ">
+                    <AiTwotoneHeart className="inline-block " />
+                    {node.likes}
+                  </div>
+
+                  <div className="hidden m-3 font-sans text-xl font-bold text-white">
+                    <FaComment className="inline-block " />
+                    {node.comments}
+                  </div>
+                </a>
+
+                <div className="w-full h-64 overflow-hidden bg-teal-800 ">
+                  <img
+                    src={node.original}
+                    className="object-cover w-full h-full opacity-75 "
+                    alt="Los que se andan jugando"
+                  />
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      <section className="px-2 mt-2">
+        <div className="relative flex-col hidden w-full max-w-6xl mx-auto md:flex-row">
+          <h1 className="flex flex-col items-center w-full max-w-6xl pt-4 mx-auto font-mono text-3xl text-center text-blue-500 ">
+            <AiFillShop className="mr-3 text-3xl text-blue-500 transform " />
+            Los que se andan jugando
+          </h1>
+        </div>
+        <QueriesLastGames />
+      </section>
+
+      <section className="relative hidden py-24 mt-6">
         <h1 className="font-mono text-2xl leading-tight text-center text-orange-500 md:text-4xl">
-          Algunas modalidades de juegos
+          Varias modalidades para elegir
         </h1>
-        <div className="grid max-w-6xl grid-cols-2 gap-6 mx-auto my-12 font-sans text-center text-gray-800 bg-white md:grid-cols-4 md:flex-row">
+        <div className="grid max-w-4xl grid-cols-2 gap-6 mx-auto my-12 font-sans text-center text-gray-800 bg-white md:grid-cols-4 md:flex-row">
           {data.allContentfulCategoriaDelJuego.edges.map(({ node }) => {
             return (
               <Link
@@ -133,14 +218,14 @@ const IndexPage = () => {
           })}
         </div>
       </section>
-      <section className="px-6 py-10 mt-12 bg-yellow-100">
+      <section className="px-6 py-24 mt-12 text-orange-200 bg-orange-100 pattern-grid-lg">
         <Fade delay={100}>
           <div className="flex justify-center max-w-lg mx-auto">
             <div id="kallpa-Potencia" style={{ width: 150, height: 150 }} />
           </div>
         </Fade>
 
-        <div className="max-w-lg mx-auto mb-5">
+        <div className="max-w-xl mx-auto mb-5">
           <Fade bottom delay={100}>
             <h1 className="font-mono text-2xl leading-tight text-center text-orange-600 md:text-4xl">
               <span className="relative inline-block transform -translate-y-2">
@@ -152,11 +237,11 @@ const IndexPage = () => {
               </span>
             </h1>
           </Fade>
-
           <Fade bottom delay={100}>
-            <h2 className="pt-6 font-sans text-2xl text-center text-indigo-900">
-              Somos un entramado donde nos encontramos caminando en relación al
-              juego, el aprendizaje y la recreación.
+            <h2 className="pt-6 font-sans text-xl text-center text-indigo-900">
+              Fomentamos vínculos saludables, pensados desde el juego y la
+              lúdica, donde cada quien pueda desarrollarse desde la diversidad e
+              integración como la base de la construcción.
             </h2>
           </Fade>
         </div>
@@ -166,17 +251,21 @@ const IndexPage = () => {
             action={() => {
               navigate(`/quienes-somos`)
             }}
-            type="secondary"
+            type="primary"
           >
-            Quienes somos
+            Conocé quienes somos
             <FiChevronRight className="inline-block mt-1 ml-3" />
           </AwesomeButton>
         </Fade>
       </section>
 
+      <section>
+        <Contact />
+      </section>
+
       <section className="relative py-24 pb-40 bg-white ">
-        <h1 className="max-w-6xl pb-12 mx-auto font-mono text-4xl font-bold">
-          Editoriales
+        <h1 className="max-w-6xl pb-12 mx-auto font-sans text-4xl font-bold opacity-50">
+          - editoriales que nos acompañan -
         </h1>
         <div className="mb-3">
           <Publishers />
@@ -187,7 +276,7 @@ const IndexPage = () => {
           }}
           type="secondary"
         >
-          Ver todas las editoriales
+          Ver todas
           <FiChevronRight className="inline-block mt-1 ml-3" />
         </AwesomeButton>
         <Wave>
@@ -213,9 +302,6 @@ const IndexPage = () => {
             ></path>
           </svg>
         </Wave>
-      </section>
-      <section>
-        <Contact />
       </section>
     </Layout>
   )

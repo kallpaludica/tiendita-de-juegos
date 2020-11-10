@@ -5,6 +5,8 @@ import { AwesomeButton } from "react-awesome-button"
 import BackgroundSlider from "../HomeSlider"
 import TextLoop from "react-text-loop"
 import { Link } from "gatsby"
+import AnchorLink from "react-anchor-link-smooth-scroll"
+import { BsChevronDoubleDown } from "react-icons/bs"
 
 const HomeHeroCompoent = () => {
   return (
@@ -12,12 +14,12 @@ const HomeHeroCompoent = () => {
       <div className="relative z-50 flex flex-col items-center justify-start w-full py-20 pt-12">
         <section className="container flex flex-col flex-1 h-full mx-auto">
           <div className="flex flex-col flex-1 w-full h-full max-w-6xl px-3 mx-auto">
-            <div className="flex items-start flex-1 pb-12">
+            <div className="flex items-start flex-1 pb-2">
               <div className="flex items-center flex-1 max-w-xl py-8 font-mono">
                 <div className="col-span-2 text-left">
                   <h1 className="text-3xl leading-9 text-left text-white md:text-4xl">
                     Tienda de juegos{" "}
-                    <TextLoop interval={2500} fade={true}>
+                    <TextLoop interval={3000} fade={true}>
                       <Link
                         to={`/tienda-de-juegos/colecciones/familiares`}
                         className="text-blue-300 hover:text-white hover:underline"
@@ -65,13 +67,14 @@ const HomeHeroCompoent = () => {
                       </AwesomeButton>
                     </div>
                   </div>
-                  <p className="block pt-6 font-sans text-xl text-left text-white transition-all duration-200 transform opacity-75 hover:opacity-100">
-                    <Link
-                      to={`/quienes-somos`}
-                      className="inline-block text-white underline hover:text-white"
+                  <p className="block pt-8 font-sans text-xl text-left text-white transition-all duration-200 transform opacity-100">
+                    <AnchorLink
+                      className="inline-block text-white hover:text-white"
+                      href="#redes"
                     >
-                      Compartir la potencia de jugar.
-                    </Link>
+                      <BsChevronDoubleDown className="inline-block mr-2 text-3xl" />
+                      Compartimos la potencia de jugar.
+                    </AnchorLink>
                   </p>
                 </div>
               </div>
@@ -79,7 +82,7 @@ const HomeHeroCompoent = () => {
           </div>
         </section>
       </div>
-      <div style={{ opacity: 0.95 }}>
+      <div style={{ opacity: 0.2 }}>
         <BackgroundSlider />
       </div>
       <div style={{ opacity: 0.35 }}>
@@ -88,12 +91,18 @@ const HomeHeroCompoent = () => {
           transition={2}
           duration={5}
           images={[
-            "dafault-kallpa.jpg",
-            "juegos.png",
-            "47.png",
-            "23.png",
-            "29.png",
-            "3.png",
+            "home-slider-1.jpg",
+            "home-slider-2.jpg",
+            "home-slider-3.jpg",
+            "home-slider-4.jpg",
+            "home-slider-5.jpg",
+            "home-slider-6.jpg",
+            "home-slider-7.jpg",
+            "home-slider-8.jpg",
+            "home-slider-9.jpg",
+            "home-slider-10.jpg",
+            "home-slider-11.jpg",
+            "home-slider-12.jpg",
           ]}
           query={useStaticQuery(graphql`
             query {

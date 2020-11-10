@@ -19,6 +19,7 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
     <Layout location={location}>
       <SEO title={collection.title} />
       <HeroWave
+        heading={collection.title}
         pattern="bg-blue-600 text-blue-500 h-64"
         svg="M0,224L80,240C160,256,320,288,480,277.3C640,267,800,213,960,202.7C1120,192,1280,224,1360,240L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
       />
@@ -27,7 +28,6 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
           <GamesAside />
         </Aside>
         <Main>
-          <Title>{collection.title}</Title>
           <Subtitle>
             {collection.CollectionDescription.CollectionDescription}
           </Subtitle>
@@ -87,7 +87,7 @@ const Title = styled.h1`
 `
 
 const Subtitle = styled.h2`
-  ${tw`w-full pb-1 m-0 font-sans text-xl text-left text-gray-800`}
+  ${tw`w-full pb-1 pl-3 m-0 font-sans text-xl text-left text-gray-800`}
 `
 
 const PageNav = styled.nav`
@@ -120,6 +120,11 @@ export const pageQuery = graphql`
       id
       title
       slug
+      childContentfulColeccionesCollectionDescriptionTextNode {
+        childMarkdownRemark {
+          html
+        }
+      }
       CollectionDescription {
         CollectionDescription
       }

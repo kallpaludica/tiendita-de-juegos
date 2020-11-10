@@ -3,11 +3,14 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import React, { useEffect } from "react"
 import lottie from "lottie-web"
+import AnchorLink from "react-anchor-link-smooth-scroll"
 
 import AnimatedWhatsapp from "../animations/whatsapp.json"
 import Sidebar from "../components/Sidebar"
 import Header from "../components/Header"
 import { AiOutlineHeart } from "react-icons/ai"
+import { BsFillTriangleFill } from "react-icons/bs"
+
 import { HiCode } from "react-icons/hi"
 import SimpleReactLightbox from "simple-react-lightbox"
 import tw from "twin.macro"
@@ -36,6 +39,7 @@ const Layout = ({ location, children }) => {
     <>
       <Sidebar />
       <Header siteTitle={data.site.siteMetadata.title} />
+      <div id="top"></div>
       <div className="app-container">
         <SimpleReactLightbox>
           <main className="text-center bg-white ">{children}</main>
@@ -66,9 +70,15 @@ const Layout = ({ location, children }) => {
           </Inner>
         </Stn>
       </div>
+      <AnchorLink
+        className="fixed bottom-0 left-0 z-50 p-4 m-4 font-mono text-xl text-white bg-orange-500 rounded-full hover:text-orange-300"
+        href="#top"
+      >
+        <BsFillTriangleFill />
+      </AnchorLink>
       <ReactTooltip place="left" type="dark" effect="solid" />
       <a
-        className="fixed bottom-0 right-0 p-1 mb-3 mr-3 overflow-hidden transition-all duration-500 rounded-full hover:bg-green-600 hover:text-white"
+        className="fixed bottom-0 right-0 z-50 p-1 mb-3 mr-3 overflow-hidden transition-all duration-500 rounded-full hover:bg-green-600 hover:text-white"
         target="_blank"
         rel="noopener noreferrer"
         title="Consultas por Whatsapp"

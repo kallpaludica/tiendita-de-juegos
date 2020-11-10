@@ -32,14 +32,14 @@ const GameCollectionComponent = () => {
         <div className="grid grid-cols-2 gap-6 my-12 font-sans text-gray-800 md:grid-cols-4">
           {data.collections.edges.map(({ node }) => {
             return (
-              <div className="flex flex-col text-center">
+              <div className="flex flex-col p-3 text-center transition-all duration-200 transform shadow-xl hover:shadow-2xl hover:-translate-y-2">
                 <Link
                   key={node.slug}
                   to={`/tienda-de-juegos/colecciones/${kebabCase(node.slug)}/`}
-                  className="flex flex-col justify-center text-2xl font-bold text-blue-500 "
+                  className="flex flex-col justify-center text-lg font-bold text-blue-500 "
                 >
                   {node.icono && (
-                    <div className="relative overflow-hidden text-center transition-all duration-200 transform md:w-full hover:-translate-y-2">
+                    <div className="relative overflow-hidden text-center md:w-full ">
                       <Img
                         title={node.title}
                         className="w-full"
@@ -48,13 +48,17 @@ const GameCollectionComponent = () => {
                       />
                     </div>
                   )}
-                  <span className="text-blue-500 hover:underline">
-                    {node.title}
-                  </span>
+                  <span className="text-blue-500">{node.title}</span>
                 </Link>
-                <p className="font-sans text-xl">
+                <p className="h-16 font-sans text-base">
                   {node.CollectionDescription.CollectionDescription}
                 </p>
+                <Link
+                  to={`/tienda-de-juegos/colecciones/${kebabCase(node.slug)}/`}
+                  className="px-2 py-2 text-white bg-blue-500 rounded-sm hover:bg-blue-600 hover:text-white"
+                >
+                  Ver {node.title}
+                </Link>
               </div>
             )
           })}

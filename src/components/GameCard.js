@@ -15,32 +15,38 @@ import { AiFillCheckCircle } from "react-icons/ai"
 import Flash from "react-reveal/Flash"
 export default ({ card }) => (
   <GameCard>
-    <Link
-      to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
-      className="flex md:flex-col"
-    >
+    <div className="flex md:flex-col">
       {card.imagenDestacada ? (
-        <div className="image">
+        <Link
+          to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
+          className="image"
+        >
           <Img
             title={card.title}
             className="w-full h-full"
             alt={card.title}
             fluid={card.imagenDestacada.fluid}
           />
-        </div>
+        </Link>
       ) : (
-        <div className="image">
+        <Link
+          to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
+          className="image"
+        >
           <img
             className="w-full h-full mx-auto my-6 opacity-25 "
             alt="Kallpa Lúdica"
             src={AboutImage}
           />
-        </div>
+        </Link>
       )}
       <div className="relative flex flex-col w-full px-0 pb-0 font-sans text-left">
-        <h3 className="block px-2 pt-3 pb-1 font-sans text-base font-bold leading-6 sm:pb-0 md:pb-0 ">
+        <Link
+          to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
+          className="block px-2 pt-3 pb-1 font-sans text-base font-bold leading-6 sm:pb-0 md:pb-0 "
+        >
           {card.title}
-        </h3>
+        </Link>
         {card.stock ? (
           <b className="top-0 right-0 block px-2 text-xl font-bold text-blue-500 sm:py-1">
             ${card.GameBuyPrice}
@@ -79,21 +85,21 @@ export default ({ card }) => (
             </div>
           </div>
         )}
-        {card.stock ? (
-          <div className="bottom-0 left-0 right-0 flex items-center justify-between p-2 px-2 font-sans text-sm font-bold text-left text-blue-800 transition-all duration-500 md:text-base md:bg-blue-300 hover:text-white hover:bg-blue-700">
-            <span>Por encargo</span>
-            <FaShippingFast className="inline-block mb-1 " />
-          </div>
-        ) : (
-          <div className="bottom-0 left-0 right-0 flex items-center justify-between p-2 px-2 font-sans text-sm font-bold text-left text-green-800 transition-all duration-500 md:text-base md:bg-green-100 hover:text-white hover:bg-green-700">
-            <span>Stock disponible</span>
-            <Flash forever duration={5000}>
+        <Link to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}>
+          {card.stock ? (
+            <div className="bottom-0 left-0 right-0 flex items-center justify-between p-2 px-2 font-sans text-sm font-bold text-left text-blue-600 transition-all duration-500 md:text-base hover:text-white hover:bg-blue-500 ">
+              <span>Pedido por encargo</span>
+              <FaShippingFast className="inline-block mb-1 " />
+            </div>
+          ) : (
+            <div className="bottom-0 left-0 right-0 flex items-center justify-between p-2 px-2 font-sans text-sm font-bold text-left text-green-600 transition-all duration-500 md:text-base hover:text-white hover:bg-green-500 ">
+              <span>Consultar juego</span>
               <AiFillCheckCircle className="inline-block mb-1 " />
-            </Flash>
-          </div>
-        )}
+            </div>
+          )}
+        </Link>
       </div>
-    </Link>
+    </div>
 
     <div className="hidden">
       <Toggle

@@ -20,7 +20,7 @@ const GamesSort = () => {
           className="game-available"
         >
           <AiOutlineCheck className="mx-auto mr-1 text-base " />
-          En Stock
+          Disponibles
         </Link>
         <Link
           activeClassName="text-blue-100 bg-blue-500 "
