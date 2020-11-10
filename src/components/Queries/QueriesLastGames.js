@@ -9,7 +9,7 @@ const QueriesLastGamesComponent = () => {
     query QueriesLastGamesQuery {
       GamesSorted: allContentfulArticulos(
         sort: { fields: [GameBuyPrice], order: ASC }
-        limit: 6
+        limit: 8
         filter: { articuloDestacado: { eq: "destacar" } }
       ) {
         edges {
@@ -53,5 +53,5 @@ const QueriesLastGamesComponent = () => {
 export default QueriesLastGamesComponent
 
 const Container = styled.div`
-  ${tw`grid max-w-4xl grid-cols-1 gap-4 p-3 py-12 mx-auto md:px-0 sm:grid-cols-2 md:grid-cols-3 `}
+  ${tw`grid max-w-6xl grid-cols-1 gap-4 p-3 py-12 mx-auto md:px-0 sm:grid-cols-2 md:grid-cols-4 `}
 `

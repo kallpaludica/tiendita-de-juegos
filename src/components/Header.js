@@ -12,8 +12,8 @@ import "./header.css"
 
 const routesLeft = [
   {
-    title: "Tiendita de juegos",
-    slug: "/tienda-de-juegos/disponibles",
+    title: "Tienda de juegos",
+    slug: "/tienda-de-juegos",
     icon: <AiFillShop className="text-xl " />,
   },
   /*
@@ -108,7 +108,7 @@ const HeaderContainer = styled.header`
   ${tw`z-50 px-2 py-2 transition-all duration-500 md:py-2 `}
 
   body.ingame & a {
-    ${tw`text-gray-800`} !important
+    ${tw`text-gray-800`}
   }
 `
 

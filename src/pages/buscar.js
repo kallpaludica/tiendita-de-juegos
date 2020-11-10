@@ -1,9 +1,9 @@
-import { graphql, Link } from "gatsby"
-import { kebabCase } from "lodash"
+import { graphql } from "gatsby"
 import React from "react"
 import HeroWave from "../components/HeroWave"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
+import GameCard from "../components/GameCardColumn"
 
 const SearchIndex = (props) => {
   const { data } = props
@@ -54,7 +54,7 @@ const SearchIndex = (props) => {
         svg="M0,224L80,240C160,256,320,288,480,277.3C640,267,800,213,960,202.7C1120,192,1280,224,1360,240L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
       />
       <div className="w-full bg-white">
-        <div className="relative w-full max-w-2xl py-2 m-auto mb-2 text-center bg-white searchBox md:pb-6 animated fadeIn slower">
+        <div className="relative w-full max-w-xl py-2 m-auto mb-2 text-center bg-white searchBox md:pb-6 animated fadeIn slower">
           <span className="absolute top-0 right-0 p-6 py-5 font-sans text-lg font-bold text-gray-400">
             {totales} juegos
           </span>
@@ -69,29 +69,9 @@ const SearchIndex = (props) => {
           />
         </div>
 
-        <div className="flex flex-col w-full max-w-2xl mx-auto">
+        <div className="flex flex-col w-full max-w-xl mx-auto">
           {posts.map(({ node }) => {
-            const { id, slug, title, GameBuyPrice, stock } = node
-
-            return (
-              <article
-                key={id}
-                className="flex justify-between w-full p-6 my-3 text-center transition-all duration-500 transform bg-white shadow-md animated fadeIn hover:-translate-y-1 hover:shadow-2xl"
-              >
-                <Link
-                  to={`/tienda-de-juegos/${kebabCase(slug)}/`}
-                  className="font-sans text-xl font-bold"
-                >
-                  {title}
-                </Link>
-                <div className="text-xl font-bold text-green-500">
-                  <small className="inline-block text-gray-500">{stock}</small>
-                  <span className="inline-block w-20 text-right">
-                    ${GameBuyPrice}
-                  </span>
-                </div>
-              </article>
-            )
+            return <GameCard card={node} key={node.slug} />
           })}
         </div>
       </div>
@@ -103,7 +83,7 @@ export default SearchIndex
 
 export const pageQuery = graphql`
   query {
-    allContentfulArticulos(sort: { fields: [title], order: ASC }) {
+    allContentfulArticulos(sort: { fields: [GameBuyPrice], order: ASC }) {
       edges {
         node {
           id

@@ -17,8 +17,6 @@ import HomeHero from "../components/About/HomeHero"
 
 import "../components/AwsBtn.css"
 import Collections from "../components/Games/GameCollections"
-import { AiTwotoneHeart } from "react-icons/ai"
-import { FaComment } from "react-icons/fa"
 
 //import GameSort from "../components/Games/GameSort"
 import Publishers from "../components/Publishers/FeaturedPublishers"
@@ -128,66 +126,6 @@ const IndexPage = () => {
         <QueriesLastGames />
       </section>
 
-      <section
-        className="py-24 mb-0 text-blue-200 bg-blue-100 pattern-grid-lg"
-        id="redes"
-      >
-        <Fade bottom delay={100}>
-          <h1 className="pt-12 pb-12 font-sans text-3xl font-bold leading-tight text-center text-gray-800 md:text-4xl">
-            Seguinos en <br />
-            <a
-              href="https://www.instagram.com/kallpaludica/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 underline hover:opacity-75 hover:text-blue-500"
-            >
-              instagram
-            </a>{" "}
-            y{" "}
-            <a
-              href="https://www.facebook.com/kallpaludicaa"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 underline hover:opacity-75 hover:text-blue-500"
-            >
-              facebook
-            </a>
-          </h1>
-        </Fade>
-        <div className="grid max-w-5xl grid-cols-2 gap-1 mx-auto md:grid-cols-4 ">
-          {data.allInstaNode.edges.map(({ node }) => {
-            return (
-              <div className="relative">
-                <a
-                  href="https://www.instagram.com/kallpaludica/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute z-40 flex items-center justify-center w-full h-full transition-all duration-200 transform opacity-0 hover:opacity-100"
-                >
-                  <div className="flex flex-col items-center justify-center w-12 h-12 px-2 m-3 font-sans text-xl font-bold text-white ">
-                    <AiTwotoneHeart className="inline-block " />
-                    {node.likes}
-                  </div>
-
-                  <div className="hidden m-3 font-sans text-xl font-bold text-white">
-                    <FaComment className="inline-block " />
-                    {node.comments}
-                  </div>
-                </a>
-
-                <div className="w-full h-64 overflow-hidden bg-teal-800 ">
-                  <img
-                    src={node.original}
-                    className="object-cover w-full h-full opacity-75 "
-                    alt="Lo que se anda jugando"
-                  />
-                </div>
-              </div>
-            )
-          })}
-        </div>
-      </section>
-
       <section className="relative hidden py-24 mt-6">
         <h1 className="font-mono text-2xl leading-tight text-center text-orange-500 md:text-4xl">
           Varias modalidades para elegir
@@ -259,26 +197,8 @@ const IndexPage = () => {
         </Fade>
       </section>
 
-      <section>
+      <section className="relative">
         <Contact />
-      </section>
-
-      <section className="relative py-24 pb-40 bg-white ">
-        <h1 className="max-w-6xl pb-12 mx-auto font-sans text-4xl font-bold opacity-50">
-          . Nos acompañan .
-        </h1>
-        <div className="mb-3">
-          <Publishers />
-        </div>
-        <AwesomeButton
-          action={() => {
-            navigate(`/tienda-de-juegos/editoriales`)
-          }}
-          type="secondary"
-        >
-          Ver juegos por editoriales
-          <FiChevronRight className="inline-block mt-1 ml-3" />
-        </AwesomeButton>
         <Wave>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <defs xmlns="http://www.w3.org/2000/svg">
@@ -302,6 +222,24 @@ const IndexPage = () => {
             ></path>
           </svg>
         </Wave>
+      </section>
+
+      <section className="relative hidden py-24 pb-40 bg-white ">
+        <h1 className="max-w-6xl pb-12 mx-auto font-sans text-4xl font-bold opacity-50">
+          . Nos acompañan .
+        </h1>
+        <div className="mb-3">
+          <Publishers />
+        </div>
+        <AwesomeButton
+          action={() => {
+            navigate(`/tienda-de-juegos/editoriales`)
+          }}
+          type="secondary"
+        >
+          Ver juegos por editoriales
+          <FiChevronRight className="inline-block mt-1 ml-3" />
+        </AwesomeButton>
       </section>
     </Layout>
   )

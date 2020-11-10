@@ -59,11 +59,11 @@ const HomeHeroCompoent = () => {
                     <div className="mr-3 ">
                       <AwesomeButton
                         action={() => {
-                          navigate(`/tienda-de-juegos/disponibles`)
+                          navigate(`/tienda-de-juegos`)
                         }}
                         type="primary"
                       >
-                        Ingresar a la tiendita
+                        Ingresar a la Tienda
                         <AiOutlineArrowRight className="inline-block ml-2 text-2xl" />
                       </AwesomeButton>
                     </div>

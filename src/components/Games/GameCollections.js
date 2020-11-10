@@ -32,7 +32,7 @@ const GameCollectionComponent = () => {
         <div className="grid grid-cols-2 gap-2 my-12 font-sans text-gray-800 md:grid-cols-4">
           {data.collections.edges.map(({ node }) => {
             return (
-              <div className="flex flex-col p-1 text-center transition-all duration-200 transform shadow-xl hover:shadow-2xl hover:-translate-y-2">
+              <div className="flex flex-col text-center transition-all duration-200 transform rounded-md shadow-xl hover:shadow-2xl hover:-translate-y-2">
                 <Link
                   key={node.slug}
                   to={`/tienda-de-juegos/colecciones/${kebabCase(node.slug)}/`}
@@ -50,7 +50,7 @@ const GameCollectionComponent = () => {
                   )}
                   <span className="text-blue-500">{node.title}</span>
                 </Link>
-                <p className="h-16 font-sans text-base">
+                <p className="h-16 p-2 px-3 font-sans text-base">
                   {node.CollectionDescription.CollectionDescription}
                 </p>
                 <Link

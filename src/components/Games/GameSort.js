@@ -15,16 +15,8 @@ const GamesSort = () => {
     <>
       <Sort>
         <Link
-          activeClassName="text-blue-100 bg-blue-500 border-blue-500"
-          to="/tienda-de-juegos/disponibles"
-          className="game-available"
-        >
-          <AiOutlineCheck className="mx-auto mr-1 text-base " />
-          Disponibles
-        </Link>
-        <Link
           activeClassName="text-blue-100 bg-blue-500 "
-          to="/tienda-de-juegos/"
+          to="/tienda-de-juegos"
         >
           <AiOutlineSortAscending
             activeClassName="text-blue-100 "

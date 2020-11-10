@@ -8,6 +8,9 @@ import { RiWhatsappLine } from "react-icons/ri"
 import tw from "twin.macro"
 import reactLogo from "../../animations/ogam.json"
 import FormatText from "../wysiwyg"
+import Fade from "react-reveal/Fade"
+
+import LikesInstagram from "../Queries/LikesInstagram"
 
 const ContactComponent = () => {
   const data = useStaticQuery(graphql`
@@ -112,6 +115,34 @@ const ContactComponent = () => {
           <b>Mail</b>
         </a>
       </Socials>
+      <section
+        className="py-24 mb-0 text-blue-200 bg-blue-100 pattern-grid-lg"
+        id="redes"
+      >
+        <Fade bottom delay={100}>
+          <h1 className="pt-12 pb-12 font-sans text-3xl font-bold leading-tight text-center text-gray-800 md:text-4xl">
+            Seguinos en <br />
+            <a
+              href="https://www.instagram.com/kallpaludica/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 underline hover:opacity-75 hover:text-blue-500"
+            >
+              instagram
+            </a>{" "}
+            y{" "}
+            <a
+              href="https://www.facebook.com/kallpaludicaa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 underline hover:opacity-75 hover:text-blue-500"
+            >
+              facebook
+            </a>
+          </h1>
+        </Fade>
+        <LikesInstagram />
+      </section>
     </>
   )
 }

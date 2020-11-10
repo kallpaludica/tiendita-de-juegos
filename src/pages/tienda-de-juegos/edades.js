@@ -99,7 +99,7 @@ const EdadesPage = (props) => {
 
   return (
     <Layout>
-      <SEO title="Tiendita de juegos" />
+      <SEO title="Tienda de juegos" />
       <Helmet>
         <body className="games" />
       </Helmet>
@@ -112,7 +112,7 @@ const EdadesPage = (props) => {
           <PageSticky>
             <MainTitle>Por Edades</MainTitle>
           </PageSticky>
-          <div className="relative flex flex-col justify-start border-b-2 border-blue-300 md:flex-row sm:py-0 sm:pt-0">
+          <div className="relative flex flex-col justify-start border-b-2 border-blue-300 md:flex-row sm:py-0 sm:pt-0 md:pl-2">
             <GameSort />
             <button
               className="relative bottom-0 right-0 flex items-center justify-center px-4 py-3 text-white bg-blue-500 outline-none md:absolute focus:outline-none hover:bg-blue-600"
@@ -184,6 +184,6 @@ const Main = styled.section`
 `
 
 const MainTitle = styled.h2`
-  ${tw`font-sans text-3xl font-bold text-center md:text-left `}
+  ${tw`font-sans text-3xl font-bold text-left `}
   ${tw`pb-6 text-white md:pl-3`}
 `

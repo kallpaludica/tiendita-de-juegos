@@ -71,7 +71,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       </Helmet>
 
       <div className="w-full py-12 bg-orange-100">
-        <div className="max-w-6xl mx-auto mt-16 bg-white shadow-lg">
+        <div className="max-w-6xl mx-auto mt-16 bg-white shadow-lg ">
+          <div className="p-4 pb-0">
+            <GoBack />
+          </div>
           <div className="flex flex-col p-5 pt-6 sm:flex-row">
             <div className="w-full md:w-2/3">
               <SRLWrapper options={options}>
@@ -116,8 +119,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </SRLWrapper>
             </div>
             <div className="relative flex flex-col w-full pt-3 md:pl-12">
-              <GoBack />
-
               <h1 className="w-full pt-2 pl-2 font-mono text-3xl text-left text-gray-800 md:pt-0 md:pl-0 md:text-5xl md:mb-3">
                 {post.title}
               </h1>
@@ -145,31 +146,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </div>
 
               <div className="flex items-center justify-start text-lg text-center">
-                {post.categoria && (
-                  <>
-                    {post.categoria.map((item, i) => (
-                      <Link
-                        to={`/tienda-de-juegos/modalidades/${kebabCase(
-                          item.slug
-                        )}`}
-                        className="flex flex-col py-1 pr-4 my-2 mr-2 rounded-full "
-                        key={i}
-                      >
-                        <div className="relative overflow-hidden transition-all duration-200 transform md:w-full hover:-translate-y-2">
-                          <Img
-                            title={item.title}
-                            className="w-16 h-16"
-                            alt={item.title}
-                            fixed={item.icono.fixed}
-                          />
-                        </div>
-                        <b className="font-sans text-orange-500 hover:text-orange-700">
-                          {item.title}
-                        </b>
-                      </Link>
-                    ))}
-                  </>
-                )}
                 {post.colecciones && (
                   <>
                     {post.colecciones.map((item, i) => (
@@ -203,23 +179,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 </div>
               )}
 
-              {post.stock ? (
-                <div className="flex flex-col-reverse justify-between w-full px-3 py-6 mb-0 bg-green-100 border-t-2 border-b-2 border-green-500 md:flex-row">
-                  <AwesomeButtonSocial
-                    href={`https://api.whatsapp.com/send?phone=5493876034627&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20encargar%20el%20juego%20${post.title}`}
-                    target="_blank"
-                    type="whatsapp"
-                    rel="noopener noreferrer"
-                  >
-                    Hacenos tu consulta
-                  </AwesomeButtonSocial>
-                  {post.GameBuyPrice && (
-                    <div className="mb-3 font-sans text-2xl font-bold text-center text-blue-500 md:my-0 md:text-right">
-                      ${post.GameBuyPrice}
-                    </div>
-                  )}
-                </div>
-              ) : (
+              {post.GameBuyPrice && (
                 <div className="flex flex-col-reverse justify-between w-full px-3 py-6 mb-0 bg-green-100 border-t-2 border-b-2 border-green-500 md:flex-row">
                   <AwesomeButtonSocial
                     type="whatsapp"
@@ -349,6 +309,7 @@ export const pageQuery = graphql`
       }
       colecciones {
         title
+        slug
         icono {
           fixed(width: 50, height: 50) {
             ...GatsbyContentfulFixed

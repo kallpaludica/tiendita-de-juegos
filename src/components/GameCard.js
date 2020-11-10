@@ -15,15 +15,15 @@ import { AiFillCheckCircle } from "react-icons/ai"
 import Flash from "react-reveal/Flash"
 export default ({ card }) => (
   <GameCard>
-    <div className="flex md:flex-col">
+    <div className="flex sm:flex-col">
       {card.imagenDestacada ? (
         <Link
           to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
-          className="image"
+          className="bg-white image"
         >
           <Img
             title={card.title}
-            className="w-full h-full"
+            className="object-contain w-32 h-32 sm:h-48 sm:w-full"
             alt={card.title}
             fluid={card.imagenDestacada.fluid}
           />
@@ -40,36 +40,27 @@ export default ({ card }) => (
           />
         </Link>
       )}
-      <div className="relative flex flex-col w-full px-0 pb-0 font-sans text-left">
+      <div className="relative flex flex-col w-full px-0 pb-0 font-sans text-left bg-white">
         <Link
           to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
-          className="block px-2 pt-3 pb-1 font-sans text-base font-bold leading-6 sm:pb-0 md:pb-0 "
+          className="block px-2 pt-3 pb-1 pr-12 font-sans text-base font-bold leading-6 hover:text-blue-600 sm:pb-0 md:pb-3 "
         >
           {card.title}
         </Link>
-        {card.stock ? (
-          <b className="top-0 right-0 block px-2 text-xl font-bold text-blue-500 sm:py-1">
-            ${card.GameBuyPrice}
-          </b>
-        ) : (
-          <b className="top-0 right-0 block px-2 text-xl font-bold text-green-600 sm:py-1">
-            ${card.GameBuyPrice}
-          </b>
-        )}
 
         {card.GameAges && (
           <div className="hidden w-full pt-1 text-center game-ages">
             <div className="flex justify-start pb-1 font-sans text-lg font-bold text-left text-gray-800 md:px-2 ">
-              <div className="flex flex-1 text-base opacity-75 md:px-3">
+              <div className="flex flex-1 text-base opacity-100">
                 {card.GameAges}+ años
               </div>
             </div>
           </div>
         )}
         {card.GameDuration && (
-          <div className="hidden w-full pt-1 text-center game-duration">
+          <div className="hidden w-full px-2 pt-1 text-center game-duration">
             <div className="flex justify-center pb-1 font-sans text-lg font-bold text-center text-gray-800 md:px-2 ">
-              <div className="flex flex-1 text-base opacity-75">
+              <div className="flex flex-1 text-base opacity-100">
                 Duración: {card.GameDuration}min.
               </div>
             </div>
@@ -85,18 +76,23 @@ export default ({ card }) => (
             </div>
           </div>
         )}
-        <Link to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}>
-          {card.stock ? (
-            <div className="bottom-0 left-0 right-0 flex items-center justify-between p-2 px-2 font-sans text-sm font-bold text-left text-blue-600 transition-all duration-500 md:text-base hover:text-white hover:bg-blue-500 ">
-              <span>Pedido por encargo</span>
-              <FaShippingFast className="inline-block mb-1 " />
-            </div>
-          ) : (
-            <div className="bottom-0 left-0 right-0 flex items-center justify-between p-2 px-2 font-sans text-sm font-bold text-left text-green-600 transition-all duration-500 md:text-base hover:text-white hover:bg-green-500 ">
-              <span>Consultar juego</span>
-              <AiFillCheckCircle className="inline-block mb-1 " />
-            </div>
-          )}
+        {card.stock && (
+          <div
+            className="absolute top-0 right-0 flex items-center justify-between p-2 px-2 m-1 my-2 font-sans text-sm font-bold text-left text-blue-600 transition-all duration-500 md:text-base hover:text-white hover:bg-blue-500 "
+            data-tip="Consultar stock"
+          >
+            <FaShippingFast className="inline-block mb-1 " />
+          </div>
+        )}
+        <Link
+          to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
+          tw=" border-t border-blue-200"
+        >
+          <div tw="flex items-center justify-between p-2 px-2 font-sans font-bold text-left text-blue-600 transition-all duration-500 bg-white text-lg hover:text-blue-500 hover:bg-blue-100">
+            <span>Ver mas</span>
+            <AiFillCheckCircle tw="hidden mb-1 " />
+            <b tw="block  font-bold text-blue-800 ">${card.GameBuyPrice}</b>
+          </div>
         </Link>
       </div>
     </div>
@@ -120,10 +116,10 @@ const GameCard = styled.div`
   ${tw`relative w-full mb-3 overflow-hidden transition-all duration-500 transform bg-white rounded-md shadow-lg hover:shadow-2xl md:max-w-md`}
 
   .image {
-    ${tw`relative w-full h-48 overflow-hidden transition-all duration-500 transform scale-90 md:h-64 md:w-48 md:w-full`}
+    ${tw`relative h-full transition-all duration-500 transform`}
   }
 
   .image:hover {
-    transform: scale(0.95);
+    transform: scale(1.06);
   }
 `
