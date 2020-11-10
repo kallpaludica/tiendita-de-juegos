@@ -122,7 +122,7 @@ const IndexPage = () => {
         <div className="relative flex flex-col w-full max-w-6xl mx-auto md:flex-row">
           <h1 className="flex flex-col items-center w-full max-w-6xl pt-4 mx-auto font-sans text-2xl leading-tight text-center text-gray-600 md:text-4xl">
             <AiFillShop className="mt-6 text-6xl text-blue-500 transform " />
-            lo que se andan jugando
+            Lo que se anda jugando
           </h1>
         </div>
         <QueriesLastGames />
@@ -179,7 +179,7 @@ const IndexPage = () => {
                   <img
                     src={node.original}
                     className="object-cover w-full h-full opacity-75 "
-                    alt="Los que se andan jugando"
+                    alt="Lo que se anda jugando"
                   />
                 </div>
               </div>

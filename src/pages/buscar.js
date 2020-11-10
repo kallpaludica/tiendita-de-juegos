@@ -3,6 +3,7 @@ import { kebabCase } from "lodash"
 import React from "react"
 import HeroWave from "../components/HeroWave"
 import SEO from "../components/seo"
+import Layout from "../components/layout"
 
 const SearchIndex = (props) => {
   const { data } = props
@@ -46,7 +47,7 @@ const SearchIndex = (props) => {
   const posts = hasSearchResults ? filteredData : allPosts
 
   return (
-    <>
+    <Layout>
       <SEO title={totales} />
       <HeroWave
         pattern="bg-teal-600 text-teal-500"
@@ -70,8 +71,7 @@ const SearchIndex = (props) => {
 
         <div className="flex flex-col w-full max-w-2xl mx-auto">
           {posts.map(({ node }) => {
-            const { id, slug, title, GameBuyPrice } = node
-            //const { description } = node.description
+            const { id, slug, title, GameBuyPrice, stock } = node
 
             return (
               <article
@@ -84,15 +84,18 @@ const SearchIndex = (props) => {
                 >
                   {title}
                 </Link>
-                <span className="text-xl font-bold text-green-500">
-                  ${GameBuyPrice}
-                </span>
+                <div className="text-xl font-bold text-green-500">
+                  <small className="inline-block text-gray-500">{stock}</small>
+                  <span className="inline-block w-20 text-right">
+                    ${GameBuyPrice}
+                  </span>
+                </div>
               </article>
             )
           })}
         </div>
       </div>
-    </>
+    </Layout>
   )
 }
 
@@ -111,8 +114,9 @@ export const pageQuery = graphql`
           GameDuration
           GameAuthor
           GameAges
-
+          stock
           imagenDestacada {
+            title
             fixed(width: 200, height: 230) {
               ...GatsbyContentfulFixed
             }

@@ -124,7 +124,7 @@ const AllPage = (props) => {
                 </animated.div>
                 <animated.div style={sortASD}>
                   De la A a la Z
-                  <AiOutlineArrowDown className="inline-block ml-1 text-lg" />
+                  <AiOutlineArrowDown className="inline-block ml-1 text-lg " />
                 </animated.div>
               </span>
             </button>
@@ -153,11 +153,11 @@ const AllPage = (props) => {
 export default AllPage
 
 const Container = styled.div`
-  ${tw`grid w-full grid-cols-1 gap-4 p-3 pt-6 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3`}
+  ${tw`grid w-full grid-cols-1 gap-4 p-3 pt-6 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4`}
 `
 
 const ContainerDesc = styled.div`
-  ${tw`grid w-full grid-cols-1 gap-4 p-3 pt-6 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3`}
+  ${tw`grid w-full grid-cols-1 gap-4 p-3 pt-6 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4`}
 `
 
 const PageSticky = styled.div`
@@ -169,7 +169,7 @@ const ContentSidebar = styled.div`
 `
 
 const Aside = styled.aside`
-  ${tw`hidden w-64 md:block `}
+  ${tw`hidden w-56 md:block `}
 `
 
 const Main = styled.section`

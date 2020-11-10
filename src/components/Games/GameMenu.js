@@ -13,8 +13,8 @@ const GamesAside = () => {
     <Aside>
       <h2 className="text-blue-500">Colecciones</h2>
       <QueryCollections />
-      <h2 className="text-blue-500">Modalidades</h2>
-      <QueryCategories />
+      <h2 className="hidden text-blue-500">Modalidades</h2>
+      {/*<QueryCategories />*/}
       <h2 className="text-blue-500">Editoriales</h2>
       <QueryPublishers />
     </Aside>
@@ -27,7 +27,7 @@ const Aside = styled.div`
   ${tw`top-0 flex flex-col w-full mt-20 font-sans text-left border-l border-gray-300 `}
 
   a {
-    ${tw`py-1 pl-6 text-lg text-left transition-all duration-200 border-b border-gray-300`}
+    ${tw`py-1 pl-6 text-base text-left transition-all duration-200 border-b border-gray-300`}
   }
 
   h2 {
