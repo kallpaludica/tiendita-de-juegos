@@ -1,7 +1,7 @@
 import React from "react"
 
 import QueryCollections from "../../components/Queries/QueryCollection"
-import QueryCategories from "../../components/Queries/QueryCategories"
+//import QueryCategories from "../../components/Queries/QueryCategories"
 import QueryPublishers from "../../components/Queries/QueryPublishers"
 //import { Link } from "gatsby"
 

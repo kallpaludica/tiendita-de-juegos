@@ -1,7 +1,6 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import Img from "gatsby-image"
-import { kebabCase } from "lodash"
+import { useStaticQuery, graphql } from "gatsby"
+
 import { AiTwotoneHeart } from "react-icons/ai"
 import { FaComment } from "react-icons/fa"
 

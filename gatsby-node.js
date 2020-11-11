@@ -24,7 +24,7 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            allContentfulArticulos {
+            allContentfulArticulos(sort: { fields: title, order: ASC }) {
               edges {
                 node {
                   title

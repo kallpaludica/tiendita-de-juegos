@@ -207,10 +207,14 @@ button.aws-btn .aws-btn__wrapper {
   top: auto;
   bottom: calc(var(--button-raise-level) * -1);
   z-index: 1;
-  -webkit-transition: background var(--transform-speed) ease-out, -webkit-transform var(--transform-speed) ease-out;
-  transition: background var(--transform-speed) ease-out, -webkit-transform var(--transform-speed) ease-out;
-  transition: transform var(--transform-speed) ease-out, background var(--transform-speed) ease-out;
-  transition: transform var(--transform-speed) ease-out, background var(--transform-speed) ease-out,
+  -webkit-transition: background var(--transform-speed) ease-out,
+    -webkit-transform var(--transform-speed) ease-out;
+  transition: background var(--transform-speed) ease-out,
+    -webkit-transform var(--transform-speed) ease-out;
+  transition: transform var(--transform-speed) ease-out,
+    background var(--transform-speed) ease-out;
+  transition: transform var(--transform-speed) ease-out,
+    background var(--transform-speed) ease-out,
     -webkit-transform var(--transform-speed) ease-out;
 }
 .aws-btn .aws-btn__wrapper:after {
@@ -246,14 +250,22 @@ button.aws-btn .aws-btn__wrapper {
   transform-style: flat;
   -webkit-transform: skew(0) translate3d(0, 0, 0);
   transform: skew(0) translate3d(0, 0, 0);
-  -webkit-transition: border var(--transform-speed) ease-out, background var(--transform-speed) ease-out,
-    color var(--transform-speed) ease-out, -webkit-transform var(--transform-speed) ease-out;
-  transition: border var(--transform-speed) ease-out, background var(--transform-speed) ease-out,
-    color var(--transform-speed) ease-out, -webkit-transform var(--transform-speed) ease-out;
-  transition: border var(--transform-speed) ease-out, transform var(--transform-speed) ease-out,
-    background var(--transform-speed) ease-out, color var(--transform-speed) ease-out;
-  transition: border var(--transform-speed) ease-out, transform var(--transform-speed) ease-out,
-    background var(--transform-speed) ease-out, color var(--transform-speed) ease-out,
+  -webkit-transition: border var(--transform-speed) ease-out,
+    background var(--transform-speed) ease-out,
+    color var(--transform-speed) ease-out,
+    -webkit-transform var(--transform-speed) ease-out;
+  transition: border var(--transform-speed) ease-out,
+    background var(--transform-speed) ease-out,
+    color var(--transform-speed) ease-out,
+    -webkit-transform var(--transform-speed) ease-out;
+  transition: border var(--transform-speed) ease-out,
+    transform var(--transform-speed) ease-out,
+    background var(--transform-speed) ease-out,
+    color var(--transform-speed) ease-out;
+  transition: border var(--transform-speed) ease-out,
+    transform var(--transform-speed) ease-out,
+    background var(--transform-speed) ease-out,
+    color var(--transform-speed) ease-out,
     -webkit-transform var(--transform-speed) ease-out;
 }
 .aws-btn .aws-btn__content > span:nth-child(1) {
@@ -593,10 +605,24 @@ button.aws-btn .aws-btn__wrapper {
   color: #ffffff;
 }
 .aws-btn--instagram .aws-btn__wrapper:before {
-  background: radial-gradient(circle at 25% 110%, #b9a800 0%, #938500 5%, #b10f00 45%, #8c0061 60%, #002ca9 90%);
+  background: radial-gradient(
+    circle at 25% 110%,
+    #b9a800 0%,
+    #938500 5%,
+    #b10f00 45%,
+    #8c0061 60%,
+    #002ca9 90%
+  );
 }
 .aws-btn--instagram .aws-btn__content {
-  background: radial-gradient(circle at 25% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  background: radial-gradient(
+    circle at 25% 110%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
   color: #ffffff;
 }
 .aws-btn--instagram .aws-btn__content path {
@@ -809,8 +835,10 @@ button.aws-btn .aws-btn__wrapper {
   left: 0;
   width: 100%;
   height: 100%;
-  -webkit-animation: placeholder calc(var(--transform-speed) * 14) linear forwards infinite;
-  animation: placeholder calc(var(--transform-speed) * 14) linear forwards infinite;
+  -webkit-animation: placeholder calc(var(--transform-speed) * 14) linear
+    forwards infinite;
+  animation: placeholder calc(var(--transform-speed) * 14) linear forwards
+    infinite;
 }
 .aws-btn--visible {
   opacity: 1;
@@ -836,11 +864,19 @@ button.aws-btn .aws-btn__wrapper {
   transform: skewY(calc(1deg * var(--button-hover-pressure) * 1));
 }
 .aws-btn--middle:before {
-  -webkit-transform: translate3d(0, calc(-1px * var(--button-hover-pressure)), 0);
+  -webkit-transform: translate3d(
+    0,
+    calc(-1px * var(--button-hover-pressure)),
+    0
+  );
   transform: translate3d(0, calc(-1px * var(--button-hover-pressure)), 0);
 }
 .aws-btn--middle .aws-btn__content {
-  -webkit-transform: translate3d(0, calc(1px * var(--button-hover-pressure)), 0);
+  -webkit-transform: translate3d(
+    0,
+    calc(1px * var(--button-hover-pressure)),
+    0
+  );
   transform: translate3d(0, calc(1px * var(--button-hover-pressure)), 0);
 }
 .aws-btn--icon .aws-btn__content > span:nth-child(1) > svg {
@@ -854,13 +890,17 @@ button.aws-btn .aws-btn__wrapper {
 .aws-btn--active .aws-btn__content {
   will-change: transform;
   -webkit-transition: background calc(var(--transform-speed) * 0.8) ease-out,
-    color calc(var(--transform-speed) * 0.8) ease-out, -webkit-transform calc(var(--transform-speed) * 0.8) ease-out;
-  transition: background calc(var(--transform-speed) * 0.8) ease-out, color calc(var(--transform-speed) * 0.8) ease-out,
+    color calc(var(--transform-speed) * 0.8) ease-out,
+    -webkit-transform calc(var(--transform-speed) * 0.8) ease-out;
+  transition: background calc(var(--transform-speed) * 0.8) ease-out,
+    color calc(var(--transform-speed) * 0.8) ease-out,
     -webkit-transform calc(var(--transform-speed) * 0.8) ease-out;
   transition: transform calc(var(--transform-speed) * 0.8) ease-out,
-    background calc(var(--transform-speed) * 0.8) ease-out, color calc(var(--transform-speed) * 0.8) ease-out;
+    background calc(var(--transform-speed) * 0.8) ease-out,
+    color calc(var(--transform-speed) * 0.8) ease-out;
   transition: transform calc(var(--transform-speed) * 0.8) ease-out,
-    background calc(var(--transform-speed) * 0.8) ease-out, color calc(var(--transform-speed) * 0.8) ease-out,
+    background calc(var(--transform-speed) * 0.8) ease-out,
+    color calc(var(--transform-speed) * 0.8) ease-out,
     -webkit-transform calc(var(--transform-speed) * 0.8) ease-out;
   -webkit-transform: translate3d(0, var(--button-raise-level), 0);
   transform: translate3d(0, var(--button-raise-level), 0);
@@ -927,8 +967,10 @@ span.aws-btn__bubble {
   opacity: 0;
   -webkit-transform: scale(0.1);
   transform: scale(0.1);
-  -webkit-animation: bubble-ping calc(var(--transform-speed) * 3.5) cubic-bezier(0.5, 0, 0.6, 0.4) 0.05s forwards;
-  animation: bubble-ping calc(var(--transform-speed) * 3.5) cubic-bezier(0.5, 0, 0.6, 0.4) 0.05s forwards;
+  -webkit-animation: bubble-ping calc(var(--transform-speed) * 3.5)
+    cubic-bezier(0.5, 0, 0.6, 0.4) 0.05s forwards;
+  animation: bubble-ping calc(var(--transform-speed) * 3.5)
+    cubic-bezier(0.5, 0, 0.6, 0.4) 0.05s forwards;
 }
 
 @-webkit-keyframes placeholder {
@@ -1073,19 +1115,29 @@ span.aws-btn__bubble {
   text-indent: 0;
   z-index: 3;
   overflow: hidden;
-  -webkit-transition: border var(--transform-speed) ease-out, background var(--transform-speed) ease-out,
-    color var(--transform-speed) ease-out, -webkit-transform var(--transform-speed) ease-out;
-  transition: border var(--transform-speed) ease-out, background var(--transform-speed) ease-out,
-    color var(--transform-speed) ease-out, -webkit-transform var(--transform-speed) ease-out;
-  transition: border var(--transform-speed) ease-out, transform var(--transform-speed) ease-out,
-    background var(--transform-speed) ease-out, color var(--transform-speed) ease-out;
-  transition: border var(--transform-speed) ease-out, transform var(--transform-speed) ease-out,
-    background var(--transform-speed) ease-out, color var(--transform-speed) ease-out,
+  -webkit-transition: border var(--transform-speed) ease-out,
+    background var(--transform-speed) ease-out,
+    color var(--transform-speed) ease-out,
+    -webkit-transform var(--transform-speed) ease-out;
+  transition: border var(--transform-speed) ease-out,
+    background var(--transform-speed) ease-out,
+    color var(--transform-speed) ease-out,
+    -webkit-transform var(--transform-speed) ease-out;
+  transition: border var(--transform-speed) ease-out,
+    transform var(--transform-speed) ease-out,
+    background var(--transform-speed) ease-out,
+    color var(--transform-speed) ease-out;
+  transition: border var(--transform-speed) ease-out,
+    transform var(--transform-speed) ease-out,
+    background var(--transform-speed) ease-out,
+    color var(--transform-speed) ease-out,
     -webkit-transform var(--transform-speed) ease-out;
 }
 .aws-btn--progress .aws-btn__progress > span {
-  -webkit-transition: opacity calc(var(--transform-speed) * 0.5) ease-out calc(var(--transform-speed) * 0.75);
-  transition: opacity calc(var(--transform-speed) * 0.5) ease-out calc(var(--transform-speed) * 0.75);
+  -webkit-transition: opacity calc(var(--transform-speed) * 0.5) ease-out
+    calc(var(--transform-speed) * 0.75);
+  transition: opacity calc(var(--transform-speed) * 0.5) ease-out
+    calc(var(--transform-speed) * 0.75);
 }
 .aws-btn--progress .aws-btn__progress:before,
 .aws-btn--progress .aws-btn__progress:after {
@@ -1107,7 +1159,8 @@ span.aws-btn__bubble {
   transition: transform var(--transform-speed) ease-out 0.05s,
     opacity calc(var(--transform-speed) * 0.75) ease-out 0.05s;
   transition: transform var(--transform-speed) ease-out 0.05s,
-    opacity calc(var(--transform-speed) * 0.75) ease-out 0.05s, -webkit-transform var(--transform-speed) ease-out 0.05s;
+    opacity calc(var(--transform-speed) * 0.75) ease-out 0.05s,
+    -webkit-transform var(--transform-speed) ease-out 0.05s;
 }
 .aws-btn--progress .aws-btn__progress:before {
   content: attr(data-loading);
@@ -1162,10 +1215,14 @@ span.aws-btn__bubble {
 }
 
 .aws-btn--end .aws-btn__content:after {
-  -webkit-transition: -webkit-transform var(--loading-transition-end-speed) var(--loading-transition-timing);
-  transition: -webkit-transform var(--loading-transition-end-speed) var(--loading-transition-timing);
-  transition: transform var(--loading-transition-end-speed) var(--loading-transition-timing);
-  transition: transform var(--loading-transition-end-speed) var(--loading-transition-timing),
+  -webkit-transition: -webkit-transform var(--loading-transition-end-speed)
+    var(--loading-transition-timing);
+  transition: -webkit-transform var(--loading-transition-end-speed)
+    var(--loading-transition-timing);
+  transition: transform var(--loading-transition-end-speed)
+    var(--loading-transition-timing);
+  transition: transform var(--loading-transition-end-speed)
+      var(--loading-transition-timing),
     -webkit-transform var(--loading-transition-end-speed) var(--loading-transition-timing);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);

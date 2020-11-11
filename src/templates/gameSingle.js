@@ -1,7 +1,6 @@
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import { kebabCase } from "lodash"
-
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import React from "react"
@@ -75,7 +74,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
       <div tw="w-full py-12 bg-orange-100">
         <div tw="max-w-6xl mx-auto mt-16 bg-white shadow-lg ">
-          <div tw="p-4 pb-0">
+          <div tw="md:hidden p-4 pb-0">
             <GoBack />
           </div>
           <div tw="flex flex-col p-5 pt-6 sm:flex-row">
@@ -251,13 +250,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <div tw="max-w-6xl mx-auto font-sans border-t border-gray-300 ">
             <nav tw="flex justify-between">
               <div tw="flex-1 py-6 text-center border-r border-gray-300 hover:bg-green-100">
-                {next && (
+                {prev && (
                   <Link
-                    to={`/tienda-de-juegos/${kebabCase(next.slug)}`}
-                    rel="next"
-                    tw="text-xl font-bold transition-all duration-200 transform hover:-translate-x-2"
+                    to={`/tienda-de-juegos/${kebabCase(prev.slug)}`}
+                    rel="prev"
+                    tw="text-xl font-bold transition-all duration-200 transform hover:translate-x-2"
                   >
-                    ← {next.title}
+                    ← {prev.title}
                   </Link>
                 )}
               </div>
@@ -265,13 +264,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 tw="flex-1 py-6 text-center hover:bg-green-100 "
                 style={{ justifySelf: "flex-end" }}
               >
-                {prev && (
+                {next && (
                   <Link
-                    to={`/tienda-de-juegos/${kebabCase(prev.slug)}`}
-                    rel="prev"
-                    tw="text-xl font-bold transition-all duration-200 transform hover:translate-x-2"
+                    to={`/tienda-de-juegos/${kebabCase(next.slug)}`}
+                    rel="next"
+                    tw="text-xl font-bold transition-all duration-200 transform hover:-translate-x-2"
                   >
-                    {prev.title} →
+                    {next.title} →
                   </Link>
                 )}
               </div>

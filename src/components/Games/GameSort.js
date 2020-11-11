@@ -5,11 +5,7 @@ import tw from "twin.macro"
 import styled from "@emotion/styled"
 import { IoMdTime } from "react-icons/io"
 import { FaUserFriends } from "react-icons/fa"
-import {
-  AiOutlineSortAscending,
-  AiOutlineCheck,
-  AiOutlineDollar,
-} from "react-icons/ai"
+import { AiOutlineSortAscending, AiOutlineDollar } from "react-icons/ai"
 const GamesSort = () => {
   return (
     <>

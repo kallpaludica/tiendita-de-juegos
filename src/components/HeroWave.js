@@ -1,16 +1,13 @@
 import React from "react"
 import tw from "twin.macro"
 import styled from "@emotion/styled"
-import FormatText from "./wysiwyg"
 import { Link } from "gatsby"
-import Bread from "../components/breadcrumb"
 
 const HeroWave = (props) => (
   <>
     <Hero className={`${props.pattern} pattern-cross-dots-md`}>
       {props.heading && (
         <HeroContent>
-          <Bread breaddata={props.bread}></Bread>
           <Title>{props.heading}</Title>
           {props.subtitle && (
             <Subtitle className="flex items-start max-w-3xl mx-auto font-mono text-white">

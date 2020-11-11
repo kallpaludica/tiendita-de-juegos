@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import React from "react"
 import tw from "twin.macro"
 import Fade from "react-reveal/Fade"
-import Bread from "../components/breadcrumb"
 import GameCard from "../components/GameCard"
 import HeroWave from "../components/HeroWave"
 import Layout from "../components/layout"
@@ -17,7 +16,6 @@ const PublisherSingleTemplate = ({ data, pageContext, location }) => {
       <SEO title="Editorial" />
       <HeroWave
         heading={publisher.title}
-        bread={pageContext.breadcrumb}
         pattern="bg-blue-600 text-blue-500 "
         svg="M0,224L80,240C160,256,320,288,480,277.3C640,267,800,213,960,202.7C1120,192,1280,224,1360,240L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
       />
@@ -48,7 +46,7 @@ const PublisherSingleTemplate = ({ data, pageContext, location }) => {
 }
 
 const Container = styled.div`
-  ${tw`grid max-w-6xl grid-cols-1 gap-4 p-3 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 `}
+  ${tw`grid max-w-6xl grid-cols-1 gap-4 p-3 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 `}
 `
 
 const ContentSidebar = styled.div`

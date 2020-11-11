@@ -32,18 +32,7 @@ const HomeHeroCompoent = () => {
                       >
                         educativos
                       </Link>
-                      <Link
-                        to={`/tienda-de-juegos/modalidades/cooperativo`}
-                        className="text-indigo-300 hover:text-white hover:underline"
-                      >
-                        cooperativos
-                      </Link>
-                      <Link
-                        to={`/tienda-de-juegos/modalidades/abstractos`}
-                        className="text-red-300 hover:text-white hover:underline"
-                      >
-                        abstractos
-                      </Link>
+
                       <Link
                         to={`/tienda-de-juegos/colecciones/terapeuticos`}
                         className="text-green-300 hover:text-white hover:underline"

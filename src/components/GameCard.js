@@ -12,7 +12,6 @@ import { FaShippingFast } from "react-icons/fa"
 //import { FaUserFriends, FaShippingFast } from "react-icons/fa"
 import { AiFillCheckCircle } from "react-icons/ai"
 
-import Flash from "react-reveal/Flash"
 export default ({ card }) => (
   <GameCard>
     <div tw="flex sm:flex-col">
