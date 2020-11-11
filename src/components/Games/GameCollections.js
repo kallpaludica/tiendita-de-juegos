@@ -17,7 +17,7 @@ const GameCollectionComponent = () => {
               CollectionDescription
             }
             icono {
-              fixed(width: 80, height: 80) {
+              fixed(width: 85, height: 85) {
                 ...GatsbyContentfulFixed
               }
             }
@@ -33,14 +33,14 @@ const GameCollectionComponent = () => {
         <div tw="grid grid-cols-2 gap-5 my-12 font-sans text-gray-800 md:grid-cols-4">
           {data.collections.edges.map(({ node }) => {
             return (
-              <div className="flex flex-col pt-3 text-center transition-all duration-500 ease-in-out transform bg-blue-100 rounded-md shadow-xl hover:shadow-2xl hover:-translate-y-2">
+              <Card className="">
                 <Link
                   key={node.slug}
                   to={`/tienda-de-juegos/colecciones/${kebabCase(node.slug)}/`}
-                  tw="flex flex-col justify-center text-lg font-bold text-blue-500 "
+                  tw="flex flex-col justify-center text-lg font-bold text-blue-500 shadow-sm"
                 >
                   {node.icono && (
-                    <div tw="relative overflow-hidden text-center md:w-full ">
+                    <div tw="relative bg-white py-6 overflow-hidden text-center md:w-full ">
                       <Img
                         title={node.title}
                         tw="w-full"
@@ -49,10 +49,9 @@ const GameCollectionComponent = () => {
                       />
                     </div>
                   )}
-                  <span tw="text-blue-500">{node.title}</span>
                 </Link>
                 <p
-                  tw=" p-2 md:px-12  font-sans text-base"
+                  tw=" p-2 pt-4 md:px-8  font-sans text-base md:text-lg"
                   style={{ minHeight: "80px" }}
                 >
                   {node.CollectionDescription.CollectionDescription}
@@ -63,7 +62,7 @@ const GameCollectionComponent = () => {
                 >
                   Ver {node.title}
                 </Link>
-              </div>
+              </Card>
             )
           })}
         </div>
@@ -73,3 +72,9 @@ const GameCollectionComponent = () => {
 }
 
 export default GameCollectionComponent
+
+const Card = styled.div`
+  ${tw`flex flex-col text-center transition-all duration-500 ease-in-out transform bg-blue-100 rounded-md shadow-xl hover:shadow-2xl hover:-translate-y-2`}
+  
+  }
+`

@@ -44,7 +44,7 @@ export default ({ card }) => (
         <div className="flex-grow" style={{ minHeight: "80px" }}>
           <Link
             to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
-            tw="inline-block px-2 pt-4 pb-2 pr-12 font-sans text-lg font-bold leading-6 hover:text-blue-600 flex-grow"
+            tw="inline-block px-2 pt-4 pr-6 pb-2 font-sans text-lg font-bold leading-6 hover:text-blue-600 flex-grow"
           >
             {card.title}
           </Link>
@@ -85,10 +85,10 @@ export default ({ card }) => (
           )}
           {card.stock && (
             <div
-              tw="absolute top-0 right-0 flex items-center justify-between p-2 px-2 m-1 my-2 font-sans text-sm font-bold text-left text-blue-600 transition-all duration-500 md:text-base hover:text-white hover:bg-blue-500 "
+              tw="absolute hidden top-0 right-0 flex items-center justify-between p-2 px-2 m-1 my-2 font-sans text-sm font-bold text-left text-blue-600 transition-all duration-500 md:text-base hover:text-white hover:bg-blue-500 "
               data-tip="Consultar stock"
             >
-              <FaShippingFast className="inline-block mb-1 " />
+              <FaShippingFast className="hidden mb-1 " />
             </div>
           )}
         </div>

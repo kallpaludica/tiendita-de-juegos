@@ -15,6 +15,7 @@ import GamesAside from "../components/Games/GameMenu"
 
 const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
   const collection = data.contentfulColecciones
+  const articulos = data.allContentfulArticulos.edges
   const { prev, next } = pageContext
   return (
     <Layout location={location}>
@@ -25,21 +26,18 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
         pattern="bg-blue-600 text-blue-500 "
         svg="M0,224L80,240C160,256,320,288,480,277.3C640,267,800,213,960,202.7C1120,192,1280,224,1360,240L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
       />
+
       <ContentSidebar>
         <Aside>
           <GamesAside />
         </Aside>
         <Main>
           <div>
-            {collection.CollectionGames ? (
-              <Container>
-                {collection.CollectionGames.map((item, i) => (
-                  <GameCard card={item} key={item.slug} />
-                ))}
-              </Container>
-            ) : (
-              <div className="text-center text-gray-500 ">Proximamente</div>
-            )}
+            <Container>
+              {articulos.map(({ node }) => {
+                return <GameCard card={node} key={node.slug} />
+              })}
+            </Container>
 
             <div className="w-full max-w-2xl m-auto article">
               <PageNav>
@@ -78,7 +76,7 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
 }
 
 const Container = styled.div`
-  ${tw`grid max-w-6xl grid-cols-1 gap-4 p-3 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 `}
+  ${tw`grid max-w-6xl grid-cols-1 gap-4 p-3 pb-12 mx-auto mt-16 bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 `}
 `
 
 const PageNav = styled.nav`
@@ -160,6 +158,31 @@ export const pageQuery = graphql`
           }
         }
       }
+    }
+    allContentfulArticulos(
+      filter: { colecciones: { elemMatch: { slug: { eq: $slug } } } }
+      sort: { fields: GameBuyPrice, order: ASC }
+    ) {
+      edges {
+        node {
+          id
+          title
+          slug
+          GameBuyPrice
+          imagenDestacada {
+            fixed(width: 500, height: 500) {
+              ...GatsbyContentfulFixed
+            }
+            file {
+              url
+            }
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+        }
+      }
+      totalCount
     }
   }
 `

@@ -117,11 +117,14 @@ const IndexPage = () => {
       </section>
 
       <section className="px-2 mt-2">
-        <div className="relative flex flex-col w-full max-w-6xl mx-auto md:flex-row">
-          <h1 className="flex flex-col items-center w-full max-w-6xl pt-4 mx-auto font-mono text-2xl leading-tight text-center text-blue-300 md:text-4xl">
-            <AiFillShop className="mt-6 text-6xl text-blue-300 transform " />
+        <div className="relative flex flex-col w-full max-w-6xl pt-12 pb-6 mx-auto md:flex-row">
+          <h1 className="flex flex-col items-center w-full max-w-6xl pt-4 mx-auto font-mono text-2xl leading-tight text-center text-orange-500 md:text-4xl">
+            <AiFillShop className="mt-6 text-6xl text-orange-500 transform " />
             Lo que se anda jugando
           </h1>
+        </div>
+        <div className="w-full mb-4">
+          <div className="w-64 h-1 py-0 mx-auto my-0 border-t-4 border-orange-400 opacity-25"></div>
         </div>
         <QueriesLastGames />
       </section>

@@ -11,6 +11,8 @@ import GamesAside from "../components/Games/GameMenu"
 
 const PublisherSingleTemplate = ({ data, pageContext, location }) => {
   const publisher = data.contentfulEditorial
+  const articulos = data.allContentfulArticulos.edges
+
   return (
     <Layout location={location}>
       <SEO title="Editorial" />
@@ -24,21 +26,11 @@ const PublisherSingleTemplate = ({ data, pageContext, location }) => {
           <GamesAside />
         </Aside>
         <Main>
-          <div>
-            {publisher.articulos ? (
-              <Container>
-                {publisher.articulos.map((item, i) => (
-                  <Fade duration={800} delay={600} key={item.slug}>
-                    <GameCard card={item} />
-                  </Fade>
-                ))}
-              </Container>
-            ) : (
-              <div className="py-24 text-center text-gray-700 ">
-                Aún no hay juegos asignados a esta editorial
-              </div>
-            )}
-          </div>
+          <Container>
+            {articulos.map(({ node }) => {
+              return <GameCard card={node} key={node.slug} />
+            })}
+          </Container>
         </Main>
       </ContentSidebar>
     </Layout>
@@ -46,7 +38,7 @@ const PublisherSingleTemplate = ({ data, pageContext, location }) => {
 }
 
 const Container = styled.div`
-  ${tw`grid max-w-6xl grid-cols-1 gap-4 p-3 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 `}
+  ${tw`grid max-w-6xl grid-cols-1 gap-4 p-3 pb-12 mx-auto mt-16 bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 `}
 `
 
 const ContentSidebar = styled.div`
@@ -110,6 +102,31 @@ export const pageQuery = graphql`
           }
         }
       }
+    }
+    allContentfulArticulos(
+      filter: { publisher: { slug: { eq: $slug } } }
+      sort: { fields: GameBuyPrice, order: ASC }
+    ) {
+      edges {
+        node {
+          id
+          title
+          slug
+          GameBuyPrice
+          imagenDestacada {
+            fixed(width: 500, height: 500) {
+              ...GatsbyContentfulFixed
+            }
+            file {
+              url
+            }
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+        }
+      }
+      totalCount
     }
   }
 `

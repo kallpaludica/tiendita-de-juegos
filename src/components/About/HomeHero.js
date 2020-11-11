@@ -59,7 +59,7 @@ const HomeHeroCompoent = () => {
                   </div>
                   <p className="block pt-8 font-sans text-xl text-left text-white transition-all duration-200 transform opacity-100">
                     <AnchorLink
-                      className="inline-block text-white hover:text-white"
+                      className="inline-block text-white hover:underline hover:text-white"
                       href="#redes"
                     >
                       Compartimos la potencia de jugar.

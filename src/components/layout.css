@@ -28,10 +28,10 @@ a {
 }
 
 .bm-overlay + div::before {
-  right: 60px;
+  right: 54px;
   position: absolute;
-  content: "Menu";
-  @apply font-sans text-lg;
+  content: "Menú";
+  @apply font-sans text-lg font-bold text-gray-500;
 }
 
 @screen md {

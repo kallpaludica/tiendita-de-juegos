@@ -70,7 +70,7 @@ const ContactComponent = () => {
       </div>
       <Socials>
         <a
-          tw="flex flex-col items-center justify-center text-center text-green-500 bg-green-100 "
+          tw="flex flex-col items-center justify-center text-center text-green-500 transition-all duration-500 ease-in-out transform bg-white rounded-md hover:shadow-md hover:-translate-y-2 hover:text-green-600"
           target="_blank"
           rel="noopener noreferrer"
           title={data.whatsapp.titulo}
@@ -81,7 +81,7 @@ const ContactComponent = () => {
           <b>Teléfono</b>
         </a>
         <a
-          tw="flex flex-col items-center justify-center text-center text-blue-500 bg-blue-100"
+          tw="flex flex-col items-center justify-center text-center text-blue-500 transition-all duration-500 ease-in-out transform bg-white rounded-md hover:shadow-md hover:text-blue-600 hover:-translate-y-2"
           target="_blank"
           rel="noopener noreferrer"
           title={data.facebook.titulo}
@@ -93,7 +93,7 @@ const ContactComponent = () => {
         </a>
 
         <a
-          tw="flex flex-col items-center justify-center text-center text-purple-600 bg-purple-100"
+          tw="flex flex-col items-center justify-center text-center text-purple-500 transition-all duration-500 ease-in-out transform bg-white rounded-md hover:shadow-md hover:text-purple-600 hover:-translate-y-2"
           target="_blank"
           rel="noopener noreferrer"
           title={data.instagram.titulo}
@@ -104,7 +104,7 @@ const ContactComponent = () => {
           <b>Instagram</b>
         </a>
         <a
-          tw="flex flex-col items-center justify-center text-center text-orange-500 bg-orange-100"
+          tw="flex flex-col items-center justify-center text-center text-orange-500 transition-all duration-500 ease-in-out transform bg-white rounded-md hover:shadow-md  hover:text-orange-600 hover:-translate-y-2"
           target="_blank"
           rel="noopener noreferrer"
           title={data.mail.titulo}
@@ -153,7 +153,7 @@ export default ContactComponent
 const Socials = styled.div`
   ${tw`flex flex-col justify-center max-w-5xl py-12 mx-auto text-center md:flex-row`}
   a {
-    ${tw`w-full max-w-sm p-2 mx-auto mb-3 rounded-md shadow-md md:mx-3`}
+    ${tw`w-full max-w-sm p-2 mx-auto mb-3 rounded-md md:mx-3`}
   }
 
   b {
