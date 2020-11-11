@@ -20,7 +20,7 @@ const GamesSort = () => {
         >
           <AiOutlineSortAscending
             activeClassName="text-blue-100 "
-            className="mx-auto mr-1 text-xl "
+            tw="mx-auto mr-1 text-xl "
           />
           Título
         </Link>
@@ -29,21 +29,21 @@ const GamesSort = () => {
           activeClassName="text-blue-100 bg-blue-500 "
           to="/tienda-de-juegos/precio"
         >
-          <AiOutlineDollar className="mx-auto mr-1 text-xl " /> Precio
+          <AiOutlineDollar tw="mx-auto mr-1 text-xl " /> Precio
         </Link>
 
         <Link
           activeClassName="text-blue-100 bg-blue-500 "
           to="/tienda-de-juegos/duracion"
         >
-          <IoMdTime className="mx-auto mr-1 text-xl " /> Duración
+          <IoMdTime tw="mx-auto mr-1 text-xl " /> Duración
         </Link>
 
         <Link
           activeClassName="text-blue-100 bg-blue-500 "
           to="/tienda-de-juegos/edades"
         >
-          <FaUserFriends className="mx-auto mr-1 text-base " /> Edades
+          <FaUserFriends tw="mx-auto mr-1 text-base " /> Edades
         </Link>
       </Sort>
     </>

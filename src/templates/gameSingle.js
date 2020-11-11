@@ -1,6 +1,9 @@
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import { kebabCase } from "lodash"
+
+import tw from "twin.macro"
+import styled from "@emotion/styled"
 import React from "react"
 import { AwesomeButtonSocial } from "react-awesome-button"
 import { Helmet } from "react-helmet"
@@ -70,16 +73,19 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <body className="ingame" />
       </Helmet>
 
-      <div className="w-full py-12 bg-orange-100">
-        <div className="max-w-6xl mx-auto mt-16 bg-white shadow-lg ">
-          <div className="p-4 pb-0">
+      <div tw="w-full py-12 bg-orange-100">
+        <div tw="max-w-6xl mx-auto mt-16 bg-white shadow-lg ">
+          <div tw="p-4 pb-0">
             <GoBack />
           </div>
-          <div className="flex flex-col p-5 pt-6 sm:flex-row">
-            <div className="w-full md:w-2/3">
+          <div tw="flex flex-col p-5 pt-6 sm:flex-row">
+            <div tw="w-full md:w-2/3">
               <SRLWrapper options={options}>
                 {post.imagenDestacada ? (
-                  <div className="w-full mx-auto mb-2 text-center shadow-md cursor-pointer link">
+                  <div
+                    tw="w-full mx-auto mb-2 text-center shadow-md cursor-pointer"
+                    className="link"
+                  >
                     <Img
                       fluid={post.imagenDestacada.fluid}
                       alt={post.title}
@@ -88,26 +94,27 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   </div>
                 ) : (
                   <img
-                    className="w-48 h-48 mx-auto my-6 opacity-25 "
+                    tw="w-48 h-48 mx-auto my-6 opacity-25 "
                     alt="Kallpa Lúdica"
                     src={AboutImage}
                   />
                 )}
 
                 {post.GameGallery && (
-                  <div className="w-full text-center ">
-                    <div className="w-full px-0 pt-6 m-auto md:py-0">
-                      <div className="grid grid-cols-3 gap-2">
+                  <div tw="w-full text-center ">
+                    <div tw="w-full px-0 pt-6 m-auto md:py-0">
+                      <div tw="grid grid-cols-3 gap-2">
                         {post.GameGallery.map((item, i) => (
                           <div
-                            className="relative h-24 max-w-xl m-0 overflow-hidden transition-all duration-200 transform shadow-md hover:opacity-75 link"
+                            tw="relative h-24 max-w-xl m-0 overflow-hidden transition-all duration-200 transform shadow-md hover:opacity-75 "
+                            className="link"
                             key={item.id}
                           >
-                            <RiZoomInLine className="absolute top-0 right-0 z-30 m-2 text-xl text-gray-400" />
+                            <RiZoomInLine tw="absolute top-0 right-0 z-30 m-2 text-xl text-gray-400" />
                             <Img
                               title={item.title}
                               alt={item.title}
-                              className="cursor-pointer"
+                              tw="cursor-pointer"
                               fluid={item.fluid}
                             />
                           </div>
@@ -118,34 +125,34 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 )}
               </SRLWrapper>
             </div>
-            <div className="relative flex flex-col w-full pt-3 md:pl-12">
-              <h1 className="w-full pt-2 pl-2 font-mono text-3xl text-left text-gray-800 md:pt-0 md:pl-0 md:text-5xl md:mb-3">
+            <div tw="relative flex flex-col w-full pt-3 md:pl-12">
+              <h1 tw="w-full pt-2 pl-2 font-mono text-3xl text-left text-gray-800 md:pt-0 md:pl-0 md:text-5xl md:mb-3">
                 {post.title}
               </h1>
 
-              <div className="flex flex-col justify-center w-full pl-2 my-2 text-gray-700 md:pl-0 md:px-0 md:flex-row md:justify-start">
+              <div tw="flex flex-col justify-center w-full pl-2 my-2 text-gray-700 md:pl-0 md:px-0 md:flex-row md:justify-start">
                 {post.GameAges && (
-                  <div className="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
-                    <FaUserFriends className="mr-3 text-2xl " />
+                  <div tw="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
+                    <FaUserFriends tw="mr-3 text-2xl " />
                     Edad {post.GameAges}+
                   </div>
                 )}
 
                 {post.GameDuration && (
-                  <div className="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
-                    <IoMdTime className="mr-3 text-2xl " />
+                  <div tw="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
+                    <IoMdTime tw="mr-3 text-2xl " />
                     Duración de {post.GameDuration} min.
                   </div>
                 )}
                 {post.GamePlayers && (
-                  <div className="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
-                    <GiTabletopPlayers className="mr-3 text-3xl " />
+                  <div tw="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
+                    <GiTabletopPlayers tw="mr-3 text-3xl " />
                     {post.GamePlayers} jugadores
                   </div>
                 )}
               </div>
 
-              <div className="flex items-center justify-start text-lg text-center">
+              <div tw="flex items-center justify-start text-lg text-center">
                 {post.colecciones && (
                   <>
                     {post.colecciones.map((item, i) => (
@@ -153,18 +160,18 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                         to={`/tienda-de-juegos/colecciones/${kebabCase(
                           item.slug
                         )}`}
-                        className="flex flex-col py-1 pr-4 my-2 mr-2 rounded-full "
+                        tw="flex flex-col py-1 pr-4 my-2 mr-2 rounded-full "
                         key={i}
                       >
-                        <div className="relative overflow-hidden transition-all duration-200 transform md:w-full hover:-translate-y-2">
+                        <div tw="relative overflow-hidden transition-all duration-200 transform md:w-full hover:-translate-y-2">
                           <Img
                             title={item.title}
-                            className="w-16 h-16"
+                            tw="w-16 h-16"
                             alt={item.title}
                             fixed={item.icono.fixed}
                           />
                         </div>
-                        <b className="font-sans text-blue-500 hover:text-blue-700">
+                        <b tw="font-sans text-blue-500 hover:text-blue-700">
                           {item.title}
                         </b>
                       </Link>
@@ -233,7 +240,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </div>
 
               {post.GamePlay && (
-                <div className="mt-12">
+                <div tw="mt-12">
                   <Player src={post.GamePlay.file.url}>
                     <BigPlayButton position="center" />
                   </Player>
@@ -241,28 +248,28 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               )}
             </div>
           </div>
-          <div className="max-w-6xl mx-auto font-sans border-t border-gray-300 ">
-            <nav style={{ display: "flex", justifyContent: "space-between" }}>
-              <div className="flex-1 py-6 text-center border-r border-gray-300 hover:bg-green-100">
+          <div tw="max-w-6xl mx-auto font-sans border-t border-gray-300 ">
+            <nav tw="flex justify-between">
+              <div tw="flex-1 py-6 text-center border-r border-gray-300 hover:bg-green-100">
                 {next && (
                   <Link
                     to={`/tienda-de-juegos/${kebabCase(next.slug)}`}
                     rel="next"
-                    className="text-xl font-bold transition-all duration-200 transform hover:-translate-x-2"
+                    tw="text-xl font-bold transition-all duration-200 transform hover:-translate-x-2"
                   >
                     ← {next.title}
                   </Link>
                 )}
               </div>
               <div
-                className="flex-1 py-6 text-center hover:bg-green-100 "
+                tw="flex-1 py-6 text-center hover:bg-green-100 "
                 style={{ justifySelf: "flex-end" }}
               >
                 {prev && (
                   <Link
                     to={`/tienda-de-juegos/${kebabCase(prev.slug)}`}
                     rel="prev"
-                    className="text-xl font-bold transition-all duration-200 transform hover:translate-x-2"
+                    tw="text-xl font-bold transition-all duration-200 transform hover:translate-x-2"
                   >
                     {prev.title} →
                   </Link>
@@ -271,11 +278,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             </nav>
           </div>
         </div>
-        <div className="relative flex flex-col items-center w-full max-w-6xl px-2 pb-1 mx-auto mt-12 ">
-          <h1 className="w-full max-w-6xl pt-3 pb-3 mx-auto font-mono text-3xl text-left text-blue-500 ">
+        <div tw="relative flex flex-col items-center w-full max-w-6xl px-2 pb-1 mx-auto mt-12 ">
+          <h1 tw="w-full max-w-6xl pt-3 pb-3 mx-auto font-mono text-3xl text-left text-blue-500 ">
             Lo que se anda jugando
           </h1>
-          <div className="w-full mx-auto mt-0">
+          <div tw="w-full mx-auto mt-0">
             <GameSort />
           </div>
         </div>

@@ -15,15 +15,16 @@ import { AiFillCheckCircle } from "react-icons/ai"
 import Flash from "react-reveal/Flash"
 export default ({ card }) => (
   <GameCard>
-    <div className="flex sm:flex-col">
+    <div tw="flex sm:flex-col">
       {card.imagenDestacada ? (
         <Link
           to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
-          className="bg-white image"
+          tw="bg-white "
+          className="image"
         >
           <Img
             title={card.title}
-            className="object-contain w-32 h-32 sm:h-48 sm:w-full"
+            tw="object-contain w-32 h-32 sm:h-48 sm:w-full"
             alt={card.title}
             fluid={card.imagenDestacada.fluid}
           />
@@ -34,56 +35,64 @@ export default ({ card }) => (
           className="image"
         >
           <img
-            className="w-full h-full mx-auto my-6 opacity-25 "
+            tw="w-full h-full mx-auto my-6 opacity-25 "
             alt="Kallpa Lúdica"
             src={AboutImage}
           />
         </Link>
       )}
-      <div className="relative flex flex-col w-full px-0 pb-0 font-sans text-left bg-white">
-        <Link
-          to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
-          className="block px-2 pt-3 pb-1 pr-12 font-sans text-base font-bold leading-6 hover:text-blue-600 sm:pb-0 md:pb-3 "
-        >
-          {card.title}
-        </Link>
-
-        {card.GameAges && (
-          <div className="hidden w-full pt-1 text-center game-ages">
-            <div className="flex justify-start pb-1 font-sans text-lg font-bold text-left text-gray-800 md:px-2 ">
-              <div className="flex flex-1 text-base opacity-100">
-                {card.GameAges}+ años
-              </div>
-            </div>
-          </div>
-        )}
-        {card.GameDuration && (
-          <div className="hidden w-full px-2 pt-1 text-center game-duration">
-            <div className="flex justify-center pb-1 font-sans text-lg font-bold text-center text-gray-800 md:px-2 ">
-              <div className="flex flex-1 text-base opacity-100">
-                Duración: {card.GameDuration}min.
-              </div>
-            </div>
-          </div>
-        )}
-        {card.GamePlayers && (
-          <div className="hidden w-full pt-1 text-center game-players">
-            <div className="flex justify-center pb-1 font-sans text-lg font-bold text-center text-gray-800 ">
-              <div className="flex items-baseline flex-1 ">
-                {card.GamePlayers}
-                jugadores/as
-              </div>
-            </div>
-          </div>
-        )}
-        {card.stock && (
-          <div
-            className="absolute top-0 right-0 flex items-center justify-between p-2 px-2 m-1 my-2 font-sans text-sm font-bold text-left text-blue-600 transition-all duration-500 md:text-base hover:text-white hover:bg-blue-500 "
-            data-tip="Consultar stock"
+      <div tw="relative flex flex-col w-full px-0 pb-0 font-sans text-left bg-white ">
+        <div className="flex-grow" style={{ minHeight: "80px" }}>
+          <Link
+            to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
+            tw="inline-block px-2 pt-4 pb-2 pr-12 font-sans text-lg font-bold leading-6 hover:text-blue-600 flex-grow"
           >
-            <FaShippingFast className="inline-block mb-1 " />
-          </div>
-        )}
+            {card.title}
+          </Link>
+
+          {card.GameAges && (
+            <div
+              tw="hidden w-full px-2 pt-1 text-center md:px-0 "
+              className="game-ages"
+            >
+              <div tw="flex justify-start pb-1 font-sans text-lg font-bold text-left text-gray-700 md:px-2 ">
+                <div tw="flex flex-1 text-base opacity-100">
+                  {card.GameAges}+ años
+                </div>
+              </div>
+            </div>
+          )}
+          {card.GameDuration && (
+            <div
+              tw="hidden w-full px-2 pt-1 text-center md:px-0"
+              className=" game-duration"
+            >
+              <div tw="flex justify-center pb-1 font-sans text-lg font-bold text-center text-gray-700 md:px-2 ">
+                <div tw="flex flex-1 text-base opacity-100">
+                  Duración: {card.GameDuration}min.
+                </div>
+              </div>
+            </div>
+          )}
+          {card.GamePlayers && (
+            <div tw="hidden w-full pt-1 text-center " className="game-players">
+              <div tw="flex justify-center pb-1 font-sans text-lg font-bold text-center text-gray-700 ">
+                <div tw="flex items-baseline flex-1 ">
+                  {card.GamePlayers}
+                  jugadores/as
+                </div>
+              </div>
+            </div>
+          )}
+          {card.stock && (
+            <div
+              tw="absolute top-0 right-0 flex items-center justify-between p-2 px-2 m-1 my-2 font-sans text-sm font-bold text-left text-blue-600 transition-all duration-500 md:text-base hover:text-white hover:bg-blue-500 "
+              data-tip="Consultar stock"
+            >
+              <FaShippingFast className="inline-block mb-1 " />
+            </div>
+          )}
+        </div>
         <Link
           to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
           tw=" border-t border-blue-200"
@@ -116,10 +125,10 @@ const GameCard = styled.div`
   ${tw`relative w-full mb-3 overflow-hidden transition-all duration-500 transform bg-white rounded-md shadow-lg hover:shadow-2xl md:max-w-md`}
 
   .image {
-    ${tw`relative h-full transition-all duration-500 transform`}
+    ${tw`relative h-full transition-all duration-500 ease-in-out transform`}
   }
 
   .image:hover {
-    transform: scale(1.06);
+    transform: scale(1.03);
   }
 `

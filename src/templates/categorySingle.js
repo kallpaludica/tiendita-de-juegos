@@ -20,9 +20,7 @@ const CategorySingleTemplate = ({ data, pageContext, location }) => {
       <SEO title="Categoria" />
       <HeroWave
         heading={categoria.title}
-        subtitle={
-          categoria.childContentfulCategoriaDelJuegoCategoryDescriptionRichTextNode
-        }
+        bread={pageContext.breadcrumb}
         pattern="bg-blue-600 text-blue-500 "
         svg="M0,224L80,240C160,256,320,288,480,277.3C640,267,800,213,960,202.7C1120,192,1280,224,1360,240L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
       />
@@ -31,10 +29,6 @@ const CategorySingleTemplate = ({ data, pageContext, location }) => {
           <GamesAside />
         </Aside>
         <Main>
-          <div className="max-w-6xl px-6 mx-auto">
-            <Bread breaddata={pageContext.breadcrumb}></Bread>
-          </div>
-
           <div className="pb-24">
             {categoria.articulos ? (
               <Container>

@@ -42,28 +42,28 @@ const Layout = ({ location, children }) => {
       <div id="top"></div>
       <div className="app-container">
         <SimpleReactLightbox>
-          <main className="text-center bg-white ">{children}</main>
+          <main tw="text-center bg-white ">{children}</main>
         </SimpleReactLightbox>
 
         <Stn>
           <Inner>
-            <KallpaLogo className="w-20 h-20 max-w-xs mx-auto mb-6" />
-            <h3 className="pb-2 text-base font-bold ">
+            <KallpaLogo tw="w-20 h-20 max-w-xs mx-auto mb-6" />
+            <h3 tw="pb-2 text-base font-bold ">
               {new Date().getFullYear()} Kallpa Lúdica
             </h3>
-            <div className="flex justify-center pr-2 text-base opacity-75">
+            <div tw="flex justify-center pr-2 text-base opacity-75">
               <a
                 rel="noopener noreferrer"
                 target="_blank"
-                className="inline-block font-bold"
+                tw="inline-block font-bold"
                 href="https://www.cooparaje.com.ar"
               >
                 Realizado cooperativamente con
               </a>
               <div>
-                <HiCode className="inline-block mx-1 text-lg " />
-                <span className="mx-1">&</span>
-                <AiOutlineHeart className="inline-block mx-1 text-lg " />
+                <HiCode tw="inline-block mx-1 text-lg " />
+                <span tw="mx-1">&</span>
+                <AiOutlineHeart tw="inline-block mx-1 text-lg " />
               </div>
               {` `}
             </div>
@@ -71,14 +71,14 @@ const Layout = ({ location, children }) => {
         </Stn>
       </div>
       <AnchorLink
-        className="fixed bottom-0 left-0 z-50 p-4 m-4 font-mono text-xl text-white bg-orange-500 rounded-full hover:text-orange-300"
+        tw="fixed bottom-0 left-0 z-50 p-4 m-4 font-mono text-xl text-white bg-orange-500 rounded-full hover:text-orange-300"
         href="#top"
       >
         <BsFillTriangleFill />
       </AnchorLink>
       <ReactTooltip place="left" type="dark" effect="solid" />
       <a
-        className="fixed bottom-0 right-0 z-50 p-1 mb-3 mr-3 overflow-hidden transition-all duration-500 rounded-full hover:bg-green-600 hover:text-white"
+        tw="fixed bottom-0 right-0 z-50 p-1 mb-3 mr-3 overflow-hidden transition-all duration-500 rounded-full hover:bg-green-600 hover:text-white"
         target="_blank"
         rel="noopener noreferrer"
         title="Consultas por Whatsapp"

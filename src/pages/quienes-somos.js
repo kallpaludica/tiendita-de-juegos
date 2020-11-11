@@ -62,7 +62,7 @@ const AboutPage = () => {
           </Subtitle>
         </HeroContent>
 
-        <div className="absolute inset-0 z-40 opacity-25">
+        <div tw="absolute inset-0 z-40 opacity-25">
           <AboutSlider
             initDelay={3}
             transition={3}
@@ -90,44 +90,50 @@ const AboutPage = () => {
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path
               fillOpacity="1"
-              className="text-white fill-current "
+              tw="text-white fill-current "
               d="M0,256L80,261.3C160,267,320,277,480,272C640,267,800,245,960,229.3C1120,213,1280,203,1360,197.3L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
             ></path>
           </svg>
         </Wave>
       </Hero>
-      <section className="top-0 z-50 py-1 bg-white md:sticky">
+      <section tw="top-0 z-50 py-1 bg-white md:sticky">
         <AnchorLinks>
-          <AnchorLink className="font-mono" href="#mision">
+          <AnchorLink tw="font-mono" href="#mision">
             Misión
           </AnchorLink>
-          <AnchorLink className="font-mono" href="#equipo">
+          <AnchorLink tw="font-mono" href="#equipo">
             Equipo
           </AnchorLink>
-          <AnchorLink className="font-mono" href="#objectives">
+          <AnchorLink tw="font-mono" href="#objectives">
             Objetivos
           </AnchorLink>
-          <AnchorLink className="font-mono" href="#proposals">
+          <AnchorLink tw="font-mono" href="#proposals">
             Propuestas
           </AnchorLink>
         </AnchorLinks>
       </section>
-      <section className="px-2 pb-6 " id="mision">
-        <div className="flex flex-wrap justify-center max-w-6xl py-12 mx-auto">
-          <KallpaLogo className="w-32 h-32 mt-12 mr-3 transform rotate-90 kallpa-logo" />
+      <section tw="px-2 pb-6 " id="mision">
+        <div tw="flex flex-wrap justify-center max-w-6xl py-12 mx-auto">
+          <KallpaLogo
+            tw="w-32 h-32 mt-12 mr-3 transform rotate-90 "
+            className="kallpa-logo"
+          />
         </div>
         <Mision />
       </section>
 
-      <Section className="px-2 py-24 text-orange-700 bg-orange-600 pattern-cross-dots-xl">
+      <Section
+        tw="px-2 py-24 text-orange-700 bg-orange-600 "
+        className="pattern-cross-dots-xl"
+      >
         <About />
       </Section>
       <section id="equipo" className="px-2 pt-24 bg-orange-100">
-        <div className="w-full px-6 py-12 md:py-2">
+        <div tw="w-full px-6 py-12 md:py-2">
           <section className="container mx-auto">
-            <div className="flex flex-col items-center ">
+            <div tw="flex flex-col items-center ">
               <Fade delay={100}>
-                <div className="flex justify-start ">
+                <div tw="flex justify-start ">
                   <div
                     id="kallpa-Potencia"
                     style={{ width: 200, height: 200, top: "25px" }}
@@ -135,12 +141,12 @@ const AboutPage = () => {
                 </div>
               </Fade>
 
-              <div className="text-center">
-                <h2 className="max-w-6xl mx-auto font-mono text-4xl leading-tight text-orange-600 md:text-5xl">
+              <div tw="text-center">
+                <h2 tw="max-w-6xl mx-auto font-mono text-4xl leading-tight text-orange-600 md:text-5xl">
                   Equipo
                 </h2>
 
-                <div className="grid max-w-6xl grid-cols-1 gap-3 pt-12 pb-24 mx-auto sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+                <div tw="grid max-w-6xl grid-cols-1 gap-3 pt-12 pb-24 mx-auto sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
                   <Team />
                 </div>
               </div>
@@ -149,29 +155,29 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="px-2 pt-24 pb-12 bg-orange-200" id="objectives">
+      <section tw="px-2 pt-24 pb-12 bg-orange-200" id="objectives">
         <Fade delay={100}>
-          <div className="flex justify-center ">
+          <div tw="flex justify-center ">
             <div id="kallpa-Union" style={{ width: 200, height: 200 }} />
           </div>
         </Fade>
         <Objectives />
       </section>
 
-      <section className="px-2 pt-24 pb-12 bg-orange-100 " id="proposals">
+      <section tw="px-2 pt-24 pb-12 bg-orange-100 " id="proposals">
         <Fade delay={100}>
-          <div className="flex justify-center ">
+          <div tw="flex justify-center ">
             <div id="kallpa-Propuestas" style={{ width: 200, height: 200 }} />
           </div>
         </Fade>
         <Proposals />
       </section>
-      <section className="flex flex-col items-center justify-center pt-24 pb-3 text-center">
+      <section tw="flex flex-col items-center justify-center pt-24 pb-3 text-center">
         <Fade delay={100}>
-          <ImQuotesLeft className="pb-4 text-4xl text-orange-500" />
+          <ImQuotesLeft tw="pb-4 text-4xl text-orange-500" />
         </Fade>
         <Fade delay={200}>
-          <p className="max-w-3xl mx-auto font-serif text-3xl font-bold text-orange-500">
+          <p tw="max-w-3xl mx-auto font-serif text-3xl font-bold text-orange-500">
             Encontrarnos a jugar o jugar a encontrarnos.. conocernos,
             afectarnos.. son búsquedas para potenciarnos y caminar hacia
             construcciones más cuidadas.. comunitarias, alterativas, libres,
@@ -179,7 +185,7 @@ const AboutPage = () => {
           </p>
         </Fade>
         <Fade delay={300}>
-          <ImQuotesRight className="pt-4 text-4xl text-orange-500" />
+          <ImQuotesRight tw="pt-4 text-4xl text-orange-500" />
         </Fade>
       </section>
 

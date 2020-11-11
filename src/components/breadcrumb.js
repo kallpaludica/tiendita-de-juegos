@@ -16,7 +16,7 @@ const juicyBread = ({ breaddata }) => {
     <>
       <Breadcrumb>
         <nav
-          className="hidden mt-2 mb-3 font-bold text-black md:block "
+          className="hidden mt-2 mb-3 font-bold text-white md:block "
           aria-label="Breadcrumb"
         >
           <List className="">
@@ -29,8 +29,8 @@ const juicyBread = ({ breaddata }) => {
                   <Link
                     key={index}
                     to={`${value.pathname}`}
-                    className="hover:text-gray-600"
-                    activeClassName="text-gray-600"
+                    className="hover:text-gray-100"
+                    activeClassName="text-gray-100"
                   >
                     {value.crumlabel}
                   </Link>

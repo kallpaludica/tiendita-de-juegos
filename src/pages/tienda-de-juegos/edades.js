@@ -112,20 +112,20 @@ const EdadesPage = (props) => {
           <PageSticky>
             <MainTitle>Por Edades</MainTitle>
           </PageSticky>
-          <div className="relative flex flex-col justify-start border-b-2 border-blue-300 md:flex-row sm:py-0 sm:pt-0 md:pl-2">
+          <div tw="relative flex flex-col justify-start border-b-2 border-blue-300 md:flex-row sm:py-0 sm:pt-0 md:pl-2">
             <GameSort />
             <button
-              className="relative bottom-0 right-0 flex items-center justify-center px-4 py-3 text-white bg-blue-500 outline-none md:absolute focus:outline-none hover:bg-blue-600"
+              tw="relative bottom-0 right-0 flex items-center justify-center px-4 py-3 text-white bg-blue-500 outline-none md:absolute focus:outline-none hover:bg-blue-600"
               onClick={() => setToggle(!isToggled)}
             >
-              <span className="font-sans font-bold">
+              <span tw="font-sans font-bold">
                 <animated.div style={sortDESC}>
                   De mayor a menor{" "}
-                  <AiOutlineArrowUp className="inline-block text-lg" />
+                  <AiOutlineArrowUp tw="inline-block text-lg" />
                 </animated.div>
                 <animated.div style={sortASD}>
                   De menor a mayor{" "}
-                  <AiOutlineArrowDown className="inline-block text-lg" />
+                  <AiOutlineArrowDown tw="inline-block text-lg" />
                 </animated.div>
               </span>
             </button>

@@ -54,13 +54,13 @@ const ContactComponent = () => {
 
   return (
     <>
-      <div className="flex justify-center max-w-lg mx-auto">
+      <div tw="flex justify-center max-w-lg mx-auto">
         <div id="react-logo" style={{ width: 400, height: 300 }} />
       </div>
-      <h1 className="max-w-6xl mx-auto mt-0 font-mono text-3xl font-bold text-green-700">
+      <h1 tw="max-w-6xl mx-auto mt-0 font-mono text-3xl font-bold text-green-700">
         {data.contactanos.title}
       </h1>
-      <div className="max-w-6xl mx-auto ">
+      <div tw="max-w-6xl mx-auto ">
         <FormatText
           FormatText={
             data.contactanos
@@ -70,63 +70,64 @@ const ContactComponent = () => {
       </div>
       <Socials>
         <a
-          className="flex flex-col items-center justify-center text-center text-green-500 bg-green-100 "
+          tw="flex flex-col items-center justify-center text-center text-green-500 bg-green-100 "
           target="_blank"
           rel="noopener noreferrer"
           title={data.whatsapp.titulo}
           href={`https://api.whatsapp.com/send?phone=${data.whatsapp.link}&text=%C2%A1Hola!%F0%9F%A4%97%20`}
         >
-          <RiWhatsappLine className="my-6 text-4xl" />
-          <h2 className="my-2 font-sans text-xl">{data.whatsapp.link}</h2>
+          <RiWhatsappLine tw="my-6 text-4xl" />
+          <h2 tw="my-2 font-sans text-xl">{data.whatsapp.link}</h2>
           <b>Teléfono</b>
         </a>
         <a
-          className="flex flex-col items-center justify-center text-center text-blue-500 bg-blue-100"
+          tw="flex flex-col items-center justify-center text-center text-blue-500 bg-blue-100"
           target="_blank"
           rel="noopener noreferrer"
           title={data.facebook.titulo}
           href={data.facebook.link}
         >
-          <AiOutlineFacebook className="my-6 text-4xl" />
-          <h2 className="my-2 font-sans text-xl">kallpaludicaa</h2>
+          <AiOutlineFacebook tw="my-6 text-4xl" />
+          <h2 tw="my-2 font-sans text-xl">kallpaludicaa</h2>
           <b>Facebook</b>
         </a>
 
         <a
-          className="flex flex-col items-center justify-center text-center text-purple-600 bg-purple-100"
+          tw="flex flex-col items-center justify-center text-center text-purple-600 bg-purple-100"
           target="_blank"
           rel="noopener noreferrer"
           title={data.instagram.titulo}
           href={data.instagram.link}
         >
-          <AiOutlineInstagram className="my-6 text-4xl" />
-          <h2 className="my-2 font-sans text-xl">@kallpaludica</h2>
+          <AiOutlineInstagram tw="my-6 text-4xl" />
+          <h2 tw="my-2 font-sans text-xl">@kallpaludica</h2>
           <b>Instagram</b>
         </a>
         <a
-          className="flex flex-col items-center justify-center text-center text-orange-500 bg-orange-100"
+          tw="flex flex-col items-center justify-center text-center text-orange-500 bg-orange-100"
           target="_blank"
           rel="noopener noreferrer"
           title={data.mail.titulo}
           href={`mailto:${data.mail.link}`}
         >
-          <GoMail className="my-6 text-4xl" />
-          <h2 className="my-2 font-sans text-xl">{data.mail.link}</h2>
+          <GoMail tw="my-6 text-4xl" />
+          <h2 tw="my-2 font-sans text-xl">{data.mail.link}</h2>
           <b>Mail</b>
         </a>
       </Socials>
       <section
-        className="py-24 mb-0 text-blue-200 bg-blue-100 pattern-grid-lg"
+        tw="py-24 mb-0 text-blue-200 bg-blue-100 "
+        className="pattern-grid-lg"
         id="redes"
       >
         <Fade bottom delay={100}>
-          <h1 className="pt-12 pb-12 font-sans text-3xl font-bold leading-tight text-center text-gray-800 md:text-4xl">
+          <h1 tw="pt-12 pb-12 font-sans text-3xl font-bold leading-tight text-center text-gray-800 md:text-4xl">
             Seguinos en <br />
             <a
               href="https://www.instagram.com/kallpaludica/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 underline hover:opacity-75 hover:text-blue-500"
+              tw="text-blue-600 underline hover:opacity-75 hover:text-blue-500"
             >
               instagram
             </a>{" "}
@@ -135,7 +136,7 @@ const ContactComponent = () => {
               href="https://www.facebook.com/kallpaludicaa"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 underline hover:opacity-75 hover:text-blue-500"
+              tw="text-blue-500 underline hover:opacity-75 hover:text-blue-500"
             >
               facebook
             </a>
