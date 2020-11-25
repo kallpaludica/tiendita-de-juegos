@@ -1,8 +1,8 @@
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import { kebabCase } from "lodash"
-import tw from "twin.macro"
-import styled from "@emotion/styled"
+import  "twin.macro"
+//import styled from "@emotion/styled"
 import React from "react"
 import { AwesomeButtonSocial } from "react-awesome-button"
 import { Helmet } from "react-helmet"
@@ -186,7 +186,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               )}
 
               {post.GameBuyPrice && (
-                <div className="flex flex-col-reverse justify-between w-full px-3 py-6 mb-0 bg-green-100 border-t-2 border-b-2 border-green-500 md:flex-row">
+                <div className="flex flex-col-reverse items-center justify-between w-full px-3 py-6 mb-0 bg-green-100 border-t-2 border-b-2 border-green-500 md:flex-row">
                   <AwesomeButtonSocial
                     type="whatsapp"
                     href={`https://api.whatsapp.com/send?phone=5493876034627&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20consultar%20por%20el%20juego%20${post.title}`}
@@ -278,7 +278,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </div>
         </div>
         <div tw="relative flex flex-col items-center w-full max-w-6xl px-2 pb-1 mx-auto mt-12 ">
-          <h1 tw="w-full max-w-6xl pt-3 pb-3 mx-auto font-mono text-3xl text-left text-blue-500 ">
+          <h1 tw="w-full max-w-6xl pt-3 pb-3 mx-auto font-mono text-3xl text-left text-orange-500 ">
             Lo que se anda jugando
           </h1>
           <div tw="w-full mx-auto mt-0">

@@ -102,7 +102,7 @@ const AllPage = (props) => {
       <Helmet>
         <body className="games" />
       </Helmet>
-      <HeroWave pattern="bg-blue-600 text-blue-500" />
+      <HeroWave pattern="bg-orange-600 text-orange-500" />
       <ContentSidebar>
         <Aside>
           <GamesAside />
@@ -111,10 +111,10 @@ const AllPage = (props) => {
           <PageSticky>
             <MainTitle>Por Título</MainTitle>
           </PageSticky>
-          <div className="relative flex flex-col justify-start border-b-2 border-blue-300 md:flex-row sm:py-0 sm:pt-0 md:pl-2">
+          <div className="relative flex flex-col justify-start border-b-2 border-orange-300 md:flex-row sm:py-0 sm:pt-0 md:pl-2">
             <GameSort />
             <button
-              className="relative bottom-0 right-0 flex items-baseline justify-center px-4 py-3 text-white bg-blue-500 outline-none md:absolute focus:outline-none hover:bg-blue-600"
+              className="relative bottom-0 right-0 flex items-baseline justify-center px-4 py-3 text-white bg-orange-500 outline-none md:absolute focus:outline-none hover:bg-orange-600"
               onClick={() => setToggle(!isToggled)}
             >
               <span className="font-sans font-bold">

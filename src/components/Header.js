@@ -125,11 +125,11 @@ const Logo = styled.div`
     transition: all 1s;
   }
   .headroom--pinned & .kallpa-logo {
-    transform: scale(0.9) rotate(120deg);
+    transform: scale(1.05) rotate(120deg);
   }
 
   .headroom--unpinned & .kallpa-logo {
-    transform: scale(0.9) rotate(60deg);
+    transform: scale(1.05) rotate(60deg);
   }
 
   .gatsby-image-wrapper {

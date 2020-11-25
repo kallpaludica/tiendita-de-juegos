@@ -1,8 +1,7 @@
 import React from "react"
 import { navigate } from "gatsby"
 import AnimatedBack from "../animations/goBack"
-import tw from "twin.macro"
-import styled from "@emotion/styled"
+import "twin.macro"
 const goBack = () => {
   navigate(-1)
 }

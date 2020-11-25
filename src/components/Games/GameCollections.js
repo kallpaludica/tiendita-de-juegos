@@ -37,7 +37,7 @@ const GameCollectionComponent = () => {
                 <Link
                   key={node.slug}
                   to={`/tienda-de-juegos/colecciones/${kebabCase(node.slug)}/`}
-                  tw="flex flex-col justify-center text-lg font-bold text-blue-500 shadow-sm"
+                  tw="flex flex-col justify-center text-lg font-bold text-teal-500 shadow-sm"
                 >
                   {node.icono && (
                     <div tw="relative bg-white py-6 overflow-hidden text-center md:w-full ">
@@ -58,7 +58,7 @@ const GameCollectionComponent = () => {
                 </p>
                 <Link
                   to={`/tienda-de-juegos/colecciones/${kebabCase(node.slug)}/`}
-                  tw="px-2 py-2 text-white bg-blue-500 font-bold rounded-sm hover:bg-blue-600 hover:text-white"
+                  tw="px-2 py-2 text-white bg-teal-500 font-bold rounded-sm hover:bg-teal-600 hover:text-white"
                 >
                   Ver {node.title}
                 </Link>
@@ -74,7 +74,6 @@ const GameCollectionComponent = () => {
 export default GameCollectionComponent
 
 const Card = styled.div`
-  ${tw`flex flex-col text-center transition-all duration-500 ease-in-out transform bg-blue-100 rounded-md shadow-xl hover:shadow-2xl hover:-translate-y-2`}
-  
-  }
+  ${tw`flex flex-col text-center transition-all duration-500 ease-in-out transform bg-teal-100 rounded-md shadow-xl hover:shadow-2xl hover:-translate-y-2`}
+
 `

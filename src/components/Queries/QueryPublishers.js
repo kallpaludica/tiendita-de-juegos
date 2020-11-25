@@ -29,7 +29,7 @@ const QueryPublisherComponent = () => {
           <Link
             key={node.slug}
             to={`/tienda-de-juegos/editoriales/${kebabCase(node.slug)}/`}
-            className="hover:text-indigo-500 hover:border-indigo-500"
+            className="hover:text-teal-500 hover:border-teal-500"
           >
             {node.title}
           </Link>

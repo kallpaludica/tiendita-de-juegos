@@ -109,7 +109,7 @@ const IndexPage = () => {
 
       <section className="pt-12">
         <Fade bottom delay={100}>
-          <h1 className="font-mono text-2xl leading-tight text-center text-blue-500 md:text-4xl">
+          <h1 className="font-mono text-2xl leading-tight text-center text-teal-500 md:text-4xl">
             Colecciones para empezar
           </h1>
         </Fade>

@@ -1,4 +1,9 @@
 /* purgecss start ignore */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .aws-btn {
   --button-default-height: 63px;
   --button-default-font-size: 20px;
@@ -8,29 +13,29 @@
   --button-icon-width: 44px;
   --button-icon-height: 44px;
   --button-small-width: 88px;
-  --button-small-height: 44px;
+  --button-small-height: 34px;
   --button-medium-width: 136px;
-  --button-medium-height: 44px;
+  --button-medium-height: 34px;
   --button-large-width: auto;
-  --button-large-height: 54px;
+  --button-large-height: 34px;
   --button-font-family: inherit;
   --button-font-color: #ffffff;
   --button-font-weight: 600;
   --button-font-style: normal;
   --button-hover-darken-opacity: 0.1;
-  --button-letter-spacing: 0px;
-  --button-horizontal-padding: 16px;
-  --button-raise-level: 2px;
+  --button-letter-spacing: 2px;
+  --button-horizontal-padding: 26px;
+  --button-raise-level: 3px;
   --button-hover-pressure: 1;
   --loading-transition-timing: ease-out;
   --loading-transition-speed: 6s;
   --loading-transition-end-speed: 0.3s;
-  --transform-speed: 0.15s;
-  --button-primary-color: #1e88e5;
-  --button-primary-color-dark: #1360a4;
+  --transform-speed: 0.25s;
+  --button-primary-color: #10B981;
+  --button-primary-color-dark: #059669;
   --button-primary-color-light: white;
-  --button-primary-color-hover: #187bd1;
-  --button-primary-color-active: #166dba;
+  --button-primary-color-hover: #059669;
+  --button-primary-color-active: #10B981;
   --button-primary-border: none;
   --button-secondary-color: #f2f6f9;
   --button-secondary-color-dark: #1360a4;
@@ -96,25 +101,6 @@
   );
 }
 
-/**
-  button-color:
-    color-name, (required)
-    background, (required)
-    darker-background, (required)
-    font-color, (required)
-    hover-background,
-    border,
-*/
-/**
-   button-social-color:
-     color-name,
-     background,
-     darken-background,
-     font-color
-  */
-/**
- button-size: size-name, width, height, font-size, line-height
-*/
 .aws-btn .aws-btn__wrapper:before,
 .aws-btn .aws-btn__wrapper:after,
 .aws-btn .aws-btn__content:after,
@@ -129,10 +115,7 @@
   left: 0;
 }
 
-.aws-btn {
-  padding: 0;
-  margin: 0;
-}
+
 
 .aws-btn,
 .aws-btn:focus {
@@ -159,14 +142,14 @@ button.aws-btn .aws-btn__wrapper {
   box-sizing: border-box;
   display: inline-block;
   vertical-align: middle;
-  height: var(--button-default-height);
+  height: 46px;
   position: relative;
   z-index: 1;
   background-color: transparent;
   font-size: var(--button-default-font-size);
   line-height: var(--button-default-line-height);
   font-weight: var(--button-font-weight);
-  font-family: var(--button-font-family);
+  @apply font-mono text-base uppercase;
   font-style: var(--button-font-style);
   letter-spacing: var(--button-letter-spacing);
   text-rendering: auto;

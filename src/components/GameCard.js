@@ -44,7 +44,7 @@ export default ({ card }) => (
         <div className="flex-grow" style={{ minHeight: "80px" }}>
           <Link
             to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
-            tw="inline-block px-2 pt-4 pr-6 pb-2 font-sans text-lg font-bold leading-6 hover:text-blue-600 flex-grow"
+            tw="inline-block px-2 pt-4 pr-6 pb-2 font-sans text-lg font-bold leading-6 hover:text-teal-600 flex-grow"
           >
             {card.title}
           </Link>
@@ -85,7 +85,7 @@ export default ({ card }) => (
           )}
           {card.stock && (
             <div
-              tw="absolute hidden top-0 right-0 flex items-center justify-between p-2 px-2 m-1 my-2 font-sans text-sm font-bold text-left text-blue-600 transition-all duration-500 md:text-base hover:text-white hover:bg-blue-500 "
+              tw="absolute hidden top-0 right-0 flex items-center justify-between p-2 px-2 m-1 my-2 font-sans text-sm font-bold text-left text-teal-600 transition-all duration-500 md:text-base hover:text-white hover:bg-teal-500 "
               data-tip="Consultar stock"
             >
               <FaShippingFast className="hidden mb-1 " />
@@ -94,12 +94,12 @@ export default ({ card }) => (
         </div>
         <Link
           to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
-          tw=" border-t border-blue-200"
+          tw=" border-t border-teal-200"
         >
-          <div tw="flex items-center justify-between p-2 px-2 font-sans font-bold text-left text-blue-600 transition-all duration-500 bg-white text-lg hover:text-blue-500 hover:bg-blue-100">
+          <div tw="flex items-center justify-between p-2 px-2 font-sans font-bold text-left text-teal-600 transition-all duration-500 bg-white text-lg hover:text-teal-500 hover:bg-teal-100">
             <span>Ver mas</span>
             <AiFillCheckCircle tw="hidden mb-1 " />
-            <b tw="block  font-bold text-blue-800 ">${card.GameBuyPrice}</b>
+            <b tw="block  font-bold text-teal-800 ">${card.GameBuyPrice}</b>
           </div>
         </Link>
       </div>

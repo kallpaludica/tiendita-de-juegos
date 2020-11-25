@@ -57,7 +57,7 @@ const ContactComponent = () => {
       <div tw="flex justify-center max-w-lg mx-auto">
         <div id="react-logo" style={{ width: 400, height: 300 }} />
       </div>
-      <h1 tw="max-w-6xl mx-auto mt-0 font-mono text-3xl font-bold text-green-700">
+      <h1 tw="max-w-6xl mx-auto mt-0 font-mono text-3xl font-bold text-teal-700">
         {data.contactanos.title}
       </h1>
       <div tw="max-w-6xl mx-auto ">
@@ -70,7 +70,7 @@ const ContactComponent = () => {
       </div>
       <Socials>
         <a
-          tw="flex flex-col items-center justify-center text-center text-green-500 transition-all duration-500 ease-in-out transform bg-white rounded-md hover:shadow-md hover:-translate-y-2 hover:text-green-600"
+          tw="flex flex-col items-center justify-center text-center text-teal-500 transition-all duration-500 ease-in-out transform bg-white rounded-md hover:shadow-md hover:-translate-y-2 hover:text-teal-600"
           target="_blank"
           rel="noopener noreferrer"
           title={data.whatsapp.titulo}
