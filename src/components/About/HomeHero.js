@@ -22,20 +22,20 @@ const HomeHeroCompoent = () => {
                     <TextLoop interval={3000} fade={true}>
                       <Link
                         to={`/tienda-de-juegos/colecciones/familiares`}
-                        className="text-blue-300 hover:text-white hover:underline"
+                        className="text-purple-400 hover:text-white hover:underline"
                       >
                         familiares
                       </Link>
                       <Link
                         to={`/tienda-de-juegos/colecciones/educativos`}
-                        className="text-orange-300 hover:text-white hover:underline"
+                        className="text-orange-400 hover:text-white hover:underline"
                       >
                         educativos
                       </Link>
 
                       <Link
                         to={`/tienda-de-juegos/colecciones/terapeuticos`}
-                        className="text-green-300 hover:text-white hover:underline"
+                        className="text-green-400 hover:text-white hover:underline"
                       >
                         terapéuticos
                       </Link>

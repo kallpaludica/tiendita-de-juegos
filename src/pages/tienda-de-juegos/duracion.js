@@ -103,7 +103,7 @@ const DurationPage = (props) => {
       <Helmet>
         <body className="games" />
       </Helmet>
-      <HeroWave pattern="bg-orange-600 text-orange-500" />
+      <HeroWave pattern="bg-teal-600 text-teal-500" />
       <ContentSidebar>
         <Aside>
           <GamesAside />
@@ -112,10 +112,10 @@ const DurationPage = (props) => {
           <PageSticky>
             <MainTitle>Por duración</MainTitle>
           </PageSticky>
-          <div className="relative flex flex-col justify-start border-b-2 border-orange-300 md:flex-row sm:py-0 sm:pt-0 md:pl-2">
+          <div className="relative flex flex-col justify-start border-b-2 border-teal-300 md:flex-row sm:py-0 sm:pt-0 md:pl-2">
             <GameSort />
             <button
-              className="relative bottom-0 right-0 flex items-center justify-center px-4 py-3 text-white bg-orange-500 outline-none md:absolute focus:outline-none hover:bg-orange-600"
+              className="relative bottom-0 right-0 flex items-center justify-center px-4 py-3 text-white bg-teal-500 outline-none md:absolute focus:outline-none hover:bg-teal-600"
               onClick={() => setToggle(!isToggled)}
             >
               <span className="font-sans font-bold">

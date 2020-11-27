@@ -40,7 +40,7 @@ header nav a {
 }
 
 .headroom--scrolled {
-  @apply bg-white shadow-xs;
+  @apply bg-white shadow-lg;
 }
 
 .headroom--scrolled header nav a svg path {

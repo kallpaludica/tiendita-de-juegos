@@ -55,7 +55,7 @@ a {
 
 @screen lg {
   .home-hero {
-    min-height: 70vh;
+    min-height: 95vh;
   }
 }
 

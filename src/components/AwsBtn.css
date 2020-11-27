@@ -31,11 +31,11 @@
   --loading-transition-speed: 6s;
   --loading-transition-end-speed: 0.3s;
   --transform-speed: 0.25s;
-  --button-primary-color: #10B981;
-  --button-primary-color-dark: #059669;
+  --button-primary-color: #ed8936;
+  --button-primary-color-dark: #c05621;
   --button-primary-color-light: white;
-  --button-primary-color-hover: #059669;
-  --button-primary-color-active: #10B981;
+  --button-primary-color-hover: #c05621;
+  --button-primary-color-active: #c05621;
   --button-primary-border: none;
   --button-secondary-color: #f2f6f9;
   --button-secondary-color-dark: #1360a4;

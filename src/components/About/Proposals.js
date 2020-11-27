@@ -40,10 +40,10 @@ export default ProposalsComponent
 
 const List = styled.div`
   ul {
-    ${tw`grid grid-cols-1 gap-3 pl-0 text-center md:grid-cols-3 `}
+    ${tw`grid grid-cols-1 gap-6 text-left md:grid-cols-2 `}
 
     li {
-      ${tw`mx-2`}
+      ${tw`mb-3`}
     }
   }
 `

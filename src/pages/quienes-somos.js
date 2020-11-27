@@ -9,9 +9,9 @@ import Fade from "react-reveal/Fade"
 import tw from "twin.macro"
 import kallpaEnergia from "../animations/kallpa-energia.json"
 import kallpaMovimiento from "../animations/kallpa-movimiento.json"
-import kallpaPotencia from "../animations/kallpa-potencia.json"
-import kallpaUnion from "../animations/kallpa-union.json"
-import kallpaPropuestas from "../animations/kallpa-propuestas.json"
+import kallpaObjetivos from "../animations/objetivos.json"
+import kallpaEquipo from "../animations/equipo.json"
+import kallpaPropuestas from "../animations/propuestas.json"
 import KallpaLogo from "../assets/logo.svg"
 import About from "../components/About/About"
 import Contact from "../components/About/Contact"
@@ -22,23 +22,24 @@ import Team from "../components/About/Team"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { ImQuotesLeft, ImQuotesRight } from "react-icons/im"
+import { BsFillTriangleFill } from "react-icons/bs"
 
 const AboutPage = () => {
   useEffect(() => {
     lottie.loadAnimation({
-      container: document.querySelector("#kallpa-Potencia"),
-      animationData: kallpaPotencia,
+      container: document.querySelector("#kallpa-objetivos"),
+      animationData: kallpaObjetivos,
     })
     lottie.loadAnimation({
-      container: document.querySelector("#kallpa-Union"),
-      animationData: kallpaUnion,
+      container: document.querySelector("#kallpa-equipo"),
+      animationData: kallpaEquipo,
     })
     lottie.loadAnimation({
       container: document.querySelector("#kallpa-Energia"),
       animationData: kallpaEnergia,
     })
     lottie.loadAnimation({
-      container: document.querySelector("#kallpa-Propuestas"),
+      container: document.querySelector("#kallpa-propuestas"),
       animationData: kallpaPropuestas,
     })
     lottie.loadAnimation({
@@ -53,16 +54,21 @@ const AboutPage = () => {
       <Helmet>
         <body className="about" />
       </Helmet>
-      <Hero className="text-yellow-900 bg-yellow-800 pattern-cross-dots-md">
+      <Hero className="bg-gray-900">
         <HeroContent>
           <Title>Un equipo transdisciplinario</Title>
           <Subtitle className="flex items-center max-w-xl px-2 mx-auto font-mono text-white">
             Buscamos poner sobre la mesa el juego para problematizarlo y
             apropiarnos de una práctica milenaria imprescindible.
           </Subtitle>
+          <AnchorLink tw="text-white h-16 w-16 flex justify-center items-center transform transition-all duration-500 rounded-full max-w-xs text-xl mx-auto mt-8  hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200" className="" href="#mision">
+            
+            <BsFillTriangleFill className="transform rotate-180" />
+
+          </AnchorLink>
         </HeroContent>
 
-        <div tw="absolute inset-0 z-40 opacity-25">
+        <div tw="absolute inset-0 z-40 opacity-50">
           <AboutSlider
             initDelay={3}
             transition={3}
@@ -98,51 +104,52 @@ const AboutPage = () => {
       </Hero>
       <section tw="top-0 z-50 py-1 bg-white md:sticky">
         <AnchorLinks>
-          <AnchorLink tw="font-mono" href="#mision">
+          <AnchorLink tw="font-mono text-teal-500 hover:text-teal-700 focus:text-teal-700" href="#mision">
             Misión
           </AnchorLink>
-          <AnchorLink tw="font-mono" href="#equipo">
+          <AnchorLink tw="font-mono text-purple-700 hover:text-purple-800 focus:text-purple-800" href="#equipo">
             Equipo
           </AnchorLink>
-          <AnchorLink tw="font-mono" href="#objectives">
+          <AnchorLink tw="font-mono text-orange-500 hover:text-orange-700 focus:text-orange-700" href="#objectives">
             Objetivos
           </AnchorLink>
-          <AnchorLink tw="font-mono" href="#proposals">
+          <AnchorLink tw="font-mono text-yellow-500 hover:text-yellow-700 focus:text-yellow-700" href="#proposals">
             Propuestas
           </AnchorLink>
         </AnchorLinks>
       </section>
       <section tw="px-2 pb-6 " id="mision">
-        <div tw="flex flex-wrap justify-center max-w-6xl py-12 mx-auto">
+       
+      </section>
+
+      <Section
+        tw="px-2 py-24 text-teal-600 bg-teal-700 "
+        className="pattern-cross-dots-xl"
+      >
+         <div tw="flex flex-wrap justify-center max-w-6xl py-12 mx-auto">
           <KallpaLogo
             tw="w-32 h-32 mt-12 mr-3 transform rotate-90 "
             className="kallpa-logo"
           />
         </div>
         <Mision />
-      </section>
-
-      <Section
-        tw="px-2 py-24 text-orange-700 bg-orange-600 "
-        className="pattern-cross-dots-xl"
-      >
         <About />
       </Section>
-      <section id="equipo" className="px-2 pt-24 bg-orange-100">
+      <section id="equipo" className="px-2 pt-24 bg-purple-100">
         <div tw="w-full px-6 py-12 md:py-2">
           <section className="container mx-auto">
             <div tw="flex flex-col items-center ">
               <Fade delay={100}>
                 <div tw="flex justify-start ">
                   <div
-                    id="kallpa-Potencia"
+                    id="kallpa-equipo"
                     style={{ width: 200, height: 200, top: "25px" }}
                   />
                 </div>
               </Fade>
 
               <div tw="text-center">
-                <h2 tw="max-w-6xl mx-auto font-mono text-4xl leading-tight text-orange-600 md:text-5xl">
+                <h2 tw="max-w-6xl mx-auto font-mono text-4xl leading-tight text-purple-600 md:text-5xl">
                   Equipo
                 </h2>
 
@@ -158,26 +165,26 @@ const AboutPage = () => {
       <section tw="px-2 pt-24 pb-12 bg-orange-200" id="objectives">
         <Fade delay={100}>
           <div tw="flex justify-center ">
-            <div id="kallpa-Union" style={{ width: 200, height: 200 }} />
+            <div id="kallpa-objetivos" style={{ width: 200, height: 200 }} />
           </div>
         </Fade>
         <Objectives />
       </section>
 
-      <section tw="px-2 pt-24 pb-12 bg-orange-100 " id="proposals">
+      <section tw="px-2 pt-24 pb-12 bg-purple-100 " id="proposals">
         <Fade delay={100}>
           <div tw="flex justify-center ">
-            <div id="kallpa-Propuestas" style={{ width: 200, height: 200 }} />
+            <div id="kallpa-propuestas" style={{ width: 200, height: 200 }} />
           </div>
         </Fade>
         <Proposals />
       </section>
       <section tw="flex flex-col items-center justify-center pt-24 pb-3 text-center">
         <Fade delay={100}>
-          <ImQuotesLeft tw="pb-4 text-4xl text-orange-500" />
+          <ImQuotesLeft tw="pb-4 text-4xl text-purple-500" />
         </Fade>
         <Fade delay={200}>
-          <p tw="max-w-3xl mx-auto font-serif text-3xl font-bold text-orange-500">
+          <p tw="max-w-3xl mx-auto font-serif text-3xl font-bold text-purple-500">
             Encontrarnos a jugar o jugar a encontrarnos.. conocernos,
             afectarnos.. son búsquedas para potenciarnos y caminar hacia
             construcciones más cuidadas.. comunitarias, alterativas, libres,
@@ -185,7 +192,7 @@ const AboutPage = () => {
           </p>
         </Fade>
         <Fade delay={300}>
-          <ImQuotesRight tw="pt-4 text-4xl text-orange-500" />
+          <ImQuotesRight tw="pt-4 text-4xl text-purple-500" />
         </Fade>
       </section>
 
@@ -201,9 +208,9 @@ const Section = styled.section`
 `
 
 const AnchorLinks = styled.div`
-  ${tw`relative z-50 flex flex-wrap justify-around w-full max-w-6xl px-3 pt-0 mx-auto mt-0 md:p-3 `}
+  ${tw`relative z-50 flex flex-wrap justify-around w-full max-w-4xl px-3 pt-0 mx-auto mt-0 md:p-3 `}
   a {
-    ${tw`w-full mx-3 my-2 font-sans text-base font-bold text-center text-orange-600 md:mx-8 md:text-xl hover:text-orange-700 focus:text-gray-900`}
+    ${tw`w-full mx-3 my-2 font-sans text-base font-bold text-center md:text-xl md:mx-8 focus:underline`}
     flex: 1;
   }
 `
