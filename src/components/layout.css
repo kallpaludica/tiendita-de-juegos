@@ -49,13 +49,13 @@ a {
 
 @screen md {
   .home-hero {
-    min-height: 95vh;
+    min-height: 80vh;
   }
 }
 
 @screen lg {
   .home-hero {
-    min-height: 95vh;
+    min-height: 82vh;
   }
 }
 

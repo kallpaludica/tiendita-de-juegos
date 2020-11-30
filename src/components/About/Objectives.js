@@ -42,10 +42,16 @@ export default ObjectivesComponent
 
 const List = styled.div`
   ul {
-    ${tw`grid grid-cols-1 gap-3 pl-0 text-center `}
+    ${tw`grid max-w-lg grid-cols-1 gap-1 pl-0 mx-auto text-left `}
 
     li {
-      ${tw`mx-2`}
+      ${tw`mx-2 list-disc `}
+      
+    }
+
+    p {
+      ${tw`my-0`}
+
     }
   }
 `

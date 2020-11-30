@@ -8,7 +8,7 @@ import tw from "twin.macro"
 import AboutImage from "../images/kallpa-ludica.png"
 import Toggle from "./GameCardToggle"
 //import { IoMdTime } from "react-icons/io"
-import { FaShippingFast } from "react-icons/fa"
+import { CgSandClock } from "react-icons/cg"
 //import { FaUserFriends, FaShippingFast } from "react-icons/fa"
 import { AiFillCheckCircle } from "react-icons/ai"
 
@@ -44,7 +44,7 @@ export default ({ card }) => (
         <div className="flex-grow" style={{ minHeight: "80px" }}>
           <Link
             to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
-            tw="inline-block px-2 pt-4 pr-6 pb-2 font-sans text-lg font-bold leading-6 hover:text-teal-600 flex-grow"
+            tw="inline-block px-2 pt-4 pr-10 pb-2 font-sans text-lg font-bold leading-6 hover:text-teal-600 flex-grow"
           >
             {card.title}
           </Link>
@@ -85,10 +85,11 @@ export default ({ card }) => (
           )}
           {card.stock && (
             <div
-              tw="absolute hidden top-0 right-0 flex items-center justify-between p-2 px-2 m-1 my-2 font-sans text-sm font-bold text-left text-teal-600 transition-all duration-500 md:text-base hover:text-white hover:bg-teal-500 "
-              data-tip="Consultar stock"
+              tw="relative md:absolute  top-0 right-0 flex items-center justify-end p-2 px-2 m-1 my-2 font-sans text-sm font-bold text-left text-blue-600 transition-all duration-500 md:text-base hover:text-white hover:bg-blue-500 "
+              data-tip="Por encargo"
             >
-              <FaShippingFast className="hidden mb-1 " />
+              <CgSandClock className="mb-1 " />
+              <span className="block md:hidden">Por encargo</span>
             </div>
           )}
         </div>

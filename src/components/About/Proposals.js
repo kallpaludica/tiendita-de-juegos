@@ -43,7 +43,11 @@ const List = styled.div`
     ${tw`grid grid-cols-1 gap-6 text-left md:grid-cols-2 `}
 
     li {
-      ${tw`mb-3`}
+      ${tw`pb-4 mb-1 border-b border-orange-500`}
+    }
+    p {
+      ${tw`my-0`}
+
     }
   }
 `

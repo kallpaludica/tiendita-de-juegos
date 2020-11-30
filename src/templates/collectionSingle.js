@@ -168,6 +168,7 @@ export const pageQuery = graphql`
           id
           title
           slug
+          stock
           GameBuyPrice
           imagenDestacada {
             fixed(width: 500, height: 500) {

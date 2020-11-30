@@ -80,17 +80,18 @@ const HomeHeroCompoent = () => {
           transition={2}
           duration={5}
           images={[
+            "home-caiaaate.jpg",
+            "home-balance.jpg",
+            "home-kabuki.jpg",
+            "home-nacio.jpg",
+            "home-slider-soy.jpg",
             "home-slider-1.jpg",
             "home-slider-2.jpg",
-            "home-slider-3.jpg",
+            "home-warmis.jpg",
             "home-slider-4.jpg",
-            "home-slider-5.jpg",
             "home-slider-6.jpg",
             "home-slider-7.jpg",
-            "home-slider-8.jpg",
-            "home-slider-9.jpg",
             "home-slider-10.jpg",
-            "home-slider-11.jpg",
             "home-slider-12.jpg",
           ]}
           query={useStaticQuery(graphql`
