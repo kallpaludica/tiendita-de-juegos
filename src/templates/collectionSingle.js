@@ -20,8 +20,10 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
   return (
     <Layout location={location}>
       <SEO
-        title={`Modalidad ${collection.title}`}
-        description={`Juego de la modalidad ${collection.title}`}
+        title={`Coleccion ${collection.title}`}
+        description={`Juego de la Coleccion ${collection.title}`}
+        image={`${collection.icono.file.url}`}
+
       />
       <HeroWave
         heading={collection.title}
@@ -115,6 +117,11 @@ export const pageQuery = graphql`
       childContentfulColeccionesCollectionDescriptionTextNode {
         childMarkdownRemark {
           html
+        }
+      }
+      icono {
+        file {
+          url
         }
       }
       CollectionDescription {

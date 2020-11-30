@@ -1,7 +1,23 @@
 import styled from "@emotion/styled"
 import algoliasearch from "algoliasearch/lite"
 import React from "react"
-import { Hits, InstantSearch, SearchBox } from "react-instantsearch-dom"
+import {
+  InstantSearch,
+  HierarchicalMenu,
+  RefinementList,
+  SortBy,
+  Pagination,
+  ClearRefinements,
+  Highlight,
+  Hits,
+  HitsPerPage,
+  Panel,
+  Configure,
+  SearchBox,
+  Snippet,
+  ToggleRefinement,
+  Stats,
+} from "react-instantsearch-dom"
 import tw from "twin.macro"
 import Layout from "../components/layout"
 import PostPreview from "../components/postPreview"
@@ -19,12 +35,15 @@ const BuscarComponent = () => {
       <Layout>
         <SearchContainer>
           <SEO title="Buscar" />
-
           <div className="max-w-xl p-6 pt-6 mx-auto">
             <InstantSearch
               searchClient={searchClient}
               indexName="netlify_89e873dd-0214-4d2f-b526-ed8fb59a5cfe_master_all"
             >
+              <div>
+                <Stats />
+                <Pagination />
+              </div>
               <SearchBox
                 className="w-full mx-auto mb-6"
                 translations={{
