@@ -99,7 +99,7 @@ const PreciosPage = (props) => {
 
   return (
     <Layout>
-      <SEO title="Tienda de juegos" />
+      <SEO title="Juegos por precio" />
       <Helmet>
         <body className="games" />
       </Helmet>

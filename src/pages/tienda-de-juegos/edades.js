@@ -99,7 +99,7 @@ const EdadesPage = (props) => {
 
   return (
     <Layout>
-      <SEO title="Tienda de juegos" />
+      <SEO title="Juegos por edades" />
       <Helmet>
         <body className="games" />
       </Helmet>

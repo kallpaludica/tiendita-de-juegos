@@ -16,7 +16,10 @@ const CategorySingleTemplate = ({ data, pageContext, location }) => {
   const { prev, next } = pageContext
   return (
     <Layout location={location}>
-      <SEO title="Categoria" />
+      <SEO
+        title={`Modalidad ${categoria.title}`}
+        description={`Juego de la modalidad ${categoria.title}`}
+      />
       <HeroWave
         heading={categoria.title}
         pattern="bg-teal-600 text-teal-500 "

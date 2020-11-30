@@ -99,7 +99,7 @@ const DurationPage = (props) => {
 
   return (
     <Layout>
-      <SEO title="Tienda de juegos" />
+      <SEO title="Juegos por duración" />
       <Helmet>
         <body className="games" />
       </Helmet>

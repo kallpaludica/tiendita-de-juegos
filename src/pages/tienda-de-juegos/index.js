@@ -98,7 +98,7 @@ const AllPage = (props) => {
 
   return (
     <Layout>
-      <SEO title="Tienda de juegos" />
+      <SEO title="Juegos de la A a la Z" />
       <Helmet>
         <body className="games" />
       </Helmet>

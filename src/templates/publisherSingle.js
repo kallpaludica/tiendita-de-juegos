@@ -15,7 +15,11 @@ const PublisherSingleTemplate = ({ data, pageContext, location }) => {
 
   return (
     <Layout location={location}>
-      <SEO title="Editorial" />
+      <SEO
+        title={`Editorial ${publisher.title}`}
+        description={`Juego de la editorial ${publisher.title}`}
+        image={`${publisher.imagenDestacada.file.url}`}
+      />
       <HeroWave
         heading={publisher.title}
         pattern="bg-teal-600 text-teal-500 "
