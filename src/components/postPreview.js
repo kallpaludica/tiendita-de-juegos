@@ -21,6 +21,9 @@ const PostPreview = ({ hit }) => {
           <p>
             <Highlight hit={hit} attribute="description" tagName="mark" />
           </p>
+          <p>
+            <Highlight hit={hit} attribute="content" tagName="mark" />
+          </p>
         </Content>
         <Image>
           <img
@@ -36,7 +39,7 @@ const PostPreview = ({ hit }) => {
 export default PostPreview
 
 const SearchItem = styled.div`
-  ${tw`flex text-teal-800 bg-white`}
+  ${tw`flex text-left text-teal-800 bg-white`}
 
 
 

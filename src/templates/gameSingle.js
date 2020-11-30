@@ -236,8 +236,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   Creado por {post.GameAuthor}
                 </div>
               )}
-
-              <div
+              <main>
+              <article
                 className="w-full pl-0 pr-6 my-6 text-left article"
                 id={post.slug}
               >
@@ -248,7 +248,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                     }
                   />
                 )}
-              </div>
+              </article>
+              </main>
 
               {post.GamePlay && (
                 <div tw="mt-12">
