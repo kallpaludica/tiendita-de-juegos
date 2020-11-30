@@ -19,7 +19,10 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
   const { prev, next } = pageContext
   return (
     <Layout location={location}>
-      <SEO title={collection.title} />
+      <SEO
+        title={`Modalidad ${collection.title}`}
+        description={`Juego de la modalidad ${collection.title}`}
+      />
       <HeroWave
         heading={collection.title}
         subtitle={collection.CollectionDescription.CollectionDescription}

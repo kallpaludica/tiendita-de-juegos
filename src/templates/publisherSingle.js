@@ -18,7 +18,7 @@ const PublisherSingleTemplate = ({ data, pageContext, location }) => {
       <SEO
         title={`Editorial ${publisher.title}`}
         description={`Juego de la editorial ${publisher.title}`}
-        image={`${publisher.imagenDestacada.file.url}`}
+        image={`${publisher.logo.file.url}`}
       />
       <HeroWave
         heading={publisher.title}
@@ -65,6 +65,11 @@ export const pageQuery = graphql`
       id
       title
       slug
+      logo {
+        file {
+          url
+        }
+      }
       articulos {
         title
         slug
