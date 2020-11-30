@@ -67,7 +67,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const { prev, next } = pageContext
   return (
     <Layout location={location}>
-      <SEO title="Juegos" />
+      <SEO
+        title={`${post.title}`}
+        description={`Juego de la editorial ${post.publisher.title}`}
+        image={`${post.imagenDestacada.file.url}`}
+      />
       <Helmet>
         <body className="ingame" />
       </Helmet>
@@ -301,6 +305,7 @@ export const pageQuery = graphql`
       title
       childContentfulArticulosTextoPrincipalRichTextNode {
         json
+        textoPrincipal
       }
       stock
       GameBuyPrice

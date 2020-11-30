@@ -51,7 +51,7 @@ const GameCollectionComponent = () => {
                   )}
                 </Link>
                 <p
-                  tw=" p-2 pt-4 md:px-8  font-sans text-base md:text-lg"
+                  tw=" p-2 pt-4 md:px-0  font-sans text-base md:text-lg"
                   style={{ minHeight: "80px" }}
                 >
                   {node.CollectionDescription.CollectionDescription}
