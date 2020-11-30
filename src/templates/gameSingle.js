@@ -1,7 +1,7 @@
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import { kebabCase } from "lodash"
-import  "twin.macro"
+import "twin.macro"
 //import styled from "@emotion/styled"
 import React from "react"
 import { AwesomeButtonSocial } from "react-awesome-button"
@@ -67,11 +67,19 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const { prev, next } = pageContext
   return (
     <Layout location={location}>
-      <SEO
-        title={`${post.title}`}
-        description={`Juego de la editorial ${post.publisher.title}`}
-        image={`${post.imagenDestacada.file.url}`}
-      />
+      {post.publisher ? (
+        <SEO
+          title={`${post.title}`}
+          description={`Juego de la editorial ${post.publisher.title}`}
+          image={`${post.imagenDestacada.file.url}`}
+        />
+      ) : (
+        <SEO
+          title={`${post.title}`}
+          description={`Juego en la provincia de Salta`}
+          image={`${post.imagenDestacada.file.url}`}
+        />
+      )}
       <Helmet>
         <body className="ingame" />
       </Helmet>
