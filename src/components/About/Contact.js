@@ -9,8 +9,7 @@ import tw from "twin.macro"
 import reactLogo from "../../animations/ogam.json"
 import FormatText from "../wysiwyg"
 import Fade from "react-reveal/Fade"
-
-import LikesInstagram from "../Queries/LikesInstagram"
+//import LikesInstagram from "../Queries/LikesInstagram"
 
 const ContactComponent = () => {
   const data = useStaticQuery(graphql`
@@ -116,7 +115,7 @@ const ContactComponent = () => {
         </a>
       </Socials>
       <section
-        tw="py-24 mb-0 text-blue-200 bg-blue-100 "
+        tw="py-24 pb-32 mb-0 text-blue-200 bg-blue-100 "
         className="pattern-grid-lg"
         id="redes"
       >
@@ -142,7 +141,7 @@ const ContactComponent = () => {
             </a>
           </h1>
         </Fade>
-        <LikesInstagram />
+        
       </section>
     </>
   )

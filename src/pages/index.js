@@ -42,28 +42,7 @@ const IndexPage = () => {
           }
         }
       }
-      allInstaNode(limit: 8, sort: { order: DESC, fields: likes }, skip: 6) {
-        edges {
-          node {
-            id
-            likes
-            comments
-            caption
-            mediaType
-            timestamp
-            original
-            thumbnails {
-              src
-              config_width
-              config_height
-            }
-            dimensions {
-              height
-              width
-            }
-          }
-        }
-      }
+      
     }
   `)
 
