@@ -14,7 +14,7 @@ import { AiFillCheckCircle } from "react-icons/ai"
 
 export default ({ card }) => (
   <GameCard>
-    <div className="flex l">
+    <div className="flex">
       {card.imagenDestacada ? (
         <Link
           to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
@@ -22,7 +22,7 @@ export default ({ card }) => (
         >
           <Img
             title={card.title}
-            className="object-contain w-40 h-40 "
+            className="object-contain w-64 h-64 "
             alt={card.title}
             fluid={card.imagenDestacada.fluid}
           />
@@ -46,6 +46,8 @@ export default ({ card }) => (
         >
           {card.title}
         </Link>
+
+
 
         <div className="flex flex-col md:flex-row">
           {card.GameAges && (
@@ -76,22 +78,25 @@ export default ({ card }) => (
             </div>
           )}
         </div>
-        {card.stock && (
-          <div
-            className="absolute top-0 right-0 flex items-center justify-between p-2 px-2 m-1 my-2 font-sans text-sm font-bold text-left text-blue-600 transition-all duration-500 md:text-base hover:text-white hover:bg-blue-500 "
-            data-tip="Por encargo"
-          >
-            <CgSandClock className="inline-block mb-1 " />
-          </div>
-        )}
+
         <Link
           to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
           tw=" border-t border-blue-200"
         >
-          <div tw="flex items-center justify-between p-2 px-2 font-sans font-bold text-left text-blue-600 transition-all duration-500 bg-white text-lg hover:text-blue-500 hover:bg-blue-100">
-            <span>Ver mas</span>
-            <AiFillCheckCircle tw="hidden mb-1 " />
+          <div
+            tw="flex flex-col md:flex-row items-center w-full justify-between p-2 px-2 font-sans font-bold text-left text-blue-600 transition-all duration-500 bg-white text-lg hover:text-blue-500 hover:bg-blue-100"
+            className="absolute bottom-0 left-0 right-0"
+          >
             <b tw="block  font-bold text-blue-800 ">${card.GameBuyPrice}</b>
+            {card.stock && (
+              <div
+                className="flex items-center justify-start my-2 font-sans font-bold text-left text-blue-600 transition-all duration-500 md:text-base hover:text-white hover:bg-blue-500 "
+                data-tip="Por encargo"
+              >
+                <CgSandClock className="inline-block mb-1 " />
+                <span>Pedidos por encargo</span>
+              </div>
+            )}
           </div>
         </Link>
       </div>
@@ -113,10 +118,11 @@ export default ({ card }) => (
 )
 
 const GameCard = styled.div`
-  ${tw`relative w-full mb-3 overflow-hidden transition-all duration-500 transform bg-white rounded-md shadow-lg hover:shadow-2xl `}
+  ${tw`relative w-full overflow-hidden transition-all duration-500 transform bg-white rounded-md shadow-lg hover:shadow-2xl `}
 
   .image {
-    ${tw`relative w-56 overflow-hidden transition-all duration-500 transform scale-90 `}
+    ${tw`relative overflow-hidden transition-all duration-500 transform scale-90 `}
+    width: 420px;
   }
 
   .image:hover {

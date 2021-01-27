@@ -24,8 +24,13 @@ const routes = [
     slug: "/tienda-de-juegos/editoriales",
   },
   {
+    title: "Buscador",
+    active: "text-blue-500",
+    slug: "/buscador",
+  },
+  {
     title: "Quienes somos",
-    active: "text-pink-500",
+    active: "text-orange-500",
     slug: "/quienes-somos",
   },
   {

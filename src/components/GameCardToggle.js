@@ -12,7 +12,7 @@ import { FaCaretRight } from "react-icons/fa"
 const Toggle = (props) => {
   const [isToggled, setToggle] = useState(false)
   const fade = useSpring({
-    transform: isToggled ? "translateX(0px)" : "translateX(500px)",
+    transform: isToggled ? "translateY(0px)" : "translateY(-200px)",
     config: { mass: 3, tension: 500, friction: 80 },
   })
   const rotate = useSpring({
@@ -84,7 +84,7 @@ const Toggle = (props) => {
 
         <Link
           to={`/tienda-de-juegos/${kebabCase(props.slug)}/`}
-          className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-2 px-3 font-sans text-sm font-bold text-left text-white transition-all duration-500 bg-blue-600 hover:text-white hover:bg-blue-500"
+          className="flex items-center justify-between p-2 px-3 font-sans text-sm font-bold text-left text-white transition-all duration-500 bg-blue-600 hover:text-white hover:bg-blue-500"
         >
           {props.stock ? (
             <span>Pedilo por encargo</span>
@@ -96,7 +96,7 @@ const Toggle = (props) => {
       </animated.div>
 
       <button
-        className="top-0 right-0 z-40 flex justify-center px-1 py-1 text-gray-800 duration-500 transform border-none rounded-bl-lg focus:outline-none hover:text-blue-500 hover:bg-gray-600"
+        className="absolute top-0 right-0 z-50 flex justify-center px-1 py-1 text-gray-800 duration-500 transform border-none rounded-bl-lg focus:outline-none hover:text-blue-500 hover:bg-gray-600"
         onClick={() => setToggle(!isToggled)}
         style={{ backgroundColor: "rgba(255,255,255,.3)" }}
       >

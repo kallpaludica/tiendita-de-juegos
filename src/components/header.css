@@ -4,10 +4,6 @@ header nav {
   display: block;
 }
 
-header nav a svg path {
-  stroke: #fff;
-}
-
 header nav a {
   display: inline-block;
   text-decoration: none;
@@ -43,9 +39,6 @@ header nav a {
   @apply bg-white shadow-lg;
 }
 
-.headroom--scrolled header nav a svg path {
-  stroke: #48bb78;
-}
 
 .headroom--unpinned {
   position: fixed;

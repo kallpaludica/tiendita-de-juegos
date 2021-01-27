@@ -4,7 +4,8 @@ import PropTypes from "prop-types"
 import React from "react"
 import Headroom from "react-headroom"
 //import { FaNewspaper } from "react-icons/fa"
-import { AiFillShop } from "react-icons/ai"
+import { AiFillShop, AiOutlineSearch } from "react-icons/ai"
+import { GrSearch } from "react-icons/gr"
 import { IoIosChatbubbles, IoMdMail } from "react-icons/io"
 import tw from "twin.macro"
 import KallpaLogo from "../assets/logo.svg"
@@ -14,7 +15,7 @@ const routesLeft = [
   {
     title: "Tienda de juegos",
     slug: "/tienda-de-juegos",
-    icon: <AiFillShop className="text-xl " />,
+    icon: <AiFillShop className="mr-1 text-xl " />,
   },
   /*
   {
@@ -28,21 +29,21 @@ const routesLeft = [
     icon: <IoIosArchive className="text-2xl " />,
   }*/
   {
+    title: "Buscador",
+    slug: "/buscador",
+    icon: <AiOutlineSearch className="mr-1 text-2xl " />,
+
+  },
+  {
     title: "Quienes somos",
     slug: "/quienes-somos",
-    icon: <IoIosChatbubbles className="text-2xl " />,
+    icon: <IoIosChatbubbles className="mr-1 text-2xl " />,
   },
   {
     title: "Contacto",
     slug: "/contacto",
-    icon: <IoMdMail className="text-2xl " />,
+    icon: <IoMdMail className="mr-1 text-2xl " />,
   },
-
-  //{
-  // title: <GrSearch className="mt-1 text-white fill-current" />,
-  //active: "opacity-50",
-  //slug: "/buscar",
-  //},
 ]
 
 const Header = ({ siteTitle }) => (
@@ -65,9 +66,10 @@ const Header = ({ siteTitle }) => (
                 key={i}
                 activeClassName="opacity-100 border-white"
                 partiallyActive={true}
-                className="flex items-center py-3 font-mono text-sm text-center border-b border-transparent opacity-75 hover:opacity-100 md:mx-4 lg:text-lg"
+                className="flex items-center py-3 font-mono text-sm text-center border-t-2 border-transparent opacity-90 hover:opacity-100 md:mx-4 lg:text-lg"
                 to={route.slug}
               >
+                <span>{route.icon}</span>
                 <span>{route.title}</span>
               </Link>
             )

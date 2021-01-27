@@ -520,14 +520,29 @@ a[class^="ais-"] {
 .ais-InfiniteResults-list,
 .ais-Hits-list,
 .ais-Results-list {
-  margin-top: -1rem;
-  margin-left: -1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  @apply grid grid-cols-1 gap-3;
 }
+
+
+
+@screen md {
+  .ais-InfiniteHits-list,
+  .ais-InfiniteResults-list,
+  .ais-Hits-list,
+  .ais-Results-list {
+    @apply grid grid-cols-2 gap-3;
+  }
+}
+
+@screen lg {
+  .ais-InfiniteHits-list,
+  .ais-InfiniteResults-list,
+  .ais-Hits-list,
+  .ais-Results-list {
+    @apply grid grid-cols-3 gap-3;
+  }
+}
+
 .ais-Panel-body .ais-InfiniteHits-list,
 .ais-Panel-body .ais-InfiniteResults-list,
 .ais-Panel-body .ais-Hits-list,
@@ -539,8 +554,6 @@ a[class^="ais-"] {
 .ais-InfiniteResults-item,
 .ais-Hits-item,
 .ais-Results-item {
-  margin-top: 1rem;
-  margin-left: 1rem;
   width: 100%;
   @apply shadow-lg;
 }

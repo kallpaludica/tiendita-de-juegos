@@ -13,26 +13,28 @@ import tw from "twin.macro"
 
 const PostPreview = ({ hit }) => {
   return (
-      <SearchItem>
-        <Content>
-          <Link to={hit.url}>
-            <Highlight hit={hit} attribute="title" tagName="mark" />
-          </Link>
-          <p>
-            <Highlight hit={hit} attribute="description" tagName="mark" />
-          </p>
-          <p>
-            <Highlight hit={hit} attribute="content" tagName="mark" />
-          </p>
-        </Content>
-        <Image>
+    <SearchItem>
+      <Image>
+        <Link to={hit.url}>
           <img
-            className="object-cover w-32 h-32"
+            className="w-32 object-fit"
             alt={hit.title}
             src={hit.image}
           />
-        </Image>
-      </SearchItem>
+        </Link>
+      </Image>
+      <Content>
+        <Link to={hit.url}>
+          <Highlight hit={hit} attribute="title" tagName="mark" />
+        </Link>
+        <p className="hidden">
+          <Highlight hit={hit} attribute="description" tagName="mark" />
+        </p>
+        <p className="hidden">
+          <Highlight hit={hit} attribute="content" tagName="mark" />
+        </p>
+      </Content>
+    </SearchItem>
   )
 }
 
@@ -41,14 +43,12 @@ export default PostPreview
 const SearchItem = styled.div`
   ${tw`flex text-left text-teal-800 bg-white`}
 
-
-
   body.dark & {
     ${tw`text-teal-100 bg-white`}
   }
 
   a {
-    ${tw`font-mono text-xl font-bold text-teal-500`}
+    ${tw`font-sans text-xl font-bold text-gray-700`}
   }
 
   p {
@@ -57,14 +57,13 @@ const SearchItem = styled.div`
 `
 
 const Image = styled.div`
-  ${tw`w-32 `}
-
-  ${tw`opacity-75`}
-  body.dark & {
+  ${tw`relative w-32 overflow-hidden bg-gray-200`}
+  a {
+    ${tw`flex items-center justify-center w-32 h-32`}
   }
 `
 
 const Content = styled.div`
-  ${tw`w-full p-2 px-3`}
+  ${tw`flex items-center justify-center w-full p-2 px-3`}
   flex: 1
 `
