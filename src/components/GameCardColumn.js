@@ -8,7 +8,7 @@ import tw from "twin.macro"
 import AboutImage from "../images/kallpa-ludica.png"
 import Toggle from "./GameCardToggle"
 //import { IoMdTime } from "react-icons/io"
-import { FaShippingFast } from "react-icons/fa"
+import { CgSandClock } from "react-icons/cg"
 //import { FaUserFriends, FaShippingFast } from "react-icons/fa"
 import { AiFillCheckCircle } from "react-icons/ai"
 
@@ -39,10 +39,10 @@ export default ({ card }) => (
           />
         </Link>
       )}
-      <div className="relative flex flex-col w-full px-0 pb-0 font-sans text-left bg-white">
+      <div className="relative flex flex-col w-full pb-0 pl-3 font-sans text-left bg-white md:pl-0">
         <Link
           to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
-          className="block px-2 pt-3 pb-1 pr-12 font-sans text-base font-bold leading-6 hover:text-blue-600 sm:pb-0 md:pb-3 "
+          className="block pt-3 pb-1 pr-12 font-sans text-base font-bold leading-6 hover:text-blue-600 sm:pb-0 md:pb-3 "
         >
           {card.title}
         </Link>
@@ -50,7 +50,7 @@ export default ({ card }) => (
         <div className="flex flex-col md:flex-row">
           {card.GameAges && (
             <div className="inline-block pt-1 text-center game-ages">
-              <div className="flex justify-start pb-1 font-sans text-base font-bold text-left text-gray-800 md:px-2 ">
+              <div className="flex justify-start pb-1 font-sans text-base font-bold text-left text-gray-800 md:pr-4 ">
                 <div className="flex flex-1 opacity-100">
                   {card.GameAges}+ años
                 </div>
@@ -58,8 +58,8 @@ export default ({ card }) => (
             </div>
           )}
           {card.GameDuration && (
-            <div className="inline-block px-2 pt-1 text-center game-duration">
-              <div className="flex justify-center pb-1 font-sans text-base font-bold text-center text-gray-800 md:px-2 ">
+            <div className="inline-block pt-1 text-center game-duration">
+              <div className="flex justify-center pb-1 font-sans text-base font-bold text-center text-gray-800 md:pr-4 ">
                 <div className="flex flex-1 opacity-100">
                   Duración: {card.GameDuration}min.
                 </div>
@@ -68,7 +68,7 @@ export default ({ card }) => (
           )}
           {card.GamePlayers && (
             <div className="inline-block pt-1 text-center game-players">
-              <div className="flex justify-center pb-1 font-sans text-base font-bold text-center text-gray-800 ">
+              <div className="flex justify-center pb-1 font-sans text-base font-bold text-center text-gray-800 md:pr-4">
                 <div className="flex items-baseline flex-1 ">
                   {card.GamePlayers} jugadores/as
                 </div>
@@ -79,9 +79,9 @@ export default ({ card }) => (
         {card.stock && (
           <div
             className="absolute top-0 right-0 flex items-center justify-between p-2 px-2 m-1 my-2 font-sans text-sm font-bold text-left text-blue-600 transition-all duration-500 md:text-base hover:text-white hover:bg-blue-500 "
-            data-tip="Consultar stock"
+            data-tip="Por encargo"
           >
-            <FaShippingFast className="inline-block mb-1 " />
+            <CgSandClock className="inline-block mb-1 " />
           </div>
         )}
         <Link

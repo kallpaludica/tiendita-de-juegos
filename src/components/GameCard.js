@@ -23,7 +23,7 @@ export default ({ card }) => (
         >
           <Img
             title={card.title}
-            tw="object-contain w-32 h-32 sm:h-48 sm:w-full"
+            tw="object-contain w-32 h-32 sm:h-56 sm:w-full"
             alt={card.title}
             fluid={card.imagenDestacada.fluid}
           />
@@ -48,7 +48,6 @@ export default ({ card }) => (
           >
             {card.title}
           </Link>
-
           {card.GameAges && (
             <div
               tw="hidden w-full px-2 pt-1 text-center md:px-0 "
@@ -105,7 +104,6 @@ export default ({ card }) => (
         </Link>
       </div>
     </div>
-
     <div className="hidden">
       <Toggle
         title={card.title}

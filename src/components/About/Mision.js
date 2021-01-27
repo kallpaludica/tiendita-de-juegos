@@ -20,7 +20,7 @@ const MisionComponent = () => {
   return (
     <>
       <div className="w-full text-center ">
-        <h1 className="max-w-4xl mx-auto font-mono text-4xl text-white">
+        <h1 className="max-w-4xl mx-auto font-mono text-4xl text-gray-900">
           {data.mision.title}
         </h1>
         <div className="flex items-center justify-center my-8 ">
@@ -45,6 +45,6 @@ const List = styled.div`
     ${tw`pl-6 list-disc `}
   }
   p {
-    ${tw`font-sans text-2xl leading-8 text-white`}
+    ${tw`font-sans text-2xl leading-8 text-gray-900`}
   }
 `

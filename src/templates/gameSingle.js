@@ -253,7 +253,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
               {post.GamePlay && (
                 <div tw="mt-12">
-                  <Player src={post.GamePlay.file.url}>
+                  <Player src={post.GamePlay.file.url} poster={post.imagenDestacada.file.url} >
                     <BigPlayButton position="center" />
                   </Player>
                 </div>

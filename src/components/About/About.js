@@ -39,6 +39,6 @@ export default AboutAboutComponent
 const About = styled.div`
   ${tw`max-w-3xl mx-auto font-sans text-2xl text-left `}
   p {
-    ${tw`text-white`}
+    ${tw`text-gray-900`}
   }
 `

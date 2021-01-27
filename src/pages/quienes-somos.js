@@ -61,10 +61,12 @@ const AboutPage = () => {
             Buscamos poner sobre la mesa el juego para problematizarlo y
             apropiarnos de una práctica milenaria imprescindible.
           </Subtitle>
-          <AnchorLink tw="text-white h-16 w-16 flex justify-center items-center transform transition-all duration-500 rounded-full max-w-xs text-xl mx-auto mt-8  hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200" className="" href="#mision">
-            
+          <AnchorLink
+            tw="text-white h-16 w-16 flex justify-center items-center transform transition-all duration-500 rounded-full max-w-xs text-xl mx-auto mt-8  hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200"
+            className=""
+            href="#mision"
+          >
             <BsFillTriangleFill className="transform rotate-180" />
-
           </AnchorLink>
         </HeroContent>
 
@@ -104,29 +106,34 @@ const AboutPage = () => {
       </Hero>
       <section tw="top-0 z-50 py-1 bg-white md:sticky">
         <AnchorLinks>
-          <AnchorLink tw="font-mono text-teal-500 hover:text-teal-700 focus:text-teal-700" href="#mision">
+          <AnchorLink
+            tw="font-mono text-teal-500 hover:text-teal-700 focus:text-teal-700"
+            href="#mision"
+          >
             Misión
           </AnchorLink>
-          <AnchorLink tw="font-mono text-purple-700 hover:text-purple-800 focus:text-purple-800" href="#equipo">
+          <AnchorLink
+            tw="font-mono text-purple-700 hover:text-purple-800 focus:text-purple-800"
+            href="#equipo"
+          >
             Equipo
           </AnchorLink>
-          <AnchorLink tw="font-mono text-orange-500 hover:text-orange-700 focus:text-orange-700" href="#objectives">
+          <AnchorLink
+            tw="font-mono text-orange-500 hover:text-orange-700 focus:text-orange-700"
+            href="#objectives"
+          >
             Objetivos
           </AnchorLink>
-          <AnchorLink tw="font-mono text-yellow-500 hover:text-yellow-700 focus:text-yellow-700" href="#proposals">
+          <AnchorLink
+            tw="font-mono text-yellow-500 hover:text-yellow-700 focus:text-yellow-700"
+            href="#proposals"
+          >
             Propuestas
           </AnchorLink>
         </AnchorLinks>
       </section>
-      <section tw="px-2 pb-6 " id="mision">
-       
-      </section>
-
-      <Section
-        tw="px-2 py-24 text-teal-600 bg-teal-700 "
-        className="pattern-cross-dots-xl"
-      >
-         <div tw="flex flex-wrap justify-center max-w-6xl py-12 mx-auto">
+      <Section tw="px-2 pb-24 ">
+        <div tw="flex flex-wrap justify-center max-w-6xl py-12 mx-auto">
           <KallpaLogo
             tw="w-32 h-32 mt-12 mr-3 transform rotate-90 "
             className="kallpa-logo"
@@ -179,23 +186,24 @@ const AboutPage = () => {
         </Fade>
         <Proposals />
       </section>
-      <section tw="flex flex-col items-center justify-center pt-24 pb-3 text-center">
-        <Fade delay={100}>
-          <ImQuotesLeft tw="pb-4 text-4xl text-purple-500" />
-        </Fade>
-        <Fade delay={200}>
-          <p tw="max-w-3xl mx-auto font-serif text-3xl font-bold text-purple-500">
-            Encontrarnos a jugar o jugar a encontrarnos.. conocernos,
-            afectarnos.. son búsquedas para potenciarnos y caminar hacia
-            construcciones más cuidadas.. comunitarias, alterativas, libres,
-            diversas, dinámicas..
-          </p>
-        </Fade>
-        <Fade delay={300}>
-          <ImQuotesRight tw="pt-4 text-4xl text-purple-500" />
-        </Fade>
+      <section tw="py-24 text-center bg-purple-100">
+        <div className="flex flex-col items-center justify-center max-w-3xl px-6 py-12 mx-auto bg-white shadow-2xl ">
+          <Fade delay={100}>
+            <ImQuotesLeft tw="pb-4 text-4xl text-purple-500" />
+          </Fade>
+          <Fade delay={200}>
+            <p tw=" font-serif text-3xl font-bold text-purple-500">
+              Encontrarnos a jugar o jugar a encontrarnos.. conocernos,
+              afectarnos.. son búsquedas para potenciarnos y caminar hacia
+              construcciones más cuidadas.. comunitarias, alterativas, libres,
+              diversas, dinámicas..
+            </p>
+          </Fade>
+          <Fade delay={300}>
+            <ImQuotesRight tw="pt-4 text-4xl text-purple-500" />
+          </Fade>
+        </div>
       </section>
-
       <Contact />
     </Layout>
   )
@@ -208,7 +216,7 @@ const Section = styled.section`
 `
 
 const AnchorLinks = styled.div`
-  ${tw`relative z-50 flex flex-wrap justify-around w-full max-w-4xl px-3 pt-0 mx-auto mt-0 md:p-3 `}
+  ${tw`relative z-50 flex flex-wrap justify-around w-full max-w-2xl px-3 pt-0 mx-auto mt-0 md:p-3 `}
   a {
     ${tw`w-full mx-3 my-2 font-sans text-base font-bold text-center md:text-xl md:mx-8 focus:underline`}
     flex: 1;

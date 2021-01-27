@@ -42,7 +42,7 @@ const PublisherSingleTemplate = ({ data, pageContext, location }) => {
 }
 
 const Container = styled.div`
-  ${tw`grid max-w-6xl grid-cols-1 gap-4 p-3 pb-12 mx-auto mt-16 bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 `}
+  ${tw`grid max-w-6xl grid-cols-1 gap-4 p-3 pb-12 mx-auto mt-16 bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 `}
 `
 
 const ContentSidebar = styled.div`
