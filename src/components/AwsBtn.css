@@ -1,9 +1,5 @@
 /* purgecss start ignore */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .aws-btn {
   --button-default-height: 63px;
   --button-default-font-size: 20px;
