@@ -7,6 +7,8 @@ import Layout from "../components/layout"
 import PostPreview from "../components/postPreview"
 import SEO from "../components/seo"
 import "./algolia.css"
+import { Helmet } from "react-helmet"
+
 
 const searchClient = algoliasearch(
   "REF3SMUMO1",
@@ -17,6 +19,9 @@ const BuscarComponent = () => {
   return (
     <>
       <Layout>
+        <Helmet>
+          <body className="ingame" />
+        </Helmet>
         <SearchContainer>
           <SEO title="Buscar" />
           <div className="max-w-6xl min-h-screen p-6 pt-6 mx-auto">
@@ -45,7 +50,7 @@ export default BuscarComponent
 
 const SearchContainer = styled.div`
   ${tw`relative`}
-  ${tw`mt-24 border-teal-800`}
+  ${tw`pt-24 border-teal-800`}
 
   p {
     ${tw`text-gray-800 `}
