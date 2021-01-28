@@ -1,14 +1,14 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import "../components/AwsBtn.css"
-import HeroWave from "../components/HeroWave"
+//import HeroWave from "../components/HeroWave"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "../components/VideoReact.css"
 import "../components/VideoReact.css"
 import { InlineWidget } from "react-calendly"
 import styled from "@emotion/styled"
-import tw from "twin.macro"
+import "twin.macro"
 
 const ConsultaVirtualPage = () => {
   return (

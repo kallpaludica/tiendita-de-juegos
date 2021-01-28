@@ -110,10 +110,10 @@ const EdadesPage = (props) => {
         </Aside>
         <Main>
           <PageSticky>
-            <MainTitle>Por Edades</MainTitle>
-          </PageSticky>
-          <div tw="relative flex flex-col justify-start border-b-2 border-teal-300 md:flex-row sm:py-0 sm:pt-0 md:pl-2">
             <GameSort />
+          </PageSticky>
+          <div className="relative flex flex-row items-center justify-between border-b-2 border-teal-300 sm:py-0 sm:pt-6 md:pl-2">
+            <MainTitle>Por Edades</MainTitle>
             <button
               tw="relative bottom-0 right-0 flex items-center justify-center px-4 py-3 text-white bg-teal-500 outline-none md:absolute focus:outline-none hover:bg-teal-600"
               onClick={() => setToggle(!isToggled)}
@@ -168,11 +168,11 @@ const ContainerDesc = styled.div`
 `
 
 const PageSticky = styled.div`
-  ${tw`top-0 z-50 pt-3 `}
+${tw`relative top-0 z-50 pt-3 pl-4`}
 `
 
 const ContentSidebar = styled.div`
-  ${tw`relative z-10 flex flex-row-reverse w-full max-w-6xl mx-auto -mt-16`}
+  ${tw`relative z-10 flex flex-row-reverse w-full max-w-6xl mx-auto md:-mt-16`}
 `
 
 const Aside = styled.aside`
@@ -184,6 +184,6 @@ const Main = styled.section`
 `
 
 const MainTitle = styled.h2`
-  ${tw`font-sans text-3xl font-bold text-left `}
-  ${tw`pb-6 text-white md:pl-3`}
+  ${tw`font-sans text-lg font-bold text-left md:text-3xl `}
+  ${tw`text-teal-600 md:pl-3`}
 `

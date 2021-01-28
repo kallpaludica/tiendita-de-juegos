@@ -1,11 +1,7 @@
 import styled from "@emotion/styled"
 import algoliasearch from "algoliasearch/lite"
 import React from "react"
-import {
-  InstantSearch,
-  Hits,
-  SearchBox
-} from "react-instantsearch-dom"
+import { InstantSearch, Hits, SearchBox } from "react-instantsearch-dom"
 import tw from "twin.macro"
 import Layout from "../components/layout"
 import PostPreview from "../components/postPreview"
@@ -36,7 +32,6 @@ const BuscarComponent = () => {
                   placeholder: "Buscador",
                 }}
               />
-
               <Hits className="w-full mx-auto" hitComponent={PostPreview} />
             </InstantSearch>
           </div>
