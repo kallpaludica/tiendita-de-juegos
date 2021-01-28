@@ -1,5 +1,5 @@
 import React from "react"
-import {  navigate } from "gatsby"
+import { navigate } from "gatsby"
 import { AwesomeButton } from "react-awesome-button"
 //import { Link } from "gatsby"
 import tw from "twin.macro"
@@ -16,9 +16,9 @@ const GamesSort = () => {
             navigate(`/tienda-de-juegos`)
           }}
           type="primary"
-          size="medium"
+          size="small"
         >
-           <AiOutlineSortAscending
+          <AiOutlineSortAscending
             activeClassName="text-teal-100 "
             tw="mx-auto mr-1 text-xl "
           />
@@ -29,9 +29,9 @@ const GamesSort = () => {
             navigate(`/tienda-de-juegos/precio`)
           }}
           type="primary"
-          size="medium"
+          size="small"
         >
-           <AiOutlineDollar
+          <AiOutlineDollar
             activeClassName="text-teal-100 "
             tw="mx-auto mr-1 text-xl "
           />
@@ -42,9 +42,9 @@ const GamesSort = () => {
             navigate(`/tienda-de-juegos/duracion`)
           }}
           type="primary"
-          size="medium"
+          size="small"
         >
-           <IoMdTime
+          <IoMdTime
             activeClassName="text-teal-100 "
             tw="mx-auto mr-1 text-xl "
           />
@@ -55,12 +55,9 @@ const GamesSort = () => {
             navigate(`/tienda-de-juegos/edades`)
           }}
           type="primary"
-          size="medium"
+          size="small"
         >
-           <FaUserFriends
-            activeClassName="text-teal-100 "
-            tw="mx-auto mr-1 text-xl "
-          />
+          <FaUserFriends activeClassName="text-teal-100 " tw="mx-auto mr-1" />
           Edades
         </AwesomeButton>
       </Sort>
@@ -71,10 +68,10 @@ const GamesSort = () => {
 export default GamesSort
 
 const Sort = styled.div`
-  ${tw`relative top-0 right-0 w-full px-1 py-1 text-left sm:py-3 md:px-6 md:px-0 md:p-0 `}
+  ${tw`relative top-0 right-0 grid flex-wrap w-full grid-cols-2 gap-3 px-0 py-1 mb-3 text-left md:flex sm:py-3 `}
 
   button {
-    ${tw`mb-3 mr-3 text-base border border-teal-500 md:text-base`}
+    ${tw`text-xs border border-teal-500 md:text-sm`}
   }
 
   a {

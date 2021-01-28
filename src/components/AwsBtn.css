@@ -267,7 +267,7 @@ button.aws-btn .aws-btn__wrapper {
 }
 .aws-btn:before {
   content: " ";
-  background-color: rgba(0, 0, 0, 0.3);
+  /*background-color: rgba(0, 0, 0, 0.3);*/
   width: calc(100% - 2px);
   height: calc(100% - (var(--button-raise-level) * 2));
   bottom: calc(0px - (var(--button-raise-level) / 2));
@@ -912,9 +912,10 @@ button.aws-btn .aws-btn__wrapper {
   line-height: calc(var(--button-default-line-height) * 1.5);
 }
 .aws-btn--small {
-  width: var(--button-small-width);
+  min-width: var(--button-small-width);
   height: var(--button-small-height);
-  font-size: var(--button-default-font-size);
+  /*font-size: var(--button-default-font-size);*/
+  @apply text-xs;
   line-height: var(--button-default-line-height);
 }
 .aws-btn--medium {
