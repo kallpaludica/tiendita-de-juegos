@@ -168,7 +168,7 @@ const ContainerDesc = styled.div`
 `
 
 const PageSticky = styled.div`
-${tw`relative top-0 z-50 pt-3 pl-4`}
+${tw`relative top-0 z-50 pt-3 md:pl-4`}
 `
 
 const ContentSidebar = styled.div`
