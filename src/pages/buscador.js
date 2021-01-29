@@ -9,7 +9,6 @@ import SEO from "../components/seo"
 import "./algolia.css"
 import { Helmet } from "react-helmet"
 
-
 const searchClient = algoliasearch(
   "REF3SMUMO1",
   "e01ef19f511d91260a11e891714a8432"

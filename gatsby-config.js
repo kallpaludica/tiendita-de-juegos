@@ -21,7 +21,6 @@ module.exports = {
   siteMetadata: {
     title: `Kallpa Lúdica`,
     titleTemplate: "%s | Kallpa Lúdica",
-    description: `Kallpa Lúdica`,
     author: `@Kallpa Lúdica`,
     description: `Tienda de juegos en la provincia de Salta`,
     url: "https://www.kallpaludica.com.ar",

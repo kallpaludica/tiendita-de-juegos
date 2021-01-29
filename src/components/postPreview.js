@@ -17,7 +17,7 @@ const PostPreview = ({ hit }) => {
       <Image>
         <Link to={hit.url}>
           <img
-            className="w-32 object-fit"
+            className="w-24 object-fit"
             alt={hit.title}
             src={hit.image}
           />
@@ -41,14 +41,10 @@ const PostPreview = ({ hit }) => {
 export default PostPreview
 
 const SearchItem = styled.div`
-  ${tw`flex text-left text-teal-800 bg-white`}
-
-  body.dark & {
-    ${tw`text-teal-100 bg-white`}
-  }
+  ${tw`relative flex overflow-hidden text-left text-teal-800 bg-white `}
 
   a {
-    ${tw`font-sans text-xl font-bold text-gray-700`}
+    ${tw`font-sans text-lg font-bold text-gray-800`}
   }
 
   p {
@@ -57,13 +53,13 @@ const SearchItem = styled.div`
 `
 
 const Image = styled.div`
-  ${tw`relative w-32 overflow-hidden bg-gray-200`}
+  ${tw`relative w-24 overflow-hidden bg-white shadow-2xl`}
   a {
-    ${tw`flex items-center justify-center w-32 h-32`}
+    ${tw`flex items-center justify-center w-24 h-24`}
   }
 `
 
 const Content = styled.div`
-  ${tw`flex items-center justify-center w-full p-2 px-3`}
+  ${tw`flex items-center justify-start w-full p-2 px-6`}
   flex: 1
 `
