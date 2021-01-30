@@ -97,6 +97,12 @@
   transition: all 0.5s;
 }
 
+.bm-burger-button button {
+  width: 90px !important;
+  right: 0 !important;
+  left: initial !important;
+}
+
 .logo {
   left: -5px !important;
   top: -12px !important;
@@ -164,7 +170,7 @@
 
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
-  @apply bg-gray-300;
+  @apply bg-gray-500;
   opacity: 1 !important;
 }
 

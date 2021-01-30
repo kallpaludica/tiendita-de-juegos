@@ -63,7 +63,7 @@ const Header = ({ siteTitle }) => (
             return (
               <Link
                 key={i}
-                activeClassName="opacity-100 border-white"
+                activeClassName="opacity-100 border-white active"
                 partiallyActive={true}
                 className="flex items-center py-3 font-mono text-sm text-center border-t-2 border-transparent opacity-90 hover:opacity-100 md:mx-4 lg:text-lg"
                 to={route.slug}
@@ -90,7 +90,7 @@ Header.defaultProps = {
 export default Header
 
 const NavLeft = styled.nav`
-  ${tw`justify-end hidden w-full md:flex`}
+  ${tw`justify-end hidden w-full h-16 md:flex`}
   flex:1;
 
   a {
@@ -106,10 +106,14 @@ const NavLeft = styled.nav`
 `
 
 const HeaderContainer = styled.header`
-  ${tw`z-50 px-2 py-2 transition-all duration-500 md:py-2 `}
+  ${tw`z-50 px-2 py-2 transition-all duration-500 md:py-0 `}
 
   body.ingame & a {
     ${tw`text-gray-800`}
+  }
+
+  body.ingame & a.active {
+    ${tw`text-gray-800 border-gray-800`}
   }
 `
 
@@ -119,7 +123,7 @@ const InnerHeader = styled.div`
 
 const Logo = styled.div`
   ${tw`m-0 md:px-3 md:relative`}
-  top:2px;
+  top:4px;
   transition: all 1s;
 
   .kallpa-logo {

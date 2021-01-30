@@ -33,9 +33,9 @@ const GameCollectionComponent = () => {
         <div tw="grid grid-cols-1 sm:grid-cols-2 gap-5 my-12 font-sans text-gray-800 md:grid-cols-4">
           {data.collections.edges.map(({ node }) => {
             return (
-              <Card className="">
+              <Card key={node.slug}>
                 <Link
-                  key={node.slug}
+                  
                   to={`/tienda-de-juegos/colecciones/${kebabCase(node.slug)}/`}
                   tw="flex flex-col justify-center text-lg font-bold text-blue-500 shadow-sm"
                 >

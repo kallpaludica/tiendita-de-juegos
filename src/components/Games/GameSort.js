@@ -18,10 +18,7 @@ const GamesSort = () => {
           type="primary"
           size="small"
         >
-          <AiOutlineSortAscending
-            activeClassName="text-teal-100 "
-            tw="mx-auto mr-1 text-xl "
-          />
+          <AiOutlineSortAscending tw="mx-auto mr-1 text-xl " />
           Título
         </AwesomeButton>
         <AwesomeButton
@@ -31,10 +28,7 @@ const GamesSort = () => {
           type="primary"
           size="small"
         >
-          <AiOutlineDollar
-            activeClassName="text-teal-100 "
-            tw="mx-auto mr-1 text-xl "
-          />
+          <AiOutlineDollar tw="mx-auto mr-1 text-xl " />
           Precio
         </AwesomeButton>
         <AwesomeButton
@@ -44,10 +38,7 @@ const GamesSort = () => {
           type="primary"
           size="small"
         >
-          <IoMdTime
-            activeClassName="text-teal-100 "
-            tw="mx-auto mr-1 text-xl "
-          />
+          <IoMdTime tw="mx-auto mr-1 text-xl " />
           Duración
         </AwesomeButton>
         <AwesomeButton
@@ -57,7 +48,7 @@ const GamesSort = () => {
           type="primary"
           size="small"
         >
-          <FaUserFriends activeClassName="text-teal-100 " tw="mx-auto mr-1" />
+          <FaUserFriends tw="mx-auto mr-1" />
           Edades
         </AwesomeButton>
       </Sort>

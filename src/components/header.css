@@ -42,7 +42,7 @@ header nav a {
 
 .headroom--unpinned {
   position: fixed;
-  @apply bg-white;
+  @apply bg-white shadow-lg;
   transform: translateY(0);
 }
 

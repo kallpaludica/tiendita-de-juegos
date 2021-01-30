@@ -21,7 +21,7 @@ const BuscarComponent = () => {
         <Helmet>
           <body className="ingame" />
         </Helmet>
-        <SearchContainer>
+        <SearchContainer className="bg-gradient-to-tl from-yellow-100 to-yellow-300">
           <SEO title="Buscar" />
           <div className="max-w-6xl min-h-screen p-6 pt-6 mx-auto">
             <InstantSearch
@@ -31,8 +31,8 @@ const BuscarComponent = () => {
               <SearchBox
                 className="w-full mx-auto mb-6"
                 translations={{
-                  submitTitle: "Add your search query.",
-                  resetTitle: "Reset your search query.",
+                  submitTitle: "Iniciar búsqueda",
+                  resetTitle: "Reiniciar búsqueda",
                   placeholder: "Buscador",
                 }}
               />
@@ -49,7 +49,7 @@ export default BuscarComponent
 
 const SearchContainer = styled.div`
   ${tw`relative`}
-  ${tw`pt-24 border-teal-800`}
+  ${tw`pt-24 bg-teal-100 border-teal-800`}
 
   p {
     ${tw`text-gray-800 `}
