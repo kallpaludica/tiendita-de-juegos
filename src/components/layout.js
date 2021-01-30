@@ -48,7 +48,7 @@ const Layout = ({ location, children }) => {
         <Stn>
           <Inner>
             
-            <video width="100%" height="442" autoPlay loop className="max-w-lg mx-auto">
+            <video width="100%" height="442" autoPlay muted loop className="max-w-lg mx-auto">
               <source src="https://videos.ctfassets.net/e99fpapc95u3/3lJUtCmKPyBjjkXd3p3u4Q/1c4cdddf0a91cdc6198e5da325734159/0001-0750.webm" type="video/webm" />
               Your browser does not support the video tag.
             </video>
