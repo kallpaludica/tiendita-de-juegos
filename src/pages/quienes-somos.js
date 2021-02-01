@@ -133,7 +133,7 @@ const AboutPage = () => {
         </AnchorLinks>
       </section>
       <Section tw="px-2 pb-24 ">
-        <div tw="flex flex-wrap justify-center max-w-6xl py-12 mx-auto">
+        <div tw="flex flex-wrap justify-center max-w-6xl py-12 mx-auto" id="mision">
           <KallpaLogo
             tw="w-32 h-32 mt-12 mr-3 transform rotate-90 "
             className="kallpa-logo"
