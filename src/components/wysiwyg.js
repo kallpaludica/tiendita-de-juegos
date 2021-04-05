@@ -5,6 +5,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
 import Fade from "react-reveal/Fade"
 import { Player, BigPlayButton } from "video-react"
+import { Link } from "gatsby"
 
 const Bold = ({ children }) => (
   <span className="font-sans font-bold">{children}</span>
@@ -44,7 +45,7 @@ const options = {
             <div>
               <div className="post-image">
                 <img
-                  className="w-full max-w-md mx-auto"
+                  className="w-full max-w-2xl mx-auto"
                   alt={node.data.target.fields.title["es-AR"]}
                   src={node.data.target.fields.file["es-AR"].url}
                 />
@@ -54,6 +55,12 @@ const options = {
         }
       }
     },
+    [INLINES.EMBEDDED_ENTRY]:  node => {
+      return (
+        <Link>{node.data.target.fields.slug["es-AR"]} - {node.data.target.fields.title["es-AR"]}</Link>
+      )
+    },
+
     [INLINES.HYPERLINK]: (node) => {
       return (
         <a
@@ -72,7 +79,10 @@ const options = {
     },
     [BLOCKS.PARAGRAPH]: (_, children) => <Text>{children}</Text>,
   },
+  
 }
+
+
 
 export default ({ FormatText }) => (
   <Format>{documentToReactComponents(FormatText.json, options)}</Format>

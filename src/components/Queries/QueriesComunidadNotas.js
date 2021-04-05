@@ -4,10 +4,10 @@ import { kebabCase } from "lodash"
 import Img from "gatsby-image"
 import { FiExternalLink } from "react-icons/fi"
 
-const QueryComunidadComponent = () => {
+const QueryComunidadNotasComponent = () => {
   const data = useStaticQuery(graphql`
-    query QueryComunidadQuery {
-      collections: allContentfulComunidad {
+    query QueryComunidadNotasQuery {
+      collections: allContentfulComunidad(filter: {categoria: {eq: "Notas"}}) {
         edges {
           node {
             id
@@ -46,9 +46,6 @@ const QueryComunidadComponent = () => {
               />
             </div>
             <div className="relative col-span-2 px-4 mt-2 text-left">
-              <span className="inline-block text-sm font-bold text-gray-600 uppercase">
-                {node.categoria}
-              </span>
               {node.textoPrincipal ? (
                 <Link
                   className="block my-3 font-sans text-2xl font-semibold leading-tight text-gray-900 hover:underline"
@@ -93,4 +90,4 @@ const QueryComunidadComponent = () => {
   )
 }
 
-export default QueryComunidadComponent
+export default QueryComunidadNotasComponent

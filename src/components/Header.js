@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import Headroom from "react-headroom"
-//import { FaNewspaper } from "react-icons/fa"
+import { FaNewspaper } from "react-icons/fa"
 import { AiFillShop, AiOutlineSearch } from "react-icons/ai"
 import { IoIosChatbubbles, IoMdMail } from "react-icons/io"
 import tw from "twin.macro"
@@ -16,12 +16,13 @@ const routesLeft = [
     slug: "/tienda-de-juegos",
     icon: <AiFillShop className="mr-1 text-xl " />,
   },
-  /*
+    /*
   {
     title: "Comunidad",
     slug: "/comunidad",
-    icon: <FaNewspaper className="text-2xl " />,
+    icon: <FaNewspaper className="mr-1 text-xl" />,
   },
+
   {
     title: "Recursos",
     slug: "/recursos",
@@ -31,7 +32,6 @@ const routesLeft = [
     title: "Buscador",
     slug: "/buscador",
     icon: <AiOutlineSearch className="mr-1 text-2xl " />,
-
   },
   {
     title: "Quienes somos",
@@ -118,7 +118,7 @@ const HeaderContainer = styled.header`
 `
 
 const InnerHeader = styled.div`
-  ${tw`relative flex items-center justify-between w-full max-w-6xl px-0 mx-auto md:pb-1 sm:pr-6 md:pr-0`}
+  ${tw`relative flex items-center justify-between w-full max-w-full px-0 mx-auto md:pb-1 sm:pr-6 md:pr-0`}
 `
 
 const Logo = styled.div`

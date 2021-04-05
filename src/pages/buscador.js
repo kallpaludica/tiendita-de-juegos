@@ -21,7 +21,7 @@ const BuscarComponent = () => {
         <Helmet>
           <body className="ingame" />
         </Helmet>
-        <SearchContainer className="bg-gradient-to-tl from-yellow-100 to-yellow-300">
+        <SearchContainer className="bg-gradient-to-tl from-blue-200 to-blue-300">
           <SEO title="Buscar" />
           <div className="max-w-6xl min-h-screen p-6 pt-6 mx-auto">
             <InstantSearch

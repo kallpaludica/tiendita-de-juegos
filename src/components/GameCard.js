@@ -11,6 +11,7 @@ import Toggle from "./GameCardToggle"
 import { CgSandClock } from "react-icons/cg"
 //import { FaUserFriends, FaShippingFast } from "react-icons/fa"
 import { AiFillCheckCircle } from "react-icons/ai"
+//import ProductModal from "./modal/ProductModal"
 
 export default ({ card }) => (
   <GameCard>
@@ -104,6 +105,18 @@ export default ({ card }) => (
         </Link>
       </div>
     </div>
+    {/*
+    <ProductModal
+      title={card.title}
+      slug={card.slug}
+      stock={card.stock}
+      age={card.GameAges}
+      publisher={card.publisher}
+      categoria={card.categoria}
+      duration={card.GameDuration}
+      players={card.GamePlayers}
+    />
+     */}
     <div className="hidden">
       <Toggle
         title={card.title}

@@ -17,7 +17,6 @@ import HomeHero from "../components/About/HomeHero"
 
 import "../components/AwsBtn.css"
 import Collections from "../components/Games/GameCollections"
-
 //import GameSort from "../components/Games/GameSort"
 import Publishers from "../components/Publishers/FeaturedPublishers"
 import Layout from "../components/layout"
@@ -99,6 +98,7 @@ const IndexPage = () => {
           </div>
         </Wave>
       </div>
+
 
       <section className="px-2">
         <div className="relative flex flex-col w-full max-w-6xl pt-2 pb-6 mx-auto md:flex-row">

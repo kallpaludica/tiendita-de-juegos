@@ -12,7 +12,7 @@ import { FaCaretRight } from "react-icons/fa"
 const Toggle = (props) => {
   const [isToggled, setToggle] = useState(false)
   const fade = useSpring({
-    transform: isToggled ? "translateY(0px)" : "translateY(-200px)",
+    transform: isToggled ? "translateY(0px)" : "translateY(-100%)",
     config: { mass: 3, tension: 500, friction: 80 },
   })
   const rotate = useSpring({

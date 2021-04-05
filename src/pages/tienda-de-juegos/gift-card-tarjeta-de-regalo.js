@@ -1,12 +1,9 @@
 import React from "react"
 import Layout from "../../components/layout"
-import HeroWave from "../../components/HeroWave"
-import Categories from "../../components/Games/GameCategories"
 import SEO from "../../components/seo"
 import { Helmet } from "react-helmet"
-import Bread from "../../components/breadcrumb"
 import styled from "@emotion/styled"
-import tw from "twin.macro"
+import "twin.macro"
 import Contact from "../../components/About/Contact"
 import { GiCardRandom } from "react-icons/gi"
 import { AwesomeButtonSocial } from "react-awesome-button"
@@ -21,6 +18,7 @@ const GiftCardPages = ({ data, pageContext, location }) => {
         <div className="relative pt-24 pb-12 text-yellow-500 bg-yellow-400 pattern-grid-lg">
           <img
             className="w-full max-w-3xl mx-auto"
+            alt="Gift Card"
             src="https://images.ctfassets.net/mc6j42086v0m/3pFbrddf49dIRLm9j2yJIX/a8c93d084471698e400a1bf2a3b29908/1.png?w=1747&h=1240&q=50&fm=webp"
           />
 

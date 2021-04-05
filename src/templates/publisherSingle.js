@@ -22,7 +22,7 @@ const PublisherSingleTemplate = ({ data, pageContext, location }) => {
       />
       <HeroWave
         heading={publisher.title}
-        pattern="bg-teal-600 text-teal-500 "
+        pattern="bg-teal-600 text-teal-500"
         svg="M0,224L80,240C160,256,320,288,480,277.3C640,267,800,213,960,202.7C1120,192,1280,224,1360,240L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
       />
       <ContentSidebar>
@@ -88,7 +88,6 @@ export const pageQuery = graphql`
           title
           slug
         }
-
         GameGallery {
           title
           fluid(maxWidth: 1600) {
