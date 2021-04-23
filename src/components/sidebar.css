@@ -128,7 +128,7 @@
   }
 }
 
-@screen md {
+@screen lg {
   .bm-burger-button {
     position: absolute;
     width: 36px;

@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { slide as Menu } from "react-burger-menu"
-import "./sidebar.css"
 import Navigation from "../components/Navigation"
+import "./sidebar.css"
 
 class Sidebar extends Component {
   constructor() {

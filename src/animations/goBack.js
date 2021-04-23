@@ -1,8 +1,7 @@
 import lottie from "lottie-web"
 import React, { useEffect } from "react"
 import AnimateBack from "./left-arrow.json"
-import tw from "twin.macro"
-import styled from "@emotion/styled"
+
 const AnimateBackComponent = () => {
   useEffect(() => {
     lottie.loadAnimation({
@@ -11,18 +10,11 @@ const AnimateBackComponent = () => {
     })
   }, [])
   return (
-    <Button className="lottie-left-arrow">
+    <div className="text-gray-800 lottie-left-arrow ">
       <div id="animate-arrow-back" style={{ width: 25, height: 25 }} />
-    </Button>
+    </div>
   )
 }
 
 export default AnimateBackComponent
 
-const Button = styled.div`
-  ${tw`text-gray-800 `}
-
-  path {
-    stroke: #999 !important;
-  }
-`

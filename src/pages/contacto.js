@@ -1,12 +1,11 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import Contact from "../components/About/Contact"
-import "../components/AwsBtn.css"
 import HeroWave from "../components/HeroWave"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import "../components/VideoReact.css"
-import "../components/VideoReact.css"
+import Seo from "../components/seo"
+import "../styles/AwsBtn.css"
+import "../styles/VideoReact.css"
 
 const ContactPage = () => {
   return (
@@ -14,17 +13,17 @@ const ContactPage = () => {
       <Helmet>
         <body className="home" />
       </Helmet>
-      <SEO title="Inicio" />
+      <Seo title="Contacto" />
       <HeroWave
-        pattern="bg-teal-700 h-64 text-teal-900"
-        svg="M0,256L80,261.3C160,267,320,277,480,272C640,267,800,245,960,229.3C1120,213,1280,203,1360,197.3L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+        heading="👋 Contacto"
+        pattern="bg-green-700 text-green-900"
+        subtitle="¿Tenés una consulta, pregunta o sugerencia?"
+        center={true}
       />
       <Contact />
-
+      
     </Layout>
   )
 }
 
 export default ContactPage
-
-

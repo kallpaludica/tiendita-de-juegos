@@ -14,11 +14,28 @@ exports.createPages = ({ graphql, actions }) => {
 
   return new Promise((resolve, reject) => {
     const gameSingle = path.resolve(`./src/templates/gameSingle.js`)
-    const categorySingle = path.resolve(`./src/templates/categorySingle.js`)
+    // const categorySingle = path.resolve(`./src/templates/categorySingle.js`)
     const publisherSingle = path.resolve(`./src/templates/publisherSingle.js`)
     const collectionSingle = path.resolve(`./src/templates/collectionSingle.js`)
-    const resourseSingle = path.resolve(`./src/templates/resourseSingle.js`)
+    // const resourseSingle = path.resolve(`./src/templates/resourseSingle.js`)
     const blogSingle = path.resolve(`./src/templates/blogSingle.js`)
+
+    // allContentfulCategoriaDelJuego {
+    //   edges {
+    //     node {
+    //       title
+    //       slug
+    //     }
+    //   }
+    // }
+    // allContentfulRecursos {
+    //   edges {
+    //     node {
+    //       title
+    //       slug
+    //     }
+    //   }
+    // }
 
     resolve(
       graphql(
@@ -33,14 +50,7 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
-            allContentfulCategoriaDelJuego {
-              edges {
-                node {
-                  title
-                  slug
-                }
-              }
-            }
+
             allContentfulEditorial {
               edges {
                 node {
@@ -57,14 +67,7 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
-            allContentfulRecursos {
-              edges {
-                node {
-                  title
-                  slug
-                }
-              }
-            }
+
             allContentfulColecciones {
               edges {
                 node {
@@ -81,19 +84,19 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        paginate({
-          createPage,
-          items: result.data.allContentfulArticulos.edges,
-          itemsPerPage: 200,
-          pathPrefix: "/juegosss",
-          component: path.resolve("src/templates/gameArchive.js"),
-        })
+        // paginate({
+        //   createPage,
+        //   items: result.data.allContentfulArticulos.edges,
+        //   itemsPerPage: 200,
+        //   pathPrefix: "/juegosss",
+        //   component: path.resolve("src/templates/gameArchive.js"),
+        // })
 
         const posts = result.data.allContentfulArticulos.edges
-        const categories = result.data.allContentfulCategoriaDelJuego.edges
+        // const categories = result.data.allContentfulCategoriaDelJuego.edges
         const publishers = result.data.allContentfulEditorial.edges
         const collections = result.data.allContentfulColecciones.edges
-        const resourses = result.data.allContentfulRecursos.edges
+        // const resourses = result.data.allContentfulRecursos.edges
         const blogs = result.data.allContentfulComunidad.edges
 
         posts.forEach((post, index) => {
@@ -108,20 +111,20 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
 
-        categories.forEach((category, index) => {
-          createPage({
-            path: `/tienda-de-juegos/modalidades/${category.node.slug}/`,
-            component: categorySingle,
-            context: {
-              slug: category.node.slug,
-              prev: index === 0 ? null : categories[index - 1].node,
-              next:
-                index === categories.length - 1
-                  ? null
-                  : categories[index + 1].node,
-            },
-          })
-        })
+        // categories.forEach((category, index) => {
+        //   createPage({
+        //     path: `/tienda-de-juegos/modalidades/${category.node.slug}/`,
+        //     component: categorySingle,
+        //     context: {
+        //       slug: category.node.slug,
+        //       prev: index === 0 ? null : categories[index - 1].node,
+        //       next:
+        //         index === categories.length - 1
+        //           ? null
+        //           : categories[index + 1].node,
+        //     },
+        //   })
+        // })
 
         publishers.forEach((publisher, index) => {
           createPage({
@@ -165,20 +168,20 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
 
-        resourses.forEach((resourse, index) => {
-          createPage({
-            path: `/recursos/${resourse.node.slug}/`,
-            component: resourseSingle,
-            context: {
-              slug: resourse.node.slug,
-              prev: index === 0 ? null : resourses[index - 1].node,
-              next:
-                index === resourses.length - 1
-                  ? null
-                  : resourses[index + 1].node,
-            },
-          })
-        })
+        // resourses.forEach((resourse, index) => {
+        //   createPage({
+        //     path: `/recursos/${resourse.node.slug}/`,
+        //     component: resourseSingle,
+        //     context: {
+        //       slug: resourse.node.slug,
+        //       prev: index === 0 ? null : resourses[index - 1].node,
+        //       next:
+        //         index === resourses.length - 1
+        //           ? null
+        //           : resourses[index + 1].node,
+        //     },
+        //   })
+        // })
       })
     )
   })

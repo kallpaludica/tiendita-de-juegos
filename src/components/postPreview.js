@@ -4,62 +4,38 @@
 // import lottie from "lottie-web"
 // import React from "react"
 
-import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import React from "react"
 import { Highlight } from "react-instantsearch-dom"
 //import Fade from "react-reveal/Fade"
-import tw from "twin.macro"
 
 const PostPreview = ({ hit }) => {
   return (
-    <SearchItem>
-      <Image>
-        <Link to={hit.url}>
-          <img
-            className="w-24 object-fit"
-            alt={hit.title}
-            src={hit.image}
-          />
+    <div className="relative flex overflow-hidden text-left text-green-800 bg-white ">
+      <div className="relative flex-none w-24 overflow-hidden bg-white shadow-2xl">
+        <Link
+          to={hit.url}
+          className="flex items-center justify-center w-24 h-24 font-sans text-lg font-bold text-gray-800"
+        >
+          <img className="w-24 object-fit" alt={hit.title} src={hit.image} />
         </Link>
-      </Image>
-      <Content>
-        <Link to={hit.url}>
+      </div>
+      <div className="flex items-center justify-start flex-1 w-full p-2 px-6">
+        <Link
+          to={hit.url}
+          className="font-sans text-lg font-bold text-gray-800"
+        >
           <Highlight hit={hit} attribute="title" tagName="mark" />
         </Link>
-        <p className="hidden">
+        <p className="hidden font-sans text-base">
           <Highlight hit={hit} attribute="description" tagName="mark" />
         </p>
-        <p className="hidden">
+        <p className="hidden font-sans text-base">
           <Highlight hit={hit} attribute="content" tagName="mark" />
         </p>
-      </Content>
-    </SearchItem>
+      </div>
+    </div>
   )
 }
 
 export default PostPreview
-
-const SearchItem = styled.div`
-  ${tw`relative flex overflow-hidden text-left text-teal-800 bg-white `}
-
-  a {
-    ${tw`font-sans text-lg font-bold text-gray-800`}
-  }
-
-  p {
-    ${tw`font-sans text-base`}
-  }
-`
-
-const Image = styled.div`
-  ${tw`relative w-24 overflow-hidden bg-white shadow-2xl`}
-  a {
-    ${tw`flex items-center justify-center w-24 h-24`}
-  }
-`
-
-const Content = styled.div`
-  ${tw`flex items-center justify-start w-full p-2 px-6`}
-  flex: 1
-`

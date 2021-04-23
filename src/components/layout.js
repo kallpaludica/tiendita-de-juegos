@@ -1,23 +1,17 @@
-import styled from "@emotion/styled"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import React, { useEffect } from "react"
 import lottie from "lottie-web"
 import AnchorLink from "react-anchor-link-smooth-scroll"
-
 import AnimatedWhatsapp from "../animations/whatsapp.json"
+import { BsFillTriangleFill } from "react-icons/bs"
+import SimpleReactLightbox from "simple-react-lightbox"
+import ReactTooltip from "react-tooltip"
+import "./layout.css"
+import "../styles/pattern.css"
 import Sidebar from "../components/Sidebar"
 import Header from "../components/Header"
-import { AiOutlineHeart } from "react-icons/ai"
-import { BsFillTriangleFill } from "react-icons/bs"
-
-import { HiCode } from "react-icons/hi"
-import SimpleReactLightbox from "simple-react-lightbox"
-import tw from "twin.macro"
-import "../styles/pattern.css"
-import "./layout.css"
-import KallpaLogo from "../assets/logo.svg"
-import ReactTooltip from "react-tooltip"
+import Footer from "../components/Footer"
 
 const Layout = ({ location, children }) => {
   const data = useStaticQuery(graphql`
@@ -29,12 +23,14 @@ const Layout = ({ location, children }) => {
       }
     }
   `)
+
   useEffect(() => {
     lottie.loadAnimation({
       container: document.querySelector("#animated-whatsapp"),
       animationData: AnimatedWhatsapp,
     })
   }, [])
+
   return (
     <>
       <Sidebar />
@@ -42,43 +38,19 @@ const Layout = ({ location, children }) => {
       <div id="top"></div>
       <div className="app-container">
         <SimpleReactLightbox>
-          <main tw="text-center bg-white ">{children}</main>
+          <main className="text-center bg-white">{children}</main>
         </SimpleReactLightbox>
-
-        <Stn>
-          <Inner>
-            <KallpaLogo tw="w-20 h-20 max-w-xs mx-auto mb-6" />
-            <h3 tw="pb-2 text-base font-bold ">
-              {new Date().getFullYear()} Kallpa Lúdica
-            </h3>
-            <div tw="flex justify-center pr-2 text-base opacity-75">
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                tw="inline-block font-bold"
-                href="https://www.cooparaje.com.ar"
-              >
-                Realizado cooperativamente con
-              </a>
-              <div>
-                <HiCode tw="inline-block mx-1 text-lg " />
-                <span tw="mx-1">&</span>
-                <AiOutlineHeart tw="inline-block mx-1 text-lg " />
-              </div>
-              {` `}
-            </div>
-          </Inner>
-        </Stn>
+        <Footer />
       </div>
       <AnchorLink
-        tw="fixed bottom-0 left-0 z-50 p-4 m-4 font-mono text-xl text-white bg-orange-500 rounded-full hover:text-orange-300"
+        className="fixed bottom-0 left-0 z-50 p-4 m-4 font-mono text-xl text-white bg-yellow-500 rounded-full hover:text-yellow-300"
         href="#top"
       >
         <BsFillTriangleFill />
       </AnchorLink>
       <ReactTooltip place="left" type="dark" effect="solid" />
       <a
-        tw="fixed bottom-0 right-0 z-50 p-1 mb-3 mr-3 overflow-hidden transition-all duration-500 rounded-full hover:bg-green-600 hover:text-white"
+        className="fixed bottom-0 right-0 z-50 p-1 mb-3 mr-3 overflow-hidden transition-all duration-500 rounded-full hover:bg-green-600 hover:text-white"
         target="_blank"
         rel="noopener noreferrer"
         title="Consultas por Whatsapp"
@@ -96,15 +68,3 @@ Layout.propTypes = {
 }
 
 export default Layout
-
-//const Footer = styled.footer`
-//  ${tw`relative hidden px-2 py-8 text-center text-gray-800 bg-white`}
-//`
-
-const Stn = styled.div`
-  ${tw`w-full p-2 py-4 bg-white`}
-`
-
-const Inner = styled.div`
-  ${tw`flex flex-col justify-between max-w-6xl p-2 py-3 mx-auto text-center text-gray-800 `}
-`

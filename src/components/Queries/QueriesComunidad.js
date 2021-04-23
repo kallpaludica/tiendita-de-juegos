@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { kebabCase } from "lodash"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { FiExternalLink } from "react-icons/fi"
 
 const QueryComunidadComponent = () => {
@@ -16,15 +16,18 @@ const QueryComunidadComponent = () => {
             linkExterno
             categoria
             textoPrincipal {
-              textoPrincipal
+              raw
             }
             featuredImg {
-              fixed(width: 300, height: 230) {
-                ...GatsbyContentfulFixed
-              }
-              fluid(maxWidth: 300) {
-                ...GatsbyContentfulFluid_withWebp
-              }
+              gatsbyImageData(
+                layout: FULL_WIDTH
+                height: 500
+                width: 420
+                formats: JPG
+                backgroundColor: "#ffffff"
+                jpegProgressive: false
+                placeholder: DOMINANT_COLOR
+              )
             }
           }
         }
@@ -33,47 +36,39 @@ const QueryComunidadComponent = () => {
   `)
 
   return (
-    <div className="grid w-full gap-5 md:grid-cols-2">
+    <div className="grid w-full gap-5 md:grid-cols-3">
       {data.collections.edges.map(({ node }) => {
         return (
-          <div className="grid grid-cols-4 overflow-hidden border border-gray-300 rounded-lg shadow-lg">
-            <div className="relative w-full h-64 col-span-2 overflow-hidden">
-              <Img
-                title={node.title}
-                className="object-cover w-full h-full"
-                alt={node.title}
-                fluid={node.featuredImg.fluid}
-              />
+          <div
+            key={node.id}
+            className="relative overflow-hidden border border-gray-300 rounded-lg shadow-lg"
+          >
+            <div className="w-full h-64 overflow-hidden md:relative">
+              <Link
+                className="block hover:opacity-90"
+                key={node.slug}
+                to={`/comunidad/${kebabCase(node.slug)}/`}
+              >
+                <GatsbyImage
+                  title={node.title}
+                  className="object-cover w-full h-64"
+                  alt={node.title}
+                  image={node.featuredImg.gatsbyImageData}
+                />
+              </Link>
             </div>
-            <div className="relative col-span-2 px-4 mt-2 text-left">
-              <span className="inline-block text-sm font-bold text-gray-600 uppercase">
+            <div className="relative px-4 -mt-10 text-left">
+              <span className="relative z-20 inline-block px-3 py-1 text-sm font-bold text-indigo-100 uppercase bg-indigo-800 rounded-full bg-opacity-80">
                 {node.categoria}
               </span>
-              {node.textoPrincipal ? (
-                <Link
-                  className="block my-3 font-sans text-2xl font-semibold leading-tight text-gray-900 hover:underline"
-                  key={node.slug}
-                  to={`/comunidad/${kebabCase(node.slug)}/`}
-                >
-                  {node.title}
-                </Link>
-              ) : (
-                <div className="flex-1 block my-3 font-sans text-2xl font-semibold leading-tight text-gray-900 ">
-                  {node.title}
-                </div>
-              )}
-              
-              <div className="flex justify-between">
-                {node.textoPrincipal && (
-                  <Link
-                    className="px-4 py-2 mt-2 mb-3 font-sans text-sm text-center text-white bg-teal-600 rounded hover:text-teal-300 hover:no-underline"
-                    key={node.slug}
-                    to={`/comunidad/${kebabCase(node.slug)}/`}
-                  >
-                    Leer más
-                  </Link>
-                )}
-              </div>
+              <Link
+                className="block pt-4 my-3 font-sans text-2xl font-semibold leading-tight text-gray-900 hover:underline"
+                key={node.slug}
+                to={`/comunidad/${kebabCase(node.slug)}/`}
+              >
+                {node.title}
+              </Link>
+
               {node.linkExterno && (
                 <a
                   rel="noopener noreferrer"
@@ -85,6 +80,15 @@ const QueryComunidadComponent = () => {
                   <FiExternalLink className="ml-1" />
                 </a>
               )}
+              <div className="flex justify-between">
+                <Link
+                  className="px-4 py-2 mt-2 mb-3 font-sans text-sm text-center text-white bg-indigo-600 rounded hover:text-indigo-300 hover:no-underline"
+                  key={node.slug}
+                  to={`/comunidad/${kebabCase(node.slug)}/`}
+                >
+                  Leer más
+                </Link>
+              </div>
             </div>
           </div>
         )

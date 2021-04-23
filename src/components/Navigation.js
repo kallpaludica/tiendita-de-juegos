@@ -4,7 +4,7 @@ import React from "react"
 const routes = [
   {
     title: "Inicio",
-    active: "text-orange-500",
+    active: "text-yellow-500",
     slug: "/",
   },
   {
@@ -12,7 +12,11 @@ const routes = [
     active: "text-green-500",
     slug: "/tienda-de-juegos/",
   },
-
+  {
+    title: "Buscador",
+    active: "text-blue-500",
+    slug: "/buscador",
+  },
   {
     title: "Colecciones",
     active: "text-pink-500",
@@ -24,13 +28,8 @@ const routes = [
     slug: "/tienda-de-juegos/editoriales",
   },
   {
-    title: "Buscador",
-    active: "text-blue-500",
-    slug: "/buscador",
-  },
-  {
     title: "Quienes somos",
-    active: "text-orange-500",
+    active: "text-yellow-500",
     slug: "/quienes-somos",
   },
   {

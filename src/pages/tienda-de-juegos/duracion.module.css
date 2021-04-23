@@ -1,0 +1,8 @@
+.showduration {
+  @apply grid w-full grid-cols-1 gap-4 p-3 pt-6 pb-12 mx-auto bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+}
+
+.showduration :global .game-duration {
+  @apply block !important;
+}
+

@@ -1,81 +1,106 @@
-import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import Headroom from "react-headroom"
-import { FaNewspaper } from "react-icons/fa"
-import { AiFillShop, AiOutlineSearch } from "react-icons/ai"
-import { IoIosChatbubbles, IoMdMail } from "react-icons/io"
-import tw from "twin.macro"
+import { FcShop, FcContacts, FcGlobe } from "react-icons/fc"
 import KallpaLogo from "../assets/logo.svg"
 import "./header.css"
 
 const routesLeft = [
+  /*
+  {
+    title: "Recursos",
+    slug: "/recursos",
+    icon: <IoIosArchive className="text-2xl " />,
+  },
   {
     title: "Tienda de juegos",
     slug: "/tienda-de-juegos",
     icon: <AiFillShop className="mr-1 text-xl " />,
   },
-    /*
   {
+    title: "Recursos lúdicos",
+    slug: "/comunidad/recursos/",
+    icon: "🧭",
+  },
+    {
+    title: "Buscador",
+    slug: "/buscador",
+    icon: <FcSearch className="mr-1 text-2xl" />,
+  },
+    {
     title: "Comunidad",
     slug: "/comunidad",
-    icon: <FaNewspaper className="mr-1 text-xl" />,
+    icon: <FcGlobe className="mr-1 text-2xl" />,
+  },
+  */
+ {
+   title: "Tienda de juegos",
+   slug: "/tienda-de-juegos",
+   icon: <FcShop className="mr-1 text-2xl" />,
   },
 
   {
-    title: "Recursos",
-    slug: "/recursos",
-    icon: <IoIosArchive className="text-2xl " />,
-  }*/
-  {
-    title: "Buscador",
-    slug: "/buscador",
-    icon: <AiOutlineSearch className="mr-1 text-2xl " />,
-  },
-  {
     title: "Quienes somos",
     slug: "/quienes-somos",
-    icon: <IoIosChatbubbles className="mr-1 text-2xl " />,
+    icon: <FcContacts className="mr-1 text-2xl" />,
   },
   {
     title: "Contacto",
     slug: "/contacto",
-    icon: <IoMdMail className="mr-1 text-2xl " />,
+    icon: (
+      <span role="img" aria-label="contacto" className="mr-1 text-xl">
+        👋
+      </span>
+    ),
   },
 ]
 
 const Header = ({ siteTitle }) => (
   <Headroom disableInlineStyles>
-    <HeaderContainer>
-      <InnerHeader>
-        <Logo>
+    <header className="header-container">
+      <div className="relative flex items-center justify-between w-full max-w-full px-0 mx-auto 2xl:max-w-7xl md:pb-1 sm:pr-6 md:pr-0">
+        <div className="logo-container">
           <Link to="/" className="flex items-center mr-12">
             <KallpaLogo className="w-16 h-16 mr-3 kallpa-logo" />
-            <span className="font-mono text-2xl leading-5 md:leading-7 md:text-3xl">
+            <span className="font-mono text-2xl leading-5 duration-700 md:leading-7 md:text-3xl">
               Kallpa <br /> lúdica
             </span>
           </Link>
-        </Logo>
+        </div>
 
-        <NavLeft>
+        <div className="justify-end hidden w-full h-16 nav-left lg:flex">
           {routesLeft.map((route, i) => {
             return (
               <Link
                 key={i}
                 activeClassName="opacity-100 border-white active"
                 partiallyActive={true}
-                className="flex items-center py-3 font-mono text-sm text-center border-t-2 border-transparent opacity-90 hover:opacity-100 md:mx-4 lg:text-lg"
+                className="flex items-center py-3 m-0 font-mono text-xs text-center border-t-2 border-transparent opacity-100 md:text-base hover:opacity-80 md:mx-4 "
                 to={route.slug}
               >
-                <span>{route.icon}</span>
+                <span className="hidden mr-1 xl:inline-block">
+                  {route.icon}
+                </span>
                 <span>{route.title}</span>
               </Link>
             )
           })}
-        </NavLeft>
-      </InnerHeader>
-    </HeaderContainer>
+          {/* <div className="py-3 pt-4 md:mx-4">
+            <AwesomeButton
+              action={() => {
+                navigate(`/tienda-de-juegos`)
+              }}
+              type="primary"
+              size="small"
+            >
+              <AiFillShop className="mr-1 text-lg " />
+              <span className="text-xs">Tienda de juegos</span>
+            </AwesomeButton>
+          </div> */}
+        </div>
+      </div>
+    </header>
   </Headroom>
 )
 
@@ -88,72 +113,3 @@ Header.defaultProps = {
 }
 
 export default Header
-
-const NavLeft = styled.nav`
-  ${tw`justify-end hidden w-full h-16 md:flex`}
-  flex:1;
-
-  a {
-    ${tw`text-white`}
-
-    .headroom--pinned & {
-      ${tw`text-gray-900`}
-    }
-    .headroom--unpinned & {
-      ${tw`text-gray-900`}
-    }
-  }
-`
-
-const HeaderContainer = styled.header`
-  ${tw`z-50 px-2 py-2 transition-all duration-500 md:py-0 `}
-
-  body.ingame & a {
-    ${tw`text-gray-800`}
-  }
-
-  body.ingame & a.active {
-    ${tw`text-gray-800 border-gray-800`}
-  }
-`
-
-const InnerHeader = styled.div`
-  ${tw`relative flex items-center justify-between w-full max-w-full px-0 mx-auto md:pb-1 sm:pr-6 md:pr-0`}
-`
-
-const Logo = styled.div`
-  ${tw`m-0 md:px-3 md:relative`}
-  top:4px;
-  transition: all 1s;
-
-  .kallpa-logo {
-    transition: all 1s;
-  }
-  .headroom--pinned & .kallpa-logo {
-    transform: scale(1.05) rotate(120deg);
-  }
-
-  .headroom--unpinned & .kallpa-logo {
-    transform: scale(1.05) rotate(60deg);
-  }
-
-  .gatsby-image-wrapper {
-    ${tw`w-24 `}
-  }
-
-  a {
-    ${tw`text-white`}
-
-    &:hover {
-      ${tw`text-gray-100`}
-    }
-
-    .headroom--unpinned & {
-      ${tw`text-gray-800`}
-    }
-
-    .headroom--scrolled & {
-      ${tw`text-gray-800`}
-    }
-  }
-`

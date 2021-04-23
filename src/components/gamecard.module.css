@@ -1,0 +1,19 @@
+/* purgecss start ignore */
+
+.gamecard {
+  @apply relative w-full mb-3 overflow-hidden transition-all duration-500 transform bg-white rounded-md shadow-lg hover:shadow-2xl md:max-w-md;
+}
+
+.gamecard .image {
+  @apply relative h-full transition-all duration-500 ease-in-out transform hover:scale-105;
+}
+
+.show-age .gamecard .game-ages {
+  @apply block !important;
+}
+
+.show-duration .gamecard .game-duration {
+  @apply block !important;
+}
+
+/* purgecss end ignore */

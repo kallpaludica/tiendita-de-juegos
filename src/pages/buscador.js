@@ -1,13 +1,15 @@
-import styled from "@emotion/styled"
 import algoliasearch from "algoliasearch/lite"
 import React from "react"
 import { InstantSearch, Hits, SearchBox } from "react-instantsearch-dom"
-import tw from "twin.macro"
 import Layout from "../components/layout"
 import PostPreview from "../components/postPreview"
-import SEO from "../components/seo"
-import "./algolia.css"
+import HeroWave from "../components/HeroWave"
+import GameSort from "../components/Games/GameSort"
+import GamesAside from "../components/Games/GameMenu"
+import Seo from "../components/seo"
 import { Helmet } from "react-helmet"
+import Fade from "react-reveal/Fade"
+import "../styles/algolia.css"
 
 const searchClient = algoliasearch(
   "REF3SMUMO1",
@@ -18,43 +20,42 @@ const BuscarComponent = () => {
   return (
     <>
       <Layout>
+        <Seo title="Buscar" />
         <Helmet>
-          <body className="ingame" />
+          <body className="games searcher" />
         </Helmet>
-        <SearchContainer className="bg-gradient-to-tl from-blue-200 to-blue-300">
-          <SEO title="Buscar" />
-          <div className="max-w-6xl min-h-screen p-6 pt-6 mx-auto">
-            <InstantSearch
-              searchClient={searchClient}
-              indexName="netlify_89e873dd-0214-4d2f-b526-ed8fb59a5cfe_master_all"
-            >
-              <SearchBox
-                className="w-full mx-auto mb-6"
-                translations={{
-                  submitTitle: "Iniciar búsqueda",
-                  resetTitle: "Reiniciar búsqueda",
-                  placeholder: "Buscador",
-                }}
-              />
-              <Hits className="w-full mx-auto" hitComponent={PostPreview} />
-            </InstantSearch>
+        <HeroWave pattern="bg-green-600 text-green-500" />
+        <div className="relative z-10 flex flex-row-reverse w-full mx-auto max-w-7xl md:-mt-16">
+          <div className="hidden w-72 md:block ">
+            <GamesAside />
           </div>
-        </SearchContainer>
+          <div className="relative w-full px-2 mx-auto md:px-0">
+            <div className="relative top-0 z-50 pt-3 md:pl-4">
+              <GameSort />
+            </div>
+            <div className="p-6 pt-6 mx-auto max-w-7xl">
+              <InstantSearch
+                searchClient={searchClient}
+                indexName="netlify_89e873dd-0214-4d2f-b526-ed8fb59a5cfe_master_all"
+              >
+                <SearchBox
+                  className="w-full mx-auto mb-6"
+                  translations={{
+                    submitTitle: "Iniciar búsqueda",
+                    resetTitle: "Reiniciar búsqueda",
+                    placeholder: "Buscador",
+                  }}
+                />
+                <Fade delay={800}>
+                  <Hits className="w-full mx-auto" hitComponent={PostPreview} />
+                </Fade>
+              </InstantSearch>
+            </div>
+          </div>
+        </div>
       </Layout>
     </>
   )
 }
 
 export default BuscarComponent
-
-const SearchContainer = styled.div`
-  ${tw`relative`}
-  ${tw`pt-24 bg-teal-100 border-teal-800`}
-
-  p {
-    ${tw`text-gray-800 `}
-  }
-  h1 {
-    ${tw`text-gray-800`}
-  }
-`

@@ -1,7 +1,7 @@
-import Img from "gatsby-image"
 import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { kebabCase } from "lodash"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 
 const PublishersFeaturedComponent = () => {
@@ -14,12 +14,14 @@ const PublishersFeaturedComponent = () => {
             title
             slug
             logo {
-              fluid(maxWidth: 300) {
-                ...GatsbyContentfulFluid_withWebp
-              }
-              fixed(width: 250, height: 100) {
-                ...GatsbyContentfulFixed
-              }
+              gatsbyImageData(
+                layout: CONSTRAINED
+                width: 500
+                formats: JPG
+                backgroundColor: "#ffffff"
+                jpegProgressive: false
+                placeholder: DOMINANT_COLOR
+              )
             }
           }
         }
@@ -29,7 +31,7 @@ const PublishersFeaturedComponent = () => {
 
   return (
     <>
-      <div className="relative z-50 overflow-hidden grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 max-w-6xl mx-auto mb-12">
+      <div className="relative z-50 grid max-w-6xl grid-cols-2 gap-2 mx-auto mb-12 overflow-hidden md:grid-cols-3 lg:grid-cols-6">
         {data.editoriales.edges.map(({ node }) => {
           return (
             <Link
@@ -38,12 +40,12 @@ const PublishersFeaturedComponent = () => {
               className="flex items-center justify-center m-5 overflow-hidden text-gray-800 rounded-md "
             >
               {node.logo && (
-                <Img
-                  title={node.title}
-                  className="block object-cover w-32 h-auto "
-                  alt={node.title}
-                  fluid={node.logo.fluid}
-                />
+                <GatsbyImage
+                title={node.title}
+                className="object-scale-down w-full"
+                alt={node.title}
+                image={node.logo.gatsbyImageData}
+              />
               )}
             </Link>
           )

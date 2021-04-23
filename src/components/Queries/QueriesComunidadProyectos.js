@@ -1,13 +1,15 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { kebabCase } from "lodash"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { FiExternalLink } from "react-icons/fi"
 
 const QueryComunidadProyectosComponent = () => {
   const data = useStaticQuery(graphql`
     query QueryComunidadProyectosQuery {
-      collections: allContentfulComunidad(filter: {categoria: {eq: "Proyectos que nos potencian"}}) {
+      collections: allContentfulComunidad(
+        filter: { categoria: { eq: "Proyectos que nos potencian" } }
+      ) {
         edges {
           node {
             id
@@ -16,15 +18,18 @@ const QueryComunidadProyectosComponent = () => {
             linkExterno
             categoria
             textoPrincipal {
-              textoPrincipal
+              raw
             }
             featuredImg {
-              fixed(width: 300, height: 230) {
-                ...GatsbyContentfulFixed
-              }
-              fluid(maxWidth: 300) {
-                ...GatsbyContentfulFluid_withWebp
-              }
+              gatsbyImageData(
+                layout: FULL_WIDTH
+                height: 500
+                width: 420
+                formats: JPG
+                backgroundColor: "#ffffff"
+                jpegProgressive: false
+                placeholder: DOMINANT_COLOR
+              )
             }
           }
         }
@@ -38,11 +43,11 @@ const QueryComunidadProyectosComponent = () => {
         return (
           <div className="grid grid-cols-4 overflow-hidden border border-gray-300 rounded-lg shadow-lg">
             <div className="relative w-full h-64 col-span-2 overflow-hidden">
-              <Img
+              <GatsbyImage
                 title={node.title}
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-64"
                 alt={node.title}
-                fluid={node.featuredImg.fluid}
+                image={node.featuredImg.gatsbyImageData}
               />
             </div>
             <div className="relative col-span-2 px-4 mt-2 text-left">
@@ -59,11 +64,11 @@ const QueryComunidadProyectosComponent = () => {
                   {node.title}
                 </div>
               )}
-              
+
               <div className="flex justify-between">
                 {node.textoPrincipal && (
                   <Link
-                    className="px-4 py-2 mt-2 mb-3 font-sans text-sm text-center text-white bg-teal-600 rounded hover:text-teal-300 hover:no-underline"
+                    className="px-4 py-2 mt-2 mb-3 font-sans text-sm text-center text-white bg-green-600 rounded hover:text-green-300 hover:no-underline"
                     key={node.slug}
                     to={`/comunidad/${kebabCase(node.slug)}/`}
                   >

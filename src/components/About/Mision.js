@@ -1,8 +1,6 @@
-import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
-import tw from "twin.macro"
-import FormatText from "../wysiwyg"
+import FormatText from "../serializers"
 
 const MisionComponent = () => {
   const data = useStaticQuery(graphql`
@@ -10,8 +8,8 @@ const MisionComponent = () => {
       mision: contentfulSobreElProyecto(slug: { eq: "mision" }) {
         id
         title
-        childContentfulSobreElProyectoTextoPrincipalRichTextNode {
-          json
+        textoPrincipal {
+          raw
         }
       }
     }
@@ -19,19 +17,16 @@ const MisionComponent = () => {
 
   return (
     <>
-      <div className="w-full text-center ">
-        <h1 className="max-w-4xl mx-auto font-mono text-4xl text-gray-900">
+      <div className="w-full max-w-3xl mx-auto mb-12 text-center">
+        <h2 className="max-w-6xl mx-auto mb-6 font-mono text-4xl leading-tight text-green-500 md:text-5xl">
           {data.mision.title}
-        </h1>
-        <div className="flex items-center justify-center my-8 ">
-          <List className="max-w-3xl mx-auto ">
-            <FormatText
-              FormatText={
-                data.mision
-                  .childContentfulSobreElProyectoTextoPrincipalRichTextNode
-              }
-            />
-          </List>
+        </h2>
+        <div className="flex items-center justify-center mb-2 ">
+          <h3 className="max-w-3xl mx-auto mb-6 text-2xl leading-loose ">
+            {data.mision.textoPrincipal && (
+              <FormatText FormatText={data.mision.textoPrincipal} />
+            )}
+          </h3>
         </div>
       </div>
     </>
@@ -39,12 +34,3 @@ const MisionComponent = () => {
 }
 
 export default MisionComponent
-
-const List = styled.div`
-  ul {
-    ${tw`pl-6 list-disc `}
-  }
-  p {
-    ${tw`font-sans text-2xl leading-8 text-gray-900`}
-  }
-`

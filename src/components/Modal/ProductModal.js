@@ -1,12 +1,12 @@
 import React from "react"
 import Modal from "react-modal"
-import "./ProductModal.css"
 import { Link } from "gatsby"
 import { kebabCase } from "lodash"
 import { IoMdTime } from "react-icons/io"
 import { FaUserFriends } from "react-icons/fa"
 import { GiTabletopPlayers } from "react-icons/gi"
 import { FaCaretRight } from "react-icons/fa"
+import "./ProductModal.css"
 
 Modal.setAppElement("#___gatsby")
 

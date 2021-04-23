@@ -11,11 +11,6 @@ const QueryPublisherComponent = () => {
             id
             title
             slug
-            logo {
-              fluid(maxWidth: 200) {
-                ...GatsbyContentfulFluid_withWebp
-              }
-            }
           }
         }
       }
@@ -29,7 +24,8 @@ const QueryPublisherComponent = () => {
           <Link
             key={node.slug}
             to={`/tienda-de-juegos/editoriales/${kebabCase(node.slug)}/`}
-            className="hover:text-teal-500 hover:border-teal-500"
+            activeClassName="text-green-500"
+            className=" hover:text-green-500 hover:border-green-500"
           >
             {node.title}
           </Link>

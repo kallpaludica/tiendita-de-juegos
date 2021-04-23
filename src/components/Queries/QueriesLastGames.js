@@ -1,7 +1,5 @@
-import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
-import tw from "twin.macro"
 import GameCard from "../../components/GameCard"
 
 const QueriesLastGamesComponent = () => {
@@ -25,12 +23,15 @@ const QueriesLastGamesComponent = () => {
             GameAuthor
             GameAges
             imagenDestacada {
-              fixed(width: 200, height: 230) {
-                ...GatsbyContentfulFixed
-              }
-              fluid(maxWidth: 450) {
-                ...GatsbyContentfulFluid_withWebp
-              }
+              gatsbyImageData(
+                layout: CONSTRAINED
+                width:300
+                height:300
+                formats: JPG
+                backgroundColor: "#ffffff"
+                jpegProgressive: false
+                placeholder: DOMINANT_COLOR
+              )
             }
           }
         }
@@ -41,17 +42,13 @@ const QueriesLastGamesComponent = () => {
 
   return (
     <>
-      <Container id="contenido">
+      <div className='grid max-w-6xl grid-cols-1 gap-4 p-3 py-12 mx-auto md:px-0 sm:grid-cols-2 md:grid-cols-4 ' id="contenido">
         {data.GamesSorted.edges.map(({ node }) => {
           return <GameCard card={node} key={node.slug} />
         })}
-      </Container>
+      </div >
     </>
   )
 }
 
 export default QueriesLastGamesComponent
-
-const Container = styled.div`
-  ${tw`grid max-w-6xl grid-cols-1 gap-4 p-3 py-12 mx-auto md:px-0 sm:grid-cols-2 md:grid-cols-4 `}
-`

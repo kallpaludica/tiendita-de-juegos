@@ -24,8 +24,8 @@ const QueryCollectionComponent = () => {
           <Link
             key={node.slug}
             to={`/tienda-de-juegos/colecciones/${kebabCase(node.slug)}/`}
-            activeClassName="text-teal-500"
-            className="hover:text-teal-500 hover:border-teal-500"
+            activeClassName="text-blue-500"
+            className=" hover:text-blue-500 hover:border-blue-500"
           >
             {node.title}
           </Link>

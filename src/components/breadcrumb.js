@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import tw from "twin.macro"
-import styled from "@emotion/styled"
+
 const juicyBread = ({ breaddata }) => {
   var elementsNew = []
 
@@ -14,12 +13,12 @@ const juicyBread = ({ breaddata }) => {
 
   return (
     <>
-      <Breadcrumb>
+      <div className="relative w-full max-w-6xl mx-auto mb-3 ">
         <nav
           className="hidden mt-2 mb-3 font-bold text-white md:block "
           aria-label="Breadcrumb"
         >
-          <List className="">
+          <div className="flex justify-start p-0 list-none">
             {elementsNew.map((value, index) => {
               return (
                 <li
@@ -51,19 +50,11 @@ const juicyBread = ({ breaddata }) => {
                 </li>
               )
             })}
-          </List>
+          </div>
         </nav>
-      </Breadcrumb>
+      </div>
     </>
   )
 }
 
 export default juicyBread
-
-const Breadcrumb = styled.div`
-  ${tw`relative w-full max-w-6xl mx-auto mb-3 `}
-`
-
-const List = styled.ol`
-  ${tw`flex justify-start p-0 list-none`}
-`

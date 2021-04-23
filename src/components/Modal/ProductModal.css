@@ -1,3 +1,5 @@
+/* purgecss start ignore */
+
 .ReactModal__Content {
     @apply flex flex-col w-full max-w-xs mx-auto outline-none;
     inset: initial !important;
@@ -29,4 +31,5 @@
     @apply bg-gray-100 border-blue-500 ring-1;
   }
   
+/* purgecss end ignore */
   

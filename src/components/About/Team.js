@@ -1,9 +1,8 @@
+//import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import React from "react"
-import FormatText from "../wysiwyg"
-import tw from "twin.macro"
-import styled from "@emotion/styled"
+import FormatText from "../serializers"
 
 const QueryTeamComponent = () => {
   const data = useStaticQuery(graphql`
@@ -14,13 +13,20 @@ const QueryTeamComponent = () => {
             id
             title
             orden
-            childContentfulEquipoTextoPrincipalRichTextNode {
-              json
+            textoPrincipal {
+              raw
             }
             imagenDestacada {
-              fluid(maxWidth: 200) {
-                ...GatsbyContentfulFluid_withWebp
-              }
+              gatsbyImageData(
+                layout: CONSTRAINED
+                width:400
+                height:400
+                quality: 90
+                formats: JPG
+                backgroundColor: "#ffffff"
+                jpegProgressive: false
+                placeholder: BLURRED
+              )
             }
           }
         }
@@ -32,25 +38,21 @@ const QueryTeamComponent = () => {
     <>
       {data.editoriales.edges.map(({ node }) => {
         return (
-          <Person key={node.id} className="">
-            <div className="p-2 text-orange-300 transform translate-x-0 translate-y-2 md:flex-row pattern-dots-sm md:translate-x-6 md:translate-y-6 ">
-              <div className="flex items-center justify-center mb-3 transform md:-translate-x-6 -md:translate-y-6">
-                <Img
+          <div key={node.id} className="flex flex-col items-start justify-start w-full max-w-lg px-0 pb-3 mx-auto my-6 font-sans transition-all duration-500 bg-white shadow-md hover:shadow-xl">
+            <div className="p-2 text-yellow-300 md:flex-row pattern-dots-sm ">
+              <div className="flex items-center justify-center mx-auto mb-3 overflow-hidden transform -translate-y-12 border-4 border-white rounded-full shadow-lg w-44 ">
+                 <GatsbyImage
                   title={node.title}
-                  className="block object-cover w-32 h-auto transform scale-90 "
+                  className="block object-cover h-auto transform w-44"
                   alt={node.title}
-                  fluid={node.imagenDestacada.fluid}
+                  image={node.imagenDestacada.gatsbyImageData}
                 />
               </div>
-              <div className="mt-3 text-center transform md:-translate-x-6 md:-translate-y-4">
-                <FormatText
-                  FormatText={
-                    node.childContentfulEquipoTextoPrincipalRichTextNode
-                  }
-                />
+              <div className="px-2 -mt-10 prose prose-lg text-left">
+                {node.textoPrincipal && <FormatText FormatText={node.textoPrincipal} />}
               </div>
             </div>
-          </Person>
+          </div>
         )
       })}
     </>
@@ -59,10 +61,3 @@ const QueryTeamComponent = () => {
 
 export default QueryTeamComponent
 
-const Person = styled.div`
-  ${tw`flex flex-col items-start justify-start w-full max-w-lg p-3 mx-auto my-6 font-sans transition-all duration-500 transform bg-white shadow-md hover:shadow-xl`}
-  p {
-    font-size: 1rem !important;
-    line-height: 1.5rem !important;
-  }
-`

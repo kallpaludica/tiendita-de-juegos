@@ -2,13 +2,11 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { Link } from "gatsby"
 import { kebabCase } from "lodash"
-import SEO from "../components/seo"
-import FormatText from "../components/wysiwyg"
-import tw from "twin.macro"
-import styled from "@emotion/styled"
+import Seo from "../components/seo"
+import FormatText from "../components/serializers"
 import HeroWave from "../components/HeroWave"
 import lottie from "lottie-web"
-import reactLogo from "../animations/left-arrow.json"
+import ArrowLeft from "../animations/left-arrow.json"
 import React, { useEffect } from "react"
 import { FiExternalLink } from "react-icons/fi"
 
@@ -17,64 +15,61 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
 
   useEffect(() => {
     lottie.loadAnimation({
-      container: document.querySelector("#react-logo"),
-      animationData: reactLogo,
+      container: document.querySelector("#arrowLeft"),
+      animationData: ArrowLeft,
     })
   }, [])
 
   const { prev, next } = pageContext
   return (
     <Layout location={location}>
-      <SEO title={collection.title} />
+      <Seo title={collection.title} />
       <HeroWave
-        pattern="bg-teal-700 text-teal-600 "
-        heading="Comunidad"
-        svg="M0,224L80,240C160,256,320,288,480,277.3C640,267,800,213,960,202.7C1120,192,1280,224,1360,240L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+        pattern="bg-green-700 text-green-600 "
+        heading={collection.title}
+        center={true}
       />
-      <Meta>
+      <div className="flex flex-col items-center justify-between max-w-4xl mx-auto border-b border-gray-200 md:flex-row">
         <Link
           to="/comunidad"
-          className="flex items-center max-w-2xl px-3 mx-auto my-6 font-sans font-bold text-left text-teal-500 hover:text-teal-600 lottie-left-arrow"
+          className="flex items-center max-w-2xl px-3 mx-auto my-6 font-sans font-bold text-left text-green-500 hover:text-green-600 lottie-left-arrow"
         >
-          <div id="react-logo" style={{ width: 30, height: 30 }} />
+          <div id="arrowLeft" style={{ width: 30, height: 30 }} />
           <span className="mt-1 ml-4 text-xl">Volver a comunidad</span>
         </Link>
-      </Meta>
-      <h1 className="max-w-2xl px-3 mx-auto mb-6 font-sans text-4xl font-bold text-left">
-        {collection.title}
-      </h1>
-      {collection.linkExterno && (
-        <div className="flex justify-start max-w-2xl px-3 mx-auto mb-3">
+        {collection.linkExterno && (
+        <div className="flex items-center justify-start max-w-2xl px-3 mx-auto">
           <a
             rel="noopener noreferrer"
             href={collection.linkExterno}
             target="_blank"
-            className="inline-flex py-2 font-sans text-lg font-bold text-center text-indigo-600 border-b border-indigo-600 hover:border-indigo-700 hover:text-indigo-600 hover:no-underline"
+            className="inline-flex font-sans text-lg font-bold text-center text-indigo-600 no-underline border-b border-indigo-600 hover:border-indigo-700 hover:text-indigo-600"
           >
             Visitar espacio
             <FiExternalLink className="ml-1" />
           </a>
         </div>
       )}
+      </div>
+      
       <div
-        className="w-full max-w-2xl px-3 pr-6 mx-auto my-6 text-left article"
+        className="w-full max-w-6xl px-3 pr-6 mx-auto my-6 prose prose-xl text-left article"
         id={collection.slug}
       >
-        {collection.childContentfulComunidadTextoPrincipalRichTextNode && (
-          <FormatText
-            FormatText={
-              collection.childContentfulComunidadTextoPrincipalRichTextNode
-            }
-          />
+        {collection.textoPrincipal && (
+          <FormatText FormatText={collection.textoPrincipal} />
         )}
       </div>
-
       <div>
         <div className="w-full max-w-2xl m-auto article">
-          <PageNav>
+          <div className="flex justify-between py-12">
             <div>
               {prev && (
-                <Link to={`/comunidad/${kebabCase(prev.slug)}/`} rel="prev">
+                <Link
+                  to={`/comunidad/${kebabCase(prev.slug)}/`}
+                  rel="prev"
+                  className="font-sans text-lg font-bold"
+                >
                   ← {prev.title}
                 </Link>
               )}
@@ -82,33 +77,21 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
 
             <div style={{ justifySelf: "flex-end" }}>
               {next && (
-                <Link to={`/comunidad/${kebabCase(next.slug)}/`} rel="next">
+                <Link
+                  to={`/comunidad/${kebabCase(next.slug)}/`}
+                  rel="next"
+                  className="font-sans text-lg font-bold"
+                >
                   {next.title} →
                 </Link>
               )}
             </div>
-          </PageNav>
+          </div>
         </div>
       </div>
     </Layout>
   )
 }
-
-const PageNav = styled.nav`
-  ${tw`flex justify-between py-12`}
-  a {
-    ${tw`text-sm font-bold`}
-  }
-  body.dark & a {
-    ${tw`text-teal-300`}
-  }
-`
-
-const Meta = styled.div`
-  .lottie-left-arrow path {
-    stroke: #48bb78;
-  }
-`
 
 export default ComunidadSingleTemplate
 
@@ -120,8 +103,93 @@ export const pageQuery = graphql`
       slug
       categoria
       linkExterno
-      childContentfulComunidadTextoPrincipalRichTextNode {
-        json
+      textoPrincipal {
+        raw
+        references {
+          ... on ContentfulAsset {
+            contentful_id
+            __typename
+            title
+            file {
+              url
+              contentType
+            }
+          }
+          ... on ContentfulRecursos {
+            contentful_id
+            __typename
+            title
+            slug
+            featuredImg {
+              gatsbyImageData(
+                height: 150
+                width: 150
+                formats: AUTO
+                layout: FIXED
+              )
+            }
+          }
+          ... on ContentfulEditorial {
+            contentful_id
+            __typename
+            title
+            slug
+            logo {
+              gatsbyImageData(
+                height: 150
+                width: 150
+                formats: AUTO
+                layout: FIXED
+              )
+            }
+          }
+          ... on ContentfulComunidad {
+            contentful_id
+            __typename
+            title
+            slug
+            featuredImg {
+              gatsbyImageData(
+                height: 150
+                width: 150
+                formats: AUTO
+                layout: FIXED
+              )
+            }
+          }
+          ... on ContentfulColecciones {
+            contentful_id
+            __typename
+            title
+            slug
+            CollectionDescription {
+              CollectionDescription
+            }
+            icono {
+              gatsbyImageData(
+                height: 150
+                width: 150
+                formats: AUTO
+                layout: FIXED
+              )
+            }
+          }
+          ... on ContentfulArticulos {
+            contentful_id
+            __typename
+            title
+            slug
+            GameBuyPrice
+            imagenDestacada {
+              gatsbyImageData(
+                height: 150
+                width: 150
+                formats: AUTO
+                layout: FIXED
+              )
+            }
+          }
+        }
       }
     }
   }

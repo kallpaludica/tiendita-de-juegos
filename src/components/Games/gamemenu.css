@@ -1,0 +1,14 @@
+/* purgecss start ignore */
+
+.game-aside  {
+@apply top-0 flex flex-col w-full mt-20 font-sans text-left border-l border-gray-300 ;
+}
+
+.game-aside a {
+  @apply py-1 pl-6 text-base text-left transition-all duration-200 border-b border-gray-300;
+  }
+
+.game-aside h2 {
+  @apply pt-0 pl-6 my-3 font-mono text-xl text-left;
+}
+/* purgecss end ignore */

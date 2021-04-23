@@ -1,80 +1,38 @@
+//import Img from "gatsby-image"
 import { graphql, Link } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { kebabCase } from "lodash"
-import "twin.macro"
-//import styled from "@emotion/styled"
 import React from "react"
 import { AwesomeButtonSocial } from "react-awesome-button"
 import { Helmet } from "react-helmet"
-import { FaUserFriends } from "react-icons/fa"
-import { GiTabletopPlayers } from "react-icons/gi"
-import { IoMdTime } from "react-icons/io"
+import { FcClock, FcConferenceCall, FcCollaboration } from "react-icons/fc"
 import { SRLWrapper } from "simple-react-lightbox"
-import { BigPlayButton, Player } from "video-react"
-import "../components/AwsBtn.css"
 import GameSort from "../components/Games/GameSort"
 import Layout from "../components/layout"
 import OpenGallery from "../components/OpenGallery"
 import QueriesLastGames from "../components/Queries/QueriesLastGames"
-import SEO from "../components/seo"
-import "../components/VideoReact.css"
-import FormatText from "../components/wysiwyg"
+import Seo from "../components/seo"
 import GoBack from "../components/GoBack"
 import AboutImage from "../images/kallpa-ludica.png"
 import { RiZoomInLine } from "react-icons/ri"
-
-const options = {
-  buttons: {
-    iconPadding: "7px",
-    showDownloadButton: false,
-    backgroundColor: "rgba(255, 255, 255, 0.95)",
-    iconColor: "rgba(0, 0, 0, 0.8)",
-  },
-  caption: {
-    captionFontFamily: "Montserrat, sans-serif",
-    captionFontSize: "22px",
-    captionColor: "#8D99AE",
-    captionFontWeight: 300,
-    showCaption: false,
-  },
-  settings: {
-    overlayColor: "rgba(255, 255, 255, 1)",
-    transitionTimingFunction: "ease-in-out",
-    slideTransitionSpeed: 2.6,
-    slideTransitionTimingFunction: [0.25, 0.75, 0.5, 1],
-    slideAnimationType: "both",
-    slideSpringValues: [300, 200],
-    disablePanzoom: true,
-    autoplaySpeed: 6000,
-    hideControlsAfter: false,
-  },
-  progressBar: {
-    height: "3px",
-    fillColor: "rgba(237, 137, 54,1)",
-    backgroundColor: "rgba(255, 255, 255, 0.95)",
-  },
-  thumbnails: {
-    thumbnailsSize: ["150px", "100px"],
-    thumbnailsGap: "0 5px",
-  },
-}
+import FormatText from "../components/serializers"
+import "../styles/AwsBtn.css"
+import "../styles/VideoReact.css"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.contentfulArticulos
-  const Article =
-    data.contentfulArticulos.childContentfulArticulosTextoPrincipalRichTextNode
-
+  // const { article } = data.contentfulArticulos
   const { prev, next } = pageContext
   return (
     <Layout location={location}>
       {post.publisher ? (
-        <SEO
+        <Seo
           title={`${post.title}`}
           description={`Juego de la editorial ${post.publisher.title}`}
           image={`${post.imagenDestacada.file.url}`}
         />
       ) : (
-        <SEO
+        <Seo
           title={`${post.title}`}
           description={`Juego en la provincia de Salta`}
           image={`${post.imagenDestacada.file.url}`}
@@ -83,50 +41,44 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <Helmet>
         <body className="ingame" />
       </Helmet>
-
-      <div tw="w-full py-12 bg-orange-100">
-        <div tw="max-w-6xl mx-auto mt-16 bg-white shadow-lg ">
-          <div tw="md:hidden p-4 pb-0">
+      <div className="w-full py-12 bg-yellow-50">
+        <div className="mx-auto mt-12 bg-white shadow-lg max-w-7xl ">
+          <div className="p-4 pb-0 md:hidden">
             <GoBack />
           </div>
-          <div tw="flex flex-col p-5 pt-6 sm:flex-row">
-            <div tw="w-full md:w-2/3">
+          <div className="flex flex-col p-5 pt-6 sm:flex-row">
+            <div className="w-full md:w-2/3">
               <SRLWrapper options={options}>
                 {post.imagenDestacada ? (
-                  <div
-                    tw="w-full mx-auto mb-2 text-center shadow-md cursor-pointer"
-                    className="link"
-                  >
-                    <Img
-                      fluid={post.imagenDestacada.fluid}
-                      alt={post.title}
+                  <div className="w-full mx-auto mb-2 text-center shadow-md cursor-pointer link">
+                    <GatsbyImage
                       title={post.title}
+                      alt={post.title}
+                      image={post.imagenDestacada.gatsbyImageData}
                     />
                   </div>
                 ) : (
                   <img
-                    tw="w-48 h-48 mx-auto my-6 opacity-25 "
+                    className="w-48 h-48 mx-auto my-6 opacity-25 "
                     alt="Kallpa Lúdica"
                     src={AboutImage}
                   />
                 )}
-
                 {post.GameGallery && (
-                  <div tw="w-full text-center ">
-                    <div tw="w-full px-0 pt-6 m-auto md:py-0">
-                      <div tw="grid grid-cols-3 gap-2">
+                  <div className="w-full text-center ">
+                    <div className="w-full px-0 pt-6 m-auto md:py-0">
+                      <div className="grid grid-cols-3 gap-2">
                         {post.GameGallery.map((item, i) => (
                           <div
-                            tw="relative h-24 max-w-xl m-0 overflow-hidden transition-all duration-200 transform shadow-md hover:opacity-75 "
-                            className="link"
+                            className="relative h-24 max-w-xl m-0 overflow-hidden transition-all duration-200 transform shadow-md link hover:opacity-75 "
                             key={item.id}
                           >
-                            <RiZoomInLine tw="absolute top-0 right-0 z-30 m-2 text-xl text-gray-400" />
-                            <Img
+                            <RiZoomInLine className="absolute top-0 right-0 z-30 m-2 text-xl text-gray-400" />
+                            <GatsbyImage
                               title={item.title}
+                              className="cursor-pointer"
                               alt={item.title}
-                              tw="cursor-pointer"
-                              fluid={item.fluid}
+                              image={item.gatsbyImageData}
                             />
                           </div>
                         ))}
@@ -136,69 +88,37 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 )}
               </SRLWrapper>
             </div>
-            <div tw="relative flex flex-col w-full pt-3 md:pl-12">
-              <h1 tw="w-full pt-2 pl-2 font-mono text-3xl text-left text-gray-800 md:pt-0 md:pl-0 md:text-5xl md:mb-3">
+            <div className="relative flex flex-col w-full pt-3 md:pl-6">
+              <h1 className="w-full pt-2 pl-2 font-mono text-3xl text-left text-gray-600 md:pt-0 md:pl-0 md:text-5xl md:mb-3">
                 {post.title}
               </h1>
-
-              <div tw="flex flex-col justify-center w-full pl-2 my-2 text-gray-700 md:pl-0 md:px-0 md:flex-row md:justify-start">
+              <div className="flex flex-col justify-center w-full px-1 pl-2 my-2 text-gray-700 md:pl-0 md:px-6 md:flex-row md:justify-start">
                 {post.GameAges && (
-                  <div tw="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
-                    <FaUserFriends tw="mr-3 text-2xl " />
+                  <div className="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
+                    <FcConferenceCall className="mr-3 text-4xl " />
                     Edad {post.GameAges}+
                   </div>
                 )}
-
                 {post.GameDuration && (
-                  <div tw="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
-                    <IoMdTime tw="mr-3 text-2xl " />
-                    Duración de {post.GameDuration} min.
+                  <div className="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
+                    <FcClock className="mr-3 text-4xl " />
+                    {post.GameDuration} min.
                   </div>
                 )}
                 {post.GamePlayers && (
-                  <div tw="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
-                    <GiTabletopPlayers tw="mr-3 text-3xl " />
+                  <div className="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
+                    <FcCollaboration className="mr-3 text-4xl " />
                     {post.GamePlayers} jugadores
                   </div>
                 )}
               </div>
-
-              <div tw="flex items-center justify-start text-lg text-center">
-                {post.colecciones && (
-                  <>
-                    {post.colecciones.map((item, i) => (
-                      <Link
-                        to={`/tienda-de-juegos/colecciones/${kebabCase(
-                          item.slug
-                        )}`}
-                        tw="flex flex-col py-1 pr-4 my-2 mr-2 rounded-full "
-                        key={i}
-                      >
-                        <div tw="relative overflow-hidden transition-all duration-200 transform md:w-full hover:-translate-y-2">
-                          <Img
-                            title={item.title}
-                            tw="w-16 h-16"
-                            alt={item.title}
-                            fixed={item.icono.fixed}
-                          />
-                        </div>
-                        <b tw="font-sans text-blue-500 hover:text-blue-700">
-                          {item.title}
-                        </b>
-                      </Link>
-                    ))}
-                  </>
-                )}
-              </div>
-
               {post.GameGallery && (
                 <div className="hidden pl-6 my-6 mb-8 md:px-0">
                   <OpenGallery />
                 </div>
               )}
-
               {post.GameBuyPrice && (
-                <div className="flex flex-col-reverse items-center justify-between w-full px-3 py-6 mb-0 bg-green-100 border-t-2 border-b-2 border-green-500 md:flex-row">
+                <div className="flex flex-col-reverse items-center justify-between w-full px-6 py-6 mb-0 bg-green-100 border-t-2 border-b-2 border-green-500 md:flex-row">
                   <AwesomeButtonSocial
                     type="whatsapp"
                     href={`https://api.whatsapp.com/send?phone=5493876034627&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20consultar%20por%20el%20juego%20${post.title}`}
@@ -212,76 +132,86 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   </div>
                 </div>
               )}
-
-              <div className="flex flex-col items-start justify-start mt-6 text-lg text-center md:flex-row">
-                {post.publisher && (
-                  <div className="flex items-center justify-center text-lg">
+              <div className="flex flex-col items-start justify-between mt-6 text-lg md:px-6 md:flex-row">
+                <div className="flex flex-col items-start justify-start">
+                  {post.publisher && (
                     <Link
                       to={`/tienda-de-juegos/editoriales/${kebabCase(
                         post.publisher.slug
                       )}`}
-                      className="flex flex-col py-1 mr-2"
+                      className="flex flex-col py-1 mr-2 font-sans text-indigo-500 underline hover:text-indigo-800"
                       key={post.publisher.slug}
                     >
-                      <b className="font-sans text-indigo-500 underline hover:text-indigo-800">
-                        Editorial {post.publisher.title}
-                      </b>
+                      Editorial {post.publisher.title}
                     </Link>
+                  )}
+                  {post.GameAuthor && (
+                    <div className="block py-1 mt-1 mb-4 font-sans text-base italic font-bold text-left text-gray-700 ">
+                      Creado por {post.GameAuthor}
+                    </div>
+                  )}
+                </div>
+                {post.colecciones && (
+                  <div className="flex items-center justify-end text-lg text-center">
+                    {post.colecciones.map((item, i) => (
+                      <Link
+                        to={`/tienda-de-juegos/colecciones/${kebabCase(
+                          item.slug
+                        )}`}
+                        className="flex flex-col py-1 pr-4 mr-2"
+                        key={i}
+                      >
+                        <div className="relative overflow-hidden transition-all duration-200 transform md:w-full hover:-translate-y-1">
+                          <GatsbyImage
+                            title={item.title}
+                            className="w-16 h-16 mx-auto"
+                            alt={item.title}
+                            image={item.icono.gatsbyImageData}
+                          />
+                        </div>
+                        <b className="font-sans text-blue-500 hover:text-blue-700">
+                          {item.title}
+                        </b>
+                      </Link>
+                    ))}
                   </div>
                 )}
               </div>
 
-              {post.GameAuthor && (
-                <div className="block mt-1 mb-4 font-sans text-base italic font-bold text-left text-gray-700 ">
-                  Creado por {post.GameAuthor}
-                </div>
-              )}
               <main>
-              <article
-                className="w-full pl-0 pr-6 my-6 text-left article"
-                id={post.slug}
-              >
-                {Article && (
-                  <FormatText
-                    FormatText={
-                      post.childContentfulArticulosTextoPrincipalRichTextNode
-                    }
-                  />
-                )}
-              </article>
+                <article
+                  className="w-full pl-0 pr-6 my-6 prose prose-xl text-left md:px-6"
+                  id={post.slug}
+                >
+                  {post.textoPrincipal && (
+                    <FormatText FormatText={post.textoPrincipal} />
+                  )}
+                </article>
               </main>
-
-              {post.GamePlay && (
-                <div tw="mt-12">
-                  <Player src={post.GamePlay.file.url} poster={post.imagenDestacada.file.url} >
-                    <BigPlayButton position="center" />
-                  </Player>
-                </div>
-              )}
             </div>
           </div>
-          <div tw="max-w-6xl mx-auto font-sans border-t border-gray-300 ">
-            <nav tw="flex justify-between">
-              <div tw="flex-1 py-6 text-center border-r border-gray-300 hover:bg-green-100">
+          <div className="mx-auto font-sans border-t border-gray-300 max-w-7xl ">
+            <nav className="flex justify-between">
+              <div className="flex-1 py-6 text-center border-r border-gray-300 hover:bg-green-100">
                 {prev && (
                   <Link
                     to={`/tienda-de-juegos/${kebabCase(prev.slug)}`}
                     rel="prev"
-                    tw="text-xl font-bold transition-all duration-200 transform hover:translate-x-2"
+                    className="text-xl font-bold transition-all duration-200 transform hover:translate-x-2"
                   >
                     ← {prev.title}
                   </Link>
                 )}
               </div>
               <div
-                tw="flex-1 py-6 text-center hover:bg-green-100 "
+                className="flex-1 py-6 text-center hover:bg-green-100 "
                 style={{ justifySelf: "flex-end" }}
               >
                 {next && (
                   <Link
                     to={`/tienda-de-juegos/${kebabCase(next.slug)}`}
                     rel="next"
-                    tw="text-xl font-bold transition-all duration-200 transform hover:-translate-x-2"
+                    className="text-xl font-bold transition-all duration-200 transform hover:-translate-x-2"
                   >
                     {next.title} →
                   </Link>
@@ -290,15 +220,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             </nav>
           </div>
         </div>
-        <div tw="relative flex flex-col items-center w-full max-w-6xl px-2 pb-1 mx-auto mt-12 ">
-          <h1 tw="w-full max-w-6xl pt-3 pb-3 mx-auto font-mono text-3xl text-left text-orange-500 ">
+        <div className="relative flex flex-col items-center w-full px-2 pb-1 mx-auto mt-12 max-w-7xl ">
+          <h1 className="w-full pt-3 pb-3 mx-auto font-mono text-3xl text-left text-yellow-500 max-w-7xl ">
             Lo que se anda jugando
           </h1>
-          <div tw="w-full mx-auto mt-0">
+          <div className="w-full mx-auto mt-0">
             <GameSort />
           </div>
         </div>
-
         <QueriesLastGames />
       </div>
     </Layout>
@@ -312,9 +241,8 @@ export const pageQuery = graphql`
     contentfulArticulos(slug: { eq: $slug }) {
       slug
       title
-      childContentfulArticulosTextoPrincipalRichTextNode {
-        json
-        textoPrincipal
+      textoPrincipal {
+        raw
       }
       stock
       GameBuyPrice
@@ -322,27 +250,20 @@ export const pageQuery = graphql`
       GameDuration
       GameAuthor
       GameAges
-      GamePlay {
-        file {
-          url
-        }
-      }
       colecciones {
         title
         slug
         icono {
-          fixed(width: 50, height: 50) {
-            ...GatsbyContentfulFixed
-          }
-        }
-      }
-      categoria {
-        title
-        slug
-        icono {
-          fixed(width: 50, height: 50) {
-            ...GatsbyContentfulFixed
-          }
+          gatsbyImageData(
+            layout: FIXED
+            width: 50
+            height: 50
+            quality: 90
+            formats: JPG
+            backgroundColor: "#ffffff"
+            jpegProgressive: false
+            placeholder: BLURRED
+          )
         }
       }
       publisher {
@@ -352,25 +273,78 @@ export const pageQuery = graphql`
       GameGallery {
         title
         id
-        fluid(maxWidth: 1600) {
-          # Choose either the fragment including a small base64ed image, a traced placeholder SVG, or one without.
-          ...GatsbyContentfulFluid_withWebp
-        }
-        fixed(width: 150, height: 150) {
-          ...GatsbyContentfulFixed
-        }
+        gatsbyImageData(
+          layout: FULL_WIDTH
+          width: 1200
+          quality: 90
+          formats: JPG
+          backgroundColor: "#ffffff"
+          jpegProgressive: false
+          placeholder: BLURRED
+        )
       }
       imagenDestacada {
-        fixed(width: 800, height: 800) {
-          ...GatsbyContentfulFixed
-        }
+        gatsbyImageData(
+          layout: FULL_WIDTH
+          width: 1200
+          quality: 90
+          formats: JPG
+          backgroundColor: "#ffffff"
+          jpegProgressive: false
+          placeholder: BLURRED
+        )
         file {
           url
-        }
-        fluid(maxWidth: 1800) {
-          ...GatsbyContentfulFluid_withWebp
         }
       }
     }
   }
 `
+
+const options = {
+  buttons: {
+    iconPadding: "5px",
+    showDownloadButton: false,
+    backgroundColor: "rgba(255, 255, 255, .8)",
+    iconColor: "rgba(0, 0, 0, 0.8)",
+    showNextButton: true,
+    showPrevButton: true,
+  },
+  caption: {
+    captionFontSize: "15px",
+    captionAlignment: "center",
+    captionColor: "#a7825f",
+    captionFontWeight: 300,
+    showCaption: false,
+  },
+  settings: {
+    overlayColor: "rgba(255, 255, 255, .95)",
+    transitionTimingFunction: "ease-in-out",
+    slideTransitionSpeed: 0.6,
+    slideTransitionTimingFunction: [0.25, 0.75, 0.5, 1],
+    slideAnimationType: "fade",
+    slideSpringValues: [300, 200],
+    autoplaySpeed: 4000,
+    disablePanzoom: false,
+    hideControlsAfter: true,
+  },
+  translations: {
+    autoplayText: "Play",
+    closeText: "Cerrar",
+    downloadText: "Descargar",
+    fullscreenText: "Pantalla completa",
+    nextText: "Siguiente",
+    pauseText: "Pausa",
+    previousText: "Anterior",
+    thumbnailsText: "Miniaturas",
+    zoomOutText: "Zoom Out",
+  },
+  progressBar: {
+    height: "4px",
+    fillColor: "rgb(0, 0, 0)",
+    backgroundColor: "rgba(255, 255, 255, 1)",
+  },
+  thumbnails: {
+    showThumbnails: true,
+  },
+}

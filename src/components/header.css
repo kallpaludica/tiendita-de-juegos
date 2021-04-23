@@ -39,10 +39,9 @@ header nav a {
   @apply bg-white shadow-lg;
 }
 
-
 .headroom--unpinned {
   position: fixed;
-  @apply bg-white shadow-lg;
+  @apply py-1 bg-white shadow-lg;
   transform: translateY(0);
 }
 
@@ -57,6 +56,7 @@ header nav a {
 .headroom--pinned {
   position: fixed;
   transform: translateY(0%);
+  @apply py-1;
 }
 
 body.about .headroom--pinned {
@@ -65,6 +65,64 @@ body.about .headroom--pinned {
 
 body.about .headroom--unpinned {
   transform: translateY(-100%);
+}
+
+.nav-left a {
+  @apply text-white;
+}
+
+.headroom--pinned a {
+  @apply text-gray-900;
+}
+.headroom--unpinned a {
+  @apply text-gray-900;
+}
+
+.header-container {
+  @apply z-50 px-2 py-2 transition-all duration-500 md:py-0;
+}
+
+body.ingame .header-container  a {
+  @apply text-gray-800;
+}
+
+body.ingame .header-container  a.active {
+ @apply text-gray-800 border-gray-800;
+}
+
+.logo-container {
+  @apply m-0 md:px-3 md:relative;
+  top:4px;
+  transition: all 1s;
+}
+
+.logo-container .kallpa-logo {
+  transition: all 1s;
+}
+
+.headroom--pinned .logo-container  .kallpa-logo {
+  transform: scale(.95) rotate(120deg);
+}
+
+.headroom--unpinned .logo-container  .kallpa-logo {
+  transform: scale(.95) rotate(60deg);
+  
+}
+
+.logo-container .gatsby-image-wrapper {
+  @apply w-24 ;
+}
+
+.logo-container a {
+  @apply text-white hover:text-gray-100;
+}
+
+.headroom--unpinned .logo-container a {
+  @apply text-gray-800;
+}
+
+.headroom--scrolled .logo-container a {
+  @apply text-gray-800;
 }
 
 /* purgecss end ignore */
