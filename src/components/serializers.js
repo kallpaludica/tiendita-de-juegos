@@ -11,11 +11,7 @@ import { FiExternalLink } from "react-icons/fi"
 const Bold = ({ children }) => (
   <span className="font-sans font-bold">{children}</span>
 )
-const Text = ({ children }) => (
-  <Fade>
-    <p className="font-sans text">{children}</p>
-  </Fade>
-)
+const Text = ({ children }) => <p className="font-sans text">{children}</p>
 const website_url = "https://www.kallpaludica.com.ar"
 
 const options = {

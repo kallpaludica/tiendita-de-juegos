@@ -105,9 +105,9 @@ const AboutPage = () => {
             </svg>
           </div>
         </div>
-        <SliderAbout/>
+        <SliderAbout />
       </div>
-      <div className="sticky z-50 w-32 py-1 ml-auto transform -translate-y-6 bg-white md:-48 top-32 right-3 bg-opacity-60 md:top-1/3">
+      <div className="sticky z-50 w-32 py-1 ml-auto transform -translate-y-6 bg-white md:w-48 top-32 right-3 bg-opacity-60 md:top-1/3">
         <div className="relative z-50 flex flex-col justify-around w-full max-w-full px-3 mx-auto 2xl:max-w-7xl md:p-3">
           <AnchorLink
             className="w-full mx-1 my-2 font-sans text-lg font-bold text-right text-green-500 md:text-xl md:mx-3 focus:underline hover:text-green-700 focus:text-green-700"
@@ -128,23 +128,28 @@ const AboutPage = () => {
             Objetivos
           </AnchorLink>
           <AnchorLink
-            className="w-full mx-1 my-2 font-sans text-lg font-bold text-right text-yellow-700 md:text-xl md:mx-3 focus:underline hover:text-yellow-800 focus:text-yellow-800"
+            className="w-full mx-1 my-2 font-sans text-lg font-bold text-right text-red-700 md:text-xl md:mx-3 focus:underline hover:text-red-800 focus:text-yellow-800"
             href="#proposals"
           >
             Propuestas
           </AnchorLink>
         </div>
       </div>
-      <div className="relative px-2 pb-12 -mt-32" id="mision">
-        <div className="flex items-center justify-center max-w-6xl pb-6 mx-auto ">
-          <KallpaLogo className="w-32 h-32 kallpa-logo " />
+      <div
+        className="relative pt-24 pb-12 -mt-40 overflow-x-hidden bg-gradient-to-b from-white via-white to-indigo-100"
+        id="mision"
+      >
+        <div className="relative z-10 px-2 ">
+          <div className="flex items-center justify-center max-w-6xl pb-6 mx-auto ">
+            <KallpaLogo className="w-32 h-32 kallpa-logo " />
+          </div>
+          <Mision />
+          <About />
         </div>
-        <Mision />
-        <About />
       </div>
       <section
+        className="px-2 pt-24 text-indigo-200 bg-gradient-to-b from-indigo-100 via-indigo-100 to-yellow-100"
         id="equipo"
-        className="px-2 pt-24 text-indigo-200 bg-indigo-100 pattern-grid-md"
       >
         <div className="w-full px-6 py-12 md:py-2">
           <section className="container mx-auto">
@@ -170,7 +175,7 @@ const AboutPage = () => {
         </div>
       </section>
       <section
-        className="px-2 pt-24 pb-12 text-yellow-200 bg-yellow-100 pattern-grid-md"
+        className="px-2 pt-24 pb-12 text-yellow-200 bg-gradient-to-b from-yellow-100 via-yellow-100 to-red-100"
         id="objectives"
       >
         <Fade delay={100}>
@@ -181,7 +186,7 @@ const AboutPage = () => {
         <Objectives />
       </section>
       <section
-        className="px-2 pt-24 pb-12 text-purple-200 bg-purple-100 pattern-grid-md "
+        className="px-2 pt-24 pb-12 text-purple-200 bg-gradient-to-b from-red-100 via-red-100 to-white"
         id="proposals"
       >
         <Fade delay={100}>

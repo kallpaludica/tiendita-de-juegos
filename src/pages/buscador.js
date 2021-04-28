@@ -47,7 +47,7 @@ const BuscarComponent = () => {
                   }}
                 />
                 <Fade delay={800}>
-                  <Hits className="w-full mx-auto" hitComponent={PostPreview} />
+                  <Hits className="w-full mx-auto grilla" hitComponent={PostPreview} />
                 </Fade>
               </InstantSearch>
             </div>

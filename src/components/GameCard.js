@@ -19,7 +19,7 @@ const Card = ({ card }) => (
         >
           <GatsbyImage
             title={card.title}
-            className="object-scale-down w-32 sm:w-full"
+            className="block object-scale-down w-32 sm:w-full"
             alt={card.title}
             image={card.imagenDestacada.gatsbyImageData}
           />

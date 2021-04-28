@@ -47,7 +47,7 @@ const GameCollectionComponent = () => {
                   className="flex flex-col justify-center text-lg font-bold text-blue-500 shadow-sm"
                 >
                   {node.icono && (
-                    <div className="relative py-6 overflow-hidden text-center bg-white md:w-full ">
+                    <div className="relative py-6 pb-0 overflow-hidden text-center bg-white md:w-full ">
                       <GatsbyImage
                         title={node.title}
                         className="mx-auto"

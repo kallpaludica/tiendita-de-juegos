@@ -3,22 +3,16 @@ body {
   @apply bg-gradient-to-tr from-indigo-300 to-indigo-800;
 }
 
-body.searcher .searcher-go {
-  @apply duration-700 opacity-0;
-}
-
-
 *::-webkit-scrollbar {
   width: 8px;
 }
-
 
 *::-webkit-scrollbar-track {
   @apply bg-gray-300;
 }
 
 *::-webkit-scrollbar-thumb {
-  @apply bg-gray-800;
+  @apply bg-gray-800 bg-gradient-to-br from-indigo-600 to-green-600;
 }
 
 .bm-overlay + div {

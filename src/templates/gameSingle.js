@@ -18,6 +18,7 @@ import { RiZoomInLine } from "react-icons/ri"
 import FormatText from "../components/serializers"
 import "../styles/AwsBtn.css"
 import "../styles/VideoReact.css"
+import { CgSandClock } from "react-icons/cg"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.contentfulArticulos
@@ -92,22 +93,30 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               <h1 className="w-full pt-2 pl-2 font-mono text-3xl text-left text-gray-600 md:pt-0 md:pl-0 md:text-5xl md:mb-3">
                 {post.title}
               </h1>
+              {post.stock && (
+                <div
+                  className="relative flex items-center justify-start m-1 my-2 font-sans text-lg font-bold text-left text-gray-700 transition-all duration-500"
+                >
+                  <CgSandClock className="mr-1 " />
+                  <span className="block">Por encargo</span>
+                </div>
+              )}
               <div className="flex flex-col justify-center w-full px-1 pl-2 my-2 text-gray-700 md:pl-0 md:px-6 md:flex-row md:justify-start">
                 {post.GameAges && (
                   <div className="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
-                    <FcConferenceCall className="mr-3 text-4xl " />
+                    <FcConferenceCall className="mr-3 text-xl md:text-4xl " />
                     Edad {post.GameAges}+
                   </div>
                 )}
                 {post.GameDuration && (
                   <div className="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
-                    <FcClock className="mr-3 text-4xl " />
+                    <FcClock className="mr-3 text-xl md:text-4xl " />
                     {post.GameDuration} min.
                   </div>
                 )}
                 {post.GamePlayers && (
                   <div className="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
-                    <FcCollaboration className="mr-3 text-4xl " />
+                    <FcCollaboration className="mr-3 text-xl md:text-4xl " />
                     {post.GamePlayers} jugadores
                   </div>
                 )}

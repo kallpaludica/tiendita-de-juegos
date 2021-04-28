@@ -7,7 +7,7 @@ import makeCarousel from "react-reveal/makeCarousel"
 import Fade from "react-reveal/Fade"
 import "../styles/AwsBtn.css"
 import "../styles/VideoReact.css"
-import {  navigate } from "gatsby"
+import { navigate } from "gatsby"
 import { AwesomeButton } from "react-awesome-button"
 
 const ConsultaVirtualPage = () => {
@@ -25,30 +25,32 @@ const ConsultaVirtualPage = () => {
       </Helmet>
       <Seo title="Consultas virtuales" />
       <div className="relative z-50 flex flex-col items-center justify-center w-full pt-24 m-auto mt-0 overflow-hidden text-center bg-indigo-600 bg-gradient-to-br from-indigo-800 to-green-500">
-        <div className="relative z-40 flex flex-col items-center justify-center w-full py-12 mx-auto">
-          <h2 className="mb-3 font-sans text-4xl font-bold text-white">
-            Conociendo el Showroom <br />
-            <span className="font-sans text-xl font-bold uppercase">
-              (modalidad virtual)
-            </span>
-          </h2>
-          <p className="w-full mx-auto font-sans text-2xl text-white">
-            Dias y Horario de atención.
-          </p>
-          <p className="w-full mx-auto mb-6 font-sans text-2xl text-white">
-            Lunes a Viernes de 10 a 19hs
-          </p>
-          <AwesomeButton
-            action={() => {
-              navigate(`/preguntas-frecuentes`)
-            }}
-            type="secondary"
-          >
-            Ver las Preguntas Frecuentes
-          </AwesomeButton>
+        <div className="relative z-40 flex flex-col items-center justify-center w-full pt-0 pb-12 mx-auto md:py-12">
+          <div className="hidden md:block">
+            <h2 className="mb-3 font-sans text-4xl font-bold text-white">
+              Conociendo el Showroom <br />
+              <span className="font-sans text-xl font-bold uppercase">
+                (modalidad virtual)
+              </span>
+            </h2>
+            <p className="w-full mx-auto font-sans text-2xl text-white">
+              Dias y Horario de atención.
+            </p>
+            <p className="w-full mx-auto mb-6 font-sans text-2xl text-white">
+              Lunes a Viernes de 10 a 19hs
+            </p>
+            <AwesomeButton
+              action={() => {
+                navigate(`/preguntas-frecuentes`)
+              }}
+              type="secondary"
+            >
+              Ver las Preguntas Frecuentes
+            </AwesomeButton>
+          </div>
           <div
             id="consulta-virtual"
-            className="w-full mx-auto overflow-visible"
+            className="w-full p-2 mx-auto overflow-visible"
           >
             <InlineWidget
               pageSettings={{

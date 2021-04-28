@@ -1,5 +1,17 @@
 /* purgecss start ignore */
 
+body.searcher .searcher-go {
+  @apply duration-700 opacity-0;
+}
+
+body.searcher footer {
+  @apply hidden;
+}
+
+body.searcher .to-top,
+body.searcher .to-whatsapp {
+  @apply hidden;
+}
 
 .ais-Breadcrumb-list,
 .ais-CurrentRefinements-list,
@@ -276,7 +288,6 @@ a[class^="ais-"] {
   color: #0073a8;
 }
 
-.ais-ClearRefinements-button,
 .ais-CurrentRefinements-reset,
 .ais-GeoSearch-redo,
 .ais-GeoSearch-reset,
@@ -286,15 +297,18 @@ a[class^="ais-"] {
 .ais-InfiniteResults-loadMore,
 .ais-Menu-showMore,
 .ais-RefinementList-showMore {
-  padding: 0.3rem 0.5rem;
-  font-size: 0.8rem;
-  color: #fff;
-  background-color: #0096db;
-  border-radius: 5px;
-  -webkit-transition: background-color 0.2s ease-out;
-  transition: background-color 0.2s ease-out;
-  outline: none;
+  @apply block w-full px-5 py-2 font-mono text-sm font-bold text-white transition-all duration-700 bg-yellow-600 rounded outline-none;
 }
+
+.ais-ClearRefinements-button {
+  @apply block w-full px-5 py-2 font-mono text-sm font-bold text-white transition-all duration-700 bg-indigo-700 rounded outline-none;
+}
+
+.ais-ClearRefinements-button:hover,
+.ais-ClearRefinements-button:focus {
+  @apply bg-indigo-800 !important;
+}
+
 .ais-ClearRefinements-button:hover,
 .ais-ClearRefinements-button:focus,
 .ais-CurrentRefinements-reset:hover,
@@ -315,7 +329,7 @@ a[class^="ais-"] {
 .ais-Menu-showMore:focus,
 .ais-RefinementList-showMore:hover,
 .ais-RefinementList-showMore:focus {
-  background-color: #0073a8;
+  @apply bg-yellow-600;
 }
 
 .ais-ClearRefinements-button--disabled,
@@ -345,7 +359,7 @@ a[class^="ais-"] {
 .ais-Menu-showMore--disabled:focus,
 .ais-RefinementList-showMore--disabled:hover,
 .ais-RefinementList-showMore--disabled:focus {
-  background-color: #0096db;
+  @apply bg-yellow-600;
 }
 
 .ais-InfiniteHits-loadPrevious--disabled {
@@ -361,12 +375,11 @@ a[class^="ais-"] {
   flex-wrap: wrap;
 }
 
-.ais-CurrentRefinements-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+.ais-RefinementList-showMore {
+}
+
+.ais-RefinementList-list {
+  position: relative;
 }
 
 .ais-CurrentRefinements-item {
@@ -523,14 +536,12 @@ a[class^="ais-"] {
   @apply grid grid-cols-1 gap-3;
 }
 
-
-
 @screen md {
   .ais-InfiniteHits-list,
   .ais-InfiniteResults-list,
   .ais-Hits-list,
   .ais-Results-list {
-    @apply grid grid-cols-2 gap-3;
+    @apply grid grid-cols-1 gap-3;
   }
 }
 
@@ -539,6 +550,24 @@ a[class^="ais-"] {
   .ais-InfiniteResults-list,
   .ais-Hits-list,
   .ais-Results-list {
+    @apply grid grid-cols-1 gap-3;
+  }
+}
+
+@screen md {
+  .grilla .ais-InfiniteHits-list,
+  .grilla .ais-InfiniteResults-list,
+  .grilla .ais-Hits-list,
+  .grilla .ais-Results-list {
+    @apply grid grid-cols-2 gap-3;
+  }
+}
+
+@screen lg {
+  .grilla .ais-InfiniteHits-list,
+  .grilla .ais-InfiniteResults-list,
+  .grilla .ais-Hits-list,
+  .grilla .ais-Results-list {
     @apply grid grid-cols-3 gap-3;
   }
 }
@@ -807,15 +836,7 @@ a[class^="ais-"] {
 }
 
 .ais-SearchBox-input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  padding: 0.5rem 2rem;
-  width: 100%;
-  position: relative;
-  background-color: #fff;
-  border: 1px solid #c4c8d8;
-  border-radius: 5px;
+  @apply px-8 py-1.5 w-full appearance-none relative bg-white border border-gray-200 rounded-sm;
 }
 .ais-SearchBox-input::-webkit-input-placeholder {
   color: #a5aed1;
@@ -912,6 +933,110 @@ a[class^="ais-"] {
   color: #a5aed1;
   cursor: not-allowed;
   background: inherit;
+}
+
+.ais-RefinementList-label {
+  @apply inline-flex items-center w-full px-2 py-2 font-sans border-b border-gray-200 cursor-pointer select-none;
+}
+
+.ais-RefinementList-labelText {
+  @apply w-full px-3 truncate;
+}
+
+.ais-NumericMenu-labelText {
+  @apply w-full px-3;
+}
+
+.ais-RefinementList-count {
+  @apply flex-none px-2 font-mono text-lg;
+}
+
+.ais-NumericMenu-label {
+  @apply inline-flex items-center w-full px-2 py-2 font-sans border-b border-gray-200 cursor-pointer select-none;
+}
+
+
+.ais-NumericMenu-radio {
+  @apply w-4 h-4 cursor-pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-print-color-adjust: exact;
+  color-adjust: exact;
+  display: inline-block;
+  vertical-align: middle;
+  background-origin: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  flex-shrink: 0;
+  height: 1rem;
+  width: 1rem;
+  @apply text-yellow-500 bg-gray-200 border-white rounded-full;
+  border-width: 1px;
+  
+}
+
+.ais-NumericMenu-item--noRefinement {
+@apply opacity-60;
+}
+
+.ais-NumericMenu-radio:checked {
+  background-image: url(
+    data:image/svg + xml,
+    %3csvgviewBox="0 0 16 16"fill="white"xmlns="http://www.w3.org/2000/svg"%3e%3cpathd="M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z"/%3e%3c/svg%3e
+  );
+  border-color: transparent;
+  background-color: currentColor;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.ais-RefinementList-checkbox {
+  @apply w-4 h-4 cursor-pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-print-color-adjust: exact;
+  color-adjust: exact;
+  display: inline-block;
+  vertical-align: middle;
+  background-origin: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  flex-shrink: 0;
+  height: 1rem;
+  width: 1rem;
+  @apply text-yellow-500 bg-gray-200 border-white;
+  border-width: 1px;
+  border-radius: 0.25rem;
+}
+
+.ais-RefinementList-checkbox:checked {
+  background-image: url(
+    data:image/svg + xml,
+    %3csvgviewBox="0 0 16 16"fill="white"xmlns="http://www.w3.org/2000/svg"%3e%3cpathd="M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z"/%3e%3c/svg%3e
+  );
+  border-color: transparent;
+  background-color: currentColor;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.ais-RefinementList-item:hover {
+  @apply bg-gray-100;
+}
+
+.ais-RefinementList-item {
+  @apply duration-700;
+}
+
+.ais-RefinementList-item--selected .ais-RefinementList-labelText {
+  @apply text-yellow-500 font-bold !important;
 }
 
 /* purgecss end ignore */

@@ -45,14 +45,14 @@ const SliderHomeCollection = (props) => {
           style={{ minHeight: "50vh" }}
         >
           <button
-            className="absolute top-0 left-0 z-50 items-center justify-center hidden w-20 h-20 mt-32 text-4xl text-center text-blue-500 duration-700 bg-white rounded-full shadow-xl outline-none cursor-pointer hover:opacity-90 md:flex hover:translate-y-1"
+            className="absolute top-0 left-0 z-50 flex items-center justify-center w-20 h-20 mt-32 text-4xl text-center text-blue-500 duration-700 bg-white rounded-full shadow-xl outline-none cursor-pointer hover:opacity-90 hover:translate-y-1"
             onClick={handleClick}
             data-position={position - 1}
           >
             <AiOutlineArrowLeft />
           </button>
           <button
-            className="absolute top-0 right-0 z-50 items-center justify-center hidden w-20 h-20 mt-32 text-4xl text-center text-blue-500 duration-700 bg-white rounded-full shadow-xl outline-none cursor-pointer hover:opacity-90 md:flex hover:translate-y-1"
+            className="absolute top-0 right-0 z-50 flex items-center justify-center w-20 h-20 mt-32 text-4xl text-center text-blue-500 duration-700 bg-white rounded-full shadow-xl outline-none cursor-pointer hover:opacity-90 hover:translate-y-1"
             right="true"
             onClick={handleClick}
             data-position={position + 1}
