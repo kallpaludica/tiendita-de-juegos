@@ -7,6 +7,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { kebabCase } from "lodash"
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai"
 import { BiRadioCircle, BiRadioCircleMarked } from "react-icons/bi"
+import * as containerStyles from "./SliderHomeCollection.module.css"
 
 const SliderHomeCollection = (props) => {
   const data = useStaticQuery(graphql`
@@ -26,9 +27,8 @@ const SliderHomeCollection = (props) => {
                 height: 120
                 width: 120
                 formats: JPG
-                backgroundColor: "#ffffff"
                 jpegProgressive: false
-                placeholder: DOMINANT_COLOR
+                placeholder: TRACED_SVG 
               )
             }
           }
@@ -88,20 +88,20 @@ const SliderHomeCollection = (props) => {
 
   return (
     <div className="pt-12">
-      <Carousel defaultWait={8000} maxTurns={1} /*wait for 1000 milliseconds*/>
+      <Carousel defaultWait={8000000} maxTurns={1} /*wait for 1000 milliseconds*/>
         {data.collections.edges.map(({ node }) => {
           return (
-            <Fade>
+            <Fade key={node.slug}>
               <div
                 className="relative flex flex-col max-w-md p-3 pb-6 mx-auto overflow-hidden text-center transition-all duration-500 ease-in-out transform bg-white shadow-md rounded-xl hover:shadow-2xl hover:translate-y-1"
-                key={node.slug}
+                
               >
                 <Link
                   to={`/tienda-de-juegos/colecciones/${kebabCase(node.slug)}/`}
                   className="flex flex-col items-center justify-center w-full text-lg font-bold text-blue-500 shadow-sm"
                 >
                   {node.icono && (
-                    <div className="relative flex items-center justify-center max-w-md py-6 pt-3 mx-auto overflow-hidden text-center bg-white md:w-full">
+                    <div className={containerStyles.icono} >
                       <GatsbyImage
                         title={node.title}
                         alt={node.title}

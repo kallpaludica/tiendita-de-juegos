@@ -6,7 +6,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll"
 import AnimatedWhatsapp from "../animations/whatsapp.json"
 import { BsFillTriangleFill } from "react-icons/bs"
 import SimpleReactLightbox from "simple-react-lightbox"
-import ReactTooltip from "react-tooltip"
+// import ReactTooltip from "react-tooltip"
 import "./layout.css"
 import "../styles/pattern.css"
 import Sidebar from "../components/Sidebar"
@@ -48,13 +48,11 @@ const Layout = ({ location, children }) => {
       >
         <BsFillTriangleFill />
       </AnchorLink>
-      <ReactTooltip place="left" type="dark" effect="solid" />
       <a
         className="fixed bottom-0 right-0 z-50 p-1 mb-3 mr-3 overflow-hidden transition-all duration-500 rounded-full hover:bg-green-600 hover:text-white to-whatsapp"
         target="_blank"
         rel="noopener noreferrer"
         title="Consultas por Whatsapp"
-        data-tip="Consultas por Whatsapp"
         href="https://api.whatsapp.com/send?phone=+549%203876034627&text=%C2%A1Hola!%F0%9F%A4%97%20"
       >
         <div id="animated-whatsapp" style={{ width: 60, height: 60 }} />

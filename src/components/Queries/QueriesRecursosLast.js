@@ -2,37 +2,30 @@ import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { kebabCase } from "lodash"
 import { GatsbyImage } from "gatsby-plugin-image"
-import * as containerStyles from "./NewsCard.module.css"
+import * as containerStyles from "./ResoursesCard.module.css"
 
-const QueryComunidadNotasComponent = () => {
+const QueryCRecursosLastComponent = () => {
   const data = useStaticQuery(graphql`
-    query QueryComunidadNotasQuery {
-      collections: allContentfulComunidad(
-        filter: { categoria: { eq: "Notas" } }
-      ) {
+    query QueryRecursosLastQuery {
+      collections: allContentfulRecursos(limit: 9) {
         edges {
           node {
             id
             title
             slug
-            linkExterno
-            categoria
-            description {
-              description
-            }
             textoPrincipal {
               raw
             }
-            fechaDePublicacion(formatString: "LL", locale: "es")
             featuredImg {
               gatsbyImageData(
-                layout: FULL_WIDTH
-                height: 500
-                width: 420
+                layout: CONSTRAINED
+                width: 400
+                height: 400
+                quality: 90
                 formats: JPG
                 backgroundColor: "#ffffff"
                 jpegProgressive: false
-                placeholder: DOMINANT_COLOR
+                placeholder: BLURRED
               )
             }
           }
@@ -46,32 +39,28 @@ const QueryComunidadNotasComponent = () => {
       {data.collections.edges.map(({ node }) => {
         return (
           <div key={node.id} className={containerStyles.item}>
-            <div className={containerStyles.imageContainer}>
+            <Link to={`/recursos/${kebabCase(node.slug)}/`} className={containerStyles.imageContainer}>
               <GatsbyImage
                 title={node.title}
                 className={containerStyles.image}
                 alt={node.title}
                 image={node.featuredImg.gatsbyImageData}
               />
-            </div>
+            </Link>
             <div className={containerStyles.content}>
               <Link
                 className={containerStyles.title}
                 key={node.slug}
-                to={`/comunidad/${kebabCase(node.slug)}/`}
+                to={`/recursos/${kebabCase(node.slug)}/`}
               >
                 {node.title}
               </Link>
-              <p className={containerStyles.description}>
-                {node.description.description}
-              </p>
-              <time>{node.fechaDePublicacion}</time>
               <div className={containerStyles.buttonContainer}>
                 {node.textoPrincipal && (
                   <Link
                     className={containerStyles.button}
                     key={node.slug}
-                    to={`/comunidad/${kebabCase(node.slug)}/`}
+                    to={`/recursos/${kebabCase(node.slug)}/`}
                   >
                     Conocer más
                   </Link>
@@ -85,4 +74,4 @@ const QueryComunidadNotasComponent = () => {
   )
 }
 
-export default QueryComunidadNotasComponent
+export default QueryCRecursosLastComponent

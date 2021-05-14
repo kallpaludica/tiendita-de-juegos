@@ -1,8 +1,8 @@
 import React from "react"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
-import Fade from "react-reveal/Fade"
-// import { Player, BigPlayButton } from "video-react"
+//import Fade from "react-reveal/Fade"
+import { Player, BigPlayButton } from "video-react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import "./serializers.css"
@@ -24,21 +24,36 @@ const options = {
     ),
   },
   renderNode: {
+
     [BLOCKS.EMBEDDED_ASSET]: (node) => {
       if (!node.data || !node.data.target) {
-        return <span className="">Embedded asset is broken</span>
+        return <span className="hidden">Embedded asset is broken</span>
       } else {
-        return (
-          <div>
-            <div className="post-image">
-              <img
-                className="w-full max-w-3xl mx-auto"
-                alt={node.data.target.title}
+        if (node.data.target.file.contentType === "video/mp4") {
+          return (
+            <div className="max-w-6xl p-0 mx-auto my-6 mb-12 aspect-h-9 aspect-w-16">
+              <Player
                 src={node.data.target.file.url}
-              />
+                loop={true}
+                autoPlay
+              >
+                <BigPlayButton position="center" />
+              </Player>
             </div>
-          </div>
-        )
+          )
+        } else {
+          return (
+            <div>
+              <div className="post-image">
+                <img
+                  className="w-full max-w-2xl mx-auto"
+                  alt={node.data.target.title}
+                  src={node.data.target.file.url}
+                />
+              </div>
+            </div>
+          )
+        }
       }
     },
 

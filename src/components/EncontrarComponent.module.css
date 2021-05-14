@@ -1,0 +1,39 @@
+/* purgecss start ignore */
+
+.gamecard {
+  @apply relative flex pb-12 overflow-hidden text-left text-green-800 bg-white md:pb-0;
+}
+
+.imageContainer {
+  @apply relative flex-none w-32 h-32 overflow-hidden bg-white md:h-full md:w-56;
+}
+
+.imageLink {
+  @apply flex items-center justify-center w-full h-32 font-sans text-lg font-bold text-gray-800 md:h-56;
+}
+
+.image {
+  @apply object-cover w-32 h-full md:w-56;
+}
+
+.content {
+  @apply flex flex-col items-center justify-start flex-1 w-full p-2 px-6 pt-3 text-left;
+}
+
+:global(.grilla) .gamecard {
+  @apply flex-col;
+}
+
+:global(.grilla) .image {
+  @apply absolute inset-0 w-full h-full opacity-80 hover:opacity-100;
+}
+
+:global(.grilla) .imageContainer {
+  @apply w-full h-56 bg-gray-900;
+}
+
+:global(.grilla) .imageLink {
+  @apply w-full h-full;
+}
+
+/* purgecss end ignore */

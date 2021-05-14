@@ -21,7 +21,7 @@ const GamesAside = () => {
         <div id="ogam" style={{ width: 140, height: 130 }} />
       </div>
       <Link
-        activeClassName="opacity-100 border-white active"
+        activeClassName="opacity-100  border-white active"
         className="flex items-center justify-between w-full pr-3 m-0 font-mono text-left opacity-100 searcher-go md:text-base hover:opacity-80"
         to="/buscador"
       >

@@ -17,18 +17,10 @@ exports.createPages = ({ graphql, actions }) => {
     // const categorySingle = path.resolve(`./src/templates/categorySingle.js`)
     const publisherSingle = path.resolve(`./src/templates/publisherSingle.js`)
     const collectionSingle = path.resolve(`./src/templates/collectionSingle.js`)
-    // const resourseSingle = path.resolve(`./src/templates/resourseSingle.js`)
+    const resourseSingle = path.resolve(`./src/templates/resourseSingle.js`)
     const blogSingle = path.resolve(`./src/templates/blogSingle.js`)
 
     // allContentfulCategoriaDelJuego {
-    //   edges {
-    //     node {
-    //       title
-    //       slug
-    //     }
-    //   }
-    // }
-    // allContentfulRecursos {
     //   edges {
     //     node {
     //       title
@@ -47,6 +39,15 @@ exports.createPages = ({ graphql, actions }) => {
                   title
                   slug
                   GameBuyPrice
+                }
+              }
+            }
+
+            allContentfulRecursos {
+              edges {
+                node {
+                  title
+                  slug
                 }
               }
             }
@@ -92,11 +93,12 @@ exports.createPages = ({ graphql, actions }) => {
         //   component: path.resolve("src/templates/gameArchive.js"),
         // })
 
-        const posts = result.data.allContentfulArticulos.edges
         // const categories = result.data.allContentfulCategoriaDelJuego.edges
+        
+        const posts = result.data.allContentfulArticulos.edges
         const publishers = result.data.allContentfulEditorial.edges
         const collections = result.data.allContentfulColecciones.edges
-        // const resourses = result.data.allContentfulRecursos.edges
+        const resourses = result.data.allContentfulRecursos.edges
         const blogs = result.data.allContentfulComunidad.edges
 
         posts.forEach((post, index) => {
@@ -168,20 +170,20 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
 
-        // resourses.forEach((resourse, index) => {
-        //   createPage({
-        //     path: `/recursos/${resourse.node.slug}/`,
-        //     component: resourseSingle,
-        //     context: {
-        //       slug: resourse.node.slug,
-        //       prev: index === 0 ? null : resourses[index - 1].node,
-        //       next:
-        //         index === resourses.length - 1
-        //           ? null
-        //           : resourses[index + 1].node,
-        //     },
-        //   })
-        // })
+        resourses.forEach((resourse, index) => {
+          createPage({
+            path: `/recursos/${resourse.node.slug}/`,
+            component: resourseSingle,
+            context: {
+              slug: resourse.node.slug,
+              prev: index === 0 ? null : resourses[index - 1].node,
+              next:
+                index === resourses.length - 1
+                  ? null
+                  : resourses[index + 1].node,
+            },
+          })
+        })
       })
     )
   })

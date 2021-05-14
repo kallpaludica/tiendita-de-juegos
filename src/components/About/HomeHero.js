@@ -56,9 +56,9 @@ const HomeHeroCompoent = () => {
                     </div>
                   </div>
                   <p className="block pt-8 font-sans text-xl text-left text-white transition-all duration-200 transform opacity-100">
-                    <div className="inline-block text-white">
+                    <span className="inline-block text-white">
                       Compartimos la potencia de jugar.
-                    </div>
+                    </span>
                   </p>
                 </div>
               </div>

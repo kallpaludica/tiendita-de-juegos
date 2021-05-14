@@ -1,4 +1,3 @@
-//import Img from "gatsby-image"
 import { graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { kebabCase } from "lodash"

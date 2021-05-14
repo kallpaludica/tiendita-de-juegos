@@ -34,10 +34,11 @@ const routesLeft = [
     icon: <FcGlobe className="mr-1 text-2xl" />,
   },
   */
- {
-   title: "Tienda de juegos",
-   slug: "/tienda-de-juegos",
-   icon: <FcShop className="mr-1 text-2xl" />,
+
+  {
+    title: "Tienda de juegos",
+    slug: "/tienda-de-juegos",
+    icon: <FcShop className="mr-1 text-2xl" />,
   },
 
   {
@@ -76,7 +77,7 @@ const Header = ({ siteTitle }) => (
                 key={i}
                 activeClassName="opacity-100 border-white active"
                 partiallyActive={true}
-                className="flex items-center py-3 m-0 font-mono text-xs text-center border-t-2 border-transparent opacity-100 md:text-base hover:opacity-80 md:mx-4 "
+                className="flex items-center py-3 m-0 font-mono text-xs text-center duration-700 border-t-2 border-transparent opacity-100 md:text-base hover:opacity-80 md:mx-4 focus:outline-none focus-visible:ring focus-visible:ring-yellow-500 focus:ring-yellow-500 focus-visible:ring-opacity-75"
                 to={route.slug}
               >
                 <span className="hidden mr-1 xl:inline-block">

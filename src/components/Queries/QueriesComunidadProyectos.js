@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { kebabCase } from "lodash"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { FiExternalLink } from "react-icons/fi"
+import * as containerStyles from "./ProjectCard.module.css"
 
 const QueryComunidadProyectosComponent = () => {
   const data = useStaticQuery(graphql`
@@ -17,6 +17,9 @@ const QueryComunidadProyectosComponent = () => {
             slug
             linkExterno
             categoria
+            description {
+              description
+            }
             textoPrincipal {
               raw
             }
@@ -38,55 +41,42 @@ const QueryComunidadProyectosComponent = () => {
   `)
 
   return (
-    <div className="grid w-full gap-5 md:grid-cols-2">
+    <div className={containerStyles.gridContainer}>
       {data.collections.edges.map(({ node }) => {
         return (
-          <div className="grid grid-cols-4 overflow-hidden border border-gray-300 rounded-lg shadow-lg">
-            <div className="relative w-full h-64 col-span-2 overflow-hidden">
+          <div key={node.id} className={containerStyles.item}>
+            <div className={containerStyles.imageContainer}>
               <GatsbyImage
                 title={node.title}
-                className="object-cover w-full h-64"
+                className={containerStyles.image}
                 alt={node.title}
                 image={node.featuredImg.gatsbyImageData}
               />
             </div>
-            <div className="relative col-span-2 px-4 mt-2 text-left">
-              {node.textoPrincipal ? (
-                <Link
-                  className="block my-3 font-sans text-2xl font-semibold leading-tight text-gray-900 hover:underline"
-                  key={node.slug}
-                  to={`/comunidad/${kebabCase(node.slug)}/`}
-                >
-                  {node.title}
-                </Link>
-              ) : (
-                <div className="flex-1 block my-3 font-sans text-2xl font-semibold leading-tight text-gray-900 ">
-                  {node.title}
-                </div>
-              )}
+            <div className={containerStyles.content}>
+              <Link
+                className={containerStyles.title}
+                key={node.slug}
+                to={`/comunidad/${kebabCase(node.slug)}/`}
+              >
+                {node.title}
+              </Link>
 
-              <div className="flex justify-between">
+              <p className={containerStyles.description}>
+                {node.description.description}
+              </p>
+
+              <div className={containerStyles.buttonContainer}>
                 {node.textoPrincipal && (
                   <Link
-                    className="px-4 py-2 mt-2 mb-3 font-sans text-sm text-center text-white bg-green-600 rounded hover:text-green-300 hover:no-underline"
+                    className={containerStyles.button}
                     key={node.slug}
                     to={`/comunidad/${kebabCase(node.slug)}/`}
                   >
-                    Leer más
+                    Conocer más
                   </Link>
                 )}
               </div>
-              {node.linkExterno && (
-                <a
-                  rel="noopener noreferrer"
-                  href={node.linkExterno}
-                  target="_blank"
-                  className="inline-flex py-2 pr-4 font-sans text-base font-bold text-center text-indigo-600 rounded hover:text-indigo-600 hover:no-underline"
-                >
-                  Visitar espacio
-                  <FiExternalLink className="ml-1" />
-                </a>
-              )}
             </div>
           </div>
         )

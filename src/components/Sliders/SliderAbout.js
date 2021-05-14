@@ -9,7 +9,9 @@ import { BiRadioCircle, BiRadioCircleMarked } from "react-icons/bi"
 const SliderAboutComponent = (props) => {
   const data = useStaticQuery(graphql`
     query SliderAboutComponentQuery {
-      backgrounds: allContentfulCarrousel(filter: {slug: {eq: "quienes-somos"}}) {
+      backgrounds: allContentfulCarrousel(
+        filter: { slug: { eq: "quienes-somos" } }
+      ) {
         edges {
           node {
             id
@@ -82,8 +84,8 @@ const SliderAboutComponent = (props) => {
             maxTurns={100} /*wait for 1000 milliseconds*/
           >
             {node.images.map((item, i) => (
-              <Fade>
-                <div className="relative w-auto h-screen md:w-full md:h-full" key={item.id}>
+              <Fade key={item.id}>
+                <div className="relative w-auto h-screen md:w-full md:h-full">
                   <GatsbyImage
                     title={item.title}
                     className="object-cover w-full h-full"

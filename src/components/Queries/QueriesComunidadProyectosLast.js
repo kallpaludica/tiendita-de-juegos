@@ -2,13 +2,15 @@ import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { kebabCase } from "lodash"
 import { GatsbyImage } from "gatsby-plugin-image"
-import * as containerStyles from "./NewsCard.module.css"
+import * as containerStyles from "./ProjectCard.module.css"
 
-const QueryComunidadNotasComponent = () => {
+const QueryComunidadProyectosLastComponent = () => {
   const data = useStaticQuery(graphql`
-    query QueryComunidadNotasQuery {
+    query QueryComunidadProyectosLastQuery {
       collections: allContentfulComunidad(
-        filter: { categoria: { eq: "Notas" } }
+        filter: { categoria: { eq: "Proyectos que nos potencian" } }
+        limit: 4
+        sort: {fields: title, order: DESC}
       ) {
         edges {
           node {
@@ -23,7 +25,6 @@ const QueryComunidadNotasComponent = () => {
             textoPrincipal {
               raw
             }
-            fechaDePublicacion(formatString: "LL", locale: "es")
             featuredImg {
               gatsbyImageData(
                 layout: FULL_WIDTH
@@ -62,10 +63,11 @@ const QueryComunidadNotasComponent = () => {
               >
                 {node.title}
               </Link>
+
               <p className={containerStyles.description}>
                 {node.description.description}
               </p>
-              <time>{node.fechaDePublicacion}</time>
+
               <div className={containerStyles.buttonContainer}>
                 {node.textoPrincipal && (
                   <Link
@@ -85,4 +87,4 @@ const QueryComunidadNotasComponent = () => {
   )
 }
 
-export default QueryComunidadNotasComponent
+export default QueryComunidadProyectosLastComponent

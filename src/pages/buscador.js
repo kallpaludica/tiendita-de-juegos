@@ -13,7 +13,7 @@ import "../styles/algolia.css"
 
 const searchClient = algoliasearch(
   "REF3SMUMO1",
-  "e01ef19f511d91260a11e891714a8432"
+  "7c4c56c7384927744e0746a4b31a7ff2"
 )
 
 const BuscarComponent = () => {
@@ -22,7 +22,7 @@ const BuscarComponent = () => {
       <Layout>
         <Seo title="Buscar" />
         <Helmet>
-          <body className="games searcher" />
+          <body className="games" />
         </Helmet>
         <HeroWave pattern="bg-green-600 text-green-500" />
         <div className="relative z-10 flex flex-row-reverse w-full mx-auto max-w-7xl md:-mt-16">
@@ -36,7 +36,7 @@ const BuscarComponent = () => {
             <div className="p-6 pt-6 mx-auto max-w-7xl">
               <InstantSearch
                 searchClient={searchClient}
-                indexName="netlify_89e873dd-0214-4d2f-b526-ed8fb59a5cfe_master_all"
+                indexName="juegos"
               >
                 <SearchBox
                   className="w-full mx-auto mb-6"

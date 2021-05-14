@@ -1,0 +1,48 @@
+/* purgecss start ignore */
+
+.gridContainer {
+  @apply grid w-full gap-5 md:grid-cols-2;
+}
+
+.item {
+  @apply grid grid-cols-4 overflow-hidden bg-white border border-gray-300 rounded-lg shadow-lg;
+}
+
+.imageContainer {
+  @apply relative w-full h-64 col-span-2 overflow-hidden;
+}
+
+.image {
+  @apply object-cover w-full h-64;
+}
+
+.content {
+  @apply relative col-span-2 px-4 mt-2 text-left;
+}
+
+.title {
+  @apply block pr-6 my-3 font-sans text-xl font-semibold leading-tight text-gray-800 md:text-2xl hover:underline hover:text-blue-600;
+}
+
+.content time {
+  @apply absolute bottom-0 right-0 z-20 px-2 py-1 mr-2 font-sans text-sm text-gray-900 rounded bg-gray-50 mb-7 bg-opacity-90;
+}
+
+.description {
+  @apply mb-2 font-sans text-lg text-gray-800 line-clamp-3;
+}
+
+.buttonContainer {
+  @apply  flex justify-between;
+}
+
+.button {
+  @apply px-4 py-2 mt-2 mb-3 font-sans text-sm text-center text-white bg-blue-600 rounded hover:text-blue-100 hover:no-underline;
+}
+/*
+:global(.grilla) .gamecard {
+  @apply flex-col;
+}
+*/
+
+/* purgecss end ignore */
