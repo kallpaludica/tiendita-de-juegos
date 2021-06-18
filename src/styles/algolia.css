@@ -649,13 +649,13 @@ a[class^="ais-"] {
 .ais-HitsPerPage-select,
 .ais-ResultsPerPage-select,
 .ais-SortBy-select {
-  -webkit-appearance: none;
+  /* -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
-  padding: 0.3rem 2rem 0.3rem 0.3rem;
+  appearance: none; */
+  padding: .45rem 2rem .5rem .3rem;
   max-width: 100%;
   background-color: #fff;
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M0 7.3l2.8-2.8 9.2 9.3 9.2-9.3 2.8 2.8-12 12.2z' fill='%233A4570'/%3E%3C/svg%3E");
+  /* background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M0 7.3l2.8-2.8 9.2 9.3 9.2-9.3 2.8 2.8-12 12.2z' fill='%233A4570'/%3E%3C/svg%3E"); */
   background-repeat: no-repeat;
   background-size: 10px 10px;
   background-position: 92% 50%;

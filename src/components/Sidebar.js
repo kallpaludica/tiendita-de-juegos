@@ -28,7 +28,7 @@ class Sidebar extends Component {
 
     return (
       <Menu
-        width={240}
+        width={200}
         right
         isOpen={openMenu}
         onStateChange={state => this.handleStateChange(state)}

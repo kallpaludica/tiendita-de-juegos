@@ -54,8 +54,8 @@ const EncontrarPostPreview = ({ hit }) => {
 
         <div className="absolute bottom-0 left-0 right-0 flex justify-between w-full p-3 space-x-2 bg-white meta md:justify-start md:relative md:space-x-6 md:flex-row bg-opacity-95">
           {hit.GameAges && (
-            <p className="flex items-center font-serif text-xs font-bold text-gray-700 md:text-base">
-              <FcConferenceCall className="block text-xl " />
+            <p className="flex items-center font-serif text-sm font-bold text-gray-700 md:text-base">
+              <FcConferenceCall className="block mr-1 text-xl md:mx-0 " />
               <span className="pr-1 ">Edad</span>{" "}
               <div>
                 <Highlight hit={hit} attribute="GameAges" tagName="mark" />+
@@ -63,16 +63,16 @@ const EncontrarPostPreview = ({ hit }) => {
             </p>
           )}
           {hit.GameDuration && (
-            <p className="flex items-center font-serif text-xs font-bold text-gray-700 md:text-base">
-              <FcClock className="block mr-1 text-xl" />
+            <p className="flex items-center font-serif text-sm font-bold text-gray-700 md:text-base">
+              <FcClock className="block mr-1 text-xl md:mx-0" />
               <Highlight hit={hit} attribute="GameDuration" tagName="mark" />
              
               <span className="pl-1 ">min. </span>
             </p>
           )}
           {hit.GamePlayers && (
-            <p className="flex items-center font-serif text-xs font-bold text-gray-700 md:text-base">
-              <FcCollaboration className="block text-xl " />
+            <p className="flex items-center font-serif text-sm font-bold text-gray-700 md:text-base">
+              <FcCollaboration className="block mr-1 text-xl md:mx-0 " />
               <Highlight
                 hit={hit}
                 attribute="GamePlayers"
