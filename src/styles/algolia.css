@@ -512,7 +512,7 @@ a[class^="ais-"] {
   width: 10px;
   height: 10px;
   display: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Cpath d=%27M7.3 24l-2.8-2.8 9.3-9.2-9.3-9.2 2.8-2.8 12.2 12z%27 fill%3D%22%233A4570%22 /%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M0 7.3l2.8-2.8 9.2 9.3 9.2-9.3 2.8 2.8-12 12.2z' fill='%233A4570'/%3E%3C/svg%3E")
   background-size: 100% 100%;
 }
 
