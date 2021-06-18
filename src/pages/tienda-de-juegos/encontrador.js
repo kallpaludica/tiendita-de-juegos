@@ -62,7 +62,7 @@ const EncontrarComponent = () => {
             </animated.div>
             <div className="relative w-full px-2 mx-auto duration-700 md:py-5 md:px-2">
               <div className="relative p-6 px-0 pt-0 mx-auto">
-                <div className="relative z-50 flex mb-3 space-x-1 bg-white lg:sticky md:space-x-3 md:pb-6 md:px-3">
+                <div className="relative z-50 flex flex-col mb-3 space-y-2 bg-white sm:flex-row sm:space-y-0 sm:space-x-1 lg:sticky md:space-x-3 md:pb-6 md:px-3">
                   <button
                     tabIndex="0"
                     className="items-center justify-center hidden px-5 py-1 font-sans text-sm font-bold text-white duration-700 bg-indigo-600 rounded-md cursor-pointer lg:flex hover:bg-indigo-700 focus:outline-none focus-visible:ring focus-visible:ring-yellow-500 focus:ring-yellow-500 focus-visible:ring-opacity-75"
@@ -98,7 +98,7 @@ const EncontrarComponent = () => {
                     </div>
                   </div>
                   <HitsPerPage
-                    defaultRefinement={3}
+                    defaultRefinement={24}
                     items={[
                       { value: 3, label: "Mostrando 3" },
                       { value: 9, label: "Mostrando 9" },
