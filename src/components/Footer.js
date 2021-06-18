@@ -24,9 +24,9 @@ const Footer = ({ children }) => {
               <KallpaLogo className="w-20 h-20 max-w-xs mb-6" />
             </div>
             <div className="w-full">
-              <div className="grid w-full gap-3 mx-auto mt-12 font-sans text-lg text-left text-gray-800 md:grid-cols-2 md:mt-3 lg:grid-cols-3">
+              <div className="grid w-full gap-3 mx-auto mt-12 font-serif text-lg text-left text-gray-800 md:grid-cols-2 md:mt-3 lg:grid-cols-3">
                 <div className="flex flex-col mt-6 mb-3 space-y-1 md:mt-0">
-                  <span className="block mb-3 text-sm font-bold text-gray-800 uppercase">
+                  <span className="block mb-3 font-sans text-sm font-bold text-gray-800 uppercase">
                     Tiendita de juegos
                   </span>
                   <Link className="hover:underline" to="/tienda-de-juegos">Por título</Link>
@@ -37,7 +37,7 @@ const Footer = ({ children }) => {
                   <Link className="hover:underline" to="/tienda-de-juegos/colecciones/">Colecciones</Link>
                 </div>
                 <div className="flex-col hidden mt-6 mb-3 space-y-1 md:mt-0">
-                  <span className="block mb-3 text-sm font-bold text-gray-800 uppercase">
+                  <span className="block mb-3 font-sans text-sm font-bold text-gray-800 uppercase">
                     Comunidad
                   </span>
                   <Link className="hover:underline" to="/comunidad">Subido recientemente</Link>
@@ -48,7 +48,7 @@ const Footer = ({ children }) => {
                   <Link className="hover:underline" to="/comunidad/notas/">Notas</Link>
                 </div>
                 <div className="flex flex-col mt-6 mb-3 space-y-1 md:mt-0">
-                  <span className="block mb-3 text-sm font-bold text-gray-800 uppercase">
+                  <span className="block mb-3 font-sans text-sm font-bold text-gray-800 uppercase">
                     Contacto
                   </span>
                   <div className="select-all">+549 3876034627</div>

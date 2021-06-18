@@ -41,7 +41,7 @@ const ContactComponent = () => {
 
   return (
     <>
-      {/* <h1 className="max-w-6xl mx-auto mt-6 font-sans text-3xl font-bold text-green-600">
+      {/* <h1 className="max-w-6xl mx-auto mt-6 font-serif text-3xl font-bold text-green-600">
         {data.contactanos.title}
       </h1> */}
       <div className="flex flex-col justify-center max-w-5xl pb-6 mx-auto mt-6 text-center md:flex-row">
@@ -53,8 +53,8 @@ const ContactComponent = () => {
           href={`https://api.whatsapp.com/send?phone=${data.whatsapp.link}&text=%C2%A1Hola!%F0%9F%A4%97%20`}
         >
           <RiWhatsappLine className="my-6 text-4xl" />
-          <h2 className="my-2 font-sans text-xl">{data.whatsapp.link}</h2>
-          <b className="mb-3 font-mono text-base font-light">Teléfono</b>
+          <b className="mb-3 font-serif text-lg">Teléfono</b>
+          <h2 className="my-2 font-serif text-xl">{data.whatsapp.link}</h2>
         </a>
         <a
           className="flex flex-col items-center justify-center w-full max-w-sm p-2 mx-auto mb-3 text-center text-blue-500 transition-all duration-500 ease-in-out transform bg-white rounded-md md:mx-3 hover:shadow-md hover:text-blue-600 hover:-translate-y-2"
@@ -64,8 +64,8 @@ const ContactComponent = () => {
           href={data.facebook.link}
         >
           <AiOutlineFacebook className="my-6 text-4xl" />
-          <h2 className="my-2 font-sans text-xl">kallpaludicaa</h2>
-          <b className="mb-3 font-mono text-base font-light">Facebook</b>
+          <b className="mb-3 font-serif text-lg">Facebook</b>
+          <h2 className="my-2 font-serif text-xl">kallpaludicaa</h2>
         </a>
 
         <a
@@ -76,8 +76,8 @@ const ContactComponent = () => {
           href={data.instagram.link}
         >
           <AiOutlineInstagram className="my-6 text-4xl" />
-          <h2 className="my-2 font-sans text-xl">@kallpaludica</h2>
-          <b className="mb-3 font-mono text-base font-light">Instagram</b>
+          <b className="mb-3 font-serif text-lg">Instagram</b>
+          <h2 className="my-2 font-serif text-xl">@kallpaludica</h2>
         </a>
         <a
           className="flex flex-col items-center justify-center w-full max-w-sm p-2 mx-auto mb-3 text-center text-yellow-500 transition-all duration-500 ease-in-out transform bg-white rounded-md md:mx-3 hover:shadow-md hover:text-yellow-600 hover:-translate-y-2"
@@ -87,8 +87,8 @@ const ContactComponent = () => {
           href={`mailto:${data.mail.link}`}
         >
           <GoMail className="my-6 text-4xl" />
-          <h2 className="my-2 font-sans text-xl">{data.mail.link}</h2>
-          <b className="mb-3 font-mono text-base font-light">Mail</b>
+          <b className="mb-3 font-serif text-lg">Mail</b>
+          <h2 className="my-2 font-serif text-xl">{data.mail.link}</h2>
         </a>
       </div>
 

@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["Josefin Sans", "sans-serif"],
-      serif: ["Josefin Slab", "sans-serif"],
+      serif: ["Fira Sans", "sans-serif"],
       mono: ["Fredoka One", "sans-serif"],
     },
   },

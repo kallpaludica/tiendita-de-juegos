@@ -2,27 +2,25 @@
 
 .article.prose p {
   @apply max-w-2xl mx-auto;
-} 
-
-
+}
 
 .article.prose blockquote {
   @apply max-w-2xl mx-auto;
-} 
+}
 
 .article.prose h1,
 .article.prose h2,
 .article.prose h3,
 .article.prose h4,
 .article.prose h5,
-.article.prose h6
- {
+.article.prose h6 {
   @apply max-w-2xl mx-auto;
-} 
+}
 
+.article.prose ol,
 .article.prose ul {
   @apply max-w-2xl mx-auto;
-} 
+}
 
 .prose .article-card img {
   @apply my-0;
@@ -53,13 +51,12 @@
 .article.prose .article-card .content h3,
 .article.prose .article-card .content h4,
 .article.prose .article-card .content h5,
-.article.prose .article-card .content h6
- {
+.article.prose .article-card .content h6 {
   @apply m-0 font-sans font-bold;
-} 
+}
 
 .article-card .image {
-  @apply flex-none
+  @apply flex-none;
 }
 
 /* purgecss end ignore */

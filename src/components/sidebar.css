@@ -273,4 +273,44 @@ body.dark .bm-menu {
   left: 22px;
 }
 
+.menu-2 .bm-burger-button {
+  right: initial;
+  left: 0;
+}
+
+.menu-2 .bm-overlay + div {
+  left: -27px;
+  right: initial;
+  background: #6366f1;
+  @apply rounded;
+  height: 40px;
+  top: 20px;
+}
+
+.menu-2 .bm-burger-button button {
+  right: initial !important;
+  left: 0 !important;
+  /* background: red !important; */
+  padding: 1.5rem 0 !important;
+  top: -10px !important;
+}
+
+.menu-2 .bm-burger-button .bm-burger-bars {
+  opacity: 0;
+  display: none;
+}
+
+@screen lg {
+  .menu-2 .bm-overlay {
+    display: none !important;
+  }
+}
+
+.menu-2 .bm-overlay + div::before {
+  content: "Filtros" !important;
+  right: initial;
+  color: #fff;
+  left: 42px;
+}
+
 /* purgecss end ignore */

@@ -11,7 +11,7 @@ import { FiExternalLink } from "react-icons/fi"
 const Bold = ({ children }) => (
   <span className="font-sans font-bold">{children}</span>
 )
-const Text = ({ children }) => <p className="font-sans text">{children}</p>
+const Text = ({ children }) => <p className="font-serif text">{children}</p>
 const website_url = "https://www.kallpaludica.com.ar"
 
 const options = {
@@ -219,7 +219,7 @@ const options = {
       return (
         <a
           href={node.data.uri}
-          className="inline-flex items-baseline px-1 font-bold duration-700 rounded hover:bg-green-600 hover:text-white hover:px-3"
+          className="inline-flex items-baseline px-1 font-bold duration-700 rounded hover:text-green-600 hover:px-3"
           target={`${
             node.data.uri.startsWith(website_url) ? "_self" : "_blank"
           }`}

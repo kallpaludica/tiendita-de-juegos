@@ -29,7 +29,7 @@
 }
 
 .description {
-  @apply mb-2 font-sans text-lg text-gray-800 line-clamp-3;
+  @apply hidden mb-2 font-sans text-lg text-gray-800 md:block line-clamp-3;
 }
 
 .buttonContainer {

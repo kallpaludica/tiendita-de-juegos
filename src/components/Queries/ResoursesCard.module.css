@@ -36,10 +36,15 @@
   @apply px-4 py-2 mt-2 mb-3 font-sans text-sm text-center text-white bg-green-600 rounded hover:text-green-100 hover:no-underline;
 }
 
+:global(.widgets) .gridContainer {
+  @apply grid w-full grid-cols-1 px-0 md:grid-cols-2 lg:grid-cols-1 ;
+}
+
 /*
 :global(.grilla) .gamecard {
   @apply flex-col;
 }
 */
+
 
 /* purgecss end ignore */

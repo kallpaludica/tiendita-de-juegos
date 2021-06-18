@@ -8,6 +8,30 @@ body.searcher .headroom {
   @apply bg-white;
 }
 
+body.searcher .headroom .header-container .relative {
+  @apply justify-center !important;
+}
+
+body.searcher .logo-container a {
+  @apply mr-0 transform scale-90 !important;
+}
+
+body.searcher .logo-container span {
+  @apply hidden;
+}
+
+@screen sm {
+  body.searcher .logo-container span {
+    @apply inline-block;
+  }
+}
+
+@screen lg {
+  body.searcher .headroom .header-container.relative {
+    @apply justify-between !important;
+  }
+}
+
 body.searcher .filter-menu::-webkit-scrollbar {
   width: 8px;
 }
@@ -24,7 +48,6 @@ body.searcher footer {
   @apply hidden;
 }
 
-body.searcher .to-top,
 body.searcher .to-whatsapp {
   @apply hidden;
 }
@@ -576,12 +599,13 @@ a[class^="ais-"] {
   .grilla .ais-InfiniteResults-list,
   .grilla .ais-Hits-list,
   .grilla .ais-Results-list {
-    @apply grid grid-cols-3 gap-3;
+    @apply grid grid-cols-2 gap-3;
   }
 }
 
+
 .grilla .meta {
-  @apply grid grid-cols-3 gap-2 px-0 space-x-0;
+  @apply grid grid-cols-3 px-0 space-x-0 md:gap-2;
 }
 .grilla .description {
   @apply line-clamp-3;
@@ -961,7 +985,7 @@ a[class^="ais-"] {
 }
 
 .ais-RefinementList-labelText {
-  @apply w-full px-3 truncate;
+  @apply w-full px-3 text-left truncate;
 }
 
 .ais-NumericMenu-labelText {

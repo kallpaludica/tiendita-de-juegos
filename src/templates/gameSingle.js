@@ -92,29 +92,46 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               <h1 className="w-full pt-2 pl-2 font-mono text-3xl text-left text-gray-600 md:pt-0 md:pl-0 md:text-5xl md:mb-3">
                 {post.title}
               </h1>
+
               {post.stock && (
-                <div
-                  className="relative flex items-center justify-start m-1 my-2 font-sans text-lg font-bold text-left text-gray-700 transition-all duration-500"
-                >
+                <div className="relative flex items-center justify-start m-1 my-2 font-sans text-lg font-bold text-left text-gray-700 transition-all duration-500">
                   <CgSandClock className="mr-1 " />
                   <span className="block">Por encargo</span>
                 </div>
               )}
+              <div className="flex flex-col items-start justify-start">
+                {post.publisher && (
+                  <Link
+                    to={`/tienda-de-juegos/editoriales/${kebabCase(
+                      post.publisher.slug
+                    )}`}
+                    className="flex flex-col py-1 mr-2 font-sans text-indigo-500 underline hover:text-indigo-800"
+                    key={post.publisher.slug}
+                  >
+                    Editorial {post.publisher.title}
+                  </Link>
+                )}
+                {post.GameAuthor && (
+                  <div className="block py-1 mt-1 mb-4 font-sans text-base italic font-bold text-left text-gray-700 ">
+                    Creado por {post.GameAuthor}
+                  </div>
+                )}
+              </div>
               <div className="flex flex-col justify-center w-full px-1 pl-2 my-2 text-gray-700 md:pl-0 md:px-6 md:flex-row md:justify-start">
                 {post.GameAges && (
-                  <div className="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
+                  <div className="flex items-center justify-start my-2 font-bold text-left md:pr-6 sm:flex-row">
                     <FcConferenceCall className="mr-3 text-xl md:text-4xl " />
                     Edad {post.GameAges}+
                   </div>
                 )}
                 {post.GameDuration && (
-                  <div className="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
+                  <div className="flex items-center justify-start my-2 font-bold text-left md:pr-6 sm:flex-row">
                     <FcClock className="mr-3 text-xl md:text-4xl " />
                     {post.GameDuration} min.
                   </div>
                 )}
                 {post.GamePlayers && (
-                  <div className="flex items-center justify-start my-2 font-bold text-center md:pr-6 sm:flex-row">
+                  <div className="flex items-center justify-start my-2 font-bold text-left md:pr-6 sm:flex-row">
                     <FcCollaboration className="mr-3 text-xl md:text-4xl " />
                     {post.GamePlayers} jugadores
                   </div>
@@ -141,24 +158,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 </div>
               )}
               <div className="flex flex-col items-start justify-between mt-6 text-lg md:px-6 md:flex-row">
-                <div className="flex flex-col items-start justify-start">
-                  {post.publisher && (
-                    <Link
-                      to={`/tienda-de-juegos/editoriales/${kebabCase(
-                        post.publisher.slug
-                      )}`}
-                      className="flex flex-col py-1 mr-2 font-sans text-indigo-500 underline hover:text-indigo-800"
-                      key={post.publisher.slug}
-                    >
-                      Editorial {post.publisher.title}
-                    </Link>
-                  )}
-                  {post.GameAuthor && (
-                    <div className="block py-1 mt-1 mb-4 font-sans text-base italic font-bold text-left text-gray-700 ">
-                      Creado por {post.GameAuthor}
-                    </div>
-                  )}
-                </div>
                 {post.colecciones && (
                   <div className="flex items-center justify-end text-lg text-center">
                     {post.colecciones.map((item, i) => (
@@ -188,7 +187,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
               <main>
                 <article
-                  className="w-full pl-0 pr-6 my-6 prose prose-xl text-left md:px-6"
+                  className="w-full my-6 prose prose-xl text-left "
                   id={post.slug}
                 >
                   {post.textoPrincipal && (

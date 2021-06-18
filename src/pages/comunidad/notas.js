@@ -8,9 +8,9 @@ import Seo from "../../components/seo"
 const ComunidadNotasPage = () => {
   return (
     <Layout>
-      <Seo title="Notas y archivos" />
+      <Seo title="Artículos" />
       <HeroWave
-        heading="Notas y archivos"
+        heading="Artículos"
         pattern="bg-indigo-700 text-indigo-600"
         center={true}
         back="volver a comunidad"

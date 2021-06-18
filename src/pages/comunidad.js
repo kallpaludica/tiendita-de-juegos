@@ -6,7 +6,7 @@ import Fade from "react-reveal/Fade"
 import Contact from "../components/About/Contact"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { FcIdea, FcCalendar, FcEngineering } from "react-icons/fc"
+import { FcIdea, FcDocument, FcEngineering } from "react-icons/fc"
 import ComunidadNotas from "../components/Queries/QueriesComunidadNotas"
 import ComunidadProyectos from "../components/Queries/QueriesComunidadProyectosLast"
 import ComunidadRecursos from "../components/Queries/QueriesRecursosLast"
@@ -25,9 +25,9 @@ const ComunidadPage = () => {
   return (
     <Layout>
       <Seo title="Comunidad" />
-      <div className="text-green-700 bg-green-800 pattern-grid-lg">
-        <div className="relative min-h-screen px-2 py-12 mb-12 bg-gradient-to-b from-blue-800 to-transparent">
-          <div className="grid max-w-6xl grid-cols-1 gap-3 px-3 py-24 pb-12 mx-auto md:grid-cols-2">
+      <div className="text-green-800 bg-green-900 pattern-grid-lg">
+        <div className="relative px-2 py-12 mb-12 bg-gradient-to-b from-blue-900 to-transparent">
+          <div className="grid grid-cols-1 gap-3 px-3 py-24 pb-12 mx-auto max-w-7xl md:grid-cols-2">
             <div className="text-left ">
               <h1 className="w-full font-mono text-5xl text-white">
                 Bienvenides a la Comunidad Kallpa.
@@ -41,18 +41,12 @@ const ComunidadPage = () => {
                 del campo de la Recreación, Educación y los Juegos de Mesa.
               </h2>
             </div>
-            <Fade>
-              <div className="items-start justify-center hidden md:flex">
-                <World className="w-full h-auto pl-24 pr-12" />
-                {/* <div id="animate-arrow-back" style={{ width: 400, height: 300 }} /> */}
-              </div>
-            </Fade>
           </div>
-          <h1 className="flex items-center w-full max-w-6xl px-2 mx-auto font-sans text-3xl font-bold text-left text-white">
+          <h1 className="flex items-center w-full px-2 mx-auto font-sans text-3xl font-bold text-left text-white max-w-7xl">
             Explorar
             <HiArrowNarrowRight className="ml-3" />
           </h1>
-          <div className="relative z-50 grid max-w-6xl grid-cols-1 gap-3 px-2 mx-auto my-12 text-center md:grid-cols-3">
+          <div className="relative z-50 grid grid-cols-1 gap-3 px-2 mx-auto my-12 text-center max-w-7xl md:grid-cols-3">
             <Fade bottom delay={300}>
               <Link
                 className="flex items-center justify-between w-full p-4 font-sans text-xl font-semibold leading-tight text-gray-800 duration-500 transform bg-white rounded-md shadow-lg hover:-translate-y-1 hover:shadow-2xl hover:border-green-200 hover:text-green-200"
@@ -87,10 +81,12 @@ const ComunidadPage = () => {
                 to={`/comunidad/notas/`}
               >
                 <div className="mb-3 font-sans text-xl font-bold text-left ">
-                  <h2 className="text-sm text-green-600 uppercase">Notas</h2>
+                  <h2 className="text-sm text-green-600 uppercase">
+                    Artículos
+                  </h2>
                   <p className="text-gray-800">Historias y Novedades</p>
                 </div>
-                <FcCalendar className="text-6xl" />
+                <FcDocument className="text-6xl" />
               </Link>
             </Fade>
           </div>
@@ -133,12 +129,18 @@ const ComunidadPage = () => {
             </div>
           </div>
         </div>
+        <Fade>
+          <div className="absolute top-0 left-0 right-0 flex items-center justify-center overflow-hidden">
+            <World className="w-auto h-1/2 opacity-5" />
+            {/* <div id="animate-arrow-back" style={{ width: 400, height: 300 }} /> */}
+          </div>
+        </Fade>
       </div>
       <div className="relative z-10 pb-24 transform bg-gradient-to-b from-white to-blue-50">
         <div className="px-2 mx-auto my-3 max-w-7xl">
           <div className="flex flex-col items-center justify-center py-12 space-y-3">
             <FcIdea className="text-6xl" />
-            <h2 className="mb-6 font-mono text-4xl font-bold text-left text-green-600">
+            <h2 className="mb-6 font-sans text-4xl font-bold text-left text-green-600">
               Proyectos que nos potencian
             </h2>
           </div>
@@ -154,34 +156,33 @@ const ComunidadPage = () => {
             </AwesomeButton>
           </div>
         </div>
-        
       </div>
       <div className="py-12 text-blue-100 bg-fixed border-t border-blue-100 bg-blue-50 pattern-grid-lg">
         <div className="px-2 py-12 mx-auto my-3 mb-24 max-w-7xl ">
           <div className="flex flex-col items-center justify-center">
-            <FcCalendar className="text-6xl" />
+            <FcDocument className="text-6xl" />
             <h2 className="mb-6 font-sans text-4xl font-bold text-left text-gray-800">
-              Notas recientes
+              Artículos recientes
             </h2>
           </div>
-          <ComunidadNotas />
-          <div className="mt-12">
+          <div className="mt-6 mb-12">
             <AwesomeButton
               action={() => {
                 navigate(`/comunidad/notas/`)
               }}
               type="secondary"
             >
-              Todas las novedades
+              Ver todas
             </AwesomeButton>
           </div>
+          <ComunidadNotas />
         </div>
       </div>
       <div className="py-12 text-yellow-100 bg-fixed bg-yellow-50 pattern-grid-lg">
         <div className="px-2 mx-auto my-3 mb-24 max-w-7xl">
           <div className="flex flex-col items-center justify-center">
             <FcEngineering className="text-6xl" />
-            <h2 className="mb-6 font-mono text-3xl font-bold text-left text-gray-700">
+            <h2 className="mb-6 font-sans text-3xl font-bold text-left text-gray-700">
               Recursos lúdicos
             </h2>
           </div>
