@@ -79,6 +79,7 @@ const { spaceId, accessToken } = contentfulConfig
 // }
 
 module.exports = {
+  flags: { PRESERVE_WEBPACK_CACHE: true },
   siteMetadata: {
     title: `Kallpa Lúdica`,
     titleTemplate: "%s | Kallpa Lúdica",
