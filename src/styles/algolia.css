@@ -664,6 +664,7 @@ a[class^="ais-"] {
   @apply font-bold duration-700 focus:outline-none focus:ring focus:ring-green-500 focus:ring-opacity-75;
 }
 
+
 .ais-Panel--collapsible {
   position: relative;
 }
