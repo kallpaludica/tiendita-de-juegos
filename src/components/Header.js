@@ -8,26 +8,11 @@ import "./header.css"
 
 const routesLeft = [
   /*
-  {
-    title: "Recursos",
-    slug: "/recursos",
-    icon: <IoIosArchive className="text-2xl " />,
-  },
-  {
-    title: "Tienda de juegos",
-    slug: "/tienda-de-juegos",
-    icon: <AiFillShop className="mr-1 text-xl " />,
-  },
-  {
-    title: "Recursos lúdicos",
-    slug: "/comunidad/recursos/",
-    icon: "🧭",
-  },
     {
-    title: "Buscador",
-    slug: "/buscador",
-    icon: <FcSearch className="mr-1 text-2xl" />,
-  },
+      title: "Comunidad",
+      slug: "/comunidad",
+      icon: <FcGlobe className="mr-1 text-2xl" />,
+    },
   */
 
   {
@@ -36,11 +21,6 @@ const routesLeft = [
     icon: <FcShop className="mr-1 text-2xl" />,
   },
 
-  {
-    title: "Comunidad",
-    slug: "/comunidad",
-    icon: <FcGlobe className="mr-1 text-2xl" />,
-  },
   {
     title: "Quienes somos",
     slug: "/quienes-somos",
