@@ -28,11 +28,6 @@ const routesLeft = [
     slug: "/buscador",
     icon: <FcSearch className="mr-1 text-2xl" />,
   },
-    {
-    title: "Comunidad",
-    slug: "/comunidad",
-    icon: <FcGlobe className="mr-1 text-2xl" />,
-  },
   */
 
   {
@@ -41,6 +36,11 @@ const routesLeft = [
     icon: <FcShop className="mr-1 text-2xl" />,
   },
 
+  {
+    title: "Comunidad",
+    slug: "/comunidad",
+    icon: <FcGlobe className="mr-1 text-2xl" />,
+  },
   {
     title: "Quienes somos",
     slug: "/quienes-somos",
@@ -61,7 +61,7 @@ const Header = ({ siteTitle }) => (
   <Headroom disableInlineStyles>
     <header className="header-container">
       <div className="relative flex items-center justify-between w-full max-w-full px-0 mx-auto 2xl:max-w-7xl md:pb-1 sm:pr-6 md:pr-0">
-        <div className="logo-container">
+        <div className=" logo-container">
           <Link to="/" className="flex items-center mr-12">
             <KallpaLogo className="w-16 h-16 mr-3 kallpa-logo" />
             <span className="font-mono text-2xl leading-5 duration-700 md:leading-7 md:text-3xl">
@@ -87,18 +87,6 @@ const Header = ({ siteTitle }) => (
               </Link>
             )
           })}
-          {/* <div className="py-3 pt-4 md:mx-4">
-            <AwesomeButton
-              action={() => {
-                navigate(`/tienda-de-juegos`)
-              }}
-              type="primary"
-              size="small"
-            >
-              <AiFillShop className="mr-1 text-lg " />
-              <span className="text-xs">Tienda de juegos</span>
-            </AwesomeButton>
-          </div> */}
         </div>
       </div>
     </header>

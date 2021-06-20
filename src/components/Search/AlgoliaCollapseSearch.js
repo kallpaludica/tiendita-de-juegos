@@ -14,20 +14,9 @@ import { FiChevronDown } from "react-icons/fi"
 const EncontrarComponent = () => {
   return (
     <>
-      <div className="absolute left-0 px-2 top-4 right-12">
-        <SearchBox
-          className="w-full mx-auto"
-          translations={{
-            submitTitle: "Iniciar búsqueda",
-            resetTitle: "Reiniciar búsqueda",
-            placeholder: "Buscador",
-            noResults: "Sin resultados",
-          }}
-        />
-      </div>
       <div className="flex justify-between px-1 py-3 mb-2">
-        <h3 className="pt-0 my-1 font-serif text-xl text-left text-gray-800 ">
-          Filtrar
+        <h3 className="pt-0 my-1 font-serif text-sm text-left text-gray-800 ">
+        Filtros
         </h3>
         <ClearRefinements
           translations={{
@@ -66,10 +55,13 @@ const EncontrarComponent = () => {
                 <RefinementList
                   attribute="publisher.title"
                   operator="and"
+                  showMoreLimit={60}
+                  showMore={true}
                   translations={{
                     showMore(expanded) {
                       return expanded ? "Mostrar menos" : "Mostrar más"
                     },
+                    
                     noResults: "Sin resultados",
                     submitTitle: "Iniciar búsqueda",
                     resetTitle: "Reiniciar búsqueda",

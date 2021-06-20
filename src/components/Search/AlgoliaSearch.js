@@ -13,26 +13,14 @@ const EncontrarComponent = () => {
   return (
     <>
       <div className="flex justify-between px-1 py-3 mb-2">
-        <h3 className="pt-0 my-1 font-serif text-xl text-left text-gray-800 ">
-          Filtrado
+        <h3 className="pt-0 my-1 font-serif font-bold text-left text-gray-800 text-md ">
+          Filtros
         </h3>
         <ClearRefinements
           translations={{
             reset: "Reiniciar",
           }}
         />
-      </div>
-      <div className="relative w-full md:hidden">
-        <SearchBox
-          className="w-full mx-auto"
-          translations={{
-            submitTitle: "Iniciar búsqueda",
-            resetTitle: "Reiniciar búsqueda",
-            placeholder: "Buscador",
-            noResults: "Sin resultados",
-          }}
-        />
-        
       </div>
       <div className="flex justify-between w-full px-4 py-0 mt-3 text-sm font-medium text-left text-indigo-900 duration-700 bg-indigo-100 rounded-lg hover:bg-indigo-200 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75 focus:ring-green-500">
         <h3 className="pt-1 my-1 font-serif text-lg font-bold text-left text-indigo-500">
@@ -75,7 +63,7 @@ const EncontrarComponent = () => {
             { label: "De 10", start: 10 },
           ]}
           translations={{
-            all: "Para Todos",
+            all: "Para Todes",
           }}
         />
       </div>

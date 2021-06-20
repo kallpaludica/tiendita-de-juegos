@@ -28,7 +28,7 @@ class SidebarFilters extends Component {
 
     return (
       <Menu
-        width={300}
+        width={230}
         left
         isOpen={openMenu}
         onStateChange={(state) => this.handleStateChange(state)}

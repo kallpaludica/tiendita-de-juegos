@@ -24,7 +24,7 @@ const myQuery = `{
       }
     }
   }
-}`;
+}`
 
 const myQuery2 = `{
   pages: allContentfulArticulos {
@@ -54,21 +54,20 @@ const myQuery2 = `{
       GamePlayers
     }
   }
-}`;
+}`
 
 const queries = [
   {
     query: myQuery,
     transformer: ({ data }) => data.pages.nodes, // optional
-    indexName: 'comunidad', // overrides main index name, optional
+    indexName: "comunidad", // overrides main index name, optional
   },
   {
     query: myQuery2,
     transformer: ({ data }) => data.pages.nodes, // optional
-    indexName: 'juegos', // overrides main index name, optional
-    
+    indexName: "juegos", // overrides main index name, optional
   },
-];
+]
 
 const { spaceId, accessToken } = contentfulConfig
 
@@ -79,7 +78,13 @@ const { spaceId, accessToken } = contentfulConfig
 // }
 
 module.exports = {
-  flags: { PRESERVE_WEBPACK_CACHE: true },
+  flags: {
+    PRESERVE_WEBPACK_CACHE: true,
+    FAST_DEV: true,
+    PRESERVE_WEBPACK_CACHE: true,
+    PARALLEL_SOURCING: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+  },
   siteMetadata: {
     title: `Kallpa Lúdica`,
     titleTemplate: "%s | Kallpa Lúdica",
@@ -183,10 +188,10 @@ module.exports = {
           // Note: by supplying settings, you will overwrite all existing settings on the index
         },
         enablePartialUpdates: true, // default: false
-        matchFields: ['slug', 'modified', 'colecciones', 'GameBuyPrice'], // Array<String> default: ['modified']
+        matchFields: ["slug", "modified", "colecciones", "GameBuyPrice"], // Array<String> default: ['modified']
         concurrentQueries: false, // default: true
         skipIndexing: false, // default: false, useful for e.g. preview deploys or local development
-        continueOnFailure: false // default: false, don't fail the build if algolia indexing fails
+        continueOnFailure: false, // default: false, don't fail the build if algolia indexing fails
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

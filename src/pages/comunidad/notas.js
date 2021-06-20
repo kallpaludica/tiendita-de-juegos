@@ -1,24 +1,28 @@
 import React from "react"
-import Contact from "../../components/About/Contact"
-import HeroWave from "../../components/HeroWave"
+import { FcDocument } from "react-icons/fc"
 import Layout from "../../components/layout"
-import ComunidadNotas from "../../components/Queries/QueriesComunidadNotas"
 import Seo from "../../components/seo"
+import ComunidadNotas from "../../components/Queries/QueriesComunidadNotas"
+import ComunidadWidgets from "../../components/Comunidad/HomeWidgets"
+import Contact from "../../components/About/Contact"
 
 const ComunidadNotasPage = () => {
   return (
     <Layout>
       <Seo title="Artículos" />
-      <HeroWave
-        heading="Artículos"
-        pattern="bg-indigo-700 text-indigo-600"
-        center={true}
-        back="volver a comunidad"
-        backUrl="/comunidad"
-        svg="M0,256L80,261.3C160,267,320,277,480,272C640,267,800,245,960,229.3C1120,213,1280,203,1360,197.3L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-      />
-      <div className="px-6 mx-auto my-3 mb-24 max-w-7xl">
-        <ComunidadNotas />
+      <div className="py-12 mt-20 text-blue-100 bg-fixed border-t border-blue-100 bg-blue-50 pattern-grid-lg">
+        <div className="px-2 py-12 mx-auto my-3 mb-24 max-w-7xl ">
+          <div className="flex flex-col items-center justify-center">
+            <FcDocument className="text-6xl" />
+            <h2 className="mb-24 font-sans text-4xl font-bold text-left text-gray-800">
+              Artículos recientess
+            </h2>
+          </div>
+          <ComunidadNotas />
+        </div>
+      </div>
+      <div className="relative z-50 grid grid-cols-1 gap-3 px-2 pt-6 pb-12 mx-auto my-12 text-center max-w-7xl md:grid-cols-3">
+        <ComunidadWidgets />
       </div>
       <Contact />
     </Layout>

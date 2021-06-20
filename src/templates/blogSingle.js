@@ -4,69 +4,49 @@ import { Link } from "gatsby"
 import { kebabCase } from "lodash"
 import Seo from "../components/seo"
 import FormatText from "../components/serializers"
-import HeroWave from "../components/HeroWave"
-import lottie from "lottie-web"
-import ArrowLeft from "../animations/left-arrow.json"
-import React, { useEffect } from "react"
+import React from "react"
 import { FiExternalLink } from "react-icons/fi"
-
+import ComunidadWidgets from "../components/Comunidad/HomeWidgets"
 const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
   const collection = data.contentfulComunidad
-
-  useEffect(() => {
-    lottie.loadAnimation({
-      container: document.querySelector("#arrowLeft"),
-      animationData: ArrowLeft,
-    })
-  }, [])
-
   const { prev, next } = pageContext
   return (
     <Layout location={location}>
       <Seo title={collection.title} />
-      <HeroWave
-        pattern="bg-green-700 text-green-600 "
-        heading={collection.title}
-        center={true}
-      />
-      <div className="flex flex-col items-center justify-between max-w-4xl mx-auto border-b border-gray-200 md:flex-row">
-        {collection.linkExterno && (
-          <div className="flex items-center justify-start max-w-2xl px-3 mx-auto">
-            <a
-              rel="noopener noreferrer"
-              href={collection.linkExterno}
-              target="_blank"
-              className="inline-flex font-sans text-lg font-bold text-center text-indigo-600 no-underline border-b border-indigo-600 hover:border-indigo-700 hover:text-indigo-600"
-            >
-              Visitar espacio
-              <FiExternalLink className="ml-1" />
-            </a>
-          </div>
-        )}
+      <div className="relative flex items-center justify-center pt-24 pb-4 md:pt-64 bg-gradient-to-br to-green-700 from-green-900 ">
+        <div className="flex flex-col w-full mx-auto md:px-24 md:items-end md:justify-between max-w-7xl">
+          <h1 className="relative z-50 w-full mx-auto font-serif text-3xl font-bold text-center text-white md:text-6xl max-w-7xl">
+            {collection.title}
+          </h1>
+          {collection.linkExterno && (
+            <div className="flex flex-col items-center justify-between max-w-2xl pt-6 mx-auto border-b border-gray-200">
+              <div className="flex items-center justify-start max-w-2xl px-3 mx-auto">
+                <a
+                  rel="noopener noreferrer"
+                  href={collection.linkExterno}
+                  target="_blank"
+                  className="inline-flex font-sans text-lg font-bold text-center text-gray-100 no-underline hover:text-green-200"
+                >
+                  Link para conocer más
+                  <FiExternalLink className="ml-1" />
+                </a>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
 
       <div
-        className="w-full max-w-6xl px-3 pr-6 mx-auto my-6 prose prose-xl text-left article"
+        className="w-full max-w-6xl p-6 mx-auto my-6 prose prose-xl text-left article"
         id={collection.slug}
       >
         {collection.textoPrincipal && (
           <FormatText FormatText={collection.textoPrincipal} />
         )}
       </div>
-      <Link
-        to="/comunidad"
-        className="flex items-center max-w-2xl px-3 mx-auto my-6 font-sans font-bold text-left text-green-500 hover:text-green-600 lottie-left-arrow"
-      >
-        <div id="arrowLeft" style={{ width: 30, height: 30 }} />
-        <span className="mt-1 ml-4 text-xl">Volver a comunidad</span>
-      </Link>
       <div>
-        <div className="w-full max-w-2xl m-auto article">
-          <h2 className="w-full py-3 mt-6 text-lg font-bold text-center text-green-600 border-t border-b border-green-600">
-            Más proyectos
-          </h2>
-
-          <div className="flex justify-between py-12">
+        <div className="w-full max-w-2xl py-12 m-auto article">
+          <div className="justify-between hidden ">
             <div>
               {prev && (
                 <Link
@@ -78,7 +58,6 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
                 </Link>
               )}
             </div>
-
             <div style={{ justifySelf: "flex-end" }}>
               {next && (
                 <Link
@@ -92,6 +71,9 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="relative z-50 grid grid-cols-1 gap-3 px-2 pt-4 pb-24 mx-auto text-center max-w-7xl md:grid-cols-3">
+        <ComunidadWidgets />
       </div>
     </Layout>
   )

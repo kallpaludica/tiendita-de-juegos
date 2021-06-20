@@ -340,7 +340,7 @@ a[class^="ais-"] {
 }
 
 .ais-ClearRefinements-button {
-  @apply block w-full px-5 py-2 font-sans text-sm font-bold text-indigo-700 transition-all duration-700 rounded outline-none;
+  @apply block w-full px-5 py-2 font-serif text-sm font-bold text-indigo-700 transition-all duration-700 rounded outline-none;
 }
 
 .ais-ClearRefinements-button:hover,
@@ -611,7 +611,7 @@ a[class^="ais-"] {
   @apply line-clamp-3;
 }
 .grilla .meta p {
-  @apply flex flex-col font-sans font-bold md:text-base;
+  @apply flex flex-col font-serif font-bold md:text-base;
 }
 
 .ais-Panel-body .ais-InfiniteHits-list,
@@ -661,7 +661,7 @@ a[class^="ais-"] {
   background-position: 92% 50%;
   border: 1px solid #c4c8d8;
   border-radius: 5px;
-  @apply font-bold duration-700 focus:outline-none focus:ring focus:ring-green-500 focus:ring-opacity-75;
+  @apply w-full font-bold duration-700 focus:outline-none focus:ring focus:ring-green-500 focus:ring-opacity-75;
 }
 
 .ais-Panel--collapsible {
@@ -748,7 +748,7 @@ a[class^="ais-"] {
   border-radius: 5px;
   -webkit-transition: background-color 0.2s ease-out;
   transition: background-color 0.2s ease-out;
-  @apply w-16 font-sans font-bold text-gray-500 border;
+  @apply w-16 font-serif font-bold text-gray-500 border;
 }
 .ais-Pagination-link:hover,
 .ais-Pagination-link:focus {
@@ -981,7 +981,7 @@ a[class^="ais-"] {
 }
 
 .ais-RefinementList-label {
-  @apply inline-flex items-center w-full px-2 py-2 font-sans border-b border-gray-200 cursor-pointer select-none;
+  @apply inline-flex items-center w-full px-2 py-2 font-serif border-b border-gray-200 cursor-pointer select-none;
 }
 
 .ais-RefinementList-labelText {
@@ -997,7 +997,7 @@ a[class^="ais-"] {
 }
 
 .ais-NumericMenu-label {
-  @apply inline-flex items-center w-full px-2 py-2 font-sans border-b border-gray-200 cursor-pointer select-none;
+  @apply inline-flex items-center w-full px-2 py-2 font-serif border-b border-gray-200 cursor-pointer select-none;
 }
 
 .ais-NumericMenu-radio {

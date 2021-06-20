@@ -34,10 +34,10 @@ const QueryComunidadRecursosComponent = () => {
   `)
 
   return (
-    <div className="grid w-full grid-cols-1 gap-5 mx-auto max-w-7xl md:grid-cols-5">
+    <div className="grid w-full grid-cols-1 gap-5 mx-auto max-w-7xl md:grid-cols-4">
       {data.collections.edges.map(({ node }) => {
         return (
-          <div key={node.slug} className="grid grid-cols-1 overflow-hidden bg-white border border-gray-300 rounded-lg shadow-lg">
+          <div key={node.slug} className="relative grid grid-cols-1 overflow-hidden bg-white border border-gray-300 rounded-lg shadow-lg">
             <Link className="relative w-full col-span-2 overflow-hidden hover:opacity-80" to={`/recursos/${kebabCase(node.slug)}/`}>
               <GatsbyImage
                 title={node.title}
@@ -46,7 +46,7 @@ const QueryComunidadRecursosComponent = () => {
                 image={node.featuredImg.gatsbyImageData}
               />
             </Link>
-            <div className="relative col-span-2 px-4 mt-2 text-left">
+            <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center h-20 col-span-2 px-4 mt-2 text-center bg-white bg-opacity-95">
               <Link
                 className="block my-3 font-sans text-xl font-bold leading-tight text-gray-900 hover:underline"
                 key={node.slug}
