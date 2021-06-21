@@ -21,15 +21,15 @@
 }
 
 .title {
-  @apply block pr-6 my-3 font-sans text-xl font-semibold leading-tight text-gray-800 md:text-2xl hover:underline hover:text-blue-600;
+  @apply block pr-6 my-3 font-serif text-xl font-semibold leading-tight text-gray-800 md:text-2xl hover:underline hover:text-blue-600;
 }
 
 .content time {
-  @apply bottom-0 right-0 z-20 py-1 mb-2 mr-2 font-sans text-sm text-gray-900 rounded md:px-2 md:absolute bg-gray-50 bg-opacity-90;
+  @apply bottom-0 right-0 z-20 py-1 mb-2 mr-2 font-serif text-sm text-gray-900 rounded md:px-2 md:absolute bg-gray-50 bg-opacity-90;
 }
 
 .description {
-  @apply hidden mb-2 font-sans text-lg text-gray-800 md:block line-clamp-3;
+  @apply hidden mb-2 font-serif text-lg text-gray-800 md:block line-clamp-3;
 }
 
 .buttonContainer {

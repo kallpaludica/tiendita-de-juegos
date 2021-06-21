@@ -25,9 +25,8 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
       />
       <HeroWave
         heading={collection.title}
-        center={true}
         subtitle={collection.CollectionDescription.CollectionDescription}
-        pattern="bg-blue-600 text-blue-500 "
+        pattern="bg-blue-800 text-blue-900"
       />
 
       <div className='relative z-10 flex flex-row-reverse w-full mx-auto -mt-16 max-w-7xl'>

@@ -20,7 +20,7 @@ import { HiViewGrid } from "react-icons/hi"
 import { TiThList } from "react-icons/ti"
 import { useSpring, animated } from "react-spring"
 import SidebarFilters from "../../components/SidebarFilters"
-import AlgoliaSearch from "../../components/Search/AlgoliaSearch"
+import AlgoliaSearch from "../../components/Search/AlgoliaCollapseSearch"
 
 const searchClient = algoliasearch(
   "REF3SMUMO1",
@@ -28,12 +28,11 @@ const searchClient = algoliasearch(
 )
 
 const EncontrarComponent = () => {
-  const [isToggled, setToggle] = useState(false)
+  const [isToggled, setToggle] = useState(true)
 
   const fade = useSpring({
     opacity: isToggled ? "1" : "0",
     position: isToggled ? "sticky" : "absolute",
-    maxHeight: isToggled ? "90vh" : "90vh",
   })
 
   const [isActive, setActive] = useState(false)
@@ -53,12 +52,12 @@ const EncontrarComponent = () => {
           <div className="menu-2">
             <SidebarFilters />
           </div>
-          <div className="relative z-50 flex flex-col-reverse px-2 pt-24 pb-12 mx-auto mb-3 space-y-2 bg-white md:px-8 md:pb-0 2xl:max-w-7xl sm:flex-row sm:space-y-0 sm:space-x-1 md:space-x-3">
+          <div className="sticky z-50 flex flex-col-reverse px-2 pt-6 pb-4 mx-auto mb-3 space-y-2 bg-white top-16 md:px-7 2xl:max-w-7xl sm:flex-row sm:space-y-0 sm:space-x-1 md:space-x-3">
             <button
               tabIndex="0"
               className={`${
                 isToggled
-                  ? "bg-green-500 hover:bg-green-700"
+                  ? "bg-blue-500 hover:bg-blue-700"
                   : "bg-indigo-600 hover:bg-indigo-700"
               } items-center justify-center hidden px-5 py-1 font-sans text-sm font-bold text-white duration-700  rounded-md cursor-pointer lg:flex  focus:outline-none focus-visible:ring focus-visible:ring-yellow-500 focus:ring-yellow-500 focus-visible:ring-opacity-75`}
               onClick={() => setToggle(!isToggled)}
@@ -76,7 +75,7 @@ const EncontrarComponent = () => {
                   noResults: "Sin resultados",
                 }}
               />
-              <div className="absolute right-0 mr-8 font-bold text-gray-500 top-1">
+              <div className="absolute right-0 mr-8 font-sans text-base font-bold text-gray-500 top-1">
                 <Stats
                   translations={{
                     stats(
@@ -108,22 +107,22 @@ const EncontrarComponent = () => {
               <SortBy
                 defaultRefinement="juegos"
                 items={[
-                  { value: "juegos", label: "A-Z" },
+                  { value: "juegos", label: "Ordenado A-Z" },
                   {
                     value: "juegos_precio_asc",
-                    label: "< Precio",
+                    label: "< Precio más bajo",
                   },
                   {
                     value: "juegos_precio_desc",
-                    label: "> Precio",
+                    label: "> Precio más alto",
                   },
                   {
                     value: "juegos_edades_asc",
-                    label: "< Edades",
+                    label: "< Edades más chiques",
                   },
                   {
                     value: "juegos_edades_desc",
-                    label: "> Edades",
+                    label: "> Edades más grandes",
                   },
                 ]}
               />
@@ -152,7 +151,7 @@ const EncontrarComponent = () => {
               </button>
             </div>
           </div>
-          <div className="relative z-10 flex flex-row w-full min-h-screen mx-auto md:px-3 2xl:max-w-7xl">
+          <div className="relative z-10 flex flex-row w-full min-h-screen pt-16 mx-auto md:px-3 2xl:max-w-7xl">
             <animated.div
               style={fade}
               className="hidden px-3 text-left filter-menu w-80 lg:block"

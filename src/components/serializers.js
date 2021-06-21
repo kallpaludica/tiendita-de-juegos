@@ -9,7 +9,7 @@ import "./serializers.css"
 import { FiExternalLink } from "react-icons/fi"
 
 const Bold = ({ children }) => (
-  <span className="font-sans font-bold">{children}</span>
+  <span className="font-serif font-bold">{children}</span>
 )
 const Text = ({ children }) => <p className="font-serif text">{children}</p>
 const website_url = "https://www.kallpaludica.com.ar"

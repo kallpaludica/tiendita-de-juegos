@@ -43,7 +43,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       </Helmet>
       <div className="w-full py-12 bg-yellow-50">
         <div className="mx-auto mt-12 bg-white shadow-lg max-w-7xl ">
-          <div className="p-4 pb-0 md:hidden">
+          <div className="p-4 pb-0">
             <GoBack />
           </div>
           <div className="flex flex-col p-5 pt-6 sm:flex-row">

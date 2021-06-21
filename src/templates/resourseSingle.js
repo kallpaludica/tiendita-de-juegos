@@ -9,6 +9,8 @@ import ArrowLeft from "../animations/left-arrow.json"
 import React, { useEffect } from "react"
 import { FiExternalLink } from "react-icons/fi"
 import ComunidadRecursos from "../components/Queries/QueriesRecursosLast"
+import ComunidadNav from "../components/Comunidad/HomeWidgets"
+
 const RecursosSingleTemplate = ({ data, pageContext, location }) => {
   const collection = data.contentfulRecursos
 
@@ -23,19 +25,15 @@ const RecursosSingleTemplate = ({ data, pageContext, location }) => {
   return (
     <Layout location={location}>
       <Seo title={collection.title} />
-      <div className="relative flex items-center justify-center pt-64 pb-4 bg-gradient-to-br to-green-700 from-green-900 ">
-        <div className="flex flex-col-reverse w-full px-4 mx-auto md:px-24 md:items-end md:justify-between md:flex-row max-w-7xl">
-          <h1 className="relative z-50 w-full mx-auto font-sans text-6xl text-left text-white max-w-7xl">
-            {collection.title}
-          </h1>
-        </div>
-      </div>
-      <div className="relative z-50 pt-12 pb-24 mx-auto bg-white max-w-7xl">
+      <div className="relative z-50 pt-6 pb-24 mx-auto mt-20 bg-white max-w-7xl">
         <div className="grid gap-2 lg:grid-cols-6">
           <div className="lg:col-span-4">
-            <div className="flex flex-col items-center justify-between max-w-4xl mx-auto md:flex-row">
+            <h1 className="relative z-50 w-full pt-6 mx-auto font-serif text-3xl font-bold text-center text-gray-900">
+              {collection.title}
+            </h1>
+            <div className="flex flex-col items-center justify-between mx-auto md:flex-row">
               {collection.linkExterno && (
-                <div className="flex items-center justify-start max-w-2xl px-3 mx-auto">
+                <div className="flex items-center justify-start px-3 mx-auto">
                   <a
                     rel="noopener noreferrer"
                     href={collection.linkExterno}
@@ -49,7 +47,7 @@ const RecursosSingleTemplate = ({ data, pageContext, location }) => {
               )}
             </div>
             <div
-              className="w-full max-w-6xl px-3 pr-6 mx-auto my-6 prose prose-xl text-left article"
+              className="w-full max-w-full px-3 pr-6 mx-auto my-6 prose prose-xl text-left article"
               id={collection.slug}
             >
               {collection.textoPrincipal && (
@@ -85,9 +83,14 @@ const RecursosSingleTemplate = ({ data, pageContext, location }) => {
             </div>
           </div>
           <div className="flex flex-col w-full px-4 lg:col-span-2 widgets">
-            <h3 className="mb-6 font-serif text-lg font-bold text-left">Más recursos</h3>
+            <h3 className="mt-6 mb-6 font-serif text-lg font-bold text-center text-gray-700">
+              Más recursos
+            </h3>
             <ComunidadRecursos />
           </div>
+        </div>
+        <div className="relative z-50 grid grid-cols-1 gap-3 px-2 mx-auto mt-24 mb-12 text-center max-w-7xl md:grid-cols-3">
+          <ComunidadNav />
         </div>
       </div>
     </Layout>

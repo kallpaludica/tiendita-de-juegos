@@ -37,8 +37,8 @@ const QueryComunidadRecursosComponent = () => {
     <div className="grid w-full grid-cols-1 gap-5 mx-auto max-w-7xl md:grid-cols-4">
       {data.collections.edges.map(({ node }) => {
         return (
-          <div key={node.slug} className="relative grid grid-cols-1 overflow-hidden bg-white border border-gray-300 rounded-lg shadow-lg">
-            <Link className="relative w-full col-span-2 overflow-hidden hover:opacity-80" to={`/recursos/${kebabCase(node.slug)}/`}>
+          <div key={node.slug} className="relative grid h-64 grid-cols-1 overflow-hidden bg-white border border-gray-300 rounded-lg shadow-lg">
+            <Link className="absolute inset-0 w-full col-span-2 overflow-hidden hover:opacity-80" to={`/recursos/${kebabCase(node.slug)}/`}>
               <GatsbyImage
                 title={node.title}
                 className="object-cover w-full h-full"

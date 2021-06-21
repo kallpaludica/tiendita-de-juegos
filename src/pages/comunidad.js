@@ -1,6 +1,6 @@
 //import React, { useEffect } from "react"
 import React from "react"
-import {  navigate } from "gatsby"
+import { navigate } from "gatsby"
 import { AwesomeButton } from "react-awesome-button"
 import Fade from "react-reveal/Fade"
 import Contact from "../components/About/Contact"
@@ -20,22 +20,17 @@ const ComunidadPage = () => {
       <div className="text-green-800 bg-green-900 pattern-grid-lg">
         <div className="relative px-2 py-12 bg-gradient-to-b from-blue-900 to-transparent">
           <div className="grid max-w-xl grid-cols-1 gap-3 px-3 py-24 pb-12 mx-auto">
-            <div className="text-center">
+            <div className="relative z-50 text-center">
               <h1 className="w-full font-mono text-5xl text-white">
                 Bienvenides a la Comunidad Kallpa.
               </h1>
               <h2 className="w-full mt-4 mb-3 font-sans text-xl font-bold text-white">
-                Generando redes que nos potencien.
-              </h2>
-              <h2 className="w-full mt-4 font-sans text-xl text-white">
-                Un espacio donde compartimos valiosos proyectos que nos rodean.
-                Recursos lúdicos al alcance de las manos, noticias, entrevistas
-                del campo de la Recreación, Educación y los Juegos de Mesa.
+                Un espacio para generar redes que nos potencien.
               </h2>
             </div>
           </div>
-          <div className="relative z-50 grid grid-cols-1 gap-3 px-2 mx-auto my-12 text-center max-w-7xl md:grid-cols-3">
-            <ComunidadWidgets/>
+          <div className="relative z-50 grid grid-cols-1 gap-3 px-2 mx-auto mb-12 text-center max-w-7xl md:grid-cols-3">
+            <ComunidadWidgets />
           </div>
         </div>
         <Fade>
@@ -48,7 +43,7 @@ const ComunidadPage = () => {
         <div className="px-2 mx-auto my-3 mb-24 max-w-7xl">
           <div className="flex flex-col items-center justify-center">
             <FcEngineering className="text-6xl" />
-            <h2 className="mb-6 font-sans text-3xl font-bold text-left text-gray-700">
+            <h2 className="mb-6 font-mono text-3xl font-bold text-left text-gray-700">
               Recursos lúdicos
             </h2>
           </div>

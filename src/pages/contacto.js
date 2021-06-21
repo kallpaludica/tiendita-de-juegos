@@ -15,13 +15,11 @@ const ContactPage = () => {
       </Helmet>
       <Seo title="Contacto" />
       <HeroWave
-        heading="👋 Contacto"
-        pattern="bg-green-700 text-green-900"
-        subtitle="¿Tenés una consulta, pregunta o sugerencia?"
-        center={true}
+        heading="Contacto"
+        pattern="bg-green-800 text-green-900"
+        subtitle="¿Tenés una consulta, pregunta o sugerencia? Tenemos canales para contestarlas"
       />
       <Contact />
-      
     </Layout>
   )
 }

@@ -5,6 +5,7 @@ import {
   ToggleRefinement,
   ClearRefinements,
   SearchBox,
+  Stats,
   RefinementList,
 } from "react-instantsearch-dom"
 
@@ -15,8 +16,17 @@ const EncontrarComponent = () => {
   return (
     <>
       <div className="flex justify-between px-1 py-3 mb-2">
-        <h3 className="pt-0 my-1 font-serif text-sm text-left text-gray-800 ">
-        Filtros
+        <h3 className="font-serif text-sm font-bold text-left text-gray-800">
+          Encontrados <br/>
+          <Stats
+            translations={{
+              stats(nbHits, processingTimeMS, nbSortedHits, areHitsSorted) {
+                return areHitsSorted && nbHits !== nbSortedHits
+                  ? `${nbSortedHits.toLocaleString()} relevant results sorted out of ${nbHits.toLocaleString()} ${processingTimeMS.toLocaleString()}ms`
+                  : `${nbHits.toLocaleString()} juegos`
+              },
+            }}
+          />
         </h3>
         <ClearRefinements
           translations={{
@@ -55,13 +65,13 @@ const EncontrarComponent = () => {
                 <RefinementList
                   attribute="publisher.title"
                   operator="and"
-                  showMoreLimit={60}
+                  showMoreLimit={100}
                   showMore={true}
                   translations={{
                     showMore(expanded) {
                       return expanded ? "Mostrar menos" : "Mostrar más"
                     },
-                    
+
                     noResults: "Sin resultados",
                     submitTitle: "Iniciar búsqueda",
                     resetTitle: "Reiniciar búsqueda",

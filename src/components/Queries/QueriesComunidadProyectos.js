@@ -73,7 +73,7 @@ const QueryComunidadProyectosComponent = () => {
                     key={node.slug}
                     to={`/comunidad/${kebabCase(node.slug)}/`}
                   >
-                    Conocer más
+                    Conocer más del proyecto
                   </Link>
                 )}
               </div>

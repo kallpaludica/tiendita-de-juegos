@@ -1,7 +1,7 @@
 /* purgecss start ignore */
 
 .game-aside  {
-@apply top-0 flex flex-col w-full mt-20 font-sans text-left border-l border-gray-300 ;
+@apply top-0 flex flex-col w-full mt-20 font-serif text-left border-l border-gray-300 ;
 }
 
 .game-aside a {

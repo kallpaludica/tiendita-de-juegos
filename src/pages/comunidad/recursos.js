@@ -14,8 +14,11 @@ const ComunidadRecursosPage = () => {
         <div className="px-2 mx-auto my-3 mb-24 max-w-7xl">
           <div className="flex flex-col items-center justify-center">
             <FcEngineering className="text-6xl" />
-            <h2 className="mb-24 font-sans text-3xl font-bold text-left text-gray-700">
+            <h1 className="mb-6 font-sans text-3xl font-bold text-left text-gray-700">
               Recursos lúdicos
+            </h1>
+            <h2 className="mb-24 font-sans text-xl font-bold text-gray-800">
+              Para jugar al alcance de la mano y descargar al alcance de un click.
             </h2>
           </div>
           <ComunidadRecursos />

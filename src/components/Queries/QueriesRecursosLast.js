@@ -62,7 +62,7 @@ const QueryCRecursosLastComponent = () => {
                     key={node.slug}
                     to={`/recursos/${kebabCase(node.slug)}/`}
                   >
-                    Conocer más
+                    Ver juego
                   </Link>
                 )}
               </div>

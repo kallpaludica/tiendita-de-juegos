@@ -18,24 +18,23 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
           <h1 className="relative z-50 w-full mx-auto font-serif text-3xl font-bold text-center text-white md:text-6xl max-w-7xl">
             {collection.title}
           </h1>
-          {collection.linkExterno && (
-            <div className="flex flex-col items-center justify-between max-w-2xl pt-6 mx-auto border-b border-gray-200">
-              <div className="flex items-center justify-start max-w-2xl px-3 mx-auto">
-                <a
-                  rel="noopener noreferrer"
-                  href={collection.linkExterno}
-                  target="_blank"
-                  className="inline-flex font-sans text-lg font-bold text-center text-gray-100 no-underline hover:text-green-200"
-                >
-                  Link para conocer más
-                  <FiExternalLink className="ml-1" />
-                </a>
-              </div>
-            </div>
-          )}
         </div>
       </div>
-
+      {collection.linkExterno && (
+        <div className="flex flex-col items-center justify-start max-w-2xl pt-6 mx-auto border-b border-green-200">
+          <div className="flex items-center justify-start max-w-2xl px-3 mx-auto">
+            <a
+              rel="noopener noreferrer"
+              href={collection.linkExterno}
+              target="_blank"
+              className="inline-flex font-sans text-lg font-bold text-center text-green-500 no-underline hover:text-green-800"
+            >
+              Link para conocer más
+              <FiExternalLink className="ml-1" />
+            </a>
+          </div>
+        </div>
+      )}
       <div
         className="w-full max-w-6xl p-6 mx-auto my-6 prose prose-xl text-left article"
         id={collection.slug}
@@ -44,6 +43,7 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
           <FormatText FormatText={collection.textoPrincipal} />
         )}
       </div>
+
       <div>
         <div className="w-full max-w-2xl py-12 m-auto article">
           <div className="justify-between hidden ">

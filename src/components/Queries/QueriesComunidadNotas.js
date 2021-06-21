@@ -46,14 +46,14 @@ const QueryComunidadNotasComponent = () => {
       {data.collections.edges.map(({ node }) => {
         return (
           <div key={node.id} className={containerStyles.item}>
-            <div className={containerStyles.imageContainer}>
+            <Link className={containerStyles.imageContainer}  to={`/comunidad/${kebabCase(node.slug)}/`}>
               <GatsbyImage
                 title={node.title}
                 className={containerStyles.image}
                 alt={node.title}
                 image={node.featuredImg.gatsbyImageData}
               />
-            </div>
+            </Link>
             <div className={containerStyles.content}>
               <Link
                 className={containerStyles.title}
@@ -73,7 +73,7 @@ const QueryComunidadNotasComponent = () => {
                     key={node.slug}
                     to={`/comunidad/${kebabCase(node.slug)}/`}
                   >
-                    Conocer más
+                    Leer más
                   </Link>
                 )}
               </div>

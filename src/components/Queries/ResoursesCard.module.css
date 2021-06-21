@@ -5,27 +5,27 @@
 }
 
 .item {
-  @apply flex flex-row overflow-hidden bg-white border border-gray-300 rounded-lg shadow-lg;
+  @apply relative flex flex-row h-32 overflow-hidden bg-green-900 rounded-lg shadow-lg;
 }
 
 .imageContainer {
-  @apply relative flex-none w-32 overflow-hidden;
+  @apply absolute inset-0 flex-none overflow-hidden ;
 }
 
 .image {
-  @apply object-cover w-full h-full;
+  @apply object-cover w-full h-full opacity-30;
 }
 
 .content {
-  @apply relative w-full px-4 mt-2 text-left;
+  @apply relative w-full px-4 text-left bg-opacity-50 bg-gradient-to-br from-green-900 to-transparent;
 }
 
 .title {
-  @apply block my-3 font-sans text-xl font-bold leading-tight text-gray-900 hover:underline;
+  @apply block my-3 font-serif text-xl font-bold leading-tight text-gray-100 hover:underline;
 }
 
 .description {
-  @apply mb-2 font-sans text-lg text-gray-800 line-clamp-3;
+  @apply mb-2 font-serif text-lg text-gray-800 line-clamp-3;
 }
 
 .buttonContainer {
@@ -33,11 +33,15 @@
 }
 
 .button {
-  @apply px-4 py-2 mt-2 mb-3 font-sans text-sm text-center text-white bg-green-600 rounded hover:text-green-100 hover:no-underline;
+  @apply absolute bottom-0 right-0 px-2 py-1 mt-2 font-serif text-xs text-center text-white bg-green-600 rounded-tl-lg hover:text-green-100 hover:no-underline;
 }
 
 :global(.widgets) .gridContainer {
   @apply grid w-full grid-cols-1 px-0 md:grid-cols-2 lg:grid-cols-1 ;
+}
+
+:global(.widgets) .item {
+  @apply h-24;
 }
 
 /*

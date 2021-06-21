@@ -19,8 +19,7 @@ const PublisherSingleTemplate = ({ data, pageContext, location }) => {
       />
       <HeroWave
         heading={publisher.title}
-        pattern="bg-green-600 text-green-500"
-        svg="M0,224L80,240C160,256,320,288,480,277.3C640,267,800,213,960,202.7C1120,192,1280,224,1360,240L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+        pattern="bg-green-700 text-green-800"
       />
       <div className='relative z-10 flex flex-row-reverse w-full mx-auto -mt-16 max-w-7xl'>
         <div className='hidden px-6 pr-12 -mt-2 w-80 md:block'>

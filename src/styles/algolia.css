@@ -380,6 +380,7 @@ a[class^="ais-"] {
 .ais-Menu-showMore--disabled,
 .ais-RefinementList-showMore--disabled {
   opacity: 0.6;
+  @apply text-gray-800 bg-gray-300;
   cursor: not-allowed;
 }
 .ais-ClearRefinements-button--disabled:hover,

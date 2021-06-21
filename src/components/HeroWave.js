@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 const HeroWave = (props) => (
   <>
     <div
-      className={`pattern-cross-dots-md relative flex flex-col items-center justify-center w-full pt-24 md:pt-24 pb-12 md:pb-32 mx-auto ${props.pattern}`}
+      className={`pattern-grid-lg relative flex flex-col items-center justify-center w-full pt-24 md:pt-24 pb-12 md:pb-32 mx-auto ${props.pattern}`}
     >
       {props.heading && (
         <div
@@ -12,17 +12,17 @@ const HeroWave = (props) => (
           relative z-50 flex flex-col justify-start w-full px-6 pt-0 pb-0 mx-auto text-left max-w-7xl md:pt-12 md:pb-12
           `}
         >
-          <h1 className="pt-12 font-sans text-3xl leading-relaxed text-white md:pt-0 md:text-5xl">
+          <h1 className="pt-12 font-mono text-3xl leading-relaxed text-white md:pt-0 md:text-5xl">
             {props.heading}
           </h1>
           {props.subtitle && (
             <div
               className={`${
                 props.center
-                  ? "items-center justify-center"
+                  ? "items-center justify-start"
                   : "items-center justify-start"
               }
-            flex  w-full max-w-2xl pb-1 m-0 mx-auto mt-3 font-serif text-xl text-center text-white
+            flex w-full pb-1 m-0 mx-auto mt-3 font-serif text-xl text-left text-white
           `}
             >
               {props.subtitle}

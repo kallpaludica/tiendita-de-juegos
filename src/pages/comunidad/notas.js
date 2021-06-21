@@ -15,7 +15,7 @@ const ComunidadNotasPage = () => {
           <div className="flex flex-col items-center justify-center">
             <FcDocument className="text-6xl" />
             <h2 className="mb-24 font-sans text-4xl font-bold text-left text-gray-800">
-              Artículos recientess
+              Artículos recientes
             </h2>
           </div>
           <ComunidadNotas />
