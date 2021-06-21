@@ -8,16 +8,16 @@ import "./header.css"
 
 const routesLeft = [
   /*
-
-  */
   {
     title: "Comunidad",
     slug: "/comunidad",
     icon: <FcGlobe className="mr-1 text-2xl" />,
   },
+  */
+
   {
     title: "Tienda de juegos",
-    slug: "/tienda-de-juegos/encontrador",
+    slug: "/tienda-de-juegos",
     icon: <FcShop className="mr-1 text-2xl" />,
   },
 

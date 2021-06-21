@@ -104,7 +104,7 @@ const AllPage = (props) => {
       <Helmet>
         <body className="games" />
       </Helmet>
-      <HeroWave pattern="bg-green-600 text-green-500" />
+      <HeroWave pattern="bg-green-600 text-green-700" />
       <div className="relative z-10 flex flex-row-reverse w-full mx-auto max-w-7xl md:-mt-16">
         <div className="hidden w-72 md:block ">
           <GamesAside />

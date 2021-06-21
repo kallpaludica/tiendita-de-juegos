@@ -17,7 +17,7 @@ const ComunidadPage = () => {
   return (
     <Layout>
       <Seo title="Comunidad" />
-      <div className="text-green-800 bg-green-900 pattern-grid-lg">
+      <div className="text-green-900 bg-fixed bg-green-800 pattern-grid-lg">
         <div className="relative px-2 py-12 bg-gradient-to-b from-blue-900 to-transparent">
           <div className="grid max-w-xl grid-cols-1 gap-3 px-3 py-24 pb-12 mx-auto">
             <div className="relative z-50 text-center">
@@ -39,7 +39,7 @@ const ComunidadPage = () => {
           </div>
         </Fade>
       </div>
-      <div className="py-12 text-yellow-100 bg-fixed bg-yellow-50 pattern-grid-lg">
+      <div className="py-12 text-green-100 bg-fixed bg-green-50 pattern-grid-lg">
         <div className="px-2 mx-auto my-3 mb-24 max-w-7xl">
           <div className="flex flex-col items-center justify-center">
             <FcEngineering className="text-6xl" />
@@ -60,11 +60,11 @@ const ComunidadPage = () => {
           </div>
         </div>
       </div>
-      <div className="relative z-10 pb-24 transform bg-gradient-to-b from-white to-blue-50">
+      <div className="py-12 pb-24 text-yellow-100 bg-fixed bg-yellow-50 pattern-grid-lg">
         <div className="px-2 mx-auto my-3 max-w-7xl">
           <div className="flex flex-col items-center justify-center py-12 space-y-3">
             <FcIdea className="text-6xl" />
-            <h2 className="mb-6 font-sans text-4xl font-bold text-left text-yellow-600">
+            <h2 className="mb-6 font-mono text-4xl font-bold text-left text-yellow-600">
               Proyectos que nos potencian
             </h2>
           </div>
@@ -81,15 +81,16 @@ const ComunidadPage = () => {
           </div>
         </div>
       </div>
-      <div className="py-12 text-blue-100 bg-fixed border-t border-blue-100 bg-blue-50 pattern-grid-lg">
+      <div className="py-12 text-blue-100 bg-fixed border-blue-100 bg-blue-50 pattern-grid-lg">
         <div className="px-2 py-12 mx-auto my-3 mb-24 max-w-7xl ">
           <div className="flex flex-col items-center justify-center">
             <FcDocument className="text-6xl" />
-            <h2 className="mb-6 font-sans text-4xl font-bold text-left text-gray-800">
+            <h2 className="mb-6 font-mono text-4xl font-bold text-left text-gray-800">
               Artículos recientes
             </h2>
           </div>
-          <div className="mt-6 mb-12">
+          <ComunidadNotas />
+          <div className="my-12">
             <AwesomeButton
               action={() => {
                 navigate(`/comunidad/notas/`)
@@ -99,7 +100,6 @@ const ComunidadPage = () => {
               Ver todas
             </AwesomeButton>
           </div>
-          <ComunidadNotas />
         </div>
       </div>
       <Contact />
