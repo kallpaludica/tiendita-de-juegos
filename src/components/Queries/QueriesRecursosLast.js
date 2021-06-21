@@ -7,7 +7,7 @@ import * as containerStyles from "./ResoursesCard.module.css"
 const QueryCRecursosLastComponent = () => {
   const data = useStaticQuery(graphql`
     query QueryRecursosLastQuery {
-      collections: allContentfulRecursos(limit: 9) {
+      collections: allContentfulRecursos(limit: 6) {
         edges {
           node {
             id

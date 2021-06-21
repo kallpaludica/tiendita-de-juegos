@@ -2,11 +2,12 @@ import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { kebabCase } from "lodash"
 import { GatsbyImage } from "gatsby-plugin-image"
+import * as containerStyles from "./ResoursesCard.module.css"
 
 const QueryComunidadRecursosComponent = () => {
   const data = useStaticQuery(graphql`
     query QueryComunidadRecursosQuery {
-      collections: allContentfulRecursos {
+      collections: allContentfulRecursos(sort: {fields: updatedAt, order: ASC}) {
         edges {
           node {
             id
@@ -34,26 +35,40 @@ const QueryComunidadRecursosComponent = () => {
   `)
 
   return (
-    <div className="grid w-full grid-cols-1 gap-5 mx-auto max-w-7xl md:grid-cols-4">
+    <div className="grid w-full grid-cols-1 gap-8 mx-auto max-w-7xl md:grid-cols-4">
       {data.collections.edges.map(({ node }) => {
         return (
-          <div key={node.slug} className="relative grid h-64 grid-cols-1 overflow-hidden bg-white border border-gray-300 rounded-lg shadow-lg">
-            <Link className="absolute inset-0 w-full col-span-2 overflow-hidden hover:opacity-80" to={`/recursos/${kebabCase(node.slug)}/`}>
+          <div key={node.id} className={containerStyles.item}>
+            <Link
+              to={`/recursos/${kebabCase(node.slug)}/`}
+              className={containerStyles.imageContainer}
+            >
               <GatsbyImage
                 title={node.title}
-                className="object-cover w-full h-full"
+                className={containerStyles.image}
                 alt={node.title}
                 image={node.featuredImg.gatsbyImageData}
               />
             </Link>
-            <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center h-20 col-span-2 px-4 mt-2 text-center bg-white bg-opacity-95">
+            <div className={containerStyles.content}>
               <Link
-                className="block my-3 font-sans text-xl font-bold leading-tight text-gray-900 hover:underline"
+                className={containerStyles.title}
                 key={node.slug}
                 to={`/recursos/${kebabCase(node.slug)}/`}
               >
                 {node.title}
               </Link>
+              <div className={containerStyles.buttonContainer}>
+                {node.textoPrincipal && (
+                  <Link
+                    className={containerStyles.button}
+                    key={node.slug}
+                    to={`/recursos/${kebabCase(node.slug)}/`}
+                  >
+                    Ver juego
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
         )

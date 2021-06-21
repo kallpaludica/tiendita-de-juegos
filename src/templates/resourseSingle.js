@@ -83,9 +83,20 @@ const RecursosSingleTemplate = ({ data, pageContext, location }) => {
             </div>
           </div>
           <div className="flex flex-col w-full px-4 lg:col-span-2 widgets">
-            <h3 className="mt-6 mb-6 font-serif text-lg font-bold text-center text-gray-700">
-              Más recursos
-            </h3>
+            <div className="flex items-center justify-between w-full mt-6 mb-6 font-serif font-bold">
+              <Link
+                to={`/comunidad/recursos`}
+                className="text-lg text-gray-700 border-b "
+              >
+                ← Más recursos
+              </Link>
+              <Link
+                to={`/comunidad/`}
+                className="font-serif text-lg text-gray-800 border-b"
+              >
+                Volver a comunidad →
+              </Link>
+            </div>
             <ComunidadRecursos />
           </div>
         </div>

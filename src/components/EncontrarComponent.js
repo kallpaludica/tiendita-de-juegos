@@ -28,7 +28,7 @@ const EncontrarPostPreview = ({ hit }) => {
         <Highlight hit={hit} attribute="collection.title" tagName="mark" />
         <Link
           to={`/tienda-de-juegos/${hit.slug}/`}
-          className="inline-flex items-baseline justify-between font-serif text-2xl font-bold text-gray-800 duration-700 border-2 border-white border-dashed outline-none hover:text-indigo-700 hover:underline focus:border-green-500 focus:px-2"
+          className="inline-flex items-baseline justify-between font-serif font-bold text-gray-800 duration-700 border-2 border-white border-dashed outline-none md:text-2xl hover:text-indigo-700 hover:underline focus:border-green-500 focus:px-2"
         >
           <Highlight hit={hit} attribute="title" tagName="mark" />
           <small className="hidden ml-3 text-base text-gray-700 ">
@@ -69,9 +69,9 @@ const EncontrarPostPreview = ({ hit }) => {
         <div className="hidden">
           <Highlight hit={hit} attribute="textoPrincipal" tagName="mark" />
         </div>
-        <div className="absolute left-0 right-0 flex justify-start w-full p-3 px-4 space-x-2 bg-white border-t border-gray-200 md:px-3 bottom-1 md:pt-5 meta md:relative md:space-x-4 md:flex-row bg-opacity-95">
+        <div className="absolute left-0 right-0 flex justify-around w-full p-3 px-4 space-x-2 bg-white border-t border-gray-200 md:justify-start md:px-3 bottom-1 md:pt-5 meta md:relative md:space-x-4 md:flex-row bg-opacity-95">
           {hit.GameAges && (
-            <div className="flex items-center w-32 font-serif text-sm font-bold text-gray-700 md:text-base">
+            <div className="flex items-center font-serif text-sm font-bold text-gray-700 md:w-32 md:text-base">
               <FcConferenceCall className="block mr-1 text-xl " />
               <span className="pr-1 ">Edad</span>{" "}
               <div>
@@ -80,7 +80,7 @@ const EncontrarPostPreview = ({ hit }) => {
             </div>
           )}
           {hit.GameDuration && (
-            <div className="flex items-center w-40 font-serif text-sm font-bold text-gray-700 md:text-base">
+            <div className="flex items-center font-serif text-sm font-bold text-gray-700 md:w-40 md:text-base">
               <FcClock className="block mr-1 text-xl " />
               <Highlight hit={hit} attribute="GameDuration" tagName="mark" />
 

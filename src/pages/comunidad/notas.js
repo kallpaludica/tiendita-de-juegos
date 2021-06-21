@@ -15,7 +15,7 @@ const ComunidadNotasPage = () => {
           <div className="flex flex-col items-center justify-center">
             <FcDocument className="text-6xl" />
             <h1 className="mb-6 font-mono text-4xl font-bold tracking-wider text-gray-800">
-              Artículos recientes
+              Educación y los Juegos de Mesa
             </h1>
             <h2 className="mb-24 font-serif text-xl font-bold text-gray-800">
               Noticias y entrevistas del campo de la Recreación

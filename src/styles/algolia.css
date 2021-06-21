@@ -16,9 +16,9 @@ body.searcher .logo-container a {
   @apply mr-0 transform scale-90 !important;
 }
 
-body.searcher .logo-container span {
+/* body.searcher .logo-container span {
   @apply hidden;
-}
+} */
 
 @screen sm {
   body.searcher .logo-container span {

@@ -13,7 +13,7 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
   return (
     <Layout location={location}>
       <Seo title={collection.title} />
-      <div className="relative flex items-center justify-center pt-24 pb-4 md:pt-64 bg-gradient-to-br to-green-700 from-green-900 ">
+      <div className="relative flex items-center justify-center pt-24 pb-4 md:pt-64 bg-gradient-to-br to-blue-700 from-blue-900 ">
         <div className="flex flex-col w-full mx-auto md:px-24 md:items-end md:justify-between max-w-7xl">
           <h1 className="relative z-50 w-full mx-auto font-serif text-3xl font-bold text-center text-white md:text-6xl max-w-7xl">
             {collection.title}
@@ -21,13 +21,13 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
         </div>
       </div>
       {collection.linkExterno && (
-        <div className="flex flex-col items-center justify-start max-w-2xl pt-6 mx-auto border-b border-green-200">
+        <div className="flex flex-col items-center justify-start max-w-2xl pt-6 mx-auto border-b border-blue-200">
           <div className="flex items-center justify-start max-w-2xl px-3 mx-auto">
             <a
               rel="noopener noreferrer"
               href={collection.linkExterno}
               target="_blank"
-              className="inline-flex font-sans text-lg font-bold text-center text-green-500 no-underline hover:text-green-800"
+              className="inline-flex font-sans text-lg font-bold text-center text-blue-500 no-underline hover:text-blue-800"
             >
               Link para conocer más
               <FiExternalLink className="ml-1" />
