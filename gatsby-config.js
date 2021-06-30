@@ -188,7 +188,7 @@ module.exports = {
           // Note: by supplying settings, you will overwrite all existing settings on the index
         },
         enablePartialUpdates: true, // default: false
-        matchFields: ["slug", "modified", "colecciones", "GameBuyPrice"], // Array<String> default: ['modified']
+        matchFields: ["slug", "modified", "colecciones", "GameBuyPrice", "GamePlayers"], // Array<String> default: ['modified']
         concurrentQueries: false, // default: true
         skipIndexing: false, // default: false, useful for e.g. preview deploys or local development
         continueOnFailure: false, // default: false, don't fail the build if algolia indexing fails
