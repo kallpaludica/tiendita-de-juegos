@@ -46,7 +46,7 @@ const HomeHeroCompoent = () => {
                     <div className="mr-3 ">
                       <AwesomeButton
                         action={() => {
-                          navigate(`/tienda-de-juegos`)
+                          navigate(`/tienda-de-juegos/encontrador`)
                         }}
                         type="primary"
                       >
