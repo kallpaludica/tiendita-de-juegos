@@ -46,7 +46,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <div className="p-4 pb-0">
             <GoBack />
           </div>
-          <div className="flex flex-col p-5 pt-6 sm:flex-row">
+          <div className="flex flex-col p-0 py-6 sm:flex-row">
             <div className="w-full md:w-2/3">
               <SRLWrapper options={options}>
                 {post.imagenDestacada ? (
@@ -67,10 +67,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 {post.GameGallery && (
                   <div className="w-full text-center ">
                     <div className="w-full px-0 pt-6 m-auto md:py-0">
-                      <div className="grid grid-cols-3 gap-2">
+                      <div className="grid grid-cols-2 gap-2">
                         {post.GameGallery.map((item, i) => (
                           <div
-                            className="relative h-24 max-w-xl m-0 overflow-hidden transition-all duration-200 transform shadow-md link hover:opacity-75 "
+                            className="relative max-w-xl m-0 overflow-hidden transition-all duration-200 transform shadow-md h-28 link hover:opacity-75 "
                             key={item.id}
                           >
                             <RiZoomInLine className="absolute top-0 right-0 z-30 m-2 text-xl text-gray-400" />
@@ -94,18 +94,18 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </h1>
 
               {post.stock && (
-                <div className="relative flex items-center justify-start m-1 my-2 font-sans text-lg font-bold text-left text-gray-700 transition-all duration-500">
-                  <CgSandClock className="mr-1 " />
+                <div className="relative flex items-baseline justify-start m-1 my-2 font-mono text-xl font-bold tracking-wider text-left text-blue-500 transition-all duration-500">
+                  <CgSandClock className="relative mr-1 top-1 " />
                   <span className="block">Por encargo</span>
                 </div>
               )}
-              <div className="flex flex-col items-start justify-start">
+              <div className="flex flex-col items-start justify-start px-3 md:px-0">
                 {post.publisher && (
                   <Link
                     to={`/tienda-de-juegos/editoriales/${kebabCase(
                       post.publisher.slug
                     )}`}
-                    className="flex flex-col py-1 mr-2 font-sans text-indigo-500 underline hover:text-indigo-800"
+                    className="flex flex-col py-1 mr-2 font-sans font-bold text-green-500 underline hover:text-indigo-800"
                     key={post.publisher.slug}
                   >
                     Editorial {post.publisher.title}
@@ -187,7 +187,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
               <main>
                 <article
-                  className="w-full my-6 prose prose-xl text-left "
+                  className="w-full px-3 my-6 prose prose-xl text-left md:px-0 "
                   id={post.slug}
                 >
                   {post.textoPrincipal && (
@@ -197,7 +197,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </main>
             </div>
           </div>
-          <div className="mx-auto font-sans border-t border-gray-300 max-w-7xl ">
+          <div className="py-6 mx-auto font-sans border-t border-gray-300 max-w-7xl ">
             <nav className="flex justify-between">
               <div className="flex-1 py-6 text-center border-r border-gray-300 hover:bg-green-100">
                 {prev && (

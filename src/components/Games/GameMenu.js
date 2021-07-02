@@ -20,14 +20,14 @@ const GamesAside = () => {
       <div className="absolute right-0 z-0 flex w-full max-w-lg mx-auto -translate-y-4 -top-40">
         <div id="ogam" style={{ width: 140, height: 130 }} />
       </div>
-      <Link
+      {/* <Link
         activeClassName="opacity-100  border-white active"
         className="flex items-center justify-between w-full pr-3 m-0 font-mono text-left opacity-100 searcher-go md:text-base hover:opacity-80"
         to="/buscador"
       >
         <span className="text-base">Ir al buscador</span>
         <FcSearch className="ml-1 text-xl" />
-      </Link>
+      </Link> */}
       <h2 className="text-blue-500">Colecciones</h2>
       <QueryCollections className="relative z-10" />
       <h2 className="text-green-500">Editoriales</h2>

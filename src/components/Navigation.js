@@ -10,13 +10,15 @@ const routes = [
   {
     title: "Tienda de juegos",
     active: "text-green-500",
-    slug: "/tienda-de-juegos/",
+    slug: "/tienda-de-juegos/encontrador",
   },
+  /*  
   {
     title: "Buscador",
     active: "text-blue-500",
     slug: "/buscador",
   },
+  */
   {
     title: "Colecciones",
     active: "text-pink-500",

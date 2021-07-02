@@ -17,7 +17,7 @@ const routesLeft = [
 
   {
     title: "Tienda de juegos",
-    slug: "/tienda-de-juegos",
+    slug: "/tienda-de-juegos/encontrador",
     icon: <FcShop className="mr-1 text-2xl" />,
   },
 

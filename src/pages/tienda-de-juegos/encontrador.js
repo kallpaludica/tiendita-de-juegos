@@ -68,6 +68,7 @@ const EncontrarComponent = () => {
             <div className="relative w-full">
               <SearchBox
                 className="w-full mx-auto"
+                showLoadingIndicator 
                 translations={{
                   submitTitle: "Iniciar búsqueda",
                   resetTitle: "Reiniciar búsqueda",
@@ -92,40 +93,46 @@ const EncontrarComponent = () => {
                 />
               </div>
             </div>
-            <div className="grid w-full grid-cols-2 gap-2 space-x-2">
-              <HitsPerPage
-                defaultRefinement={10}
-                items={[
-                  { value: 2, label: "Mostrando de a 2" },
-                  { value: 10, label: "Mostrando de a 10" },
-                  { value: 20, label: "Mostrando de a 20" },
-                  { value: 30, label: "Mostrando de a 30" },
-                  { value: 50, label: "Mostrando de a 50" },
-                  { value: 100, label: "Mostrando de a 100" },
-                ]}
-              />
-              <SortBy
-                defaultRefinement="juegos"
-                items={[
-                  { value: "juegos", label: "Ordenado A-Z" },
-                  {
-                    value: "juegos_precio_asc",
-                    label: "< Precio más bajo",
-                  },
-                  {
-                    value: "juegos_precio_desc",
-                    label: "> Precio más alto",
-                  },
-                  {
-                    value: "juegos_edades_asc",
-                    label: "< Edades más chiques",
-                  },
-                  {
-                    value: "juegos_edades_desc",
-                    label: "> Edades más grandes",
-                  },
-                ]}
-              />
+            <div className="grid items-center justify-end w-full grid-cols-2 gap-2 space-x-2 md:w-auto md:flex">
+              <div className="flex items-center justify-end w-full md:w-auto">
+                <div className="w-full md:w-44">
+                  <HitsPerPage
+                    defaultRefinement={10}
+                    items={[
+                      { value: 2, label: "Mostrar 2 " },
+                      { value: 10, label: "Mostrar 10 " },
+                      { value: 20, label: "Mostrar 20 " },
+                      { value: 30, label: "Mostrar 30 " },
+                      { value: 50, label: "Mostrar 50 " },
+                      { value: 100, label: "Mostrar 100 " },
+                    ]}
+                  />
+                </div>
+              </div>
+              <div className="w-full md:w-64">
+                <SortBy
+                  defaultRefinement="juegos"
+                  items={[
+                    { value: "juegos", label: "Ordenado A-Z" },
+                    {
+                      value: "juegos_precio_asc",
+                      label: "< Precio más bajo",
+                    },
+                    {
+                      value: "juegos_precio_desc",
+                      label: "> Precio más alto",
+                    },
+                    {
+                      value: "juegos_edades_asc",
+                      label: "< Edades más chiques",
+                    },
+                    {
+                      value: "juegos_edades_desc",
+                      label: "> Edades más grandes",
+                    },
+                  ]}
+                />
+              </div>
             </div>
             <div className="hidden">
               <button

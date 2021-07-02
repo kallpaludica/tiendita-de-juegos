@@ -31,7 +31,7 @@ const EncontrarPostPreview = ({ hit }) => {
           className="inline-flex items-baseline justify-between font-serif font-bold text-gray-800 duration-700 border-2 border-white border-dashed outline-none md:text-2xl hover:text-indigo-700 hover:underline focus:border-green-500 focus:px-2"
         >
           <Highlight hit={hit} attribute="title" tagName="mark" />
-          <small className="hidden ml-3 text-base text-gray-700 ">
+          <small className="relative hidden w-full ml-3 text-sm text-right text-gray-700 md:block md:absolute top-2 right-2">
             <Highlight hit={hit} attribute="publisher.title" tagName="mark" />
           </small>
         </Link>
@@ -42,17 +42,18 @@ const EncontrarPostPreview = ({ hit }) => {
             </>
           )}
           {hit.stock ? (
-            <small className="inline-block ml-3 text-xl text-blue-500 opacity-80">
+            <small className="inline-block ml-3 text-xl text-blue-500 w-52 opacity-80">
               Por encargo
             </small>
           ) : (
-            <small className="inline-block ml-3 text-xl text-green-500 opacity-90">
+            <small className="inline-block ml-3 text-xl text-green-500 w-52 opacity-90">
               en Stock
             </small>
           )}
+         
         </div>
-        <div className="flex items-center justify-end w-full md:absolute md:w-auto top-2 right-2 sm:block group">
-          <span className="pr-2 font-sans font-bold duration-300 opacity-0 group-hover:opacity-100">
+        <div className="relative z-10 flex items-center justify-end w-full md:absolute md:w-auto bottom-4 right-2 md:block group">
+          <span className="pr-2 font-sans font-bold text-green-600 duration-300 opacity-0 group-hover:opacity-100">
             Consultar
           </span>
           <AwesomeButtonSocial
@@ -69,9 +70,9 @@ const EncontrarPostPreview = ({ hit }) => {
         <div className="hidden">
           <Highlight hit={hit} attribute="textoPrincipal" tagName="mark" />
         </div>
-        <div className="absolute left-0 right-0 flex justify-around w-full p-3 px-4 space-x-2 bg-white border-t border-gray-200 md:justify-start md:px-3 bottom-1 md:pt-5 meta md:relative md:space-x-4 md:flex-row bg-opacity-95">
+        <div className="absolute left-0 right-0 flex justify-around w-full p-3 px-4 space-x-2 bg-white border-t border-gray-200 md:justify-start md:px-3 bottom-1 md:pt-5 meta md:relative md:space-x-6 md:flex-row bg-opacity-95">
           {hit.GameAges && (
-            <div className="flex items-center font-serif text-sm font-bold text-gray-700 md:w-32 md:text-base">
+            <div className="flex items-center font-serif text-sm font-bold text-gray-700 md:text-base">
               <FcConferenceCall className="block mr-1 text-xl " />
               <span className="pr-1 ">Edad</span>{" "}
               <div>
@@ -80,7 +81,7 @@ const EncontrarPostPreview = ({ hit }) => {
             </div>
           )}
           {hit.GameDuration && (
-            <div className="flex items-center font-serif text-sm font-bold text-gray-700 md:w-40 md:text-base">
+            <div className="flex items-center font-serif text-sm font-bold text-gray-700 md:text-base">
               <FcClock className="block mr-1 text-xl " />
               <Highlight hit={hit} attribute="GameDuration" tagName="mark" />
 

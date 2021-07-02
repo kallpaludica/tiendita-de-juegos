@@ -17,7 +17,7 @@ const ContactPage = () => {
       <HeroWave
         heading="Contacto"
         pattern="bg-green-800 text-green-900"
-        subtitle="¿Tenés una consulta, pregunta o sugerencia? Tenemos canales para contestarlas"
+        subtitle="¿Tenés una consulta, pregunta o sugerencia? Contamos con los canales para contestarlas."
       />
       <Contact />
     </Layout>

@@ -127,7 +127,7 @@ const IndexPage = () => {
             </h1>
           </Fade>
           <Fade bottom delay={100}>
-            <h2 className="pt-6 font-sans text-xl text-center text-indigo-900">
+            <h2 className="pt-6 font-serif text-xl text-center text-indigo-900">
               Fomentamos vínculos saludables, pensados desde el juego y la
               lúdica, donde cada quien pueda desarrollarse desde la diversidad e
               integración como la base de la construcción.
