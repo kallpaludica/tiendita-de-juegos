@@ -93,7 +93,7 @@ const EncontrarComponent = () => {
                 />
               </div>
             </div>
-            <div className="grid items-center justify-end w-full grid-cols-2 gap-2 space-x-2 md:w-auto md:flex">
+            <div className="grid items-center justify-end w-full grid-cols-2 gap-2 md:space-x-2 md:w-auto md:flex">
               <div className="flex items-center justify-end w-full md:w-auto">
                 <div className="w-full md:w-44">
                   <HitsPerPage
@@ -109,7 +109,7 @@ const EncontrarComponent = () => {
                   />
                 </div>
               </div>
-              <div className="w-full md:w-64">
+              <div className="w-full m-0 md:w-64">
                 <SortBy
                   defaultRefinement="juegos"
                   items={[

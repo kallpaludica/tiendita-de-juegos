@@ -52,7 +52,7 @@ const EncontrarPostPreview = ({ hit }) => {
           )}
          
         </div>
-        <div className="relative z-10 flex items-center justify-end w-full md:absolute md:w-auto bottom-4 right-2 md:block group">
+        <div className="relative z-10 hidden w-full md:absolute md:w-auto bottom-4 right-2 md:block group">
           <span className="pr-2 font-sans font-bold text-green-600 duration-300 opacity-0 group-hover:opacity-100">
             Consultar
           </span>
