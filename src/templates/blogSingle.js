@@ -7,43 +7,57 @@ import FormatText from "../components/serializers"
 import React from "react"
 import { FiExternalLink } from "react-icons/fi"
 import ComunidadWidgets from "../components/Comunidad/HomeWidgets"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { SRLWrapper } from "simple-react-lightbox"
+
 const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
   const collection = data.contentfulComunidad
   const { prev, next } = pageContext
   return (
     <Layout location={location}>
       <Seo title={collection.title} />
-      <div className="relative flex items-center justify-center pt-24 pb-4 md:pt-64 bg-gradient-to-br to-blue-700 from-blue-900 ">
-        <div className="flex flex-col w-full mx-auto md:px-24 md:items-end md:justify-between max-w-7xl">
+      <div className="relative flex items-center justify-center pb-32 overflow-hidden py-52 bg-gradient-to-b to-gray-700 from-gray-900">
+        <div className="flex flex-col w-full max-w-4xl mx-auto md:px-24 md:items-end md:justify-between">
           <h1 className="relative z-50 w-full mx-auto font-serif text-3xl font-bold text-center text-white md:text-6xl max-w-7xl">
             {collection.title}
           </h1>
         </div>
+        {collection.imagenPortada && (
+          <div className="absolute inset-0 z-0 w-full min-h-screen opacity-30">
+            <GatsbyImage
+              title={collection.title}
+              alt={collection.title}
+              image={collection.imagenPortada.gatsbyImageData}
+            />
+          </div>
+        )}
       </div>
-      {collection.linkExterno && (
-        <div className="flex flex-col items-center justify-start max-w-2xl pt-6 mx-auto border-b border-blue-200">
-          <div className="flex items-center justify-start max-w-2xl px-3 mx-auto">
+
+      <div
+        className="relative w-full max-w-2xl p-6 mx-auto my-6 prose prose-xl text-left article"
+        id={collection.slug}
+      >
+        {collection.linkExterno && (
+          <div className="relative z-50 flex flex-col items-center justify-center w-full p-3 py-6 mx-auto -mt-64 duration-200 transform -translate-y-8 bg-blue-100 border-2 border-blue-200 rounded-sm shadow-xl hover:bg-blue-50 bg-opacity-95 hover:shadow-2xl">
             <a
               rel="noopener noreferrer"
               href={collection.linkExterno}
               target="_blank"
-              className="inline-flex font-sans text-lg font-bold text-center text-blue-500 no-underline hover:text-blue-800"
+              className="inline-flex items-center space-x-3 font-sans text-2xl font-bold text-center text-blue-800 no-underline hover:text-blue-500 "
             >
-              Link para conocer más
-              <FiExternalLink className="ml-1" />
+              Link al sitio web
+              <FiExternalLink className="ml-1 text-lg" />
             </a>
+            <span className="relative block mt-2 text-sm italic text-gray-900 opacity-90">{collection.linkExterno}</span>
           </div>
-        </div>
-      )}
-      <div
-        className="w-full max-w-6xl p-6 mx-auto my-6 prose prose-xl text-left article"
-        id={collection.slug}
-      >
-        {collection.textoPrincipal && (
-          <FormatText FormatText={collection.textoPrincipal} />
         )}
-      </div>
 
+        <SRLWrapper options={options}>
+          {collection.textoPrincipal && (
+            <FormatText FormatText={collection.textoPrincipal} />
+          )}
+        </SRLWrapper>
+      </div>
       <div>
         <div className="w-full max-w-2xl py-12 m-auto article">
           <div className="justify-between hidden ">
@@ -89,6 +103,17 @@ export const pageQuery = graphql`
       slug
       categoria
       linkExterno
+      imagenPortada {
+        gatsbyImageData(
+          layout: FULL_WIDTH
+          height: 800
+          width: 1800
+          formats: JPG
+          backgroundColor: "#ffffff"
+          jpegProgressive: false
+          placeholder: DOMINANT_COLOR
+        )
+      }
       textoPrincipal {
         raw
         references {
@@ -106,3 +131,51 @@ export const pageQuery = graphql`
     }
   }
 `
+
+const options = {
+  buttons: {
+    iconPadding: "5px",
+    showDownloadButton: false,
+    backgroundColor: "rgba(255, 255, 255, .8)",
+    iconColor: "rgba(0, 0, 0, 0.8)",
+    showNextButton: true,
+    showPrevButton: true,
+  },
+  caption: {
+    captionFontSize: "15px",
+    captionAlignment: "center",
+    captionColor: "#a7825f",
+    captionFontWeight: 300,
+    showCaption: false,
+  },
+  settings: {
+    overlayColor: "rgba(255, 255, 255, .95)",
+    transitionTimingFunction: "ease-in-out",
+    slideTransitionSpeed: 0.6,
+    slideTransitionTimingFunction: [0.25, 0.75, 0.5, 1],
+    slideAnimationType: "fade",
+    slideSpringValues: [300, 200],
+    autoplaySpeed: 4000,
+    disablePanzoom: false,
+    hideControlsAfter: true,
+  },
+  translations: {
+    autoplayText: "Play",
+    closeText: "Cerrar",
+    downloadText: "Descargar",
+    fullscreenText: "Pantalla completa",
+    nextText: "Siguiente",
+    pauseText: "Pausa",
+    previousText: "Anterior",
+    thumbnailsText: "Miniaturas",
+    zoomOutText: "Zoom Out",
+  },
+  progressBar: {
+    height: "4px",
+    fillColor: "rgb(0, 0, 0)",
+    backgroundColor: "rgba(255, 255, 255, 1)",
+  },
+  thumbnails: {
+    showThumbnails: true,
+  },
+}

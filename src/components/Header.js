@@ -7,13 +7,13 @@ import KallpaLogo from "../assets/logo.svg"
 import "./header.css"
 
 const routesLeft = [
-  /*
+  
   {
     title: "Comunidad",
     slug: "/comunidad",
     icon: <FcGlobe className="mr-1 text-2xl" />,
   },
-  */
+  
 
   {
     title: "Tienda de juegos",
@@ -41,7 +41,7 @@ const Header = ({ siteTitle }) => (
   <Headroom disableInlineStyles>
     <header className="header-container">
       <div className="relative flex items-center justify-between w-full max-w-full px-0 mx-auto 2xl:max-w-7xl md:pb-1 sm:pr-6 md:pr-0">
-        <div className=" logo-container">
+        <div className="logo-container">
           <Link to="/" className="flex items-center mr-12">
             <KallpaLogo className="w-16 h-16 mr-3 kallpa-logo" />
             <span className="font-mono text-2xl leading-5 duration-700 md:leading-7 md:text-3xl">

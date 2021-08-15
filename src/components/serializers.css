@@ -14,7 +14,7 @@
 .article.prose h4,
 .article.prose h5,
 .article.prose h6 {
-  @apply max-w-2xl mx-auto;
+  @apply max-w-2xl mx-auto font-serif;
 }
 
 .article.prose ol,

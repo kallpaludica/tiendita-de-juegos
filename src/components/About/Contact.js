@@ -44,7 +44,7 @@ const ContactComponent = () => {
       {/* <h1 className="max-w-6xl mx-auto mt-6 font-serif text-3xl font-bold text-green-600">
         {data.contactanos.title}
       </h1> */}
-      <div className="flex flex-col justify-center max-w-5xl pb-6 mx-auto mt-6 text-center md:flex-row">
+      <div className="flex flex-col justify-center max-w-5xl pb-24 mx-auto mt-6 text-center md:flex-row">
         <a
           className="flex flex-col items-center justify-center w-full max-w-sm p-2 mx-auto mb-3 text-center text-green-500 transition-all duration-500 ease-in-out transform bg-white rounded-md md:mx-3 hover:shadow-md hover:-translate-y-2 hover:text-green-600"
           target="_blank"

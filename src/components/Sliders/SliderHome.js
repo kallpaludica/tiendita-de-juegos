@@ -78,7 +78,7 @@ const SliderHomeAboutComponent = (props) => {
       {data.backgrounds.edges.map(({ node }) => {
         return (
           <Carousel
-            defaultWait={50000000}
+            defaultWait={3000}
             maxTurns={100} /*wait for 1000 milliseconds*/
           >
             {node.images.map((item, i) => (

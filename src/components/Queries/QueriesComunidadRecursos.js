@@ -7,7 +7,7 @@ import * as containerStyles from "./ResoursesCard.module.css"
 const QueryComunidadRecursosComponent = () => {
   const data = useStaticQuery(graphql`
     query QueryComunidadRecursosQuery {
-      collections: allContentfulRecursos(sort: {fields: updatedAt, order: ASC}) {
+      collections: allContentfulRecursos(sort: {fields: updatedAt, order: DESC}) {
         edges {
           node {
             id

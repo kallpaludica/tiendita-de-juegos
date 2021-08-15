@@ -17,10 +17,10 @@ const AboutAboutComponent = () => {
 
   return (
     <>
-      <h1 className="max-w-6xl pb-3 mx-auto font-sans text-4xl text-indigo-600 ">
+      <h1 className="max-w-6xl pb-3 mx-auto font-serif text-4xl font-bold text-gary-800 ">
         {data.about.title}
       </h1>
-      <div className="max-w-3xl mx-auto mt-3 font-sans prose prose-xl text-center text-gray-800">
+      <div className="max-w-3xl mx-auto mt-3 font-serif prose prose-xl text-center text-gray-800">
         {data.about.textoPrincipal && (
           <FormatText FormatText={data.about.textoPrincipal} />
         )}

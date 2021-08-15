@@ -16,7 +16,7 @@ const HomeWidgets = ({ children }) => {
               Recursos lúdicos
             </h2>
             <p className="font-serif text-gray-800">
-              Para jugar y descargar <br /> al alcance de un click.
+              Para jugar al <br /> alcance de la mano.
             </p>
           </div>
           <FcEngineering className="text-6xl" />

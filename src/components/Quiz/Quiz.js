@@ -17,15 +17,14 @@ const Quiz = ({
       <div className="relative z-50 overflow-hidden bg-white shadow-2xl rounded-xl questions">
         <header className="left-0 right-0 z-50 flex justify-between p-4 font-mono bg-yellow-100">
           <div className="space-x-1 text-lg question-count">
-            <div className="question-number">{step}</div>
-            <div className="description">
-              / <span>{totalQuestions}</span>
+            <div className="question-number ">Pregunta {step}</div>
+            <div className="description opacity-80">
+              de <span>{totalQuestions}</span>
             </div>
           </div>
           <div className="flex items-center justify-center space-x-1 font-mono text-2xl score-container">
-            <div className="score">{score} x</div>
-            <div className=" description">
-              <FcRating />
+            <div className="score">
+              {score} <small className="opacity-80">/ 50</small>
             </div>
           </div>
         </header>

@@ -91,7 +91,7 @@ const Card = ({ card }) => (
           className="border-t border-green-200 "
         >
           <div className="flex items-center justify-between p-2 px-2 font-serif text-lg font-bold text-left text-green-600 transition-all duration-500 bg-white hover:text-green-500 hover:bg-green-100">
-            <span>Ver mas</span>
+            <span>Ver más</span>
             <AiFillCheckCircle className="hidden mb-1 " />
             <b className="block font-bold text-green-800 ">
               ${card.GameBuyPrice}

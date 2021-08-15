@@ -37,16 +37,29 @@
 }
 
 :global(.widgets) .gridContainer {
-  @apply grid w-full grid-cols-1 px-0 md:grid-cols-2 lg:grid-cols-1 ;
+  @apply grid w-full grid-cols-1 px-0 md:grid-cols-2 lg:grid-cols-3 ;
 }
 
 :global(.widgets) .item {
-  @apply h-32;
+  @apply h-32 bg-gradient-to-br from-blue-400 to-blue-800;
+}
+
+:global(.widgets) .item:hover .image {
+  @apply scale-110 opacity-30;
 }
 
 :global(.widgets) .image {
-  @apply opacity-80;
+  @apply duration-300 transform opacity-20;
 }
+
+:global(.widgets) .content {
+  @apply justify-start opacity-80 hover:opacity-100;
+}
+
+:global(.widgets)  .title {
+  @apply relative z-50 text-lg opacity-100; 
+}
+
 
 :global(.widgets) .button {
   @apply bottom-0 top-auto bg-blue-600 rounded-tl-lg ;

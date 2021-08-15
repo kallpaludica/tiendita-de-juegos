@@ -1,16 +1,15 @@
 import React from "react"
-import algoliasearch from "algoliasearch"
 import {
   NumericMenu,
   ToggleRefinement,
   ClearRefinements,
-  SearchBox,
+  // SearchBox,
   Stats,
   RefinementList,
 } from "react-instantsearch-dom"
-
 import { Disclosure, Transition } from "@headlessui/react"
 import { FiChevronDown } from "react-icons/fi"
+// import algoliasearch from "algoliasearch"
 
 const EncontrarComponent = () => {
   return (
@@ -34,7 +33,6 @@ const EncontrarComponent = () => {
           }}
         />
       </div>
-
       <Disclosure>
         {({ open }) => (
           <>

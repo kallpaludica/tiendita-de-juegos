@@ -12,6 +12,7 @@ import ComunidadProyectos from "../components/Queries/QueriesComunidadProyectosL
 import ComunidadRecursos from "../components/Queries/QueriesRecursosLast"
 import World from "../assets/connected_world.svg"
 import ComunidadWidgets from "../components/Comunidad/HomeWidgets"
+// import QuizApp from "../components/Quiz/QuizApp"
 
 const ComunidadPage = () => {
   return (
@@ -64,7 +65,7 @@ const ComunidadPage = () => {
         <div className="px-2 mx-auto my-3 max-w-7xl">
           <div className="flex flex-col items-center justify-center py-12 space-y-3">
             <FcIdea className="text-6xl" />
-            <h2 className="mb-6 font-mono text-4xl font-bold text-left text-yellow-600">
+            <h2 className="mb-6 font-mono text-4xl font-bold text-center text-yellow-600">
               Proyectos que nos potencian
             </h2>
           </div>
@@ -102,6 +103,13 @@ const ComunidadPage = () => {
           </div>
         </div>
       </div>
+      {/* <div className="text-indigo-700 bg-indigo-800 pattern-grid-lg ">
+        <div className="relative flex flex-col items-center justify-start py-12 md:py-24 from-indigo-700 via-indigo-800 to-transparent bg-gradient-to-b ">
+          <div className="relative w-full max-w-md p-3 mx-auto mt-6 overflow-hidden text-indigo-900 bg-indigo-800 pattern-checks-md rounded-xl">
+            <QuizApp totalQuestions={5} />
+          </div>
+        </div>
+      </div> */}
       <Contact />
     </Layout>
   )

@@ -7,7 +7,10 @@ import * as containerStyles from "./ResoursesCard.module.css"
 const QueryCRecursosLastComponent = () => {
   const data = useStaticQuery(graphql`
     query QueryRecursosLastQuery {
-      collections: allContentfulRecursos(limit: 6) {
+      collections: allContentfulRecursos(
+        limit: 9
+        sort: { order: DESC, fields: updatedAt }
+      ) {
         edges {
           node {
             id
@@ -39,7 +42,10 @@ const QueryCRecursosLastComponent = () => {
       {data.collections.edges.map(({ node }) => {
         return (
           <div key={node.id} className={containerStyles.item}>
-            <Link to={`/recursos/${kebabCase(node.slug)}/`} className={containerStyles.imageContainer}>
+            <Link
+              to={`/recursos/${kebabCase(node.slug)}/`}
+              className={containerStyles.imageContainer}
+            >
               <GatsbyImage
                 title={node.title}
                 className={containerStyles.image}

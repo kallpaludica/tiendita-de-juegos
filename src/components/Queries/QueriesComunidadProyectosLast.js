@@ -10,7 +10,7 @@ const QueryComunidadProyectosLastComponent = () => {
       collections: allContentfulComunidad(
         filter: { categoria: { eq: "Proyectos que nos potencian" } }
         limit: 4
-        sort: {fields: title, order: DESC}
+        sort: {fields: updatedAt, order: DESC}
       ) {
         edges {
           node {

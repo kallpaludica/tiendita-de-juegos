@@ -25,7 +25,7 @@ const Footer = ({ children }) => {
             </div>
             <div className="w-full">
               <div className="grid w-full gap-3 mx-auto mt-12 font-serif text-lg text-left text-gray-800 md:grid-cols-2 md:mt-3 lg:grid-cols-3">
-                <div className="flex flex-col mt-6 mb-3 space-y-1 md:mt-0">
+                <div className="flex flex-col mt-6 mb-3 space-y-2 md:mt-0">
                   <span className="block mb-3 font-sans text-sm font-bold text-gray-800 uppercase">
                     Tiendita de juegos
                   </span>
@@ -36,7 +36,7 @@ const Footer = ({ children }) => {
                   <Link className="hover:underline" to="/tienda-de-juegos/editoriales/">Editoriales</Link>
                   <Link className="hover:underline" to="/tienda-de-juegos/colecciones/">Colecciones</Link>
                 </div>
-                <div className="flex-col hidden mt-6 mb-3 space-y-1 md:mt-0">
+                <div className="flex flex-col mt-6 mb-3 space-y-2 md:mt-0">
                   <span className="block mb-3 font-sans text-sm font-bold text-gray-800 uppercase">
                     Comunidad
                   </span>
@@ -46,8 +46,9 @@ const Footer = ({ children }) => {
                   </Link>
                   <Link className="hover:underline" to="/comunidad/recursos/">Recursos lúdicos</Link>
                   <Link className="hover:underline" to="/comunidad/notas/">Notas</Link>
+                  {/* <Link className="hover:underline" to="/comunidad/quiz/">Quiz</Link> */}
                 </div>
-                <div className="flex flex-col mt-6 mb-3 space-y-1 md:mt-0">
+                <div className="flex flex-col mt-6 mb-3 space-y-2 md:mt-0">
                   <span className="block mb-3 font-sans text-sm font-bold text-gray-800 uppercase">
                     Contacto
                   </span>
@@ -55,7 +56,7 @@ const Footer = ({ children }) => {
                   <div className="select-all">kallpaludica@gmail.com</div>
                   <Link className="hover:underline" to="/quienes-somos">Quienes somos</Link>
                   <Link className="hidden hover:underline" to="/showroom">Showroom</Link>
-                  <Link className="hidden hover:underline" to="/preguntas-frecuentes">Preguntas Frecuentes</Link>
+                  <Link className="hover:underline" to="/preguntas-frecuentes">Preguntas Frecuentes</Link>
                 </div>
               </div>
             </div>

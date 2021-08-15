@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
-import { GatsbyImage } from "gatsby-plugin-image"
+// import { GatsbyImage } from "gatsby-plugin-image"
 import { Highlight } from "react-instantsearch-dom"
 import FormatText from "../components/serializers"
 import { FcClock, FcConferenceCall, FcCollaboration } from "react-icons/fc"
@@ -19,7 +19,6 @@ const EncontrarPostPreview = ({ hit }) => {
           <img
             className={containerStyles.image}
             alt={hit.title}
-            className="object-cover h-full"
             src={`https:${hit.imagenDestacada.file.url}?w=220&h=220&fm=png&q=80`}
           />
         </Link>

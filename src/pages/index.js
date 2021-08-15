@@ -1,4 +1,4 @@
-import { navigate  } from "gatsby"
+import { navigate } from "gatsby"
 import lottie from "lottie-web"
 import React, { useEffect } from "react"
 import Fade from "react-reveal/Fade"
@@ -10,6 +10,7 @@ import { FiChevronRight } from "react-icons/fi"
 import Layout from "../components/layout"
 import Contact from "../components/About/Contact"
 import HomeHero from "../components/About/HomeHero"
+import HomeComunidad from "../components/Comunidad/HeroComunidad"
 import Collections from "../components/Sliders/SliderHomeCollection"
 import QueriesLastGames from "../components/Queries/QueriesLastGames"
 import Seo from "../components/seo"
@@ -98,11 +99,17 @@ const IndexPage = () => {
         <QueriesLastGames />
       </section>
 
-      <section className="pt-12 text-blue-300 bg-fixed bg-indigo-100 bg-gradient-to-br from-blue-200 via-yellow-200 pattern-grid-lg">
+      <section>
+        <HomeComunidad />
+      </section>
+
+      <section className="pt-12 text-blue-200 bg-fixed bg-indigo-100 bg-gradient-to-br from-blue-200 via-yellow-200 pattern-grid-lg">
         <Fade bottom delay={100}>
           <div className="flex flex-col items-center ">
             <FcFlowChart className="mt-6 text-6xl transform " />
-            <h3 className="mb-6 font-mono text-2xl leading-tight text-center text-blue-500 md:text-4xl">Colecciones para empezar</h3>
+            <h3 className="mb-6 font-mono text-2xl leading-tight text-center text-blue-500 md:text-4xl">
+              Colecciones para empezar
+            </h3>
           </div>
         </Fade>
         <Collections arrows={true} />
@@ -149,8 +156,12 @@ const IndexPage = () => {
         {/* <AboutSlider/> */}
       </section>
 
+      
+
       <section className="relative pt-12">
-        <h2 className="pt-12 mb-6 font-mono text-4xl text-gray-800">Contáctanos</h2>
+        <h2 className="pt-12 mb-6 font-mono text-4xl text-gray-800">
+          Contáctanos
+        </h2>
         <Contact />
       </section>
     </Layout>

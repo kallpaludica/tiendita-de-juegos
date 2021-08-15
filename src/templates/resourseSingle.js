@@ -25,12 +25,14 @@ const RecursosSingleTemplate = ({ data, pageContext, location }) => {
   return (
     <Layout location={location}>
       <Seo title={collection.title} />
-      <div className="relative z-50 pt-6 pb-24 mx-auto mt-20 bg-white max-w-7xl">
-        <div className="grid gap-2 lg:grid-cols-6">
-          <div className="lg:col-span-4">
-            <h1 className="relative z-50 w-full pt-6 mx-auto font-serif text-3xl font-bold text-center text-gray-900">
-              {collection.title}
-            </h1>
+      <div className="py-24 text-green-600 bg-green-700 pt-52 pattern-grid-lg">
+        <h1 className="relative z-50 w-full mx-auto font-serif text-6xl font-bold text-center text-green-100">
+          {collection.title}
+        </h1>
+      </div>
+      <div className="relative z-50 pb-24 mx-auto bg-white max-w-7xl">
+        <div className="">
+          <div className="">
             <div className="flex flex-col items-center justify-between mx-auto md:flex-row">
               {collection.linkExterno && (
                 <div className="flex items-center justify-start px-3 mx-auto">
@@ -82,19 +84,19 @@ const RecursosSingleTemplate = ({ data, pageContext, location }) => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col w-full px-4 lg:col-span-2 widgets">
+          <div className="flex flex-col w-full px-4 mt-24 border-t border-gray-200 widgets">
             <div className="flex items-center justify-between w-full mt-6 mb-6 font-serif font-bold">
-              <Link
-                to={`/comunidad/recursos`}
-                className="text-lg text-gray-700 border-b "
-              >
-                ← Más recursos
-              </Link>
               <Link
                 to={`/comunidad/`}
                 className="font-serif text-lg text-gray-800 border-b"
               >
-                Volver a comunidad →
+                ← Volver a comunidad
+              </Link>
+              <Link
+                to={`/comunidad/recursos`}
+                className="text-lg text-gray-700 border-b "
+              >
+                Más recursos →
               </Link>
             </div>
             <ComunidadRecursos />

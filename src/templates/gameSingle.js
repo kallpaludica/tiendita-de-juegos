@@ -6,7 +6,6 @@ import { AwesomeButtonSocial } from "react-awesome-button"
 import { Helmet } from "react-helmet"
 import { FcClock, FcConferenceCall, FcCollaboration } from "react-icons/fc"
 import { SRLWrapper } from "simple-react-lightbox"
-import GameSort from "../components/Games/GameSort"
 import Layout from "../components/layout"
 import OpenGallery from "../components/OpenGallery"
 import QueriesLastGames from "../components/Queries/QueriesLastGames"
@@ -228,12 +227,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </div>
         </div>
         <div className="relative flex flex-col items-center w-full px-2 pb-1 mx-auto mt-12 max-w-7xl ">
-          <h1 className="w-full pt-3 pb-3 mx-auto font-mono text-3xl text-left text-yellow-500 max-w-7xl ">
+          <h1 className="w-full pt-3 pb-3 mx-auto font-mono text-3xl text-center text-yellow-500 max-w-7xl ">
             Lo que se anda jugando
           </h1>
-          <div className="w-full mx-auto mt-0">
-            <GameSort />
-          </div>
         </div>
         <QueriesLastGames />
       </div>
