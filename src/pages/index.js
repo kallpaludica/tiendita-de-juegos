@@ -96,15 +96,24 @@ const IndexPage = () => {
             Lo que se anda jugando
           </h1>
         </div>
+        <div className="flex flex-col justify-start mt-5">
+          <div className="mr-3 ">
+            <AwesomeButton
+              action={() => {
+                navigate(`/tienda-de-juegos/encontrador`)
+              }}
+              type="primary"
+            >
+              Ver todos los Juegos
+            </AwesomeButton>
+          </div>
+        </div>
         <div className="w-full mb-4">
-          <div className="w-64 h-1 py-0 mx-auto my-0 border-t-4 border-yellow-400 opacity-25"></div>
+          <div className="w-64 h-1 py-0 mx-auto my-0 border-t border-yellow-400 opacity-25"></div>
         </div>
         <QueriesLastGames />
       </section>
 
-
-
-      
       <section className="relative px-6 py-32 mt-0 overflow-hidden text-yellow-200 bg-fixed bg-yellow-100 pattern-grid-lg">
         <Fade delay={100}>
           <div className="flex justify-center max-w-lg mx-auto">
@@ -158,8 +167,6 @@ const IndexPage = () => {
         </Fade>
         <Collections arrows={true} />
       </section>
-
-      
 
       <section className="relative pt-12">
         <h2 className="pt-12 mb-6 font-mono text-4xl text-gray-800">
