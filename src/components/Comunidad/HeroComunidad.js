@@ -11,8 +11,8 @@ const HeroComunidad = ({ children }) => {
   return (
     <>
       <div className="relative text-green-900 bg-fixed bg-white pattern-grid-lg">
-        <div className="relative px-2 py-12 pb-12 bg-white">
-          <div className="grid max-w-4xl grid-cols-1 gap-3 px-3 py-24 pb-6 mx-auto">
+        <div className="relative px-2 pb-12 bg-white">
+          <div className="grid max-w-4xl grid-cols-1 gap-3 px-3 py-6 pb-6 mx-auto">
             <div className="relative z-50 flex flex-col items-center justify-center text-center">
               <FcGlobe className="mb-1 text-6xl" />
               <h1 className="w-full font-mono text-4xl text-blue-600 md:text-6xl">
