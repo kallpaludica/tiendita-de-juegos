@@ -4,11 +4,12 @@ import { kebabCase } from "lodash"
 import { GatsbyImage } from "gatsby-plugin-image"
 import * as containerStyles from "./NewsCard.module.css"
 
-const QueryComunidadNotasComponent = () => {
+const QueryComunidadNotasLastComponent = () => {
   const data = useStaticQuery(graphql`
-    query QueryComunidadNotasQuery {
+    query QueryComunidadNotasLastQuery {
       collections: allContentfulComunidad(
         filter: { categoria: { eq: "Notas" } }
+        limit: 3
         sort: {fields: fechaDePublicacion, order: DESC}
       ) {
         edges {
@@ -86,4 +87,4 @@ const QueryComunidadNotasComponent = () => {
   )
 }
 
-export default QueryComunidadNotasComponent
+export default QueryComunidadNotasLastComponent

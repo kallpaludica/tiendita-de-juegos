@@ -13,10 +13,10 @@ const HomeHeroCompoent = () => {
         <section className="container flex flex-col flex-1 h-full mx-auto">
           <div className="flex flex-col flex-1 w-full h-full px-3 mx-auto max-w-7xl">
             <div className="flex items-start flex-1 pb-2">
-              <div className="flex items-center flex-1 max-w-xl py-8 font-mono">
+              <div className="flex items-center flex-1 max-w-4xl py-8 font-mono">
                 <div className="col-span-2 text-left">
                   <h1 className="text-3xl leading-9 text-left text-white md:text-4xl">
-                    Tienda de juegos{" "}
+                    Comunidad de juegos{" "}
                     <TextLoop interval={3000} fade={true}>
                       <Link
                         to={`/tienda-de-juegos/colecciones/familiares`}

@@ -86,6 +86,9 @@ const IndexPage = () => {
           </div>
         </div>
       </div>
+      <section>
+        <HomeComunidad />
+      </section>
       <section className="px-2">
         <div className="relative flex flex-col w-full max-w-6xl pt-2 pb-6 mx-auto md:flex-row">
           <h1 className="flex flex-col items-center w-full max-w-6xl pt-4 mx-auto font-mono text-2xl leading-tight text-center text-yellow-500 md:text-4xl">
@@ -99,21 +102,9 @@ const IndexPage = () => {
         <QueriesLastGames />
       </section>
 
-      <section>
-        <HomeComunidad />
-      </section>
 
-      <section className="pt-12 text-blue-200 bg-fixed bg-indigo-100 bg-gradient-to-br from-blue-200 via-yellow-200 pattern-grid-lg">
-        <Fade bottom delay={100}>
-          <div className="flex flex-col items-center ">
-            <FcFlowChart className="mt-6 text-6xl transform " />
-            <h3 className="mb-6 font-mono text-2xl leading-tight text-center text-blue-500 md:text-4xl">
-              Colecciones para empezar
-            </h3>
-          </div>
-        </Fade>
-        <Collections arrows={true} />
-      </section>
+
+      
       <section className="relative px-6 py-32 mt-0 overflow-hidden text-yellow-200 bg-fixed bg-yellow-100 pattern-grid-lg">
         <Fade delay={100}>
           <div className="flex justify-center max-w-lg mx-auto">
@@ -154,6 +145,18 @@ const IndexPage = () => {
           </AwesomeButton>
         </Fade>
         {/* <AboutSlider/> */}
+      </section>
+
+      <section className="pt-12 text-blue-200 bg-fixed bg-indigo-100 bg-gradient-to-br from-blue-200 via-yellow-200 pattern-grid-lg">
+        <Fade bottom delay={100}>
+          <div className="flex flex-col items-center ">
+            <FcFlowChart className="mt-6 text-6xl transform " />
+            <h3 className="mb-6 font-mono text-2xl leading-tight text-center text-blue-500 md:text-4xl">
+              Colecciones para empezar
+            </h3>
+          </div>
+        </Fade>
+        <Collections arrows={true} />
       </section>
 
       
