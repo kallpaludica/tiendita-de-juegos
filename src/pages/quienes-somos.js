@@ -168,7 +168,7 @@ const AboutPage = () => {
         id="mision"
       >
         <div className="relative z-10 px-2 ">
-          <div className="items-center justify-center max-w-6xl pb-6 mx-auto ">
+          <div className="flex items-center justify-center max-w-6xl pb-6 mx-auto ">
             <KallpaLogo className="w-32 h-32 kallpa-logo " />
           </div>
           <Mision />
