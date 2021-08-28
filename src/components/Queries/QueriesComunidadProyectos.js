@@ -8,7 +8,8 @@ const QueryComunidadProyectosComponent = () => {
   const data = useStaticQuery(graphql`
     query QueryComunidadProyectosQuery {
       collections: allContentfulComunidad(
-        filter: { categoria: { eq: "Proyectos que nos potencian" } }
+        filter: {categoria: {eq: "Proyectos que nos potencian"}}
+        sort: {order: DESC, fields: createdAt}
       ) {
         edges {
           node {
@@ -45,7 +46,10 @@ const QueryComunidadProyectosComponent = () => {
       {data.collections.edges.map(({ node }) => {
         return (
           <div key={node.id} className={containerStyles.item}>
-            <Link className={containerStyles.imageContainer} to={`/comunidad/${kebabCase(node.slug)}/`}>
+            <Link
+              className={containerStyles.imageContainer}
+              to={`/comunidad/${kebabCase(node.slug)}/`}
+            >
               <GatsbyImage
                 title={node.title}
                 className={containerStyles.image}

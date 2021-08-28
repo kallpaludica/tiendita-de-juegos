@@ -35,7 +35,6 @@ const options = {
               <Player
                 src={node.data.target.file.url}
                 loop={true}
-                autoPlay
               >
                 <BigPlayButton position="center" />
               </Player>
@@ -44,9 +43,9 @@ const options = {
         } else {
           return (
             <div>
-              <div className="post-image">
+              <div className="duration-200 cursor-pointer post-image hover:opacity-80">
                 <img
-                  className="w-full max-w-2xl mx-auto"
+                  className="relative w-full max-w-2xl mx-auto overflow-hidden rounded-md shadow-sm"
                   alt={node.data.target.title}
                   src={node.data.target.file.url}
                 />

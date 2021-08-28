@@ -9,7 +9,7 @@ const QueryComunidadNotasLastComponent = () => {
     query QueryComunidadNotasLastQuery {
       collections: allContentfulComunidad(
         filter: { categoria: { eq: "Notas" } }
-        limit: 3
+        limit: 2
         sort: {fields: fechaDePublicacion, order: DESC}
       ) {
         edges {

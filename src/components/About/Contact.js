@@ -93,14 +93,14 @@ const ContactComponent = () => {
       </div>
 
       <section
-        className="relative pt-6 pb-24 mb-0 bg-gradient-to-b from-white to-green-300"
+        className="relative pt-6 pb-24 mb-0 bg-gradient-to-b from-white via-green-300 to-green-500"
         id="redes"
       >
         <Fade bottom delay={100}>
-          <div className="relative z-50 hidden py-12 space-y-6 md:space-y-0 md:space-x-3">
+          <div className="relative z-50 flex-col items-center justify-center hidden py-12 space-y-6 md:flex-row md:space-y-0 md:space-x-3">
             <AwesomeButton
               action={() => {
-                navigate(`/showroom`)
+                navigate(`/consulta-virtual`)
               }}
               type="primary"
             >

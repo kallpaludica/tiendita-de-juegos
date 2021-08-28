@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+.safariVideo {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}

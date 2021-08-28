@@ -3,5 +3,5 @@
 }
 
 .icono {
-  @apply relative flex items-center justify-center max-w-md py-6 pt-3 mx-auto overflow-hidden text-center bg-white md:w-full;
+  @apply  flex items-center justify-center p-3 mx-auto overflow-hidden text-center bg-white ;
 }
