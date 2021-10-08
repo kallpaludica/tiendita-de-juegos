@@ -140,7 +140,7 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
 
       <SRLWrapper options={options}>
         <div
-          className="relative w-full max-w-2xl p-6 mx-auto my-6 prose prose-xl text-left article"
+          className="relative w-full max-w-2xl p-6 mx-auto my-6 prose text-left md:prose-xl article"
           id={collection.slug}
         >
           {collection.linkExterno && (
@@ -225,7 +225,7 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
             </div>
           </div>
           {collection.juegosRelacionados && (
-            <div className="grid max-w-4xl grid-cols-3 gap-3 mx-auto text-gray-900">
+            <div className="grid max-w-4xl gap-3 mx-auto text-gray-900 md:grid-cols-3">
               {collection.juegosRelacionados.map((item, i) => (
                 <GameCard card={item} key={item.slug} />
               ))}
