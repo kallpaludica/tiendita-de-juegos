@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import { navigate } from "gatsby"
 import Fade from "react-reveal/Fade"
 import ComunidadWidgets from "./HomeWidgets"

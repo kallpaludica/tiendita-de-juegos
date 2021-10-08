@@ -5,8 +5,8 @@ import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
 import { Player, BigPlayButton } from "video-react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import "./serializers.css"
 import { FiExternalLink } from "react-icons/fi"
+import "./serializers.css"
 
 const Bold = ({ children }) => (
   <span className="font-serif font-bold">{children}</span>

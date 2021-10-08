@@ -9,15 +9,15 @@
 }
 
 .imageContainer {
-  @apply relative w-full col-span-1 overflow-hidden md:h-64;
+  @apply relative w-full col-span-2 overflow-hidden md:h-64;
 }
 
 .image {
-  @apply object-contain w-full h-full md:h-64;
+  @apply object-contain w-full h-64;
 }
 
 .content {
-  @apply relative col-span-3 px-4 mt-2 text-left;
+  @apply relative col-span-2 px-4 mt-6 text-left;
 }
 
 .title {

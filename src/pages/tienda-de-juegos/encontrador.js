@@ -15,12 +15,12 @@ import PostPreview from "../../components/EncontrarComponent"
 import Seo from "../../components/seo"
 import { Helmet } from "react-helmet"
 import Fade from "react-reveal/Fade"
-import "../../styles/algolia.css"
 import { HiViewGrid } from "react-icons/hi"
 import { TiThList } from "react-icons/ti"
 import { useSpring, animated } from "react-spring"
 import SidebarFilters from "../../components/SidebarFilters"
 import AlgoliaSearch from "../../components/Search/AlgoliaCollapseSearch"
+import "../../styles/algolia.css"
 
 const searchClient = algoliasearch(
   "REF3SMUMO1",

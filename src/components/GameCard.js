@@ -7,7 +7,6 @@ import Toggle from "./GameCardToggle"
 import { CgSandClock } from "react-icons/cg"
 import { AiFillCheckCircle } from "react-icons/ai"
 //import ProductModal from "./modal/ProductModal"
-import ReactTooltip from "react-tooltip"
 import * as containerStyles from "./gamecard.module.css"
 
 const Card = ({ card }) => (
@@ -74,11 +73,10 @@ const Card = ({ card }) => (
               </div>
             </div>
           )}
-          <ReactTooltip place="left" type="dark" effect="solid"/>
           {card.stock && (
             <div
               className="relative top-0 right-0 flex items-center justify-end p-2 px-2 m-1 my-2 font-serif text-sm font-bold text-left text-blue-600 transition-all duration-500 md:absolute md:text-base hover:text-white hover:bg-blue-500 "
-              data-tip="Por encargo"
+              
             >
               <CgSandClock className="mb-1 " />
               <span className="block md:hidden">Por encargo</span>

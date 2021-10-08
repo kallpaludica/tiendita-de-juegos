@@ -7,11 +7,11 @@ import AnimatedWhatsapp from "../animations/whatsapp.json"
 import { BsFillTriangleFill } from "react-icons/bs"
 import SimpleReactLightbox from "simple-react-lightbox"
 // import ReactTooltip from "react-tooltip"
-import "./layout.css"
-import "../styles/pattern.css"
 import Sidebar from "../components/Sidebar"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import "../styles/pattern.css"
+import "./layout.css"
 
 const Layout = ({ location, children }) => {
   const data = useStaticQuery(graphql`

@@ -13,10 +13,11 @@ import Seo from "../components/seo"
 import GoBack from "../components/GoBack"
 import AboutImage from "../images/kallpa-ludica.png"
 import { RiZoomInLine } from "react-icons/ri"
-import FormatText from "../components/serializers"
+import { CgSandClock } from "react-icons/cg"
+import ReactPlayer from "react-player"
 import "../styles/AwsBtn.css"
 import "../styles/VideoReact.css"
-import { CgSandClock } from "react-icons/cg"
+import FormatText from "../components/serializers"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.contentfulArticulos
@@ -192,6 +193,15 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   {post.textoPrincipal && (
                     <FormatText FormatText={post.textoPrincipal} />
                   )}
+
+                  <div className="my-6">
+                    <ReactPlayer
+                      controls="true"
+                      width="100%"
+                      height="400px"
+                      url={post.insertarVideoDeYoutube}
+                    />
+                  </div>
                 </article>
               </main>
             </div>
@@ -250,6 +260,7 @@ export const pageQuery = graphql`
       stock
       GameBuyPrice
       GamePlayers
+      insertarVideoDeYoutube
       GameDuration
       GameAuthor
       GameAges

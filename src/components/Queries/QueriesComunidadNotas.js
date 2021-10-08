@@ -27,9 +27,9 @@ const QueryComunidadNotasComponent = () => {
             fechaDePublicacion(formatString: "LL", locale: "es")
             featuredImg {
               gatsbyImageData(
-                layout: FULL_WIDTH
-                height: 500
-                width: 420
+                layout: CONSTRAINED
+                height: 920
+                width: 1080
                 formats: JPG
                 backgroundColor: "#ffffff"
                 jpegProgressive: false
@@ -74,7 +74,7 @@ const QueryComunidadNotasComponent = () => {
                     key={node.slug}
                     to={`/comunidad/${kebabCase(node.slug)}/`}
                   >
-                    Leer más
+                    Ir a la nota
                   </Link>
                 )}
               </div>

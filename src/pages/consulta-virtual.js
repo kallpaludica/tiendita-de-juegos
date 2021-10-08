@@ -5,10 +5,10 @@ import Seo from "../components/seo"
 import { InlineWidget } from "react-calendly"
 import makeCarousel from "react-reveal/makeCarousel"
 import Fade from "react-reveal/Fade"
-import "../styles/AwsBtn.css"
-import "../styles/VideoReact.css"
 import { navigate } from "gatsby"
 import { AwesomeButton } from "react-awesome-button"
+import "../styles/AwsBtn.css"
+import "../styles/VideoReact.css"
 
 const ConsultaVirtualPage = () => {
   const CarouselUI = ({ children }) => (

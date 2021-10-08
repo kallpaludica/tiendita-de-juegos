@@ -15,7 +15,6 @@ const CollectionsPages = ({ data, pageContext, location }) => {
       <Seo title="Colecciones" />
       <HeroWave
         heading="Colecciones"
-        bread={pageContext.breadcrumb}
         center={true}
         pattern="bg-blue-500 text-blue-600"
       />

@@ -1,16 +1,16 @@
+// import HeroWave from "../components/HeroWave"
+// import { GiTreeBranch } from "react-icons/gi"
+// import { GatsbyImage } from "gatsby-plugin-image"
 import React from "react"
 import { Helmet } from "react-helmet"
 import Contact from "../components/About/Contact"
-// import HeroWave from "../components/HeroWave"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import "../styles/AwsBtn.css"
-import "../styles/VideoReact.css"
 import Fade from "react-reveal/Fade"
 import makeCarousel from "react-reveal/makeCarousel"
-// import { GiTreeBranch } from "react-icons/gi"
-// import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
+import "../styles/AwsBtn.css"
+import "../styles/VideoReact.css"
 
 
 const LinktreePages = () => {
@@ -41,12 +41,6 @@ const LinktreePages = () => {
           <Link to="/tienda-de-juegos/encontrador" className="block w-full py-3 text-lg font-bold text-blue-500 bg-white border-2 rounded-lg shadow-sm cursor-pointer hover:bg-opacity-25 hover:text-white hover:border-white">
             Tiendita de juegos
           </Link>
-          <a className="block w-full py-3 text-lg font-bold text-red-500 bg-white border-2 rounded-lg shadow-sm cursor-pointer hover:bg-opacity-25 hover:text-white hover:border-white">
-            Proyectos Lúdicos
-          </a>
-          <a className="block w-full py-3 text-lg font-bold text-green-500 bg-white border-2 rounded-lg shadow-sm cursor-pointer hover:bg-opacity-25 hover:text-white hover:border-white">
-            Talleres de formación docente
-          </a>
           <Link to="/preguntas-frecuentes" className="block w-full py-3 text-lg font-bold text-yellow-500 bg-white border-2 rounded-lg shadow-sm cursor-pointer hover:bg-opacity-25 hover:text-white hover:border-white">
             Preguntas Frecuentes
           </Link>

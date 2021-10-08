@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import QuestionList from "./QuestionList"
 import "./quiz.css"
-import { FcRating } from "react-icons/fc"
+// import { FcRating } from "react-icons/fc"
 
 const Quiz = ({
   step,

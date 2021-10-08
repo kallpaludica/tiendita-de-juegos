@@ -3,11 +3,11 @@ import { useStaticQuery, graphql, Link, navigate } from "gatsby"
 import makeCarousel from "react-reveal/makeCarousel"
 import Fade from "react-reveal/Fade"
 import { AwesomeButton } from "react-awesome-button"
-import { GatsbyImage } from "gatsby-plugin-image"
+// import { GatsbyImage } from "gatsby-plugin-image"
 import { kebabCase } from "lodash"
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai"
 import { BiRadioCircle, BiRadioCircleMarked } from "react-icons/bi"
-import * as containerStyles from "./SliderHomeCollection.module.css"
+// import * as containerStyles from "./SliderHomeCollection.module.css"
 
 const SliderHomeCollection = (props) => {
   const data = useStaticQuery(graphql`

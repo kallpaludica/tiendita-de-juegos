@@ -1,9 +1,9 @@
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
+import { AwesomeButton } from "react-awesome-button"
 import { kebabCase } from "lodash"
 import Seo from "../components/seo"
-import FormatText from "../components/serializers"
 import React from "react"
 import { FiExternalLink } from "react-icons/fi"
 import ComunidadWidgets from "../components/Comunidad/HomeWidgets"
@@ -14,6 +14,9 @@ import { HiMailOpen, HiMail } from "react-icons/hi"
 import { FcGallery } from "react-icons/fc"
 import AnchorLink from "react-anchor-link-smooth-scroll"
 import ReactTooltip from "react-tooltip"
+import ReactPlayer from "react-player"
+import GameCard from "../components/GameCard"
+import FormatText from "../components/serializers"
 
 const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
   const copyToClipboard = (str) => {
@@ -28,7 +31,6 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
     document.body.removeChild(el)
   }
   const [isCopied, setIsCopied] = React.useState(false)
-
   const collection = data.contentfulComunidad
   const { prev, next } = pageContext
   return (
@@ -156,7 +158,7 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
           )}
 
           {collection.portfolio && (
-            <div className="relative z-50 flex flex-col items-center justify-center w-full p-3 py-6 mx-auto mb-6 duration-200 transform bg-yellow-100 border-2 border-yellow-200 rounded-sm shadow-xl hover:bg-yellow-50 bg-opacity-95 hover:shadow-md">
+            <div className="relative z-50 flex flex-col items-center justify-center w-full p-3 py-6 mx-auto my-3 mb-6 duration-200 transform bg-yellow-100 border-2 border-yellow-200 rounded-sm shadow-xl hover:bg-yellow-50 bg-opacity-95 hover:shadow-md">
               <AnchorLink
                 className="inline-flex items-center space-x-3 font-serif text-xl font-bold text-center text-yellow-800 no-underline hover:text-yellow-500"
                 href="#gallery"
@@ -167,16 +169,26 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
             </div>
           )}
 
+          {collection.insertarVideoDeYoutube && (
+            <div className="my-6">
+              <ReactPlayer
+                controls="true"
+                width="100%"
+                height="400px"
+                url={collection.insertarVideoDeYoutube}
+              />
+            </div>
+          )}
           {collection.textoPrincipal && (
             <FormatText FormatText={collection.textoPrincipal} />
           )}
         </div>
         {collection.portfolio && (
           <div className="pt-24" id="gallery">
-            <h3 className="font-serif text-3xl font-bold text-center">Galería</h3>
-            <div
-              className="grid gap-2 px-6 mx-auto mt-6 md:grid-cols-2 max-w-7xl"
-            >
+            <h3 className="font-serif text-3xl font-bold text-center">
+              Galería
+            </h3>
+            <div className="grid gap-2 px-6 mx-auto mt-6 md:grid-cols-2 max-w-7xl">
               {collection.portfolio.map((item, i) => (
                 <div
                   key={item.id}
@@ -193,6 +205,50 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
           </div>
         )}
       </SRLWrapper>
+
+      {collection.editorial && (
+        <div className="max-w-full p-6 mx-auto mt-20 text-indigo-200 bg-fixed bg-indigo-100 border-t pattern-grid-lg">
+          <div className="max-w-3xl py-12 mx-auto">
+            <div className="relative flex flex-col items-center justify-center w-full overflow-hidden">
+              <AwesomeButton
+                action={() => {
+                  navigate(
+                    `/tienda-de-juegos/editoriales/${kebabCase(
+                      collection.editorial.slug
+                    )}`
+                  )
+                }}
+                type="primary"
+              >
+                Conocé los Juegos de {collection.editorial.title}
+              </AwesomeButton>
+            </div>
+          </div>
+          {collection.juegosRelacionados && (
+            <div className="grid max-w-4xl grid-cols-3 gap-3 mx-auto text-gray-900">
+              {collection.juegosRelacionados.map((item, i) => (
+                <GameCard card={item} key={item.slug} />
+              ))}
+            </div>
+          )}
+          <div className="max-w-2xl px-3 py-6 mx-auto">
+            <Link
+              to={`/tienda-de-juegos/editoriales/${kebabCase(
+                collection.editorial.slug
+              )}`}
+              className="relative flex flex-col items-center justify-center max-w-xs mx-auto overflow-hidden duration-1000 transform rounded-lg shadow-lg -translate-y-0 hover:-translate-y-2 "
+            >
+              <GatsbyImage
+                title={collection.editorial.title}
+                className="object-fill w-full max-w-xs mx-auto bg-white "
+                alt={collection.editorial.title}
+                image={collection.editorial.logo.gatsbyImageData}
+              />
+            </Link>
+          </div>
+        </div>
+      )}
+
       <div>
         <div className="w-full max-w-2xl py-12 m-auto article">
           <div className="justify-between hidden ">
@@ -241,6 +297,29 @@ export const pageQuery = graphql`
         description
       }
       linkExterno
+      insertarVideoDeYoutube
+      juegosRelacionados {
+        title
+        slug
+        GameBuyPrice
+        stock
+        imagenDestacada {
+          gatsbyImageData
+        }
+      }
+      editorial {
+        title
+        slug
+        logo {
+          gatsbyImageData(
+            layout: CONSTRAINED
+            width: 300
+            formats: PNG
+            backgroundColor: "#ffffff"
+            jpegProgressive: false
+          )
+        }
+      }
       imagenPortada {
         gatsbyImageData(
           layout: FULL_WIDTH
@@ -249,7 +328,6 @@ export const pageQuery = graphql`
           formats: JPG
           backgroundColor: "#ffffff"
           jpegProgressive: false
-          placeholder: DOMINANT_COLOR
         )
       }
       portfolio {
@@ -260,7 +338,6 @@ export const pageQuery = graphql`
           formats: JPG
           backgroundColor: "#ffffff"
           jpegProgressive: false
-          placeholder: DOMINANT_COLOR
         )
       }
       socialFacebook
