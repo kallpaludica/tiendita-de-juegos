@@ -25,8 +25,8 @@
   @apply md:line-clamp-3;
 }
 
-.content time {
-  @apply top-0 z-20 py-0 font-serif text-sm font-bold text-gray-500 rounded left-3 md:px-2 md:absolute;
+time {
+  @apply z-20 py-0 font-serif text-sm font-bold text-gray-500 rounded top-2 left-3 md:px-1 md:absolute;
 }
 
 .description {
