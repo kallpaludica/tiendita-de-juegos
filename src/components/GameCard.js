@@ -3,10 +3,10 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { kebabCase } from "lodash"
 import React from "react"
 import AboutImage from "../images/kallpa-ludica.png"
-import Toggle from "./GameCardToggle"
 import { CgSandClock } from "react-icons/cg"
 import { AiFillCheckCircle } from "react-icons/ai"
-//import ProductModal from "./modal/ProductModal"
+// import Toggle from "./GameCardToggle"
+// import ProductModal from "./modal/ProductModal"
 import * as containerStyles from "./gamecard.module.css"
 
 const Card = ({ card }) => (
@@ -93,8 +93,8 @@ const Card = ({ card }) => (
         </Link>
       </div>
     </div>
-    {/*
-    <ProductModal
+    
+    {/* <ProductModal
       title={card.title}
       slug={card.slug}
       stock={card.stock}
@@ -104,7 +104,7 @@ const Card = ({ card }) => (
       duration={card.GameDuration}
       players={card.GamePlayers}
     />
-     */}
+    
     <div className="hidden">
       <Toggle
         title={card.title}
@@ -116,7 +116,7 @@ const Card = ({ card }) => (
         duration={card.GameDuration}
         players={card.GamePlayers}
       />
-    </div>
+    </div> */}
   </div>
 )
 

@@ -30,7 +30,7 @@ function CategoryModal(props) {
     <div>
       <button
         onClick={openModal}
-        className="relative flex items-center justify-center w-full h-full p-2 font-sans text-white duration-1000 transform bg-blue-500 rounded-lg shadow-lg outline-none rounded-bl-2xl rounded-br-2xl hover:shadow-xl hover:-translate-y-1"
+        className="absolute top-0 right-0 z-50 flex justify-center p-2 text-gray-800 duration-500 transform bg-gray-800 border-none rounded-bl-lg bg-opacity-80 focus:outline-none hover:text-blue-500 hover:bg-gray-600"
       >
         <svg
           viewBox="0 0 20 20"
@@ -44,8 +44,8 @@ function CategoryModal(props) {
                                       C15.952,9,16,9.447,16,10z"
           />
         </svg>
-        Previsualizar
       </button>
+
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
@@ -75,8 +75,7 @@ function CategoryModal(props) {
           </svg>
         </button>
         <div className="py-3 text-xl">
-          <h2 className="w-full pb-1 mb-3 font-sans text-lg text-left text-blue-600 border-b border-blue-600">
-            <span className="pr-2">{props.title}</span>
+          <h2 className="w-full pb-1 mb-3 font-serif text-lg text-left text-blue-600 border-b border-blue-600">
             {props.publisher && (
               <div className="flex items-center justify-start ">
                 <Link
@@ -86,7 +85,7 @@ function CategoryModal(props) {
                   className="flex flex-col py-1 mr-2 text-sm opacity-75"
                   key={props.publisher.slug}
                 >
-                  <b className="font-sans text-gray-800 underline hover:text-dblue-600">
+                  <b className="font-serif text-gray-800 underline hover:text-blue-600">
                     Editorial {props.publisher.title}
                   </b>
                 </Link>
@@ -95,7 +94,7 @@ function CategoryModal(props) {
           </h2>
           {props.age && (
             <div className="w-full text-left">
-              <div className="flex justify-center pb-1 font-sans text-lg font-bold text-left text-gray-800 ">
+              <div className="flex justify-center pb-1 font-serif text-lg font-bold text-left text-gray-800 ">
                 <FaUserFriends className="w-6 mx-auto mb-1 text-base text-blue-600" />
                 <div className="flex flex-col flex-1 pl-3">
                   {props.age}+ años
@@ -106,7 +105,7 @@ function CategoryModal(props) {
           )}
           {props.duration && (
             <div className="w-full text-left">
-              <div className="flex justify-center pb-1 font-sans text-lg font-bold text-left text-gray-800 ">
+              <div className="flex justify-center pb-1 font-serif text-lg font-bold text-left text-gray-800 ">
                 <IoMdTime className="w-6 mx-auto mb-1 text-2xl text-blue-600" />
                 <div className="flex flex-col flex-1 pl-3">
                   {props.duration} min.
@@ -118,7 +117,7 @@ function CategoryModal(props) {
 
           {props.players && (
             <div className="w-full text-left">
-              <div className="flex justify-center pb-1 font-sans text-lg font-bold text-left text-gray-800 ">
+              <div className="flex justify-center pb-1 font-serif text-lg font-bold text-left text-gray-800 ">
                 <GiTabletopPlayers className="w-6 mx-auto mb-1 text-2xl text-blue-600" />
                 <div className="flex items-baseline flex-1 pl-3">
                   {props.players}{" "}
@@ -130,14 +129,14 @@ function CategoryModal(props) {
 
           <Link
             to={`/tienda-de-juegos/${kebabCase(props.slug)}/`}
-            className="flex items-center justify-between p-2 px-3 font-sans text-sm font-bold text-left text-white transition-all duration-500 bg-blue-600 hover:text-white hover:bg-blue-500"
+            className="flex items-center justify-between p-2 px-3 mt-3 font-serif text-sm font-bold text-left text-white transition-all duration-500 bg-yellow-600 rounded hover:text-white hover:bg-yellow-500"
           >
             {props.stock ? (
               <span>Pedilo por encargo</span>
             ) : (
               <span>Consulta este juego</span>
             )}
-            <FaCaretRight className="text-lg text-blue-200" />
+            <FaCaretRight className="text-lg text-yellow-200" />
           </Link>
         </div>
       </Modal>

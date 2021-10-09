@@ -34,7 +34,7 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
   const collection = data.contentfulComunidad
   const { prev, next } = pageContext
   return (
-    <Layout location={location}>
+    <Layout location={location}>  
       <Seo title={collection.title} />
       <ReactTooltip place="top" type="light" effect="solid" />
       <div className="relative flex flex-col items-center justify-center overflow-hidden py-44 bg-gradient-to-b to-gray-700 from-gray-900">
@@ -48,11 +48,12 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
             <GatsbyImage
               title={collection.title}
               alt={collection.title}
+              className="object-cover w-auto h-screen"
               image={collection.imagenPortada.gatsbyImageData}
             />
           </div>
         )}
-        <div className="relative z-50 w-full max-w-3xl mx-auto my-6 font-serif text-xl text-center text-white md:text-xl">
+        <div className="relative z-50 w-full max-w-3xl px-3 mx-auto my-6 font-serif text-xl text-center text-white md:text-xl">
           {collection.description.description}
         </div>
 
@@ -109,8 +110,8 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
         </div>
         {collection.socialMail && (
           <div>
-            <div className="relative flex px-6 overflow-hidden ">
-              <div className="block p-2 px-4 font-serif text-xl font-bold tracking-wider text-gray-100 truncate duration-700 bg-blue-300 select-all bg-opacity-10">
+            <div className="relative flex flex-col px-6 overflow-hidden md:flex-row ">
+              <div className="block p-2 px-4 font-serif font-bold text-gray-100 duration-700 bg-blue-300 select-all md:text-xl md:tracking-wider bg-opacity-10">
                 {collection.socialMail}
               </div>
               <button
@@ -123,12 +124,14 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
               >
                 <div className="block w-full px-4 py-2 font-bold text-white bg-gray-800 md:px-3 ">
                   {isCopied ? (
-                    <div className="flex justify-between text-green-500">
-                      <HiMailOpen className="text-2xl text-green-500" />
+                    <div className="flex items-center justify-center font-serif text-green-500">
+                      <HiMailOpen className="mr-1 text-2xl text-green-500 md:mr-0" />
+                      <span className="md:hidden">Mail copiado</span>
                     </div>
                   ) : (
-                    <div className="flex justify-between duration-200 transform hover:scale-105">
-                      <HiMail className="text-2xl text-yellow-500" />
+                    <div className="flex items-center justify-center font-serif duration-200 transform hover:scale-105">
+                      <HiMail className="mr-1 text-2xl text-yellow-500 md:mr-0" />
+                      <span className="md:hidden">Click para Copiar</span>
                     </div>
                   )}
                 </div>
