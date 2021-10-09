@@ -67,7 +67,7 @@ const QueryComunidadNotasLastComponent = () => {
               <p className={containerStyles.description}>
                 {node.description.description}
               </p>
-              <time>{node.fechaDePublicacion}</time>
+              <time className={containerStyles.time}>{node.fechaDePublicacion}</time>
               <div className={containerStyles.buttonContainer}>
                 {node.textoPrincipal && (
                   <Link

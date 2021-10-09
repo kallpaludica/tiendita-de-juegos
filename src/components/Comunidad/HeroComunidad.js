@@ -5,6 +5,8 @@ import Fade from "react-reveal/Fade"
 import ComunidadWidgets from "./HomeWidgets"
 import World from "../../assets/connected_world.svg"
 import { AwesomeButton } from "react-awesome-button"
+import ComunidadNotas from "../Queries/QueriesComunidadNotasLast"
+import { FcDocument } from "react-icons/fc"
 import { FiChevronRight } from "react-icons/fi"
 import { FcGlobe } from "react-icons/fc"
 const HeroComunidad = ({ children }) => {
@@ -38,6 +40,15 @@ const HeroComunidad = ({ children }) => {
           </div>
           <div className="relative z-50 grid grid-cols-1 gap-3 px-2 mx-auto mt-12 mb-12 text-center max-w-7xl md:grid-cols-3">
             <ComunidadWidgets />
+          </div>
+          <div className="relative z-50 px-2 mx-auto mt-12 max-w-7xl">
+            <div className="flex flex-col items-center justify-center mb-12">
+              <FcDocument className="text-5xl" />
+              <h2 className="mt-3 ml-6 font-mono text-4xl font-bold text-left text-gray-800 ">
+                Educación y los Juegos de Mesa
+              </h2>
+            </div>
+            <ComunidadNotas />
           </div>
         </div>
         <Fade>

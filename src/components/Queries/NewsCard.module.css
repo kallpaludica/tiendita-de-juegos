@@ -1,7 +1,7 @@
 /* purgecss start ignore */
 
 .gridContainer {
-  @apply grid w-full max-w-4xl gap-5 mx-auto ;
+  @apply grid w-full gap-5 mx-auto max-w-7xl md:grid-cols-2;
 }
 
 .item {
@@ -17,23 +17,24 @@
 }
 
 .content {
-  @apply relative col-span-2 px-4 mt-6 text-left;
+  @apply relative col-span-2 px-4 mt-3 text-left;
 }
 
 .title {
-  @apply block pr-6 mb-1 font-serif text-xl font-semibold leading-tight text-gray-800 md:text-2xl hover:underline hover:text-blue-600;
+  @apply block pt-8 pr-6 mb-1 font-serif text-xl font-semibold leading-tight text-gray-800 md:text-2xl hover:underline hover:text-blue-600;
+  @apply md:line-clamp-3;
 }
 
 .content time {
-  @apply bottom-0 right-0 z-20 py-1 mb-2 mr-2 font-serif text-sm text-gray-900 rounded md:px-2 md:absolute bg-gray-50 bg-opacity-90;
+  @apply top-0 z-20 py-0 font-serif text-sm font-bold text-gray-500 rounded left-3 md:px-2 md:absolute;
 }
 
 .description {
-  @apply hidden mb-2 font-serif text-lg text-gray-800 md:block md:line-clamp-3;
+  @apply hidden mb-2 font-serif text-base text-gray-800 md:block md:line-clamp-2;
 }
 
 .buttonContainer {
-  @apply  flex justify-between;
+  @apply flex justify-between;
 }
 
 .button {

@@ -88,6 +88,7 @@ const IndexPage = () => {
       </div>
       <section>
         <HomeComunidad />
+        
       </section>
       <section className="px-2">
         <div className="relative flex flex-col w-full max-w-6xl pt-2 pb-6 mx-auto md:flex-row">

@@ -207,8 +207,23 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
       </SRLWrapper>
 
       {collection.editorial && (
-        <div className="max-w-full p-6 mx-auto mt-20 text-indigo-200 bg-fixed bg-indigo-100 border-t pattern-grid-lg">
-          <div className="max-w-3xl py-12 mx-auto">
+        <div className="max-w-full p-6 mx-auto mt-20 text-gray-100 bg-fixed bg-white border-t pattern-grid-lg">
+          <div className="max-w-2xl px-3 mx-auto">
+            <Link
+              to={`/tienda-de-juegos/editoriales/${kebabCase(
+                collection.editorial.slug
+              )}`}
+              className="relative flex flex-col items-center justify-center max-w-xs mx-auto overflow-hidden duration-1000 transform rounded-lg -translate-y-0 hover:-translate-y-1 "
+            >
+              <GatsbyImage
+                title={collection.editorial.title}
+                className="object-fill w-64 max-w-xs mx-auto "
+                alt={collection.editorial.title}
+                image={collection.editorial.logo.gatsbyImageData}
+              />
+            </Link>
+          </div>
+          <div className="max-w-3xl pt-6 pb-12 mx-auto">
             <div className="relative flex flex-col items-center justify-center w-full overflow-hidden">
               <AwesomeButton
                 action={() => {
@@ -225,27 +240,12 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
             </div>
           </div>
           {collection.juegosRelacionados && (
-            <div className="grid max-w-4xl gap-3 mx-auto text-gray-900 md:grid-cols-3">
+            <div className="grid max-w-4xl gap-3 mx-auto text-gray-900 sm:grid-cols-3">
               {collection.juegosRelacionados.map((item, i) => (
                 <GameCard card={item} key={item.slug} />
               ))}
             </div>
           )}
-          <div className="max-w-2xl px-3 py-6 mx-auto">
-            <Link
-              to={`/tienda-de-juegos/editoriales/${kebabCase(
-                collection.editorial.slug
-              )}`}
-              className="relative flex flex-col items-center justify-center max-w-xs mx-auto overflow-hidden duration-1000 transform rounded-lg shadow-lg -translate-y-0 hover:-translate-y-2 "
-            >
-              <GatsbyImage
-                title={collection.editorial.title}
-                className="object-fill w-full max-w-xs mx-auto bg-white "
-                alt={collection.editorial.title}
-                image={collection.editorial.logo.gatsbyImageData}
-              />
-            </Link>
-          </div>
         </div>
       )}
 

@@ -11,7 +11,6 @@ import * as containerStyles from "./gamecard.module.css"
 
 const Card = ({ card }) => (
   <div className={containerStyles.gamecard}>
-    
     <div className="flex sm:flex-col">
       {card.imagenDestacada ? (
         <Link
@@ -74,13 +73,9 @@ const Card = ({ card }) => (
             </div>
           )}
           {card.stock && (
-            <div
-              className="relative top-0 right-0 flex items-center justify-end p-2 px-2 m-1 my-2 font-serif text-sm font-bold text-left text-blue-600 transition-all duration-500 md:absolute md:text-base hover:text-white hover:bg-blue-500 "
-              
-            >
+            <div className="relative top-0 right-0 flex items-center justify-end p-2 px-2 m-1 my-2 font-serif text-sm font-bold text-left text-blue-600 transition-all duration-500 md:absolute md:text-base hover:text-blue-800 " title="Por encargo">
               <CgSandClock className="mb-1 " />
               <span className="block md:hidden">Por encargo</span>
-              
             </div>
           )}
         </div>
