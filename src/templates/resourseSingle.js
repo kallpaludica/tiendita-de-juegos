@@ -10,6 +10,57 @@ import React, { useEffect } from "react"
 import { FiExternalLink } from "react-icons/fi"
 import ComunidadRecursos from "../components/Queries/QueriesRecursosLast"
 import ComunidadNav from "../components/Comunidad/HomeWidgets"
+import { SRLWrapper } from "simple-react-lightbox"
+
+
+const options = {
+  buttons: {
+    iconPadding: "5px",
+    showDownloadButton: false,
+    backgroundColor: "rgba(255, 255, 255, .8)",
+    iconColor: "rgba(0, 0, 0, 0.8)",
+    showNextButton: true,
+    showPrevButton: true,
+  },
+  caption: {
+    captionFontSize: "15px",
+    captionAlignment: "center",
+    captionColor: "#a7825f",
+    captionFontWeight: 300,
+    showCaption: false,
+  },
+  settings: {
+    overlayColor: "rgba(255, 255, 255, .95)",
+    transitionTimingFunction: "ease-in-out",
+    slideTransitionSpeed: 0.6,
+    slideTransitionTimingFunction: [0.25, 0.75, 0.5, 1],
+    slideAnimationType: "fade",
+    slideSpringValues: [300, 200],
+    autoplaySpeed: 4000,
+    disablePanzoom: false,
+    hideControlsAfter: true,
+  },
+  translations: {
+    autoplayText: "Play",
+    closeText: "Cerrar",
+    downloadText: "Descargar",
+    fullscreenText: "Pantalla completa",
+    nextText: "Siguiente",
+    pauseText: "Pausa",
+    previousText: "Anterior",
+    thumbnailsText: "Miniaturas",
+    zoomOutText: "Zoom Out",
+  },
+  progressBar: {
+    height: "4px",
+    fillColor: "rgb(0, 0, 0)",
+    backgroundColor: "rgba(255, 255, 255, 1)",
+  },
+  thumbnails: {
+    showThumbnails: true,
+  },
+}
+
 
 const RecursosSingleTemplate = ({ data, pageContext, location }) => {
   const collection = data.contentfulRecursos
@@ -48,14 +99,16 @@ const RecursosSingleTemplate = ({ data, pageContext, location }) => {
                 </div>
               )}
             </div>
-            <div
-              className="w-full max-w-full px-3 pr-6 mx-auto my-6 prose prose-xl text-left article"
-              id={collection.slug}
-            >
-              {collection.textoPrincipal && (
-                <FormatText FormatText={collection.textoPrincipal} />
-              )}
-            </div>
+            <SRLWrapper options={options}>
+              <div
+                className="w-full max-w-full px-3 pr-6 mx-auto my-6 prose prose-xl text-left article"
+                id={collection.slug}
+              >
+                {collection.textoPrincipal && (
+                  <FormatText FormatText={collection.textoPrincipal} />
+                )}
+              </div>
+            </SRLWrapper>
             <div className="hidden w-full max-w-4xl mx-auto article">
               <div className="flex justify-between py-12">
                 <div>
