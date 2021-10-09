@@ -194,14 +194,16 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                     <FormatText FormatText={post.textoPrincipal} />
                   )}
 
-                  <div className="my-6">
-                    <ReactPlayer
-                      controls="true"
-                      width="100%"
-                      height="400px"
-                      url={post.insertarVideoDeYoutube}
-                    />
-                  </div>
+                  {post.insertarVideoDeYoutube && (
+                    <div className="my-6">
+                      <ReactPlayer
+                        controls="true"
+                        width="100%"
+                        height="400px"
+                        url={post.insertarVideoDeYoutube}
+                      />
+                    </div>
+                  )}
                 </article>
               </main>
             </div>
