@@ -158,7 +158,7 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
 
       <SRLWrapper options={options}>
         {collection.portfolio && (
-          <div className="max-w-2xl mx-auto mt-6">
+          <div className="max-w-2xl px-2 mx-auto mt-2">
             <Disclosure>
               {({ open }) => (
                 <>
@@ -210,7 +210,7 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
           </div>
         )}
         <div
-          className="relative w-full max-w-2xl p-6 mx-auto my-6 prose text-left md:prose-xl article"
+          className="relative w-full max-w-2xl p-6 pt-2 mx-auto my-6 mt-2 prose text-left md:prose-xl article"
           id={collection.slug}
         >
           {collection.insertarVideoDeYoutube && (
