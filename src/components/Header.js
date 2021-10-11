@@ -60,7 +60,7 @@ const Header = ({ siteTitle }) => (
                 className="flex items-center py-3 m-0 font-mono text-xs text-center duration-700 border-t-2 border-transparent opacity-100 md:text-base hover:opacity-80 md:mx-4 focus:outline-none focus-visible:ring focus-visible:ring-yellow-500 focus:ring-yellow-500 focus-visible:ring-opacity-75"
                 to={route.slug}
               >
-                <span className="hidden mr-1 xl:inline-block">
+                <span className="hidden mr-1 lg:inline-block">
                   {route.icon}
                 </span>
                 <span>{route.title}</span>

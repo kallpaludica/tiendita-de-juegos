@@ -1,7 +1,11 @@
 import { graphql, useStaticQuery, navigate } from "gatsby"
 import { AwesomeButton } from "react-awesome-button"
 import React from "react"
-import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai"
+import {
+  AiOutlineFacebook,
+  AiOutlineInstagram,
+  AiOutlineYoutube,
+} from "react-icons/ai"
 import { GoMail } from "react-icons/go"
 import { RiWhatsappLine } from "react-icons/ri"
 import Fade from "react-reveal/Fade"
@@ -44,7 +48,7 @@ const ContactComponent = () => {
       {/* <h1 className="max-w-6xl mx-auto mt-6 font-serif text-3xl font-bold text-green-600">
         {data.contactanos.title}
       </h1> */}
-      <div className="flex flex-col justify-center max-w-5xl pb-24 mx-auto mt-6 text-center md:flex-row">
+      <div className="flex flex-col justify-center pb-24 mx-auto mt-6 text-center max-w-7xl md:flex-row">
         <a
           className="flex flex-col items-center justify-center w-full max-w-sm p-2 mx-auto mb-3 text-center text-green-500 transition-all duration-500 ease-in-out transform bg-white rounded-md md:mx-3 hover:shadow-md hover:-translate-y-2 hover:text-green-600"
           target="_blank"
@@ -52,9 +56,11 @@ const ContactComponent = () => {
           title={data.whatsapp.titulo}
           href={`https://api.whatsapp.com/send?phone=${data.whatsapp.link}&text=%C2%A1Hola!%F0%9F%A4%97%20`}
         >
-          <RiWhatsappLine className="my-6 text-4xl" />
-          <b className="mb-3 font-serif text-lg">Teléfono</b>
-          <h2 className="my-2 font-serif text-xl">{data.whatsapp.link}</h2>
+          <RiWhatsappLine className="mt-6 mb-2 text-4xl" />
+          <b className="my-2 font-serif text-lg">Teléfono</b>
+          <h2 className="mb-2 font-serif text-lg font-bold">
+            {data.whatsapp.link}
+          </h2>
         </a>
         <a
           className="flex flex-col items-center justify-center w-full max-w-sm p-2 mx-auto mb-3 text-center text-blue-500 transition-all duration-500 ease-in-out transform bg-white rounded-md md:mx-3 hover:shadow-md hover:text-blue-600 hover:-translate-y-2"
@@ -63,21 +69,9 @@ const ContactComponent = () => {
           title={data.facebook.titulo}
           href={data.facebook.link}
         >
-          <AiOutlineFacebook className="my-6 text-4xl" />
-          <b className="mb-3 font-serif text-lg">Facebook</b>
-          <h2 className="my-2 font-serif text-xl">kallpaludicaa</h2>
-        </a>
-
-        <a
-          className="flex flex-col items-center justify-center w-full max-w-sm p-2 mx-auto mb-3 text-center text-purple-500 transition-all duration-500 ease-in-out transform bg-white rounded-md md:mx-3 hover:shadow-md hover:text-purple-600 hover:-translate-y-2"
-          target="_blank"
-          rel="noopener noreferrer"
-          title={data.instagram.titulo}
-          href={data.instagram.link}
-        >
-          <AiOutlineInstagram className="my-6 text-4xl" />
-          <b className="mb-3 font-serif text-lg">Instagram</b>
-          <h2 className="my-2 font-serif text-xl">@kallpaludica</h2>
+          <AiOutlineFacebook className="mt-6 mb-2 text-4xl" />
+          <b className="my-2 font-serif text-lg">Facebook</b>
+          <h2 className="mb-2 font-serif text-lg font-bold">kallpaludicaa</h2>
         </a>
         <a
           className="flex flex-col items-center justify-center w-full max-w-sm p-2 mx-auto mb-3 text-center text-yellow-500 transition-all duration-500 ease-in-out transform bg-white rounded-md md:mx-3 hover:shadow-md hover:text-yellow-600 hover:-translate-y-2"
@@ -86,9 +80,33 @@ const ContactComponent = () => {
           title={data.mail.titulo}
           href={`mailto:${data.mail.link}`}
         >
-          <GoMail className="my-6 text-4xl" />
-          <b className="mb-3 font-serif text-lg">Mail</b>
-          <h2 className="my-2 font-serif text-xl">{data.mail.link}</h2>
+          <GoMail className="mt-6 mb-2 text-4xl" />
+          <b className="my-2 font-serif text-lg">Mail</b>
+          <h2 className="mb-2 font-serif text-lg font-bold">
+            {data.mail.link}
+          </h2>
+        </a>
+        <a
+          className="flex flex-col items-center justify-center w-full max-w-sm p-2 mx-auto mb-3 text-center text-purple-500 transition-all duration-500 ease-in-out transform bg-white rounded-md md:mx-3 hover:shadow-md hover:text-purple-600 hover:-translate-y-2"
+          target="_blank"
+          rel="noopener noreferrer"
+          title={data.instagram.titulo}
+          href={data.instagram.link}
+        >
+          <AiOutlineInstagram className="mt-6 mb-2 text-4xl" />
+          <b className="my-2 font-serif text-lg">Instagram</b>
+          <h2 className="mb-2 font-serif text-lg font-bold">@kallpaludica</h2>
+        </a>
+        <a
+          className="flex flex-col items-center justify-center w-full max-w-sm p-2 mx-auto mb-3 text-center text-red-500 transition-all duration-500 ease-in-out transform bg-white rounded-md md:mx-3 hover:shadow-md hover:-translate-y-2 hover:text-red-600"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="youtube"
+          href="https://www.youtube.com/channel/UCBiIvzck56BxP9PXCEQ4E3Q"
+        >
+          <AiOutlineYoutube className="mt-6 mb-2 text-4xl" />
+          <b className="my-2 font-serif text-lg">Youtube</b>
+          <h2 className="mb-2 font-serif text-lg font-bold">Kallpa Lúdica</h2>
         </a>
       </div>
 

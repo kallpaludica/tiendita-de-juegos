@@ -1,7 +1,11 @@
 import React, { useEffect } from "react"
 import lottie from "lottie-web"
 import { Link } from "gatsby"
-import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai"
+import {
+  AiOutlineFacebook,
+  AiOutlineYoutube,
+  AiOutlineInstagram,
+} from "react-icons/ai"
 import KallpaLogo from "../assets/logo.svg"
 import { AiOutlineHeart } from "react-icons/ai"
 import { HiCode } from "react-icons/hi"
@@ -29,23 +33,59 @@ const Footer = ({ children }) => {
                   <span className="block mb-3 font-sans text-sm font-bold text-gray-800 uppercase">
                     Tiendita de juegos
                   </span>
-                  <Link className="hover:underline" to="/tienda-de-juegos">Por título</Link>
-                  <Link className="hover:underline" to="/tienda-de-juegos/precio">Por precio</Link>
-                  <Link className="hover:underline" to="/tienda-de-juegos/duracion">Por duración</Link>
-                  <Link className="hover:underline" to="/tienda-de-juegos/edades">Por edades</Link>
-                  <Link className="hover:underline" to="/tienda-de-juegos/editoriales/">Editoriales</Link>
-                  <Link className="hover:underline" to="/tienda-de-juegos/colecciones/">Colecciones</Link>
+                  <Link className="hover:underline" to="/tienda-de-juegos">
+                    Por título
+                  </Link>
+                  <Link
+                    className="hover:underline"
+                    to="/tienda-de-juegos/precio"
+                  >
+                    Por precio
+                  </Link>
+                  <Link
+                    className="hover:underline"
+                    to="/tienda-de-juegos/duracion"
+                  >
+                    Por duración
+                  </Link>
+                  <Link
+                    className="hover:underline"
+                    to="/tienda-de-juegos/edades"
+                  >
+                    Por edades
+                  </Link>
+                  <Link
+                    className="hover:underline"
+                    to="/tienda-de-juegos/editoriales/"
+                  >
+                    Editoriales
+                  </Link>
+                  <Link
+                    className="hover:underline"
+                    to="/tienda-de-juegos/colecciones/"
+                  >
+                    Colecciones
+                  </Link>
                 </div>
                 <div className="flex flex-col mt-6 mb-3 space-y-2 md:mt-0">
                   <span className="block mb-3 font-sans text-sm font-bold text-gray-800 uppercase">
                     Comunidad
                   </span>
-                  <Link className="hover:underline" to="/comunidad">Subido recientemente</Link>
-                  <Link className="hover:underline" to="/comunidad/proyectos-que-nos-potencian/">
+                  <Link className="hover:underline" to="/comunidad">
+                    Subido recientemente
+                  </Link>
+                  <Link
+                    className="hover:underline"
+                    to="/comunidad/proyectos-que-nos-potencian/"
+                  >
                     Proyectos
                   </Link>
-                  <Link className="hover:underline" to="/comunidad/recursos/">Recursos lúdicos</Link>
-                  <Link className="hover:underline" to="/comunidad/notas/">Notas</Link>
+                  <Link className="hover:underline" to="/comunidad/recursos/">
+                    Recursos lúdicos
+                  </Link>
+                  <Link className="hover:underline" to="/comunidad/notas/">
+                    Notas
+                  </Link>
                   {/* <Link className="hover:underline" to="/comunidad/quiz/">Quiz</Link> */}
                 </div>
                 <div className="flex flex-col mt-6 mb-3 space-y-2 md:mt-0">
@@ -54,9 +94,15 @@ const Footer = ({ children }) => {
                   </span>
                   <div className="select-all">+549 3876034627</div>
                   <div className="select-all">kallpaludica@gmail.com</div>
-                  <Link className="hover:underline" to="/quienes-somos">Quienes somos</Link>
-                  <Link className="hidden hover:underline" to="/showroom">Showroom</Link>
-                  <Link className="hover:underline" to="/preguntas-frecuentes">Preguntas Frecuentes</Link>
+                  <Link className="hover:underline" to="/quienes-somos">
+                    Quienes somos
+                  </Link>
+                  <Link className="hidden hover:underline" to="/showroom">
+                    Showroom
+                  </Link>
+                  <Link className="hover:underline" to="/preguntas-frecuentes">
+                    Preguntas Frecuentes
+                  </Link>
                 </div>
               </div>
             </div>
@@ -68,7 +114,7 @@ const Footer = ({ children }) => {
                 className="h-12"
                 rel="noopener noreferrer"
               >
-                <AiOutlineFacebook className="mx-3 text-5xl" />
+                <AiOutlineFacebook className="mx-3 text-4xl" />
               </a>
               <a
                 href="https://www.instagram.com/kallpaludica/"
@@ -76,7 +122,15 @@ const Footer = ({ children }) => {
                 className="h-12"
                 rel="noopener noreferrer"
               >
-                <AiOutlineInstagram className="mx-3 text-5xl" />
+                <AiOutlineInstagram className="mx-3 text-4xl" />
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UCBiIvzck56BxP9PXCEQ4E3Q"
+                target="_blank"
+                className="h-12"
+                rel="noopener noreferrer"
+              >
+                <AiOutlineYoutube className="mx-3 text-4xl" />
               </a>
             </div>
           </div>
