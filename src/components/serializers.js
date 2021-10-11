@@ -45,7 +45,7 @@ const options = {
             <div>
               <div className="duration-200 cursor-pointer post-image hover:opacity-80">
                 <img
-                  className="relative w-full max-w-2xl mx-auto overflow-hidden rounded-md shadow-sm"
+                  className="relative w-full max-w-5xl mx-auto overflow-hidden rounded-md shadow-sm"
                   alt={node.data.target.title}
                   src={node.data.target.file.url}
                 />

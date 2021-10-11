@@ -54,11 +54,11 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
             />
           </div>
         )}
-        <div className="relative z-50 w-full max-w-3xl px-2 mx-auto my-6 font-serif text-xl text-center text-white md:text-xl">
+        <div className="relative z-50 w-full max-w-2xl px-2 mx-auto my-6 font-serif text-xl text-center text-white md:text-xl">
           {collection.description.description}
         </div>
 
-        <div className="flex justify-between max-w-2xl px-2 mx-auto mt-6 mb-12 space-x-8 text-4xl text-white">
+        <div className="flex justify-between max-w-2xl px-2 mx-auto space-x-8 text-4xl text-white">
           {collection.socialYoutube && (
             <div className="relative z-50" data-tip="Youtube ❤️">
               <a
@@ -110,7 +110,7 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
           )}
         </div>
         {collection.socialMail && (
-          <div>
+          <div className="pt-6">
             <div className="relative flex flex-col px-6 overflow-hidden md:flex-row ">
               <div className="block p-2 px-4 font-serif font-bold text-gray-100 duration-700 bg-blue-300 select-all md:text-xl md:tracking-wider bg-opacity-10">
                 {collection.socialMail}
@@ -160,7 +160,7 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
 
       <SRLWrapper options={options}>
         {collection.portfolio && (
-          <div className="max-w-5xl px-2 mx-auto mt-2 md:mt-6">
+          <div className="max-w-5xl mx-auto mt-2 md:mt-6">
             <Disclosure>
               {({ open }) => (
                 <>
@@ -211,21 +211,21 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
             </Disclosure>
           </div>
         )}
+        {collection.insertarVideoDeYoutube && (
+          <div className="relative max-w-5xl mx-auto my-6 overflow-hidden rounded-lg shadow-lg">
+            <ReactPlayer
+              controls="true"
+              volume="1"
+              width="100%"
+              height="500px"
+              url={collection.insertarVideoDeYoutube}
+            />
+          </div>
+        )}
         <div
-          className="relative w-full max-w-2xl p-6 pt-2 mx-auto my-6 mt-2 prose text-left md:prose-xl article"
+          className="relative w-full max-w-5xl p-6 pt-2 mx-auto my-6 mt-2 prose text-left md:prose-xl article"
           id={collection.slug}
         >
-          {collection.insertarVideoDeYoutube && (
-            <div className="my-6">
-              <ReactPlayer
-                controls="true"
-                volume="1"
-                width="100%"
-                height="400px"
-                url={collection.insertarVideoDeYoutube}
-              />
-            </div>
-          )}
           {collection.textoPrincipal && (
             <FormatText FormatText={collection.textoPrincipal} />
           )}
@@ -263,7 +263,6 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
               >
                 Conocé los Juegos
                 <span className="hidden ml-2 md:inline-block">
-                  
                   de {collection.editorial.title}
                 </span>
               </AwesomeButton>
