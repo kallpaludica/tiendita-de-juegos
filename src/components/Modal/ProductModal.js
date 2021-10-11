@@ -30,18 +30,17 @@ function CategoryModal(props) {
     <div>
       <button
         onClick={openModal}
-        className="absolute top-0 right-0 z-50 flex justify-center p-2 text-gray-800 duration-500 transform bg-gray-800 border-none rounded-bl-lg bg-opacity-80 focus:outline-none hover:text-blue-500 hover:bg-gray-600"
+        className="absolute right-0 z-50 flex items-center justify-center p-1 pl-3 mb-1 font-serif text-xs font-bold text-gray-900 uppercase duration-500 transform bg-gray-300 border-none rounded-tl-lg bottom-12 hover:bg-opacity-80 focus:outline-none hover:text-gray-900 hover:bg-gray-200"
       >
+        <span>Detalles</span>
         <svg
           viewBox="0 0 20 20"
           enableBackground="new 0 0 20 20"
-          className="inline-block w-6 h-6"
+          className="inline-block w-5 h-5 ml-1"
         >
           <path
-            fill="#fff"
-            d="M16,10c0,0.553-0.048,1-0.601,1H11v4.399C11,15.951,10.553,16,10,16c-0.553,0-1-0.049-1-0.601V11H4.601
-                                      C4.049,11,4,10.553,4,10c0-0.553,0.049-1,0.601-1H9V4.601C9,4.048,9.447,4,10,4c0.553,0,1,0.048,1,0.601V9h4.399
-                                      C15.952,9,16,9.447,16,10z"
+            fill="#333"
+            d="M16,10c0,0.553-0.048,1-0.601,1H11v4.399C11,15.951,10.553,16,10,16c-0.553,0-1-0.049-1-0.601V11H4.601 C4.049,11,4,10.553,4,10c0-0.553,0.049-1,0.601-1H9V4.601C9,4.048,9.447,4,10,4c0.553,0,1,0.048,1,0.601V9h4.399 C15.952,9,16,9.447,16,10z"
           />
         </svg>
       </button>
@@ -60,7 +59,7 @@ function CategoryModal(props) {
         </h2>
         <button
           onClick={closeModal}
-          className="absolute top-0 right-0 z-50 w-6 h-6 m-3"
+          className="absolute top-0 right-0 z-50 w-5 h-5 m-5"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

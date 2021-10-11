@@ -30,7 +30,6 @@ const PublisherSingleTemplate = ({ data, pageContext, location }) => {
           relative z-50 flex flex-col justify-start w-full px-6 pt-0 pb-0 mx-auto text-left max-w-7xl md:pt-12 md:pb-12
           `}
         >
-
           <h1 className="pt-12 font-serif text-3xl font-bold leading-relaxed text-center text-white md:pt-0 md:text-6xl">
             {publisher.title}
           </h1>
@@ -195,7 +194,15 @@ export const pageQuery = graphql`
           title
           slug
           stock
+          GamePlayers
+          GameDuration
+          GameAuthor
+          GameAges
           GameBuyPrice
+          publisher {
+            title
+            slug
+          }
           imagenDestacada {
             gatsbyImageData(
               layout: CONSTRAINED

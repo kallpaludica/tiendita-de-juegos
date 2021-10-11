@@ -149,7 +149,9 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
               className="w-full mt-5"
               type="secondary"
             >
-              Visitar <span className="hidden md:inline-block">página </span> web
+              Visitar
+              <span className="hidden mx-2 md:inline-block">página</span>
+              web
               <GoLinkExternal className="inline-block ml-2" />
             </AwesomeButton>
           </div>
@@ -158,11 +160,11 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
 
       <SRLWrapper options={options}>
         {collection.portfolio && (
-          <div className="max-w-2xl px-2 mx-auto mt-2">
+          <div className="max-w-5xl px-2 mx-auto mt-2 md:mt-6">
             <Disclosure>
               {({ open }) => (
                 <>
-                  <Disclosure.Button className="flex justify-between w-full px-6 py-4 font-serif text-xl font-bold text-left text-purple-900 bg-purple-100 rounded-lg hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                  <Disclosure.Button className="flex justify-between w-full max-w-2xl px-6 py-4 mx-auto font-serif text-xl font-bold text-left text-purple-900 bg-purple-100 rounded-lg hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
                     <span className="flex items-center justify-start">
                       <FcGallery className="mr-2 text-2xl" />
                       Galeria de Fotos
@@ -259,7 +261,11 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
                 }}
                 type="primary"
               >
-                Conocé los Juegos de {collection.editorial.title}
+                Conocé los Juegos
+                <span className="hidden ml-2 md:inline-block">
+                  
+                  de {collection.editorial.title}
+                </span>
               </AwesomeButton>
             </div>
           </div>

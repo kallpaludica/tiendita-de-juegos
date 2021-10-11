@@ -40,7 +40,7 @@ const Card = ({ card }) => (
         <div className="flex-grow" style={{ minHeight: "80px" }}>
           <Link
             to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
-            className="flex-grow inline-block px-2 pt-4 pb-2 pr-10 font-serif text-base font-bold leading-6 hover:text-green-600"
+            className="flex-grow inline-block px-2 pt-4 font-serif text-base font-bold line-clamp-1 hover:text-green-600"
           >
             {card.title}
           </Link>
@@ -73,9 +73,12 @@ const Card = ({ card }) => (
             </div>
           )}
           {card.stock && (
-            <div className="relative top-0 right-0 flex items-center justify-end p-2 px-2 m-1 my-2 font-serif text-sm font-bold text-left text-blue-600 transition-all duration-500 md:absolute md:text-base hover:text-blue-800 " title="Por encargo">
-              <CgSandClock className="mb-1 " />
-              <span className="block md:hidden">Por encargo</span>
+            <div
+              className="relative top-0 right-0 flex items-center justify-start pt-1 pl-1 m-0 font-serif text-sm font-bold text-left text-blue-600 transition-all duration-500 md:text-base hover:text-blue-800"
+              title="Por encargo"
+            >
+              <CgSandClock className="" />
+              <span className="block">Por encargo</span>
             </div>
           )}
         </div>
@@ -83,7 +86,7 @@ const Card = ({ card }) => (
           to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
           className="border-t border-green-200 "
         >
-          <div className="flex items-center justify-between p-2 px-2 font-serif text-lg font-bold text-left text-green-600 transition-all duration-500 bg-white hover:text-green-500 hover:bg-green-100">
+          <div className="flex items-center justify-between p-3 px-2 font-serif text-lg font-bold text-left text-green-600 transition-all duration-500 bg-white hover:text-green-500 hover:bg-green-100">
             <span>Ver más</span>
             <AiFillCheckCircle className="hidden mb-1 " />
             <b className="block font-bold text-green-800 ">
@@ -94,7 +97,8 @@ const Card = ({ card }) => (
       </div>
     </div>
     
-    {/* <ProductModal
+    {/*
+    <ProductModal
       title={card.title}
       slug={card.slug}
       stock={card.stock}
@@ -104,7 +108,7 @@ const Card = ({ card }) => (
       duration={card.GameDuration}
       players={card.GamePlayers}
     />
-    
+     
     <div className="hidden">
       <Toggle
         title={card.title}
@@ -117,6 +121,7 @@ const Card = ({ card }) => (
         players={card.GamePlayers}
       />
     </div> */}
+    
   </div>
 )
 
