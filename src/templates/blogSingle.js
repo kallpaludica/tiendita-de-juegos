@@ -150,8 +150,8 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
               type="secondary"
             >
               Visitar
-              <span className="hidden mx-2 md:inline-block">página</span>
-              web
+              <span className="hidden ml-2 md:inline-block">página</span>
+              <span className="ml-2">web</span>
               <GoLinkExternal className="inline-block ml-2" />
             </AwesomeButton>
           </div>
