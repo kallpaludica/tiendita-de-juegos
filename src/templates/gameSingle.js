@@ -9,6 +9,7 @@ import { SRLWrapper } from "simple-react-lightbox"
 import Layout from "../components/layout"
 import OpenGallery from "../components/OpenGallery"
 import QueriesLastGames from "../components/Queries/QueriesLastGames"
+import Faq from "../components/About/Faq"
 import Seo from "../components/seo"
 import GoBack from "../components/GoBack"
 import AboutImage from "../images/kallpa-ludica.png"
@@ -208,7 +209,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </main>
             </div>
           </div>
-          <div className="mx-auto font-sans border-t border-gray-300  max-w-7xl">
+
+          <div className="mx-auto font-sans border-t border-gray-300 max-w-7xl">
             <nav className="flex justify-between">
               <div className="flex-1 py-6 text-center border-r border-gray-300 hover:bg-yellow-100">
                 {prev && (
@@ -238,10 +240,16 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             </nav>
           </div>
         </div>
+        <div>
+          <h2 className="w-full pt-20 pb-6 mx-auto font-serif text-3xl font-bold text-center text-indigo-500 max-w-7xl ">
+            Preguntas Frecuentes
+          </h2>
+          <Faq />
+        </div>
         <div className="relative flex flex-col items-center w-full px-2 pb-1 mx-auto mt-12 max-w-7xl ">
-          <h1 className="w-full pt-3 pb-3 mx-auto font-serif text-3xl font-bold text-center text-yellow-500 max-w-7xl ">
+          <h2 className="w-full pt-3 pb-3 mx-auto font-serif text-3xl font-bold text-center text-yellow-500 max-w-7xl ">
             Lo que se anda jugando
-          </h1>
+          </h2>
         </div>
         <QueriesLastGames />
       </div>

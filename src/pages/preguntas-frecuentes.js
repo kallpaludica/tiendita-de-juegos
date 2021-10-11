@@ -10,7 +10,7 @@ const ConsultaVirtualPage = () => {
     <Layout>
       <Seo title="Consultas virtuales" />
       <div id="faq" className="min-h-screen py-12 from-indigo-700 to-indigo-400 bg-gradient-to-br bg-pattern">
-        <h2 className="pt-24 font-mono text-5xl text-indigo-100">
+        <h2 className="pt-24 pb-16 font-mono text-5xl text-indigo-100">
           Preguntas Frecuentes
         </h2>
         <Faq />
