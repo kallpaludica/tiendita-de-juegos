@@ -8,12 +8,12 @@ import { AiOutlineSortAscending, AiOutlineDollar } from "react-icons/ai"
 const GamesSort = () => {
   return (
     <>
-      <div className="relative top-0 right-0 grid flex-wrap w-full grid-cols-2 gap-3 px-0 py-1 mb-0 text-left md:flex sm:py-3">
+      <div className="relative top-0 right-0 grid flex-wrap items-center justify-center w-full grid-cols-2 gap-2 px-2 py-1 mb-0 text-center md:justify-end md:space-x-1 md:flex sm:py-3">
         <AwesomeButton
           action={() => {
             navigate(`/tienda-de-juegos`)
           }}
-          type="primary"
+          type="secondary"
           size="small"
         >
           <AiOutlineSortAscending className="mx-auto mr-1 text-xl " />
@@ -23,7 +23,7 @@ const GamesSort = () => {
           action={() => {
             navigate(`/tienda-de-juegos/precio`)
           }}
-          type="primary"
+          type="secondary"
           size="small"
         >
           <AiOutlineDollar className="mx-auto mr-1 text-xl " />
@@ -33,7 +33,7 @@ const GamesSort = () => {
           action={() => {
             navigate(`/tienda-de-juegos/duracion`)
           }}
-          type="primary"
+          type="secondary"
           size="small"
         >
           <IoMdTime className="mx-auto mr-1 text-xl " />
@@ -43,13 +43,12 @@ const GamesSort = () => {
           action={() => {
             navigate(`/tienda-de-juegos/edades`)
           }}
-          type="primary"
+          type="secondary"
           size="small"
         >
           <FaUserFriends className="mx-auto mr-1" />
           Edades
         </AwesomeButton>
-        
       </div>
     </>
   )

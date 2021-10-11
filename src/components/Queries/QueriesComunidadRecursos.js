@@ -35,7 +35,7 @@ const QueryComunidadRecursosComponent = () => {
   `)
 
   return (
-    <div className="grid w-full grid-cols-1 gap-8 mx-auto max-w-7xl md:grid-cols-4">
+    <div className="grid w-full grid-cols-1 gap-8 mx-auto max-w-7xl md:grid-cols-3">
       {data.collections.edges.map(({ node }) => {
         return (
           <div key={node.id} className={containerStyles.item}>

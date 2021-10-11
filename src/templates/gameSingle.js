@@ -89,12 +89,12 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </SRLWrapper>
             </div>
             <div className="relative flex flex-col w-full pt-3 md:pl-6">
-              <h1 className="w-full pt-2 pl-2 font-mono text-3xl text-left text-gray-600 md:pt-0 md:pl-0 md:text-5xl md:mb-3">
+              <h1 className="w-full pt-2 pl-2 font-serif text-3xl font-bold text-left text-gray-600 md:pt-0 md:pl-0 md:text-5xl md:mb-3">
                 {post.title}
               </h1>
 
               {post.stock && (
-                <div className="relative flex items-baseline justify-start m-1 my-2 font-mono text-xl font-bold tracking-wider text-left text-blue-500 transition-all duration-500">
+                <div className="relative flex items-baseline justify-start m-1 my-2 font-serif text-xl font-bold tracking-wider text-left text-blue-500 transition-all duration-500">
                   <CgSandClock className="relative mr-1 top-1 " />
                   <span className="block">Por encargo</span>
                 </div>
@@ -105,19 +105,19 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                     to={`/tienda-de-juegos/editoriales/${kebabCase(
                       post.publisher.slug
                     )}`}
-                    className="flex flex-col py-1 mr-2 font-sans font-bold text-green-500 underline hover:text-indigo-800"
+                    className="flex flex-col py-1 mr-2 font-serif font-bold text-blue-500 underline hover:text-indigo-800"
                     key={post.publisher.slug}
                   >
                     Editorial {post.publisher.title}
                   </Link>
                 )}
                 {post.GameAuthor && (
-                  <div className="block py-1 mt-1 mb-4 font-sans text-base italic font-bold text-left text-gray-700 ">
+                  <div className="block py-1 mt-1 mb-4 font-serif text-base italic font-bold text-left text-gray-700 ">
                     Creado por {post.GameAuthor}
                   </div>
                 )}
               </div>
-              <div className="flex flex-col justify-center w-full px-1 pl-2 my-2 text-gray-700 md:pl-0 md:px-6 md:flex-row md:justify-start">
+              <div className="flex flex-col justify-center w-full px-1 pl-2 my-2 font-serif text-gray-700 md:pl-0 md:px-6 md:flex-row md:justify-start">
                 {post.GameAges && (
                   <div className="flex items-center justify-start my-2 font-bold text-left md:pr-6 sm:flex-row">
                     <FcConferenceCall className="mr-3 text-xl md:text-4xl " />
@@ -127,7 +127,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 {post.GameDuration && (
                   <div className="flex items-center justify-start my-2 font-bold text-left md:pr-6 sm:flex-row">
                     <FcClock className="mr-3 text-xl md:text-4xl " />
-                    {post.GameDuration} min.
+                    {post.GameDuration} min
                   </div>
                 )}
                 {post.GamePlayers && (
@@ -208,9 +208,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </main>
             </div>
           </div>
-          <div className="py-6 mx-auto font-sans border-t border-gray-300 max-w-7xl ">
+          <div className="mx-auto font-sans border-t border-gray-300  max-w-7xl">
             <nav className="flex justify-between">
-              <div className="flex-1 py-6 text-center border-r border-gray-300 hover:bg-green-100">
+              <div className="flex-1 py-6 text-center border-r border-gray-300 hover:bg-yellow-100">
                 {prev && (
                   <Link
                     to={`/tienda-de-juegos/${kebabCase(prev.slug)}`}
@@ -222,7 +222,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 )}
               </div>
               <div
-                className="flex-1 py-6 text-center hover:bg-green-100 "
+                className="flex-1 py-6 text-center hover:bg-yellow-100 "
                 style={{ justifySelf: "flex-end" }}
               >
                 {next && (
@@ -239,7 +239,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </div>
         </div>
         <div className="relative flex flex-col items-center w-full px-2 pb-1 mx-auto mt-12 max-w-7xl ">
-          <h1 className="w-full pt-3 pb-3 mx-auto font-mono text-3xl text-center text-yellow-500 max-w-7xl ">
+          <h1 className="w-full pt-3 pb-3 mx-auto font-serif text-3xl font-bold text-center text-yellow-500 max-w-7xl ">
             Lo que se anda jugando
           </h1>
         </div>

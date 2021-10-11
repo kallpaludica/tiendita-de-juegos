@@ -41,7 +41,7 @@ const PublishersComponent = () => {
                 <Link
                   key={node.slug}
                   to={`/tienda-de-juegos/editoriales/${kebabCase(node.slug)}`}
-                  activeClassName="opacity-25"
+                  activeClassName="hidden"
                   className="flex items-center justify-center m-6 overflow-hidden text-gray-800 rounded-md "
                 >
                   {node.logo ? (

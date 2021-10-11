@@ -1,14 +1,19 @@
 /* purgecss start ignore */
 
-.game-aside  {
-@apply top-0 flex flex-col w-full mt-20 font-serif text-left border-l border-gray-300 ;
+.game-aside {
+  @apply top-0 flex flex-col w-full pt-6 mt-16 font-serif text-left ;
 }
 
 .game-aside a {
-  @apply py-1 pl-6 text-base text-left transition-all duration-200 border-b border-gray-300;
-  }
+  @apply w-full py-2 pl-3 pr-3 text-base text-left truncate transition-all duration-200 border-b border-gray-300;
+  @apply hover:bg-gray-100;
+}
 
 .game-aside h2 {
-  @apply pt-0 pl-6 my-3 font-mono text-xl text-left;
+  @apply pt-0 font-serif font-bold text-left;
+}
+
+.game-aside h2 a {
+  @apply block w-full text-xl border-gray-100 border-none;
 }
 /* purgecss end ignore */

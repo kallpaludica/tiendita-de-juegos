@@ -25,7 +25,7 @@ const QueryPublisherComponent = () => {
             key={node.slug}
             to={`/tienda-de-juegos/editoriales/${kebabCase(node.slug)}/`}
             activeClassName="text-green-500"
-            className="font-sans  hover:text-green-500 hover:border-green-500"
+            className="font-serif hover:text-gray-800 hover:border-gray-600"
           >
             {node.title}
           </Link>

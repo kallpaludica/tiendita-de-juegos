@@ -5,18 +5,19 @@ import { AwesomeButton } from "react-awesome-button"
 import { kebabCase } from "lodash"
 import Seo from "../components/seo"
 import React from "react"
-import { FiExternalLink } from "react-icons/fi"
 import ComunidadWidgets from "../components/Comunidad/HomeWidgets"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { SRLWrapper } from "simple-react-lightbox"
 import { ImFacebook2, ImYoutube, ImWhatsapp, ImInstagram } from "react-icons/im"
 import { HiMailOpen, HiMail } from "react-icons/hi"
 import { FcGallery } from "react-icons/fc"
-import AnchorLink from "react-anchor-link-smooth-scroll"
+import { GoLinkExternal } from "react-icons/go"
 import ReactTooltip from "react-tooltip"
 import ReactPlayer from "react-player"
 import GameCard from "../components/GameCard"
 import FormatText from "../components/serializers"
+import { Disclosure, Transition } from "@headlessui/react"
+import { FiChevronDown } from "react-icons/fi"
 
 const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
   const copyToClipboard = (str) => {
@@ -34,7 +35,7 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
   const collection = data.contentfulComunidad
   const { prev, next } = pageContext
   return (
-    <Layout location={location}>  
+    <Layout location={location}>
       <Seo title={collection.title} />
       <ReactTooltip place="top" type="light" effect="solid" />
       <div className="relative flex flex-col items-center justify-center overflow-hidden py-44 bg-gradient-to-b to-gray-700 from-gray-900">
@@ -139,43 +140,84 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
             </div>
           </div>
         )}
+        {collection.linkExterno && (
+          <div className="relative z-50 flex flex-col items-center justify-center w-full max-w-xs p-3 py-6 mx-auto duration-200 transform">
+            <AwesomeButton
+              href={collection.linkExterno}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full mt-5"
+              type="secondary"
+            >
+              Visitar página web
+              <GoLinkExternal className="inline-block ml-2" />
+            </AwesomeButton>
+          </div>
+        )}
       </div>
 
       <SRLWrapper options={options}>
+        {collection.portfolio && (
+          <div className="max-w-2xl mx-auto mt-6">
+            <Disclosure>
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="flex justify-between w-full px-6 py-4 font-serif text-xl font-bold text-left text-purple-900 bg-purple-100 rounded-lg hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                    <span className="flex items-center justify-start">
+                      <FcGallery className="mr-2 text-2xl" />
+                      Galeria de Fotos
+                    </span>
+                    <FiChevronDown
+                      className={`${
+                        open ? "transform rotate-180" : ""
+                      } w-5 h-5 text-purple-500`}
+                    />
+                  </Disclosure.Button>
+                  <Transition
+                    show={open}
+                    enter="transition duration-100 ease-out"
+                    enterFrom="transform scale-95 opacity-0"
+                    enterTo="transform scale-100 opacity-100"
+                    leave="transition duration-75 ease-out"
+                    leaveFrom="transform scale-100 opacity-100"
+                    leaveTo="transform scale-95 opacity-0"
+                  >
+                    <Disclosure.Panel
+                      static
+                      className="pt-6 font-serif text-xl text-left text-gray-800 "
+                    >
+                      <div>
+                        <div className="grid gap-2 px-1 mx-auto mt-1 md:grid-cols-2 max-w-7xl">
+                          {collection.portfolio.map((item, i) => (
+                            <div
+                              key={item.id}
+                              className="relative h-64 m-0 overflow-hidden rounded cursor-pointer hover:opacity-90 link"
+                            >
+                              <GatsbyImage
+                                title={collection.title}
+                                alt={collection.title}
+                                image={item.gatsbyImageData}
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </Disclosure.Panel>
+                  </Transition>
+                </>
+              )}
+            </Disclosure>
+          </div>
+        )}
         <div
           className="relative w-full max-w-2xl p-6 mx-auto my-6 prose text-left md:prose-xl article"
           id={collection.slug}
         >
-          {collection.linkExterno && (
-            <div className="relative z-50 flex flex-col items-center justify-center w-full p-3 py-6 mx-auto duration-200 transform bg-blue-100 border-2 border-blue-200 rounded-sm shadow-xl hover:bg-blue-50 bg-opacity-95 hover:shadow-2xl">
-              <a
-                rel="noopener noreferrer"
-                href={collection.linkExterno}
-                target="_blank"
-                className="inline-flex items-center space-x-3 font-serif text-xl font-bold text-center text-blue-800 no-underline hover:text-blue-500 "
-              >
-                Link al sitio web
-                <FiExternalLink className="ml-1 text-lg" />
-              </a>
-            </div>
-          )}
-
-          {collection.portfolio && (
-            <div className="relative z-50 flex flex-col items-center justify-center w-full p-3 py-6 mx-auto my-3 mb-6 duration-200 transform bg-yellow-100 border-2 border-yellow-200 rounded-sm shadow-xl hover:bg-yellow-50 bg-opacity-95 hover:shadow-md">
-              <AnchorLink
-                className="inline-flex items-center space-x-3 font-serif text-xl font-bold text-center text-yellow-800 no-underline hover:text-yellow-500"
-                href="#gallery"
-              >
-                Galeria de Fotos
-                <FcGallery className="ml-2 text-2xl" />
-              </AnchorLink>
-            </div>
-          )}
-
           {collection.insertarVideoDeYoutube && (
             <div className="my-6">
               <ReactPlayer
                 controls="true"
+                volume="1"
                 width="100%"
                 height="400px"
                 url={collection.insertarVideoDeYoutube}
@@ -186,27 +228,6 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
             <FormatText FormatText={collection.textoPrincipal} />
           )}
         </div>
-        {collection.portfolio && (
-          <div className="pt-24" id="gallery">
-            <h3 className="font-serif text-3xl font-bold text-center">
-              Galería
-            </h3>
-            <div className="grid gap-2 px-6 mx-auto mt-6 md:grid-cols-2 max-w-7xl">
-              {collection.portfolio.map((item, i) => (
-                <div
-                  key={item.id}
-                  className="relative m-0 overflow-hidden cursor-pointer h-96 hover:opacity-90 link"
-                >
-                  <GatsbyImage
-                    title={collection.title}
-                    alt={collection.title}
-                    image={item.gatsbyImageData}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </SRLWrapper>
 
       {collection.editorial && (

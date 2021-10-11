@@ -6,8 +6,8 @@ import Seo from "../../components/seo"
 import HeroWave from "../../components/HeroWave"
 import GameCard from "../../components/GameCard"
 import GameSort from "../../components/Games/GameSort"
-import GamesAside from "../../components/Games/GameMenu"
 import * as containerStyles from "./duracion.module.css"
+import GamesAside from "../../components/Games/GameMenu"
 
 const DurationPage = (props) => {
   const data = useStaticQuery(graphql`
@@ -60,18 +60,18 @@ const DurationPage = (props) => {
         <body className="games" />
       </Helmet>
       <HeroWave pattern="bg-green-600 text-green-700" />
-      <div className="relative z-10 flex flex-row-reverse w-full mx-auto max-w-7xl md:-mt-16">
+      <div className="relative z-10 flex flex-row w-full mx-auto max-w-7xl md:-mt-16">
         <div className="hidden w-72 md:block ">
           <GamesAside />
         </div>
         <div className="relative w-full px-2 mx-auto md:px-0">
-          <div className="relative top-0 z-50 pt-3 md:pl-4">
-            <GameSort />
-          </div>
-          <div className="relative flex flex-row items-center justify-between border-b-2 border-green-300 sm:py-0 sm:pt-4 md:pl-2">
-            <h2 className="font-serif text-lg font-bold text-left text-gray-600 md:text-3xl md:pl-3">
+          <div className="relative flex flex-row items-center justify-center sm:py-0 sm:pt-4">
+            <h2 className="w-full pb-2 font-serif text-2xl font-bold text-center text-gray-600 md:pr-32 md:text-right md:text-3xl">
               Juegos por Duración
             </h2>
+          </div>
+          <div className="relative top-0 z-50 pt-3 md:pl-4">
+            <GameSort />
           </div>
           <div >
             <div className={containerStyles.showduration} id="contenido">
