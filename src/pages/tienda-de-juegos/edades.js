@@ -1,14 +1,13 @@
 import { useStaticQuery, graphql } from "gatsby"
 import React from "react"
-
 import { Helmet } from "react-helmet"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import HeroWave from "../../components/HeroWave"
 import GameCard from "../../components/GameCard"
 import GameSort from "../../components/Games/GameSort"
-import GamesAside from "../../components/Games/GameMenu"
 import * as containerStyles from "./edades.module.css"
+import GamesAside from "../../components/Games/GameMenu"
 
 const EdadesPage = (props) => {
   const data = useStaticQuery(graphql`

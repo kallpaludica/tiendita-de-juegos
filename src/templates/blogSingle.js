@@ -40,7 +40,7 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
       <ReactTooltip place="top" type="light" effect="solid" />
       <div className="relative flex flex-col items-center justify-center overflow-hidden py-44 bg-gradient-to-b to-gray-700 from-gray-900">
         <div className="flex flex-col w-full max-w-4xl mx-auto md:px-24 md:items-end md:justify-between">
-          <h1 className="relative z-50 w-full mx-auto font-serif text-3xl font-bold text-center text-white md:text-5xl max-w-7xl">
+          <h1 className="relative z-50 w-full px-2 mx-auto font-serif text-3xl font-bold text-center text-white md:text-5xl max-w-7xl">
             {collection.title}
           </h1>
         </div>
@@ -54,11 +54,11 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
             />
           </div>
         )}
-        <div className="relative z-50 w-full max-w-3xl px-3 mx-auto my-6 font-serif text-xl text-center text-white md:text-xl">
+        <div className="relative z-50 w-full max-w-3xl px-2 mx-auto my-6 font-serif text-xl text-center text-white md:text-xl">
           {collection.description.description}
         </div>
 
-        <div className="flex justify-between max-w-2xl mx-auto mt-6 mb-12 space-x-8 text-4xl text-white">
+        <div className="flex justify-between max-w-2xl px-2 mx-auto mt-6 mb-12 space-x-8 text-4xl text-white">
           {collection.socialYoutube && (
             <div className="relative z-50" data-tip="Youtube ❤️">
               <a
@@ -141,7 +141,7 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
           </div>
         )}
         {collection.linkExterno && (
-          <div className="relative z-50 flex flex-col items-center justify-center w-full max-w-xs p-3 py-6 mx-auto duration-200 transform">
+          <div className="relative z-50 flex flex-col items-center justify-center w-full max-w-xs px-3 py-6 mx-auto duration-200 transform">
             <AwesomeButton
               href={collection.linkExterno}
               target="_blank"
@@ -149,7 +149,7 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
               className="w-full mt-5"
               type="secondary"
             >
-              Visitar página web
+              Visitar <span className="hidden md:inline-block">página </span> web
               <GoLinkExternal className="inline-block ml-2" />
             </AwesomeButton>
           </div>
