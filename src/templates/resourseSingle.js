@@ -75,8 +75,12 @@ const RecursosSingleTemplate = ({ data, pageContext, location }) => {
   const { prev, next } = pageContext
   return (
     <Layout location={location}>
-      <Seo title={collection.title} />
-      <div className="py-24 text-green-600 bg-green-700 pt-52 pattern-grid-lg">
+      <Seo
+        title={`${collection.title}`}
+        description="Recursos lúdicos"
+        image={`${collection.featuredImg.file.url}`}
+      />
+      <div className="py-24 text-green-700 bg-green-600 pt-52 pattern-grid-lg">
         <h1 className="relative z-50 w-full mx-auto font-serif text-6xl font-bold text-center text-green-100">
           {collection.title}
         </h1>
@@ -171,6 +175,11 @@ export const pageQuery = graphql`
       id
       title
       slug
+      featuredImg {
+        file {
+          url
+        }
+      }
       textoPrincipal {
         raw
         references {
@@ -178,6 +187,13 @@ export const pageQuery = graphql`
             contentful_id
             __typename
             title
+            gatsbyImageData(
+              width: 1320
+              quality: 90
+              formats: AUTO
+              placeholder: BLURRED
+              layout: CONSTRAINED
+            )
             file {
               url
               contentType

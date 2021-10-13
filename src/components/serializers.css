@@ -38,6 +38,10 @@
   @apply no-underline;
 }
 
+.prose .post-image img {
+  @apply my-1 object-contain w-full  !important;
+}
+
 .article-card .content {
   @apply flex flex-col items-start justify-center w-full pl-3 text-left no-underline;
 }

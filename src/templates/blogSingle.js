@@ -36,7 +36,11 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
   const { prev, next } = pageContext
   return (
     <Layout location={location}>
-      <Seo title={collection.title} />
+      <Seo
+        title={`${collection.title}`}
+        description={`${collection.description.description}`}
+        image={`${collection.featuredImg.file.url}`}
+      />
       <ReactTooltip place="top" type="light" effect="solid" />
       <div className="relative flex flex-col items-center justify-center overflow-hidden py-44 bg-gradient-to-b to-gray-700 from-gray-900">
         <div className="flex flex-col w-full max-w-4xl mx-auto md:px-24 md:items-end md:justify-between">
@@ -160,7 +164,7 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
 
       <SRLWrapper options={options}>
         {collection.portfolio && (
-          <div className="max-w-5xl mx-auto mt-2 md:mt-6">
+          <div className="max-w-5xl px-3 pt-2 mx-auto mt-2 md:mt-6">
             <Disclosure>
               {({ open }) => (
                 <>
@@ -186,10 +190,10 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
                   >
                     <Disclosure.Panel
                       static
-                      className="pt-6 font-serif text-xl text-left text-gray-800 "
+                      className="pt-3 font-serif text-xl text-left text-gray-800 "
                     >
                       <div>
-                        <div className="grid gap-2 px-1 mx-auto mt-1 md:grid-cols-2 max-w-7xl">
+                        <div className="grid max-w-3xl gap-2 px-1 mx-auto mt-1 md:grid-cols-2">
                           {collection.portfolio.map((item, i) => (
                             <div
                               key={item.id}
@@ -212,10 +216,10 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
           </div>
         )}
         {collection.insertarVideoDeYoutube && (
-          <div className="relative max-w-5xl mx-auto my-6 overflow-hidden rounded-lg shadow-lg">
+          <div className="relative max-w-4xl px-3 mx-auto my-6 overflow-hidden md:px-0 md:rounded-lg md:shadow-lg">
             <ReactPlayer
-              controls="true"
-              volume="1"
+              controls={true}
+              volume={1}
               width="100%"
               height="500px"
               url={collection.insertarVideoDeYoutube}
@@ -359,7 +363,13 @@ export const pageQuery = graphql`
           jpegProgressive: false
         )
       }
+      featuredImg {
+        file {
+          url
+        }
+      }
       portfolio {
+        id
         gatsbyImageData(
           layout: FULL_WIDTH
           height: 800
@@ -381,6 +391,13 @@ export const pageQuery = graphql`
             contentful_id
             __typename
             title
+            gatsbyImageData(
+              width: 1320
+              quality: 90
+              formats: AUTO
+              placeholder: BLURRED
+              layout: CONSTRAINED
+            )
             file {
               url
               contentType

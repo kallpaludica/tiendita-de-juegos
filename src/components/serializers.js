@@ -5,7 +5,9 @@ import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
 import { Player, BigPlayButton } from "video-react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 import { FiExternalLink } from "react-icons/fi"
+
 import "./serializers.css"
 
 const Bold = ({ children }) => (
@@ -24,18 +26,15 @@ const options = {
     ),
   },
   renderNode: {
-
     [BLOCKS.EMBEDDED_ASSET]: (node) => {
+      
       if (!node.data || !node.data.target) {
         return <span className="hidden">Embedded asset is broken</span>
       } else {
         if (node.data.target.file.contentType === "video/mp4") {
           return (
-            <div className="max-w-6xl p-0 mx-auto my-6 mb-12 aspect-h-9 aspect-w-16">
-              <Player
-                src={node.data.target.file.url}
-                loop={true}
-              >
+            <div className="max-w-3xl p-0 mx-auto my-6 mb-12 aspect-h-9 aspect-w-16">
+              <Player src={node.data.target.file.url} loop={true}>
                 <BigPlayButton position="center" />
               </Player>
             </div>
@@ -43,11 +42,12 @@ const options = {
         } else {
           return (
             <div>
-              <div className="duration-200 cursor-pointer post-image hover:opacity-80">
-                <img
-                  className="relative w-full max-w-5xl mx-auto overflow-hidden rounded-md shadow-sm"
+              <div className="w-full max-w-3xl mx-auto duration-200 rounded-md shadow-sm cursor-pointer post-image hover:opacity-80">
+                <GatsbyImage
+                  title={node.data.target.title}
                   alt={node.data.target.title}
-                  src={node.data.target.file.url}
+                  className="relative"
+                  image={node.data.target.gatsbyImageData}
                 />
               </div>
             </div>
