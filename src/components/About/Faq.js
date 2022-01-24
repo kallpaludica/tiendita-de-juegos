@@ -176,9 +176,7 @@ const FaqComponent = () => {
                     Salta: Los juegos se retiran por nuestro Show Room, en zona
                     centro de la ciudad de Salta (cerca de la terminal). Para
                     más información por favor comunicarse a nuestro Whatsapp.
-                    Ciudad Autónoma de Buenos Aires: Se retiran por el barrio de
-                    Flores o Villa Santa Rita. Para más información por favor
-                    comunicarse a nuestro Whatsapp.
+                    
                   </Disclosure.Panel>
                 </Transition>
               </>
