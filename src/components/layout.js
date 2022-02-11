@@ -45,6 +45,7 @@ const Layout = ({ location, children }) => {
       <AnchorLink
         className="fixed bottom-0 left-0 z-50 p-4 m-4 font-mono text-xl text-white bg-yellow-500 rounded-full hover:text-yellow-300 to-top"
         href="#top"
+        aria-label="Ir a la parte de arriba del sitio"
       >
         <BsFillTriangleFill />
       </AnchorLink>

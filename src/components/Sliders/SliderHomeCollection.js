@@ -44,6 +44,7 @@ const SliderHomeCollection = (props) => {
           <button
             className="absolute top-0 left-0 z-50 flex items-center justify-center w-20 h-20 mt-32 text-4xl text-center text-blue-500 duration-700 bg-white rounded-full shadow-xl outline-none cursor-pointer hover:opacity-90 hover:translate-y-1"
             onClick={handleClick}
+            aria-label="slide left"
             data-position={position - 1}
           >
             <AiOutlineArrowLeft />
@@ -52,6 +53,7 @@ const SliderHomeCollection = (props) => {
             className="absolute top-0 right-0 z-50 flex items-center justify-center w-20 h-20 mt-32 text-4xl text-center text-blue-500 duration-700 bg-white rounded-full shadow-xl outline-none cursor-pointer "
             right="true"
             onClick={handleClick}
+            aria-label="slide right"
             data-position={position + 1}
           >
             <AiOutlineArrowRight />
@@ -63,6 +65,7 @@ const SliderHomeCollection = (props) => {
                   className="mx-1 text-4xl text-blue-500 outline-none cursor-pointer"
                   key={index}
                   onClick={handleClick}
+                  aria-label="Select slide"
                   data-position={index}
                 >
                   {index === position ? (

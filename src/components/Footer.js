@@ -111,6 +111,7 @@ const Footer = ({ children }) => {
               <a
                 href="https://www.facebook.com/kallpaludicaa"
                 target="_blank"
+                aria-label="Ir a página de Facebook"
                 className="h-12"
                 rel="noopener noreferrer"
               >
@@ -119,6 +120,7 @@ const Footer = ({ children }) => {
               <a
                 href="https://www.instagram.com/kallpaludica/"
                 target="_blank"
+                aria-label="Ir a página de Instagram"
                 className="h-12"
                 rel="noopener noreferrer"
               >
@@ -127,6 +129,7 @@ const Footer = ({ children }) => {
               <a
                 href="https://www.youtube.com/channel/UCBiIvzck56BxP9PXCEQ4E3Q"
                 target="_blank"
+                aria-label="Ir a página de Youtube"
                 className="h-12"
                 rel="noopener noreferrer"
               >

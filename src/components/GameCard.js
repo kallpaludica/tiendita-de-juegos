@@ -86,7 +86,7 @@ const Card = ({ card }) => (
           to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
           className="border-t border-green-200 "
         >
-          <div className="flex items-center justify-between p-3 px-2 font-serif text-lg font-bold text-left text-green-600 transition-all duration-500 bg-white hover:text-green-500 hover:bg-green-100">
+          <div className="flex items-center justify-between p-3 px-2 font-serif text-lg font-bold text-left text-green-700 transition-all duration-500 bg-white hover:text-green-500 hover:bg-green-100">
             <span>Ver más</span>
             <AiFillCheckCircle className="hidden mb-1 " />
             <b className="block font-bold text-green-800 ">
