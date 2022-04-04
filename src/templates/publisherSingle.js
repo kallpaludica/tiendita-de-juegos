@@ -36,11 +36,11 @@ const PublisherSingleTemplate = ({ data, pageContext, location }) => {
 
           {publisher.comunidad && (
             <AnchorLink
-              className="btn green"
+              className="relative px-12 btn green"
               href="#comunidad"
             >
               Ver Editorial en Comunidad
-              <FcGlobe className="ml-2 text-xl" />
+              <FcGlobe className="absolute text-2xl -top-3 -right-3" />
             </AnchorLink>
           )}
         </div>

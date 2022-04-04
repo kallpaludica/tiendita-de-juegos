@@ -143,7 +143,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   </div>
                 )}
               </div>
-              <div className="flex flex-col justify-center w-full px-1 pl-2 my-2 font-serif text-gray-700 md:pl-0 md:px-6 md:flex-row md:justify-center">
+              <div className="flex flex-col items-center justify-center w-full px-1 pl-2 my-2 font-serif text-gray-700 md:items-start md:pl-0 md:px-6 md:flex-row md:justify-center">
                 {post.GameAges && (
                   <div className="flex items-center justify-start my-2 font-bold text-left md:pr-6 sm:flex-row">
                     <FcConferenceCall className="mr-3 text-xl md:text-4xl " />
