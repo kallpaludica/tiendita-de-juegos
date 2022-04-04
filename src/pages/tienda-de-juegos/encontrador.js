@@ -10,17 +10,17 @@ import {
   SearchBox,
   Pagination,
 } from "react-instantsearch-dom"
-import Layout from "../../components/layout"
-import PostPreview from "../../components/EncontrarComponent"
-import Seo from "../../components/seo"
+import Layout from "@components/layout"
+import PostPreview from "@components/CardGameSearchResult/CardGameSearchResult"
+import Seo from "@components/seo"
 import { Helmet } from "react-helmet"
 import Fade from "react-reveal/Fade"
 import { HiViewGrid } from "react-icons/hi"
 import { TiThList } from "react-icons/ti"
 import { useSpring, animated } from "react-spring"
-import SidebarFilters from "../../components/SidebarFilters"
-import AlgoliaSearch from "../../components/Search/AlgoliaCollapseSearch"
-import "../../styles/algolia.css"
+import OffcanvasFilters from "@components/OffcanvasFilters/OffcanvasFilters"
+import AlgoliaSearch from "@components/Search/AlgoliaCollapseSearch"
+
 
 const searchClient = algoliasearch(
   "REF3SMUMO1",
@@ -50,7 +50,7 @@ const EncontrarComponent = () => {
         </Helmet>
         <InstantSearch searchClient={searchClient} indexName="juegos">
           <div className="menu-2">
-            <SidebarFilters />
+            <OffcanvasFilters />
           </div>
           <div className="sticky z-50 flex flex-col-reverse px-2 pt-6 pb-4 mx-auto mb-3 space-y-2 bg-white top-16 md:px-7 2xl:max-w-7xl sm:flex-row sm:space-y-0 sm:space-x-1 md:space-x-3">
             <button

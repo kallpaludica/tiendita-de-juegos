@@ -1,14 +1,16 @@
 /* purgecss start ignore */
-.proposals ul {
+.Proposals {
+  @apply max-w-4xl mx-auto font-sans text-xl;
+}
+.Proposals ul {
   @apply grid grid-cols-1 gap-6 text-left md:grid-cols-2;
 }
 
-.proposals li {
+.Proposals li {
   @apply pb-4 mb-1 text-gray-900 border-b border-yellow-500;
 }
 
-.proposals p {
+.Proposals p {
   @apply my-0 text-gray-900;
 }
-
 /* purgecss end ignore */

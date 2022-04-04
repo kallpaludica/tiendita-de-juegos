@@ -1,12 +1,12 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import { Helmet } from "react-helmet"
-import Layout from "../../components/layout"
-import GameCard from "../../components/GameCard"
-import GamesAside from "../../components/Games/GameMenu"
-import GameSort from "../../components/Games/GameSort"
-import HeroWave from "../../components/HeroWave"
-import Seo from "../../components/seo"
+import Layout from "@components/layout"
+import GameCard from "@components/GameCard/GameCard"
+import GamesAside from "@components/Games/GameMenu"
+import GameSort from "@components/Games/GameSort"
+import HeroWave from "@components/HeroWave/HeroWave"
+import Seo from "@components/seo"
 
 const AllPage = (props) => {
   const data = useStaticQuery(graphql`

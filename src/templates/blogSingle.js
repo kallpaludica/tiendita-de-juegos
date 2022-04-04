@@ -1,11 +1,11 @@
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "@components/layout"
 import { Link, navigate } from "gatsby"
 import { AwesomeButton } from "react-awesome-button"
 import { kebabCase } from "lodash"
-import Seo from "../components/seo"
+import Seo from "@components/seo"
 import React from "react"
-import ComunidadWidgets from "../components/Comunidad/HomeWidgets"
+import ComunidadWidgets from "@components/Comunidad/HomeWidgets"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { SRLWrapper } from "simple-react-lightbox"
 import { ImFacebook2, ImYoutube, ImWhatsapp, ImInstagram } from "react-icons/im"
@@ -14,8 +14,8 @@ import { FcGallery } from "react-icons/fc"
 import { GoLinkExternal } from "react-icons/go"
 import ReactTooltip from "react-tooltip"
 import ReactPlayer from "react-player"
-import GameCard from "../components/GameCard"
-import FormatText from "../components/serializers"
+import GameCard from "@components/GameCard/GameCard"
+import FormatText from "@components/Serializers/Serializers"
 import { Disclosure, Transition } from "@headlessui/react"
 import { FiChevronDown } from "react-icons/fi"
 
@@ -58,9 +58,41 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
             />
           </div>
         )}
-        <div className="relative z-50 w-full max-w-2xl px-2 mx-auto my-6 font-serif text-xl text-center text-white md:text-xl">
+        <p className="relative z-50 w-full max-w-2xl px-2 mx-auto my-6 font-serif text-xl text-center text-white line-clamp-4 md:text-xl">
           {collection.description.description}
-        </div>
+        </p>
+
+        {collection.socialMail && (
+          <div className="pb-6">
+            <div className="relative flex flex-col px-6 overflow-hidden md:flex-row ">
+              <div className="block p-2 px-4 font-serif font-bold text-gray-100 duration-700 bg-blue-300 select-all md:text-xl md:tracking-wider bg-opacity-10">
+                {collection.socialMail}
+              </div>
+              <button
+                onClick={() => {
+                  copyToClipboard("" + collection.socialMail + "")
+                  setIsCopied(true)
+                  setTimeout(() => setIsCopied(false), 3000)
+                }}
+                data-tip="Copiar mail con un click"
+              >
+                <div className="block w-full px-4 py-2 font-bold text-white bg-gray-800 md:px-3 ">
+                  {isCopied ? (
+                    <div className="flex items-center justify-center font-serif text-green-500">
+                      <HiMailOpen className="mr-1 text-2xl text-green-500 md:mr-0" />
+                      <span className="md:hidden">Mail copiado</span>
+                    </div>
+                  ) : (
+                    <div className="flex items-center justify-center font-serif duration-200 transform hover:scale-105">
+                      <HiMail className="mr-1 text-2xl text-yellow-500 md:mr-0" />
+                      <span className="md:hidden">Click para Copiar</span>
+                    </div>
+                  )}
+                </div>
+              </button>
+            </div>
+          </div>
+        )}
 
         <div className="flex justify-between max-w-2xl px-2 mx-auto space-x-8 text-4xl text-white">
           {collection.socialYoutube && (
@@ -113,37 +145,7 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
             </div>
           )}
         </div>
-        {collection.socialMail && (
-          <div className="pt-6">
-            <div className="relative flex flex-col px-6 overflow-hidden md:flex-row ">
-              <div className="block p-2 px-4 font-serif font-bold text-gray-100 duration-700 bg-blue-300 select-all md:text-xl md:tracking-wider bg-opacity-10">
-                {collection.socialMail}
-              </div>
-              <button
-                onClick={() => {
-                  copyToClipboard("" + collection.socialMail + "")
-                  setIsCopied(true)
-                  setTimeout(() => setIsCopied(false), 3000)
-                }}
-                data-tip="Copiar mail con un click"
-              >
-                <div className="block w-full px-4 py-2 font-bold text-white bg-gray-800 md:px-3 ">
-                  {isCopied ? (
-                    <div className="flex items-center justify-center font-serif text-green-500">
-                      <HiMailOpen className="mr-1 text-2xl text-green-500 md:mr-0" />
-                      <span className="md:hidden">Mail copiado</span>
-                    </div>
-                  ) : (
-                    <div className="flex items-center justify-center font-serif duration-200 transform hover:scale-105">
-                      <HiMail className="mr-1 text-2xl text-yellow-500 md:mr-0" />
-                      <span className="md:hidden">Click para Copiar</span>
-                    </div>
-                  )}
-                </div>
-              </button>
-            </div>
-          </div>
-        )}
+
         {collection.linkExterno && (
           <div className="relative z-50 flex flex-col items-center justify-center w-full max-w-xs px-3 py-6 mx-auto duration-200 transform">
             <AwesomeButton
@@ -253,25 +255,6 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
               />
             </Link>
           </div>
-          <div className="max-w-3xl pt-6 pb-12 mx-auto">
-            <div className="relative flex flex-col items-center justify-center w-full overflow-hidden">
-              <AwesomeButton
-                action={() => {
-                  navigate(
-                    `/tienda-de-juegos/editoriales/${kebabCase(
-                      collection.editorial.slug
-                    )}`
-                  )
-                }}
-                type="primary"
-              >
-                Conocé los Juegos
-                <span className="hidden ml-2 md:inline-block">
-                  de {collection.editorial.title}
-                </span>
-              </AwesomeButton>
-            </div>
-          </div>
           {collection.juegosRelacionados && (
             <div className="grid max-w-4xl gap-3 mx-auto text-gray-900 sm:grid-cols-3">
               {collection.juegosRelacionados.map((item, i) => (
@@ -279,6 +262,18 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
               ))}
             </div>
           )}
+          <div className="max-w-3xl pt-6 pb-12 mx-auto">
+            <div className="relative flex flex-col items-center justify-center w-full py-3 overflow-hidden">
+              <Link
+                to={`/tienda-de-juegos/editoriales/${kebabCase(
+                  collection.editorial.slug
+                )}`}
+                className="btn yellow"
+              >
+                Ver más juegos en la tienda
+              </Link>
+            </div>
+          </div>
         </div>
       )}
 

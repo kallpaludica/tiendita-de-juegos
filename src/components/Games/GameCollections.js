@@ -17,13 +17,14 @@ const GameCollectionComponent = () => {
             }
             icono {
               gatsbyImageData(
-                layout: FIXED
-                height: 100
-                width: 100
+                layout: CONSTRAINED
+                width:100
+                height:100
+                quality: 100
                 formats: JPG
                 backgroundColor: "#ffffff"
                 jpegProgressive: false
-                placeholder: DOMINANT_COLOR
+                placeholder: BLURRED
               )
             }
           }
@@ -34,7 +35,7 @@ const GameCollectionComponent = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center max-w-6xl px-6 mx-auto">
+      <div className="flex flex-col items-center justify-center max-w-6xl px-6 pb-24 mx-auto">
         <div className="grid grid-cols-1 gap-5 my-12 font-sans text-gray-800 sm:grid-cols-2 md:grid-cols-4">
           {data.collections.edges.map(({ node }) => {
             return (
@@ -59,14 +60,14 @@ const GameCollectionComponent = () => {
                   <h4 className="text-xl text-blue-500">{node.title}</h4>
                 </Link>
                 <p
-                  className="p-2 pt-4 font-sans text-base md:px-0 md:text-lg"
+                  className="p-2 pt-4 font-serif text-base md:px-0 md:text-lg"
                   style={{ minHeight: "80px" }}
                 >
                   {node.CollectionDescription.CollectionDescription}
                 </p>
                 <Link
                   to={`/tienda-de-juegos/colecciones/${kebabCase(node.slug)}/`}
-                  className="px-2 py-2 font-bold text-white bg-blue-500 rounded-sm hover:bg-blue-600 hover:text-white"
+                  className="w-32 mx-auto mb-6 btn blue"
                 >
                   Ver colección
                 </Link>

@@ -5,6 +5,7 @@ import { AwesomeButton } from "react-awesome-button"
 import TextLoop from "react-text-loop"
 import { Link } from "gatsby"
 import { AiOutlineArrowRight } from "react-icons/ai"
+import AnchorLink from "react-anchor-link-smooth-scroll"
 
 const HomeHeroCompoent = () => {
   return (
@@ -56,9 +57,12 @@ const HomeHeroCompoent = () => {
                     </div>
                   </div>
                   <p className="block pt-8 font-sans text-xl text-left text-white transition-all duration-200 transform opacity-100">
-                    <span className="inline-block text-white">
+                    <AnchorLink
+                      className="inline-block text-white"
+                      href="#comunidad"
+                    >
                       Compartimos la potencia de jugar.
-                    </span>
+                    </AnchorLink>
                   </p>
                 </div>
               </div>
@@ -66,7 +70,7 @@ const HomeHeroCompoent = () => {
           </div>
         </section>
       </div>
-      <SliderHome/>
+      <SliderHome />
     </>
   )
 }

@@ -1,6 +1,6 @@
+import FormatText from "@components/Serializers/Serializers"
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
-import FormatText from "../serializers"
 
 const ObjectivesComponent = () => {
   const data = useStaticQuery(graphql`
@@ -23,9 +23,9 @@ const ObjectivesComponent = () => {
         </h1>
         <hr className="w-16 mx-auto my-8 border-t-4 border-yellow-600" />
         <div className="max-w-4xl mx-auto font-sans text-2xl prose prose-xl prose-red">
-        {data.objetivos.textoPrincipal && (
-          <FormatText FormatText={data.objetivos.textoPrincipal} />
-        )}
+          {data.objetivos.textoPrincipal && (
+            <FormatText FormatText={data.objetivos.textoPrincipal} />
+          )}
         </div>
       </div>
     </>

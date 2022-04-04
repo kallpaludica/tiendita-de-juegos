@@ -5,20 +5,22 @@ import React from "react"
 import { AwesomeButtonSocial } from "react-awesome-button"
 import { Helmet } from "react-helmet"
 import { FcClock, FcConferenceCall, FcCollaboration } from "react-icons/fc"
+import { FaExternalLinkSquareAlt } from "react-icons/fa"
+
 import { SRLWrapper } from "simple-react-lightbox"
-import Layout from "../components/layout"
-import OpenGallery from "../components/OpenGallery"
-import QueriesLastGames from "../components/Queries/QueriesLastGames"
-import Faq from "../components/About/Faq"
-import Seo from "../components/seo"
-import GoBack from "../components/GoBack"
-import AboutImage from "../images/kallpa-ludica.png"
+import Layout from "@components/layout"
+import OpenGallery from "@components/OpenGallery"
+import QueriesLastGames from "@components/Queries/QueriesLastGames"
+import Faq from "@components/About/Faq"
+import Seo from "@components/seo"
+import GoBack from "@components/GoBack/GoBack"
+import AboutImage from "@images/kallpa-ludica.png"
 import { RiZoomInLine } from "react-icons/ri"
 import { CgSandClock } from "react-icons/cg"
 import ReactPlayer from "react-player"
-import "../styles/AwsBtn.css"
-import "../styles/VideoReact.css"
-import FormatText from "../components/serializers"
+import "@styles/AwsBtn.css"
+import "@styles/VideoReact.css"
+import FormatText from "@components/Serializers/Serializers"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.contentfulArticulos
@@ -26,17 +28,17 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const { prev, next } = pageContext
   return (
     <Layout location={location}>
-      {post.publisher ? (
+      {post.imagenDestacada ? (
         <Seo
           title={`${post.title}`}
-          description={`Juego de la editorial ${post.publisher.title}`}
+          description={`Juego en la provincia de Salta`}
           image={`${post.imagenDestacada.file.url}`}
         />
       ) : (
         <Seo
           title={`${post.title}`}
           description={`Juego en la provincia de Salta`}
-          image={`${post.imagenDestacada.file.url}`}
+          image={AboutImage}
         />
       )}
       <Helmet>
@@ -44,8 +46,22 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       </Helmet>
       <div className="w-full py-12 bg-yellow-50">
         <div className="mx-auto mt-12 bg-white shadow-lg max-w-7xl ">
-          <div className="p-4 pb-0">
+          <div className="relative flex items-center justify-between w-full p-4 pb-0">
             <GoBack />
+            {post.LinkBgg ? (
+              <a
+                className="z-10 m-3 btn yellow"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Link a la BGG"
+                href={post.LinkBgg}
+              >
+                Ver más en la BGG
+                <FaExternalLinkSquareAlt className="ml-2" />
+              </a>
+            ) : (
+              <></>
+            )}
           </div>
           <div className="flex flex-col p-0 py-6 sm:flex-row">
             <div className="w-full md:w-2/3">
@@ -60,7 +76,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   </div>
                 ) : (
                   <img
-                    className="w-48 h-48 mx-auto my-6 opacity-25 "
+                    className="w-full h-full mx-auto my-5 rounded-lg opacity-10 "
                     alt="Kallpa Lúdica"
                     src={AboutImage}
                   />
@@ -90,35 +106,45 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </SRLWrapper>
             </div>
             <div className="relative flex flex-col w-full pt-3 md:pl-6">
-              <h1 className="w-full pt-2 pl-2 font-serif text-3xl font-bold text-left text-gray-600 md:pt-0 md:pl-0 md:text-5xl md:mb-3">
-                {post.title}
-              </h1>
-
               {post.stock && (
-                <div className="relative flex items-baseline justify-start m-1 my-2 font-serif text-xl font-bold tracking-wider text-left text-blue-500 transition-all duration-500">
-                  <CgSandClock className="relative mr-1 top-1 " />
+                <div className="relative flex items-baseline justify-center m-1 my-2 font-serif text-xl font-bold tracking-wider text-left text-blue-500 transition-all duration-500">
+                  <CgSandClock className="relative mr-1 text-lg top-0.5 " />
                   <span className="block">Por encargo</span>
                 </div>
               )}
-              <div className="flex flex-col items-start justify-start px-3 md:px-0">
+              <h1 className="w-full pt-2 pl-2 mb-0 font-serif text-3xl font-bold text-center text-gray-600 md:pt-0 md:pl-0 md:text-5xl">
+                {post.title}
+              </h1>
+              <div className="flex flex-col items-center justify-center px-3 pt-3 md:px-0">
+                {post.publisher && (
+                  <span
+                    to={`/tienda-de-juegos/editoriales/${kebabCase(
+                      post.publisher.slug
+                    )}`}
+                    className="block mb-3 font-bold"
+                    key={post.publisher.slug}
+                  >
+                    Editorial {post.publisher.title}
+                  </span>
+                )}
                 {post.publisher && (
                   <Link
                     to={`/tienda-de-juegos/editoriales/${kebabCase(
                       post.publisher.slug
                     )}`}
-                    className="flex flex-col py-1 mr-2 font-serif font-bold text-blue-500 underline hover:text-indigo-800"
+                    className="btn blue"
                     key={post.publisher.slug}
                   >
-                    Editorial {post.publisher.title}
+                    Ver más juegos de la editorial
                   </Link>
                 )}
                 {post.GameAuthor && (
-                  <div className="block py-1 mt-1 mb-4 font-serif text-base italic font-bold text-left text-gray-700 ">
+                  <div className="block py-1 mt-4 mb-4 font-serif text-base italic font-bold text-center text-gray-700 ">
                     Creado por {post.GameAuthor}
                   </div>
                 )}
               </div>
-              <div className="flex flex-col justify-center w-full px-1 pl-2 my-2 font-serif text-gray-700 md:pl-0 md:px-6 md:flex-row md:justify-start">
+              <div className="flex flex-col justify-center w-full px-1 pl-2 my-2 font-serif text-gray-700 md:pl-0 md:px-6 md:flex-row md:justify-center">
                 {post.GameAges && (
                   <div className="flex items-center justify-start my-2 font-bold text-left md:pr-6 sm:flex-row">
                     <FcConferenceCall className="mr-3 text-xl md:text-4xl " />
@@ -144,7 +170,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 </div>
               )}
               {post.GameBuyPrice && (
-                <div className="flex flex-col-reverse items-center justify-between w-full px-6 py-6 mb-0 bg-green-100 border-t-2 border-b-2 border-green-500 md:flex-row">
+                <div className="flex flex-col items-center justify-between w-full px-6 py-6 mb-0 border-t-2 border-b-2 bg-green-50 border-green-50">
+                  <div className="mb-6 font-sans text-4xl font-bold text-center text-green-600">
+                    ${post.GameBuyPrice}
+                  </div>
                   <AwesomeButtonSocial
                     type="whatsapp"
                     href={`https://api.whatsapp.com/send?phone=5493876034627&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20consultar%20por%20el%20juego%20${post.title}`}
@@ -153,14 +182,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   >
                     Hacenos tu consulta
                   </AwesomeButtonSocial>
-                  <div className="mb-3 font-sans text-3xl font-bold text-center text-green-900 md:my-0 md:text-right">
-                    ${post.GameBuyPrice}
-                  </div>
                 </div>
               )}
-              <div className="flex flex-col items-start justify-between mt-6 text-lg md:px-6 md:flex-row">
+              <div className="flex items-center justify-center mt-6 text-lg md:px-6">
                 {post.colecciones && (
-                  <div className="flex items-center justify-end text-lg text-center">
+                  <div className="flex items-center justify-center text-lg text-center">
                     {post.colecciones.map((item, i) => (
                       <Link
                         to={`/tienda-de-juegos/colecciones/${kebabCase(
@@ -172,12 +198,12 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                         <div className="relative overflow-hidden transition-all duration-200 transform md:w-full hover:-translate-y-1">
                           <GatsbyImage
                             title={item.title}
-                            className="w-16 h-16 mx-auto"
+                            className="w-10 h-10 mx-auto"
                             alt={item.title}
                             image={item.icono.gatsbyImageData}
                           />
                         </div>
-                        <b className="font-sans text-blue-500 hover:text-blue-700">
+                        <b className="mt-1 font-serif text-gray-800 hover:text-blue-700">
                           {item.title}
                         </b>
                       </Link>
@@ -188,7 +214,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
               <main>
                 <article
-                  className="w-full px-3 my-6 prose prose-xl text-left md:px-0 "
+                  className="w-full px-3 mx-auto my-6 prose prose-xl text-left gameSingle "
                   id={post.slug}
                 >
                   {post.textoPrincipal && (
@@ -273,6 +299,7 @@ export const pageQuery = graphql`
       insertarVideoDeYoutube
       GameDuration
       GameAuthor
+      LinkBgg
       GameAges
       colecciones {
         title
@@ -280,12 +307,11 @@ export const pageQuery = graphql`
         icono {
           gatsbyImageData(
             layout: FIXED
-            width: 50
-            height: 50
+            width: 40
+            height: 40
             quality: 90
             formats: JPG
             backgroundColor: "#ffffff"
-            jpegProgressive: false
             placeholder: BLURRED
           )
         }

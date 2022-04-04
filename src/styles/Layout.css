@@ -35,7 +35,7 @@ body {
   right: 54px;
   position: absolute;
   content: "Menú";
-  @apply font-sans text-lg font-bold text-gray-500;
+  @apply font-serif text-lg font-bold text-gray-500;
 }
 
 @screen lg {
@@ -91,10 +91,50 @@ main {
   z-index: 9999;
 }
 
-.btn {
+/* .btn {
   @apply inline-block px-12 py-3 my-6 font-mono text-2xl font-bold text-center text-gray-900 transition-all duration-500 rounded-md shadow-md;
+}  */
+.btn:hover,
+.btn:focus-visible {
+  @apply ring-2 bg-opacity-80 ring-offset-2 ring-gray-600 ring-opacity-75 shadow;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center px-4 py-2 font-serif text-xs md:text-sm font-bold tracking-wide duration-300 bg-gray-200 border-0 rounded-md outline-none cursor-pointer ring-0 bg-opacity-90 shadow-lg ring-gray-800;
 }
 
 
+.btn.red {
+  @apply bg-red-200 text-red-900 ring-red-600;
+}
+
+.btn.blue {
+  @apply bg-indigo-200 text-indigo-900 ring-indigo-600;
+}
+
+.btn.yellow {
+  @apply bg-yellow-200 text-yellow-900 ring-yellow-600;
+}
+
+.btn.green {
+  @apply bg-green-200 text-green-900 ring-green-600;
+}
+
+.btn.green:hover {
+  @apply ring-2
+}
+
+.collectionPage #ogam {
+  filter: hue-rotate(105deg);
+}
+
+.home #OgamAnimation {
+  filter: hue-rotate(105deg);
+}
+
+
+.community #OgamAnimation {
+  filter: hue-rotate(40deg);
+}
 
 /* purgecss end ignore */

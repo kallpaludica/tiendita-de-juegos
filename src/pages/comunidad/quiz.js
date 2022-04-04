@@ -1,9 +1,9 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-// import Contact from "../../components/Quiz/Quiz"
-import QuizApp from "../../components/Quiz/QuizApp"
-import Layout from "../../components/layout"
-import Seo from "../../components/seo"
+// import Contact from "@components/Quiz/Quiz"
+import QuizApp from "@components/Quiz/QuizApp"
+import Layout from "@components/layout"
+import Seo from "@components/seo"
 
 const QuizPage = () => {
   return (

@@ -1,7 +1,7 @@
+import FormatText from "@components/Serializers/Serializers"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import React from "react"
-import FormatText from "../serializers"
 
 const QueryTeamComponent = () => {
   const data = useStaticQuery(graphql`

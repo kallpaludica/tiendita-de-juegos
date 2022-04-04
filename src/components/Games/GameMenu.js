@@ -1,12 +1,11 @@
 import React, { useEffect } from "react"
-import QueryCollections from "../../components/Queries/QueryCollection"
-import QueryPublishers from "../../components/Queries/QueryPublishers"
+import QueryCollections from "@components/Queries/QueryCollection"
+import QueryPublishers from "@components/Queries/QueryPublishers"
 // import { FcSearch } from "react-icons/fc"
 // import { Link } from "gatsby"
 import lottie from "lottie-web"
 import { Link } from "gatsby"
-import Ogam from "../../animations/ogam.json"
-import "./gamemenu.css"
+import Ogam from "@animations/ogam.json"
 
 const GamesAside = () => {
   useEffect(() => {

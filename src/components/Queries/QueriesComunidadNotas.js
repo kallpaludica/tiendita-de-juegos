@@ -70,7 +70,7 @@ const QueryComunidadNotasComponent = () => {
               <div className={containerStyles.buttonContainer}>
                 {node.textoPrincipal && (
                   <Link
-                    className={containerStyles.button}
+                    className="btn blue"
                     key={node.slug}
                     to={`/comunidad/${kebabCase(node.slug)}/`}
                   >

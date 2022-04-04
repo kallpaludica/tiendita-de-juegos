@@ -10,8 +10,8 @@ const AnimateBackComponent = () => {
     })
   }, [])
   return (
-    <div className="text-gray-800 lottie-left-arrow ">
-      <div id="animate-arrow-back" style={{ width: 25, height: 25 }} />
+    <div className="text-red-800 lottie-left-arrow ">
+      <div id="animate-arrow-back" style={{ width: 15, height: 15 }} />
     </div>
   )
 }

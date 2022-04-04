@@ -1,13 +1,13 @@
 import { useStaticQuery, graphql } from "gatsby"
 import React from "react"
 import { Helmet } from "react-helmet"
-import Layout from "../../components/layout"
-import Seo from "../../components/seo"
-import HeroWave from "../../components/HeroWave"
-import GameCard from "../../components/GameCard"
-import GameSort from "../../components/Games/GameSort"
+import Layout from "@components/layout"
+import Seo from "@components/seo"
+import HeroWave from "@components/HeroWave/HeroWave"
+import GameCard from "@components/GameCard/GameCard"
+import GameSort from "@components/Games/GameSort"
 import * as containerStyles from "./duracion.module.css"
-import GamesAside from "../../components/Games/GameMenu"
+import GamesAside from "@components/Games/GameMenu"
 
 const DurationPage = (props) => {
   const data = useStaticQuery(graphql`

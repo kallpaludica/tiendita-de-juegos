@@ -1,6 +1,6 @@
+import FormatText from "@components/Serializers/Serializers"
+import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import FormatText from "../serializers"
 
 const AboutAboutComponent = () => {
   const data = useStaticQuery(graphql`

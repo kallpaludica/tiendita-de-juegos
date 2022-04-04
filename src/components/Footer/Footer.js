@@ -1,24 +1,15 @@
-import React, { useEffect } from "react"
-import lottie from "lottie-web"
+import KallpaLogo from "@assets/logo.svg"
 import { Link } from "gatsby"
+import React from "react"
 import {
   AiOutlineFacebook,
-  AiOutlineYoutube,
+  AiOutlineHeart,
   AiOutlineInstagram,
+  AiOutlineYoutube,
 } from "react-icons/ai"
-import KallpaLogo from "../assets/logo.svg"
-import { AiOutlineHeart } from "react-icons/ai"
 import { HiCode } from "react-icons/hi"
-import reactLogo from "../animations/ogam.json"
 
 const Footer = ({ children }) => {
-  useEffect(() => {
-    lottie.loadAnimation({
-      container: document.querySelector("#react-logo"),
-      animationData: reactLogo,
-    })
-  }, [])
-
   return (
     <>
       <footer className="relative w-full p-2 py-8 pb-24 overflow-hidden text-gray-800 bg-white">
@@ -155,9 +146,6 @@ const Footer = ({ children }) => {
             </div>
 
             <div>
-              <div className="relative flex w-32 h-40 max-w-lg mx-auto overflow-hidden duration-200">
-                <div id="react-logo" style={{ width: 220, height: 210 }} />
-              </div>
               <div className="font-sans font-bold">
                 {new Date().getFullYear()} Kallpa Lúdica
               </div>

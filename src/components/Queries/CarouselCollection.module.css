@@ -5,3 +5,4 @@
 .icono {
   @apply  flex items-center justify-center p-3 mx-auto overflow-hidden text-center bg-white ;
 }
+

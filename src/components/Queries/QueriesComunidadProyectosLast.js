@@ -71,7 +71,7 @@ const QueryComunidadProyectosLastComponent = () => {
               <div className={containerStyles.buttonContainer}>
                 {node.textoPrincipal && (
                   <Link
-                    className={containerStyles.button}
+                    className="btn yellow"
                     key={node.slug}
                     to={`/comunidad/${kebabCase(node.slug)}/`}
                   >

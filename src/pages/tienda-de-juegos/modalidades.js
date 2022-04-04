@@ -1,8 +1,8 @@
+import HeroWave from "@components/HeroWave/HeroWave"
+import Layout from "@components/layout"
+// import Categories from "@components/Games/GameCategories"
+import Seo from "@components/seo"
 import React from "react"
-import Layout from "../../components/layout"
-import HeroWave from "../../components/HeroWave"
-// import Categories from "../../components/Games/GameCategories"
-import Seo from "../../components/seo"
 import { Helmet } from "react-helmet"
 
 const CategoriesPages = ({ data, pageContext, location }) => {

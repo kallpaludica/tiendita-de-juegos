@@ -1,9 +1,8 @@
 import React, { Component } from "react"
 import { slide as Menu } from "react-burger-menu"
-import Navigation from "../components/Navigation"
-import "./sidebar.css"
+import OffcanvasNavigation from "@components/Offcanvas/OffcanvasNavigation"
 
-class Sidebar extends Component {
+class Offcanvas extends Component {
   constructor() {
     super()
     this.state = {
@@ -33,10 +32,10 @@ class Sidebar extends Component {
         isOpen={openMenu}
         onStateChange={state => this.handleStateChange(state)}
       >
-        <Navigation closeMenu={this.closeMenu} />
+        <OffcanvasNavigation closeMenu={this.closeMenu} />
       </Menu>
     )
   }
 }
 
-export default Sidebar
+export default Offcanvas

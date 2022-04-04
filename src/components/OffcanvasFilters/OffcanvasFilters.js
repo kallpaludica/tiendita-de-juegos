@@ -1,9 +1,8 @@
 import React, { Component } from "react"
 import { slide as Menu } from "react-burger-menu"
-import AlgoliaSearch from "../components/Search/AlgoliaCollapseSearch"
-import "./sidebar.css"
+import AlgoliaSearch from "../Search/AlgoliaCollapseSearch"
 
-class SidebarFilters extends Component {
+class OffcanvasFilters extends Component {
   constructor() {
     super()
     this.state = {
@@ -39,4 +38,4 @@ class SidebarFilters extends Component {
   }
 }
 
-export default SidebarFilters
+export default OffcanvasFilters

@@ -7,12 +7,12 @@
 
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import Sidebar from "../components/Sidebar"
-import Header from "../components/Header"
+import Sidebar from "@components/Sidebar/Sidebar"
+import Header from "@components/Header/Header"
 //import { RiWhatsappLine } from "react-icons/ri"
 import ReactTooltip from "react-tooltip"
 import lottie from "lottie-web"
-import reactLogo from "../animations/whatsapp.json"
+import reactLogo from "@animations/whatsapp.json"
 import React, { useEffect } from "react"
 
 const Layout = ({ location, children }) => {

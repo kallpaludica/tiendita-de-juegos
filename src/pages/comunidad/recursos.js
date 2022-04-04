@@ -1,30 +1,32 @@
+import Contact from "@components/About/Contact"
+import ComunidadWidgets from "@components/Comunidad/HomeWidgets"
+import Layout from "@components/layout"
+import ComunidadRecursos from "@components/Queries/QueriesComunidadRecursos"
+import Seo from "@components/seo"
 import React from "react"
+import { Helmet } from "react-helmet"
 import { FcEngineering } from "react-icons/fc"
-import Layout from "../../components/layout"
-import Seo from "../../components/seo"
-import ComunidadRecursos from "../../components/Queries/QueriesComunidadRecursos"
-import ComunidadWidgets from "../../components/Comunidad/HomeWidgets"
-import Contact from "../../components/About/Contact"
+
 
 const ComunidadRecursosPage = () => {
   return (
     <Layout>
+      <Helmet>
+        <body className="ingame" />
+      </Helmet>
       <Seo title="Recursos lúdicos" />
-      <div className="pb-24 mt-20 text-green-100 bg-fixed bg-green-50 pattern-grid-lg">
-        <div className="py-12 mx-auto my-3 mb-24 bg-green-100 bg-opacity-90">
-          <div className="flex flex-col items-center justify-center px-2">
-            <FcEngineering className="text-6xl" />
-            <h1 className="mb-2 font-mono text-3xl font-bold tracking-wider text-gray-700">
+      <div className="pt-20 pb-24 text-gray-100 bg-fixed bg-white pattern-grid-lg">
+        <div className="py-6 pt-6 mx-auto mb-6 bg-yellow-100 bg-opacity-90">
+          <div className="flex flex-col items-start justify-center max-w-4xl px-2 mx-auto">
+            <h1 className="flex items-center justify-start font-mono text-4xl font-bold tracking-wider text-yellow-500">
+              <FcEngineering className="mr-3 text-6xl" />
               Recursos lúdicos
             </h1>
-            <h2 className="mb-2 font-serif text-xl font-bold text-gray-700">
-              Para jugar al alcance de la mano.
-            </h2>
           </div>
         </div>
         <ComunidadRecursos />
       </div>
-      <div className="relative z-50 grid grid-cols-1 gap-3 px-2 pt-6 pb-12 mx-auto my-12 text-center max-w-7xl md:grid-cols-3">
+      <div className="relative z-50 grid grid-cols-1 gap-3 px-2 pt-6 pb-24 mx-auto my-12 text-center max-w-7xl md:grid-cols-3">
         <ComunidadWidgets />
       </div>
       <Contact />

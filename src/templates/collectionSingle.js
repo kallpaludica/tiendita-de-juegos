@@ -1,12 +1,12 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import { Link } from "gatsby"
+import GameCard from "@components/GameCard/GameCard"
+import GamesAside from "@components/Games/GameMenu"
+import HeroWave from "@components/HeroWave/HeroWave"
+import Layout from "@components/layout"
+import Seo from "@components/seo"
+import { graphql, Link } from "gatsby"
 import { kebabCase } from "lodash"
-import Seo from "../components/seo"
-import HeroWave from "../components/HeroWave"
-import GameCard from "../components/GameCard"
-import GamesAside from "../components/Games/GameMenu"
+import React from "react"
+import { Helmet } from "react-helmet"
 
 //import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
 //import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
@@ -17,11 +17,13 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
   const { prev, next } = pageContext
   return (
     <Layout location={location}>
+      <Helmet>
+        <body className="collectionPage" />
+      </Helmet>
       <Seo
         title={`Coleccion ${collection.title}`}
         description={`Juego de la Coleccion ${collection.title}`}
         image={`${collection.icono.file.url}`}
-
       />
       <HeroWave
         heading={collection.title}
@@ -29,27 +31,28 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
         pattern="bg-blue-500 text-blue-600"
       />
 
-      <div className='relative z-10 flex flex-row w-full mx-auto -mt-16 max-w-7xl'>
-        <div className='hidden w-64 px-6 pr-12 -mt-2 md:block'>
+      <div className="relative z-10 flex flex-row w-full mx-auto -mt-16 max-w-7xl">
+        <div className="hidden w-64 px-6 pr-12 -mt-2 md:block">
           <GamesAside />
         </div>
-        <div className='relative w-full px-2 pt-12 mx-auto'>
+        <div className="relative w-full px-2 pt-12 mx-auto">
           <div>
-            <div className='grid max-w-6xl grid-cols-1 gap-4 p-3 pb-12 mx-auto mt-16 bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 '>
+            <div className="grid max-w-6xl grid-cols-1 gap-4 p-3 pb-12 mx-auto mt-16 bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
               {articulos.map(({ node }) => {
                 return <GameCard card={node} key={node.slug} />
               })}
             </div>
 
             <div className="w-full max-w-2xl m-auto article">
-              <div className='flex justify-between py-12'>
+              <div className="flex justify-between py-12">
                 <div>
                   {prev && (
                     <Link
                       to={`/tienda-de-juegos/colecciones/${kebabCase(
                         prev.slug
                       )}/`}
-                      rel="prev" className="font-mono"
+                      rel="prev"
+                      className="font-mono"
                     >
                       ← {prev.title}
                     </Link>
@@ -62,13 +65,14 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
                       to={`/tienda-de-juegos/colecciones/${kebabCase(
                         next.slug
                       )}/`}
-                      rel="next" className="font-mono"
+                      rel="next"
+                      className="font-mono"
                     >
                       {next.title} →
                     </Link>
                   )}
                 </div>
-              </div >
+              </div>
             </div>
           </div>
         </div>
@@ -113,12 +117,11 @@ export const pageQuery = graphql`
           imagenDestacada {
             gatsbyImageData(
               layout: CONSTRAINED
-              width:300
-              height:300
+              width: 500
+              height: 500
               formats: JPG
               backgroundColor: "#ffffff"
-              jpegProgressive: false
-              placeholder: DOMINANT_COLOR
+              placeholder: BLURRED
             )
             file {
               url

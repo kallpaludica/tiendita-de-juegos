@@ -1,17 +1,14 @@
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import React, { useEffect } from "react"
+import AnimatedWhatsapp from "@animations/whatsapp.json"
+import Footer from "@components/Footer/Footer"
+import Header from "@components/Header/Header"
+import Offcanvas from "@components/Offcanvas/Offcanvas"
+import { graphql, useStaticQuery } from "gatsby"
 import lottie from "lottie-web"
+import PropTypes from "prop-types"
+import React, { useEffect } from "react"
 import AnchorLink from "react-anchor-link-smooth-scroll"
-import AnimatedWhatsapp from "../animations/whatsapp.json"
 import { BsFillTriangleFill } from "react-icons/bs"
 import SimpleReactLightbox from "simple-react-lightbox"
-// import ReactTooltip from "react-tooltip"
-import Sidebar from "../components/Sidebar"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
-import "../styles/pattern.css"
-import "./layout.css"
 
 const Layout = ({ location, children }) => {
   const data = useStaticQuery(graphql`
@@ -33,7 +30,7 @@ const Layout = ({ location, children }) => {
 
   return (
     <>
-      <Sidebar />
+      <Offcanvas />
       <Header siteTitle={data.site.siteMetadata.title} />
       <div id="top"></div>
       <div className="app-container">

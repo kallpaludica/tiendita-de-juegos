@@ -5,10 +5,7 @@ import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
 import { Player, BigPlayButton } from "video-react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { StaticImage } from "gatsby-plugin-image"
 import { FiExternalLink } from "react-icons/fi"
-
-import "./serializers.css"
 
 const Bold = ({ children }) => (
   <span className="font-serif font-bold">{children}</span>
@@ -27,7 +24,6 @@ const options = {
   },
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET]: (node) => {
-      
       if (!node.data || !node.data.target) {
         return <span className="hidden">Embedded asset is broken</span>
       } else {
@@ -90,17 +86,19 @@ const options = {
               to={`/tienda-de-juegos/editoriales/${node.data.target.slug}`}
               className="article-card"
             >
-              <div className="content">
-                <small>Editorial</small>
-                <h3> {node.data.target.title}</h3>
-              </div>
-              <div className="image">
+              <div className="w-40 image">
                 <GatsbyImage
                   title={node.data.target.title}
                   alt={node.data.target.title}
                   className="object-fill w-full h-full my-0"
                   image={node.data.target.logo.gatsbyImageData}
                 />
+              </div>
+              <div className="flex flex-col items-end justify-center font-serif">
+                <small className="font-bold">
+                  Editorial {node.data.target.title}
+                </small>
+                <small className="btn yellow">Ver juegos en la tienda</small>
               </div>
             </Link>
           )
@@ -135,17 +133,19 @@ const options = {
               to={`/comunidad/${node.data.target.slug}`}
               className="article-card"
             >
-              <div className="content">
-                <small>Comunidad</small>
-                <h3>{node.data.target.title}</h3>
-              </div>
-              <div className="image">
+              <div className="w-24 image">
                 <GatsbyImage
                   title={node.data.target.title}
                   alt={node.data.target.title}
                   className="object-fill w-full h-full my-0"
                   image={node.data.target.featuredImg.gatsbyImageData}
                 />
+              </div>
+              <div className="flex items-center justify-end">
+                <div className="flex flex-col font-bold text-right">
+                  <small className="font-bold">{node.data.target.title}</small>
+                  <small className="btn yellow">Proyectos que nos potencian</small>
+                </div>
               </div>
             </Link>
           )

@@ -61,7 +61,7 @@ const AboutPage = () => {
             </div>
           </Fade>
           <AnchorLink
-            className="flex items-center justify-center w-12 h-12 max-w-xs mx-auto mt-8 text-xl text-white transition-all duration-500 transform rounded-full hover:text-lg animate-bounce hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200"
+            className="flex items-center justify-center w-12 h-12 max-w-xs mx-auto mt-8 text-xl text-white transition-all duration-500 transform rounded-full hover:text-lg animate-pulse hover:text-gray-700 focus:text-gray-700 hover:bg-gray-200"
             href="#mision"
           >
             <BsFillTriangleFill className="transform rotate-180" />

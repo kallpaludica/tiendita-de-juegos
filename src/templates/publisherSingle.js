@@ -1,14 +1,14 @@
 import { graphql, Link } from "gatsby"
 import React from "react"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "@components/layout"
+import Seo from "@components/seo"
 import { kebabCase } from "lodash"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { FcGlobe } from "react-icons/fc"
 import AnchorLink from "react-anchor-link-smooth-scroll"
-import Publishers from "../components/Games/Publishers"
-import * as containerStyles from "../components/Queries/NewsCard.module.css"
-import GameCard from "../components/GameCard"
+import Publishers from "@components/Games/Publishers"
+import * as containerStyles from "@components/Queries/NewsCard.module.css"
+import GameCard from "@components/GameCard/GameCard"
 
 const PublisherSingleTemplate = ({ data, pageContext, location }) => {
   const publisher = data.contentfulEditorial
@@ -23,24 +23,24 @@ const PublisherSingleTemplate = ({ data, pageContext, location }) => {
       />
 
       <div
-        className={`pattern-grid-lg relative flex flex-col items-center justify-center w-full pt-24 md:pt-24 pb-12 md:pb-32 mx-auto bg-green-700 text-green-800`}
+        className={`pattern-grid-lg relative flex flex-col items-center justify-center w-full pt-24 md:pt-24 pb-12 md:pb-32 mx-auto bg-green-600 text-green-700 bg-fixed`}
       >
         <div
           className={`
-          relative z-50 flex flex-col justify-start w-full px-6 pt-0 pb-0 mx-auto text-left max-w-7xl md:pt-12 md:pb-12
+          relative z-50 flex flex-col items-center justify-center w-full px-6 pt-0 pb-0 mx-auto text-left max-w-7xl md:pt-12 md:pb-12
           `}
         >
-          <h1 className="pt-12 font-serif text-3xl font-bold leading-relaxed text-center text-white md:pt-0 md:text-6xl">
+          <h1 className="pt-12 pb-6 font-serif text-3xl font-bold leading-relaxed text-left text-white md:pt-0 md:text-6xl">
             {publisher.title}
           </h1>
 
           {publisher.comunidad && (
             <AnchorLink
-              className="z-50 flex items-center justify-center max-w-lg px-4 py-1 mx-auto mt-8 font-serif font-bold text-white bg-yellow-500 rounded-full textl-sm md:text-xl bg-opacity-90"
+              className="btn green"
               href="#comunidad"
             >
-              <FcGlobe className="mr-2 text-2xl" />
-              Conocé más sobre la editorial
+              Ver Editorial en Comunidad
+              <FcGlobe className="ml-2 text-xl" />
             </AnchorLink>
           )}
         </div>
@@ -136,7 +136,7 @@ const PublisherSingleTemplate = ({ data, pageContext, location }) => {
                   <time>{item.fechaDePublicacion}</time>
                   <div className={containerStyles.buttonContainer}>
                     <Link
-                      className={containerStyles.button}
+                      className="btn blue"
                       key={item.slug}
                       to={`/comunidad/${kebabCase(item.slug)}/`}
                     >
@@ -206,12 +206,11 @@ export const pageQuery = graphql`
           imagenDestacada {
             gatsbyImageData(
               layout: CONSTRAINED
-              width: 300
-              height: 300
+              width: 500
+              height: 500
               formats: JPG
               backgroundColor: "#ffffff"
-              jpegProgressive: false
-              placeholder: DOMINANT_COLOR
+              placeholder: BLURRED
             )
             file {
               url

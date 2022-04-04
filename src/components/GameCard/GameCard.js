@@ -2,12 +2,10 @@ import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { kebabCase } from "lodash"
 import React from "react"
-import AboutImage from "../images/kallpa-ludica.png"
+import AboutImage from "@images/kallpa-ludica.png"
 import { CgSandClock } from "react-icons/cg"
 import { AiFillCheckCircle } from "react-icons/ai"
-// import Toggle from "./GameCardToggle"
-// import ProductModal from "./modal/ProductModal"
-import * as containerStyles from "./gamecard.module.css"
+import * as containerStyles from "./GameCard.module.css"
 
 const Card = ({ card }) => (
   <div className={containerStyles.gamecard}>
@@ -87,7 +85,7 @@ const Card = ({ card }) => (
           className="border-t border-green-200 "
         >
           <div className="flex items-center justify-between p-3 px-2 font-serif text-lg font-bold text-left text-green-700 transition-all duration-500 bg-white hover:text-green-500 hover:bg-green-100">
-            <span>Ver más</span>
+            <span className="btn green">Ver juego</span>
             <AiFillCheckCircle className="hidden mb-1 " />
             <b className="block font-bold text-green-800 ">
               ${card.GameBuyPrice}
@@ -96,32 +94,6 @@ const Card = ({ card }) => (
         </Link>
       </div>
     </div>
-    
-    {/*
-    <ProductModal
-      title={card.title}
-      slug={card.slug}
-      stock={card.stock}
-      age={card.GameAges}
-      publisher={card.publisher}
-      categoria={card.categoria}
-      duration={card.GameDuration}
-      players={card.GamePlayers}
-    />
-     
-    <div className="hidden">
-      <Toggle
-        title={card.title}
-        slug={card.slug}
-        stock={card.stock}
-        age={card.GameAges}
-        publisher={card.publisher}
-        categoria={card.categoria}
-        duration={card.GameDuration}
-        players={card.GamePlayers}
-      />
-    </div> */}
-    
   </div>
 )
 

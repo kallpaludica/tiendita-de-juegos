@@ -1,10 +1,9 @@
+import KallpaLogo from "@assets/logo.svg"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import Headroom from "react-headroom"
-import { FcShop, FcContacts, FcGlobe } from "react-icons/fc"
-import KallpaLogo from "../assets/logo.svg"
-import "./header.css"
+import { FcContacts, FcGlobe, FcShop } from "react-icons/fc"
 
 const routesLeft = [
   
@@ -57,7 +56,7 @@ const Header = ({ siteTitle }) => (
                 key={i}
                 activeClassName="opacity-100 border-white active"
                 partiallyActive={true}
-                className="flex items-center py-3 m-0 font-mono text-xs text-center duration-700 border-t-2 border-transparent opacity-100 md:text-base hover:opacity-80 md:mx-4 focus:outline-none focus-visible:ring focus-visible:ring-yellow-500 focus:ring-yellow-500 focus-visible:ring-opacity-75"
+                className="flex items-center py-3 m-0 font-mono text-xs text-center duration-700 border-t-4 border-transparent opacity-100 md:text-base hover:opacity-80 md:mx-4 focus:outline-none focus-visible:ring focus-visible:ring-yellow-500 focus:ring-yellow-500 focus-visible:ring-opacity-75"
                 to={route.slug}
               >
                 <span className="hidden mr-1 lg:inline-block">

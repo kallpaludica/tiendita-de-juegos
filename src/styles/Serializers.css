@@ -31,7 +31,7 @@
 }
 
 .prose .article-card {
-  @apply relative flex max-w-2xl p-3 mx-auto my-6 overflow-hidden no-underline duration-700 transform rounded-md shadow-md hover:-translate-y-1 hover:shadow-xl;
+  @apply relative grid grid-cols-2 max-w-2xl p-3 mx-auto my-6 overflow-hidden no-underline duration-700 transform rounded-md shadow-md hover:-translate-y-1 hover:shadow-xl ;
 }
 
 .prose .article-card a {
@@ -47,7 +47,7 @@
 }
 
 .article-card .content p {
-  @apply w-full font-sans no-underline;
+  @apply w-full font-serif no-underline;
 }
 
 .article-card .content small {
@@ -60,11 +60,15 @@
 .article.prose .article-card .content h4,
 .article.prose .article-card .content h5,
 .article.prose .article-card .content h6 {
-  @apply m-0 font-sans font-bold;
+  @apply m-0 font-serif font-bold;
 }
 
 .article-card .image {
   @apply flex-none;
+}
+
+.gameSingle h2 {
+  @apply text-xl font-serif;
 }
 
 /* purgecss end ignore */

@@ -11,23 +11,12 @@ const { paginate } = require("gatsby-awesome-pagination")
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-
   return new Promise((resolve, reject) => {
-    const gameSingle = path.resolve(`./src/templates/gameSingle.js`)
-    // const categorySingle = path.resolve(`./src/templates/categorySingle.js`)
-    const publisherSingle = path.resolve(`./src/templates/publisherSingle.js`)
-    const collectionSingle = path.resolve(`./src/templates/collectionSingle.js`)
-    const resourseSingle = path.resolve(`./src/templates/resourseSingle.js`)
-    const blogSingle = path.resolve(`./src/templates/blogSingle.js`)
-
-    // allContentfulCategoriaDelJuego {
-    //   edges {
-    //     node {
-    //       title
-    //       slug
-    //     }
-    //   }
-    // }
+    const blogSingle = path.resolve(`./src/templates/BlogSingle.js`)
+    const collectionSingle = path.resolve(`./src/templates/CollectionSingle.js`)
+    const gameSingle = path.resolve(`./src/templates/GameSingle.js`)
+    const publisherSingle = path.resolve(`./src/templates/PublisherSingle.js`)
+    const resourseSingle = path.resolve(`./src/templates/ResourseSingle.js`)
 
     resolve(
       graphql(
@@ -85,16 +74,6 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        // paginate({
-        //   createPage,
-        //   items: result.data.allContentfulArticulos.edges,
-        //   itemsPerPage: 200,
-        //   pathPrefix: "/juegosss",
-        //   component: path.resolve("src/templates/gameArchive.js"),
-        // })
-
-        // const categories = result.data.allContentfulCategoriaDelJuego.edges
-        
         const posts = result.data.allContentfulArticulos.edges
         const publishers = result.data.allContentfulEditorial.edges
         const collections = result.data.allContentfulColecciones.edges
@@ -112,21 +91,6 @@ exports.createPages = ({ graphql, actions }) => {
             },
           })
         })
-
-        // categories.forEach((category, index) => {
-        //   createPage({
-        //     path: `/tienda-de-juegos/modalidades/${category.node.slug}/`,
-        //     component: categorySingle,
-        //     context: {
-        //       slug: category.node.slug,
-        //       prev: index === 0 ? null : categories[index - 1].node,
-        //       next:
-        //         index === categories.length - 1
-        //           ? null
-        //           : categories[index + 1].node,
-        //     },
-        //   })
-        // })
 
         publishers.forEach((publisher, index) => {
           createPage({
@@ -184,6 +148,42 @@ exports.createPages = ({ graphql, actions }) => {
             },
           })
         })
+
+        // const categorySingle = path.resolve(`./src/templates/categorySingle.js`)
+
+        // allContentfulCategoriaDelJuego {
+        //   edges {
+        //     node {
+        //       title
+        //       slug
+        //     }
+        //   }
+        // }
+
+        // paginate({
+        //   createPage,
+        //   items: result.data.allContentfulArticulos.edges,
+        //   itemsPerPage: 200,
+        //   pathPrefix: "/juegosss",
+        //   component: path.resolve("src/templates/gameArchive.js"),
+        // })
+
+        // const categories = result.data.allContentfulCategoriaDelJuego.edges
+
+        // categories.forEach((category, index) => {
+        //   createPage({
+        //     path: `/tienda-de-juegos/modalidades/${category.node.slug}/`,
+        //     component: categorySingle,
+        //     context: {
+        //       slug: category.node.slug,
+        //       prev: index === 0 ? null : categories[index - 1].node,
+        //       next:
+        //         index === categories.length - 1
+        //           ? null
+        //           : categories[index + 1].node,
+        //     },
+        //   })
+        // })
       })
     )
   })

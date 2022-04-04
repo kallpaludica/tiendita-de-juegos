@@ -1,11 +1,11 @@
+import * as containerStyles from "@components/CardGameSearchResult/CardGameSearchResult.module.css"
+import FormatText from "@components/Serializers/Serializers"
 import { Link } from "gatsby"
 import React from "react"
+import { AwesomeButtonSocial } from "react-awesome-button"
+import { FcClock, FcCollaboration, FcConferenceCall } from "react-icons/fc"
 // import { GatsbyImage } from "gatsby-plugin-image"
 import { Highlight } from "react-instantsearch-dom"
-import FormatText from "../components/serializers"
-import { FcClock, FcConferenceCall, FcCollaboration } from "react-icons/fc"
-import * as containerStyles from "./EncontrarComponent.module.css"
-import { AwesomeButtonSocial } from "react-awesome-button"
 
 const EncontrarPostPreview = ({ hit }) => {
   return (

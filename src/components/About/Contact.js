@@ -1,16 +1,25 @@
-import { graphql, useStaticQuery, navigate } from "gatsby"
+import OgamAnimation from "@animations/ogam.json"
+import { graphql, navigate, useStaticQuery } from "gatsby"
+import lottie from "lottie-web"
+import React, { useEffect } from "react"
 import { AwesomeButton } from "react-awesome-button"
-import React from "react"
 import {
   AiOutlineFacebook,
   AiOutlineInstagram,
-  AiOutlineYoutube,
+  AiOutlineYoutube
 } from "react-icons/ai"
 import { GoMail } from "react-icons/go"
 import { RiWhatsappLine } from "react-icons/ri"
 import Fade from "react-reveal/Fade"
 
 const ContactComponent = () => {
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: document.querySelector("#OgamAnimation"),
+      animationData: OgamAnimation,
+    })
+  }, [])
+
   const data = useStaticQuery(graphql`
     query ContactQuery {
       whatsapp: contentfulDatosDeContacto(titulo: { eq: "Whatsapp" }) {
@@ -48,6 +57,9 @@ const ContactComponent = () => {
       {/* <h1 className="max-w-6xl mx-auto mt-6 font-serif text-3xl font-bold text-green-600">
         {data.contactanos.title}
       </h1> */}
+      <div className="relative flex w-full h-40 max-w-xs mx-auto overflow-hidden duration-200 md:-mt-40">
+        <div id="OgamAnimation" style={{ width: '100%', height: 210 }} />
+      </div>
       <div className="flex flex-col justify-center pb-24 mx-auto mt-6 text-center max-w-7xl md:flex-row">
         <a
           className="flex flex-col items-center justify-center w-full max-w-sm p-2 mx-auto mb-3 text-center text-green-500 transition-all duration-500 ease-in-out transform bg-white rounded-md md:mx-3 hover:shadow-md hover:-translate-y-2 hover:text-green-600"
@@ -111,7 +123,7 @@ const ContactComponent = () => {
       </div>
 
       <section
-        className="relative pt-6 pb-24 mb-0 bg-gradient-to-b from-white via-green-300 to-green-500"
+        className="relative pt-6 pb-24 mb-0 bg-gradient-to-b from-white via-green-100 to-green-200"
         id="redes"
       >
         <Fade bottom delay={100}>

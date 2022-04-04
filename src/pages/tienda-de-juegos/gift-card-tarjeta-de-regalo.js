@@ -1,8 +1,8 @@
 import React from "react"
-import Layout from "../../components/layout"
-import Seo from "../../components/seo"
+import Layout from "@components/layout"
+import Seo from "@components/seo"
 import { Helmet } from "react-helmet"
-import Contact from "../../components/About/Contact"
+import Contact from "@components/About/Contact"
 import { GiCardRandom } from "react-icons/gi"
 import { AwesomeButtonSocial } from "react-awesome-button"
 const GiftCardPages = ({ data, pageContext, location }) => {

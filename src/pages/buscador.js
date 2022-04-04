@@ -2,14 +2,14 @@ import algoliasearch from "algoliasearch/lite"
 import React from "react"
 import { InstantSearch, Hits, SearchBox } from "react-instantsearch-dom"
 import Layout from "../components/layout"
-import PostPreview from "../components/postPreview"
-import HeroWave from "../components/HeroWave"
+import PostPreview from "../components/PostPreview/PostPreview"
+import HeroWave from "../components/HeroWave/HeroWave"
 import GameSort from "../components/Games/GameSort"
 import GamesAside from "../components/Games/GameMenu"
 import Seo from "../components/seo"
 import { Helmet } from "react-helmet"
 import Fade from "react-reveal/Fade"
-import "../styles/algolia.css"
+
 
 const searchClient = algoliasearch(
   "REF3SMUMO1",

@@ -1,10 +1,10 @@
 import React from "react"
 import { FcDocument } from "react-icons/fc"
-import Layout from "../../components/layout"
-import Seo from "../../components/seo"
-import ComunidadNotas from "../../components/Queries/QueriesComunidadNotas"
-import ComunidadWidgets from "../../components/Comunidad/HomeWidgets"
-import Contact from "../../components/About/Contact"
+import Layout from "@components/layout"
+import Seo from "@components/seo"
+import ComunidadNotas from "@components/Queries/QueriesComunidadNotas"
+import ComunidadWidgets from "@components/Comunidad/HomeWidgets"
+import Contact from "@components/About/Contact"
 
 const ComunidadNotasPage = () => {
   return (
@@ -24,7 +24,7 @@ const ComunidadNotasPage = () => {
           <ComunidadNotas />
         </div>
       </div>
-      <div className="relative z-50 grid grid-cols-1 gap-3 px-2 pt-6 pb-12 mx-auto my-12 text-center max-w-7xl md:grid-cols-3">
+      <div className="relative z-50 grid grid-cols-1 gap-3 px-2 pt-6 pb-24 mx-auto my-12 text-center max-w-7xl md:grid-cols-3">
         <ComunidadWidgets />
       </div>
       <Contact />

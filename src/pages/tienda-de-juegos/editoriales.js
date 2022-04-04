@@ -1,10 +1,10 @@
 import React from "react"
-import Layout from "../../components/layout"
-import HeroWave from "../../components/HeroWave"
-import Publishers from "../../components/Games/Publishers"
-import Seo from "../../components/seo"
+import Layout from "@components/layout"
+import HeroWave from "@components/HeroWave/HeroWave"
+import Publishers from "@components/Games/Publishers"
+import Seo from "@components/seo"
 import { Helmet } from "react-helmet"
-import Contact from "../../components/About/Contact"
+import Contact from "@components/About/Contact"
 
 const PublishersPages = ({ data, pageContext, location }) => {
   return (

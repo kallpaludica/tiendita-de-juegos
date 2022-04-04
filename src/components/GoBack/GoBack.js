@@ -1,6 +1,6 @@
 import React from "react"
 import { navigate } from "gatsby"
-import AnimatedBack from "../animations/goBack"
+import AnimatedBack from "@animations/goBack"
 
 const goBack = () => {
   navigate(-1)
@@ -11,10 +11,10 @@ const goBackButton = () => {
     <>
       <button
         onClick={goBack}
-        className="flex items-center py-5 text-gray-800 outline-none lottie-left-arrow md:pt-0 focus:outline-none hover:text-gray-900"
+        className="btn "
       >
         <AnimatedBack />
-        <span className="ml-2 font-sans font-bold">Retrodecer una página</span>
+        <span className="flex items-start justify-start ml-2 font-sans font-bold text-left md:flex-col">Retrodecer una página</span>
       </button>
     </>
   )

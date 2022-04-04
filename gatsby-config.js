@@ -2,6 +2,18 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+const path = require("path")
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        "@components": path.resolve(__dirname, "src/components"),
+        "@static": path.resolve(__dirname, "static"),
+      },
+    },
+  })
+}
+
 const contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
@@ -119,6 +131,23 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "@src": "src",
+          "@components": "src/components",
+          "@layouts": "src/layouts",
+          "@pages": "src/pages",
+          "@styles": "src/styles",
+          "@templates": "src/templates",
+          "@assets": "src/assets",
+          "@animations": "src/animations",
+          "@images": "src/images",
+        },
+        extensions: []
+      }
+    },
+    {
       resolve: `gatsby-plugin-breadcrumb`,
       options: {
         useAutoGen: true,
@@ -185,7 +214,14 @@ module.exports = {
           // Note: by supplying settings, you will overwrite all existing settings on the index
         },
         enablePartialUpdates: true, // default: false
-        matchFields: ["slug", "stock", "modified", "colecciones", "GameBuyPrice", "GamePlayers"], // Array<String> default: ['modified']
+        matchFields: [
+          "slug",
+          "stock",
+          "modified",
+          "colecciones",
+          "GameBuyPrice",
+          "GamePlayers",
+        ], // Array<String> default: ['modified']
         concurrentQueries: false, // default: true
         skipIndexing: false, // default: false, useful for e.g. preview deploys or local development
         continueOnFailure: false, // default: false, don't fail the build if algolia indexing fails

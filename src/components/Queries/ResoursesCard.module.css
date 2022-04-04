@@ -1,7 +1,7 @@
 /* purgecss start ignore */
 
 .gridContainer {
-  @apply grid w-full grid-cols-1 gap-5 px-3 mx-auto max-w-7xl md:grid-cols-2 lg:grid-cols-3 ;
+  @apply grid w-full grid-cols-1 gap-5 px-3 mx-auto max-w-7xl md:grid-cols-2 lg:grid-cols-3;
 }
 
 .item {
@@ -9,7 +9,7 @@
 }
 
 .imageContainer {
-  @apply absolute inset-0 flex-none overflow-hidden ;
+  @apply absolute inset-0 flex-none overflow-hidden;
 }
 
 .image {
@@ -17,7 +17,7 @@
 }
 
 .content {
-  @apply relative flex items-center justify-center w-full px-8 text-center duration-300 bg-gray-900 opacity-0 hover:opacity-100 bg-opacity-80 ;
+  @apply relative flex items-center justify-center w-full px-8 text-center duration-300 bg-gray-900 opacity-0 hover:opacity-100 bg-opacity-80;
 }
 
 .title {
@@ -29,7 +29,7 @@
 }
 
 .buttonContainer {
-  @apply  flex justify-between;
+  @apply flex justify-between;
 }
 
 .button {
@@ -37,7 +37,7 @@
 }
 
 :global(.widgets) .gridContainer {
-  @apply grid w-full grid-cols-1 px-0 md:grid-cols-2 lg:grid-cols-3 ;
+  @apply grid w-full grid-cols-1 px-0 md:grid-cols-2 lg:grid-cols-3;
 }
 
 :global(.widgets) .item {
@@ -56,20 +56,23 @@
   @apply justify-start opacity-80 hover:opacity-100;
 }
 
-:global(.widgets)  .title {
-  @apply relative z-50 text-lg opacity-100; 
+:global(.widgets) .title {
+  @apply relative z-50 text-lg opacity-100;
 }
-
 
 :global(.widgets) .button {
-  @apply bottom-0 top-auto bg-blue-600 rounded-tl-lg ;
+  @apply bottom-0 top-auto bg-blue-600 rounded-tl-lg;
 }
+
+.SlideItem {
+  @apply max-w-xs h-64;
+}
+
 
 /*
 :global(.grilla) .gamecard {
   @apply flex-col;
 }
 */
-
 
 /* purgecss end ignore */
