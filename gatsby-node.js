@@ -12,11 +12,11 @@ const { paginate } = require("gatsby-awesome-pagination")
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return new Promise((resolve, reject) => {
-    const blogSingle = path.resolve(`./src/templates/BlogSingle.js`)
-    const collectionSingle = path.resolve(`./src/templates/CollectionSingle.js`)
-    const gameSingle = path.resolve(`./src/templates/GameSingle.js`)
-    const publisherSingle = path.resolve(`./src/templates/PublisherSingle.js`)
-    const resourseSingle = path.resolve(`./src/templates/ResourseSingle.js`)
+    const blogSingle = path.resolve(`./src/templates/blogSingle.js`)
+    const collectionSingle = path.resolve(`./src/templates/collectionSingle.js`)
+    const gameSingle = path.resolve(`./src/templates/gameSingle.js`)
+    const publisherSingle = path.resolve(`./src/templates/publisherSingle.js`)
+    const resourseSingle = path.resolve(`./src/templates/resourseSingle.js`)
 
     resolve(
       graphql(

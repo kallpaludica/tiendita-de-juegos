@@ -6,7 +6,6 @@ import { AwesomeButtonSocial } from "react-awesome-button"
 import { Helmet } from "react-helmet"
 import { FcClock, FcConferenceCall, FcCollaboration } from "react-icons/fc"
 import { FaExternalLinkSquareAlt } from "react-icons/fa"
-
 import { SRLWrapper } from "simple-react-lightbox"
 import Layout from "@components/layout"
 import OpenGallery from "@components/OpenGallery"
