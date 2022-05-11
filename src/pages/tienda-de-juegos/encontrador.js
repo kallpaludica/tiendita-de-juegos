@@ -23,8 +23,8 @@ import AlgoliaSearch from "@components/Search/AlgoliaCollapseSearch"
 
 
 const searchClient = algoliasearch(
-  process.env.ALGOLIA_APP_ID,
-  process.env.ALGOLIA_API_KEY,
+  "REF3SMUMO1",
+  "7c4c56c7384927744e0746a4b31a7ff2"
 )
 
 const EncontrarComponent = () => {
