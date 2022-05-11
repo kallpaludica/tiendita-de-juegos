@@ -73,7 +73,7 @@ const IndexPage = () => {
         </div>
       </div>
 
-      <section id="comunidad" style={{ scrollMarginTop: "100px" }}>
+      <section id="comunidad" className="scroll-mt-12">
         <HomeComunidad />
         <div className="relative z-50 px-2 mx-auto mt-12 max-w-7xl">
           <div className="flex flex-col items-center justify-center mb-12">

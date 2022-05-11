@@ -18,7 +18,7 @@ const ComunidadRecursosPage = () => {
       <div className="pt-20 pb-24 text-gray-100 bg-fixed bg-white pattern-grid-lg">
         <div className="py-6 pt-6 mx-auto mb-6 bg-yellow-100 bg-opacity-90">
           <div className="flex flex-col items-start justify-center max-w-4xl px-2 mx-auto">
-            <h1 className="flex items-center justify-start font-mono text-4xl font-bold tracking-wider text-yellow-500">
+            <h1 className="flex items-center justify-start font-mono text-4xl font-bold tracking-wider text-amber-500">
               <FcEngineering className="mr-3 text-6xl" />
               Recursos lúdicos
             </h1>

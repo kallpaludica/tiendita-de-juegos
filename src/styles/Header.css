@@ -41,7 +41,7 @@ header nav a {
 
 .headroom--unpinned {
   position: fixed;
-  @apply py-1 bg-white shadow-lg;
+  @apply  bg-white shadow-lg;
   transform: translateY(0);
 }
 
@@ -56,8 +56,6 @@ header nav a {
 .headroom--pinned {
   position: fixed;
   transform: translateY(0%);
-
-  @apply py-1;
 }
 
 body.about .headroom--pinned {
@@ -102,7 +100,7 @@ body.ingame .header-container a.active {
 
 .logo-container {
   @apply m-0 md:px-3 md:relative;
-  top: 4px;
+  top: 1px;
   transition: all 1s;
 }
 

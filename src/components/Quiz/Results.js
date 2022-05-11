@@ -81,8 +81,8 @@ const Results = ({ userAnswers, score, restartQuiz }) => {
         {threeTries}
         {fourTries}
       </div>
-      <div className="flex items-center justify-center w-full py-6 bg-indigo-100 hover:bg-indigo-200">
-        <button onClick={restartQuiz} className="font-sans font-bold">
+      <div className="flex items-center justify-center w-full py-6 duration-300 bg-yellow-100 hover:bg-yellow-200">
+        <button onClick={restartQuiz} className="btn yellow">
           Jugar otra vez
         </button>
       </div>

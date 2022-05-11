@@ -37,7 +37,7 @@ const QueryTeamComponent = () => {
     <>
       {data.editoriales.edges.map(({ node }) => {
         return (
-          <div key={node.id} className="flex flex-col items-start justify-start w-full max-w-lg px-0 pb-3 mx-auto my-6 font-sans transition-all duration-500 bg-white shadow-md hover:shadow-xl">
+          <div key={node.id} className="flex flex-col items-start justify-start w-full max-w-lg px-0 pb-3 mx-auto my-6 font-serif transition-all duration-500 bg-white shadow-md hover:shadow-xl">
             <div className="p-2 text-yellow-300 md:flex-row pattern-dots-sm ">
               <div className="flex items-center justify-center mx-auto mb-3 overflow-hidden transform -translate-y-12 border-4 border-white rounded-full shadow-lg w-44 ">
                  <GatsbyImage

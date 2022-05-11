@@ -36,7 +36,7 @@ const PublisherSingleTemplate = ({ data, pageContext, location }) => {
 
           {publisher.comunidad && (
             <AnchorLink
-              className="relative px-12 btn green"
+              className="relative px-12 btn yellow"
               href="#comunidad"
             >
               Ver Editorial en Comunidad

@@ -22,7 +22,7 @@ const ObjectivesComponent = () => {
           {data.objetivos.title}
         </h1>
         <hr className="w-16 mx-auto my-8 border-t-4 border-yellow-600" />
-        <div className="max-w-4xl mx-auto font-sans text-2xl prose prose-xl prose-red">
+        <div className="max-w-4xl mx-auto font-serif text-2xl prose prose-xl prose-red">
           {data.objetivos.textoPrincipal && (
             <FormatText FormatText={data.objetivos.textoPrincipal} />
           )}

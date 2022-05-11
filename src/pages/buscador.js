@@ -10,10 +10,9 @@ import Seo from "../components/seo"
 import { Helmet } from "react-helmet"
 import Fade from "react-reveal/Fade"
 
-
 const searchClient = algoliasearch(
-  "REF3SMUMO1",
-  "7c4c56c7384927744e0746a4b31a7ff2"
+  process.env.ALGOLIA_APP_ID,
+  process.env.ALGOLIA_API_KEY,
 )
 
 const BuscarComponent = () => {

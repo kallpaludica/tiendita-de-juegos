@@ -1,6 +1,6 @@
 /* purgecss start ignore */
 .Proposals {
-  @apply max-w-4xl mx-auto font-sans text-xl;
+  @apply max-w-4xl mx-auto font-serif text-xl;
 }
 .Proposals ul {
   @apply grid grid-cols-1 gap-6 text-left md:grid-cols-2;

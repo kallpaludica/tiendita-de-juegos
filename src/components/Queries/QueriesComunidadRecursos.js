@@ -14,14 +14,14 @@ const QueryComunidadRecursosComponent = () => {
             id
             title
             slug
+            updatedAt(formatString: "LL", locale: "es")
             descripcion {
               descripcion
             }
             featuredImg {
               gatsbyImageData(
-                layout: CONSTRAINED
-                width: 400
-                height: 400
+                layout: FULL_WIDTH
+                height: 650
                 quality: 90
                 formats: JPG
                 backgroundColor: "#ffffff"
@@ -36,25 +36,25 @@ const QueryComunidadRecursosComponent = () => {
   `)
 
   return (
-    <div className="grid w-full max-w-4xl grid-cols-1 gap-8 mx-auto">
+    <div className="grid w-full max-w-4xl grid-cols-1 gap-8 px-4 mx-auto md:px-0">
       {data.collections.edges.map(({ node }) => {
         return (
           <div
             key={node.id}
-            className="grid w-full grid-cols-4 mx-auto overflow-hidden text-left duration-300 bg-white rounded-md shadow hover:shadow-lg"
+            className="relative grid w-full mx-auto overflow-hidden text-left duration-300 bg-white rounded-md shadow md:grid-cols-4 hover:shadow-lg"
           >
             <Link
               to={`/recursos/${kebabCase(node.slug)}/`}
-              className="col-span-1"
+              className="h-64 col-span-2 "
             >
               <GatsbyImage
                 title={node.title}
-                className=""
+                className="object-cover object-center w-full h-64"
                 alt={node.title}
                 image={node.featuredImg.gatsbyImageData}
               />
             </Link>
-            <div className="col-span-3 p-6">
+            <div className="relative col-span-2 p-6">
               <Link
                 className="font-serif text-2xl font-bold text-gray-900 "
                 key={node.slug}
@@ -67,7 +67,7 @@ const QueryComunidadRecursosComponent = () => {
                   {node.descripcion.descripcion}
                 </p>
               )}
-              <div className="">
+              <div className="mt-3 md:mt-0">
                 {node.descripcion && (
                   <Link
                     className="btn blue"
@@ -78,6 +78,7 @@ const QueryComunidadRecursosComponent = () => {
                   </Link>
                 )}
               </div>
+              <p className="absolute right-0 p-2 font-serif text-sm font-medium text-gray-600 md:bottom-0 bottom-5">Actualizado el {node.updatedAt}</p>
             </div>
           </div>
         )

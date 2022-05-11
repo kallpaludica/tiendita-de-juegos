@@ -170,8 +170,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               )}
               {post.GameBuyPrice && (
                 <div className="flex flex-col items-center justify-between w-full px-6 py-6 mb-0 border-t-2 border-b-2 bg-green-50 border-green-50">
-                  <div className="mb-6 font-sans text-4xl font-bold text-center text-green-600">
-                    ${post.GameBuyPrice}
+                  <div className="mb-6 font-serif text-4xl font-bold text-center text-green-600">
+                    $ {post.GameBuyPrice}
                   </div>
                   <AwesomeButtonSocial
                     type="whatsapp"
@@ -235,7 +235,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             </div>
           </div>
 
-          <div className="mx-auto font-sans border-t border-gray-300 max-w-7xl">
+          <div className="mx-auto font-serif border-t border-gray-300 max-w-7xl">
             <nav className="flex justify-between">
               <div className="flex-1 py-6 text-center border-r border-gray-300 hover:bg-yellow-100">
                 {prev && (

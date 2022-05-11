@@ -28,17 +28,17 @@ const GiftCardPages = ({ data, pageContext, location }) => {
               (Tarjeta de Regalo)
             </span>
           </div>
-          <p className="mb-6 font-sans text-2xl">
+          <p className="mb-6 font-serif text-2xl">
             La Gift Card o Tarjeta de Regalo es una idea hermosa y una solución
             increíble para aquelles indecises, que no terminen de definir su
             regalo porque les cuesta elegir entre la inmensa posibilidad de
             juegos..
           </p>
-          <p className="mb-6 font-sans text-2xl">
+          <p className="mb-6 font-serif text-2xl">
             Elegí el Monto que quieras regalar y su Nombre para recibir la
             tarjeta de regalo y enviarla!
           </p>
-          <p className="mb-12 font-sans text-2xl">
+          <p className="mb-12 font-serif text-2xl">
             Resolvé en segundos un bello regalo y disfrutá del compartir juegos
             de mesa con otres!!
           </p>

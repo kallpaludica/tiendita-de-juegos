@@ -7,3 +7,9 @@
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
 }
+
+body.home {
+  /* @apply scroll-auto xl:scroll-smooth; */
+  @apply scroll-smooth;
+  @apply motion-reduce:scroll-auto;
+}

@@ -45,6 +45,27 @@ const ComunidadPage = () => {
           </div>
         </Fade>
       </div>
+      <div className="py-6 text-blue-100 bg-fixed border-blue-100 bg-blue-50 pattern-grid-lg">
+        <div className="px-2 py-12 mx-auto my-3 mb-6 max-w-7xl ">
+          <div className="flex flex-col items-center justify-center">
+            <FcDocument className="text-6xl" />
+            <h2 className="mt-6 mb-12 font-mono text-4xl font-bold text-center text-gray-800">
+              Educación y los Juegos de Mesa
+            </h2>
+          </div>
+          <ComunidadNotas />
+          <div className="mt-12">
+            <AwesomeButton
+              action={() => {
+                navigate(`/comunidad/notas/`)
+              }}
+              type="secondary"
+            >
+              Ver todas
+            </AwesomeButton>
+          </div>
+        </div>
+      </div>
       <div className="py-12 text-gray-100 bg-fixed bg-white pattern-grid-lg">
         <div className="max-w-full mx-auto my-3 mb-24">
           <div className="flex flex-col items-center justify-center">
@@ -66,7 +87,7 @@ const ComunidadPage = () => {
           </div>
         </div>
       </div>
-      <div className="py-12 pb-24 text-yellow-100 bg-fixed bg-yellow-50 pattern-grid-lg">
+      <div className="py-12 pb-40 text-yellow-100 bg-fixed bg-yellow-50 pattern-grid-lg">
         <div className="px-2 mx-auto my-3 max-w-7xl">
           <div className="flex flex-col items-center justify-center py-12 space-y-3">
             <FcIdea className="text-6xl" />
@@ -87,34 +108,14 @@ const ComunidadPage = () => {
           </div>
         </div>
       </div>
-      <div className="py-12 text-blue-100 bg-fixed border-blue-100 bg-blue-50 pattern-grid-lg">
-        <div className="px-2 py-12 mx-auto my-3 mb-24 max-w-7xl ">
-          <div className="flex flex-col items-center justify-center">
-            <FcDocument className="text-6xl" />
-            <h2 className="mt-6 mb-12 font-mono text-4xl font-bold text-center text-gray-800">
-              Educación y los Juegos de Mesa
-            </h2>
-          </div>
-          <ComunidadNotas />
-          <div className="my-12">
-            <AwesomeButton
-              action={() => {
-                navigate(`/comunidad/notas/`)
-              }}
-              type="secondary"
-            >
-              Ver todas
-            </AwesomeButton>
-          </div>
-        </div>
-      </div>
-      {/* <div className="text-indigo-700 bg-indigo-800 pattern-grid-lg ">
-        <div className="relative flex flex-col items-center justify-start py-12 md:py-24 from-indigo-700 via-indigo-800 to-transparent bg-gradient-to-b ">
+      
+       {/* <div className="text-indigo-700 bg-indigo-800 pattern-grid-lg ">
+        <div className="relative flex flex-col items-center justify-start py-12 md:py-40 from-indigo-700 via-indigo-800 to-transparent bg-gradient-to-b ">
           <div className="relative w-full max-w-md p-3 mx-auto mt-6 overflow-hidden text-indigo-900 bg-indigo-800 pattern-checks-md rounded-xl">
-            <QuizApp totalQuestions={5} />
+            <QuizApp totalQuestions={1} />
           </div>
         </div>
-      </div> */}
+      </div>  */}
       <Contact />
     </Layout>
   )

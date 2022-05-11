@@ -110,25 +110,25 @@ const AboutPage = () => {
       <div className="sticky left-0 right-0 z-50 w-full pt-4 bg-white border-b border-gray-200 top-20 bg-opacity-95 md:top-16">
         <div className="relative z-50 flex justify-start w-full px-3 mx-auto max-w-7xl md:pt-3 md:px-3">
           <AnchorLink
-            className="w-full px-2 pb-2 mx-1 mt-2 font-sans text-lg font-bold text-center text-green-500 border-b-4 border-transparent md:text-xl md:mx-3 focus:border-green-700 hover:text-green-700 focus:text-green-700"
+            className="w-full px-2 pb-2 mx-1 mt-2 font-serif text-lg font-bold text-center text-green-500 border-b-4 border-transparent md:text-xl md:mx-3 focus:border-green-700 hover:text-green-700 focus:text-green-700"
             href="#mision"
           >
             Misión
           </AnchorLink>
           <AnchorLink
-            className="w-full px-2 pb-2 mx-1 mt-2 font-sans text-lg font-bold text-center text-indigo-700 border-b-4 border-transparent md:text-xl md:mx-3 focus:border-indigo-800 hover:text-indigo-800 focus:text-indigo-800"
+            className="w-full px-2 pb-2 mx-1 mt-2 font-serif text-lg font-bold text-center text-indigo-700 border-b-4 border-transparent md:text-xl md:mx-3 focus:border-indigo-800 hover:text-indigo-800 focus:text-indigo-800"
             href="#equipo"
           >
             Equipo
           </AnchorLink>
           <AnchorLink
-            className="w-full px-2 pb-2 mx-1 mt-2 font-sans text-lg font-bold text-center text-yellow-500 border-b-4 border-transparent md:text-xl md:mx-3 focus:border-yellow-700 hover:text-yellow-700 focus:text-yellow-700"
+            className="w-full px-2 pb-2 mx-1 mt-2 font-serif text-lg font-bold text-center text-yellow-500 border-b-4 border-transparent md:text-xl md:mx-3 focus:border-yellow-700 hover:text-yellow-700 focus:text-yellow-700"
             href="#objectives"
           >
             Objetivos
           </AnchorLink>
           <AnchorLink
-            className="w-full px-2 pb-2 mx-1 mt-2 font-sans text-lg font-bold text-center text-red-700 border-b-4 border-transparent md:text-xl md:mx-3 focus:border-yellow-800 hover:text-red-800 focus:text-yellow-800"
+            className="w-full px-2 pb-2 mx-1 mt-2 font-serif text-lg font-bold text-center text-red-700 border-b-4 border-transparent md:text-xl md:mx-3 focus:border-yellow-800 hover:text-red-800 focus:text-yellow-800"
             href="#proposals"
           >
             Propuestas

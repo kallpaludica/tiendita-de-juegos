@@ -54,7 +54,7 @@ export const pageQuery = graphql`
                 formats: JPG
                 backgroundColor: "#ffffff"
                 jpegProgressive: false
-                placeholder: DOMINANT_COLOR
+                placeholder: BLURRED
               )
             }
           }
@@ -70,7 +70,7 @@ export const pageQuery = graphql`
                 formats: JPG
                 backgroundColor: "#ffffff"
                 jpegProgressive: false
-                placeholder: DOMINANT_COLOR
+                placeholder: BLURRED
               )
             }
           }
@@ -141,7 +141,7 @@ const RecursosSingleTemplate = ({ data, pageContext, location }) => {
                       rel="noopener noreferrer"
                       href={collection.linkExterno}
                       target="_blank"
-                      className="inline-flex font-sans text-lg font-bold text-center text-indigo-600 no-underline border-b border-indigo-600 hover:border-indigo-700 hover:text-indigo-600"
+                      className="inline-flex font-serif text-lg font-bold text-center text-indigo-600 no-underline border-b border-indigo-600 hover:border-indigo-700 hover:text-indigo-600"
                     >
                       Visitar espacio
                       <FiExternalLink className="ml-1" />

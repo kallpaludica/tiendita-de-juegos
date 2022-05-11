@@ -5,7 +5,6 @@ import { AwesomeButton } from "react-awesome-button"
 import TextLoop from "react-text-loop"
 import { Link } from "gatsby"
 import { AiOutlineArrowRight } from "react-icons/ai"
-import AnchorLink from "react-anchor-link-smooth-scroll"
 
 const HomeHeroCompoent = () => {
   return (
@@ -21,20 +20,20 @@ const HomeHeroCompoent = () => {
                     <TextLoop interval={3000} fade={true}>
                       <Link
                         to={`/tienda-de-juegos/colecciones/familiares`}
-                        className="text-purple-400 hover:text-white hover:underline"
+                        className="text-indigo-400 hover:text-white hover:underline"
                       >
                         familiares
                       </Link>
                       <Link
                         to={`/tienda-de-juegos/colecciones/educativos`}
-                        className="text-yellow-400 hover:text-white hover:underline"
+                        className="text-amber-400 hover:text-white hover:underline"
                       >
                         educativos
                       </Link>
 
                       <Link
                         to={`/tienda-de-juegos/colecciones/terapeuticos`}
-                        className="text-green-400 hover:text-white hover:underline"
+                        className="text-emerald-400 hover:text-white hover:underline"
                       >
                         terapéuticos
                       </Link>
@@ -56,13 +55,10 @@ const HomeHeroCompoent = () => {
                       </AwesomeButton>
                     </div>
                   </div>
-                  <p className="block pt-8 font-sans text-xl text-left text-white transition-all duration-200 transform opacity-100">
-                    <AnchorLink
-                      className="inline-block text-white"
-                      href="#comunidad"
-                    >
+                  <p className="block pt-8 font-serif text-xl text-left text-white transition-all duration-200 transform opacity-100">
+                    <a className="inline-block text-white" href="#comunidad">
                       Compartimos la potencia de jugar.
-                    </AnchorLink>
+                    </a>
                   </p>
                 </div>
               </div>

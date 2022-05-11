@@ -20,7 +20,7 @@ const PublishersFeaturedComponent = () => {
                 formats: JPG
                 backgroundColor: "#ffffff"
                 jpegProgressive: false
-                placeholder: DOMINANT_COLOR
+                placeholder: BLURRED
               )
             }
           }

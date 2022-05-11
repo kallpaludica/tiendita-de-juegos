@@ -46,7 +46,7 @@ span {
 }
 
 .question-answer {
-  @apply px-3 py-6 font-sans text-xl text-center border border-gray-300 cursor-pointer md:hover:bg-indigo-200 md:hover:text-indigo-900;
+  @apply px-3 py-6 font-serif text-xl text-center border border-gray-300 cursor-pointer md:hover:bg-indigo-200 md:hover:text-indigo-900;
 }
 
 .question-answer span {

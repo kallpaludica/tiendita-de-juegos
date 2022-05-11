@@ -23,8 +23,8 @@ import AlgoliaSearch from "@components/Search/AlgoliaCollapseSearch"
 
 
 const searchClient = algoliasearch(
-  "REF3SMUMO1",
-  "7c4c56c7384927744e0746a4b31a7ff2"
+  process.env.ALGOLIA_APP_ID,
+  process.env.ALGOLIA_API_KEY,
 )
 
 const EncontrarComponent = () => {
@@ -59,7 +59,7 @@ const EncontrarComponent = () => {
                 isToggled
                   ? "bg-blue-500 hover:bg-blue-700"
                   : "bg-indigo-600 hover:bg-indigo-700"
-              } items-center justify-center hidden px-5 py-1 font-sans text-sm font-bold text-white duration-700  rounded-md cursor-pointer lg:flex  focus:outline-none focus-visible:ring focus-visible:ring-yellow-500 focus:ring-yellow-500 focus-visible:ring-opacity-75`}
+              } items-center justify-center hidden px-5 py-1 font-serif text-sm font-bold text-white duration-700  rounded-md cursor-pointer lg:flex  focus:outline-none focus-visible:ring focus-visible:ring-yellow-500 focus:ring-yellow-500 focus-visible:ring-opacity-75`}
               onClick={() => setToggle(!isToggled)}
             >
               <TiThList className="mr-1 text-xl" />
@@ -76,7 +76,7 @@ const EncontrarComponent = () => {
                   noResults: "Sin resultados",
                 }}
               />
-              <div className="absolute right-0 mr-8 font-sans text-base font-bold text-gray-500 top-1">
+              <div className="absolute right-0 mr-8 font-serif text-base font-bold text-gray-500 top-1">
                 <Stats
                   translations={{
                     stats(
@@ -97,7 +97,7 @@ const EncontrarComponent = () => {
               <div className="flex items-center justify-end w-full md:w-auto">
                 <div className="w-full md:w-44">
                   <HitsPerPage
-                    defaultRefinement={10}
+                    defaultRefinement={50}
                     items={[
                       { value: 2, label: "Mostrar 2 " },
                       { value: 10, label: "Mostrar 10 " },
@@ -137,7 +137,7 @@ const EncontrarComponent = () => {
             <div className="hidden">
               <button
                 onClick={handleToggle}
-                className="items-center justify-center hidden px-5 py-1 font-sans text-sm font-bold text-white duration-700 bg-indigo-600 rounded-md cursor-pointer h-9 md:flex hover:bg-indigo-700 focus:outline-none focus-visible:ring focus-visible:ring-yellow-500 focus:ring-yellow-500 focus-visible:ring-opacity-75"
+                className="items-center justify-center hidden px-5 py-1 font-serif text-sm font-bold text-white duration-700 bg-indigo-600 rounded-md cursor-pointer h-9 md:flex hover:bg-indigo-700 focus:outline-none focus-visible:ring focus-visible:ring-yellow-500 focus:ring-yellow-500 focus-visible:ring-opacity-75"
               >
                 <div
                   className={

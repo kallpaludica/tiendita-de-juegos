@@ -1,6 +1,6 @@
 import { graphql } from "gatsby"
 import Layout from "@components/layout"
-import { Link, navigate } from "gatsby"
+import { Link } from "gatsby"
 import { AwesomeButton } from "react-awesome-button"
 import { kebabCase } from "lodash"
 import Seo from "@components/seo"
@@ -285,7 +285,7 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
                 <Link
                   to={`/comunidad/${kebabCase(prev.slug)}/`}
                   rel="prev"
-                  className="font-sans text-lg font-bold"
+                  className="font-serif text-lg font-bold"
                 >
                   ← {prev.title}
                 </Link>
@@ -296,7 +296,7 @@ const ComunidadSingleTemplate = ({ data, pageContext, location }) => {
                 <Link
                   to={`/comunidad/${kebabCase(next.slug)}/`}
                   rel="next"
-                  className="font-sans text-lg font-bold"
+                  className="font-serif text-lg font-bold"
                 >
                   {next.title} →
                 </Link>
