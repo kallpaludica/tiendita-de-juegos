@@ -39,7 +39,7 @@ const EncontrarPostPreview = ({ hit }) => {
           className="inline-flex items-baseline justify-between font-serif font-bold text-gray-800 duration-700 border-2 border-white border-dashed outline-none md:text-2xl hover:text-indigo-700 hover:underline focus:border-green-500 focus:px-2"
         >
           <Highlight hit={hit} attribute="title" tagName="mark" />
-          <small className="relative hidden w-full ml-3 text-sm text-right text-gray-700 md:block md:absolute top-2 right-2">
+          <small className="absolute top-auto w-full ml-3 text-sm text-right text-gray-700 bottom-14 md:block md:bottom-auto md:top-2 right-2">
             <Highlight hit={hit} attribute="publisher.title" tagName="mark" />
           </small>
         </Link>

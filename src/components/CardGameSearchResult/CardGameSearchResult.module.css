@@ -1,7 +1,7 @@
 /* purgecss start ignore */
 
 .gamecard {
-  @apply relative flex pb-12 overflow-hidden text-left text-green-800 bg-white md:p-0;
+  @apply relative border rounded-md md:rounded-sm border-gray-200 flex pb-12 overflow-hidden text-left text-green-800 bg-white md:p-0;
 }
 
 .imageContainer {

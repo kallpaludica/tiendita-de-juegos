@@ -747,9 +747,10 @@ a[class^="ais-"] {
   display: block;
   border: 1px solid #c4c8d8;
   border-radius: 5px;
+  width: 3.75rem;
   -webkit-transition: background-color 0.2s ease-out;
   transition: background-color 0.2s ease-out;
-  @apply w-16 font-serif font-bold text-gray-500 border;
+  @apply  font-serif font-bold text-gray-500 border;
 }
 .ais-Pagination-link:hover,
 .ais-Pagination-link:focus {

@@ -52,7 +52,7 @@ const EncontrarComponent = () => {
           <div className="menu-2">
             <OffcanvasFilters />
           </div>
-          <div className="sticky z-50 flex flex-col-reverse px-2 pt-6 pb-4 mx-auto mb-3 space-y-2 bg-white top-16 md:px-7 2xl:max-w-7xl sm:flex-row sm:space-y-0 sm:space-x-1 md:space-x-3">
+          <div className="sticky z-50 flex flex-col-reverse px-2 pt-6 pb-2 mx-auto mb-3 space-y-2 bg-white md:pb-4 top-16 md:px-7 2xl:max-w-7xl sm:flex-row sm:space-y-0 sm:space-x-1 md:space-x-3">
             <button
               tabIndex="0"
               className={`${
@@ -95,7 +95,7 @@ const EncontrarComponent = () => {
             </div>
             <div className="grid items-center justify-end w-full grid-cols-2 gap-2 md:space-x-2 md:w-auto md:flex">
               <div className="flex items-center justify-end w-full md:w-auto">
-                <div className="w-full md:w-44">
+                <div className="w-full md:w-48">
                   <HitsPerPage
                     defaultRefinement={2}
                     items={[
@@ -158,7 +158,7 @@ const EncontrarComponent = () => {
               </button>
             </div>
           </div>
-          <div className="relative z-10 flex flex-row w-full min-h-screen pt-16 mx-auto md:px-3 2xl:max-w-7xl">
+          <div className="relative z-10 flex flex-row w-full min-h-screen mx-auto pt-14 md:pt-16 md:px-3 2xl:max-w-7xl">
             <animated.div
               style={fade}
               className="hidden px-3 text-left filter-menu w-80 lg:block"
@@ -178,7 +178,7 @@ const EncontrarComponent = () => {
                   />
                 </Fade>
                 <Pagination padding={1} />
-                <div className="bottom-0 right-0 flex items-center justify-center py-6 md:py-0 md:absolute opacity-30">
+                <div className="bottom-0 right-0 flex items-center justify-center py-6 scale-75 md:py-0 md:bottom-9 md:absolute opacity-30">
                   <PoweredBy />
                 </div>
               </div>

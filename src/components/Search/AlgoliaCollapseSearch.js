@@ -14,7 +14,7 @@ import { FiChevronDown } from "react-icons/fi"
 const EncontrarComponent = () => {
   return (
     <>
-      <div className="flex justify-between px-1 py-3 mb-2">
+      <div className="flex justify-between px-1 py-3 pt-1 mb-2">
         <h3 className="font-serif text-xs font-bold text-left text-gray-800">
           Encontrados <br/>
           <Stats
