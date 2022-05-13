@@ -6,7 +6,7 @@ const QueriesLastGamesComponent = () => {
   const data = useStaticQuery(graphql`
     query QueriesLastGamesQuery {
       GamesSorted: allContentfulArticulos(
-        sort: { fields: [GameBuyPrice], order: ASC }
+        sort: { fields: [createdAt], order: DESC }
         limit: 8
         filter: { articuloDestacado: { eq: "destacar" } }
       ) {
@@ -16,6 +16,7 @@ const QueriesLastGamesComponent = () => {
             title
             articuloDestacado
             slug
+            createdAt
             stock
             GameBuyPrice
             GamePlayers

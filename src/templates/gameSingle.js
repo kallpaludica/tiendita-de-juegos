@@ -4,7 +4,7 @@ import { kebabCase } from "lodash"
 import React from "react"
 import { AwesomeButtonSocial } from "react-awesome-button"
 import { Helmet } from "react-helmet"
-import { FcClock, FcConferenceCall, FcCollaboration } from "react-icons/fc"
+import { FcClock, FcConferenceCall, FcCollaboration, FcHome } from "react-icons/fc"
 import { FaExternalLinkSquareAlt } from "react-icons/fa"
 import { SRLWrapper } from "simple-react-lightbox"
 import Layout from "@components/layout"
@@ -272,9 +272,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <Faq />
         </div>
         <div className="relative flex flex-col items-center w-full px-2 pb-1 mx-auto mt-12 max-w-7xl ">
-          <h2 className="w-full pt-3 pb-3 mx-auto font-serif text-3xl font-bold text-center text-yellow-500 max-w-7xl ">
-            Lo que se anda jugando
-          </h2>
+        <h1 className="flex flex-col items-center w-full max-w-6xl pt-4 mx-auto font-mono text-2xl leading-tight text-center text-yellow-500 md:text-4xl">
+            <FcHome className="mt-6 text-6xl transform " />
+            Recien llegados
+          </h1>
         </div>
         <QueriesLastGames />
       </div>

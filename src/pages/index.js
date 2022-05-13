@@ -215,7 +215,7 @@ const IndexPage = () => {
         <div className="relative flex flex-col w-full max-w-6xl pt-2 pb-6 mx-auto md:flex-row">
           <h1 className="flex flex-col items-center w-full max-w-6xl pt-4 mx-auto font-mono text-2xl leading-tight text-center text-yellow-500 md:text-4xl">
             <FcHome className="mt-6 text-6xl transform " />
-            Lo que se anda jugando
+            Recien llegados
           </h1>
         </div>
         <div className="flex flex-col justify-start mt-5">
