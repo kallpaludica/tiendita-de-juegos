@@ -218,6 +218,7 @@ module.exports = {
           "slug",
           "stock",
           "modified",
+          "imagenDestacada",
           "colecciones",
           "GameBuyPrice",
           "GamePlayers",

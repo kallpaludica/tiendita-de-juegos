@@ -6,6 +6,7 @@ import { AwesomeButtonSocial } from "react-awesome-button"
 import { FcClock, FcCollaboration, FcConferenceCall } from "react-icons/fc"
 // import { GatsbyImage } from "gatsby-plugin-image"
 import { Highlight } from "react-instantsearch-dom"
+import AboutImage from "@images/kallpa-ludica.png"
 
 const EncontrarPostPreview = ({ hit }) => {
   return (
@@ -16,11 +17,19 @@ const EncontrarPostPreview = ({ hit }) => {
           className={containerStyles.imageLink}
           tabIndex="-1"
         >
-          <img
-            className={containerStyles.image}
-            alt={hit.title}
-            src={`https:${hit.imagenDestacada.file.url}?w=220&h=220&fm=png&q=80`}
-          />
+          {hit.imagenDestacada.file.url ? (
+            <img
+              className={containerStyles.image}
+              alt={hit.title}
+              src={`https:${hit.imagenDestacada.file.url}?w=220&h=220&fm=png&q=80`}
+            />
+          ) : (
+            <img
+              className="w-full h-full mx-auto my-5 rounded-lg opacity-10 "
+              alt="Kallpa Lúdica"
+              src={AboutImage}
+            />
+          )}
         </Link>
       </div>
       <div className={containerStyles.content}>
@@ -49,7 +58,6 @@ const EncontrarPostPreview = ({ hit }) => {
               en Stock
             </small>
           )}
-         
         </div>
         <div className="relative z-10 hidden w-full md:absolute md:w-auto bottom-4 right-2 md:block group">
           <span className="pr-2 font-sans font-bold text-green-600 duration-300 opacity-0 group-hover:opacity-100">

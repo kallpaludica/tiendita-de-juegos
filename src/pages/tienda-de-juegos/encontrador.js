@@ -97,14 +97,14 @@ const EncontrarComponent = () => {
               <div className="flex items-center justify-end w-full md:w-auto">
                 <div className="w-full md:w-44">
                   <HitsPerPage
-                    defaultRefinement={50}
+                    defaultRefinement={2}
                     items={[
-                      { value: 2, label: "Mostrar 2 " },
-                      { value: 10, label: "Mostrar 10 " },
-                      { value: 20, label: "Mostrar 20 " },
-                      { value: 30, label: "Mostrar 30 " },
-                      { value: 50, label: "Mostrar 50 " },
-                      { value: 100, label: "Mostrar 100 " },
+                      { value: 2, label: "Mostrar de a 2 " },
+                      { value: 10, label: "Mostrar de a 10 " },
+                      { value: 20, label: "Mostrar de a 20 " },
+                      { value: 30, label: "Mostrar de a 30 " },
+                      { value: 50, label: "Mostrar de a 50 " },
+                      { value: 100, label: "Mostrar de a 100 " },
                     ]}
                   />
                 </div>
