@@ -17,7 +17,7 @@ const HomeHeroCompoent = () => {
                 <div className="col-span-2 text-left">
                   <h1 className="text-3xl leading-9 text-left text-white md:text-4xl">
                     Comunidad de juegos{" "}
-                    <TextLoop interval={3000} fade={true}>
+                    {/* <TextLoop interval={3000} fade={true}>
                       <Link
                         to={`/tienda-de-juegos/colecciones/familiares`}
                         className="text-indigo-400 hover:text-white hover:underline"
@@ -37,7 +37,7 @@ const HomeHeroCompoent = () => {
                       >
                         terapéuticos
                       </Link>
-                    </TextLoop>{" "}
+                    </TextLoop>{" "} */}
                     <br />
                     en la Provincia de Salta.
                   </h1>
