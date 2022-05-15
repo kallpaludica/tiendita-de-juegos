@@ -65,7 +65,7 @@ const Card = ({ card }) => (
               <div className="flex justify-center pb-1 font-serif text-lg font-bold text-center text-gray-700 ">
                 <div className="flex items-baseline flex-1 ">
                   {card.GamePlayers}
-                  jugadores/as
+                  jugadorxs
                 </div>
               </div>
             </div>

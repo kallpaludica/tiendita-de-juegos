@@ -99,7 +99,7 @@ const EncontrarPostPreview = ({ hit }) => {
             <div className="flex items-center font-serif text-sm font-bold text-gray-700 md:text-base">
               <FcCollaboration className="block mr-1 text-xl " />
               <Highlight hit={hit} attribute="GamePlayers" tagName="mark" />
-              <span className="pl-1">Jugadores </span>
+              <span className="pl-1">Jugadorxs </span>
             </div>
           )}
         </div>
