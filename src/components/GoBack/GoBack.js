@@ -14,7 +14,7 @@ const goBackButton = () => {
         className="btn "
       >
         <AnimatedBack />
-        <span className="flex items-start justify-start ml-2 font-sans font-bold text-left md:flex-col">Retrodecer una página</span>
+        <span className="flex items-start justify-start ml-2 font-sans font-bold text-left md:flex-col">Retroceder una página</span>
       </button>
     </>
   )
