@@ -53,18 +53,7 @@ const EncontrarComponent = () => {
             <OffcanvasFilters />
           </div>
           <div className="sticky z-50 flex flex-col-reverse px-2 pt-6 pb-2 mx-auto mb-3 space-y-2 bg-white md:pb-4 top-16 md:px-7 2xl:max-w-7xl sm:flex-row sm:space-y-0 sm:space-x-1 md:space-x-3">
-            <button
-              tabIndex="0"
-              className={`${
-                isToggled
-                  ? "bg-blue-500 hover:bg-blue-700"
-                  : "bg-indigo-600 hover:bg-indigo-700"
-              } items-center justify-center hidden px-5 py-1 font-serif text-sm font-bold text-white duration-700  rounded-md cursor-pointer lg:flex  focus:outline-none focus-visible:ring focus-visible:ring-yellow-500 focus:ring-yellow-500 focus-visible:ring-opacity-75`}
-              onClick={() => setToggle(!isToggled)}
-            >
-              <TiThList className="mr-1 text-xl" />
-              Filtros
-            </button>
+            
             <div className="relative w-full">
               <SearchBox
                 className="w-full mx-auto"
