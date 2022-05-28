@@ -20,6 +20,7 @@ import ReactPlayer from "react-player"
 import "@styles/AwsBtn.css"
 import "@styles/VideoReact.css"
 import FormatText from "@components/Serializers/Serializers"
+import AnchorLink from "react-anchor-link-smooth-scroll"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.contentfulArticulos
@@ -106,10 +107,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             </div>
             <div className="relative flex flex-col w-full pt-3 md:pl-6">
               {post.stock && (
-                <div className="relative flex items-baseline justify-center m-1 my-2 font-serif text-xl font-bold tracking-wider text-left text-blue-500 transition-all duration-500">
+                <AnchorLink
+                  className="relative flex items-baseline justify-center m-1 my-2 font-serif text-xl font-bold tracking-wider text-left text-blue-500 transition-all duration-500"
+                  href="#faq"
+                >
                   <CgSandClock className="relative mr-1 text-lg top-0.5 " />
                   <span className="block">Por encargo</span>
-                </div>
+                </AnchorLink>
+
               )}
               <h1 className="w-full pt-2 pl-2 mb-0 font-serif text-3xl font-bold text-center text-gray-600 md:pt-0 md:pl-0 md:text-5xl">
                 {post.title}
@@ -266,13 +271,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </div>
         </div>
         <div>
-          <h2 className="w-full pt-20 pb-6 mx-auto font-serif text-3xl font-bold text-center text-indigo-500 max-w-7xl ">
+          <h2 id="faq" className="w-full pt-20 pb-6 mx-auto font-serif text-3xl font-bold text-center text-indigo-500 scroll-mt-20 max-w-7xl ">
             Preguntas Frecuentes
           </h2>
           <Faq />
         </div>
         <div className="relative flex flex-col items-center w-full px-2 pb-1 mx-auto mt-12 max-w-7xl ">
-        <h1 className="flex flex-col items-center w-full max-w-6xl pt-4 mx-auto font-mono text-2xl leading-tight text-center text-yellow-500 md:text-4xl">
+          <h1 className="flex flex-col items-center w-full max-w-6xl pt-4 mx-auto font-mono text-2xl leading-tight text-center text-yellow-500 md:text-4xl">
             <FcHome className="mt-6 text-6xl transform " />
             Recien llegados
           </h1>
@@ -301,21 +306,7 @@ export const pageQuery = graphql`
       GameAuthor
       LinkBgg
       GameAges
-      colecciones {
-        title
-        slug
-        icono {
-          gatsbyImageData(
-            layout: FIXED
-            width: 40
-            height: 40
-            quality: 90
-            formats: JPG
-            backgroundColor: "#ffffff"
-            placeholder: BLURRED
-          )
-        }
-      }
+      
       publisher {
         title
         slug

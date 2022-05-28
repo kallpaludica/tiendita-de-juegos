@@ -57,6 +57,7 @@ const myQuery2 = `{
         title
       }
       stock
+      GameInStock
       GameDuration
       GameAges
       articuloDestacado
@@ -219,6 +220,7 @@ module.exports = {
           "stock",
           "modified",
           "imagenDestacada",
+          "GameInStock",
           "colecciones",
           "GameBuyPrice",
           "GamePlayers",

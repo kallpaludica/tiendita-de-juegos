@@ -17,7 +17,7 @@ const EncontrarPostPreview = ({ hit }) => {
           className={containerStyles.imageLink}
           tabIndex="-1"
         >
-          {hit.imagenDestacada.file.url ? (
+          {hit.imagenDestacada ? (
             <img
               className={containerStyles.image}
               alt={hit.title}

@@ -8,7 +8,6 @@ const QueriesLastGamesComponent = () => {
       GamesSorted: allContentfulArticulos(
         sort: { fields: [createdAt], order: DESC }
         limit: 8
-        filter: { articuloDestacado: { eq: "destacar" } }
       ) {
         edges {
           node {
