@@ -106,7 +106,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </SRLWrapper>
             </div>
             <div className="relative flex flex-col w-full pt-3 md:pl-6">
-              {post.stock && (
+              {post.GameInStock ? (
+                <span
+                  className="relative flex items-baseline justify-center m-1 my-2 font-serif text-xl font-bold tracking-wider text-left text-green-500 transition-all duration-500"
+                  href="#faq"
+                >
+                  <span className="block">En Stock</span>
+                </span>
+              ) : (
                 <AnchorLink
                   className="relative flex items-baseline justify-center m-1 my-2 font-serif text-xl font-bold tracking-wider text-left text-blue-500 transition-all duration-500"
                   href="#faq"
@@ -114,7 +121,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   <CgSandClock className="relative mr-1 text-lg top-0.5 " />
                   <span className="block">Por encargo</span>
                 </AnchorLink>
-
               )}
               <h1 className="w-full pt-2 pl-2 mb-0 font-serif text-3xl font-bold text-center text-gray-600 md:pt-0 md:pl-0 md:text-5xl">
                 {post.title}
@@ -137,7 +143,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                       post.publisher.slug
                     )}`}
                     className="btn blue"
-                    key={post.publisher.slug}
+                    key={post.publisher.title}
                   >
                     Ver más juegos de la editorial
                   </Link>
@@ -164,7 +170,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 {post.GamePlayers && (
                   <div className="flex items-center justify-start my-2 font-bold text-left md:pr-6 sm:flex-row">
                     <FcCollaboration className="mr-3 text-xl md:text-4xl " />
-                    {post.GamePlayers} jugadorxs
+                    {post.GamePlayers} jugadores
                   </div>
                 )}
               </div>
@@ -299,6 +305,7 @@ export const pageQuery = graphql`
         raw
       }
       stock
+      GameInStock
       GameBuyPrice
       GamePlayers
       insertarVideoDeYoutube
@@ -306,7 +313,6 @@ export const pageQuery = graphql`
       GameAuthor
       LinkBgg
       GameAges
-      
       publisher {
         title
         slug

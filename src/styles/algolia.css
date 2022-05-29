@@ -340,12 +340,12 @@ a[class^="ais-"] {
 }
 
 .ais-ClearRefinements-button {
-  @apply block w-full px-5 py-2 font-serif text-sm font-bold text-indigo-700 transition-all duration-700 rounded outline-none;
+  @apply block w-full px-5 py-2 font-serif text-sm font-bold bg-indigo-500 text-white transition-all duration-700 rounded outline-none;
 }
 
 .ais-ClearRefinements-button:hover,
 .ais-ClearRefinements-button:focus {
-  @apply bg-indigo-800 text-white !important;
+  @apply bg-indigo-600  !important;
 }
 
 .ais-ClearRefinements-button:hover,
@@ -380,7 +380,7 @@ a[class^="ais-"] {
 .ais-Menu-showMore--disabled,
 .ais-RefinementList-showMore--disabled {
   opacity: 0.6;
-  @apply text-gray-800 bg-gray-300;
+  @apply text-gray-800 bg-gray-300 hover:bg-gray-300 !important;
   cursor: not-allowed;
 }
 .ais-ClearRefinements-button--disabled:hover,
@@ -604,7 +604,6 @@ a[class^="ais-"] {
   }
 }
 
-
 .grilla .meta {
   @apply grid grid-cols-3 px-0 space-x-0 md:gap-2;
 }
@@ -653,7 +652,7 @@ a[class^="ais-"] {
   /* -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none; */
-  padding: .45rem 2rem .5rem .3rem;
+  padding: 0.45rem 2rem 0.5rem 0.3rem;
   max-width: 100%;
   background-color: #fff;
   /* background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M0 7.3l2.8-2.8 9.2 9.3 9.2-9.3 2.8 2.8-12 12.2z' fill='%233A4570'/%3E%3C/svg%3E"); */
@@ -750,7 +749,7 @@ a[class^="ais-"] {
   width: 3.75rem;
   -webkit-transition: background-color 0.2s ease-out;
   transition: background-color 0.2s ease-out;
-  @apply  font-serif font-bold text-gray-500 border;
+  @apply font-serif font-bold text-gray-500 border;
 }
 .ais-Pagination-link:hover,
 .ais-Pagination-link:focus {
@@ -1150,6 +1149,22 @@ a[class^="ais-"] {
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.ais-RefinementList-label.inStock.active {
+@apply text-emerald-400;
+}
+
+.ais-RefinementList-label.inStock .CheckActive {
+  @apply bg-emerald-400;
+}
+
+.ais-RefinementList-label.outStock.active {
+  @apply text-blue-400;
+}
+
+.ais-RefinementList-label.outStock .CheckActive {
+  @apply bg-blue-400;
 }
 
 /* purgecss end ignore */

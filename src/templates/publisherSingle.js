@@ -194,6 +194,7 @@ export const pageQuery = graphql`
           title
           slug
           stock
+          GameInStock
           GamePlayers
           GameDuration
           GameAuthor

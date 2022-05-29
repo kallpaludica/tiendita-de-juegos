@@ -26,6 +26,7 @@ const EdadesPage = (props) => {
             GameAuthor
             GameAges
             stock
+            GameInStock
             categoria {
               title
               slug

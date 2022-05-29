@@ -49,13 +49,13 @@ const EncontrarPostPreview = ({ hit }) => {
               $<Highlight hit={hit} attribute="GameBuyPrice" tagName="mark" />
             </>
           )}
-          {hit.stock ? (
-            <small className="inline-block ml-3 text-xl text-blue-500 w-52 opacity-80">
-              Por encargo
-            </small>
-          ) : (
+          {hit.GameInStock ? (
             <small className="inline-block ml-3 text-xl text-green-500 w-52 opacity-90">
               en Stock
+            </small>
+          ) : (
+            <small className="inline-block ml-3 text-xl text-blue-500 w-52 opacity-80">
+              Por encargo
             </small>
           )}
         </div>
@@ -99,7 +99,7 @@ const EncontrarPostPreview = ({ hit }) => {
             <div className="flex items-center font-serif text-sm font-bold text-gray-700 md:text-base">
               <FcCollaboration className="block mr-1 text-xl " />
               <Highlight hit={hit} attribute="GamePlayers" tagName="mark" />
-              <span className="pl-1">Jugadorxs </span>
+              <span className="pl-1">Jugadores </span>
             </div>
           )}
         </div>

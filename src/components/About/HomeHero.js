@@ -2,8 +2,6 @@ import { navigate } from "gatsby"
 import React from "react"
 import SliderHome from "../Sliders/SliderHome"
 import { AwesomeButton } from "react-awesome-button"
-import TextLoop from "react-text-loop"
-import { Link } from "gatsby"
 import { AiOutlineArrowRight } from "react-icons/ai"
 
 const HomeHeroCompoent = () => {
@@ -16,28 +14,7 @@ const HomeHeroCompoent = () => {
               <div className="flex items-center flex-1 max-w-4xl py-8 font-mono">
                 <div className="col-span-2 text-left">
                   <h1 className="text-3xl leading-9 text-left text-white md:text-4xl">
-                    Comunidad de juegos{" "}
-                    {/* <TextLoop interval={3000} fade={true}>
-                      <Link
-                        to={`/tienda-de-juegos/colecciones/familiares`}
-                        className="text-indigo-400 hover:text-white hover:underline"
-                      >
-                        familiares
-                      </Link>
-                      <Link
-                        to={`/tienda-de-juegos/colecciones/educativos`}
-                        className="text-amber-400 hover:text-white hover:underline"
-                      >
-                        educativos
-                      </Link>
-
-                      <Link
-                        to={`/tienda-de-juegos/colecciones/terapeuticos`}
-                        className="text-emerald-400 hover:text-white hover:underline"
-                      >
-                        terapéuticos
-                      </Link>
-                    </TextLoop>{" "} */}
+                    Comunidad de juegos
                     <br />
                     en la Provincia de Salta.
                   </h1>

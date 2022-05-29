@@ -26,6 +26,7 @@ const DurationPage = (props) => {
             GameAuthor
             GameAges
             stock
+            GameInStock
             categoria {
               title
               slug

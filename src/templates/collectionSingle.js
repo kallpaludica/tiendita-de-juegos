@@ -1,24 +1,23 @@
-import GameCard from "@components/GameCard/GameCard"
+// import GameCard from "@components/GameCard/GameCard"
+import * as containerStyles from "@components/GameCard/GameCard.module.css"
 import GamesAside from "@components/Games/GameMenu"
 import HeroWave from "@components/HeroWave/HeroWave"
 import Layout from "@components/layout"
 import Seo from "@components/seo"
+import AboutImage from "@images/kallpa-ludica.png"
 import { graphql, Link } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { kebabCase } from "lodash"
 import React from "react"
 import { Helmet } from "react-helmet"
-import { GatsbyImage } from "gatsby-plugin-image"
-import AboutImage from "@images/kallpa-ludica.png"
-import { CgSandClock } from "react-icons/cg"
 import { AiFillCheckCircle } from "react-icons/ai"
-import * as containerStyles from "@components/GameCard/GameCard.module.css"
+import { CgSandClock } from "react-icons/cg"
 //import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
 //import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
   const collection = data.contentfulColecciones
   const collectionArticulos = data.contentfulColecciones.CollectionGames
-  console.log(collectionArticulos[0])
   const { prev, next } = pageContext
   return (
     <Layout location={location}>
@@ -102,7 +101,7 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
                               <div className="flex justify-center pb-1 font-serif text-lg font-bold text-center text-gray-700 ">
                                 <div className="flex items-baseline flex-1 ">
                                   {GamePlayers}
-                                  jugadorxs
+                                  jugadores
                                 </div>
                               </div>
                             </div>
@@ -202,8 +201,8 @@ export const pageQuery = graphql`
         title
         slug
         stock
-        GameBuyPrice
         GameInStock
+        GameBuyPrice
         imagenDestacada {
           gatsbyImageData(
             layout: CONSTRAINED

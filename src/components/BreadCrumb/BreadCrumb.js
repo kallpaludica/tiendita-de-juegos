@@ -8,7 +8,6 @@ const juicyBread = ({ breaddata }) => {
     var newlast = item.crumbLabel.replace(/-/g, " ")
     elementsNew.push({ pathname: item.pathname, crumlabel: newlast })
   }
-  //console.log(elementsNew)
 
   return (
     <>

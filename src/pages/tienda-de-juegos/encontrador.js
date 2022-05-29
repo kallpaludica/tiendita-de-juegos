@@ -54,9 +54,9 @@ const EncontrarComponent = () => {
           </div>
           <div className="sticky z-50 flex flex-col-reverse px-2 pt-6 pb-2 mx-auto mb-3 space-y-2 bg-white md:pb-4 top-16 md:px-7 2xl:max-w-7xl sm:flex-row sm:space-y-0 sm:space-x-1 md:space-x-3">
             
-            <div className="relative w-full">
+            <div className="relative w-full mt-2 md:mt-0">
               <SearchBox
-                className="w-full mx-auto"
+                className="w-full mx-auto "
                 showLoadingIndicator 
                 translations={{
                   submitTitle: "Iniciar búsqueda",
@@ -105,19 +105,19 @@ const EncontrarComponent = () => {
                     { value: "juegos", label: "Ordenado A-Z" },
                     {
                       value: "juegos_precio_asc",
-                      label: "< Precio más bajo",
+                      label: "Precio más bajo",
                     },
                     {
                       value: "juegos_precio_desc",
-                      label: "> Precio más alto",
+                      label: "Precio más alto",
                     },
                     {
                       value: "juegos_edades_asc",
-                      label: "< Edades más chiques",
+                      label: "Edades más chiques",
                     },
                     {
                       value: "juegos_edades_desc",
-                      label: "> Edades más grandes",
+                      label: "Edades más grandes",
                     },
                   ]}
                 />

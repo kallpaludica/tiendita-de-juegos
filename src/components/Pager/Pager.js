@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 
 const Pager = ({ pageContext }) => {
-  console.log(pageContext)
   const { previousPagePath, nextPagePath } = pageContext
   return (
     <nav style={{ display: "flex", justifyContent: "space-between" }}>

@@ -35,10 +35,10 @@ const Card = ({ card }) => (
         </Link>
       )}
       <div className="relative flex flex-col w-full px-0 pb-0 font-serif text-left bg-white ">
-        <div className="flex-grow" style={{ minHeight: "80px" }}>
+        <div className="flex-grow" style={{ minHeight: "70px" }}>
           <Link
             to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
-            className="flex-grow inline-block px-2 pt-4 font-serif text-base font-bold line-clamp-1 hover:text-green-600"
+            className="flex-grow inline-block px-2 pt-4 font-serif text-base font-bold line-clamp-1 hover:text-gray-800 hover:underline underline-offset-2"
           >
             {card.title}
           </Link>
@@ -65,12 +65,19 @@ const Card = ({ card }) => (
               <div className="flex justify-center pb-1 font-serif text-lg font-bold text-center text-gray-700 ">
                 <div className="flex items-baseline flex-1 ">
                   {card.GamePlayers}
-                  jugadorxs
+                  jugadores
                 </div>
               </div>
             </div>
           )}
-          {card.stock && (
+          {card.GameInStock ? (
+            <div
+              className="relative top-0 right-0 flex items-center justify-start pt-1 pl-1 m-0 font-serif text-sm font-bold text-left transition-all duration-500 text-emerald-600 md:text-base hover:text-emerald-800"
+              title="Por encargo"
+            >
+              <span className="block ml-1">En Stock</span>
+            </div>
+          ) : (
             <div
               className="relative top-0 right-0 flex items-center justify-start pt-1 pl-1 m-0 font-serif text-sm font-bold text-left text-blue-600 transition-all duration-500 md:text-base hover:text-blue-800"
               title="Por encargo"
@@ -80,18 +87,17 @@ const Card = ({ card }) => (
             </div>
           )}
         </div>
-        <Link
-          to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
+        <div
           className="border-t border-green-200 "
         >
-          <div className="flex items-center justify-between p-3 px-2 font-serif text-lg font-bold text-left text-green-700 transition-all duration-500 bg-white hover:text-green-500 hover:bg-green-100">
-            <span className="btn green">Ver juego</span>
+          <div className="flex items-center justify-between p-3 px-2 font-serif text-lg font-bold text-left text-gray-700 transition-all duration-500 bg-white">
+            <Link  to={`/tienda-de-juegos/${kebabCase(card.slug)}/`} className="btn yellow">Ver juego</Link>
             <AiFillCheckCircle className="hidden mb-1 " />
             <b className="block font-bold text-green-800 ">
               ${card.GameBuyPrice}
             </b>
           </div>
-        </Link>
+        </div>
       </div>
     </div>
   </div>
