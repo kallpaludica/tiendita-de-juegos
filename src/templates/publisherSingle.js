@@ -193,7 +193,6 @@ export const pageQuery = graphql`
           id
           title
           slug
-          stock
           GameInStock
           GamePlayers
           GameDuration

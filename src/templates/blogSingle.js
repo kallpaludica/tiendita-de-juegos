@@ -330,7 +330,6 @@ export const pageQuery = graphql`
         title
         slug
         GameBuyPrice
-        stock
         GameInStock
         imagenDestacada {
           gatsbyImageData

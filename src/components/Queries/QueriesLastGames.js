@@ -16,7 +16,6 @@ const QueriesLastGamesComponent = () => {
             articuloDestacado
             slug
             createdAt
-            stock
             GameInStock
             GameBuyPrice
             GamePlayers

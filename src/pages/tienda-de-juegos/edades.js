@@ -25,7 +25,6 @@ const EdadesPage = (props) => {
             GameDuration
             GameAuthor
             GameAges
-            stock
             GameInStock
             categoria {
               title

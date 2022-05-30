@@ -304,7 +304,6 @@ export const pageQuery = graphql`
       textoPrincipal {
         raw
       }
-      stock
       GameInStock
       GameBuyPrice
       GamePlayers

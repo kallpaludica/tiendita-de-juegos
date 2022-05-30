@@ -42,7 +42,7 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
         <div className="relative w-full px-2 pt-12 mx-auto">
           <div>
             <div className="grid max-w-6xl grid-cols-1 gap-4 p-3 pb-12 mx-auto mt-16 bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
-              {collectionArticulos.map(({ node, slug, title, GameBuyPrice, GameAges, GameDuration, GamePlayers, stock, GameInStock, imagenDestacada }) => {
+              {collectionArticulos.map(({ node, slug, title, GameBuyPrice, GameAges, GameDuration, GamePlayers, GameInStock, imagenDestacada }) => {
                 return (
                   <div className={containerStyles.gamecard}>
                     <div className="flex sm:flex-col">
@@ -200,7 +200,6 @@ export const pageQuery = graphql`
         id
         title
         slug
-        stock
         GameInStock
         GameBuyPrice
         imagenDestacada {
