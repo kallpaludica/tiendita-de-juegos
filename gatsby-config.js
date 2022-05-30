@@ -56,7 +56,7 @@ const myQuery2 = `{
       colecciones {
         title
       }
-      stock
+      
       GameInStock
       GameDuration
       GameAges
@@ -217,7 +217,6 @@ module.exports = {
         enablePartialUpdates: true, // default: false
         matchFields: [
           "slug",
-          "stock",
           "modified",
           "imagenDestacada",
           "GameInStock",
