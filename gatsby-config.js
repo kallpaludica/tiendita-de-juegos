@@ -84,11 +84,11 @@ const queries = [
 
 const { spaceId, accessToken } = contentfulConfig
 
-// if (!spaceId || !accessToken) {
-//   throw new Error(
-//     "Contentful spaceId and the access token need to be provided."
-//   )
-// }
+if (!spaceId || !accessToken) {
+  throw new Error(
+    "Contentful spaceId and the access token need to be provided."
+  )
+}
 
 module.exports = {
   flags: {
