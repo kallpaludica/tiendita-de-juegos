@@ -170,7 +170,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 {post.GamePlayers && (
                   <div className="flex items-center justify-start my-2 font-bold text-left md:pr-6 sm:flex-row">
                     <FcCollaboration className="mr-3 text-xl md:text-4xl " />
-                    {post.GamePlayers} jugadores
+                    {post.GamePlayers} jugadorxs
                   </div>
                 )}
               </div>

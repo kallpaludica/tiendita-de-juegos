@@ -101,7 +101,7 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
                               <div className="flex justify-center pb-1 font-serif text-lg font-bold text-center text-gray-700 ">
                                 <div className="flex items-baseline flex-1 ">
                                   {GamePlayers}
-                                  jugadores
+                                  jugadorxs
                                 </div>
                               </div>
                             </div>

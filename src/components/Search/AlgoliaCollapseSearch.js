@@ -207,7 +207,7 @@ const EncontrarComponent = () => {
                 } flex rounded-lg justify-between w-full px-4 py-0 mt-3 text-sm font-medium text-left text-indigo-900 bg-indigo-100  hover:bg-indigo-200 focus:outline-none duration-700 focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75 focus:ring-green-500`}
             >
               <h3 className="pt-1 my-1 font-serif text-lg font-bold text-left text-indigo-500">
-                Jugadores
+                Jugadorxs
               </h3>
               <FiChevronDown
                 className={`${open ? "transform rotate-180" : ""
