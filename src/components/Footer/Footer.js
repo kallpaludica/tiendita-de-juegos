@@ -83,7 +83,7 @@ const Footer = ({ children }) => {
                   <span className="block mb-3 font-sans text-sm font-bold text-gray-800 uppercase">
                     Contacto
                   </span>
-                  <div className="select-all">+549 3876034627</div>
+                  <div className="select-all">+549 3874811808</div>
                   <div className="select-all">kallpaludica@gmail.com</div>
                   <Link className="hover:underline" to="/quienes-somos">
                     Quienes somos

@@ -51,7 +51,7 @@ const Layout = ({ location, children }) => {
         target="_blank"
         rel="noopener noreferrer"
         title="Consultas por Whatsapp"
-        href="https://api.whatsapp.com/send?phone=+549%203876034627&text=%C2%A1Hola!%F0%9F%A4%97%20"
+        href="https://api.whatsapp.com/send?phone=+549%203874811808&text=%C2%A1Hola!%F0%9F%A4%97%20"
       >
         <div id="animated-whatsapp" style={{ width: 60, height: 60 }} />
       </a>

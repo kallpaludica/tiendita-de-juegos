@@ -65,7 +65,7 @@ const EncontrarPostPreview = ({ hit }) => {
           </span>
           <AwesomeButtonSocial
             type="whatsapp"
-            href={`https://api.whatsapp.com/send?phone=5493876034627&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20consultar%20por%20el%20juego%20${hit.title}`}
+            href={`https://api.whatsapp.com/send?phone=5493874811808&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20consultar%20por%20el%20juego%20${hit.title}`}
             target="_blank"
             size="small"
             rel="noopener noreferrer"

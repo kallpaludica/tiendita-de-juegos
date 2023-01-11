@@ -186,7 +186,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   </div>
                   <AwesomeButtonSocial
                     type="whatsapp"
-                    href={`https://api.whatsapp.com/send?phone=5493876034627&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20consultar%20por%20el%20juego%20${post.title}`}
+                    href={`https://api.whatsapp.com/send?phone=5493874811808&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20consultar%20por%20el%20juego%20${post.title}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

@@ -44,7 +44,7 @@ const GiftCardPages = ({ data, pageContext, location }) => {
           </p>
           <AwesomeButtonSocial
             type="whatsapp"
-            href={`https://api.whatsapp.com/send?phone=5493876034627&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20consultar%20para%20regalar%20una%20GiftCard`}
+            href={`https://api.whatsapp.com/send?phone=5493874811808&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20consultar%20para%20regalar%20una%20GiftCard`}
             target="_blank"
             rel="noopener noreferrer"
           >
