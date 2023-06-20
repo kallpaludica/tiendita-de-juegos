@@ -21,7 +21,7 @@
     "classnames": "^2.3.1",
     "embla-carousel-autoplay": "^6.2.0",
     "embla-carousel-react": "^6.2.0",
-    "gatsby": "^4.13.1",
+    "gatsby": "^5.0.0",
     "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-plugin-algolia": "^0.26.0",
     "gatsby-plugin-alias-imports": "^1.0.5",
