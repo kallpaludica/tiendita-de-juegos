@@ -108,7 +108,7 @@ module.exports = {
     title: `Kallpa Lúdica`,
     titleTemplate: "%s | Kallpa Lúdica",
     author: `@Kallpa Lúdica`,
-    description: `Tienda de juegos en la provincia de Salta`,
+    description: `Recreación y Juegos de Mesa en la provincia de Salta`,
     url: "https://www.kallpaludica.com.ar",
     image: "https://www.kallpaludica.com.ar/kallpaludica.jpg",
     twitterUsername: `@kallpaludica`,
