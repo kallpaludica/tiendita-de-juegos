@@ -22,7 +22,7 @@ const HomeHeroCompoent = () => {
                   <div className="flex flex-col justify-start mt-5">
                     <div className="mr-3 ">
                       <AwesomeButton
-                        action={() => {
+                        onPress={() => {
                           navigate(`/tienda-de-juegos/encontrador`)
                         }}
                         type="primary"

@@ -3,53 +3,13 @@ import { Disclosure, Transition } from "@headlessui/react"
 import { FiChevronDown } from "react-icons/fi"
 
 const FaqComponent = () => {
-  // const data = useStaticQuery(graphql`
-  //   query AboutAboutQuery {
-  //     about: contentfulSobreElProyecto(slug: { eq: "quienes-somos" }) {
-  //       id
-  //       title
-  //       textoPrincipal {
-  //         raw
-  //       }
-  //     }
-  //   }
-  // `)
 
   return (
     <>
       <div className="w-full px-4 pt-0">
         <div className="w-full max-w-3xl p-2 mx-auto bg-white rounded-2xl">
-        <Disclosure as="div" className="my-2">
-            {({ open }) => (
-              <>
-                <Disclosure.Button className="flex justify-between w-full px-6 py-4 font-serif text-xl font-bold text-left text-purple-900 bg-purple-100 rounded-lg hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
-                  <span>¿Qué significa "Por Encargo"?</span>
-                  <FiChevronDown
-                    className={`${
-                      open ? "transform rotate-180" : ""
-                    } w-5 h-5 text-purple-500`}
-                  />
-                </Disclosure.Button>
-                <Transition
-                  show={open}
-                  enter="transition duration-100 ease-out"
-                  enterFrom="transform scale-95 opacity-0"
-                  enterTo="transform scale-100 opacity-100"
-                  leave="transition duration-75 ease-out"
-                  leaveFrom="transform scale-100 opacity-100"
-                  leaveTo="transform scale-95 opacity-0"
-                >
-                  <Disclosure.Panel
-                    static
-                    className="px-6 pt-6 pb-8 font-serif text-xl text-left text-gray-800"
-                  >
-                    Son aquellos juegos que suelen tardar un par de días en llegar a Salta.
-                  </Disclosure.Panel>
-                </Transition>
-              </>
-            )}
-          </Disclosure>
-          <Disclosure>
+          
+          <Disclosure as="div">
             {({ open }) => (
               <>
                 <Disclosure.Button className="flex justify-between w-full px-6 py-4 font-serif text-xl font-bold text-left text-purple-900 bg-purple-100 rounded-lg hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
@@ -114,7 +74,7 @@ const FaqComponent = () => {
               </>
             )}
           </Disclosure>
-          
+
           <Disclosure as="div" className="mt-2">
             {({ open }) => (
               <>
@@ -207,7 +167,6 @@ const FaqComponent = () => {
                     Salta: Los juegos se retiran por nuestro Show Room, en zona
                     centro de la ciudad de Salta (cerca de la terminal). Para
                     más información por favor comunicarse a nuestro Whatsapp.
-                    
                   </Disclosure.Panel>
                 </Transition>
               </>

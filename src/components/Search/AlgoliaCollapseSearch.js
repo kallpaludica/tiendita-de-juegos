@@ -17,7 +17,7 @@ const RefinementListCustom = ({
   <ul>
     {items.map(item => (
       <li key={item.label}>
-        <label
+        <button
           className={`ais-RefinementList-label ${item.isRefined ? "active " : ""} ${item.label === "true" ? "inStock " : "outStock"} `}
           href={createURL(item.value)}
           onClick={event => {
@@ -40,7 +40,7 @@ const RefinementListCustom = ({
               )}
           </span>
           <span className="font-light ais-RefinementList-count">{item.count}</span>
-        </label>
+        </button>
       </li>
     ))}
   </ul>
@@ -123,45 +123,7 @@ const EncontrarComponent = () => {
           </>
         )}
       </Disclosure>
-      <Disclosure>
-        {({ open }) => (
-          <>
-            <Disclosure.Button
-              className={`${open ? "rounded-b-none bg-yellow-100 " : ""
-                } flex rounded-lg justify-between w-full px-4 py-0 mt-3 text-sm font-medium text-left text-indigo-900 bg-indigo-100  hover:bg-indigo-200 focus:outline-none duration-700 focus-visible:ring focus-visible:ring-green-500 focus:ring-green-500 focus-visible:ring-opacity-75`}
-            >
-              <h3 className="pt-1 my-1 font-serif text-lg font-bold text-left text-indigo-500">
-                Precio
-              </h3>
-              <FiChevronDown
-                className={`${open ? "transform rotate-180" : ""
-                  } w-5 h-5 text-indigo-800 mt-2 duration-100`}
-              />
-            </Disclosure.Button>
-
-            <Disclosure.Panel className="px-1 pt-1 text-base text-gray-700 bg-white shadow-md">
-
-              <NumericMenu
-                attribute="GameBuyPrice"
-                items={[
-                  { label: "Hasta $500", end: 500 },
-                  { label: "De $500 a $1000", start: 500, end: 1000 },
-                  {
-                    label: "De $1000 a $2000",
-                    start: 1000,
-                    end: 2000,
-                  },
-                  { label: "Mayores a $2000", start: 2000 },
-                ]}
-                translations={{
-                  all: "Todos",
-                }}
-              />
-            </Disclosure.Panel>
-
-          </>
-        )}
-      </Disclosure>
+      
       <Disclosure>
         {({ open }) => (
           <>
@@ -188,7 +150,7 @@ const EncontrarComponent = () => {
                     start: 7,
                     end: 10,
                   },
-                  { label: "De 10", start: 10 },
+                  { label: "Más de 10", start: 10 },
                 ]}
                 translations={{
                   all: "Para Todos",

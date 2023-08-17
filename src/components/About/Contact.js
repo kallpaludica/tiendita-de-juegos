@@ -129,7 +129,7 @@ const ContactComponent = () => {
         <Fade bottom delay={100}>
           <div className="relative z-50 flex-col items-center justify-center hidden py-12 space-y-6 md:flex-row md:space-y-0 md:space-x-3">
             <AwesomeButton
-              action={() => {
+              onPress={() => {
                 navigate(`/consulta-virtual`)
               }}
               type="primary"
@@ -137,7 +137,7 @@ const ContactComponent = () => {
               Conocer el showroom
             </AwesomeButton>
             <AwesomeButton
-              action={() => {
+              onPress={() => {
                 navigate(`/preguntas-frecuentes`)
               }}
               type="secondary"

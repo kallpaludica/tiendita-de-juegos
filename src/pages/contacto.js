@@ -11,7 +11,7 @@ const ContactPage = () => {
   return (
     <Layout>
       <Helmet>
-        <body className="ingame" />
+        <body className="ingame contact" />
       </Helmet>
       <Seo title="Contacto" />
       <HeroWave

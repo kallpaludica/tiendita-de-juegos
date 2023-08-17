@@ -102,7 +102,7 @@ const RecursosSingleTemplate = ({ data, pageContext, location }) => {
         <body className="ingame" />
       </Helmet>
       <div className="relative z-50 pb-24 mx-auto bg-gray-200 ">
-        <div className="flex flex-col items-start justify-start pt-20 mx-auto max-w-7xl md:flex-row">
+        <div className="flex flex-col items-start justify-start max-w-5xl pt-20 mx-auto">
           <div className="w-full p-3 bg-white rounded-md shadow-lg">
             <div className="flex items-center justify-center w-full max-w-5xl mx-auto article">
               <div className="grid w-full grid-cols-2 gap-3 pt-2 pb-6 border-b border-gray-200">
@@ -177,10 +177,10 @@ const RecursosSingleTemplate = ({ data, pageContext, location }) => {
               </div>
             </div>
           </div>
-          <div className="relative z-50 grid self-start w-full max-w-sm grid-cols-1 gap-3 px-2 pb-12 mx-auto text-center top-20 md:sticky md:grid-cols-1">
-            <ComunidadNav />
-          </div>
         </div>
+      </div>
+      <div className="relative z-50 grid self-start w-full grid-cols-1 gap-3 pt-12 mx-auto text-center max-w-7xl md:grid-cols-3">
+        <ComunidadNav />
       </div>
       <div className="py-12">
         <div className="flex items-center justify-start w-full pb-6 mx-auto md:px-10">

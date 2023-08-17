@@ -154,7 +154,7 @@ const IndexPage = () => {
               <div className="flex items-center justify-start pt-12">
                 <Fade bottom delay={100}>
                   <AwesomeButton
-                    action={() => {
+                    onPress={() => {
                       navigate(`/quienes-somos`)
                     }}
                     type="primary"
@@ -221,7 +221,7 @@ const IndexPage = () => {
         <div className="flex flex-col justify-start mt-5">
           <div className="mr-3 ">
             <AwesomeButton
-              action={() => {
+              onPress={() => {
                 navigate(`/tienda-de-juegos/encontrador`)
               }}
               type="primary"

@@ -4,7 +4,12 @@ import { kebabCase } from "lodash"
 import React from "react"
 import { AwesomeButtonSocial } from "react-awesome-button"
 import { Helmet } from "react-helmet"
-import { FcClock, FcConferenceCall, FcCollaboration, FcHome } from "react-icons/fc"
+import {
+  FcClock,
+  FcConferenceCall,
+  FcCollaboration,
+  FcHome,
+} from "react-icons/fc"
 import { FaExternalLinkSquareAlt } from "react-icons/fa"
 import { SRLWrapper } from "simple-react-lightbox"
 import Layout from "@components/layout"
@@ -181,16 +186,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               )}
               {post.GameBuyPrice && (
                 <div className="flex flex-col items-center justify-between w-full px-6 py-6 mb-0 border-t-2 border-b-2 bg-green-50 border-green-50">
-                  <div className="mb-6 font-serif text-4xl font-bold text-center text-green-600">
-                    $ {post.GameBuyPrice}
-                  </div>
                   <AwesomeButtonSocial
                     type="whatsapp"
                     href={`https://api.whatsapp.com/send?phone=5493874811808&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20consultar%20por%20el%20juego%20${post.title}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Hacenos tu consulta
+                    <span className="ml-2">Consultar precio</span>
                   </AwesomeButtonSocial>
                 </div>
               )}
@@ -277,7 +279,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </div>
         </div>
         <div>
-          <h2 id="faq" className="w-full pt-20 pb-6 mx-auto font-serif text-3xl font-bold text-center text-indigo-500 scroll-mt-20 max-w-7xl ">
+          <h2
+            id="faq"
+            className="w-full pt-20 pb-6 mx-auto font-serif text-3xl font-bold text-center text-indigo-500 scroll-mt-20 max-w-7xl "
+          >
             Preguntas Frecuentes
           </h2>
           <Faq />

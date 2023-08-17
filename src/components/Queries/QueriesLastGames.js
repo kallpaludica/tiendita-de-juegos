@@ -42,7 +42,7 @@ const QueriesLastGamesComponent = () => {
 
   return (
     <>
-      <div className='grid max-w-6xl grid-cols-1 gap-4 p-3 py-12 mx-auto md:px-0 sm:grid-cols-2 md:grid-cols-4 ' id="contenido">
+      <div className='grid max-w-6xl grid-cols-2 gap-4 p-3 py-12 mx-auto md:px-0 md:grid-cols-4 ' id="contenido">
         {data.GamesSorted.edges.map(({ node }) => {
           return <GameCard card={node} key={node.slug} />
         })}

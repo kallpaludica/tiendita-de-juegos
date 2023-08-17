@@ -1,4 +1,4 @@
-import KallpaLogo from "@assets/logo.svg"
+import KallpaLogo from "@components/svgs/logo"
 import { Link } from "gatsby"
 import React from "react"
 import {
@@ -16,7 +16,9 @@ const Footer = ({ children }) => {
         <div className="flex-col w-full mx-auto max-w-7xl">
           <div className="flex flex-col w-full px-6 pb-12 md:flex-row">
             <div className="flex items-start justify-start w-64">
-              <KallpaLogo className="w-20 h-20 max-w-xs mb-6" />
+              <div className="w-20 h-20 max-w-xs mb-6">
+                <KallpaLogo />
+              </div>
             </div>
             <div className="w-full">
               <div className="grid w-full gap-3 mx-auto mt-12 font-serif text-lg text-left text-gray-800 md:grid-cols-2 md:mt-3 lg:grid-cols-3">
@@ -26,12 +28,6 @@ const Footer = ({ children }) => {
                   </span>
                   <Link className="hover:underline" to="/tienda-de-juegos">
                     Por título
-                  </Link>
-                  <Link
-                    className="hover:underline"
-                    to="/tienda-de-juegos/precio"
-                  >
-                    Por precio
                   </Link>
                   <Link
                     className="hover:underline"

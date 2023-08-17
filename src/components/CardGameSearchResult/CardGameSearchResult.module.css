@@ -17,7 +17,7 @@
 }
 
 .content {
-  @apply flex flex-col items-start justify-start flex-1 w-full p-2 pt-1 pb-0 text-left md:px-6;
+  @apply flex flex-col items-start justify-start  flex-1 w-full p-2 pt-3 pb-0 text-left md:px-6;
 }
 
 :global(.grilla) .gamecard {

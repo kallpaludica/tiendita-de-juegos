@@ -28,7 +28,7 @@ const SliderHomeCollection = (props) => {
                 width: 80
                 formats: JPG
                 jpegProgressive: false
-                placeholder: TRACED_SVG
+                placeholder: BLURRED
               )
             }
           }
@@ -116,7 +116,7 @@ const SliderHomeCollection = (props) => {
                   </h4>
                 </Link>
                 <AwesomeButton
-                  action={() => {
+                  onPress={() => {
                     navigate(
                       `/tienda-de-juegos/colecciones/${kebabCase(node.slug)}/`
                     )

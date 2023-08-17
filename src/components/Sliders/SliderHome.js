@@ -15,6 +15,7 @@ const SliderHomeAboutComponent = (props) => {
             id
             title
             images {
+              id
               gatsbyImageData(
                 layout: FULL_WIDTH
                 cropFocus: CENTER
@@ -79,15 +80,15 @@ const SliderHomeAboutComponent = (props) => {
         return (
           <Carousel
             defaultWait={3000}
-            maxTurns={100} /*wait for 1000 milliseconds*/
+            maxTurns={100}
+            key={node.id}
           >
             {node.images.map((item, i) => (
               <Fade key={item.id}>
                 <div className="relative w-auto h-screen md:w-full md:h-full">
                   <GatsbyImage
-                    title={item.title}
                     className="object-cover w-auto h-screen md:w-full md:h-full"
-                    alt={item.title}
+                    alt=""
                     image={item.gatsbyImageData}
                   />
                 </div>

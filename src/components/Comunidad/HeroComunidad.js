@@ -1,4 +1,4 @@
-import World from "@assets/connected_world.svg"
+import World from "@components/svgs/connected_world"
 import ComunidadNotas from "@components/Queries/QueriesComunidadNotasLast"
 import { navigate } from "gatsby"
 import React from "react"
@@ -27,7 +27,7 @@ const HeroComunidad = ({ children }) => {
           <div className="relative z-10">
             <Fade bottom delay={100}>
               <AwesomeButton
-                action={() => {
+                onPress={() => {
                   navigate(`/comunidad`)
                 }}
                 type="secondary"
@@ -52,7 +52,9 @@ const HeroComunidad = ({ children }) => {
         </div>
         <Fade>
           <div className="absolute left-0 right-0 z-0 flex items-center justify-center overflow-hidden -top-40">
-            <World className="w-auto h-1/2 opacity-5" />
+            <div className="w-auto h-1/2 opacity-5">
+              <World />
+            </div>
           </div>
         </Fade>
       </div>

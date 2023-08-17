@@ -22,29 +22,6 @@ const EncontrarComponent = () => {
           }}
         />
       </div>
-      <div className="flex justify-between w-full px-4 py-0 mt-3 text-sm font-medium text-left text-indigo-900 duration-700 bg-indigo-100 rounded-lg hover:bg-indigo-200 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75 focus:ring-green-500">
-        <h3 className="pt-1 my-1 font-serif text-lg font-bold text-left text-indigo-500">
-          Precio
-        </h3>
-      </div>
-      <div className="px-1 pt-1 text-base text-gray-700 bg-white shadow-md">
-        <NumericMenu
-          attribute="GameBuyPrice"
-          items={[
-            { label: "Hasta $500", end: 500 },
-            { label: "De $500 a $1000", start: 500, end: 1000 },
-            {
-              label: "De $1000 a $2000",
-              start: 1000,
-              end: 2000,
-            },
-            { label: "Mayores a $2000", start: 2000 },
-          ]}
-          translations={{
-            all: "Todos",
-          }}
-        />
-      </div>
       <div className="flex justify-between w-full px-4 py-0 mt-3 text-sm font-medium text-left text-indigo-900 duration-700 bg-indigo-100 rounded-lg hover:bg-indigo-200 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus:ring-green-500focus-visible:ring-opacity-75">
         <h3 className="pt-1 my-1 font-serif text-lg font-bold text-left text-indigo-500">
           Edades
@@ -60,7 +37,7 @@ const EncontrarComponent = () => {
               start: 7,
               end: 10,
             },
-            { label: "De 10", start: 10 },
+            { label: "Más de 10", start: 10 },
           ]}
           translations={{
             all: "Para Todes",

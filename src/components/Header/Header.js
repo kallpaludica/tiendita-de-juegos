@@ -1,4 +1,4 @@
-import KallpaLogo from "@assets/logo.svg"
+import KallpaLogo from "@components/svgs/logo"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
@@ -6,13 +6,11 @@ import Headroom from "react-headroom"
 import { FcContacts, FcGlobe, FcShop } from "react-icons/fc"
 
 const routesLeft = [
-  
   {
     title: "Comunidad",
     slug: "/comunidad",
     icon: <FcGlobe className="mr-1 text-2xl" />,
   },
-  
 
   {
     title: "Tienda de juegos",
@@ -42,7 +40,9 @@ const Header = ({ siteTitle }) => (
       <div className="relative flex items-center justify-between w-full max-w-full px-0 mx-auto 2xl:max-w-7xl md:pb-1 sm:pr-6 md:pr-0">
         <div className="logo-container">
           <Link to="/" className="flex items-center mr-12">
-            <KallpaLogo className="w-16 h-16 mr-3 kallpa-logo" />
+            <div className="mr-3 w-14 h-14 kallpa-logo -translate-y-0.5">
+              <KallpaLogo />
+            </div>
             <span className="font-mono text-2xl leading-5 duration-700 md:leading-7 md:text-3xl">
               Kallpa <br /> lúdica
             </span>

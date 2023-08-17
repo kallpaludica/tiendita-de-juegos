@@ -10,6 +10,7 @@ import {
   SearchBox,
   Pagination,
 } from "react-instantsearch-dom"
+// import { Link } from "gatsby"
 import Layout from "@components/layout"
 import PostPreview from "@components/CardGameSearchResult/CardGameSearchResult"
 import Seo from "@components/seo"
@@ -21,14 +22,13 @@ import { useSpring, animated } from "react-spring"
 import OffcanvasFilters from "@components/OffcanvasFilters/OffcanvasFilters"
 import AlgoliaSearch from "@components/Search/AlgoliaCollapseSearch"
 
-
 const searchClient = algoliasearch(
   "REF3SMUMO1",
   "7c4c56c7384927744e0746a4b31a7ff2"
 )
 
 const EncontrarComponent = () => {
-  const [isToggled, setToggle] = useState(true)
+  const [isToggled] = useState(true)
 
   const fade = useSpring({
     opacity: isToggled ? "1" : "0",
@@ -53,11 +53,10 @@ const EncontrarComponent = () => {
             <OffcanvasFilters />
           </div>
           <div className="sticky z-50 flex flex-col-reverse px-2 pt-6 pb-2 mx-auto mb-3 space-y-2 bg-white md:pb-4 top-16 md:px-7 2xl:max-w-7xl sm:flex-row sm:space-y-0 sm:space-x-1 md:space-x-3">
-            
             <div className="relative w-full mt-2 md:mt-0">
               <SearchBox
                 className="w-full mx-auto "
-                showLoadingIndicator 
+                showLoadingIndicator
                 translations={{
                   submitTitle: "Iniciar búsqueda",
                   resetTitle: "Reiniciar búsqueda",
@@ -103,14 +102,6 @@ const EncontrarComponent = () => {
                   defaultRefinement="juegos"
                   items={[
                     { value: "juegos", label: "Ordenado A-Z" },
-                    {
-                      value: "juegos_precio_asc",
-                      label: "Precio más bajo",
-                    },
-                    {
-                      value: "juegos_precio_desc",
-                      label: "Precio más alto",
-                    },
                     {
                       value: "juegos_edades_asc",
                       label: "Edades más chiques",

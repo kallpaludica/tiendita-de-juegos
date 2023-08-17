@@ -39,7 +39,7 @@ const CarouselCollection = (props) => {
     <>
       {data.collections.edges.map(({ node }) => {
         return (
-          <div className="embla__slide">
+          <div className="embla__slide" key={node.slug}>
             <div
               key={node.slug}
               className="relative flex flex-col items-center justify-center p-3 pb-6 mx-auto overflow-hidden text-center transition-all duration-500 ease-in-out transform h-96 "

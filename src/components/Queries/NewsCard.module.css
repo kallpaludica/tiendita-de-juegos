@@ -30,7 +30,7 @@ time {
 }
 
 .description {
-  @apply hidden mb-2 font-serif text-base text-gray-800 md:block md:line-clamp-2;
+  @apply hidden mb-2 font-serif text-base text-gray-800 md:line-clamp-2;
 }
 
 .buttonContainer {

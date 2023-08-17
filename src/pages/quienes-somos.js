@@ -9,7 +9,7 @@ import kallpaEquipo from "../animations/equipo.json"
 import kallpaPropuestas from "../animations/propuestas.json"
 import Layout from "../components/layout"
 import Team from "../components/About/Team"
-import KallpaLogo from "../assets/logo.svg"
+import KallpaLogo from "@components/svgs/logo"
 import About from "../components/About/About"
 import Contact from "../components/About/Contact"
 import Mision from "../components/About/Mision"
@@ -169,7 +169,9 @@ const AboutPage = () => {
       >
         <div className="relative z-10 px-2 ">
           <div className="flex items-center justify-center max-w-6xl pb-6 mx-auto ">
-            <KallpaLogo className="w-32 h-32 kallpa-logo " />
+            <div className="w-32 h-32 kallpa-logo ">
+              <KallpaLogo />
+            </div>
           </div>
           <Mision />
           <About />

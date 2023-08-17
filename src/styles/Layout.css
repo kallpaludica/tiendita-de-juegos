@@ -22,7 +22,7 @@ body {
   right: 0;
   width: 120px;
   height: 50px;
-  top: 18px;
+  top: 15px;
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -100,41 +100,95 @@ main {
 }
 
 .btn {
-  @apply inline-flex items-center justify-center px-4 py-2 font-serif text-xs md:text-sm font-bold tracking-wide duration-300 bg-gray-200 border-0 rounded-md outline-none cursor-pointer ring-0 bg-opacity-90 shadow-lg ring-gray-800;
+  @apply inline-flex items-center justify-center font-serif px-4 py-2 text-sm font-medium tracking-wide duration-300 bg-gray-200 border-0 rounded-md shadow-sm cursor-pointer bg-opacity-90 ring-0 ring-gray-800 hover:bg-opacity-80 hover:shadow-none hover:ring-2 focus:ring-2 focus-visible:ring-2 focus-visible:ring-gray-800 focus-visible:ring-opacity-75 focus-visible:ring-offset-2 md:text-base hover:ring-gray-800;
+  @apply print:hidden;
 }
 
-
 .btn.red {
-  @apply bg-red-200 text-red-900 ring-red-600;
+  @apply text-white bg-red-500 outline-none shadow-red-500/50 ring-red-600 print:bg-gray-200 print:text-gray-900;
 }
 
 .btn.blue {
-  @apply bg-indigo-200 text-indigo-900 ring-indigo-600;
+  @apply text-white bg-blue-600 outline-none shadow-blue-500/50 ring-blue-600 print:bg-gray-200 print:text-gray-900;
+}
+
+.btn.orange {
+  @apply text-white bg-orange-500 outline-none shadow-orange-700/50 ring-orange-600 print:bg-gray-200 print:text-gray-900;
 }
 
 .btn.yellow {
-  @apply bg-yellow-200 text-yellow-900 ring-yellow-600;
+  @apply text-yellow-900 bg-yellow-300 outline-none shadow-orange-700/50 ring-orange-600 print:bg-gray-200 print:text-gray-900;
+}
+
+.btn.indigo {
+  @apply text-white bg-indigo-500 outline-none shadow-indigo-700/50 ring-indigo-600 print:bg-gray-200 print:text-gray-900;
 }
 
 .btn.green {
-  @apply bg-green-200 text-green-900 ring-green-600;
+  @apply text-white outline-none bg-emerald-500 shadow-emerald-500/50 ring-emerald-700 print:bg-gray-200 print:text-gray-900;
 }
 
-.btn.green:hover {
-  @apply ring-2
+.btn.ghost {
+  @apply font-bold text-gray-600 bg-white outline-none ring-2 ring-gray-300 shadow-gray-500/10 focus-visible:ring-gray-600 hover:bg-gray-100 focus-within:ring-gray-600 print:bg-gray-200 print:text-gray-900 hover:ring-gray-800 hover:ring-offset-2;
 }
 
-.collectionPage #ogam {
-  filter: hue-rotate(105deg);
+.collectionPage #ogam,
+.home #OgamAnimation,
+.community #OgamAnimation,
+.contact #OgamAnimation {
+  animation: filter-animation 8s infinite;
 }
 
-.home #OgamAnimation {
-  filter: hue-rotate(105deg);
+@-webkit-keyframes filter-animation {
+  0% {
+    -webkit-filter: hue-rotate(0deg);
+  }
+
+  50% {
+    -webkit-filter: hue-rotate(100deg);
+  }
+
+  100% {
+    -webkit-filter: hue-rotate(0deg);
+  }
 }
 
+@keyframes filter-animation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
 
-.community #OgamAnimation {
-  filter: hue-rotate(40deg);
+  50% {
+    filter: hue-rotate(100deg);
+  }
+
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
+
+.b {
+  isolation: isolate;
+  opacity: 0.1;
+}
+.b,
+.c {
+  fill: #cca42c;
+}
+.d {
+  fill: #fff;
+}
+.e {
+  fill: #702459;
+}
+.f {
+  fill: #2f855a;
+}
+.g {
+  fill: #2f5627;
+}
+.h {
+  fill: #c24f06;
 }
 
 /* purgecss end ignore */

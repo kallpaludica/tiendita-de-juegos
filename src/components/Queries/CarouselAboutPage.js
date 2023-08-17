@@ -13,6 +13,7 @@ const CarouselAboutPage = (props) => {
             id
             title
             images {
+              id
               gatsbyImageData(
                 layout: FULL_WIDTH
                 cropFocus: CENTER
@@ -25,26 +26,22 @@ const CarouselAboutPage = (props) => {
     }
   `)
 
+  
+  const backimages = data.backgrounds.edges[0].node.images
+
   return (
     <>
-      {data.backgrounds.edges.map(({ node }) => {
-        return (
-          <>
-            {node.images.map((item, i) => (
-              <div className="embla__slide" key={item.id}>
-                <div className="relative w-full h-96">
-                  <GatsbyImage
-                    title={item.title}
-                    className="object-cover w-full h-full"
-                    alt={item.title}
-                    image={item.gatsbyImageData}
-                  />
-                </div>
-              </div>
-            ))}
-          </>
-        )
-      })}
+      {backimages.map((item, i) => (
+        <div className="embla__slide" key={item.id}>
+          <div className="relative w-full h-96">
+            <GatsbyImage
+              className="object-cover w-full h-full"
+              alt=""
+              image={item.gatsbyImageData}
+            />
+          </div>
+        </div>
+      ))}
     </>
   )
 }

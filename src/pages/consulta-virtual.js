@@ -40,7 +40,7 @@ const ConsultaVirtualPage = () => {
               Lunes a Viernes de 10 a 19hs
             </p>
             <AwesomeButton
-              action={() => {
+              onPress={() => {
                 navigate(`/preguntas-frecuentes`)
               }}
               type="secondary"

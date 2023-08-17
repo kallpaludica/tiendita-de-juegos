@@ -10,6 +10,15 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         "@components": path.resolve(__dirname, "src/components"),
         "@static": path.resolve(__dirname, "static"),
       },
+      fallback: {
+        process: require.resolve("process/browser"),
+        assert: require.resolve("assert/"),
+        crypto: require.resolve("crypto-browserify"),
+        http: require.resolve("stream-http"),
+        https: require.resolve("https-browserify"),
+        os: require.resolve("os-browserify/browser"),
+        stream: require.resolve("stream-browserify"),
+      },
     },
   })
 }
@@ -115,14 +124,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /assets/, // See below to configure properly
-        },
-      },
-    },
-    {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         // Setting a color is optional.
@@ -145,14 +146,7 @@ module.exports = {
           "@animations": "src/animations",
           "@images": "src/images",
         },
-        extensions: []
-      }
-    },
-    {
-      resolve: `gatsby-plugin-breadcrumb`,
-      options: {
-        useAutoGen: true,
-        autoGenHomeLabel: `Inicio`,
+        extensions: [],
       },
     },
     `gatsby-transformer-sharp`,

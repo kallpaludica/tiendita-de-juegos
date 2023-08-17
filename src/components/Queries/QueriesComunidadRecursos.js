@@ -70,11 +70,11 @@ const QueryComunidadRecursosComponent = () => {
               <div className="mt-3 md:mt-0">
                 {node.descripcion && (
                   <Link
-                    className="btn blue"
+                    className="btn yellow"
                     key={node.slug}
                     to={`/recursos/${kebabCase(node.slug)}/`}
                   >
-                    Ver juego
+                    Ver más
                   </Link>
                 )}
               </div>

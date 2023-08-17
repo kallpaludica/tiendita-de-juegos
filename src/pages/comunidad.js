@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet"
 import { FcDocument, FcEngineering, FcIdea } from "react-icons/fc"
 import Fade from "react-reveal/Fade"
 // import ComunidadRecursos from "../components/Queries/QueriesRecursosLast"
-import World from "../assets/connected_world.svg"
+import World from "@components/svgs/connected_world"
 import Contact from "../components/About/Contact"
 // import QuizApp from "../components/Quiz/QuizApp"
 import ComunidadCarouselRecursos from "../components/Carousels/emblaCarouselAlign"
@@ -41,7 +41,9 @@ const ComunidadPage = () => {
         </div>
         <Fade>
           <div className="absolute left-0 right-0 flex items-center justify-center overflow-hidden -top-24">
-            <World className="w-auto h-1/2 opacity-5" />
+          <div className="w-auto h-1/2 opacity-5">
+              <World />
+            </div>
           </div>
         </Fade>
       </div>
@@ -56,7 +58,7 @@ const ComunidadPage = () => {
           <ComunidadNotas />
           <div className="mt-12">
             <AwesomeButton
-              action={() => {
+              onPress={() => {
                 navigate(`/comunidad/notas/`)
               }}
               type="secondary"
@@ -77,7 +79,7 @@ const ComunidadPage = () => {
           <ComunidadCarouselRecursos />
           <div className="mt-12">
             <AwesomeButton
-              action={() => {
+              onPress={() => {
                 navigate(`/comunidad/recursos/`)
               }}
               type="primary"
@@ -98,7 +100,7 @@ const ComunidadPage = () => {
           <ComunidadProyectos />
           <div className="mt-12">
             <AwesomeButton
-              action={() => {
+              onPress={() => {
                 navigate(`/comunidad/proyectos-que-nos-potencian/`)
               }}
               type="primary"
