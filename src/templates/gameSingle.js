@@ -123,7 +123,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   className="relative flex items-baseline justify-center m-1 my-2 font-serif text-xl font-bold tracking-wider text-left text-blue-500 transition-all duration-500"
                   href="#faq"
                 >
-                  <CgSandClock className="relative mr-1 text-lg top-0.5 " />
                   <span className="block">Por encargo</span>
                 </AnchorLink>
               )}

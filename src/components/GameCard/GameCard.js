@@ -39,12 +39,16 @@ const Card = ({ card }) => (
         <div className="flex-grow" style={{ minHeight: "70px" }}>
           <Link
             to={`/tienda-de-juegos/${kebabCase(card.slug)}/`}
-            className="inline-flex items-baseline flex-grow gap-2 px-2 pt-4 font-serif text-lg font-bold hover:text-gray-800 hover:underline underline-offset-2"
+            className="inline-flex items-baseline flex-grow gap-2 px-2 pt-4 font-serif font-bold hover:text-gray-800 hover:underline underline-offset-2"
           >
             <span className="">{card.title}</span>
-            {card.GameInStock && (
-              <div className="shrink-0 bg-emerald-100 inline-block ring-emerald-300 font-serif text-sm font-bold text-emerald-900 rounded px-1 py-0.5 ">
+            {card.GameInStock ? (
+              <div className="shrink-0 no-underline bg-emerald-100 inline-block ring-emerald-300 font-serif text-sm font-bold text-emerald-900 rounded px-1 py-0.5 ">
                 En Stock
+              </div>
+            ) : (
+              <div className="shrink-0 no-underline bg-blue-100 inline-block ring-blue-300 font-serif text-sm font-bold text-blue-900 rounded px-1 py-0.5 ">
+                Por encargo
               </div>
             )}
           </Link>
@@ -90,7 +94,9 @@ const Card = ({ card }) => (
               href={`https://api.whatsapp.com/send?phone=5493874811808&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20consultar%20por%20el%20juego%20${card.title}`}
               className="btn !bg-[#50cd5d] !ring-[#50cd5d] text-white"
             >
-              <span className="hidden !text-sm mr-2 sm:inline-flex">Consultar</span>
+              <span className="hidden !text-sm mr-2 sm:inline-flex">
+                Consultar
+              </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"

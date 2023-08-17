@@ -40,9 +40,13 @@ const EncontrarPostPreview = ({ hit }) => {
         >
           <div className="">
             <Highlight hit={hit} attribute="title" tagName="mark" />
-            {hit.GameInStock && (
+            {hit.GameInStock ? (
               <div className="md:relative absolute left-0 bottom-0 bg-emerald-100 inline-block ring-emerald-300 ml-3 font-serif text-sm font-bold text-emerald-900 rounded px-1 py-0.5 ">
                 En Stock
+              </div>
+            ) : (
+              <div className="md:relative absolute left-0 bottom-0 bg-blue-100 inline-block ring-blue-300 ml-3 font-serif text-sm font-bold text-blue-900 rounded px-1 py-0.5 ">
+                Por encargo
               </div>
             )}
           </div>
@@ -59,7 +63,9 @@ const EncontrarPostPreview = ({ hit }) => {
             size="small"
             rel="noopener noreferrer"
           >
-            <span className="hidden ml-2 md:inline-block">Consultar precio</span>
+            <span className="hidden ml-2 md:inline-block">
+              Consultar precio
+            </span>
           </AwesomeButtonSocial>
         </div>
         <div className="hidden w-full my-3 font-serif text-sm text-gray-900 md:text-base description md:line-clamp-3">

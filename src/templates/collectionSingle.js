@@ -86,12 +86,16 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
                           >
                             <Link
                               to={`/tienda-de-juegos/${kebabCase(slug)}/`}
-                              className="flex-grow inline-block px-2 pt-4 font-serif text-base font-bold line-clamp-1 hover:text-gray-800 hover:underline underline-offset-2"
+                              className="inline-flex items-baseline flex-grow gap-2 px-2 pt-4 font-serif font-bold hover:text-gray-800 hover:underline underline-offset-2"
                             >
-                              {title}
-                              {GameInStock && (
-                                <div className="bg-emerald-100 inline-block ring-emerald-300 ml-3 font-serif text-sm font-bold text-emerald-900 rounded px-1 py-0.5 ">
+                              <span className="">{title}</span>
+                              {GameInStock ? (
+                                <div className="shrink-0 bg-emerald-100 inline-block ring-emerald-300 ml-3 font-serif text-sm font-bold text-emerald-900 rounded px-1 py-0.5 ">
                                   En Stock
+                                </div>
+                              ) : (
+                                <div className="shrink-0 bg-blue-100 inline-block ring-blue-300 ml-3 font-serif text-sm font-bold text-blue-900 rounded px-1 py-0.5 ">
+                                  Por encargo
                                 </div>
                               )}
                             </Link>
@@ -127,9 +131,7 @@ const CollectionsSingleTemplate = ({ data, pageContext, location }) => {
                           <div className="border-t border-green-200 ">
                             <div className="flex items-center justify-between gap-1 p-3 px-1 font-serif text-lg font-bold text-left text-gray-700 transition-all duration-500 bg-white">
                               <Link
-                                to={`/tienda-de-juegos/${kebabCase(
-                                  slug
-                                )}/`}
+                                to={`/tienda-de-juegos/${kebabCase(slug)}/`}
                                 className="!text-sm btn yellow"
                               >
                                 Ver juego
