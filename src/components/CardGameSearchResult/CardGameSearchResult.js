@@ -55,7 +55,7 @@ const EncontrarPostPreview = ({ hit }) => {
           </small>
         </Link>
 
-        <div className="z-10 md:absolute bottom-3 right-2 group">
+        <div className="relative right-0 z-10 -bottom-2 md:absolute md:bottom-3 md:right-2 group">
           <AwesomeButtonSocial
             type="whatsapp"
             href={`https://api.whatsapp.com/send?phone=5493874811808&text=%C2%A1Hola!%F0%9F%A4%97%20%20Quería%2C%20consultar%20por%20el%20juego%20${hit.title}`}
@@ -63,7 +63,7 @@ const EncontrarPostPreview = ({ hit }) => {
             size="small"
             rel="noopener noreferrer"
           >
-            <span className="hidden ml-2 md:inline-block">
+            <span className="ml-2 !text-xs md:inline-block">
               Consultar precio
             </span>
           </AwesomeButtonSocial>
