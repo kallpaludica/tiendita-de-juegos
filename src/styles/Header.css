@@ -82,12 +82,12 @@ body.about .headroom--unpinned {
 }
 
 body.ingame .headroom {
-  @apply bg-white shadow-sm bg-opacity-90 backdrop-blur backdrop-filter !important;
+  @apply bg-white shadow-sm bg-opacity-90 backdrop-blur !important;
 }
 
 body.home .headroom--unpinned,
 body.home .headroom--pinned {
-  @apply bg-white shadow-sm bg-opacity-90 backdrop-blur backdrop-filter;
+  @apply bg-white shadow-sm bg-opacity-90 backdrop-blur;
 }
 
 body.ingame .header-container a {

@@ -37,7 +37,7 @@ const routesLeft = [
 const Header = ({ siteTitle }) => (
   <Headroom disableInlineStyles>
     <header className="header-container">
-      <div className="relative flex items-center justify-between w-full max-w-full px-0 mx-auto 2xl:max-w-7xl md:pb-1 sm:pr-6 md:pr-0">
+      <div className="relative flex items-center justify-between w-full max-w-full px-0 mx-auto inner 2xl:max-w-7xl md:pb-1 sm:pr-6 md:pr-0">
         <div className="logo-container">
           <Link to="/" className="flex items-center mr-12">
             <div className="mr-3 w-14 h-14 kallpa-logo -translate-y-0.5">

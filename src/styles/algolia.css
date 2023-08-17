@@ -1,3 +1,4 @@
+
 body.searcher .searcher-go {
   @apply duration-700 opacity-0;
 }
@@ -6,8 +7,12 @@ body.searcher .headroom {
   @apply bg-white;
 }
 
+body.searcher .nav-left {
+@apply hidden opacity-0 lg:flex lg:opacity-100
+}
+
 body.searcher .header-container .inner {
-  @apply justify-center md:justify-between max-w-full;
+@apply justify-center lg:justify-between;
 }
 
 body.searcher .logo-container a {
@@ -15,8 +20,7 @@ body.searcher .logo-container a {
 }
 
 body.searcher .btnJuegoteca {
-  @apply hidden;
-}
+@apply hidden}
 
 /* body.searcher .logo-container span {
   @apply hidden;
@@ -1146,7 +1150,7 @@ a[class^="ais-"] {
 }
 
 .ais-RefinementList-label.inStock.active {
-  @apply text-emerald-400;
+@apply text-emerald-400;
 }
 
 .ais-RefinementList-label.inStock .CheckActive {
@@ -1160,3 +1164,4 @@ a[class^="ais-"] {
 .ais-RefinementList-label.outStock .CheckActive {
   @apply bg-blue-400;
 }
+
