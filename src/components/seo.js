@@ -60,6 +60,7 @@ const SEO = ({ title, description, image, lang, pathname, article }) => (
             ) : (
               <meta name="twitter:image" content={`${siteUrl}/${seo.image}`} />
             )}
+            <meta name="view-transition" content="same-origin" />
           </Helmet>
         </>
       )
