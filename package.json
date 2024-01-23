@@ -20,7 +20,7 @@
     "babel-polyfill": "^6.26.0",
     "embla-carousel-autoplay": "8.0.0-rc11",
     "embla-carousel-react": "8.0.0-rc11",
-    "gatsby": "^4.13.1",
+    "gatsby": "^5.13.2",
     "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-plugin-algolia": "^0.26.0",
     "gatsby-plugin-alias-imports": "^1.0.5",
